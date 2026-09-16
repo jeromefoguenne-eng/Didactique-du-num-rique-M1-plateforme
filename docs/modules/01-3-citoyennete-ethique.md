@@ -18,9 +18,7 @@ Chaque interaction en ligne laisse une double empreinte :
 - **Traces actives** : Textes publiés, formulaires remplis, messages envoyés, photos partagées.
 - **Traces passives** : Données de géolocalisation, historique de navigation, adresse IP, métadonnées des photos (EXIF).
 
-<div style="text-align: center; margin: 1.5rem 0;">
-  <img src="/images/image3.png" style="max-width: 85%; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: inline-block;" alt="Citoyenneté numérique" />
-</div>
+
 
 ### Objectif didactique :
 Sensibiliser les élèves à la **permanence des données en ligne** et à la distinction entre sphère privée et exposition publique.

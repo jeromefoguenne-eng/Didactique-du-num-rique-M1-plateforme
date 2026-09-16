@@ -1,30 +1,31 @@
 ---
-title: "3.4 Défis express & Gamification"
-description: "Défis en temps limité (20 minutes), escape games pédagogiques et émulation positive"
+title: "3.4 Le défi pédagogique"
+description: "Texte intégral du syllabus : Tâches stimulantes sous contrainte temporelle ou technique"
 ---
 
-# 3.4. Défis Express & Gamification
+# 3.4 Le défi pédagogique
 
-::: info Dynamique de l'urgence créative
-Le défi pédagogique en temps contraint est une modalité puissante pour libérer la créativité, vaincre la peur de la page blanche et développer la réactivité numérique des élèves.
+::: info Extrait intégral des Notes de cours
+Ce chapitre reproduit fidèlement et dans son intégralité le texte du syllabus officiel du cours de Didactique du numérique (Master 1 - HECh).
 :::
 
-## 1. Pourquoi le format 20 minutes fonctionne en classe
 
-<div style="text-align: center; margin: 1.5rem 0;">
-  <img src="/images/image24.jpg" style="max-width: 85%; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: inline-block;" alt="Défis express" />
-</div>
+### Le défi pédagogique
 
-- **Focalisation extrême de l'attention** : L'échéance courte élimine les temps morts et les distractions.
-- **Concentration sur l'essentiel** : Pas le temps pour le perfectionnisme stérile ; les élèves visent le *Minimum Viable Product* (MVP).
-- **Émulation saine et ludique** : Ambiance de hackathon ou d'escape game où le groupe s'entraide pour battre le chronomètre.
+
+Le défi pédagogique consiste à placer les élèves face à une mission courte, stimulante et réalisable, mais dont la solution n'est pas immédiatement évidente. Contrairement à un exercice classique, le défi laisse une marge de liberté dans la manière de parvenir au résultat : les élèves doivent chercher, expérimenter, faire des choix et parfois mobiliser des connaissances qu'ils ne maîtrisent pas encore complètement.
+
+
+Le défi repose sur une contrainte ou un objectif clairement défini : produire quelque chose en un temps limité, résoudre une situation, atteindre un résultat avec certaines ressources ou respecter des contraintes particulières. Cette dimension crée une situation qui pousse les élèves à s'engager activement dans la recherche d'une solution.
+
+
+Le rôle de l'enseignant est de concevoir le défi, fixer les contraintes, fournir les ressources nécessaires et accompagner les élèves, sans imposer une procédure unique. Il peut ensuite organiser une mise en commun afin de comparer les stratégies utilisées et de formaliser les apprentissages.
+
+
+L'élève est placé dans une posture d'expérimentation et de résolution. Il peut essayer, se tromper, modifier sa stratégie et recommencer. Le défi permet ainsi de donner une place importante à l'erreur et au tâtonnement, tout en favorisant l'autonomie et la créativité.
+
 
 ---
 
-## 2. Exemple emblématique : Le défi Canva mot de passe
-
-Les élèves disposent de **20 minutes chrono** pour concevoir sur Canva une affiche percutante expliquant la technique de la *« phrase secrète »* (Passphrase) pour créer un mot de passe incassable.
-- Chronomètre projeté au tableau.
-- Critères d'évaluation simples : lisibilité à 2 mètres, 1 seul message clé, respect des contrastes de couleurs.
-
-👉 **Atelier pratique associé** : [Atelier 5 : Défi 20 minutes Canva](/ateliers/exercice-05)
+## Navigation
+- 🏠 **[03. Hub Méthodologies Pédagogiques](/modules/03-pedagogies-actives)**

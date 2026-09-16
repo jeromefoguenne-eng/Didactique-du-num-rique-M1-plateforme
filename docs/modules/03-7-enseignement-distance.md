@@ -1,41 +1,88 @@
 ---
 title: "3.7 L'enseignement à distance"
-description: "Principes didactiques de l'hybridation et du distanciel : scénarisation, alternance des temps et accompagnement"
+description: "Texte intégral du syllabus : Hybridation, 5 principes de scénarisation, asynchrone/synchrone et accompagnement"
 ---
 
-# 3.7. L'Enseignement à Distance
+# 3.7 L'enseignement à distance
 
-::: info Définition du syllabus
-L’enseignement à distance désigne une modalité pédagogique dans laquelle les apprenants et l’enseignant ne sont pas réunis physiquement dans le même espace au même moment. Il ne consiste donc pas simplement à transposer un cours magistral devant une webcam ou à déposer des fichiers PDF sur une plateforme.
+::: info Extrait intégral des Notes de cours
+Ce chapitre reproduit fidèlement et dans son intégralité le texte du syllabus officiel du cours de Didactique du numérique (Master 1 - HECh).
 :::
 
----
 
-## Les 5 Principes Clés d'une Méthodologie à Distance
+### L’enseignement à distance
 
-Le syllabus formule 5 principes indispensables pour concevoir un dispositif à distance efficace :
 
-### 1. Scénariser plutôt que simplement transmettre
-L'enseignant doit organiser une véritable progression pédagogique rythmée par des objectifs clairs, des étapes intermédiaires identifiables et des activités stimulantes. L'apprenant doit toujours savoir où il en est, ce qu'il doit accomplir et pourquoi.
+L’enseignement à distance désigne une modalité pédagogique dans laquelle l’enseignant et les apprenants ne sont pas nécessairement réunis physiquement au même endroit. Il repose sur l’utilisation de technologies numériques permettant de transmettre des contenus, organiser des activités, communiquer, collaborer et évaluer les apprentissages.
 
-### 2. Alterner les temps d'apprentissage
-Un dispositif solide combine harmonieusement :
-- **Temps asynchrones** : Lecture de documents, visionnage de capsules vidéos courtes, recherche autonome et résolution d'exercices à son propre rythme.
-- **Temps synchrones** : Séances de débriefing, classes virtuelles interactives, régulations collectives et réponses ciblées aux questions.
 
-### 3. Organiser les interactions
-À distance, le risque majeur est le sentiment d'isolement de l'apprenant. Il est donc crucial d'organiser des interactions riches :
-- Interactions entre apprenants (travail de groupe, forums d'entraide, peer review) ;
-- Interactions avec l'enseignant (feedbacks personnalisés, permanences de suivi).
+L’enseignement à distance ne consiste donc pas simplement à transposer un cours présentiel sur Internet. Il nécessite de repenser le scénario pédagogique : les consignes doivent être explicites, les activités doivent favoriser l’engagement et les interactions doivent être organisées intentionnellement.
 
-### 4. Rendre l'étudiant acteur et autonome
-L'étudiant ne doit pas rester dans une posture de spectateur passif. Chaque étape doit lui demander de manipuler, de produire, d'analyser ou de synthétiser des données numériques.
 
-### 5. Privilégier une évaluation continue et formative
-Multiplier les points de contrôle légers (quiz d'auto-évaluation, livrables intermédiaires, dépôts de fichiers avec feedback) plutôt que de s'en remettre uniquement à une sanction sommative terminale.
+Les principaux types d’enseignement à distance
+
+
+#### Une méthodologie qui repose sur 5 principes :
+
+1. Scénariser plutôt que simplement transmettre
+
+L'enseignant doit organiser une véritable progression :
+objectifs → ressources → activités → interactions → production → évaluation.
+
+2. Alterner les temps d'apprentissage
+
+#### Un dispositif peut combiner :
+
+
+Je découvre → j'expérimente → j'échange → je produis → je reçois un feedback → je réinvestis
+
+
+L'objectif est d'éviter que l'enseignement à distance se transforme en une succession de vidéos ou de documents à consulter passivement.
+
+3. Organiser les interactions
+
+La distance peut créer un sentiment d'isolement. Il est donc nécessaire de prévoir différentes formes d'interactions :
+
+
+enseignant ↔ étudiant : feedback, accompagnement, visioconférence ;
+
+
+étudiant ↔ étudiant : travail collaboratif, débat, peer feedback ;
+
+
+étudiant ↔ contenu : simulation, quiz, étude de cas, tutoriel interactif.
+
+4. Donner davantage d'autonomie
+
+#### À distance, l'apprenant doit pouvoir comprendre rapidement :
+
+
+ce qu'il doit faire ;
+
+
+pourquoi il doit le faire ;
+
+
+avec quelles ressources ;
+
+
+dans quel délai ;
+
+
+comment son travail sera évalué.
+
+
+Les consignes et les critères de réussite prennent donc une importance particulière.
+
+5. Évaluer régulièrement
+
+L'évaluation peut être intégrée au parcours sous forme de quiz formatifs, productions, défis, feedback entre pairs, portfolios ou autoévaluations. L'objectif est de rendre les progrès visibles plutôt que d'attendre uniquement une évaluation finale.
+
+
+Exemple : la plateforme du cours
+
 
 ---
 
 ## Navigation
-- ⬅️ **[3.6 Apprentissage expérientiel et peer learning](/modules/03-6-peer-learning)**
-- 🏠 **[Retour au Hub Méthodologies Pédagogiques](/modules/03-pedagogies-actives)**
+- 🏠 **[03. Hub Méthodologies Pédagogiques](/modules/03-pedagogies-actives)**

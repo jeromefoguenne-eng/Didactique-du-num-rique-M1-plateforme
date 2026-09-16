@@ -16,7 +16,6 @@ export default defineConfig({
     nav: [
       { text: "Accueil", link: "/" },
       { text: "👤 Espace Membre", link: "/espace-membre" },
-      { text: "Exercices", link: "/ateliers/" },
       { text: "Guide", link: "/guide/" },
       { text: "Ressources", link: "/ressources/" },
       { text: "🔒 Admin", link: "/admin" }
@@ -70,8 +69,8 @@ export default defineConfig({
           items: [
             { text: "📌 Vue d'ensemble (Hub)", link: "/modules/04-preparation-lecon-fmttn" },
             { text: "4.1 Éléments indispensables d'une fiche", link: "/modules/04-3-fiche-preparation-type" },
-            { text: "4.2 Triple concordance & Taxonomie", link: "/modules/04-1-triple-concordance" },
-            { text: "4.3 Assistant IA HECh & Copilote", link: "/modules/04-4-assistant-ia-hech" }
+            { text: "4.2 Triple concordance & Bloom", link: "/modules/04-2-taxonomie-bloom" },
+            { text: "4.4 Assistant IA HECh & Copilote", link: "/modules/04-4-assistant-ia-hech" }
           ]
         },
         {
@@ -143,8 +142,10 @@ export default defineConfig({
           text: "8. Ressources & Boîte à Outils",
           items: [
             { text: "📌 Vue d'ensemble (Hub)", link: "/ressources/" },
-            { text: "8.1 Documents & Référentiels PDF", link: "/ressources/documents" },
-            { text: "8.2 Bibliographie sélective (APA)", link: "/ressources/bibliographie" }
+            { text: "8.1 Syllabus officiel du cours", link: "/ressources/syllabus" },
+            { text: "8.2 Documents & Référentiels PDF", link: "/ressources/documents" },
+            { text: "8.3 Bibliographie sélective (APA)", link: "/ressources/bibliographie" },
+            { text: "8.4 Présentations PowerPoint", link: "/ressources/powerpoints" }
           ]
         }
       ]

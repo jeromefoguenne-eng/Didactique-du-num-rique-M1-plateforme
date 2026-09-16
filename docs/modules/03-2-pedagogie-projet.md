@@ -1,35 +1,40 @@
 ---
-title: "3.2 Pédagogie par projet & Coconstruction"
-description: "Démarche de projet, finalité concrète, travail d'équipe et posture de médiateur de l'enseignant"
+title: "3.2 L'apprentissage par projet"
+description: "Texte intégral du syllabus : Production concrète, temporalité, rôle de l'enseignant et autonomie des apprenants"
 ---
 
-# 3.2. Pédagogie par Projet & Coconstruction
+# 3.2 L'apprentissage par projet
 
-::: info Finalité authentique
-Dans la pédagogie par projet, les élèves apprennent en s'engageant dans la réalisation d'une production concrète et utile (ex : un jeu de société didactique, un podcast d'école, un escape game).
+::: info Extrait intégral des Notes de cours
+Ce chapitre reproduit fidèlement et dans son intégralité le texte du syllabus officiel du cours de Didactique du numérique (Master 1 - HECh).
 :::
 
-## 1. Exercice ponctuel vs Véritable Projet
 
-| Critère | Exercice classique | Démarche de Projet |
-| :--- | :--- | :--- |
-| **Consigne** | Étroite, procédurale et fermée | Ouverte, intentionnelle et problématisée |
-| **Temporalité** | 15 à 45 minutes | Plusieurs semaines / un quadrimestre |
-| **Choix de l'élève** | Quasiment nuls | Planification, répartition des rôles, choix esthétiques et techniques |
-| **Rôle du prof** | Transmetteur & correcteur | Facilitateur, tuteur, ressource et régulateur |
+### L’apprentissage par projet
 
-<div style="text-align: center; margin: 1.5rem 0;">
-  <img src="/images/image20.jpg" style="max-width: 85%; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: inline-block;" alt="Pédagogie par projet" />
-</div>
+
+La pédagogie par projet est une démarche dans laquelle les élèves apprennent en s'engageant dans la réalisation d'une production concrète qui répond à une intention ou à une problématique définie. Le projet donne ainsi une finalité aux apprentissages : les connaissances et les compétences ne sont pas abordées uniquement pour elles-mêmes, mais sont mobilisées parce qu'elles sont nécessaires à la réalisation du projet.
+
+
+Cette démarche se distingue d'une activité classique de production. Dans un exercice, l'enseignant définit généralement précisément ce que l'élève doit réaliser et les étapes à suivre. Dans une démarche de projet, une partie des choix, de la planification et de l'organisation du travail est confiée aux élèves. Ceux-ci doivent déterminer comment atteindre l'objectif fixé, quelles ressources utiliser, quelles connaissances rechercher et comment répartir les différentes tâches.
+
+
+Le projet s'inscrit généralement dans une temporalité plus longue qu'une activité ponctuelle. Il peut comporter plusieurs phases : définition du projet, recherche et planification, réalisation, présentation ou diffusion, évaluation et retour réflexif. Ces différentes étapes permettent aux élèves de mobiliser progressivement des connaissances et des compétences dans une situation complexe.
+
+
+Le projet repose sur plusieurs principes. Il privilégie notamment l'ancrage dans le réel, en donnant au projet une finalité qui dépasse le simple exercice scolaire ; la coconstruction, puisque les élèves construisent ensemble une réponse et confrontent leurs idées ; et la complémentarité des compétences, chaque membre du groupe pouvant apporter ses connaissances, ses capacités ou ses intérêts particuliers. Elle favorise également une certaine autonomie, les élèves étant amenés à planifier, organiser et réguler une partie de leur travail.
+
+
+Le rôle de l'enseignant évolue en conséquence. Il ne se limite plus à transmettre les connaissances nécessaires à la réalisation de la production. Il définit le cadre et les objectifs d'apprentissage, accompagne les élèves dans leurs choix, fournit des ressources, régule le travail et intervient lorsque cela est nécessaire. Il veille surtout à ce que le projet ne devienne pas une simple activité occupationnelle : la production réalisée doit être au service d'apprentissages explicitement identifiés.
+
+
+L'élève, quant à lui, devient acteur et responsable d'une partie du processus d'apprentissage. Il doit planifier, rechercher, sélectionner des ressources, prendre des décisions, expérimenter, résoudre des difficultés et éventuellement modifier ses choix en cours de réalisation. La production finale constitue ainsi l'aboutissement visible d'un processus d'apprentissage plus large.
+
+
+Cette démarche est particulièrement intéressante pour l'enseignement du numérique. Les environnements numériques offrent en effet de nombreuses possibilités de création, de collaboration et de communication. Les élèves peuvent par exemple concevoir un podcast, réaliser une vidéo, créer un site Internet, produire une infographie, développer un jeu ou élaborer une campagne de sensibilisation. Le numérique devient alors à la fois objet d'apprentissage et moyen de réalisation du projet.
+
 
 ---
 
-## 2. Les 5 phases du projet en FMTTN
-
-1. **Émergence & Définition** : Déterminer le cahier des charges, le public cible et les contraintes techniques.
-2. **Recherche & Planification** : Se documenter, prototyper des idées sur papier et répartir les rôles dans l'équipe.
-3. **Réalisation & Fabrication** : Mobiliser les outils numériques (Canva, découpe laser, IA, logiciels de montage).
-4. **Diffusion & Playtest** : Faire tester la production par d'autres élèves ou les parents d'élèves.
-5. **Bilan réflexif & Évaluation** : Analyser ce qui a fonctionné, ce qui a échoué et ce qui a été appris.
-
-👉 **Mise en œuvre concrète du cours** : [Consulter le Projet Jeu de société](/modules/05-projet-jeu-societe)
+## Navigation
+- 🏠 **[03. Hub Méthodologies Pédagogiques](/modules/03-pedagogies-actives)**

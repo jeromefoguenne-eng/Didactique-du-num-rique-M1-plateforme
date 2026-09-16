@@ -16,11 +16,11 @@ const subCategories = [
     title: "4.2 La triple concordance pédagogique et la taxonomie de Bloom",
     tag: "Alignement Didactique",
     desc: "Alignement constructif de Biggs (objectifs - activités - évaluation) et niveaux taxonomiques appliqués au numérique.",
-    link: "/modules/04-1-triple-concordance",
+    link: "/modules/04-2-taxonomie-bloom",
     image: "/images/subcategories/sub-4-1-alignment.jpg"
   },
   {
-    title: "4.3 L'application ASSISTANT COURS FMTTN (HECh)",
+    title: "4.4 L'application ASSISTANT COURS FMTTN (HECh)",
     tag: "Copilote IA HECh",
     desc: "Outil d'audit temps réel de la triple concordance, suggestions d'attendus et génération guidée de préparations conformes.",
     link: "/modules/04-4-assistant-ia-hech",

@@ -11,9 +11,7 @@ Théorisée par John Biggs sous le nom d'**alignement constructif** (*Constructi
 
 ## 1. Le triangle de la triple concordance
 
-<div style="text-align: center; margin: 1.5rem 0;">
-  <img src="/images/image28.jpg" style="max-width: 85%; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: inline-block;" alt="Triple concordance" />
-</div>
+
 
 **L'alignement constructif des 3 piliers :**  
 1. **Objectifs d'apprentissage** (attendus du référentiel)  

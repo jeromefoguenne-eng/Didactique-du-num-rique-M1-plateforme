@@ -16,9 +16,7 @@ Pour éviter que les élèves ne prêtent à l'IA une conscience humaine ou une 
 - **Les hallucinations** : L'IA peut générer des réponses d'une grande fluidité syntaxique tout en inventant des faits historiques, des formules mathématiques fausses ou des références bibliographiques inexistantes.
 - **Les biais d'entraînement** : Les données du web reflètent les biais culturels, linguistiques et de genre dominants.
 
-<div style="text-align: center; margin: 1.5rem 0;">
-  <img src="/images/image5.jpg" style="max-width: 85%; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: inline-block;" alt="IA et algorithmes" />
-</div>
+
 
 ---
 

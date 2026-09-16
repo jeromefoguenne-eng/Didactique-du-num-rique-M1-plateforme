@@ -43,14 +43,6 @@ const tiles = [
     image: "/images/tile-5-projet-jeu.jpg"
   },
   {
-    id: 6,
-    title: "6. Exercices",
-    tag: "Mises en Pratique",
-    desc: "7 ateliers et défis concrets (diagnostic, investigation, Escape Game, défi Canva, démontage PC).",
-    link: "/ateliers/",
-    image: "/images/tile-6-ateliers.jpg"
-  },
-  {
     id: 7,
     title: "7. Guide & Évaluation",
     tag: "Organisation & Jalons",
@@ -61,8 +53,8 @@ const tiles = [
   {
     id: 8,
     title: "8. Ressources & Outils",
-    tag: "Téléchargements & Outils",
-    desc: "Téléchargement direct des référentiels officiels (FMTTN, CSEM), outils numériques et bibliographie APA.",
+    tag: "Syllabus, Docs & Slides",
+    desc: "Syllabus Google Docs, référentiels officiels (FMTTN, CSEM), présentations PowerPoint et bibliographie APA.",
     link: "/ressources/",
     image: "/images/tile-8-ressources.jpg"
   }

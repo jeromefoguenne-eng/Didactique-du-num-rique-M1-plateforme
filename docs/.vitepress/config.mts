@@ -15,8 +15,10 @@ export default defineConfig({
 
     nav: [
       { text: "Accueil", link: "/" },
-      { text: "Ateliers", link: "/ateliers/" },
-      { text: "Ressources", link: "/ressources/documents" }
+      { text: "👤 Espace Membre", link: "/espace-membre" },
+      { text: "Exercices", link: "/ateliers/" },
+      { text: "Ressources", link: "/ressources/documents" },
+      { text: "🔒 Admin", link: "/admin" }
     ],
 
     sidebar: {
@@ -24,7 +26,8 @@ export default defineConfig({
         {
           text: "Navigation",
           items: [
-            { text: "🏠 Accueil (Toutes les tuiles)", link: "/" }
+            { text: "🏠 Accueil (Tableau de bord)", link: "/" },
+            { text: "👤 Mon Espace Membre", link: "/espace-membre" }
           ]
         },
         {
@@ -40,7 +43,7 @@ export default defineConfig({
           ]
         },
         {
-          text: "3. Méthodologies Actives",
+          text: "3. Méthodologies pédagogiques",
           items: [
             { text: "Projet, investigation, défi, itération", link: "/modules/03-pedagogies-actives" }
           ]
@@ -52,7 +55,7 @@ export default defineConfig({
           ]
         },
         {
-          text: "5. Projet FabLab : Jeu de Société",
+          text: "5. Projet Jeu de société",
           items: [
             { text: "Concept du jeu & Ludopédagogie", link: "/modules/05-projet-jeu-societe" },
             { text: "Règles & Mécanique du jeu", link: "/modules/06-regles-du-jeu" },
@@ -69,13 +72,14 @@ export default defineConfig({
         {
           text: "Navigation",
           items: [
-            { text: "🏠 Accueil (Toutes les tuiles)", link: "/" }
+            { text: "🏠 Accueil (Tableau de bord)", link: "/" },
+            { text: "👤 Mon Espace Membre", link: "/espace-membre" }
           ]
         },
         {
-          text: "Ateliers & Défis Pratiques",
+          text: "6. Exercices & Défis Pratiques",
           items: [
-            { text: "Vue d'ensemble des ateliers", link: "/ateliers/" },
+            { text: "Vue d'ensemble des exercices", link: "/ateliers/" },
             { text: "Atelier 1 : Diagnostic compétences", link: "/ateliers/exercice-01" },
             { text: "Atelier 2 : Évaluer une information", link: "/ateliers/exercice-02" },
             { text: "Atelier 3 : Guide collaboratif élèves", link: "/ateliers/exercice-03" },
@@ -91,11 +95,12 @@ export default defineConfig({
         {
           text: "Navigation",
           items: [
-            { text: "🏠 Accueil (Toutes les tuiles)", link: "/" }
+            { text: "🏠 Accueil (Tableau de bord)", link: "/" },
+            { text: "👤 Mon Espace Membre", link: "/espace-membre" }
           ]
         },
         {
-          text: "Accompagnement & Évaluation",
+          text: "7. Guide & Évaluation",
           items: [
             { text: "Guide de l'étudiant à distance", link: "/guide/distanciel" },
             { text: "Modalités d'évaluation & Grille", link: "/guide/evaluation" }
@@ -107,11 +112,12 @@ export default defineConfig({
         {
           text: "Navigation",
           items: [
-            { text: "🏠 Accueil (Toutes les tuiles)", link: "/" }
+            { text: "🏠 Accueil (Tableau de bord)", link: "/" },
+            { text: "👤 Mon Espace Membre", link: "/espace-membre" }
           ]
         },
         {
-          text: "Ressources & Boîte à Outils",
+          text: "8. Ressources & Boîte à Outils",
           items: [
             { text: "Documents & Référentiels PDF", link: "/ressources/documents" },
             { text: "Bibliographie sélective (APA)", link: "/ressources/bibliographie" }
@@ -160,7 +166,7 @@ export default defineConfig({
     ],
 
     footer: {
-      message: 'Master 1 en Pédagogie / Math-Numérique — Haute École Charlemagne (HECh)',
+      message: 'Master 1 - Enseignant Math-numérique — Haute École Charlemagne (HECh)',
       copyright: 'Jérôme Foguenne © 2026 — Licence CC BY-NC-SA 4.0'
     }
   }

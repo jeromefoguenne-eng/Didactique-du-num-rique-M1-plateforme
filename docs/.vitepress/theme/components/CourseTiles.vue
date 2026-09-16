@@ -20,7 +20,7 @@ const tiles = [
   },
   {
     id: 3,
-    title: "3. Méthodologies Actives",
+    title: "3. Méthodologies pédagogiques",
     tag: "Didactique Active",
     desc: "Enseigner le numérique par l'action : investigation, démarche de projet, défis express et itération.",
     link: "/modules/03-pedagogies-actives",
@@ -36,7 +36,7 @@ const tiles = [
   },
   {
     id: 5,
-    title: "5. Projet FabLab : Jeu",
+    title: "5. Projet Jeu de société",
     tag: "Projet Fil Rouge",
     desc: "Créer un jeu ludo-éducatif : règles, cartes IA, découpeuse laser, pions 3D et capsule vidéo.",
     link: "/modules/05-projet-jeu-societe",
@@ -44,7 +44,7 @@ const tiles = [
   },
   {
     id: 6,
-    title: "6. Ateliers Pratiques",
+    title: "6. Exercices",
     tag: "Mises en Pratique",
     desc: "7 ateliers et défis concrets (diagnostic, investigation, Escape Game, défi Canva, démontage PC).",
     link: "/ateliers/",

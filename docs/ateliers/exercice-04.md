@@ -27,6 +27,11 @@ Joue au jeu et termine-le :
 
 https://jeromefoguenne-eng.github.io/FMTTN---Escape-Game/
 
+
+<ClientOnly>
+  <ExerciseBox exerciseId="exercice-04" exerciseTitle="Atelier 4 : Escape Game FMTTN (Cyber-Enquête)" />
+</ClientOnly>
+
 ::: details 💡 Consulter le débriefing méthodologique & Correctif
 ntérêt méthodologique
 

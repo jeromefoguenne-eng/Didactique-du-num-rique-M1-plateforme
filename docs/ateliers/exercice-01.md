@@ -165,6 +165,11 @@ Il explique :
 
 « Je sais utiliser les outils quand on m'a montré comment faire, mais je ne sais jamais quoi faire quand ça ne marche pas comme prévu. »
 
+
+<ClientOnly>
+  <ExerciseBox exerciseId="exercice-01" exerciseTitle="Atelier 1 : Diagnostic de compétences numériques" />
+</ClientOnly>
+
 ::: details 💡 Pistes d'analyse & Débriefing didactique
 ### Repères pour l'enseignant
 Une compétence numérique ne se réduit jamais à la maîtrise technique d'un clic ou d'une interface logicielle. Elle combine trois dimensions indissociables :

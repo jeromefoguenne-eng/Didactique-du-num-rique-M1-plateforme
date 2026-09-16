@@ -35,6 +35,11 @@ comment vous avez respecté les contraintes ;
 
 ce qui rend votre affiche efficace pour le public visé.
 
+
+<ClientOnly>
+  <ExerciseBox exerciseId="exercice-05" exerciseTitle="Atelier 5 : Défi 20 minutes (Affiche Canva mot de passe)" />
+</ClientOnly>
+
 ::: details 💡 Consulter le débriefing méthodologique & Correctif
 Intérêt méthodologique
 

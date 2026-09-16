@@ -69,3 +69,8 @@ Durée : 3 à 5 minutes maximum.
 ::: tip Aide à la réalisation
 Consultez le cours théorique associé pour les aspects techniques (cadrage, plans, son et lumière) : **[Module 10 : Concevoir une capsule vidéo](/modules/10-capsule-video)**.
 :::
+
+
+<ClientOnly>
+  <ExerciseBox exerciseId="exercice-video" exerciseTitle="Atelier 7 : Capsule Vidéo du jeu" />
+</ClientOnly>

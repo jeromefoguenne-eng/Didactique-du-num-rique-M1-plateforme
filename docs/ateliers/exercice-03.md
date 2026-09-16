@@ -48,6 +48,11 @@ la contribution des différents membres du groupe ;
 
 une amélioration apportée à la suite des tests.
 
+
+<ClientOnly>
+  <ExerciseBox exerciseId="exercice-03" exerciseTitle="Atelier 3 : Concevoir un guide numérique pour les élèves" />
+</ClientOnly>
+
 ::: details 💡 Consulter le débriefing méthodologique & Correctif
 Intérêt méthodologique
 

@@ -62,6 +62,11 @@ Crossref
 
 Une IA peut vous aider dans vos recherches, mais ses réponses doivent être vérifiées à partir de sources fiables.
 
+
+<ClientOnly>
+  <ExerciseBox exerciseId="exercice-02" exerciseTitle="Atelier 2 : Peut-on faire confiance à cette information ?" />
+</ClientOnly>
+
 ::: details 💡 Consulter le débriefing méthodologique & Correctif
 Cet exercice est intéressant méthodologiquement parce qu’il permet aux étudiants de vivre la logique de la situation-problème avant de la théoriser. Ils ne reçoivent pas une méthode de vérification à appliquer : ils sont confrontés à une situation qui les oblige à construire une démarche pour parvenir à une décision.
 

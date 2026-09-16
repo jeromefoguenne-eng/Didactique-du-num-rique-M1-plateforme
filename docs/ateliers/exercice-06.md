@@ -123,6 +123,11 @@ Vous devez être capables de comprendre, expliquer et justifier vos choix.
 
 Problème → Recherche → Expérimentation → Peer learning → Résolution → Réflexion
 
+
+<ClientOnly>
+  <ExerciseBox exerciseId="exercice-06" exerciseTitle="Atelier 6 : Défi Hardware (Démonter et remonter un PC)" />
+</ClientOnly>
+
 ::: details 💡 Consulter le débriefing méthodologique & Correctif
 Intérêt méthodologique
 

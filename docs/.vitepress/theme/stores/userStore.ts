@@ -21,13 +21,64 @@ export interface Submission {
   submittedAt: string
 }
 
+export interface SubmittedFile {
+  id: string
+  userId: string
+  userName: string
+  userEmail: string
+  exerciseId: string
+  exerciseTitle: string
+  originalFileName: string
+  formattedFileName: string // ex: DUBOIS_Sarah_Atelier-01_2026-09-16.pdf
+  fileType: string
+  fileSize: number
+  dataUrl?: string
+  submittedAt: string
+  driveSynced?: boolean
+}
+
 const STORAGE_KEY_USERS = 'hech_didac_users'
 const STORAGE_KEY_CURRENT = 'hech_didac_current_user'
 const STORAGE_KEY_PROGRESS = 'hech_didac_progress'
 const STORAGE_KEY_SUBMISSIONS = 'hech_didac_submissions'
 const STORAGE_KEY_ADMIN_PIN = 'hech_didac_admin_pin'
+const STORAGE_KEY_FILES = 'hech_didac_files'
+const STORAGE_KEY_WEBHOOK = 'hech_didac_drive_webhook'
 
-// Default seed data for immediate demonstration
+// Helper de nettoyage pour le nommage des fichiers
+export function formatFileName(
+  lastName: string, 
+  firstName: string, 
+  exerciseTitle: string, 
+  originalName: string
+): string {
+  const clean = (str: string) => {
+    return (str || '')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '') // Supprime accents
+      .replace(/[^a-zA-Z0-9_-]/g, '_') // Remplace caractères spéciaux par _
+      .replace(/_+/g, '_')             // Évite les underscores multiples
+      .replace(/^_|_$/g, '')          // Nettoie bords
+  }
+
+  const nom = clean(lastName || 'ETUDIANT').toUpperCase()
+  const prenom = clean(firstName || 'Inconnu')
+  
+  // Raccourcir ou extraire l'atelier proprement
+  let exClean = clean(exerciseTitle || 'Devoir')
+  if (exClean.length > 30) {
+    exClean = exClean.substring(0, 30)
+  }
+
+  // Extension du fichier (pdf, docx, doc)
+  const parts = (originalName || 'document.pdf').split('.')
+  const ext = parts.length > 1 ? parts.pop()!.toLowerCase() : 'pdf'
+  const today = new Date().toISOString().substring(0, 10)
+
+  return `${nom}_${prenom}_${exClean}_${today}.${ext}`
+}
+
+// Données par défaut pour démonstration immédiate
 const DEFAULT_USERS: User[] = [
   {
     id: 'user-1',
@@ -107,6 +158,37 @@ const DEFAULT_SUBMISSIONS: Submission[] = [
   }
 ]
 
+const DEFAULT_FILES: SubmittedFile[] = [
+  {
+    id: 'file-demo-1',
+    userId: 'user-1',
+    userName: 'Sarah Dubois',
+    userEmail: 'sarah.dubois@student.hech.be',
+    exerciseId: 'exercice-03',
+    exerciseTitle: 'Atelier 3 : Concevoir un guide numérique élèves',
+    originalFileName: 'mon_guide_eleves_v1.pdf',
+    formattedFileName: 'DUBOIS_Sarah_Atelier-3_Guide-Numerique_2026-09-16.pdf',
+    fileType: 'application/pdf',
+    fileSize: 142800,
+    submittedAt: '2026-09-16 10:15',
+    driveSynced: false
+  },
+  {
+    id: 'file-demo-2',
+    userId: 'user-2',
+    userName: 'Maxime Lambert',
+    userEmail: 'maxime.lambert@student.hech.be',
+    exerciseId: 'exercice-05',
+    exerciseTitle: 'Atelier 5 : Défi Canva mot de passe',
+    originalFileName: 'affiche_canva_lambert.docx',
+    formattedFileName: 'LAMBERT_Maxime_Atelier-5_Canva-MDP_2026-09-16.docx',
+    fileType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    fileSize: 85200,
+    submittedAt: '2026-09-16 11:30',
+    driveSynced: false
+  }
+]
+
 function getStorage<T>(key: string, defaultVal: T): T {
   if (typeof window === 'undefined') return defaultVal
   try {
@@ -121,7 +203,9 @@ function setStorage<T>(key: string, val: T): void {
   if (typeof window === 'undefined') return
   try {
     localStorage.setItem(key, JSON.stringify(val))
-  } catch (e) {}
+  } catch (e) {
+    console.warn(`[userStore] Quota de stockage ou erreur localStorage pour ${key}`)
+  }
 }
 
 const state = reactive({
@@ -132,6 +216,8 @@ const state = reactive({
   })),
   progress: getStorage<Record<string, string[]>>(STORAGE_KEY_PROGRESS, DEFAULT_PROGRESS),
   submissions: getStorage<Submission[]>(STORAGE_KEY_SUBMISSIONS, DEFAULT_SUBMISSIONS),
+  submittedFiles: getStorage<SubmittedFile[]>(STORAGE_KEY_FILES, DEFAULT_FILES),
+  driveWebhook: getStorage<string>(STORAGE_KEY_WEBHOOK, ''),
   adminPin: getStorage<string>(STORAGE_KEY_ADMIN_PIN, 'hech2026')
 })
 
@@ -144,6 +230,12 @@ export const userStore = {
   },
   get submissions() {
     return state.submissions
+  },
+  get submittedFiles() {
+    return state.submittedFiles
+  },
+  get driveWebhook() {
+    return state.driveWebhook
   },
   get adminPin() {
     return state.adminPin
@@ -227,6 +319,7 @@ export const userStore = {
       state.users.splice(index, 1)
       delete state.progress[cleanEmail]
       state.submissions = state.submissions.filter(s => s.userEmail !== cleanEmail)
+      state.submittedFiles = state.submittedFiles.filter(f => f.userEmail !== cleanEmail)
 
       if (state.currentUser?.email === cleanEmail) {
         state.currentUser = null
@@ -236,6 +329,7 @@ export const userStore = {
       setStorage(STORAGE_KEY_USERS, state.users)
       setStorage(STORAGE_KEY_PROGRESS, state.progress)
       setStorage(STORAGE_KEY_SUBMISSIONS, state.submissions)
+      setStorage(STORAGE_KEY_FILES, state.submittedFiles)
       return { success: true, message: 'Étudiant supprimé.' }
     }
     return { success: false, message: 'Étudiant non trouvé.' }
@@ -265,7 +359,6 @@ export const userStore = {
     let colPrenom = headers.findIndex(h => h.includes('pre') || h.includes('prénom'))
     let colEmail = headers.findIndex(h => h.includes('mail'))
 
-    // Default fallback to columns 0, 1, 2 if headers not strictly recognized
     if (colNom === -1) colNom = 0
     if (colPrenom === -1) colPrenom = 1
     if (colEmail === -1) colEmail = 2
@@ -355,7 +448,7 @@ export const userStore = {
   },
 
   saveSubmission(exerciseId: string, exerciseTitle: string, answer: string) {
-    if (!state.currentUser) return { success: false, message: 'Veuillez vous identifier d\'abord.' }
+    if (!state.currentUser) return { success: false, message: "Veuillez vous identifier d'abord." }
     if (!answer.trim()) return { success: false, message: 'La réponse ne peut pas être vide.' }
 
     const cleanEmail = state.currentUser.email
@@ -381,7 +474,6 @@ export const userStore = {
       })
     }
 
-    // Auto-mark exercise as completed in user progress
     if (!state.progress[cleanEmail]) state.progress[cleanEmail] = []
     if (!state.progress[cleanEmail].includes(exerciseId)) {
       state.progress[cleanEmail].push(exerciseId)
@@ -406,6 +498,206 @@ export const userStore = {
     const completed = (state.progress[userEmail] || []).length
     return Math.min(100, Math.round((completed / totalModules) * 100))
   },
+
+  // ==========================================
+  // GESTION DU DÉPÔT DE FICHIERS (WORD & PDF)
+  // ==========================================
+
+  getFormattedNamePreview(exerciseTitle: string, originalFileName: string): string {
+    const user = state.currentUser
+    const lastName = user ? user.lastName : 'NOM'
+    const firstName = user ? user.firstName : 'Prenom'
+    return formatFileName(lastName, firstName, exerciseTitle, originalFileName)
+  },
+
+  async uploadStudentFile(
+    exerciseId: string, 
+    exerciseTitle: string, 
+    file: File
+  ): Promise<{ success: boolean; message: string; file?: SubmittedFile }> {
+    if (!state.currentUser) {
+      return { success: false, message: "Vous devez être identifié pour déposer un travail." }
+    }
+
+    const ext = file.name.split('.').pop()?.toLowerCase() || ''
+    const allowed = ['pdf', 'docx', 'doc']
+    if (!allowed.includes(ext)) {
+      return { 
+        success: false, 
+        message: "Format non accepté. Seuls les fichiers Word (.docx, .doc) et PDF (.pdf) sont autorisés." 
+      }
+    }
+
+    // 1. Génération du nom normalisé officiel
+    const formattedName = formatFileName(
+      state.currentUser.lastName,
+      state.currentUser.firstName,
+      exerciseTitle,
+      file.name
+    )
+
+    // 2. Lecture du fichier en Base64 Data URL
+    const dataUrl = await new Promise<string>((resolve, reject) => {
+      const reader = new FileReader()
+      reader.onload = () => resolve(reader.result as string)
+      reader.onerror = reject
+      reader.readAsDataURL(file)
+    })
+
+    const newFile: SubmittedFile = {
+      id: `file-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
+      userId: state.currentUser.id,
+      userName: `${state.currentUser.firstName} ${state.currentUser.lastName}`,
+      userEmail: state.currentUser.email,
+      exerciseId,
+      exerciseTitle,
+      originalFileName: file.name,
+      formattedFileName: formattedName,
+      fileType: file.type || (ext === 'pdf' ? 'application/pdf' : 'application/msword'),
+      fileSize: file.size,
+      dataUrl,
+      submittedAt: new Date().toISOString().replace('T', ' ').substring(0, 16),
+      driveSynced: false
+    }
+
+    // Remplacer l'éventuel ancien fichier du même étudiant pour cet exercice
+    const existingIdx = state.submittedFiles.findIndex(
+      f => f.userEmail === state.currentUser?.email && f.exerciseId === exerciseId
+    )
+    if (existingIdx >= 0) {
+      state.submittedFiles[existingIdx] = newFile
+    } else {
+      state.submittedFiles.push(newFile)
+    }
+
+    // Auto-marquage de l'exercice dans la progression
+    const email = state.currentUser.email
+    if (!state.progress[email]) state.progress[email] = []
+    if (!state.progress[email].includes(exerciseId)) {
+      state.progress[email].push(exerciseId)
+      setStorage(STORAGE_KEY_PROGRESS, state.progress)
+    }
+
+    setStorage(STORAGE_KEY_FILES, state.submittedFiles)
+
+    // 3. Tentative d'envoi automatique vers le serveur compagnon local (si actif)
+    try {
+      fetch('http://localhost:3001/api/upload', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fileName: formattedName,
+          base64Data: dataUrl
+        })
+      }).then(res => {
+        if (res.ok) {
+          newFile.driveSynced = true
+          setStorage(STORAGE_KEY_FILES, state.submittedFiles)
+        }
+      }).catch(() => {})
+    } catch (e) {}
+
+    // 4. Tentative d'envoi automatique vers le Webhook Google Apps Script (si configuré)
+    if (state.driveWebhook) {
+      try {
+        fetch(state.driveWebhook, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            studentName: `${state.currentUser.firstName} ${state.currentUser.lastName}`,
+            studentEmail: state.currentUser.email,
+            exerciseTitle,
+            fileName: formattedName,
+            base64Data: dataUrl.split(',')[1] || dataUrl,
+            mimeType: newFile.fileType
+          })
+        }).then(() => {
+          newFile.driveSynced = true
+          setStorage(STORAGE_KEY_FILES, state.submittedFiles)
+        }).catch(() => {})
+      } catch (e) {}
+    }
+
+    return {
+      success: true,
+      message: `Document déposé avec succès sous le libellé : ${formattedName}`,
+      file: newFile
+    }
+  },
+
+  deleteStudentFile(fileId: string) {
+    const idx = state.submittedFiles.findIndex(f => f.id === fileId)
+    if (idx >= 0) {
+      state.submittedFiles.splice(idx, 1)
+      setStorage(STORAGE_KEY_FILES, state.submittedFiles)
+      return { success: true, message: 'Document supprimé.' }
+    }
+    return { success: false, message: 'Fichier non trouvé.' }
+  },
+
+  getUserFiles(email?: string): SubmittedFile[] {
+    const userEmail = email || state.currentUser?.email
+    if (!userEmail) return []
+    return state.submittedFiles.filter(f => f.userEmail === userEmail)
+  },
+
+  downloadSubmittedFile(file: SubmittedFile) {
+    if (!file.dataUrl) {
+      alert("Le contenu du fichier n'est pas disponible pour le téléchargement direct.")
+      return
+    }
+    const link = document.createElement('a')
+    link.href = file.dataUrl
+    link.setAttribute('download', file.formattedFileName)
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  },
+
+  // Synchronisation directe vers le dossier Google Drive via l'API File System Access
+  async syncFilesToDirectory(directoryHandle: any): Promise<{ count: number; errorCount: number }> {
+    let count = 0
+    let errorCount = 0
+
+    for (const f of state.submittedFiles) {
+      if (!f.dataUrl) continue
+      try {
+        const fileHandle = await directoryHandle.getFileHandle(f.formattedFileName, { create: true })
+        const writable = await fileHandle.createWritable()
+        
+        // Convertir base64 DataURL en Blob
+        const base64Content = f.dataUrl.split(',')[1] || f.dataUrl
+        const byteCharacters = atob(base64Content)
+        const byteNumbers = new Array(byteCharacters.length)
+        for (let i = 0; i < byteCharacters.length; i++) {
+          byteNumbers[i] = byteCharacters.charCodeAt(i)
+        }
+        const byteArray = new Uint8Array(byteNumbers)
+        const blob = new Blob([byteArray], { type: f.fileType })
+
+        await writable.write(blob)
+        await writable.close()
+        f.driveSynced = true
+        count++
+      } catch (err) {
+        console.error(`Erreur d'écriture pour ${f.formattedFileName}:`, err)
+        errorCount++
+      }
+    }
+
+    setStorage(STORAGE_KEY_FILES, state.submittedFiles)
+    return { count, errorCount }
+  },
+
+  setDriveWebhook(url: string) {
+    state.driveWebhook = url.trim()
+    setStorage(STORAGE_KEY_WEBHOOK, state.driveWebhook)
+  },
+
+  // ==========================================
+  // SÉCURITÉ ADMIN
+  // ==========================================
 
   verifyAdminPin(pin: string): boolean {
     return pin.trim() === state.adminPin

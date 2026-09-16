@@ -4,7 +4,7 @@ import { userStore } from '../stores/userStore'
 
 const enteredPin = ref('')
 const isAuthenticated = ref(false)
-const adminTab = ref('students') // 'students' | 'submissions' | 'export'
+const adminTab = ref('students') // 'students' | 'submissions' | 'files' | 'export'
 
 // Filtres et recherche pour l'onglet étudiants
 const studentStatusFilter = ref('active') // 'all' | 'active' | 'archived'
@@ -24,26 +24,36 @@ const fileInputRef = ref(null)
 const selectedExerciseFilter = ref('all')
 const selectedStudentFilter = ref('all')
 
+// Filtres pour l'onglet fichiers
+const fileStudentFilter = ref('all')
+const fileExerciseFilter = ref('all')
+
 // Gestion du changement de mot de passe enseignant
 const oldPasswordInput = ref('')
 const newPasswordInput = ref('')
 const confirmPasswordInput = ref('')
 const passwordChangeFeedback = ref({ type: '', message: '' })
 
+// Webhook Google Drive
+const webhookInput = ref(userStore.driveWebhook || '')
+const webhookStatus = ref('')
+const syncFeedback = ref('')
+const isSyncing = ref(false)
+
 const users = computed(() => userStore.users)
 const submissions = computed(() => userStore.submissions)
+const submittedFiles = computed(() => userStore.submittedFiles)
 
 const totalStudents = computed(() => users.value.length)
 const activeStudentsCount = computed(() => users.value.filter(u => u.status !== 'archived').length)
 const archivedStudentsCount = computed(() => users.value.filter(u => u.status === 'archived').length)
+const totalFilesCount = computed(() => submittedFiles.value.length)
 
 const displayedUsers = computed(() => {
   return users.value.filter(u => {
-    // Filtre statut
     if (studentStatusFilter.value === 'active' && u.status === 'archived') return false
     if (studentStatusFilter.value === 'archived' && u.status !== 'archived') return false
 
-    // Filtre recherche textuelle
     if (studentSearchQuery.value.trim()) {
       const q = studentSearchQuery.value.toLowerCase().trim()
       const fullName = `${u.firstName} ${u.lastName}`.toLowerCase()
@@ -71,7 +81,8 @@ const exerciseOptions = [
   { id: 'exercice-04', title: 'Atelier 4 : Escape Game FMTTN' },
   { id: 'exercice-05', title: 'Atelier 5 : Défi 20 min Canva' },
   { id: 'exercice-06', title: 'Atelier 6 : Défi Hardware PC' },
-  { id: 'exercice-video', title: 'Atelier 7 : Capsule Vidéo' }
+  { id: 'exercice-video', title: 'Atelier 7 : Capsule Vidéo' },
+  { id: 'projet-jeu', title: 'Projet : Dossier Jeu de société' }
 ]
 
 const filteredSubmissions = computed(() => {
@@ -79,6 +90,14 @@ const filteredSubmissions = computed(() => {
     const matchEx = selectedExerciseFilter.value === 'all' || sub.exerciseId === selectedExerciseFilter.value
     const matchStudent = selectedStudentFilter.value === 'all' || sub.userEmail === selectedStudentFilter.value
     return matchEx && matchStudent
+  })
+})
+
+const filteredFiles = computed(() => {
+  return submittedFiles.value.filter(file => {
+    const matchStudent = fileStudentFilter.value === 'all' || file.userEmail === fileStudentFilter.value
+    const matchEx = fileExerciseFilter.value === 'all' || file.exerciseId === fileExerciseFilter.value
+    return matchStudent && matchEx
   })
 })
 
@@ -125,12 +144,19 @@ function handleChangePassword() {
   }
 }
 
+// Enregistrement du Webhook Google Drive
+function handleSaveWebhook() {
+  userStore.setDriveWebhook(webhookInput.value)
+  webhookStatus.value = '✓ URL du Webhook Google Drive enregistrée avec succès !'
+  setTimeout(() => { webhookStatus.value = '' }, 3500)
+}
+
 // Téléchargement du modèle CSV
 function handleDownloadTemplate() {
   userStore.downloadCSVTemplate()
 }
 
-// Déclencheur du sélecteur de fichier
+// Déclencheur du sélecteur de fichier CSV
 function triggerFileInput() {
   if (fileInputRef.value) {
     fileInputRef.value.click()
@@ -187,10 +213,55 @@ function handleToggleArchive(email) {
 
 // Suppression définitive
 function handleDeleteStudent(user) {
-  const msg = `Êtes-vous certain de vouloir supprimer définitivement l'étudiant "${user.firstName} ${user.lastName}" (${user.email}) ?\nCette action supprimera également toutes ses réponses aux exercices.`
+  const msg = `Êtes-vous certain de vouloir supprimer définitivement l'étudiant "${user.firstName} ${user.lastName}" (${user.email}) ?\nCette action supprimera également toutes ses réponses et ses fichiers déposés.`
   if (window.confirm(msg)) {
     const res = userStore.deleteStudent(user.email)
     alert(res.message)
+  }
+}
+
+// Téléchargement d'un fichier déposé individuel
+function downloadFile(file) {
+  userStore.downloadSubmittedFile(file)
+}
+
+// Suppression d'un fichier déposé
+function deleteFile(fileId) {
+  if (confirm('Voulez-vous supprimer définitivement ce document de la liste ?')) {
+    userStore.deleteStudentFile(fileId)
+  }
+}
+
+// Synchronisation directe vers le dossier Google Drive via l'API File System Access
+async function handleSyncToDrive() {
+  if (!window.showDirectoryPicker) {
+    alert("Votre navigateur ne supporte pas l'accès direct aux dossiers locaux (File System Access API). Vous pouvez télécharger les documents directement via les boutons individuels.")
+    return
+  }
+
+  try {
+    isSyncing.value = true
+    syncFeedback.value = 'Veuillez sélectionner votre dossier local Google Drive dans la boîte de dialogue...'
+    
+    // Ouvre la boîte de dialogue système pour choisir le dossier
+    const dirHandle = await window.showDirectoryPicker({
+      id: 'google-drive-exercises',
+      mode: 'readwrite',
+      startIn: 'documents'
+    })
+
+    syncFeedback.value = 'Écriture et libellé des fichiers en cours dans le dossier Google Drive...'
+    const result = await userStore.syncFilesToDirectory(dirHandle)
+
+    syncFeedback.value = `✅ ${result.count} document(s) enregistré(s) avec succès dans votre dossier Google Drive avec leur libellé officiel !`
+  } catch (err) {
+    if (err.name !== 'AbortError') {
+      syncFeedback.value = `⚠️ Erreur de synchronisation : ${err.message}`
+    } else {
+      syncFeedback.value = ''
+    }
+  } finally {
+    isSyncing.value = false
   }
 }
 
@@ -220,15 +291,21 @@ function exportCSV() {
   link.click()
   document.body.removeChild(link)
 }
+
+function formatSize(bytes) {
+  if (!bytes) return '0 Ko'
+  if (bytes < 1024 * 1024) return Math.round(bytes / 1024) + ' Ko'
+  return (bytes / (1024 * 1024)).toFixed(1) + ' Mo'
+}
 </script>
 
 <template>
   <div class="admin-container">
-    <!-- ÉCRAN DE VERROUILLAGE ADMIN (SANS AUCUN CODE PAR DÉFAUT AFFICHÉ) -->
+    <!-- ÉCRAN DE VERROUILLAGE ADMIN (AUCUN CODE PAR DÉFAUT AFFICHÉ) -->
     <div v-if="!isAuthenticated" class="lock-screen">
       <span class="lock-icon">🔒</span>
       <h2>Espace Enseignant (Administration)</h2>
-      <p>Veuillez saisir votre mot de passe d'accès enseignant pour consulter le suivi de la classe et les réponses des étudiants.</p>
+      <p>Veuillez saisir votre mot de passe d'accès enseignant pour consulter le suivi de la classe et les travaux des étudiants.</p>
       
       <div class="pin-box">
         <input 
@@ -274,7 +351,14 @@ function exportCSV() {
           <span class="kpi-icon">📝</span>
           <div>
             <div class="kpi-value">{{ totalSubmissions }}</div>
-            <div class="kpi-label">Réponses soumises</div>
+            <div class="kpi-label">Réponses rédigées</div>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-icon">📁</span>
+          <div>
+            <div class="kpi-value">{{ totalFilesCount }}</div>
+            <div class="kpi-label">Fichiers Word / PDF</div>
           </div>
         </div>
       </div>
@@ -291,13 +375,19 @@ function exportCSV() {
           :class="['admin-tab-btn', { active: adminTab === 'submissions' }]"
           @click="adminTab = 'submissions'"
         >
-          📋 Réponses aux Exercices ({{ submissions.length }})
+          📋 Réponses Rédigées ({{ submissions.length }})
+        </button>
+        <button 
+          :class="['admin-tab-btn', { active: adminTab === 'files' }]"
+          @click="adminTab = 'files'"
+        >
+          📁 Travaux Déposés ({{ totalFilesCount }})
         </button>
         <button 
           :class="['admin-tab-btn', { active: adminTab === 'export' }]"
           @click="adminTab = 'export'"
         >
-          ⚙️ Sécurité & Export
+          ⚙️ Sécurité & Google Drive
         </button>
       </div>
 
@@ -366,11 +456,11 @@ function exportCSV() {
           </div>
         </div>
 
-        <!-- FORMULAIRE D'AJOUT MANUEL (ACCORDÉON / MODAL LÉGER) -->
+        <!-- FORMULAIRE D'AJOUT MANUEL -->
         <div v-if="showAddStudentModal" class="add-student-card">
           <div class="add-student-header">
             <h4>➕ Inscrire un nouvel étudiant dans la classe</h4>
-            <p>L'étudiant sera automatiquement ajouté à la base de données locale et pourra se connecter dès son premier accès.</p>
+            <p>L'étudiant sera automatiquement ajouté et pourra se connecter dès son premier accès.</p>
           </div>
 
           <div v-if="addStudentError" class="add-student-error">
@@ -446,12 +536,11 @@ function exportCSV() {
                 </td>
                 <td style="text-align: right;">
                   <div class="action-buttons-group">
-                    <!-- Bouton Archiver / Restaurer -->
                     <button 
                       v-if="u.status !== 'archived'" 
                       @click="handleToggleArchive(u.email)" 
                       class="btn-row-action archive" 
-                      title="Archiver cet étudiant (masqué du suivi actif)"
+                      title="Archiver cet étudiant"
                     >
                       📦 Archiver
                     </button>
@@ -459,16 +548,15 @@ function exportCSV() {
                       v-else 
                       @click="handleToggleArchive(u.email)" 
                       class="btn-row-action restore" 
-                      title="Restaurer cet étudiant dans la classe active"
+                      title="Restaurer cet étudiant"
                     >
                       🔄 Restaurer
                     </button>
 
-                    <!-- Bouton Supprimer -->
                     <button 
                       @click="handleDeleteStudent(u)" 
                       class="btn-row-action delete" 
-                      title="Supprimer définitivement cet étudiant et ses réponses"
+                      title="Supprimer définitivement cet étudiant"
                     >
                       🗑️
                     </button>
@@ -482,7 +570,6 @@ function exportCSV() {
 
       <!-- VUE 2 : RÉPONSES AUX EXERCICES -->
       <div v-if="adminTab === 'submissions'" class="tab-panel">
-        <!-- FILTRES -->
         <div class="filters-row">
           <div class="filter-group">
             <label>Filtrer par Exercice :</label>
@@ -504,7 +591,6 @@ function exportCSV() {
           </div>
         </div>
 
-        <!-- LISTE DES RÉPONSES -->
         <div v-if="filteredSubmissions.length === 0" class="empty-state">
           <p>Aucune réponse ne correspond aux filtres sélectionnés.</p>
         </div>
@@ -526,12 +612,159 @@ function exportCSV() {
         </div>
       </div>
 
-      <!-- VUE 3 : SÉCURITÉ & EXPORT -->
+      <!-- VUE 3 : FICHIERS DÉPOSÉS & SYNCHRONISATION GOOGLE DRIVE -->
+      <div v-if="adminTab === 'files'" class="tab-panel">
+        <!-- BANNIÈRE D'ACTIONS GOOGLE DRIVE -->
+        <div class="drive-action-banner">
+          <div class="banner-text">
+            <h4>📁 Synchronisation vers le dossier local Google Drive</h4>
+            <p>
+              Dossier cible : <code>C:\Google Drive\Prépas light\HECh\Péda\Math-Num\M1\Didactique et numérique\Exercices étudiants Plateforme</code>
+            </p>
+          </div>
+          <div class="banner-buttons">
+            <button 
+              @click="handleSyncToDrive" 
+              :disabled="isSyncing || submittedFiles.length === 0"
+              class="btn-sync-drive"
+            >
+              {{ isSyncing ? 'Synchronisation en cours...' : '💾 Enregistrer dans mon dossier Google Drive' }}
+            </button>
+          </div>
+        </div>
+
+        <div v-if="syncFeedback" class="sync-feedback-msg">
+          {{ syncFeedback }}
+        </div>
+
+        <!-- FILTRES DES FICHIERS -->
+        <div class="filters-row">
+          <div class="filter-group">
+            <label>Filtrer par Atelier / Exercice :</label>
+            <select v-model="fileExerciseFilter">
+              <option v-for="opt in exerciseOptions" :key="opt.id" :value="opt.id">
+                {{ opt.title }}
+              </option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label>Filtrer par Étudiant :</label>
+            <select v-model="fileStudentFilter">
+              <option value="all">Tous les étudiants</option>
+              <option v-for="u in users" :key="u.id" :value="u.email">
+                {{ u.lastName }} {{ u.firstName }} ({{ u.email }})
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <!-- TABLEAU DES FICHIERS DÉPOSÉS -->
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Étudiant</th>
+                <th>Atelier</th>
+                <th>Libellé Officiel du Document</th>
+                <th>Taille</th>
+                <th>Date Dépôt</th>
+                <th style="text-align: right;">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-if="filteredFiles.length === 0">
+                <td colspan="6" class="empty-table-msg">
+                  Aucun fichier Word ou PDF déposé ne correspond aux filtres.
+                </td>
+              </tr>
+              <tr v-for="f in filteredFiles" :key="f.id">
+                <td>
+                  <strong>{{ f.userName }}</strong>
+                  <div class="email-subtext">{{ f.userEmail }}</div>
+                </td>
+                <td>
+                  <span class="exercise-badge-sm">{{ f.exerciseTitle }}</span>
+                </td>
+                <td>
+                  <span class="file-icon-inline">{{ f.formattedFileName.endsWith('.pdf') ? '📕' : '📘' }}</span>
+                  <code class="formatted-name-text">{{ f.formattedFileName }}</code>
+                </td>
+                <td>{{ formatSize(f.fileSize) }}</td>
+                <td>{{ f.submittedAt }}</td>
+                <td style="text-align: right;">
+                  <div class="action-buttons-group">
+                    <button @click="downloadFile(f)" class="btn-row-action dl" title="Télécharger le fichier">
+                      📥 Télécharger
+                    </button>
+                    <button @click="deleteFile(f.id)" class="btn-row-action delete" title="Supprimer ce document">
+                      🗑️
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- VUE 4 : SÉCURITÉ & GOOGLE DRIVE -->
       <div v-if="adminTab === 'export'" class="tab-panel">
+        <!-- PASSERELLE GOOGLE DRIVE CLOUD (WEBHOOK APPS SCRIPT) -->
+        <div class="security-box">
+          <div class="box-title-bar">
+            <h3>☁️ Passerelle Cloud Google Drive (Temps Réel)</h3>
+            <span class="box-subtitle">Acheminez automatiquement les dépôts des étudiants à distance directement dans votre Drive</span>
+          </div>
+
+          <p class="box-desc">
+            Pour que les étudiants déposant un document depuis leur propre ordinateur chez eux envoient instantanément le fichier dans votre dossier Google Drive <code>C:\Google Drive\...\Exercices étudiants Plateforme</code> sans que vous ayez à cliquer manuellement sur "Synchroniser", configurez votre URL de Webhook Google Apps Script ci-dessous :
+          </p>
+
+          <div class="webhook-config-row">
+            <input 
+              v-model="webhookInput" 
+              type="url" 
+              placeholder="https://script.google.com/macros/s/.../exec" 
+            />
+            <button @click="handleSaveWebhook" class="btn-save-webhook">Enregistrer l'URL</button>
+          </div>
+
+          <div v-if="webhookStatus" class="webhook-status-msg">
+            {{ webhookStatus }}
+          </div>
+
+          <div class="apps-script-guide">
+            <h5>💡 Comment déployer ce connecteur en 2 minutes :</h5>
+            <ol>
+              <li>Rendez-vous sur <a href="https://script.google.com" target="_blank">script.google.com</a> et créez un <strong>Nouveau projet</strong>.</li>
+              <li>Collez le code Google Apps Script fourni ci-dessous :</li>
+            </ol>
+            <pre class="script-code"><code>function doPost(e) {
+  var data = JSON.parse(e.postData.contents);
+  // Trouver ou créer le dossier
+  var folders = DriveApp.getFoldersByName("Exercices étudiants Plateforme");
+  var folder = folders.hasNext() ? folders.next() : DriveApp.createFolder("Exercices étudiants Plateforme");
+  
+  // Décoder et créer le fichier
+  var decoded = Utilities.base64Decode(data.base64Data);
+  var blob = Utilities.newBlob(decoded, data.mimeType, data.fileName);
+  var file = folder.createFile(blob);
+  
+  return ContentService.createTextOutput(JSON.stringify({ status: "success", fileId: file.getId() }))
+    .setMimeType(ContentService.MimeType.JSON);
+}</code></pre>
+            <ol start="3">
+              <li>Cliquez sur <strong>Déployer → Nouveau déploiement → Application Web</strong>.</li>
+              <li>Accès : choisissez <strong>"Tout le monde" (Anyone)</strong>, puis copiez l'URL d'application Web générée et collez-la dans le champ ci-dessus.</li>
+            </ol>
+          </div>
+        </div>
+
         <!-- SÉCURITÉ / CHANGEMENT DE MOT DE PASSE -->
         <div class="security-box">
           <div class="box-title-bar">
-            <h3>🔐 Changer le mot de passe enseignant</h3>
+            <h3>🔐 Modifier le mot de passe enseignant</h3>
             <span class="box-subtitle">Sécurisez l'accès à votre espace d'administration</span>
           </div>
 
@@ -581,11 +814,11 @@ function exportCSV() {
         <!-- EXPORT CSV -->
         <div class="export-box">
           <div class="box-title-bar">
-            <h3>📥 Exporter les données de la classe</h3>
+            <h3>📥 Exporter les données complètes de la classe</h3>
             <span class="box-subtitle">Génération d'un fichier tableur exploitable</span>
           </div>
           <p class="box-desc">
-            Téléchargez un relevé CSV complet contenant l'ensemble des étudiants (nom, prénom, email, statut actif/archivé, date d'inscription, taux de progression) ainsi que toutes leurs réponses détaillées aux exercices pour l'évaluation certificative ou formative.
+            Téléchargez un relevé CSV complet contenant l'ensemble des étudiants (nom, prénom, email, statut actif/archivé, date d'inscription, taux de progression) ainsi que toutes leurs réponses textuelles rédigées pour vos évaluations.
           </p>
           <button @click="exportCSV" class="btn-export-csv">
             Télécharger le relevé complet (.CSV / Excel)
@@ -599,7 +832,7 @@ function exportCSV() {
 
 <style scoped>
 .admin-container {
-  max-width: 1080px;
+  max-width: 1100px;
   margin: 1.5rem auto 4rem auto;
   padding: 0 1rem;
 }
@@ -648,7 +881,6 @@ function exportCSV() {
   font-size: 1rem;
   text-align: center;
   color: var(--vp-c-text-1);
-  transition: border-color 0.2s;
 }
 
 .pin-box input:focus {
@@ -665,11 +897,6 @@ function exportCSV() {
   font-weight: 700;
   font-size: 0.95rem;
   cursor: pointer;
-  transition: opacity 0.2s;
-}
-
-.btn-unlock:hover {
-  opacity: 0.92;
 }
 
 /* DASHBOARD */
@@ -710,17 +937,11 @@ function exportCSV() {
   font-size: 0.85rem;
   cursor: pointer;
   color: var(--vp-c-text-2);
-  transition: all 0.2s;
-}
-
-.btn-lock:hover {
-  background: var(--vp-c-bg-alt);
-  color: var(--vp-c-text-1);
 }
 
 .kpi-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.2rem;
   margin-bottom: 2rem;
 }
@@ -815,7 +1036,6 @@ function exportCSV() {
   font-weight: 600;
   color: var(--vp-c-text-2);
   cursor: pointer;
-  transition: all 0.15s;
 }
 
 .pill-btn.active {
@@ -830,7 +1050,7 @@ function exportCSV() {
   background: var(--vp-c-bg);
   font-size: 0.85rem;
   color: var(--vp-c-text-1);
-  min-width: 220px;
+  min-width: 200px;
 }
 
 .toolbar-right {
@@ -847,7 +1067,6 @@ function exportCSV() {
   font-weight: 600;
   cursor: pointer;
   border: 1px solid transparent;
-  transition: all 0.2s;
 }
 
 .btn-action-tool.secondary {
@@ -856,14 +1075,9 @@ function exportCSV() {
   color: var(--vp-c-text-1);
 }
 
-.btn-action-tool.secondary:hover {
-  border-color: var(--vp-c-brand-1);
-}
-
 .btn-action-tool.brand {
   background: var(--vp-c-brand-soft);
   color: var(--vp-c-brand-1);
-  border-color: rgba(37, 99, 235, 0.2);
 }
 
 .btn-action-tool.primary {
@@ -878,7 +1092,6 @@ function exportCSV() {
   border-radius: 12px;
   padding: 1.3rem;
   margin-bottom: 1.5rem;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08);
 }
 
 .add-student-header h4 {
@@ -982,7 +1195,6 @@ function exportCSV() {
 
 .row-archived {
   opacity: 0.65;
-  background: rgba(0, 0, 0, 0.02);
 }
 
 .status-badge {
@@ -1007,6 +1219,12 @@ function exportCSV() {
   font-family: monospace;
   font-size: 0.82rem;
   color: var(--vp-c-text-2);
+}
+
+.email-subtext {
+  font-size: 0.78rem;
+  color: var(--vp-c-text-3);
+  font-family: monospace;
 }
 
 .table-progress {
@@ -1059,19 +1277,11 @@ function exportCSV() {
   border: 1px solid var(--vp-c-divider);
   background: var(--vp-c-bg);
   cursor: pointer;
-  transition: all 0.15s;
 }
 
-.btn-row-action.archive:hover {
-  background: #fef3c7;
-  color: #92400e;
-  border-color: #fde68a;
-}
-
-.btn-row-action.restore:hover {
-  background: #dbeafe;
-  color: #1e40af;
-  border-color: #bfdbfe;
+.btn-row-action.dl {
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
 }
 
 .btn-row-action.delete {
@@ -1081,6 +1291,93 @@ function exportCSV() {
 .btn-row-action.delete:hover {
   background: #fee2e2;
   border-color: #fca5a5;
+}
+
+/* GOOGLE DRIVE SYNC BANNER */
+.drive-action-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.banner-text h4 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #166534;
+}
+
+.banner-text p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #15803d;
+}
+
+.banner-text code {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  color: #14532d;
+}
+
+.btn-sync-drive {
+  background: #16a34a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-sync-drive:hover {
+  background: #15803d;
+}
+
+.btn-sync-drive:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sync-feedback-msg {
+  background: var(--vp-c-bg-alt);
+  border: 1px solid var(--vp-c-divider);
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #15803d;
+}
+
+.exercise-badge-sm {
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+  padding: 2px 7px;
+  border-radius: 5px;
+}
+
+.formatted-name-text {
+  font-family: monospace;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: #10b981;
+}
+
+.file-icon-inline {
+  margin-right: 6px;
 }
 
 /* SUBMISSIONS VIEW */
@@ -1182,10 +1479,6 @@ function exportCSV() {
   margin-bottom: 1.6rem;
 }
 
-.box-title-bar {
-  margin-bottom: 0.4rem;
-}
-
 .box-title-bar h3 {
   margin: 0;
   font-size: 1.2rem;
@@ -1205,6 +1498,72 @@ function exportCSV() {
   color: var(--vp-c-text-2);
   margin: 0.6rem 0 1.2rem 0;
   line-height: 1.5;
+}
+
+.webhook-config-row {
+  display: flex;
+  gap: 0.8rem;
+  max-width: 600px;
+  margin-bottom: 0.8rem;
+}
+
+.webhook-config-row input {
+  flex-grow: 1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  font-size: 0.88rem;
+}
+
+.btn-save-webhook {
+  background: var(--vp-c-brand-1);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.webhook-status-msg {
+  color: #10b981;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.apps-script-guide {
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  padding: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+.apps-script-guide h5 {
+  margin: 0 0 0.6rem 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.apps-script-guide ol {
+  margin: 0 0 1rem 1.2rem;
+  font-size: 0.85rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.6;
+}
+
+.script-code {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.82rem;
+  margin: 0.8rem 0;
 }
 
 .feedback-box {
@@ -1252,12 +1611,6 @@ function exportCSV() {
   background: var(--vp-c-bg);
   color: var(--vp-c-text-1);
   font-size: 0.9rem;
-  transition: border-color 0.2s;
-}
-
-.pwd-field input:focus {
-  border-color: var(--vp-c-brand-1);
-  outline: none;
 }
 
 .btn-update-pin {
@@ -1269,11 +1622,6 @@ function exportCSV() {
   font-weight: 700;
   font-size: 0.9rem;
   cursor: pointer;
-  transition: opacity 0.2s;
-}
-
-.btn-update-pin:hover {
-  opacity: 0.92;
 }
 
 .btn-export-csv {
@@ -1285,10 +1633,5 @@ function exportCSV() {
   font-weight: 700;
   font-size: 0.92rem;
   cursor: pointer;
-  transition: opacity 0.2s;
-}
-
-.btn-export-csv:hover {
-  opacity: 0.92;
 }
 </style>

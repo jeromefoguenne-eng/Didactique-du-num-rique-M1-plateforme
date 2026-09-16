@@ -1,103 +1,76 @@
 ---
-title: "Ateliers & Défis Pratiques"
-description: "Espace modulaire des 7 ateliers d'application et défis pédagogiques avec débriefings dépliables"
+title: "6. Exercices & Ateliers Pratiques"
+description: "Hub des 7 ateliers d'application et défis pédagogiques avec débriefings méthodologiques"
 ---
 
-# ✏️ Ateliers & Défis Pratiques
+<script setup>
+const subCategories = [
+  {
+    title: "Atelier 1 : Diagnostic Compétences",
+    tag: "Analyse de Cas",
+    desc: "Analyse de 4 situations concrètes d'élèves : distinguer la manipulation technique de la véritable compétence numérique.",
+    link: "/ateliers/exercice-01",
+    image: "/images/image1.png"
+  },
+  {
+    title: "Atelier 2 : Évaluer une Information",
+    tag: "Investigation",
+    desc: "Vivre la démarche d'investigation : enquêter sur une rumeur virale relative aux écrans et au sommeil.",
+    link: "/ateliers/exercice-02",
+    image: "/images/image2.png"
+  },
+  {
+    title: "Atelier 3 : Guide Collaboratif Élèves",
+    tag: "Pédagogie Projet",
+    desc: "Coconstruire un guide d'organisation numérique répondant aux difficultés réelles des nouveaux élèves.",
+    link: "/ateliers/exercice-03",
+    image: "/images/image3.png"
+  },
+  {
+    title: "Atelier 4 : Escape Game FMTTN",
+    tag: "Jeu Sérieux",
+    desc: "Cyber-Enquête immersive en ligne : explorer les attendus et les 4 champs du référentiel FMTTN.",
+    link: "/ateliers/exercice-04",
+    image: "/images/image10.jpg"
+  },
+  {
+    title: "Atelier 5 : Défi 20 min Canva",
+    tag: "Défi Express",
+    desc: "Urgence créative : réaliser en 20 minutes chrono une affiche percutante sur les mots de passe et la sécurité.",
+    link: "/ateliers/exercice-05",
+    image: "/images/image24.jpg"
+  },
+  {
+    title: "Atelier 6 : Défi Hardware PC",
+    tag: "Matériel & Découverte",
+    desc: "Démonter et remonter une unité centrale : identifier carte mère, processeur, RAM et disques de stockage.",
+    link: "/ateliers/exercice-06",
+    image: "/images/image6.jpg"
+  },
+  {
+    title: "Atelier 7 : Capsule Vidéo du Jeu",
+    tag: "Audiovisuel",
+    desc: "Tourner et monter un pitch vidéo de 2 minutes pour présenter les règles et la démarche didactique de votre jeu.",
+    link: "/ateliers/exercice-video",
+    image: "/images/image44.png"
+  }
+]
+</script>
 
-Bienvenue dans l'espace des activités pratiques. Ces ateliers sont conçus pour être réalisés en séance ou **en totale autonomie à distance**. Chaque atelier vous place dans une posture active de réflexion ou de production didactique, et propose un **débriefing méthodologique sous accordéon dépliable**.
+# 06. Exercices & Ateliers Pratiques
 
-<div class="course-grid">
+::: info Espaces d'entraînement en présentiel et distanciel
+Ces 7 ateliers sont conçus pour être menés en séance ou **en totale autonomie à distance**.  
+Chaque atelier vous permet de soumettre votre réponse écrite ou de **déposer votre document Word / PDF** qui sera automatiquement libellé avec votre nom et accessible à votre enseignant.
+:::
 
-  <!-- ATELIER 1 -->
-  <a href="/ateliers/exercice-01" class="course-tile">
-    <span class="tile-icon">🎯</span>
-    <h3 class="tile-title">Atelier 1 : Diagnostic Compétences</h3>
-    <p class="tile-desc">
-      Analyse de 4 situations concrètes d'élèves : distinguer la manipulation technique de la véritable compétence numérique critique.
-    </p>
-    <div class="tile-footer">
-      <span class="tile-tag">Analyse de Cas</span>
-      <span class="tile-action">Lancer l'atelier →</span>
-    </div>
-  </a>
+### 🎯 Choisissez un atelier pour démarrer :
 
-  <!-- ATELIER 2 -->
-  <a href="/ateliers/exercice-02" class="course-tile">
-    <span class="tile-icon">🔍</span>
-    <h3 class="tile-title">Atelier 2 : Évaluer une Information</h3>
-    <p class="tile-desc">
-      Vivre la méthode d'investigation : analyser une affirmation virale sur les écrans et le sommeil avant de la partager avec des élèves.
-    </p>
-    <div class="tile-footer">
-      <span class="tile-tag">Méthode Investigation</span>
-      <span class="tile-action">Lancer l'atelier →</span>
-    </div>
-  </a>
+<SubCategoryTiles :items="subCategories" />
 
-  <!-- ATELIER 3 -->
-  <a href="/ateliers/exercice-03" class="course-tile">
-    <span class="tile-icon">🤝</span>
-    <h3 class="tile-title">Atelier 3 : Guide Collaboratif Élèves</h3>
-    <p class="tile-desc">
-      Vivre la pédagogie par projet : coconstruire un guide d'organisation numérique répondant aux difficultés réelles des nouveaux élèves.
-    </p>
-    <div class="tile-footer">
-      <span class="tile-tag">Pédagogie par Projet</span>
-      <span class="tile-action">Lancer l'atelier →</span>
-    </div>
-  </a>
+---
 
-  <!-- ATELIER 4 -->
-  <a href="/ateliers/exercice-04" class="course-tile">
-    <span class="tile-icon">🎮</span>
-    <h3 class="tile-title">Atelier 4 : Escape Game FMTTN</h3>
-    <p class="tile-desc">
-      Cyber-Enquête en ligne : plongez dans un jeu sérieux immersif pour explorer les attendus et les 4 champs du référentiel FMTTN.
-    </p>
-    <div class="tile-footer">
-      <span class="tile-tag">Jeu Sérieux en Ligne</span>
-      <span class="tile-action">Lancer l'atelier →</span>
-    </div>
-  </a>
-
-  <!-- ATELIER 5 -->
-  <a href="/ateliers/exercice-05" class="course-tile">
-    <span class="tile-icon">⏱️</span>
-    <h3 class="tile-title">Atelier 5 : Défi Canva (20 min)</h3>
-    <p class="tile-desc">
-      Vivre le défi pédagogique : concevoir une affiche claire sur les mots de passe sécurisés sous contrainte stricte de temps et d'épuration visuelle.
-    </p>
-    <div class="tile-footer">
-      <span class="tile-tag">Défi Chronométré</span>
-      <span class="tile-action">Lancer l'atelier →</span>
-    </div>
-  </a>
-
-  <!-- ATELIER 6 -->
-  <a href="/ateliers/exercice-06" class="course-tile">
-    <span class="tile-icon">💻</span>
-    <h3 class="tile-title">Atelier 6 : Défi Hardware PC</h3>
-    <p class="tile-desc">
-      Apprentissage expérientiel : démonter un ordinateur, identifier les composants clés de son architecture et le reconstruire sans mode d'emploi.
-    </p>
-    <div class="tile-footer">
-      <span class="tile-tag">Atelier Hands-On</span>
-      <span class="tile-action">Lancer l'atelier →</span>
-    </div>
-  </a>
-
-  <!-- ATELIER 7 -->
-  <a href="/ateliers/exercice-video" class="course-tile">
-    <span class="tile-icon">🎬</span>
-    <h3 class="tile-title">Atelier 7 : Capsule Vidéo du Jeu</h3>
-    <p class="tile-desc">
-      Consignes de tournage, règles de communication audiovisuelle et grille critériée pour réaliser le pitch vidéo de 3 à 5 min de votre jeu.
-    </p>
-    <div class="tile-footer">
-      <span class="tile-tag">Livrable Sommative</span>
-      <span class="tile-action">Consulter les consignes →</span>
-    </div>
-  </a>
-
-</div>
+## Fonctionnement des Ateliers
+1. **Consigne contextualisée** : Une situation scolaire authentique.
+2. **Zone de réponse intégrée** : Rédigez en ligne ou joignez votre fichier (.docx, .pdf).
+3. **Débriefing méthodologique sous accordéon** : Une fois votre réponse soumise, déployez le débriefing pour confronter votre analyse aux repères didactiques officiels.

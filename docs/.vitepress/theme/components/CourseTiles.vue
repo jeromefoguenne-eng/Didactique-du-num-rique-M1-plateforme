@@ -1,4 +1,4 @@
-﻿<script setup>
+<script setup>
 import { withBase } from 'vitepress'
 
 const tiles = [
@@ -55,7 +55,7 @@ const tiles = [
     title: "7. Guide & Évaluation",
     tag: "Organisation & Jalons",
     desc: "Suivi en présentiel ou distanciel, calendrier des jalons et critères de l'évaluation finale.",
-    link: "/guide/distanciel",
+    link: "/guide/",
     image: "/images/tile-7-evaluation.jpg"
   },
   {
@@ -63,7 +63,7 @@ const tiles = [
     title: "8. Ressources & Outils",
     tag: "Téléchargements & Outils",
     desc: "Téléchargement direct des référentiels officiels (FMTTN, CSEM), outils numériques et bibliographie APA.",
-    link: "/ressources/documents",
+    link: "/ressources/",
     image: "/images/tile-8-ressources.jpg"
   }
 ]

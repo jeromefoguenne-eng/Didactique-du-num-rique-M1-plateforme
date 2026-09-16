@@ -10,14 +10,14 @@ const subCategories = [
     tag: "Téléchargements",
     desc: "Téléchargement direct des textes légaux officiels : Référentiel FMTTN Tronc commun, brochures CSEM et cadres DigComp.",
     link: "/ressources/documents",
-    image: "/images/tile-8-ressources.jpg"
+    image: "/images/subcategories/sub-8-1-documents.jpg"
   },
   {
     title: "8.2 Bibliographie & Webographie",
     tag: "Normes APA",
     desc: "Sélection d'ouvrages scientifiques, articles de recherche en didactique du numérique, sciences cognitives et ludopédagogie.",
     link: "/ressources/bibliographie",
-    image: "/images/image2.png"
+    image: "/images/subcategories/sub-8-2-biblio.jpg"
   }
 ]
 </script>

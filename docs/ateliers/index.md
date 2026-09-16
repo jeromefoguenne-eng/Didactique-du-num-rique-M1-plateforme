@@ -10,49 +10,49 @@ const subCategories = [
     tag: "Analyse de Cas",
     desc: "Analyse de 4 situations concrètes d'élèves : distinguer la manipulation technique de la véritable compétence numérique.",
     link: "/ateliers/exercice-01",
-    image: "/images/image1.png"
+    image: "/images/subcategories/sub-6-1-diagnostic.jpg"
   },
   {
     title: "Atelier 2 : Évaluer une Information",
     tag: "Investigation",
     desc: "Vivre la démarche d'investigation : enquêter sur une rumeur virale relative aux écrans et au sommeil.",
     link: "/ateliers/exercice-02",
-    image: "/images/image2.png"
+    image: "/images/subcategories/sub-6-2-factcheck.jpg"
   },
   {
     title: "Atelier 3 : Guide Collaboratif Élèves",
     tag: "Pédagogie Projet",
     desc: "Coconstruire un guide d'organisation numérique répondant aux difficultés réelles des nouveaux élèves.",
     link: "/ateliers/exercice-03",
-    image: "/images/image3.png"
+    image: "/images/subcategories/sub-6-3-guide.jpg"
   },
   {
     title: "Atelier 4 : Escape Game FMTTN",
     tag: "Jeu Sérieux",
     desc: "Cyber-Enquête immersive en ligne : explorer les attendus et les 4 champs du référentiel FMTTN.",
     link: "/ateliers/exercice-04",
-    image: "/images/image10.jpg"
+    image: "/images/subcategories/sub-6-4-escapegame.jpg"
   },
   {
     title: "Atelier 5 : Défi 20 min Canva",
     tag: "Défi Express",
     desc: "Urgence créative : réaliser en 20 minutes chrono une affiche percutante sur les mots de passe et la sécurité.",
     link: "/ateliers/exercice-05",
-    image: "/images/image24.jpg"
+    image: "/images/subcategories/sub-6-5-poster20m.jpg"
   },
   {
     title: "Atelier 6 : Défi Hardware PC",
     tag: "Matériel & Découverte",
     desc: "Démonter et remonter une unité centrale : identifier carte mère, processeur, RAM et disques de stockage.",
     link: "/ateliers/exercice-06",
-    image: "/images/image6.jpg"
+    image: "/images/subcategories/sub-6-6-hardware.jpg"
   },
   {
     title: "Atelier 7 : Capsule Vidéo du Jeu",
     tag: "Audiovisuel",
     desc: "Tourner et monter un pitch vidéo de 2 minutes pour présenter les règles et la démarche didactique de votre jeu.",
     link: "/ateliers/exercice-video",
-    image: "/images/image44.png"
+    image: "/images/subcategories/sub-6-7-video.jpg"
   }
 ]
 </script>

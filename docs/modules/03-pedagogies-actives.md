@@ -10,35 +10,35 @@ const subCategories = [
     tag: "Didactique Active",
     desc: "Inverser la logique transmissive : partir d'une énigme concrète pour susciter le besoin d'apprendre.",
     link: "/modules/03-1-situation-probleme",
-    image: "/images/image18.jpg"
+    image: "/images/subcategories/sub-3-1-problem.jpg"
   },
   {
     title: "3.2 Pédagogie par Projet",
     tag: "Travail d'Équipe",
     desc: "Apprendre en fabriquant une production utile et concrète, autonomie et coconstruction des savoirs.",
     link: "/modules/03-2-pedagogie-projet",
-    image: "/images/image20.jpg"
+    image: "/images/subcategories/sub-3-2-project.jpg"
   },
   {
     title: "3.3 Démarche d'Investigation",
     tag: "Esprit Scientifique",
     desc: "Placer l'élève dans la posture du chercheur : question ouverte, hypothèses, vérification et preuves.",
     link: "/modules/03-3-investigation-enquete",
-    image: "/images/image22.jpg"
+    image: "/images/subcategories/sub-3-3-inquiry.jpg"
   },
   {
     title: "3.4 Défis Express (20 min)",
     tag: "Gamification",
     desc: "L'urgence créative : stimuler l'émulation et vaincre la page blanche grâce à des activités en temps contraint.",
     link: "/modules/03-4-defis-express",
-    image: "/images/image24.jpg"
+    image: "/images/subcategories/sub-3-4-defis.jpg"
   },
   {
     title: "3.5 Démarche Itérative",
     tag: "Droit à l'Erreur",
     desc: "Prototyper, tester, échouer, comprendre l'erreur et améliorer : la boucle féconde de l'ingénierie.",
     link: "/modules/03-5-iteration-erreur",
-    image: "/images/image26.jpg"
+    image: "/images/subcategories/sub-3-5-iteration.jpg"
   }
 ]
 </script>

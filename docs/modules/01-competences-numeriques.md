@@ -10,28 +10,28 @@ const subCategories = [
     tag: "Cadre Officiel",
     desc: "Définition de la compétence numérique, modèle DigComp 2.2 et distinction essentielle entre outil, habileté et compétence.",
     link: "/modules/01-1-definition-digcomp",
-    image: "/images/image1.png"
+    image: "/images/subcategories/sub-1-1-digcomp.jpg"
   },
   {
     title: "1.2 Éducation aux Médias",
     tag: "Esprit Critique",
     desc: "Évaluer l'information, décoder les infox, comprendre les bulles de filtres et les algorithmes de recommandation.",
     link: "/modules/01-2-education-aux-medias",
-    image: "/images/image2.png"
+    image: "/images/subcategories/sub-1-2-medialit.jpg"
   },
   {
     title: "1.3 Citoyenneté & RGPD",
     tag: "Éthique & Droits",
     desc: "Traces numériques, protection des données scolaires (RGPD), droit à l'image et licences Creative Commons.",
     link: "/modules/01-3-citoyennete-ethique",
-    image: "/images/image3.png"
+    image: "/images/subcategories/sub-1-3-citizenship.jpg"
   },
   {
     title: "1.4 IA & Algorithmes",
     tag: "Intelligence Artificielle",
     desc: "Comprendre les modèles de langage (LLM), art du prompt pédagogique, opportunités et limites pour les élèves.",
     link: "/modules/01-4-ia-algorithmes",
-    image: "/images/image5.jpg"
+    image: "/images/subcategories/sub-1-4-ai-algo.jpg"
   }
 ]
 </script>

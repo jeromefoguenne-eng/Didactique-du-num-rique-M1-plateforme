@@ -10,14 +10,14 @@ const subCategories = [
     tag: "Organisation & Suivi",
     desc: "Méthode de travail en autonomie, rythme hebdomadaire, accès aux cours asynchrones et communication avec l'enseignant.",
     link: "/guide/distanciel",
-    image: "/images/tile-7-evaluation.jpg"
+    image: "/images/subcategories/sub-7-1-distanciel.jpg"
   },
   {
     title: "7.2 Modalités & Grille d'Évaluation",
     tag: "Évaluation Certificative",
     desc: "Pondération des notes, critères d'évaluation des ateliers, jalons du projet de jeu de société et défense orale finale.",
     link: "/guide/evaluation",
-    image: "/images/image28.jpg"
+    image: "/images/subcategories/sub-7-2-evaluation.jpg"
   }
 ]
 </script>

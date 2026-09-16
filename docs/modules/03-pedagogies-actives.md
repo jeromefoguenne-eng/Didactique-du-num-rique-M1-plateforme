@@ -62,7 +62,23 @@ Cette démarche est particulièrement intéressante pour l'enseignement du numé
 
 ## L’apprentissage par investigation
 
-L’apprentissage par investigation place l’élève dans une démarche de recherche au cours de laquelle il doit observer, questionner, formuler des hypothèses, rechercher des informations, expérimenter et tirer des conclusions. Plutôt que de lui transmettre directement une réponse ou une procédure, l’enseignant crée les conditions qui lui permettent de construire progressivement ses connaissances à partir d'une question ou d'un phénomène à explorer.
+::: tip Exemple concret en classe : L'investigation face à un graphique télévisé tronqué
+Pour faire vivre l'investigation plutôt que de dispenser une leçon magistrale sur les biais visuels :
+1. L'enseignant projette un graphique issu d'un plateau télévisé où une barre semble 4 fois plus haute qu'une autre, alors que les chiffres réels indiquent 51% et 49% (l'axe des ordonnées ayant été coupé pour débuter à 48%).
+2. Question posée aux élèves : *« Quelle conclusion tirez-vous au premier regard ? Et si vous examinez l'axe vertical, que constatez-vous ? »*
+3. Les élèves mènent l'enquête, mesurent l'écart réel et découvrent par eux-mêmes comment un choix de cadrage graphique oriente l'interprétation.
+:::
+
+
+L’apprentissage par investigation
+
+::: tip Exemple concret en classe : L'investigation face à un graphique télévisé tronqué
+Pour faire vivre l'investigation plutôt que de dispenser une leçon magistrale sur les biais visuels :
+1. L'enseignant projette un graphique issu d'un plateau télévisé où une barre semble 4 fois plus haute qu'une autre, alors que les chiffres réels indiquent 51% et 49% (l'axe des ordonnées ayant été coupé pour débuter à 48%).
+2. Question posée aux élèves : *« Quelle conclusion tirez-vous au premier regard ? Et si vous examinez l'axe vertical, que constatez-vous ? »*
+3. Les élèves mènent l'enquête, mesurent l'écart réel et découvrent par eux-mêmes comment un choix de cadrage graphique oriente l'interprétation.
+:::
+ place l’élève dans une démarche de recherche au cours de laquelle il doit observer, questionner, formuler des hypothèses, rechercher des informations, expérimenter et tirer des conclusions. Plutôt que de lui transmettre directement une réponse ou une procédure, l’enseignant crée les conditions qui lui permettent de construire progressivement ses connaissances à partir d'une question ou d'un phénomène à explorer.
 
 Cette démarche repose sur une logique proche de celle de l'enquête : l'élève part d'une question, identifie ce qu'il sait déjà et ce qu'il cherche à comprendre, puis confronte ses hypothèses à des informations ou à des expériences. L'erreur et l'incertitude deviennent ainsi des éléments du processus d'apprentissage.
 
@@ -88,7 +104,19 @@ L'élève est placé dans une posture d'expérimentation et de résolution. Il p
 
 ## La démarche de conception itérative
 
-La démarche de conception itérative consiste à faire évoluer progressivement une production à partir d'un cycle de conception, expérimentation, évaluation et amélioration. Plutôt que de chercher à produire immédiatement une solution définitive, les élèves réalisent une première version, la testent, analysent les résultats obtenus et utilisent les retours pour construire une nouvelle version.
+::: tip Analogie didactique : La conception itérative et le jeu vidéo
+Dans un jeu vidéo, aucun joueur n'abandonne au premier échec. On essaie une trajectoire, on observe l'obstacle, on adapte son timing et on recommence. 
+La démarche de conception itérative en FMTTN transpose ce rapport positif à l'erreur : en programmation Scratch ou lors de la découpe d'une pièce au FabLab, le premier prototype n'est jamais définitif. Il sert de **support de test et de dialogue réflexif** entre l'élève et l'enseignant.
+:::
+
+
+La démarche de conception itérative
+
+::: tip Analogie didactique : La conception itérative et le jeu vidéo
+Dans un jeu vidéo, aucun joueur n'abandonne au premier échec. On essaie une trajectoire, on observe l'obstacle, on adapte son timing et on recommence. 
+La démarche de conception itérative en FMTTN transpose ce rapport positif à l'erreur : en programmation Scratch ou lors de la découpe d'une pièce au FabLab, le premier prototype n'est jamais définitif. Il sert de **support de test et de dialogue réflexif** entre l'élève et l'enseignant.
+:::
+ consiste à faire évoluer progressivement une production à partir d'un cycle de conception, expérimentation, évaluation et amélioration. Plutôt que de chercher à produire immédiatement une solution définitive, les élèves réalisent une première version, la testent, analysent les résultats obtenus et utilisent les retours pour construire une nouvelle version.
 
 Cette démarche s'inspire notamment des approches de design et de conception centrées sur l'utilisateur. Elle considère que l'erreur, les difficultés et les retours des utilisateurs ne constituent pas des échecs, mais des informations permettant d'améliorer la solution.
 

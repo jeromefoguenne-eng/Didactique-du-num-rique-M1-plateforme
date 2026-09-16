@@ -4,78 +4,140 @@ layout: home
 hero:
   name: "Didactique du Numérique"
   text: "Master 1 — Enseignement & Pédagogie"
-  tagline: "Plateforme de formation hybride, ressources didactiques et projet ludo-éducatif FabLab (HECh / FWB)"
+  tagline: "Tableau de bord modulaire du cours : explorez librement les pôles théoriques, didactiques et pratiques (HECh / FWB)"
   image:
     src: /images/image1.png
-    alt: Didactique du Numérique
-  actions:
-    - theme: brand
-      text: "🚀 Démarrer le parcours"
-      link: /guide/distanciel
-    - theme: alt
-      text: "🎲 Le Projet Jeu de Société"
-      link: /modules/05-projet-jeu-societe
-    - theme: alt
-      text: "✏️ Les Ateliers Pratiques"
-      link: /ateliers/
-
-features:
-  - icon: "🧭"
-    title: "Parcours Scénarisé Asynchrone"
-    details: "Conçu sur mesure pour les étudiants en Master et les horaires adaptés. Modules progressifs, objectifs explicites et jalons clairs."
-  - icon: "🎯"
-    title: "Ancrage Référentiel FMTTN"
-    details: "Maîtrisez les 4 champs d'apprentissage et la progression spiralaire du volet numérique du nouveau Tronc commun en Fédération Wallonie-Bruxelles."
-  - icon: "💡"
-    title: "Esprit Critique & IA"
-    details: "Questionnez les mythes de l'IA (A. Alombert), l'anthropomorphisme machine et l'éducation aux médias au-delà de la simple maîtrise technique."
-  - icon: "🎲"
-    title: "Projet Fil Rouge FabLab"
-    details: "Créez par équipe un jeu de société complet : scénarisation, illustrations IA, découpeuse laser, pions 3D et capsule vidéo de pitch."
+    alt: "Didactique du Numérique M1"
 ---
 
-<div style="max-width: 900px; margin: 3rem auto; padding: 0 1.5rem;">
+<div style="max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem;">
 
-  <h2 style="text-align: center; margin-bottom: 2rem;">🗺️ Structure du Parcours Didactique</h2>
+  <div style="text-align: center; margin-bottom: 2.5rem;">
+    <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 0.5rem; letter-spacing: -0.02em;">
+      🗂️ Tableau de bord modulaire du cours
+    </h2>
+    <p style="color: var(--vp-c-text-2); font-size: 1.05rem; max-width: 700px; margin: 0 auto;">
+      Accédez directement et librement aux différentes parties du cours selon vos besoins, votre rythme et l'état d'avancement de vos projets.
+    </p>
+  </div>
 
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+  <div class="course-grid">
 
-    <div style="border: 1px solid var(--vp-c-divider); border-radius: 12px; padding: 1.5rem; background: var(--vp-c-bg-soft);">
-      <span style="font-size: 1.8rem;">🧭</span>
-      <h3 style="margin: 0.5rem 0;">Axe 1 : Fondements & Référentiel</h3>
-      <p style="font-size: 0.9rem; color: var(--vp-c-text-2);">
-        Philosophie de l'IA, déconstruction de l'anthropomorphisme, concept de compétence numérique et maîtrise approfondie du référentiel FMTTN.
+    <!-- TUILE 1 -->
+    <a href="/modules/01-competences-numeriques" class="course-tile">
+      <span class="tile-icon">🧭</span>
+      <h3 class="tile-title">1. Fondements & Esprit Critique</h3>
+      <p class="tile-desc">
+        Qu'est-ce qu'une vraie compétence numérique ? Déconstruction du mythe de la neutralité algorithmique (COMPAS), éducation aux médias, fake news et éthique de l'IA (A. Alombert).
       </p>
-      <a href="/modules/00-introduction-ia-ethique" style="color: var(--vp-c-brand-1); font-weight: 600;">Explorer l'Axe 1 →</a>
-    </div>
+      <div class="tile-footer">
+        <span class="tile-tag">Épistémologie & Éthique</span>
+        <span class="tile-action">Accéder →</span>
+      </div>
+    </a>
 
-    <div style="border: 1px solid var(--vp-c-divider); border-radius: 12px; padding: 1.5rem; background: var(--vp-c-bg-soft);">
-      <span style="font-size: 1.8rem;">🛠️</span>
-      <h3 style="margin: 0.5rem 0;">Axe 2 : Ingénierie Pédagogique</h3>
-      <p style="font-size: 0.9rem; color: var(--vp-c-text-2);">
-        Pédagogies actives (projet, investigation, défi, itération), triple concordance didactique, taxonomie de Bloom appliquée et Assistant FMTTN.
+    <!-- TUILE 2 -->
+    <a href="/modules/02-referentiel-fmttn" class="course-tile">
+      <span class="tile-icon">📜</span>
+      <h3 class="tile-title">2. Référentiel FMTTN (FWB)</h3>
+      <p class="tile-desc">
+        Maîtriser le volet numérique du nouveau Tronc commun : les 4 champs d'apprentissage, la progression spiralaire de S1 à S3 et téléchargement direct du texte officiel.
       </p>
-      <a href="/modules/03-pedagogies-actives" style="color: var(--vp-c-brand-1); font-weight: 600;">Explorer l'Axe 2 →</a>
-    </div>
+      <div class="tile-footer">
+        <span class="tile-tag">Cadre Officiel</span>
+        <span class="tile-action">Accéder →</span>
+      </div>
+    </a>
 
-    <div style="border: 1px solid var(--vp-c-divider); border-radius: 12px; padding: 1.5rem; background: var(--vp-c-bg-soft);">
-      <span style="font-size: 1.8rem;">🎲</span>
-      <h3 style="margin: 0.5rem 0;">Axe 3 : Projet Jeu de Société</h3>
-      <p style="font-size: 0.9rem; color: var(--vp-c-text-2);">
-        Du concept à l'objet fini : rédaction des règles, visuels et éthique de l'image, génération IA, prototypage FabLab et capsule vidéo finale.
+    <!-- TUILE 3 -->
+    <a href="/modules/03-pedagogies-actives" class="course-tile">
+      <span class="tile-icon">🛠️</span>
+      <h3 class="tile-title">3. Méthodologies Actives</h3>
+      <p class="tile-desc">
+        Enseigner le numérique par l'action : apprentissage par investigation, démarche de projet, défis pédagogiques express, conception itérative et peer learning.
       </p>
-      <a href="/modules/05-projet-jeu-societe" style="color: var(--vp-c-brand-1); font-weight: 600;">Explorer le Projet →</a>
-    </div>
+      <div class="tile-footer">
+        <span class="tile-tag">Didactique Active</span>
+        <span class="tile-action">Accéder →</span>
+      </div>
+    </a>
+
+    <!-- TUILE 4 -->
+    <a href="/modules/04-preparation-lecon-fmttn" class="course-tile">
+      <span class="tile-icon">📝</span>
+      <h3 class="tile-title">4. Préparer une Leçon FMTTN</h3>
+      <p class="tile-desc">
+        La triple concordance didactique (Objectifs - Activités - Évaluation), la taxonomie de Bloom révisée appliquée au FMTTN et l'application Assistant Cours HECh.
+      </p>
+      <div class="tile-footer">
+        <span class="tile-tag">Ingénierie Pédagogique</span>
+        <span class="tile-action">Accéder →</span>
+      </div>
+    </a>
+
+    <!-- TUILE 5 -->
+    <a href="/modules/05-projet-jeu-societe" class="course-tile">
+      <span class="tile-icon">🎲</span>
+      <h3 class="tile-title">5. Projet FabLab : Jeu de Société</h3>
+      <p class="tile-desc">
+        Le projet fil rouge : créer un jeu ludo-éducatif d'éducation aux médias. De la rédaction des règles à la fabrication numérique (découpe laser, 3D, IA) et la capsule vidéo.
+      </p>
+      <div class="tile-footer">
+        <span class="tile-tag">Projet Fil Rouge</span>
+        <span class="tile-action">Accéder →</span>
+      </div>
+    </a>
+
+    <!-- TUILE 6 -->
+    <a href="/ateliers/" class="course-tile">
+      <span class="tile-icon">✏️</span>
+      <h3 class="tile-title">6. Ateliers Pratiques & Défis</h3>
+      <p class="tile-desc">
+        7 ateliers d'application (diagnostic de compétences, esprit critique, Escape Game en ligne, défi affiche Canva, démontage PC) avec débriefings méthodologiques dépliables.
+      </p>
+      <div class="tile-footer">
+        <span class="tile-tag">Mises en Pratique</span>
+        <span class="tile-action">Accéder →</span>
+      </div>
+    </a>
+
+    <!-- TUILE 7 -->
+    <a href="/guide/distanciel" class="course-tile">
+      <span class="tile-icon">🎓</span>
+      <h3 class="tile-title">7. Guide & Évaluation</h3>
+      <p class="tile-desc">
+        Feuille de route pour les étudiants en présentiel ou à distance, routine de travail recommandée (2h-3h/semaine), calendrier des jalons et grille d'évaluation sommative.
+      </p>
+      <div class="tile-footer">
+        <span class="tile-tag">Accompagnement</span>
+        <span class="tile-action">Accéder →</span>
+      </div>
+    </a>
+
+    <!-- TUILE 8 -->
+    <a href="/ressources/documents" class="course-tile">
+      <span class="tile-icon">📚</span>
+      <h3 class="tile-title">8. Ressources & Boîte à Outils</h3>
+      <p class="tile-desc">
+        Téléchargement direct des référentiels (FMTTN, Éducation aux médias CSEM), bibliographie scientifique aux normes APA et liens vers les logiciels (Tinkercad, Inkscape, Canva).
+      </p>
+      <div class="tile-footer">
+        <span class="tile-tag">Ressources & Outils</span>
+        <span class="tile-action">Accéder →</span>
+      </div>
+    </a>
 
   </div>
 
-  <div style="margin-top: 3rem; text-align: center; background: var(--vp-c-bg-alt); padding: 2rem; border-radius: 12px;">
-    <h3 style="margin-top: 0;">Vous démarrez le cours ou vous suivez à distance ?</h3>
-    <p style="color: var(--vp-c-text-2); max-width: 650px; margin: 0 auto 1.5rem auto;">
-      Consultez en priorité le guide méthodologique pour comprendre le rythme de travail hebdomadaire, la composition des équipes et les jalons d'évaluation.
-    </p>
-    <a href="/guide/distanciel" style="background: var(--vp-c-brand-1); color: white; padding: 10px 22px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block;">
-      Lire le Guide de l'Étudiant à Distance 📖
+  <div style="margin-top: 3rem; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider); padding: 1.8rem; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+    <div>
+      <h4 style="margin: 0 0 0.3rem 0; font-size: 1.1rem;">Vous commencez le cours ou vous suivez à distance ?</h4>
+      <p style="margin: 0; color: var(--vp-c-text-2); font-size: 0.92rem;">
+        Consultez le guide méthodologique pour organiser votre travail d'équipe et repérer les échéances clés du quadrimestre.
+      </p>
+    </div>
+    <a href="/guide/distanciel" style="background: var(--vp-c-brand-1); color: white; padding: 10px 20px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block;">
+      Lire le Guide →
     </a>
   </div>
 

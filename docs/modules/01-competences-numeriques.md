@@ -17,6 +17,13 @@ description: "Définition de la compétence numérique, DigComp et éducation au
 
 ## 1.1. Qu’est-ce qu’une compétence numérique ?
 
+::: tip Exemple concret (Syllabus & PPT Slide 7) : Savoir utiliser PowerPoint ≠ Savoir concevoir une présentation efficace
+On ne peut pas déterminer une compétence numérique simplement en demandant : *« Sais-tu utiliser cet outil ? »*. Il faut observer ce que la personne est capable d’en faire dans une situation concrète.
+- La maîtrise instrumentale permet d'insérer du texte et une image dans une diapositive PowerPoint.
+- La **compétence située** exige de sélectionner l'information essentielle, d'organiser la hiérarchie visuelle, d'adapter le registre de langue, de réduire la charge cognitive et de s'ajuster au public cible.
+:::
+
+
 La notion de compétence numérique occupe aujourd’hui une place centrale dans les politiques éducatives. Elle est cependant souvent comprise de manière restrictive, comme la capacité à utiliser correctement un ordinateur, une tablette, un smartphone ou un logiciel. Cette conception réduit le numérique à sa dimension instrumentale : être compétent reviendrait alors à savoir « faire fonctionner » un outil. Or, cette approche ne permet pas de rendre compte de la complexité des usages numériques contemporains. Utiliser une technologie ne signifie pas nécessairement comprendre son fonctionnement, savoir pourquoi on l’utilise, être capable d'en évaluer les résultats ou encore mesurer les conséquences de son utilisation.
 
 Le cadre européen DigComp constitue une référence importante pour dépasser cette conception instrumentale. Il définit la compétence numérique comme la capacité à s'engager avec les technologies numériques de manière confiante, critique et responsable, notamment dans les domaines de l’apprentissage, du travail et de la participation à la société. Cette définition est importante parce qu'elle associe explicitement plusieurs dimensions qui sont parfois dissociées dans les apprentissages scolaires : la connaissance, l'action, le jugement et la responsabilité. La compétence numérique ne consiste donc pas seulement à savoir utiliser une technologie ; elle implique de savoir mobiliser cette technologie de manière pertinente dans une situation donnée et d'être capable d'en apprécier les possibilités et les limites (Vuorikari et al., 2022).
@@ -40,7 +47,40 @@ La compétence numérique comporte ainsi une dimension critique. Être compéten
 Cette dimension critique est particulièrement visible dans le domaine de l'information. Un individu peut techniquement être capable de trouver une information très rapidement tout en étant incapable d'en évaluer la qualité. La compétence consiste alors moins à accéder à davantage d'informations qu'à être capable de déterminer lesquelles sont pertinentes, fiables et adaptées à la situation. Dans un contexte marqué par la circulation massive de contenus produits par des humains et par des systèmes automatisés, cette capacité d'évaluation devient une composante fondamentale de la compétence numérique.
 
 
+## 
+::: tip Exemple concret (Syllabus & PPT Slide 11) : Deux étudiants face à ChatGPT
+Deux étudiants peuvent posséder une maîtrise technique similaire (savoir formuler un prompt textuel)... mais adopter des postures didactiques radicalement différentes :
+- **Étudiant A** : Accepte automatiquement la réponse produite comme une vérité établie, effectue un copier-coller sans recul.
+- **Étudiant B** : Considère la réponse comme une simple proposition probabiliste, la questionne, repère les potentielles hallucinations, la confronte à des sources fiables et la corrige.
+La véritable compétence numérique ne réside pas dans la génération de texte, mais dans le **jugement critique**, le **rapport à l'information** et la **responsabilité intellectuelle**.
+:::
+
+
 ## L’importance de l’éducation aux médias dans les compétences numériques
+
+::: tip Démarche d'esprit critique (PPT Slides 25-28) : Théories du complot & la métaphore des licornes
+L'esprit critique ne se confond pas avec une méfiance paranoïaque généralisée envers toute information. Il s'agit d'une démarche d'enquête rigoureuse : suspendre son jugement, vérifier et confronter les sources.
+
+Comme le rappellent Catherine Bouko et Odile Gilon (*Vivre ensemble dans un monde médiatisé*, CSEM, 2016) :
+> *« Ce n’est pas parce qu’on ne peut pas prouver qu’une information est fausse qu’elle est automatiquement vraie (Je ne sais pas prouver l’inexistence des licornes, cela n’induit pas la preuve de l’existence des licornes). »*
+
+Une enquête d'éducation aux médias doit toujours être menée **à charge et à décharge**, en évitant les médias complotistes qui ne font que s'autociter en boucle.
+:::
+
+::: warning Exemple d'analyse critique (PPT Slides 31-34) : Les fausses nouvelles « journalisées »
+L'exemple d'une fausse publication virale imitant la une du journal *Le Monde* annonçant *« Adrien Devyver poursuivi par la Banque Nationale de Belgique »* illustre la fabrique contemporaine des fake news :
+- **Usurpation d'identité visuelle** : reproduction des polices et de la charte du quotidien *Le Monde* pour capter la confiance.
+- **Storytelling sensationnaliste** : mise en scène d'un secret financier révélé par mégarde.
+- **URL trompeuse** : le nom de domaine ne correspond en rien au site officiel du journal.
+- **Finalité mercantile** : rabattre l'internaute vers une plateforme d'escroquerie financière.
+
+Comme le souligne Arnaud Mercier (2018), ces informations forgées sont **« journalisées »** : elles sont délibérément façonnées pour mimer les codes d'un article de presse légitime.
+:::
+
+::: info Mise en perspective historique (PPT Slides 41-49) : De Jack l'Éventreur aux algorithmes de recommandation
+La recherche du sensationnalisme et l'exploitation des émotions primaires (peur, indignation, voyeurisme) ne sont pas nées avec Internet. Dès la fin du XIXe siècle, les faits divers sordides (comme l'affaire Jack l'Éventreur dans la presse populaire victorienne de 1888) servaient déjà à doper les tirages des journaux. Aujourd'hui, les algorithmes de réseaux sociaux et les émissions de télé-réalité réactivent les mêmes ressorts (voyeurisme, mise en scène de la précarité). La compétence critique de l'élève est donc **transférable d'une époque technologique à l'autre**.
+:::
+
 
 Une dimension citoyenne essentielle
 

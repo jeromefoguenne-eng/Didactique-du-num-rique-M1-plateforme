@@ -63,6 +63,14 @@ La progression ne doit donc pas être comprise comme une simple augmentation du 
 
 ## 2.3. La progression spiralaire
 
+::: tip Exemple concret : La progression spiralaire de la notion d'algorithme (S1 à S3)
+En Fédération Wallonie-Bruxelles, le concept d'algorithme ne s'enseigne pas de façon monolithique, mais s'approfondit par spirales successives :
+- **En 1re secondaire** : Approche débranchée et kinesthésique. L'élève expérimente la notion de séquence ordonnée d'instructions à travers des situations du quotidien (recette de cuisine, parcours d'orientation dans la classe, robot humain).
+- **En 2e secondaire** : Programmation visuelle par blocs (ex: Scratch / MakeCode). L'élève traduit un raisonnement en instructions logiques, utilise des événements et des conditions simples (*Si... Alors*).
+- **En 3e secondaire** : Structuration de données et variables. L'élève conçoit un algorithme de tri ou pilote un automate physique (capteur de température, carte micro:bit) en manipulant des variables et des boucles imbriquées.
+:::
+
+
 La progression des apprentissages numériques repose également sur une logique spiralaire. Une approche spiralaire consiste à revenir à plusieurs reprises sur une même notion, un même savoir-faire ou une même compétence, mais en augmentant progressivement le niveau d'exigence. Revenir sur une compétence ne signifie donc pas reproduire exactement la même activité : le contexte, la complexité, les ressources mobilisées ou le degré d'autonomie évoluent.
 
 Cette logique est particulièrement pertinente dans le domaine du numérique, car les compétences numériques sont rarement maîtrisées définitivement après un seul apprentissage. Une compétence comme la recherche d'information peut par exemple être introduite dans une situation fortement guidée, puis être progressivement réinvestie dans des situations où l'élève doit choisir lui-même ses mots-clés, sélectionner les informations pertinentes, comparer différentes sources et finalement justifier ses choix.

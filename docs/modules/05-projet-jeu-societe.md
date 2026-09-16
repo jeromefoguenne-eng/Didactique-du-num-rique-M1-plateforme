@@ -90,6 +90,13 @@ Il convient toutefois d'éviter une vision trop simpliste selon laquelle « jeu 
 
 ## Créer un jeu de société d’édu. Médias. au cours
 
+::: tip Exemple de transposition ludopédagogique : Matérialiser la « bulle de filtres » en règle de jeu
+Comment faire comprendre le concept abstrait d'algorithme d'enfermement informationnel à des élèves du secondaire ?
+- **Mécanique ludique** : Dans votre jeu de société, chaque fois qu'un joueur valide une carte d'un certain type (ex: *Théorie sensationnelle* ou *Rumeur virale*), il reçoit un jeton « Algorithme ».
+- **Règle de contrainte** : Dès qu'un joueur accumule 3 jetons, il a l'interdiction de piocher dans la pioche commune : il doit obligatoirement piocher dans le paquet de défausse orienté de son voisin de gauche, simulant concrètement l'enfermement dans une bulle de recommandations personnalisées.
+:::
+
+
 Le projet proposé consiste à placer les étudiants dans la situation de concepteurs d'un jeu de société intégrant des apprentissages liés au numérique, aux médias et aux technologies. L'objectif n'est pas simplement de fabriquer un objet amusant. Les étudiants doivent concevoir un dispositif pédagogique cohérent, depuis l'idée initiale jusqu'à l'expérimentation avec des joueurs.
 
 Cette démarche est particulièrement intéressante parce qu'elle transforme l'étudiant en designer, producteur, technicien, communicant et évaluateur de sa propre production.

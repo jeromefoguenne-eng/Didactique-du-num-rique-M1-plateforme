@@ -91,6 +91,16 @@ Modalité explicite de rétroaction (feedback constructif et formatif) permettan
 
 ## La triple concordance pédagogique et la taxonomie de Bloom
 
+::: danger Exemple d'analyse : Rupture classique de triple concordance didactique
+Voici une incohérence fréquente observée dans les préparations de leçons :
+- **Objectif d'apprentissage annoncé** : *« L'élève sera capable d'analyser la fiabilité et les intentions d'un site web »* (Niveau 4 de Bloom : Analyser).
+- **Activité proposée** : L'enseignant fait un exposé transmissif magistral sur l'histoire d'Internet.
+- **Évaluation sommative** : Un questionnaire fermé demandant *« Qu'est-ce qu'une URL ? »* ou *« Citez 3 extensions de domaine »* (Niveau 1 de Bloom : Mémoriser).
+
+**Diagnostic didactique** : Il y a rupture complète de la triple concordance. L'activité ne permet pas d'exercer l'analyse, et l'évaluation ne mesure que de la mémorisation lexicale. Pour rétablir la concordance, l'évaluation devrait confronter l'élève à deux articles contradictoires sur un même événement et lui demander d'argumenter sur leur degré de crédibilité à l'aide d'une grille critériée.
+:::
+
+
 L'efficacité d'une séquence d'apprentissage repose sur deux piliers théoriques incontournables de l'ingénierie éducative contemporaine : le modèle de l'alignement constructif (ou triple concordance) théorisé par John Biggs, et la taxonomie des objectifs éducatifs issue des travaux de Benjamin Bloom, révisée par Lorin Anderson et David Krathwohl.
 
 La Triple Concordance de John Biggs (Alignement Constructif)

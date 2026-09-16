@@ -2,36 +2,21 @@
 title: "01. Compétences numériques : de la technique à l'autonomie critique"
 description: "Hub de la thématique 1 : Cadres DigComp, éducation aux médias, citoyenneté et IA générative"
 ---
-
 <script setup>
 const subCategories = [
   {
-    title: "1.1 Cadres : DigComp & CRCN",
-    tag: "Cadre Officiel",
-    desc: "Définition de la compétence numérique, modèle DigComp 2.2 et distinction essentielle entre outil, habileté et compétence.",
+    title: "1.1 Qu'est-ce qu'une compétence numérique ?",
+    tag: "Cadre & Définitions",
+    desc: "Le modèle européen DigComp, le triptyque outil / habileté / compétence, savoirs, savoir-faire, attitudes et dimension critique.",
     link: "/modules/01-1-definition-digcomp",
     image: "/images/subcategories/sub-1-1-digcomp.jpg"
   },
   {
-    title: "1.2 Éducation aux Médias",
-    tag: "Esprit Critique",
-    desc: "Évaluer l'information, décoder les infox, comprendre les bulles de filtres et les algorithmes de recommandation.",
+    title: "1.2 L'importance de l'éducation aux médias dans les compétences numériques",
+    tag: "Éducation aux Médias",
+    desc: "Citoyenneté numérique, esprit critique face aux infox et complots, post-vérité, IA générative, sensationnalisme et autonomie critique.",
     link: "/modules/01-2-education-aux-medias",
     image: "/images/subcategories/sub-1-2-medialit.jpg"
-  },
-  {
-    title: "1.3 Citoyenneté & RGPD",
-    tag: "Éthique & Droits",
-    desc: "Traces numériques, protection des données scolaires (RGPD), droit à l'image et licences Creative Commons.",
-    link: "/modules/01-3-citoyennete-ethique",
-    image: "/images/subcategories/sub-1-3-citizenship.jpg"
-  },
-  {
-    title: "1.4 IA & Algorithmes",
-    tag: "Intelligence Artificielle",
-    desc: "Comprendre les modèles de langage (LLM), art du prompt pédagogique, opportunités et limites pour les élèves.",
-    link: "/modules/01-4-ia-algorithmes",
-    image: "/images/subcategories/sub-1-4-ai-algo.jpg"
   }
 ]
 </script>

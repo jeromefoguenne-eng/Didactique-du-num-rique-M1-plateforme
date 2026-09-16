@@ -6,53 +6,18 @@ description: "Hub du Projet Fil Rouge : Ludopédagogie, règles, cartes IA, FabL
 <script setup>
 const subCategories = [
   {
-    title: "5.1 Concept & Ludopédagogie",
-    tag: "Théorie du Jeu",
-    desc: "Pourquoi créer un jeu pour enseigner ? De Huizinga à Caillois, le cercle magique et l'apprentissage expérientiel.",
+    title: "5.1 Méthodologie et fondements ludopédagogiques",
+    tag: "Ludopédagogie",
+    desc: "Pourquoi créer un jeu pour enseigner ? De Huizinga à Caillois, le cercle magique, l'apprentissage expérientiel et l'engagement.",
     link: "/modules/05-projet-jeu-societe#5-1-une-methodologie-pedagogique-fondee-sur-l-experience-ludique",
     image: "/images/subcategories/sub-5-1-ludopedagogy.jpg"
   },
   {
-    title: "5.2 Règles & Mécaniques",
-    tag: "Game Design",
-    desc: "Concevoir les boucles de jeu, équilibrer les chances, rédiger un livret de règles clair et sans ambiguïté.",
+    title: "5.2 Création pas à pas & Fabrication numérique",
+    tag: "Projet Fil Rouge",
+    desc: "Règles du jeu, identité graphique, cartes générées par IA, fabrication FabLab laser/3D, capsule vidéo et playtest.",
     link: "/modules/06-regles-du-jeu",
-    image: "/images/subcategories/sub-5-2-rules.jpg"
-  },
-  {
-    title: "5.3 Photographie & Graphisme",
-    tag: "Identité Visuelle",
-    desc: "Cadrage, éclairage, droit à l'image des élèves, retouche et mise en page sur Canva.",
-    link: "/modules/07-photographie-image",
-    image: "/images/subcategories/sub-5-3-graphics.jpg"
-  },
-  {
-    title: "5.4 [Jalon] Cartes & IA",
-    tag: "Jalon Noté 1",
-    desc: "Générer les illustrations des cartes de jeu via Midjourney/DALL-E, prompts rigoureux et gabarits d'impression.",
-    link: "/modules/08-cartes-ia",
-    image: "/images/subcategories/sub-5-4-cards-ai.jpg"
-  },
-  {
-    title: "5.5 [Jalon] FabLab (Laser/3D)",
-    tag: "Jalon Noté 2",
-    desc: "Fabrication numérique au FabLab : vectorisation pour découpe laser du plateau et impression 3D des pions.",
-    link: "/modules/09-prototypage-fablab",
     image: "/images/subcategories/sub-5-5-fablab.jpg"
-  },
-  {
-    title: "5.6 Capsule Vidéo Promo",
-    tag: "Communication",
-    desc: "Scénarisation, tournage face caméra, montage dynamique et pitch de présentation de votre jeu.",
-    link: "/modules/10-capsule-video",
-    image: "/images/subcategories/sub-5-6-video.jpg"
-  },
-  {
-    title: "5.7 [Jalon] Playtest & Retours",
-    tag: "Évaluation Finale",
-    desc: "Tester le jeu en conditions réelles avec des élèves, recueil de feedbacks et ajustements itératifs.",
-    link: "/modules/11-playtest-evaluation",
-    image: "/images/subcategories/sub-5-7-playtest.jpg"
   }
 ]
 </script>

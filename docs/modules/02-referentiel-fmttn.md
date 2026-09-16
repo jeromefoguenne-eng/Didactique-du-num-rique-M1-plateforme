@@ -6,32 +6,18 @@ description: "Hub de la thématique 2 : Les 4 champs, progression spiralaire, ar
 <script setup>
 const subCategories = [
   {
-    title: "2.1 Les 4 Champs du FMTTN",
+    title: "2.1 Les quatre champs d'apprentissage du numérique",
     tag: "Cadre Curriculaire",
-    desc: "Informations et données, communication et collaboration, création de contenus et sécurité.",
+    desc: "Informations et données, communication et collaboration, création de contenus, sécurité et environnement technique.",
     link: "/modules/02-1-quatre-champs",
     image: "/images/subcategories/sub-2-1-champs.jpg"
   },
   {
-    title: "2.2 Progression Spiralaire",
+    title: "2.2 La progression des apprentissages numériques",
     tag: "Parcours P1 - S3",
-    desc: "Organisation par cycles dans le Tronc Commun, passage progressif du guidage vers l'autonomie critique.",
+    desc: "Progression spiralaire, passage de la maîtrise technique à la littératie, autonomie, attendus certifiables et conception didactique.",
     link: "/modules/02-2-progression-spiralaire",
     image: "/images/subcategories/sub-2-2-spiral.jpg"
-  },
-  {
-    title: "2.3 Mathématiques & Numérique",
-    tag: "Didactique Spécialisée",
-    desc: "Tableur, géométrie dynamique (GeoGebra), pensée algorithmique et modélisation en sciences.",
-    link: "/modules/02-3-math-numerique",
-    image: "/images/subcategories/sub-2-3-mathnum.jpg"
-  },
-  {
-    title: "2.4 Savoirs & Attendus",
-    tag: "Vocabulaire Officiel",
-    desc: "Distinguer savoirs, savoir-faire, compétences et attendus certifiables dans le texte ministériel.",
-    link: "/modules/02-4-savoirs-attendus",
-    image: "/images/subcategories/sub-2-4-savoirs.jpg"
   }
 ]
 </script>

@@ -47,8 +47,8 @@ defineProps({
 
 .subcat-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
 }
 
 .subcat-card {
@@ -73,7 +73,7 @@ defineProps({
 .subcat-image-wrapper {
   position: relative;
   width: 100%;
-  height: 135px;
+  height: 160px;
   overflow: hidden;
   background: var(--vp-c-bg-alt);
 }

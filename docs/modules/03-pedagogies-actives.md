@@ -6,39 +6,18 @@ description: "Hub de la thématique 3 : Situation-problème, pédagogie par proj
 <script setup>
 const subCategories = [
   {
-    title: "3.1 La Situation-Problème",
+    title: "3.1 Les méthodologies actives et innovantes",
     tag: "Didactique Active",
-    desc: "Inverser la logique transmissive : partir d'une énigme concrète pour susciter le besoin d'apprendre.",
+    desc: "La situation-problème, l'apprentissage par projet, la démarche d'investigation, les défis express 20 min et la conception itérative.",
     link: "/modules/03-1-situation-probleme",
     image: "/images/subcategories/sub-3-1-problem.jpg"
   },
   {
-    title: "3.2 Pédagogie par Projet",
-    tag: "Travail d'Équipe",
-    desc: "Apprendre en fabriquant une production utile et concrète, autonomie et coconstruction des savoirs.",
-    link: "/modules/03-2-pedagogie-projet",
-    image: "/images/subcategories/sub-3-2-project.jpg"
-  },
-  {
-    title: "3.3 Démarche d'Investigation",
-    tag: "Esprit Scientifique",
-    desc: "Placer l'élève dans la posture du chercheur : question ouverte, hypothèses, vérification et preuves.",
-    link: "/modules/03-3-investigation-enquete",
-    image: "/images/subcategories/sub-3-3-inquiry.jpg"
-  },
-  {
-    title: "3.4 Défis Express (20 min)",
-    tag: "Gamification",
-    desc: "L'urgence créative : stimuler l'émulation et vaincre la page blanche grâce à des activités en temps contraint.",
-    link: "/modules/03-4-defis-express",
-    image: "/images/subcategories/sub-3-4-defis.jpg"
-  },
-  {
-    title: "3.5 Démarche Itérative",
-    tag: "Droit à l'Erreur",
-    desc: "Prototyper, tester, échouer, comprendre l'erreur et améliorer : la boucle féconde de l'ingénierie.",
-    link: "/modules/03-5-iteration-erreur",
-    image: "/images/subcategories/sub-3-5-iteration.jpg"
+    title: "3.2 L'enseignement et l'accompagnement à distance",
+    tag: "Hybridation & Autonomie",
+    desc: "Scénariser plutôt que transmettre, alterner temps synchrones/asynchrones, organiser les interactions et évaluation continue.",
+    link: "/guide/distanciel",
+    image: "/images/subcategories/sub-7-1-distanciel.jpg"
   }
 ]
 </script>

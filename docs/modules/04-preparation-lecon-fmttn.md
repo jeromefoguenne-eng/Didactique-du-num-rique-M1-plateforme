@@ -6,32 +6,18 @@ description: "Hub de la thématique 4 : Triple concordance didactique, taxonomie
 <script setup>
 const subCategories = [
   {
-    title: "4.1 Triple Concordance",
-    tag: "Alignement Didactique",
-    desc: "L'alignement constructif de Biggs : faire coïncider objectifs (attendus), activités élèves et modalités d'évaluation.",
-    link: "/modules/04-1-triple-concordance",
-    image: "/images/subcategories/sub-4-1-alignment.jpg"
-  },
-  {
-    title: "4.2 Taxonomie de Bloom",
-    tag: "Objectifs & Verbes",
-    desc: "Les 6 niveaux cognitifs appliqués au numérique : hisser les élèves de la mémorisation vers l'analyse critique et la création.",
-    link: "/modules/04-2-taxonomie-bloom",
-    image: "/images/subcategories/sub-4-2-bloom.jpg"
-  },
-  {
-    title: "4.3 Fiche de Préparation Type",
+    title: "4.1 Les éléments indispensables d'une préparation FMTTN",
     tag: "Canevas HECh",
-    desc: "En-tête institutionnel strict, tableau synoptique de déroulement, minutage, gestion du matériel et différenciation.",
+    desc: "En-tête institutionnel strict, tableau synoptique de déroulement, minutage, gestion du matériel technique et différenciation.",
     link: "/modules/04-3-fiche-preparation-type",
     image: "/images/subcategories/sub-4-3-lessonplan.jpg"
   },
   {
-    title: "4.4 Assistant IA & Prompts",
-    tag: "Outils Enseignant",
-    desc: "Utiliser l'IA comme copilote didactique : prompts calibrés pour générer situations-problèmes et grilles d'évaluation.",
-    link: "/modules/04-4-assistant-ia-hech",
-    image: "/images/subcategories/sub-4-4-ai-assistant.jpg"
+    title: "4.2 Alignement didactique & Assistant IA",
+    tag: "Ingénierie & Outils",
+    desc: "La triple concordance de Biggs, taxonomie de Bloom appliquée au numérique et utilisation de l'Assistant Cours FMTTN HECh.",
+    link: "/modules/04-1-triple-concordance",
+    image: "/images/subcategories/sub-4-1-alignment.jpg"
   }
 ]
 </script>

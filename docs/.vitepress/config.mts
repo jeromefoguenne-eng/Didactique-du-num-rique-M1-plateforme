@@ -2,88 +2,79 @@
 
 export default defineConfig({
   title: "Didactique du Numérique",
-  titleTemplate: ":title | Didactique Numérique M1 (HECh)",
-  description: "Tableau de bord modulaire et notes de cours enrichies pour le Master 1 (HECh / FWB)",
+  titleTemplate: ":title | HECh",
+  description: "Plateforme et notes de cours pour le Master 1 en Didactique du numérique (HECh / FWB)",
   base: "/Didactique-du-num-rique-M1-plateforme/",
   lang: "fr-FR",
   cleanUrls: true,
   lastUpdated: true,
 
   themeConfig: {
-    logo: { text: "🎓 M1 DidacNum" },
-    siteTitle: "Didactique du Numérique M1",
+    logo: '/images/logo-hech.png',
+    siteTitle: "Didactique Numérique",
 
     nav: [
-      { text: "🏠 Tableau de bord", link: "/" },
-      { text: "🧭 1. Fondements & IA", link: "/modules/01-competences-numeriques" },
-      { text: "📜 2. Référentiel FMTTN", link: "/modules/02-referentiel-fmttn" },
-      { text: "🛠️ 3. Méthodologies", link: "/modules/03-pedagogies-actives" },
-      { text: "📝 4. Préparer une Leçon", link: "/modules/04-preparation-lecon-fmttn" },
-      { text: "🎲 5. Projet FabLab", link: "/modules/05-projet-jeu-societe" },
-      { text: "✏️ 6. Ateliers Pratiques", link: "/ateliers/" },
-      { 
-        text: "Plus...",
-        items: [
-          { text: "🎓 7. Guide & Évaluation", link: "/guide/distanciel" },
-          { text: "📚 8. Ressources & Téléchargements", link: "/ressources/documents" },
-          { text: "📖 Bibliographie sélective (APA)", link: "/ressources/bibliographie" },
-          { text: "💡 Introduction philosophique IA", link: "/modules/00-introduction-ia-ethique" }
-        ]
-      }
+      { text: "Accueil", link: "/" },
+      { text: "Ateliers", link: "/ateliers/" },
+      { text: "Ressources", link: "/ressources/documents" }
     ],
 
     sidebar: {
       '/modules/': [
         {
-          text: "🗂️ Les 8 Pôles du Cours",
+          text: "Navigation",
           items: [
-            { text: "🏠 Retour au tableau de bord", link: "/" }
+            { text: "🏠 Accueil (Toutes les tuiles)", link: "/" }
           ]
         },
         {
-          text: "🧭 1. Fondements & Esprit Critique",
+          text: "1. Compétences & Esprit Critique",
           items: [
-            { text: "00. Penser l'IA & Éthique (Alombert)", link: "/modules/00-introduction-ia-ethique" },
-            { text: "01. Compétences numériques & Édumédias", link: "/modules/01-competences-numeriques" }
+            { text: "Compétences numériques & Édumédias", link: "/modules/01-competences-numeriques" }
           ]
         },
         {
-          text: "📜 2. Référentiel FMTTN (FWB)",
+          text: "2. Référentiel FMTTN (FWB)",
           items: [
-            { text: "02. Les 4 champs & Progression spiralaire", link: "/modules/02-referentiel-fmttn" }
+            { text: "Les 4 champs & Progression spiralaire", link: "/modules/02-referentiel-fmttn" }
           ]
         },
         {
-          text: "🛠️ 3. Didactique & Méthodologies Actives",
+          text: "3. Méthodologies Actives",
           items: [
-            { text: "03. Enseigner : Projet, investigation, défi", link: "/modules/03-pedagogies-actives" }
+            { text: "Projet, investigation, défi, itération", link: "/modules/03-pedagogies-actives" }
           ]
         },
         {
-          text: "📝 4. Préparer une Leçon FMTTN",
+          text: "4. Préparer une Leçon FMTTN",
           items: [
-            { text: "04. Triple concordance & Bloom révisé", link: "/modules/04-preparation-lecon-fmttn" }
+            { text: "Triple concordance & Bloom appliqué", link: "/modules/04-preparation-lecon-fmttn" }
           ]
         },
         {
-          text: "🎲 5. Projet FabLab : Jeu de Société",
+          text: "5. Projet FabLab : Jeu de Société",
           items: [
-            { text: "05. Ludopédagogie & Édumédias", link: "/modules/05-projet-jeu-societe" },
-            { text: "06. Mécanique & Règles du jeu", link: "/modules/06-regles-du-jeu" },
-            { text: "07. Photographie, image & droit", link: "/modules/07-photographie-image" },
-            { text: "08. [Jalon] Cartes de jeu & IA", link: "/modules/08-cartes-ia" },
-            { text: "09. [Jalon] FabLab (Laser & 3D)", link: "/modules/09-prototypage-fablab" },
-            { text: "10. Capsule vidéo du jeu", link: "/modules/10-capsule-video" },
-            { text: "11. [Jalon] Playtest & Évaluation", link: "/modules/11-playtest-evaluation" }
+            { text: "Concept du jeu & Ludopédagogie", link: "/modules/05-projet-jeu-societe" },
+            { text: "Règles & Mécanique du jeu", link: "/modules/06-regles-du-jeu" },
+            { text: "Photographie, image & droit", link: "/modules/07-photographie-image" },
+            { text: "[Jalon] Cartes de jeu & IA", link: "/modules/08-cartes-ia" },
+            { text: "[Jalon] FabLab (Laser & 3D)", link: "/modules/09-prototypage-fablab" },
+            { text: "Capsule vidéo du jeu", link: "/modules/10-capsule-video" },
+            { text: "[Jalon] Playtest & Retours", link: "/modules/11-playtest-evaluation" }
           ]
         }
       ],
 
       '/ateliers/': [
         {
-          text: "✏️ Espace Ateliers & Corrigés",
+          text: "Navigation",
           items: [
-            { text: "🏠 Retour au tableau de bord", link: "/" },
+            { text: "🏠 Accueil (Toutes les tuiles)", link: "/" }
+          ]
+        },
+        {
+          text: "Ateliers & Défis Pratiques",
+          items: [
             { text: "Vue d'ensemble des ateliers", link: "/ateliers/" },
             { text: "Atelier 1 : Diagnostic compétences", link: "/ateliers/exercice-01" },
             { text: "Atelier 2 : Évaluer une information", link: "/ateliers/exercice-02" },
@@ -98,9 +89,14 @@ export default defineConfig({
 
       '/guide/': [
         {
-          text: "🎓 Accompagnement & Évaluation",
+          text: "Navigation",
           items: [
-            { text: "🏠 Retour au tableau de bord", link: "/" },
+            { text: "🏠 Accueil (Toutes les tuiles)", link: "/" }
+          ]
+        },
+        {
+          text: "Accompagnement & Évaluation",
+          items: [
             { text: "Guide de l'étudiant à distance", link: "/guide/distanciel" },
             { text: "Modalités d'évaluation & Grille", link: "/guide/evaluation" }
           ]
@@ -109,9 +105,14 @@ export default defineConfig({
 
       '/ressources/': [
         {
-          text: "📚 Ressources & Boîte à Outils",
+          text: "Navigation",
           items: [
-            { text: "🏠 Retour au tableau de bord", link: "/" },
+            { text: "🏠 Accueil (Toutes les tuiles)", link: "/" }
+          ]
+        },
+        {
+          text: "Ressources & Boîte à Outils",
+          items: [
             { text: "Documents & Référentiels PDF", link: "/ressources/documents" },
             { text: "Bibliographie sélective (APA)", link: "/ressources/bibliographie" }
           ]
@@ -126,16 +127,16 @@ export default defineConfig({
           root: {
             translations: {
               button: {
-                buttonText: 'Rechercher dans le cours...',
-                buttonAriaLabel: 'Rechercher'
+                buttonText: 'Rechercher...',
+                buttonAriaLabel: 'Rechercher dans le cours'
               },
               modal: {
-                noResultsText: 'Aucun résultat trouvé pour',
+                noResultsText: 'Aucun résultat pour',
                 resetButtonTitle: 'Effacer la recherche',
                 footer: {
-                  selectText: 'pour choisir',
-                  navigateText: 'pour naviguer',
-                  closeText: 'pour fermer'
+                  selectText: 'choisir',
+                  navigateText: 'naviguer',
+                  closeText: 'fermer'
                 }
               }
             }
@@ -145,8 +146,8 @@ export default defineConfig({
     },
 
     docFooter: {
-      prev: 'Pôle précédent',
-      next: 'Pôle suivant'
+      prev: 'Section précédente',
+      next: 'Section suivante'
     },
 
     outline: {

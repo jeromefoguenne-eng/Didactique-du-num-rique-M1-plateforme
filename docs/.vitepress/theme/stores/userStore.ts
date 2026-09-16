@@ -1,4 +1,4 @@
-﻿import { reactive, computed } from 'vue'
+import { reactive, computed } from 'vue'
 
 export interface User {
   id: string
@@ -7,6 +7,7 @@ export interface User {
   email: string
   role: 'student' | 'admin'
   registeredAt: string
+  status?: 'active' | 'archived'
 }
 
 export interface Submission {
@@ -34,7 +35,8 @@ const DEFAULT_USERS: User[] = [
     lastName: 'Dubois',
     email: 'sarah.dubois@student.hech.be',
     role: 'student',
-    registeredAt: '2026-09-15 14:30'
+    registeredAt: '2026-09-15 14:30',
+    status: 'active'
   },
   {
     id: 'user-2',
@@ -42,7 +44,8 @@ const DEFAULT_USERS: User[] = [
     lastName: 'Lambert',
     email: 'maxime.lambert@student.hech.be',
     role: 'student',
-    registeredAt: '2026-09-15 16:15'
+    registeredAt: '2026-09-15 16:15',
+    status: 'active'
   },
   {
     id: 'user-3',
@@ -50,7 +53,8 @@ const DEFAULT_USERS: User[] = [
     lastName: 'Bastien',
     email: 'thomas.bastien@student.hech.be',
     role: 'student',
-    registeredAt: '2026-09-16 08:45'
+    registeredAt: '2026-09-16 08:45',
+    status: 'active'
   }
 ]
 
@@ -122,7 +126,10 @@ function setStorage<T>(key: string, val: T): void {
 
 const state = reactive({
   currentUser: getStorage<User | null>(STORAGE_KEY_CURRENT, null),
-  users: getStorage<User[]>(STORAGE_KEY_USERS, DEFAULT_USERS),
+  users: getStorage<User[]>(STORAGE_KEY_USERS, DEFAULT_USERS).map(u => ({
+    ...u,
+    status: u.status || 'active'
+  })),
   progress: getStorage<Record<string, string[]>>(STORAGE_KEY_PROGRESS, DEFAULT_PROGRESS),
   submissions: getStorage<Submission[]>(STORAGE_KEY_SUBMISSIONS, DEFAULT_SUBMISSIONS),
   adminPin: getStorage<string>(STORAGE_KEY_ADMIN_PIN, 'hech2026')
@@ -146,6 +153,10 @@ export const userStore = {
     const cleanEmail = email.trim().toLowerCase()
     const existing = state.users.find(u => u.email === cleanEmail)
     if (existing) {
+      if (existing.status === 'archived') {
+        existing.status = 'active'
+        setStorage(STORAGE_KEY_USERS, state.users)
+      }
       state.currentUser = existing
       setStorage(STORAGE_KEY_CURRENT, state.currentUser)
       return { success: true, user: existing, message: 'Re-connexion automatique.' }
@@ -157,7 +168,8 @@ export const userStore = {
       lastName: lastName.trim(),
       email: cleanEmail,
       role: 'student',
-      registeredAt: new Date().toISOString().replace('T', ' ').substring(0, 16)
+      registeredAt: new Date().toISOString().replace('T', ' ').substring(0, 16),
+      status: 'active'
     }
 
     state.users.push(newUser)
@@ -173,10 +185,133 @@ export const userStore = {
     return { success: true, user: newUser }
   },
 
+  addStudent(firstName: string, lastName: string, email: string) {
+    const cleanEmail = email.trim().toLowerCase()
+    if (!cleanEmail || !firstName.trim() || !lastName.trim()) {
+      return { success: false, message: 'Tous les champs sont obligatoires.' }
+    }
+
+    const existing = state.users.find(u => u.email === cleanEmail)
+    if (existing) {
+      existing.firstName = firstName.trim()
+      existing.lastName = lastName.trim()
+      existing.status = 'active'
+      setStorage(STORAGE_KEY_USERS, state.users)
+      return { success: true, message: 'Étudiant déjà existant : profil réactivé et mis à jour.' }
+    }
+
+    const newUser: User = {
+      id: `user-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
+      firstName: firstName.trim(),
+      lastName: lastName.trim(),
+      email: cleanEmail,
+      role: 'student',
+      registeredAt: new Date().toISOString().replace('T', ' ').substring(0, 16),
+      status: 'active'
+    }
+
+    state.users.push(newUser)
+    if (!state.progress[cleanEmail]) {
+      state.progress[cleanEmail] = []
+    }
+
+    setStorage(STORAGE_KEY_USERS, state.users)
+    setStorage(STORAGE_KEY_PROGRESS, state.progress)
+    return { success: true, message: 'Étudiant ajouté avec succès !' }
+  },
+
+  deleteStudent(email: string) {
+    const cleanEmail = email.trim().toLowerCase()
+    const index = state.users.findIndex(u => u.email === cleanEmail)
+    if (index >= 0) {
+      state.users.splice(index, 1)
+      delete state.progress[cleanEmail]
+      state.submissions = state.submissions.filter(s => s.userEmail !== cleanEmail)
+
+      if (state.currentUser?.email === cleanEmail) {
+        state.currentUser = null
+        if (typeof window !== 'undefined') localStorage.removeItem(STORAGE_KEY_CURRENT)
+      }
+
+      setStorage(STORAGE_KEY_USERS, state.users)
+      setStorage(STORAGE_KEY_PROGRESS, state.progress)
+      setStorage(STORAGE_KEY_SUBMISSIONS, state.submissions)
+      return { success: true, message: 'Étudiant supprimé.' }
+    }
+    return { success: false, message: 'Étudiant non trouvé.' }
+  },
+
+  toggleArchiveStudent(email: string) {
+    const cleanEmail = email.trim().toLowerCase()
+    const user = state.users.find(u => u.email === cleanEmail)
+    if (user) {
+      user.status = user.status === 'archived' ? 'active' : 'archived'
+      setStorage(STORAGE_KEY_USERS, state.users)
+      return { success: true, status: user.status }
+    }
+    return { success: false, message: 'Étudiant non trouvé.' }
+  },
+
+  importStudentsFromCSV(csvText: string) {
+    const lines = csvText.split(/\r?\n/).map(l => l.trim()).filter(Boolean)
+    if (lines.length <= 1) {
+      return { success: false, count: 0, message: 'Fichier CSV vide ou incomplet.' }
+    }
+
+    const separator = lines[0].includes(';') ? ';' : ','
+    const headers = lines[0].split(separator).map(h => h.trim().toLowerCase().replace(/["']/g, ''))
+
+    let colNom = headers.findIndex(h => h.includes('nom') && !h.includes('pre'))
+    let colPrenom = headers.findIndex(h => h.includes('pre') || h.includes('prénom'))
+    let colEmail = headers.findIndex(h => h.includes('mail'))
+
+    // Default fallback to columns 0, 1, 2 if headers not strictly recognized
+    if (colNom === -1) colNom = 0
+    if (colPrenom === -1) colPrenom = 1
+    if (colEmail === -1) colEmail = 2
+
+    let importedCount = 0
+
+    for (let i = 1; i < lines.length; i++) {
+      const parts = lines[i].split(separator).map(p => p.trim().replace(/^["']|["']$/g, ''))
+      if (parts.length >= 3) {
+        const lastName = parts[colNom] || ''
+        const firstName = parts[colPrenom] || ''
+        const email = (parts[colEmail] || '').toLowerCase()
+
+        if (email && email.includes('@')) {
+          this.addStudent(firstName || 'Étudiant', lastName || 'Inconnu', email)
+          importedCount++
+        }
+      }
+    }
+
+    return {
+      success: true,
+      count: importedCount,
+      message: `${importedCount} étudiant(s) importé(s) avec succès !`
+    }
+  },
+
+  downloadCSVTemplate() {
+    const template = 'Nom;Prenom;Email\nDubois;Sarah;sarah.dubois@student.hech.be\nLambert;Maxime;maxime.lambert@student.hech.be\nBastien;Thomas;thomas.bastien@student.hech.be\n'
+    const blob = new Blob(['\ufeff' + template], { type: 'text/csv;charset=utf-8;' })
+    const link = document.createElement('a')
+    link.href = URL.createObjectURL(blob)
+    link.setAttribute('download', 'modele_import_etudiants_HECh.csv')
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  },
+
   login(email: string) {
     const cleanEmail = email.trim().toLowerCase()
     const user = state.users.find(u => u.email === cleanEmail)
     if (user) {
+      if (user.status === 'archived') {
+        user.status = 'active'
+        setStorage(STORAGE_KEY_USERS, state.users)
+      }
       state.currentUser = user
       setStorage(STORAGE_KEY_CURRENT, state.currentUser)
       return { success: true, user }
@@ -279,5 +414,19 @@ export const userStore = {
   updateAdminPin(newPin: string) {
     state.adminPin = newPin.trim()
     setStorage(STORAGE_KEY_ADMIN_PIN, state.adminPin)
+  },
+
+  changeAdminPassword(oldPin: string, newPin: string, confirmPin: string) {
+    if (!this.verifyAdminPin(oldPin)) {
+      return { success: false, message: "L'ancien mot de passe est incorrect." }
+    }
+    if (!newPin || newPin.trim().length < 4) {
+      return { success: false, message: 'Le nouveau mot de passe doit comporter au moins 4 caractères.' }
+    }
+    if (newPin.trim() !== confirmPin.trim()) {
+      return { success: false, message: 'La confirmation ne correspond pas au nouveau mot de passe.' }
+    }
+    this.updateAdminPin(newPin)
+    return { success: true, message: 'Mot de passe enseignant modifié avec succès !' }
   }
 }

@@ -1,23 +1,30 @@
 ---
 title: "04. Préparer une leçon FMTTN"
-description: "Hub de la thématique 4 : Triple concordance didactique, taxonomie de Bloom, canevas type et assistant IA HECh"
+description: "Hub de la thématique 4 : Éléments indispensables d'une fiche, alignement didactique et Assistant Cours HECh"
 ---
 
 <script setup>
 const subCategories = [
   {
     title: "4.1 Les éléments indispensables d'une préparation FMTTN",
-    tag: "Canevas HECh",
-    desc: "En-tête institutionnel strict, tableau synoptique de déroulement, minutage, gestion du matériel technique et différenciation.",
+    tag: "Canevas & Minutage",
+    desc: "En-tête institutionnel, tableau synoptique de déroulement, minutage, gestion du matériel technique et différenciation.",
     link: "/modules/04-3-fiche-preparation-type",
     image: "/images/subcategories/sub-4-3-lessonplan.jpg"
   },
   {
-    title: "4.2 Alignement didactique & Assistant IA",
-    tag: "Ingénierie & Outils",
-    desc: "La triple concordance de Biggs, taxonomie de Bloom appliquée au numérique et utilisation de l'Assistant Cours FMTTN HECh.",
+    title: "4.2 La triple concordance pédagogique et la taxonomie de Bloom",
+    tag: "Alignement Didactique",
+    desc: "Alignement constructif de Biggs (objectifs - activités - évaluation) et niveaux taxonomiques appliqués au numérique.",
     link: "/modules/04-1-triple-concordance",
     image: "/images/subcategories/sub-4-1-alignment.jpg"
+  },
+  {
+    title: "4.3 L'application ASSISTANT COURS FMTTN (HECh)",
+    tag: "Copilote IA HECh",
+    desc: "Outil d'audit temps réel de la triple concordance, suggestions d'attendus et génération guidée de préparations conformes.",
+    link: "/modules/04-4-assistant-ia-hech",
+    image: "/images/subcategories/sub-4-4-ai-assistant.jpg"
   }
 ]
 </script>
@@ -34,15 +41,4 @@ Préparer une leçon en FMTTN exige une posture rigoureuse : on ne choisit jamai
 
 ---
 
-## Le Triptyque de la Préparation Réussie
-
-```mermaid
-graph LR
-    A["Ancrage Curriculaire (Attendu FWB)"] --> B["Scénarisation Active (Élève Chercheur)"]
-    B --> C["Évaluation Critériée & Différenciation"]
-    style A fill:#dbeafe,stroke:#3b82f6
-    style B fill:#dcfce7,stroke:#22c55e
-    style C fill:#fef3c7,stroke:#f59e0b
-```
-
-Consultez les sous-parties ci-dessus pour accéder aux modèles de fiches, banques de verbes et invites IA prêtes à l'emploi.
+Consultez les dossiers ci-dessus pour accéder aux modèles de fiches, banques de verbes taxonomiques et invites IA prêtes à l'emploi.

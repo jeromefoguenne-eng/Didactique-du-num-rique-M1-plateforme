@@ -1,26 +1,23 @@
 ---
-title: "09. [Jalon] Fabriquer au FabLab : Découpeuse Laser & Impression 3D"
-description: "Fabrication numérique du plateau de jeu et des pions"
+title: "09. Fabriquer le plateau et les pions (FabLab)"
+description: "Découpeuse laser et impression 3D au FabLab HECh"
 ---
 
-# 09. Prototypage au FabLab : Découpeuse Laser & Impression 3D
+# 09. Fabriquer le plateau et les pions (FabLab)
 
-<Badge type="warning" text="Jalon 3 du Projet" /> <Badge type="tip" text="Pratique Atelier FabLab" />
+<Badge type="warning" text="En construction" />
 
-::: info Objectif du jalon
-Passer du fichier numérique à l'objet physique en mobilisant les machines à commande numérique : la **découpeuse laser** pour le plateau de jeu et la boîte, et l'**imprimante 3D** pour les pions ou accessoires personnalisés.
+::: warning En construction
+Ce chapitre est actuellement en cours de rédaction dans le syllabus officiel (Notes de cours).  
+Les contenus méthodologiques et techniques détaillés seront mis à disposition prochainement.
 :::
 
-## 1. Le plateau de jeu à la découpeuse laser
-- **Principe** : Découpe et gravure de bois contreplaqué (MDF / peuplier 3mm ou 4mm).
-- **Dessin vectoriel** : Maîtrise des tracés vectoriels sous Inkscape :
-  - Lignes de coupe (tracé rouge très fin, vectoriel).
-  - Gravure de surface (tracé noir, matriciel ou vectoriel).
-- **Assemblage** : Création d'encoches crantées pour fabriquer la boîte de rangement du jeu.
+---
 
-## 2. Les pions et dés à l'imprimante 3D (FDM)
-- **Modélisation volumique** : Conception 3D sous **Tinkercad** ou **Onshape**.
-- **Préparation à l'impression (Slicing)** : Export STL et tranchage sous Cura ou PrusaSlicer (hauteur de couche, remplissage, supports d'impression).
-- **Post-traitement** : Ébavurage et test fonctionnel sur le plateau.
+## 🎯 Objectif prévisionnel
+Découpeuse laser et impression 3D au FabLab HECh.
 
-> *Consignes de sécurité en atelier et fiches de réglage machines remises lors de la séance en présentiel au FabLab.*
+---
+
+## Navigation
+- ⬅️ **[05. Projet Jeu de société](/modules/05-projet-jeu-societe)**

@@ -39,15 +39,5 @@ La notion de compétence numérique occupe aujourd’hui une place centrale dans
 
 Le cadre européen **DigComp** et le référentiel de la **Fédération Wallonie-Bruxelles** dépassent cette conception : être compétent ne consiste pas seulement à savoir utiliser une technologie, mais à savoir mobiliser cette technologie de manière pertinente dans une situation complexe, tout en appréciant ses possibilités, ses biais et ses limites éthiques.
 
-```mermaid
-graph LR
-    A["L'Outil (Technique)"] --> B["L'Habileté (Procédure)"]
-    B --> C["La Compétence Réflexive (DigComp / FMTTN)"]
-    C --> D["Autonomie & Citoyenneté Critique"]
-    style A fill:#f1f5f9,stroke:#94a3b8
-    style B fill:#e0f2fe,stroke:#38bdf8
-    style C fill:#dbeafe,stroke:#3b82f6,stroke-width:2px
-    style D fill:#dcfce7,stroke:#22c55e,stroke-width:2px
-```
+Consultez les dossiers ci-dessus pour approfondir chaque partie du syllabus officiel et préparer les ateliers pratiques associés.
 
-Consultez les 4 sous-parties détaillées ci-dessus pour approfondir chaque axe du syllabus officiel et préparer les ateliers pratiques associés.

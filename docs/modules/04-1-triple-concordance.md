@@ -15,15 +15,11 @@ Théorisée par John Biggs sous le nom d'**alignement constructif** (*Constructi
   <img src="/images/image28.jpg" style="max-width: 85%; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: inline-block;" alt="Triple concordance" />
 </div>
 
-```mermaid
-graph TD
-    A["1. Objectifs d'Apprentissage (Attendus)"] <--> B["2. Activités d'Apprentissage (Tâches élèves)"]
-    B <--> C["3. Modalités d'Évaluation (Critères & Preuves)"]
-    C <--> A
-    style A fill:#dbeafe,stroke:#3b82f6,stroke-width:2px
-    style B fill:#dcfce7,stroke:#22c55e,stroke-width:2px
-    style C fill:#fef3c7,stroke:#f59e0b,stroke-width:2px
-```
+**L'alignement constructif des 3 piliers :**  
+1. **Objectifs d'apprentissage** (attendus du référentiel)  
+2. **Activités d'apprentissage** (tâches réelles confiées aux élèves)  
+3. **Modalités d'évaluation** (critères explicites et observables)
+
 
 ---
 

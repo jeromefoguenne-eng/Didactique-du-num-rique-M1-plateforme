@@ -36,10 +36,8 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: "📌 Vue d'ensemble (Hub)", link: "/modules/01-competences-numeriques" },
-            { text: "1.1 Cadres : DigComp & CRCN", link: "/modules/01-1-definition-digcomp" },
-            { text: "1.2 Éducation aux médias", link: "/modules/01-2-education-aux-medias" },
-            { text: "1.3 Citoyenneté & RGPD", link: "/modules/01-3-citoyennete-ethique" },
-            { text: "1.4 IA & Algorithmes", link: "/modules/01-4-ia-algorithmes" }
+            { text: "1.1 Qu'est-ce qu'une compétence numérique ?", link: "/modules/01-1-definition-digcomp" },
+            { text: "1.2 Éducation aux médias & esprit critique", link: "/modules/01-2-education-aux-medias" }
           ]
         },
         {
@@ -47,10 +45,9 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: "📌 Vue d'ensemble (Hub)", link: "/modules/02-referentiel-fmttn" },
-            { text: "2.1 Les 4 champs du FMTTN", link: "/modules/02-1-quatre-champs" },
-            { text: "2.2 Progression spiralaire", link: "/modules/02-2-progression-spiralaire" },
-            { text: "2.3 Mathématiques & Numérique", link: "/modules/02-3-math-numerique" },
-            { text: "2.4 Savoirs & Attendus", link: "/modules/02-4-savoirs-attendus" }
+            { text: "2.1 Les quatre champs d'apprentissage", link: "/modules/02-1-quatre-champs" },
+            { text: "2.2 Progression des apprentissages", link: "/modules/02-2-progression-apprentissages" },
+            { text: "2.3 Progression spiralaire & littératie", link: "/modules/02-3-progression-spiralaire" }
           ]
         },
         {
@@ -59,10 +56,12 @@ export default defineConfig({
           items: [
             { text: "📌 Vue d'ensemble (Hub)", link: "/modules/03-pedagogies-actives" },
             { text: "3.1 La Situation-Problème", link: "/modules/03-1-situation-probleme" },
-            { text: "3.2 Pédagogie par projet", link: "/modules/03-2-pedagogie-projet" },
-            { text: "3.3 Démarche d'investigation", link: "/modules/03-3-investigation-enquete" },
-            { text: "3.4 Défis express (20 min)", link: "/modules/03-4-defis-express" },
-            { text: "3.5 Démarche itérative & Erreur", link: "/modules/03-5-iteration-erreur" }
+            { text: "3.2 Apprentissage par projet", link: "/modules/03-2-pedagogie-projet" },
+            { text: "3.3 Apprentissage par investigation", link: "/modules/03-3-investigation-enquete" },
+            { text: "3.4 Le défi pédagogique", link: "/modules/03-4-defis-express" },
+            { text: "3.5 Démarche de conception itérative", link: "/modules/03-5-iteration-erreur" },
+            { text: "3.6 Expérientiel & Peer learning (42)", link: "/modules/03-6-peer-learning" },
+            { text: "3.7 L'enseignement à distance", link: "/modules/03-7-enseignement-distance" }
           ]
         },
         {
@@ -70,10 +69,9 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: "📌 Vue d'ensemble (Hub)", link: "/modules/04-preparation-lecon-fmttn" },
-            { text: "4.1 Triple concordance", link: "/modules/04-1-triple-concordance" },
-            { text: "4.2 Taxonomie de Bloom", link: "/modules/04-2-taxonomie-bloom" },
-            { text: "4.3 Fiche de préparation type", link: "/modules/04-3-fiche-preparation-type" },
-            { text: "4.4 Assistant IA HECh & Prompts", link: "/modules/04-4-assistant-ia-hech" }
+            { text: "4.1 Éléments indispensables d'une fiche", link: "/modules/04-3-fiche-preparation-type" },
+            { text: "4.2 Triple concordance & Taxonomie", link: "/modules/04-1-triple-concordance" },
+            { text: "4.3 Assistant IA HECh & Copilote", link: "/modules/04-4-assistant-ia-hech" }
           ]
         },
         {
@@ -81,12 +79,13 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: "📌 Vue d'ensemble (Hub)", link: "/modules/05-projet-jeu-societe" },
-            { text: "5.2 Règles & Mécaniques", link: "/modules/06-regles-du-jeu" },
-            { text: "5.3 Photographie & Graphisme", link: "/modules/07-photographie-image" },
-            { text: "5.4 [Jalon] Cartes & IA", link: "/modules/08-cartes-ia" },
-            { text: "5.5 [Jalon] FabLab (Laser/3D)", link: "/modules/09-prototypage-fablab" },
-            { text: "5.6 Capsule Vidéo Promo", link: "/modules/10-capsule-video" },
-            { text: "5.7 [Jalon] Playtest & Retours", link: "/modules/11-playtest-evaluation" }
+            { text: "5.1 Ludopédagogie & Édumédias", link: "/modules/05-projet-jeu-societe#5-1-une-methodologie-pedagogique-fondee-sur-l-experience-ludique" },
+            { text: "5.2 Créer les règles du jeu", link: "/modules/06-regles-du-jeu" },
+            { text: "5.3 La photographie & composition", link: "/modules/07-photographie-image" },
+            { text: "5.4 [En construction] Cartes avec l'IA", link: "/modules/08-cartes-ia" },
+            { text: "5.5 [En construction] FabLab (Laser & 3D)", link: "/modules/09-prototypage-fablab" },
+            { text: "5.6 Capsule Vidéo de présentation", link: "/modules/10-capsule-video" },
+            { text: "5.7 [En construction] Tester le jeu", link: "/modules/11-playtest-evaluation" }
           ]
         }
       ],

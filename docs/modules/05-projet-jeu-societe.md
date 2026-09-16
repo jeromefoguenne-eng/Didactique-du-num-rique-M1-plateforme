@@ -1,23 +1,58 @@
 ---
-title: "05. Projet Jeu de Société : Ludopédagogie & Édumédias"
-description: "Hub du Projet Fil Rouge : Ludopédagogie, règles, cartes IA, FabLab, capsule vidéo et playtest"
+title: "05. Projet Jeu de société : Ludopédagogie & Édumédias"
+description: "Hub du Projet Fil Rouge : De la conception des règles à la fabrication FabLab et la capsule vidéo"
 ---
 
 <script setup>
 const subCategories = [
   {
-    title: "5.1 Méthodologie et fondements ludopédagogiques",
+    title: "5.1 Méthodologie ludopédagogique",
     tag: "Ludopédagogie",
-    desc: "Pourquoi créer un jeu pour enseigner ? De Huizinga à Caillois, le cercle magique, l'apprentissage expérientiel et l'engagement.",
+    desc: "Mobiliser le jeu pour construire des apprentissages : cercle magique, résolution de problèmes et éducation aux médias.",
     link: "/modules/05-projet-jeu-societe#5-1-une-methodologie-pedagogique-fondee-sur-l-experience-ludique",
     image: "/images/subcategories/sub-5-1-ludopedagogy.jpg"
   },
   {
-    title: "5.2 Création pas à pas & Fabrication numérique",
-    tag: "Projet Fil Rouge",
-    desc: "Règles du jeu, identité graphique, cartes générées par IA, fabrication FabLab laser/3D, capsule vidéo et playtest.",
+    title: "5.2 Créer les règles du jeu",
+    tag: "Règles du Jeu",
+    desc: "Structure formelle des règles, clarté, accessibilité, équilibre des mécaniques et ergonomie de lecture.",
     link: "/modules/06-regles-du-jeu",
+    image: "/images/subcategories/sub-5-2-rules.jpg"
+  },
+  {
+    title: "5.3 La photographie & composition visuelle",
+    tag: "Photographie",
+    desc: "Repères historiques, icônes, droit à l'image (peut-on tout photographier ?) et règles de composition visuelle.",
+    link: "/modules/07-photographie-image",
+    image: "/images/subcategories/sub-5-3-graphics.jpg"
+  },
+  {
+    title: "5.4 Créer des cartes avec l'IA",
+    tag: "En construction",
+    desc: "Génération d'illustrations cohérentes, prompts de style et questions éthiques liées aux modèles génératifs.",
+    link: "/modules/08-cartes-ia",
+    image: "/images/subcategories/sub-5-4-cards-ai.jpg"
+  },
+  {
+    title: "5.5 Fabriquer le plateau et les pions (FabLab)",
+    tag: "En construction",
+    desc: "Découpeuse laser pour le plateau et impression 3D pour les pions personnalisés au FabLab HECh.",
+    link: "/modules/09-prototypage-fablab",
     image: "/images/subcategories/sub-5-5-fablab.jpg"
+  },
+  {
+    title: "5.6 Concevoir une capsule vidéo",
+    tag: "Capsule Vidéo",
+    desc: "Les règles du tournage (11.1), cadrage, prise de son, pitch dynamique de 3 à 5 min pour valoriser votre jeu.",
+    link: "/modules/10-capsule-video",
+    image: "/images/subcategories/sub-5-6-video.jpg"
+  },
+  {
+    title: "5.7 Tester et faire tester le jeu",
+    tag: "En construction",
+    desc: "Séance de playtest en conditions réelles, récolte des retours des pairs et ajustement des mécaniques.",
+    link: "/modules/11-playtest-evaluation",
+    image: "/images/subcategories/sub-5-7-playtest.jpg"
   }
 ]
 </script>
@@ -29,7 +64,7 @@ Durant ce cours, vous allez concevoir en équipe un **jeu de société physique 
 Ce projet mobilise le numérique pour la création graphique (IA, Canva), la fabrication matérielle (FabLab HECh) et la communication audiovisuelle (capsule vidéo).
 :::
 
-### 🎯 Parcourez les jalons et étapes du projet :
+### 🎯 Parcourez les étapes du projet selon le syllabus :
 
 <SubCategoryTiles :items="subCategories" />
 
@@ -41,4 +76,9 @@ La ludopédagogie désigne une approche pédagogique qui mobilise le jeu comme m
 
 L'apprenant est placé en situation d'action, de décision, d'expérimentation, de coopération et de résolution de problèmes. Il apprend en faisant, mais également en analysant ce qu'il fait et en confrontant ses productions à celles des autres.
 
-Consultez les différents jalons ci-dessus pour préparer chaque étape de conception de votre jeu.
+### Créer un jeu de société d'éducation aux médias au cours
+Le projet consiste à concevoir un jeu de plateau ou de cartes dont le cœur porte sur un enjeu sociétal du numérique :
+- Esprit critique face aux flux informationnels (fact-checking, sources fiables) ;
+- Données personnelles et traces numériques ;
+- Cybercitoyenneté et respect des droits d'auteur ;
+- Compréhension des algorithmes de recommandation.

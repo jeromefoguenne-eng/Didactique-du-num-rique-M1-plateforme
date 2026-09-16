@@ -77,13 +77,11 @@ Le sensationnalisme repose sur la surexploitation d'anecdotes émotionnelles (fa
 
 ---
 
-## Synthèse : De la dépendance vers l'autonomie critique
+## Progression didactique : De la dépendance vers l'autonomie critique
 
-```mermaid
-graph TD
-    A["Niveau 1 : Dépendance technique<br/>(L'élève applique des procédures guidées)"] --> B["Niveau 2 : Littératie fonctionnelle<br/>(L'élève sait chercher et produire)"]
-    B --> C["Niveau 3 : Autonomie critique<br/>(L'élève évalue, contextualise et choisit consciemment)"]
-    style C fill:#dcfce7,stroke:#22c55e,stroke-width:2px
-```
+1. **Niveau 1 : Dépendance technique** — L'élève applique des procédures et manipulations guidées.
+2. **Niveau 2 : Littératie fonctionnelle** — L'élève sait rechercher des informations, produire des contenus et collaborer.
+3. **Niveau 3 : Autonomie critique** — L'élève évalue les sources, contextualise les informations et choisit consciemment ses outils.
 
 👉 **Atelier pratique associé** : [Atelier 2 : Évaluer une information et mener l'investigation](/ateliers/exercice-02)
+

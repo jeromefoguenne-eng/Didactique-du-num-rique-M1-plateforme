@@ -15,17 +15,9 @@ En informatique et en technologie, personne ne produit un code parfait ou un obj
   <img src="/images/image26.jpg" style="max-width: 85%; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: inline-block;" alt="Conception itérative" />
 </div>
 
-```mermaid
-graph LR
-    A["1. Prototyper (Ébauche rapide)"] --> B["2. Tester / Playtester"]
-    B --> C["3. Analyser les bugs ou faiblesses"]
-    C --> D["4. Corriger & Ajuster"]
-    D --> A
-    style A fill:#e0f2fe,stroke:#38bdf8
-    style B fill:#fef3c7,stroke:#f59e0b
-    style C fill:#fee2e2,stroke:#ef4444
-    style D fill:#dcfce7,stroke:#22c55e
-```
+**La boucle itérative :**  
+1. **Prototyper** (ébauche rapide) ➔ 2. **Tester / Playtester** ➔ 3. **Analyser** les blocages ou faiblesses ➔ 4. **Corriger & Ajuster** (nouvelle itération).
+
 
 ---
 

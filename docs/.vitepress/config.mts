@@ -64,13 +64,20 @@ export default defineConfig({
           ]
         },
         {
-          text: "4. Préparer une Leçon FMTTN",
+          text: "Évaluer un cours de numérique",
+          collapsed: false,
+          items: [
+            { text: "🎯 Principes, Grilles & Postures", link: "/modules/evaluer-cours-numerique" }
+          ]
+        },
+        {
+          text: "4. Préparer un cours FMTTN",
           collapsed: false,
           items: [
             { text: "📌 Vue d'ensemble (Hub)", link: "/modules/04-preparation-lecon-fmttn" },
             { text: "4.1 Éléments indispensables d'une fiche", link: "/modules/04-3-fiche-preparation-type" },
             { text: "4.2 Triple concordance & Bloom", link: "/modules/04-2-taxonomie-bloom" },
-            { text: "4.4 Assistant IA HECh & Copilote", link: "/modules/04-4-assistant-ia-hech" }
+            { text: "4.3 Assistant IA HECh & Copilote", link: "/modules/04-3-assistant-ia-hech" }
           ]
         },
         {

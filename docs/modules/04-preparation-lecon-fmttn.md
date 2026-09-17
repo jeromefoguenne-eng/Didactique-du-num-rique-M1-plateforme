@@ -20,10 +20,10 @@ const subCategories = [
     image: "/images/subcategories/sub-4-1-alignment.jpg"
   },
   {
-    title: "4.4 L'application ASSISTANT COURS FMTTN (HECh)",
+    title: "4.3 L'application ASSISTANT COURS FMTTN (HECh)",
     tag: "Copilote IA HECh",
     desc: "Outil d'audit temps réel de la triple concordance, suggestions d'attendus et génération guidée de préparations conformes.",
-    link: "/modules/04-4-assistant-ia-hech",
+    link: "/modules/04-3-assistant-ia-hech",
     image: "/images/subcategories/sub-4-4-ai-assistant.jpg"
   }
 ]

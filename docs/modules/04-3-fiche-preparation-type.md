@@ -64,43 +64,52 @@ En Fédération Wallonie-Bruxelles, le volet numérique du FMTTN fusionne les co
 La préparation doit identifier laquelle de ces trois dimensions est mobilisée et expliciter la compétence critique réellement travaillée.
 
 
-La Justification de la Démarche Méthodologique Active
+La Justification de la Démarche Méthodologique
 
 
-Avant même de choisir un quelconque logiciel ou matériel, l'enseignant doit formaliser sa stratégie pédagogique. Le FMTTN récuse l'enseignement frontal magistral pour privilégier les méthodes actives et socioconstructivistes :
+Avant même de choisir un quelconque logiciel ou matériel, l'enseignant doit formaliser sa stratégie pédagogique. Il met en place une **méthodologie choisie, cohérente et construite** pour orchestrer les apprentissages :
 
 
-Démarche d'investigation : émergence d'un problème, formulation d'hypothèses par les élèves, expérimentation, confrontation des données et synthèse collective.
+L'enseignant dispose de la pleine liberté professionnelle pour **choisir sa propre méthodologie** ou **inventer sa propre démarche didactique**, en l'ajustant avec précision aux besoins de sa classe et à la spécificité des attendus visés.
 
 
-Pédagogie par problème (PBL) ou Pédagogie du défi : confrontation à une énigme complexe ou à une mission contrainte nécessitant la création d'un algorithme ou d'un montage technique.
+À titre d'exemples et de repères possibles (sans caractère obligatoire ni exclusif), il peut notamment mobiliser :
 
 
-Apprentissage expérientiel (Cycle de Kolb) : manipulation concrète préalable, observation réflexive, conceptualisation abstraite de la règle technique, puis réinvestissement actif.
+- Démarche d'investigation : émergence d'un problème, formulation d'hypothèses par les élèves, expérimentation, confrontation des données et synthèse collective.
 
 
-Apprentissage par les pairs (Jigsaw) : distribution de rôles d'experts au sein d'îlots hétérogènes favorisant l'interdépendance positive.
+- Pédagogie par problème (PBL) ou Pédagogie du défi : confrontation à une énigme complexe ou à une mission contrainte nécessitant la création d'un algorithme ou d'un montage technique.
 
 
-L'enseignant doit justifier pourquoi la démarche retenue est la plus propice pour atteindre l'objectif sans créer de surcharge cognitive extrinsèque.
+- Apprentissage expérientiel (Cycle de Kolb) : manipulation concrète préalable, observation réflexive, conceptualisation abstraite de la règle technique, puis réinvestissement actif.
 
 
-La Scénarisation Didactique en Trois Temps Canoniques
+- Apprentissage par les pairs (Jigsaw) : distribution de rôles d'experts au sein d'îlots hétérogènes favorisant l'interdépendance positive.
 
 
-Le déroulement de la leçon doit rompre avec l'improvisation chronologique en adoptant une structure ternaire immuable :
+L'essentiel attendu de l'enseignant est d'argumenter son choix : démontrer pourquoi la démarche retenue est la plus propice pour atteindre l'objectif sans créer de surcharge cognitive extrinsèque.
 
 
-Phase 1 — Amorce & Problématisation (10-15 % du temps) : mise en situation stimulante, émergence des conceptions initiales des élèves, déstabilisation cognitive bienveillante et formulation claire du défi ou du problème technique à résoudre.
+La Scénarisation Didactique
 
 
-Phase 2 — Recherche, Manipulation & Expérimentation active (60-70 % du temps) : travail autonome ou coopératif en îlots. L'élève manipule, code, démonte, teste, échoue et itère. L'enseignant adopte une posture d'étayage (scaffolding), circule, relance le questionnement sans fournir immédiatement la solution clé en main, et régule le climat d'apprentissage.
+Le déroulement de la leçon s'articule habituellement autour d'une structure de référence en trois temps :
 
 
-Phase 3 — Institutionnalisation, Synthèse & Trace écrite (15-20 % du temps) : phase capitale trop souvent sacrifiée. Elle permet d'extraire le savoir savant du contexte particulier de l'activité. Les élèves verbalisent leurs découvertes, et l'enseignant formalise la règle, le schéma de principe ou l'organigramme logique qui sera consigné dans le cahier de l'élève.
+- Phase 1 — Amorce & Problématisation (10-15 % du temps) : mise en situation stimulante, émergence des conceptions initiales des élèves, déstabilisation cognitive bienveillante et formulation claire du défi ou du problème technique à résoudre.
 
 
-Cette scénarisation intègre obligatoirement des mesures explicites de différenciation pédagogique : des dispositifs de remédiation (cartes-indices, étayage procédural renforcé) pour les apprenants en difficulté, des pistes de dépassement (défis algorithmiques additionnels) pour les élèves rapides, et des aménagements raisonnables pour les élèves présentant des troubles des apprentissages (DYS).
+- Phase 2 — Recherche, Manipulation & Expérimentation active (60-70 % du temps) : travail autonome ou coopératif en îlots. L'élève manipule, code, démonte, teste, échoue et itère. L'enseignant adopte une posture d'étayage (scaffolding), circule, relance le questionnement sans fournir immédiatement la solution clé en main, et régule le climat d'apprentissage.
+
+
+- Phase 3 — Institutionnalisation, Synthèse & Trace écrite (15-20 % du temps) : phase capitale permettant d'extraire le savoir savant du contexte particulier de l'activité. Les élèves verbalisent leurs découvertes, et l'enseignant formalise la règle, le schéma de principe ou l'organigramme logique qui sera consigné dans le cahier de l'élève.
+
+
+Cette organisation en trois temps constitue le cadre habituel, mais **une scénarisation didactique n'est pas obligatoirement figée en trois temps**. L'enseignant a toute la liberté de modifier la structure de son déroulement (enchaînement de micro-défis itératifs avec feedback en continu, ateliers tournants, classe inversée, phases d'exploration rythmées), tant que la progression pédagogique reste lisible, motivante et qu'un temps d'institutionnalisation des notions clés est rigoureusement préservé.
+
+
+Quelle que soit la forme adoptée, la scénarisation intègre obligatoirement des mesures explicites de différenciation pédagogique : des dispositifs de remédiation (cartes-indices, étayage procédural renforcé) pour les apprenants en difficulté, des pistes de dépassement (défis algorithmiques additionnels) pour les élèves rapides, et des aménagements raisonnables pour les élèves présentant des troubles des apprentissages (DYS).
 
 
 Le Dispositif d'Évaluation Critériée & la Rétroaction

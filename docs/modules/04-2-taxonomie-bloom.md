@@ -183,4 +183,4 @@ L'utilisation de la taxonomie de Bloom est le rouage central qui fait fonctionne
 ## Navigation
 - ⬅️ **[4.1 Les éléments indispensables d'une préparation](/modules/04-3-fiche-preparation-type)**
 - 🏠 **[04. Hub Préparer une leçon FMTTN](/modules/04-preparation-lecon-fmttn)**
-- ➡️ **[4.4 L'application ASSISTANT COURS FMTTN (HECh)](/modules/04-4-assistant-ia-hech)**
+- ➡️ **[4.3 L'application ASSISTANT COURS FMTTN (HECh)](/modules/04-3-assistant-ia-hech)**

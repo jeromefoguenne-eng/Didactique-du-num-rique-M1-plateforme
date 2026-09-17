@@ -28,14 +28,22 @@ const tiles = [
   },
   {
     id: 4,
-    title: "4. Préparer une Leçon FMTTN",
+    title: "Évaluer un cours de numérique",
+    tag: "Évaluation & Rubrics",
+    desc: "Principes, postures et outils d'évaluation en FMTTN : triple concordance, grilles critériées, observation formative et évaluation par les pairs.",
+    link: "/modules/evaluer-cours-numerique",
+    image: "/images/tile-evaluer-cours.jpg"
+  },
+  {
+    id: 5,
+    title: "4. Préparer un cours FMTTN",
     tag: "Ingénierie Pédagogique",
     desc: "Triple concordance didactique, taxonomie de Bloom appliquée au FMTTN et Assistant Cours HECh.",
     link: "/modules/04-preparation-lecon-fmttn",
     image: "/images/tile-4-preparation.jpg"
   },
   {
-    id: 5,
+    id: 6,
     title: "5. Projet Jeu de société",
     tag: "Projet Fil Rouge",
     desc: "Créer un jeu ludo-éducatif : règles, cartes IA, découpeuse laser, pions 3D et capsule vidéo.",
@@ -43,7 +51,7 @@ const tiles = [
     image: "/images/tile-5-projet-jeu.jpg"
   },
   {
-    id: 6,
+    id: 7,
     title: "6. Guide & Évaluation",
     tag: "Modalités sur 200 pts",
     desc: "Rôle de la plateforme, organisation du travail, calendrier et modalités de l'évaluation sur 200 points.",
@@ -51,7 +59,7 @@ const tiles = [
     image: "/images/tile-7-evaluation.jpg"
   },
   {
-    id: 7,
+    id: 8,
     title: "7. Ressources & Outils",
     tag: "Syllabus, Docs & Slides",
     desc: "Syllabus Google Docs, référentiels officiels (FMTTN, CSEM), présentations PowerPoint et bibliographie APA.",

@@ -64,13 +64,6 @@ export default defineConfig({
           ]
         },
         {
-          text: "Évaluer un cours de numérique",
-          collapsed: false,
-          items: [
-            { text: "🎯 Principes, Grilles & Postures", link: "/modules/evaluer-cours-numerique" }
-          ]
-        },
-        {
           text: "4. Préparer un cours FMTTN",
           collapsed: false,
           items: [
@@ -81,17 +74,24 @@ export default defineConfig({
           ]
         },
         {
-          text: "5. Projet Jeu de Société",
+          text: "5. Évaluer un cours de numérique",
+          collapsed: false,
+          items: [
+            { text: "🎯 Principes, Grilles & Postures", link: "/modules/evaluer-cours-numerique" }
+          ]
+        },
+        {
+          text: "6. Projet Jeu de Société",
           collapsed: false,
           items: [
             { text: "📌 Vue d'ensemble (Hub)", link: "/modules/05-projet-jeu-societe" },
-            { text: "5.1 Ludopédagogie & Édumédias", link: "/modules/05-projet-jeu-societe#5-1-une-methodologie-pedagogique-fondee-sur-l-experience-ludique" },
-            { text: "5.2 Créer les règles du jeu", link: "/modules/06-regles-du-jeu" },
-            { text: "5.3 La photographie & composition", link: "/modules/07-photographie-image" },
-            { text: "5.4 [En construction] Cartes avec l'IA", link: "/modules/08-cartes-ia" },
-            { text: "5.5 [En construction] FabLab (Laser & 3D)", link: "/modules/09-prototypage-fablab" },
-            { text: "5.6 Capsule Vidéo de présentation", link: "/modules/10-capsule-video" },
-            { text: "5.7 [En construction] Tester le jeu", link: "/modules/11-playtest-evaluation" }
+            { text: "6.1 Ludopédagogie & Édumédias", link: "/modules/05-projet-jeu-societe#5-1-une-methodologie-pedagogique-fondee-sur-l-experience-ludique" },
+            { text: "6.2 Créer les règles du jeu", link: "/modules/06-regles-du-jeu" },
+            { text: "6.3 La photographie & composition", link: "/modules/07-photographie-image" },
+            { text: "6.4 [En construction] Cartes avec l'IA", link: "/modules/08-cartes-ia" },
+            { text: "6.5 [En construction] FabLab (Laser & 3D)", link: "/modules/09-prototypage-fablab" },
+            { text: "6.6 Capsule Vidéo de présentation", link: "/modules/10-capsule-video" },
+            { text: "6.7 [En construction] Tester le jeu", link: "/modules/11-playtest-evaluation" }
           ]
         }
       ],
@@ -105,11 +105,11 @@ export default defineConfig({
           ]
         },
         {
-          text: "6. Guide & Évaluation",
+          text: "7. Guide & Évaluation",
           items: [
             { text: "📌 Vue d'ensemble (Hub)", link: "/guide/" },
-            { text: "6.1 Guide de la plateforme & de l'étudiant", link: "/guide/distanciel" },
-            { text: "6.2 Modalités d'évaluation (sur 200 pts)", link: "/guide/evaluation" }
+            { text: "7.1 Guide de la plateforme & de l'étudiant", link: "/guide/distanciel" },
+            { text: "7.2 Modalités d'évaluation (sur 200 pts)", link: "/guide/evaluation" }
           ]
         }
       ],
@@ -123,13 +123,13 @@ export default defineConfig({
           ]
         },
         {
-          text: "7. Ressources & Boîte à Outils",
+          text: "8. Ressources & Boîte à Outils",
           items: [
             { text: "📌 Vue d'ensemble (Hub)", link: "/ressources/" },
-            { text: "7.1 Syllabus officiel du cours", link: "/ressources/syllabus" },
-            { text: "7.2 Documents & Référentiels PDF", link: "/ressources/documents" },
-            { text: "7.3 Bibliographie sélective (APA)", link: "/ressources/bibliographie" },
-            { text: "7.4 Présentations PowerPoint", link: "/ressources/powerpoints" }
+            { text: "8.1 Syllabus officiel du cours", link: "/ressources/syllabus" },
+            { text: "8.2 Documents & Référentiels PDF", link: "/ressources/documents" },
+            { text: "8.3 Bibliographie sélective (APA)", link: "/ressources/bibliographie" },
+            { text: "8.4 Présentations PowerPoint", link: "/ressources/powerpoints" }
           ]
         }
       ]

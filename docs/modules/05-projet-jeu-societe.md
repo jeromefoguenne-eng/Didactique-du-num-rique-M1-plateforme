@@ -1,9 +1,9 @@
 ---
-title: "05. Projet Jeu de société : Ludopédagogie & Édumédias"
+title: "06. Projet Jeu de société : Ludopédagogie & Édumédias"
 description: "Texte intégral du syllabus : Théories du jeu (Huizinga, Caillois), cercle magique et création d'un jeu de société éducatif"
 ---
 
-# 05. Projet Jeu de Société : Ludopédagogie & Édumédias
+# 06. Projet Jeu de Société : Ludopédagogie & Édumédias
 
 ::: info Extrait intégral des Notes de cours
 Ce chapitre reproduit fidèlement et dans son intégralité le texte du syllabus officiel du cours de Didactique du numérique (Master 1 - HECh).
@@ -213,5 +213,6 @@ const subCategories = [
 ---
 
 ## Navigation
+- ⬅️ **[05. Évaluer un cours de numérique](/modules/evaluer-cours-numerique)**
 - 🏠 **[Accueil du Cours](/)**
-- ➡️ **[5.2 Créer les règles du jeu](/modules/06-regles-du-jeu)**
+- ➡️ **[6.2 Créer les règles du jeu](/modules/06-regles-du-jeu)**

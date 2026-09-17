@@ -1,99 +1,192 @@
 ---
-title: "Évaluer un cours de numérique"
-description: "Principes, postures et outils pour évaluer les compétences numériques en FMTTN : triple concordance, grilles critériées, observation formative et évaluation par les pairs."
+title: "5. Évaluer un cours de numérique"
+description: "Texte officiel du syllabus : Fonctions de l'évaluation, diversité des attendus (savoirs, savoir-faire, compétences), posture en éducation aux médias, évaluation par les pairs et grilles critériées."
 ---
 
-# Évaluer un cours de numérique
+# 5. Évaluer un cours de numérique
 
-::: info Enjeux et posture d'évaluation en FMTTN
-Évaluer en didactique du numérique ne consiste jamais à mesurer la familiarité préalable des élèves avec les écrans ou leur vitesse de frappe. L'évaluation porte exclusivement sur l'**acquisition réelle des savoirs, savoir-faire et compétences** issus du référentiel officiel FWB et du cadre d'éducation aux médias.
+::: info Extrait intégral des Notes de cours
+Ce chapitre reproduit fidèlement et dans son intégralité le texte du syllabus officiel du cours de Didactique du numérique (Master 1 - HECh).
 :::
 
----
+Dans le cadre du référentiel FMTTN, l’évaluation doit avant tout permettre de vérifier l’atteinte des attendus. Ceux-ci constituent les résultats d’apprentissage que l’élève doit progressivement être capable de maîtriser et de mobiliser. L’évaluation ne devrait donc pas être pensée uniquement à partir des activités ou des outils utilisés en classe, mais à partir de ce que l’élève doit effectivement apprendre et être capable de réaliser.
 
-## 1. Les Fondements de l'Évaluation en Éducation au Numérique
+L’évaluation peut remplir différentes fonctions selon le moment où elle intervient et l’objectif poursuivi :
 
-Dans le champ du FMTTN, l'acte d'évaluer exige de dépasser deux illusions pédagogiques récurrentes :
-
-1. **L'illusion des « digital natives »** : Ce n'est pas parce qu'un élève utilise quotidiennement un smartphone ou les réseaux sociaux qu'il maîtrise les compétences computationnelles, la logique algorithmique ou la critique de l'information.
-2. **La confusion entre outil et apprentissage** : L'évaluation ne sanctionne pas la maîtrise d'un logiciel particulier (ex. : *« connaître Scratch »* ou *« savoir utiliser Canva »*), mais la capacité de l'élève à mobiliser une démarche rigoureuse pour résoudre un problème, créer un contenu structuré ou décoder un message médiatique.
-
-<div class="callout-concept">
-  <div class="callout-title">🎯 Principe Clé — Ce que l'on évalue réellement</div>
-  <p>
-    On évalue des <strong>capacités de pensée</strong> (analyser, décomposer, tester, concevoir, critiquer) et des <strong>savoirs transférables</strong>, et non une simple habileté gestuelle sur un écran.
-  </p>
-</div>
-
----
-
-## 2. Les Trois Fonctions de l'Évaluation Appliquées au Numérique
-
-L'évaluation s'articule en trois moments complémentaires et indispensables :
-
-### A. L'Évaluation Diagnostique (Avant l'action)
-* **Objectif** : Identifier les représentations initiales, les fausses conceptions et l'hétérogénéité des compétences des élèves.
-* **Modalités pratiques** :
-  * Brefs quiz de positionnement interactifs (sur la plateforme ou en classe).
-  * Recueil des représentations par remue-méninges (ex. : *« Qu'est-ce qu'un algorithme pour vous ? »*).
-  * Petites manipulations de test pour repérer les besoins spécifiques et anticiper la différenciation.
-
-### B. L'Évaluation Formative & Régulation Continue (Pendant l'action)
-* **Objectif** : Fournir à l'élève un retour d'information immédiat pour qu'il comprenne ses erreurs et ajuste sa démarche en temps réel.
-* **Le numérique comme allié du feedback formatif** :
-  * **Droit à l'erreur et démarche d'essais-erreurs** : En programmation ou en robotique, l'erreur n'est pas une faute mais une source d'apprentissage indispensable (boucle de débogage).
-  * **Régulation par l'enseignant** : Observation des îlots de travail, relances ciblées et guidage par questions ouvertes.
-  * **Auto-évaluation guidée** : Listes de contrôle (checklists) permettant à l'élève de vérifier son avancée avant de soumettre son travail.
-
-### C. L'Évaluation Sommatrice & Certificative (Après l'action)
-* **Objectif** : Attester du degré d'acquisition des attendus du référentiel à l'issue d'une séquence.
-* **Modalités pratiques** :
-  * Tâche d'intégration complexe (réalisation d'une production numérique authentique, résolution d'un problème technique inédit, analyse critique d'un document truqué).
-  * Soutenance orale ou présentation argumentée de sa démarche.
-
----
-
-## 3. L'Alignement Didactique et la Triple Concordance
-
-Pour qu'une évaluation soit juste et valide, elle doit respecter rigoureusement le principe de **triple concordance** (alignement constructif de John Biggs) articulé à la **taxonomie de Bloom révisée** :
-
-<div class="callout-vigilance">
-  <div class="callout-title">⚠️ Éviter les Deux Ruptures d'Alignement Classiques</div>
+<div class="callout-concept" style="margin: 1.5rem 0;">
+  <div class="callout-title">📋 Les différentes fonctions et modalités de l'évaluation</div>
   <ul>
-    <li><strong>Rupture par sous-évaluation</strong> : L'enseignant fait créer un jeu vidéo pendant 4 séances (niveau taxonomique <em>Créer</em>), mais évalue les élèves via un QCM écrit de mémorisation de vocabulaire (niveau <em>Se souvenir</em>).</li>
-    <li><strong>Rupture par sur-évaluation</strong> : L'enseignant présente un cours magistral sur les fake news (niveau <em>Comprendre</em>), mais exige lors de l'épreuve que l'élève mène une enquête de fact-checking complexe avec des outils spécialisés (niveau <em>Évaluer / Analyser</em>) sans l'y avoir préalablement exercé.</li>
+    <li><strong>L’évaluation diagnostique</strong> intervient avant ou au début d’un apprentissage. Elle permet d’identifier les connaissances, les représentations et les compétences initiales des élèves. Par exemple, proposer une courte activité permettant de déterminer ce que les élèves savent déjà sur l’intelligence artificielle ou leur niveau de maîtrise d’un outil numérique.</li>
+    <li><strong>L’évaluation formative</strong> intervient pendant l’apprentissage. Elle fournit des informations permettant à l’élève et à l’enseignant d’identifier les acquis, les difficultés et les pistes de progression. Par exemple, une première version d’une production numérique peut être soumise à un retour avant d’être améliorée.</li>
+    <li><strong>L’évaluation sommative</strong> intervient généralement au terme d’une séquence ou d’un projet afin d’établir le niveau d’atteinte des attendus. Elle peut prendre la forme d’un contrôle, d’une production, d’une présentation ou d’une tâche complexe.</li>
+    <li><strong>L’auto-évaluation</strong> amène l’élève à porter un regard sur ses propres apprentissages. Elle lui permet d’identifier ce qu’il maîtrise, ce qui reste difficile et les stratégies qu’il peut mettre en œuvre pour progresser.</li>
+    <li><strong>L’évaluation par les pairs</strong> consiste à demander aux élèves d’analyser et d’évaluer la production ou la démarche d’un autre élève à partir de critères préalablement définis. Elle peut être utilisée à des fins formatives ou, dans certains dispositifs, contribuer à l’évaluation finale.</li>
+    <li><strong>La co-évaluation</strong> implique plusieurs acteurs dans le processus évaluatif, par exemple l’élève et l’enseignant, ou un groupe d’élèves et l’enseignant. Elle permet de confronter différents regards sur une production ou une performance.</li>
   </ul>
 </div>
 
-L'épreuve d'évaluation doit mobiliser **exactement le même niveau cognitif et le même type de tâche** que ceux travaillés lors des activités d'apprentissage en classe.
+Ces différentes modalités ne s’excluent pas. Au contraire, leur combinaison permet de construire des dispositifs d’évaluation plus riches et davantage intégrés au processus d’apprentissage.
 
 ---
 
-## 4. Construire des Grilles d'Évaluation Critériées (Rubrics)
+## 5.1. Tous les attendus ne s’évaluent pas de la même manière
 
-L'évaluation de productions numériques (programmes, capsules vidéos, affiches, podcasts) gagne à être outillée par des **grilles critériées descriptives analytiques**.
+Un enjeu particulier de l’évaluation en éducation au numérique réside dans la diversité des apprentissages visés. Un savoir, un savoir-faire et une compétence ne peuvent pas nécessairement être évalués avec les mêmes outils ni dans les mêmes situations.
 
-### Structure type d'une grille critériée :
-1. **Critères minimaux de conformité** : Éléments indispensables pour que le travail soit recevable (ex. : respect du thème, fonctionnement technique sans plantage, respect du droit d'auteur).
-2. **Critères de maîtrise didactique** : Qualité conceptuelle, rigueur de l'algorithme, pertinence du découpage, créativité et esprit critique.
-3. **Paliers d'acquisition descriptifs** :
-   * **Non acquis (0-25 %)** : Attendus non atteints, démarche absente ou incohérente.
-   * **En voie d'acquisition (26-50 %)** : Démarche amorcée mais incomplète, erreurs techniques récurrentes, étayage nécessaire.
-   * **Acquis (51-80 %)** : Attendu officiel maîtrisé en autonomie, respect des contraintes et démarche cohérente.
-   * **Dépassé / Expert (81-100 %)** : Maîtrise approfondie, optimisation du code, justification critique poussée, propositions originales.
+### Les savoirs
+Les savoirs correspondent aux connaissances que l’élève doit acquérir : vocabulaire, concepts, principes de fonctionnement, règles ou notions liées au numérique et aux médias. Ils peuvent faire l’objet d’évaluations sommatives classiques : questionnaire, quiz, questions ouvertes, exercices de classement ou de mise en relation, etc.
+
+Il est néanmoins souvent pertinent d’intégrer l’évaluation de ces connaissances dans des projets ou des dispositifs plus larges. Une tâche complexe permet en effet d’observer non seulement si l’élève connaît une notion, mais également s’il est capable de l’activer et de la mobiliser dans une situation concrète. Connaître les principes de protection des données personnelles, par exemple, ne signifie pas nécessairement être capable de les appliquer lorsqu’on utilise une application ou un réseau social.
+
+### Les savoir-faire
+Les savoir-faire correspondent à la capacité de réaliser une action : utiliser un logiciel, rechercher une information, produire un document multimédia, programmer, manipuler du matériel, traiter des données ou créer un contenu numérique.
+
+Ils doivent prioritairement être évalués en situation, à travers des projets, des productions, des exercices pratiques, des travaux réalisés en classe ou à la maison ou encore des défis techniques. L’enseignant peut alors observer directement la réalisation et, lorsque cela est pertinent, la démarche suivie par l’élève.
+
+### Les compétences
+La même logique s’applique aux compétences. Une compétence implique la mobilisation et la combinaison de différentes ressources pour répondre de manière pertinente à une situation. Elle doit donc être évaluée dans une situation suffisamment complexe pour permettre cette mobilisation.
+
+Un projet numérique constitue à ce titre une situation d’évaluation particulièrement intéressante : réaliser un jeu, créer une vidéo, concevoir une production multimédia, résoudre un problème technique ou développer une solution numérique peuvent permettre d’observer simultanément plusieurs apprentissages.
+
+### Vers une évaluation intégrée au processus d’apprentissage
+Dans un cours de numérique, l’évaluation peut ainsi être envisagée comme un processus continu, plutôt que comme un moment isolé situé à la fin d’une séquence.
+
+Un projet peut, par exemple, commencer par une évaluation diagnostique permettant d’identifier les acquis initiaux. Des évaluations formatives peuvent ensuite être intégrées aux différentes étapes de réalisation. Une première production peut être évaluée par les pairs à partir d’une grille critériée. Le groupe peut ensuite améliorer son travail à partir des feedbacks reçus et réaliser une auto-évaluation avant la remise finale. L’enseignant peut enfin réaliser l’évaluation sommative de la production finale.
+
+Cette organisation permet de donner à l’évaluation plusieurs fonctions : diagnostiquer, accompagner, réguler, faire réfléchir et finalement attester le niveau d’atteinte des attendus.
+
+L’objectif n’est donc pas uniquement de mesurer ce que l’élève a retenu, mais d’observer dans quelle mesure il est capable de mobiliser ses savoirs, ses savoir-faire et ses compétences dans des situations concrètes, tout en développant progressivement son autonomie, sa capacité de réflexion et son esprit critique face au numérique.
 
 ---
 
-## 5. L'Évaluation par les Pairs (Peer Assessment) et la Métacognition
+## 5.2. Le cas particulier de l’éducation aux médias
 
-Faire évaluer un travail numérique par d'autres élèves est un levier didactique puissant :
-* **Décentration cognitive** : En testant le programme ou en visionnant la vidéo d'un camarade, l'élève comprend mieux les exigences d'utilisabilité et de clarté.
-* **Explicitation et argumentation** : L'évaluateur comme l'évalué doivent expliciter leurs choix techniques (*« Pourquoi as-tu utilisé une boucle conditionnelle ici ? »*).
-* **Bienveillance et critères partagés** : La co-évaluation s'appuie toujours sur une grille descriptive partagée et connue de tous, évitant les jugements de valeur subjectifs.
+L’évaluation devient plus complexe lorsqu’elle concerne les dimensions liées à l’éducation aux médias et à la citoyenneté numérique.
+
+Certains apprentissages relèvent en effet davantage du développement d'une posture que de l'acquisition d'une connaissance ou d'une procédure. Il peut notamment s’agir de développer :
+- **la réflexivité** ;
+- **l’esprit critique** ;
+- **l’autonomie** ;
+- **la capacité d’adaptation** ;
+- **le discernement** ;
+- **la capacité à questionner ses propres pratiques numériques** ;
+- **la capacité à analyser et contextualiser une information** ;
+- **une littératie médiatique et numérique** permettant de comprendre, utiliser, analyser et produire des contenus.
+
+Ces dimensions sont plus difficiles à évaluer au moyen d'un contrôle traditionnel. Il ne suffit pas, par exemple, de demander à un élève de définir la notion de désinformation pour déterminer s’il est capable d’adopter une attitude critique face à une information rencontrée en ligne.
+
+L’évaluation peut alors porter davantage sur la démarche, le raisonnement, la justification des choix et l’évolution de la réflexion. Plusieurs dispositifs peuvent être mobilisés :
+- analyse de cas ;
+- débat argumenté ;
+- production réflexive ;
+- journal de bord ;
+- portfolio ;
+- étude critique d’une information ou analyse d’une situation médiatique.
+
+---
+
+## 5.3. L’évaluation par les pairs : apprendre en évaluant
+
+L’évaluation par les pairs est particulièrement intéressante dans un cours de numérique car elle transforme l’élève en acteur du processus d’évaluation. Il ne s’agit plus uniquement de produire un travail destiné à être évalué par l’enseignant : l’élève doit également être capable d’analyser le travail d’un autre à partir de critères explicites.
+
+Par exemple, dans le cadre de la création d’une vidéo éducative, chaque groupe peut visionner la production d’un autre groupe et utiliser une grille comportant des critères tels que la qualité du cadrage, la prise de son, la lisibilité des informations, la pertinence du scénario, l’efficacité pédagogique ou encore le respect des consignes.
+
+<div class="callout-concept" style="margin: 1.5rem 0;">
+  <div class="callout-title">🎯 Les 5 objectifs poursuivis par l'évaluation par les pairs</div>
+  <ol>
+    <li><strong>Développer la capacité à utiliser des critères</strong> : l’élève apprend à distinguer une appréciation subjective d'une analyse fondée sur des indicateurs observables.</li>
+    <li><strong>Développer la réflexivité</strong> : en identifiant les qualités et les difficultés du travail d’un autre élève, il peut être amené à porter un regard différent sur sa propre production.</li>
+    <li><strong>Améliorer une production</strong> : le retour des pairs peut intervenir avant la version finale afin de permettre une phase de révision.</li>
+    <li><strong>Développer l’argumentation</strong> : l’élève doit justifier son appréciation plutôt que simplement attribuer une note.</li>
+    <li><strong>Développer l’autonomie</strong> : progressivement, l’élève apprend à apprécier la qualité d’une production sans dépendre exclusivement du jugement de l’enseignant.</li>
+  </ol>
+</div>
+
+Pour être pertinente, l’évaluation par les pairs doit cependant être structurée et accompagnée. Les élèves doivent disposer de critères compréhensibles, d’indicateurs suffisamment précis et, idéalement, d’exemples permettant de comprendre ce qui est attendu.
+
+Il est également préférable de privilégier dans un premier temps un retour qualitatif plutôt qu’une simple attribution de points. Demander à l’élève d’identifier une réussite, un point à améliorer et une proposition concrète permet généralement de produire un feedback plus exploitable qu’une note isolée.
+
+### L’auto-évaluation et la co-évaluation
+
+L’auto-évaluation complète utilement l’évaluation par les pairs. Après avoir reçu les retours de ses camarades, l’élève peut analyser sa propre production à partir de la même grille et identifier les écarts éventuels entre la perception qu’il a de son travail et les observations formulées par les autres.
+
+La co-évaluation, quant à elle, permet de confronter plusieurs regards. Un dispositif peut par exemple prévoir une évaluation réalisée par l’élève, une évaluation par les pairs et une évaluation de l’enseignant. L’objectif n’est pas nécessairement de faire une moyenne mécanique de ces trois évaluations, mais de créer des occasions de confrontation et de régulation des apprentissages.
+
+Cette approche est particulièrement pertinente dans les apprentissages liés à l’éducation aux médias, pour lesquels il existe parfois une dimension interprétative et réflexive importante.
+
+---
+
+## 5.4. La grille critériée comme outil transversal
+
+Quelle que soit la modalité d’évaluation choisie, l’utilisation d’une grille critériée constitue un outil particulièrement pertinent.
+
+La grille permet de définir explicitement les critères d’évaluation et, lorsque cela est nécessaire, différents niveaux de maîtrise. Elle peut être utilisée par l’enseignant, mais également par l’élève dans le cadre d’une auto-évaluation ou par les pairs lors d’une évaluation par les pairs.
+
+Une grille d’évaluation critériée permet d’expliciter les critères sur lesquels une production, une démarche ou une compétence sera évaluée et de décrire différents niveaux de maîtrise. Elle favorise la transparence des attentes, la qualité du feedback et l’autorégulation des apprentissages (*Jonsson & Svingby, 2007 ; Panadero & Jonsson, 2013*).
+
+### 1. Partir des attendus
+La première étape consiste à identifier précisément les attendus que l’on souhaite évaluer. La grille doit être construite à partir des apprentissages visés et non simplement à partir des caractéristiques de la tâche.
+
+> **Question à se poser :** *« Qu’est-ce que l’élève doit être capable de démontrer à l’issue de cette activité ? »*
+
+### 2. Définir les critères
+Les critères correspondent aux dimensions importantes de l’apprentissage sur lesquelles porte le jugement. Ils doivent être directement liés aux attendus et suffisamment distincts.
+
+Par exemple, pour un projet de création d’une vidéo numérique :
+- pertinence du contenu ;
+- qualité de la communication ;
+- maîtrise des outils numériques ;
+- adaptation au public ;
+- esprit critique ;
+- autonomie.
+
+Il est préférable de limiter le nombre de critères aux dimensions réellement essentielles.
+
+### 3. Décrire les niveaux de maîtrise
+Chaque critère doit être associé à plusieurs niveaux permettant de rendre compte d'une progression qualitative.
+
+**Exemple concret : Critère « Autonomie »**
+
+| Niveau de maîtrise | Description / Descripteurs observables |
+| :--- | :--- |
+| **À renforcer** | L’élève dépend fréquemment de l’aide de l’enseignant. |
+| **En développement** | L’élève réalise les tâches courantes mais sollicite encore régulièrement de l’aide. |
+| **Maîtrisé** | L’élève travaille de manière autonome et recherche des solutions face aux difficultés. |
+| **Très bonne maîtrise** | L’élève anticipe les difficultés et adapte ses stratégies face à une situation nouvelle. |
+
+Les descripteurs doivent être observables et compréhensibles. Il vaut mieux éviter des formulations vagues telles que « travail de bonne qualité » ou « maîtrise bien l’outil ». Brookhart et Chen (2015) recommandent de décrire ce qui caractérise concrètement les différents niveaux de qualité.
+
+### 4. Distinguer critères et indicateurs
+Le critère désigne la dimension évaluée ; les indicateurs précisent ce qui permet de l'observer.
+
+* **Critère :** Esprit critique
+* **Indicateurs :** Vérifie les sources, compare plusieurs informations, identifie les biais éventuels, justifie ses choix.
+
+Cette distinction est particulièrement utile pour évaluer des apprentissages complexes comme l’autonomie, la réflexivité ou l’esprit critique.
+
+### 5. Utiliser la grille comme outil de formation
+La grille ne doit pas uniquement servir à attribuer une note. Elle peut être utilisée avant, pendant et après l’activité :
+
+<div style="background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider); padding: 1.2rem; border-radius: 10px; margin: 1.5rem 0; font-weight: 600; text-align: center; line-height: 1.8;">
+  Présentation des critères ➔ Production ➔ Auto-évaluation ➔ Évaluation par les pairs ➔ Amélioration ➔ Évaluation de l’enseignant
+</div>
+
+Cette utilisation formative permet à l’élève de comprendre ce qui est attendu, d’identifier ses difficultés et de réguler son travail. L’évaluation par les pairs devient alors une véritable activité d’apprentissage : l’élève apprend à analyser une production à partir de critères et à formuler un feedback argumenté.
+
+### 6. Vérifier la concordance pédagogique
+Enfin, la grille doit être cohérente avec les attendus, les activités d’apprentissage et la situation d’évaluation.
+
+On peut utiliser le principe suivant :
+
+<div style="background: var(--vp-c-bg-soft); border-left: 4px solid var(--vp-c-brand-1); padding: 1.2rem; border-radius: 8px; margin: 1.5rem 0; font-weight: 600; line-height: 1.8;">
+  Attendu ➔ Activité d’apprentissage ➔ Situation d’évaluation ➔ Critère ➔ Indicateur ➔ Niveau de maîtrise
+</div>
+
+Une grille pertinente ne cherche donc pas à tout évaluer. Elle sélectionne les dimensions essentielles des apprentissages et rend explicite ce qui permet de distinguer différents niveaux de maîtrise.
 
 ---
 
 ## Navigation
-- ⬅️ **[03. Méthodologies Pédagogiques](/modules/03-pedagogies-actives)**
+- ⬅️ **[04. Préparer un cours FMTTN](/modules/04-preparation-lecon-fmttn)**
 - 🏠 **[Accueil du Cours](/)**
-- ➡️ **[04. Préparer une Leçon FMTTN](/modules/04-preparation-lecon-fmttn)**
+- ➡️ **[06. Projet Jeu de société](/modules/05-projet-jeu-societe)**

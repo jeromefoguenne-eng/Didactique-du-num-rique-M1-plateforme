@@ -188,20 +188,22 @@ Une grille pertinente ne cherche donc pas à tout évaluer. Elle sélectionne le
 
 ## 📝 Exercice 08 : Construire des grilles d’évaluation critériées
 
-::: tip Atelier Pratique & Devoir d'Application
-Cet exercice est extrait directement du dossier des travaux pratiques du cours (`Exercice 08 - Créer une grille critériée.docx`). Il permet d'appliquer concrètement l'ensemble des concepts didactiques présentés ci-dessus.
-:::
+<div class="callout-exercise" style="margin: 2rem 0;">
+  <div class="callout-title" style="font-size: 1.25rem;">
+    📋 Exercice 08 — Construire des grilles d’évaluation critériées
+  </div>
 
-<div class="callout-exercise" style="margin: 1.5rem 0;">
-  <div class="callout-title">📋 Objectifs & Modalités de l'Exercice 08</div>
   <p>
-    <strong>Objectif didactique :</strong> Vous apprendre à construire une grille d’évaluation critériée adaptée à différents types d’apprentissages numériques. Vous devrez être capables d’identifier les apprentissages réellement visés, de sélectionner des critères pertinents et de construire des indicateurs permettant d’observer différents niveaux de maîtrise.
+    <strong>Objectif didactique :</strong> Vous apprendre à construire une grille d’évaluation critériée adaptée à différents types d’apprentissages numériques. Vous devrez identifier les apprentissages réellement visés, sélectionner des critères pertinents et construire des indicateurs observables permettant de distinguer différents niveaux de maîtrise.
   </p>
-  <ul>
-    <li><strong>Organisation :</strong> Travail par groupes de 2 ou 3 étudiants.</li>
-    <li><strong>Choix :</strong> Chaque groupe choisit <strong>3 cas parmi les 10 cas proposés</strong> ci-dessous.</li>
-    <li><strong>Production attendue :</strong> Pour chacun des trois cas retenus, vous construisez une grille critériée complète et formulez la justification de vos choix didactiques.</li>
-  </ul>
+
+  <div style="background: var(--vp-c-bg-soft); padding: 1rem 1.2rem; border-radius: 8px; border: 1px solid var(--vp-c-divider); margin: 1rem 0;">
+    <ul style="margin: 0; padding-left: 1.2rem;">
+      <li><strong>Organisation :</strong> Travail par groupes de 2 ou 3 étudiants.</li>
+      <li><strong>Consigne de sélection :</strong> Chaque groupe choisit <strong>3 cas parmi les 10 cas proposés</strong> ci-dessous.</li>
+      <li><strong>Production attendue :</strong> Pour chacun des trois cas retenus, concevoir une grille critériée complète et expliciter la justification de vos choix didactiques.</li>
+    </ul>
+  </div>
 
   <div style="margin: 1.2rem 0; display: flex; gap: 12px; flex-wrap: wrap;">
     <a 
@@ -216,57 +218,50 @@ Cet exercice est extrait directement du dossier des travaux pratiques du cours (
     <a 
       href="/documents/Exercice-08-Creer-une-grille-criteriee.docx" 
       download
-      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: var(--vp-c-text-1) !important; padding: 10px 18px; border-radius: 8px; font-weight: 600; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);"
+      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: var(--vp-c-text-1) !important; padding: 10px 18px; border-radius: 8px; font-weight: 600; background: var(--vp-c-bg); border: 1px solid var(--vp-c-divider);"
     >
       <span>📥 Télécharger le fichier (.docx)</span>
     </a>
   </div>
-  <div style="font-size: 0.88rem; color: var(--vp-c-text-2); line-height: 1.5; background: var(--vp-c-bg-soft); padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid var(--vp-c-divider); margin-top: 0.8rem;">
-    ℹ️ <strong>Modalités d'utilisation du Google Docs :</strong><br />
-    Le document est configuré en mode consultation / copie. Pour rédiger vos grilles, ouvrez le lien Google Docs ci-dessus puis effectuez au choix :
-    <ul>
-      <li><strong>Fichier → Créer une copie</strong> pour travailler directement dans votre propre Google Drive.</li>
-      <li><strong>Fichier → Télécharger → Microsoft Word (.docx)</strong> pour rédiger votre devoir hors-ligne.</li>
-    </ul>
+
+  <div style="font-size: 0.88rem; color: var(--vp-c-text-2); line-height: 1.5; background: rgba(59, 130, 246, 0.05); padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid rgba(59, 130, 246, 0.15); margin-bottom: 1.2rem;">
+    ℹ️ <strong>Modalités d'utilisation du Google Docs :</strong> Le document est configuré en mode consultation. Pour rédiger vos grilles, ouvrez le lien ci-dessus puis effectuez au choix <strong>Fichier → Créer une copie</strong> dans votre Google Drive ou <strong>Fichier → Télécharger → Microsoft Word (.docx)</strong> pour rédiger hors-ligne.
   </div>
+
+  <div style="margin: 1.2rem 0;">
+    <h4 style="margin: 0 0 0.6rem 0; color: var(--vp-c-text-1); font-size: 1.02rem;">📌 Démarche méthodologique à suivre (pour chacun des 3 cas) :</h4>
+    <ol style="margin: 0; padding-left: 1.2rem; line-height: 1.6;">
+      <li><strong>Identifier les apprentissages visés :</strong> Déterminez précisément ce que l’élève doit <em>savoir</em>, <em>savoir-faire</em>, <em>mobiliser comme compétence</em> et éventuellement développer comme <em>capacité réflexive, autonomie ou esprit critique</em>.</li>
+      <li><strong>Construire la grille :</strong> 3 à 5 critères directement liés aux apprentissages visés, 2 à 4 indicateurs observables par critère, et 4 niveaux de maîtrise décrivant une progression qualitative (éviter les formulations vagues comme « bon travail » ou « réussi »).</li>
+      <li><strong>Préciser le dispositif d’évaluation :</strong> Indiquez si la grille est destinée à une évaluation diagnostique, formative, sommative, auto-évaluation, évaluation par les pairs ou co-évaluation.</li>
+      <li><strong>Justifier vos choix :</strong> Expliquez la pertinence des critères, indicateurs et seuils de progression retenus.</li>
+    </ol>
+  </div>
+
+  <details class="custom-block details" style="margin: 1.2rem 0; background: var(--vp-c-bg); border: 1px solid var(--vp-c-divider); border-radius: 8px; padding: 0.6rem 1rem;" open>
+    <summary style="font-weight: 700; cursor: pointer; color: var(--vp-c-text-1);">📂 Les 10 situations de classe au choix (Cliquez pour afficher / masquer)</summary>
+    <ol style="margin-top: 0.8rem; padding-left: 1.2rem; line-height: 1.6; font-size: 0.92rem;">
+      <li><strong>Recherche d’information :</strong> Rechercher des informations sur Internet concernant une personnalité scientifique, sélectionner des informations pertinentes et identifier des sources fiables.</li>
+      <li><strong>Création d’une vidéo :</strong> Réaliser une vidéo de trois minutes destinée à expliquer un concept scientifique à des élèves plus jeunes.</li>
+      <li><strong>Éducation aux médias (Info ou intox ?) :</strong> Analyser des publications provenant des réseaux sociaux, vérifier leur fiabilité et justifier son analyse.</li>
+      <li><strong>Création d’un jeu numérique :</strong> Créer avec Scratch un jeu comprenant un objectif, des règles, plusieurs niveaux et des interactions avec le joueur.</li>
+      <li><strong>Intelligence artificielle :</strong> Utiliser une IA générative pour créer une affiche, expérimenter différents prompts, comparer les résultats et justifier ses choix.</li>
+      <li><strong>Démontage et remontage d’un ordinateur :</strong> Démonter un ordinateur, identifier ses composants, expliquer leur fonction et remonter correctement la machine.</li>
+      <li><strong>Protection des données personnelles :</strong> Analyser différentes situations numériques, identifier les risques liés aux données personnelles et proposer des comportements adaptés.</li>
+      <li><strong>Présentation multimédia :</strong> Créer une présentation destinée à sensibiliser les élèves au cyberharcèlement en sélectionnant et organisant des informations et des contenus multimédias pertinents.</li>
+      <li><strong>Résolution d’un problème technique :</strong> Diagnostiquer un problème informatique à partir de plusieurs indices, formuler des hypothèses, les tester et proposer une solution.</li>
+      <li><strong>Réflexion sur ses pratiques numériques :</strong> Réaliser un portfolio réflexif sur ses usages numériques, analyser ses pratiques et définir un objectif personnel d’amélioration.</li>
+    </ol>
+  </details>
+
+  <div style="background: rgba(245, 158, 11, 0.08); border-left: 4px solid #f59e0b; padding: 0.9rem 1.1rem; border-radius: 6px; margin: 1.2rem 0 0.8rem 0;">
+    <strong>📤 Dépôt obligatoire :</strong> Une fois vos 3 grilles complétées et justifiées, déposez votre document rédigé au format Word (<code>.docx</code>) ou PDF directement ci-dessous ou sur votre <a href="/espace-membre"><strong>Espace Membre</strong></a>.
+  </div>
+
+  <ClientOnly>
+    <ExerciseBox exerciseId="exercice-08" exerciseTitle="Atelier 8 : Construire des grilles d'évaluation critériées" />
+  </ClientOnly>
 </div>
-
-### Méthodologie à suivre pour chacun des 3 cas retenus :
-
-1. **Identifier les apprentissages visés** : Déterminez précisément ce que l’élève doit *savoir*, *savoir-faire*, *mobiliser comme compétence* et éventuellement développer comme *capacité réflexive, autonomie ou esprit critique*.
-2. **Construire la grille** :
-   - 3 à 5 critères directement liés aux apprentissages visés ;
-   - 2 à 4 indicateurs observables par critère ;
-   - 4 niveaux de maîtrise décrivant une progression qualitative (*évitez les formulations vagues comme « bon travail » ou « production réussie »*).
-3. **Préciser le dispositif d’évaluation** : Indiquez si la grille est destinée à une évaluation *diagnostique*, *formative*, *sommative*, une *auto-évaluation*, une *évaluation par les pairs* ou une *co-évaluation* (ou une combinaison de modalités).
-4. **Justifier vos choix** : Expliquez brièvement la pertinence des critères et indicateurs retenus, la graduation des niveaux et le dispositif d'évaluation choisi.
-
-<details class="custom-block details" style="margin: 1.5rem 0;" open>
-<summary><strong>📂 Les 10 cas de figure proposés au choix (Sélectionnez-en 3)</strong></summary>
-
-1. **Recherche d’information** : Rechercher des informations sur Internet concernant une personnalité scientifique, sélectionner des informations pertinentes et identifier des sources fiables.
-2. **Création d’une vidéo** : Réaliser une vidéo de trois minutes destinée à expliquer un concept scientifique à des élèves plus jeunes.
-3. **Éducation aux médias (Info ou intox ?)** : Analyser des publications provenant des réseaux sociaux, vérifier leur fiabilité et justifier son analyse.
-4. **Création d’un jeu numérique** : Créer avec Scratch un jeu comprenant un objectif, des règles, plusieurs niveaux et des interactions avec le joueur.
-5. **Intelligence artificielle** : Utiliser une IA générative pour créer une affiche, expérimenter différents prompts, comparer les résultats et justifier ses choix.
-6. **Démontage et remontage d’un ordinateur** : Démonter un ordinateur, identifier ses composants, expliquer leur fonction et remonter correctement la machine.
-7. **Protection des données personnelles** : Analyser différentes situations numériques, identifier les risques liés aux données personnelles et proposer des comportements adaptés.
-8. **Présentation multimédia** : Créer une présentation destinée à sensibiliser les élèves au cyberharcèlement en sélectionnant et organisant des informations et des contenus multimédias pertinents.
-9. **Résolution d’un problème technique** : Diagnostiquer un problème informatique à partir de plusieurs indices, formuler des hypothèses, les tester et proposer une solution.
-10. **Réflexion sur ses pratiques numériques** : Réaliser un portfolio réflexif sur ses usages numériques, analyser ses pratiques et définir un objectif personnel d’amélioration.
-
-</details>
-
-<div class="callout-vigilance" style="margin: 1.5rem 0;">
-  <div class="callout-title">📤 Dépôt du travail réalisé</div>
-  <p>
-    Une fois vos 3 grilles complétées et justifiées, déposez votre document rédigé au format Word ou PDF directement ci-dessous ou dans votre <strong><a href="/espace-membre">Espace Membre</a></strong>.
-  </p>
-</div>
-
-<ClientOnly>
-  <ExerciseBox exerciseId="exercice-08" exerciseTitle="Atelier 8 : Construire des grilles d'évaluation critériées" />
-</ClientOnly>
 
 ---
 

@@ -70,7 +70,7 @@ function saveStudentEval() {
 }
 
 function exportEvaluationsToCSV() {
-  let csv = "Nom de l'étudiant;Email institutionnel;Quiz (/20);Devoirs (/60);Total Pilier 1 (/80);Jeu Prépa (/20);Plateau Laser (/15);Pions 3D (/15);Cartes IA (/15);Vidéo (/20);Photos (/15);Total Jeu (/100);Soutenance Oral (/30);Total Général (/210);Note finale (/20);Pourcentage;Statut;Feedback Enseignant\n"
+  let csv = "Nom de l'étudiant;Email institutionnel;Quiz (/10);Devoirs (/60);Total Pilier 1 (/70);Jeu Prépa (/20);Plateau Laser (/15);Pions 3D (/15);Cartes IA (/15);Vidéo (/20);Photos (/15);Total Jeu (/100);Soutenance Oral (/30);Total Général (/200);Note finale (/20);Pourcentage;Statut;Feedback Enseignant\n"
   
   users.value.forEach(u => {
     const ev = userStore.getStudentEvaluation(u.email)
@@ -360,12 +360,15 @@ function handleToggleArchive(email) {
   userStore.toggleArchiveStudent(email)
 }
 
-// Suppression définitive
+// Suppression définitive d'un étudiant
 function handleDeleteStudent(user) {
-  const msg = `Êtes-vous certain de vouloir supprimer définitivement l'étudiant "${user.firstName} ${user.lastName}" (${user.email}) ?\nCette action supprimera également toutes ses réponses et ses fichiers déposés.`
+  const msg = `⚠️ SUPPRESSION DÉFINITIVE\n\nÊtes-vous absolument certain de vouloir supprimer l'étudiant "${user.firstName} ${user.lastName}" (${user.email}) ?\n\nCette action effacera irréversiblement son compte, ses notes d'évaluation, ses tentatives de quiz et l'ensemble de ses documents déposés.`
   if (window.confirm(msg)) {
     const res = userStore.deleteStudent(user.email)
     alert(res.message)
+    if (selectedStudentEval.value?.user?.email?.toLowerCase() === user.email.toLowerCase()) {
+      selectedStudentEval.value = null
+    }
   }
 }
 
@@ -749,7 +752,7 @@ function formatSize(bytes) {
                       class="btn-row-action delete" 
                       title="Supprimer définitivement cet étudiant"
                     >
-                      🗑️
+                      🗑️ Supprimer
                     </button>
                   </div>
                 </td>
@@ -766,7 +769,7 @@ function formatSize(bytes) {
         <div class="eval-admin-toolbar">
           <div>
             <h3>🏆 Suivi Global des Notes & Modalités d'Évaluation (200 Points)</h3>
-            <p>Pondération officielle : <strong>80 pts</strong> Travaux Plateforme • <strong>100 pts</strong> Création Jeu de Société (FabLab/IA/Vidéo/Photos) • <strong>30 pts</strong> Soutenance Orale.</p>
+            <p>Pondération officielle : <strong>70 pts</strong> Travaux Plateforme (10 pts Quiz + 60 pts Devoirs) • <strong>100 pts</strong> Création Jeu de Société (FabLab/IA/Vidéo/Photos) • <strong>30 pts</strong> Soutenance Orale.</p>
           </div>
           <button @click="exportEvaluationsToCSV" class="btn-action-tool brand" title="Télécharger le relevé complet des notes sous format Excel CSV">
             📊 Exporter les Notes (CSV)
@@ -778,12 +781,12 @@ function formatSize(bytes) {
             <thead>
               <tr>
                 <th>Étudiant</th>
-                <th>Quiz (/20)</th>
+                <th>Quiz (/10)</th>
                 <th>Devoirs (/60)</th>
-                <th>Pilier 1 (/80)</th>
+                <th>Pilier 1 (/70)</th>
                 <th>Jeu (/100)</th>
                 <th>Oral (/30)</th>
-                <th>Total (/210)</th>
+                <th>Total (/200)</th>
                 <th>Note (/20)</th>
                 <th>Statut</th>
                 <th style="text-align: right;">Éditer</th>
@@ -818,9 +821,14 @@ function formatSize(bytes) {
                   </span>
                 </td>
                 <td style="text-align: right;">
-                  <button @click="openEditEvalModal(u)" class="btn-row-action edit-grade" title="Modifier les points et le feedback">
-                    ✏️ Noter
-                  </button>
+                  <div class="action-buttons-group">
+                    <button @click="openEditEvalModal(u)" class="btn-row-action edit-grade" title="Modifier les points et le feedback">
+                      ✏️ Noter
+                    </button>
+                    <button @click="handleDeleteStudent(u)" class="btn-row-action delete-mini" title="Supprimer cet étudiant">
+                      🗑️
+                    </button>
+                  </div>
                 </td>
               </tr>
             </tbody>
@@ -899,9 +907,14 @@ function formatSize(bytes) {
               </div>
             </div>
 
-            <div class="modal-footer">
-              <button @click="saveStudentEval" class="btn-primary">Enregistrer les notes</button>
-              <button @click="selectedStudentEval = null" class="btn-secondary">Annuler</button>
+            <div class="modal-footer modal-footer-spaced">
+              <button @click="handleDeleteStudent({ firstName: evalForm.name, lastName: '', email: evalForm.email })" class="btn-danger-del" title="Supprimer cet étudiant">
+                🗑️ Supprimer cet étudiant
+              </button>
+              <div class="modal-footer-right">
+                <button @click="saveStudentEval" class="btn-primary">Enregistrer les notes</button>
+                <button @click="selectedStudentEval = null" class="btn-secondary">Annuler</button>
+              </div>
             </div>
           </div>
         </div>
@@ -2546,4 +2559,56 @@ function formatSize(bytes) {
 .form-group-eval input:focus, .form-group-eval textarea:focus {
   border-color: #ea580c;
   outline: none;
+}
+
+
+.btn-row-action.delete {
+  background: #fee2e2;
+  color: #b91c1c;
+  border-color: #fca5a5;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.btn-row-action.delete:hover {
+  background: #ef4444;
+  color: #ffffff;
+  border-color: #dc2626;
+}
+.btn-row-action.delete-mini {
+  background: #fee2e2;
+  color: #b91c1c;
+  border-color: #fca5a5;
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn-row-action.delete-mini:hover {
+  background: #ef4444;
+  color: #ffffff;
+}
+.modal-footer-spaced {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.modal-footer-right {
+  display: flex;
+  gap: 0.5rem;
+}
+.btn-danger-del {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.btn-danger-del:hover {
+  background: #ef4444;
+  color: #ffffff;
 }

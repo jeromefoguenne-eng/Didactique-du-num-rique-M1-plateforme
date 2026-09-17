@@ -89,29 +89,6 @@ export default defineConfig({
         }
       ],
 
-      '/ateliers/': [
-        {
-          text: "Navigation",
-          items: [
-            { text: "🏠 Accueil du Cours", link: "/" },
-            { text: "👤 Mon Espace Membre", link: "/espace-membre" }
-          ]
-        },
-        {
-          text: "Ateliers & Travaux Pratiques",
-          items: [
-            { text: "📌 Vue d'ensemble des ateliers", link: "/ateliers/" },
-            { text: "Atelier 1 : Diagnostic compétences", link: "/ateliers/exercice-01" },
-            { text: "Atelier 2 : Évaluer une information", link: "/ateliers/exercice-02" },
-            { text: "Atelier 3 : Guide collaboratif élèves", link: "/ateliers/exercice-03" },
-            { text: "Atelier 4 : Escape Game FMTTN", link: "/ateliers/exercice-04" },
-            { text: "Atelier 5 : Défi Canva mot de passe", link: "/ateliers/exercice-05" },
-            { text: "Atelier 6 : Défi Hardware PC", link: "/ateliers/exercice-06" },
-            { text: "Atelier 7 : Capsule vidéo du jeu", link: "/ateliers/exercice-video" }
-          ]
-        }
-      ],
-
       '/guide/': [
         {
           text: "Navigation",

@@ -506,14 +506,19 @@ export const userStore = {
 
   deleteStudent(email: string) {
     const cleanEmail = email.trim().toLowerCase()
-    const index = state.users.findIndex(u => u.email === cleanEmail)
+    const index = state.users.findIndex(u => u.email.toLowerCase() === cleanEmail)
     if (index >= 0) {
+      const removedUser = state.users[index]
       state.users.splice(index, 1)
       delete state.progress[cleanEmail]
-      state.submissions = state.submissions.filter(s => s.userEmail !== cleanEmail)
-      state.submittedFiles = state.submittedFiles.filter(f => f.userEmail !== cleanEmail)
+      if (state.evaluations) {
+        delete state.evaluations[cleanEmail]
+      }
+      state.submissions = state.submissions.filter(s => s.userEmail.toLowerCase() !== cleanEmail)
+      state.submittedFiles = state.submittedFiles.filter(f => f.userEmail.toLowerCase() !== cleanEmail)
+      state.quizAttempts = state.quizAttempts.filter(q => q.userEmail.toLowerCase() !== cleanEmail)
 
-      if (state.currentUser?.email === cleanEmail) {
+      if (state.currentUser?.email.toLowerCase() === cleanEmail) {
         state.currentUser = null
         if (typeof window !== 'undefined') localStorage.removeItem(STORAGE_KEY_CURRENT)
       }
@@ -522,9 +527,14 @@ export const userStore = {
       setStorage(STORAGE_KEY_PROGRESS, state.progress)
       setStorage(STORAGE_KEY_SUBMISSIONS, state.submissions)
       setStorage(STORAGE_KEY_FILES, state.submittedFiles)
-      return { success: true, message: 'Étudiant supprimé.' }
+      setStorage(STORAGE_KEY_QUIZZES, state.quizAttempts)
+      setStorage(STORAGE_KEY_EVALUATIONS, state.evaluations)
+      return { 
+        success: true, 
+        message: `L'étudiant "${removedUser.firstName} ${removedUser.lastName}" (${cleanEmail}) a été supprimé avec succès.` 
+      }
     }
-    return { success: false, message: 'Étudiant non trouvé.' }
+    return { success: false, message: `Aucun étudiant trouvé avec l'email "${cleanEmail}".` }
   },
 
   toggleArchiveStudent(email: string) {
@@ -911,13 +921,13 @@ export const userStore = {
       oralDefenseScore: 0
     }
 
-    // 1. Points Quiz & Diagnostic (max 20)
+    // 1. Points Quiz & Diagnostic (max 10 points)
     const userQuizzes = state.quizAttempts.filter(q => q.userEmail.toLowerCase() === targetEmail)
     let quizPoints = 0
     if (userQuizzes.length > 0) {
       const avgPct = userQuizzes.reduce((acc, q) => acc + q.percentage, 0) / userQuizzes.length
       const completionFactor = Math.min(1, userQuizzes.length / 2)
-      quizPoints = Math.round((avgPct / 100) * 20 * completionFactor * 10) / 10
+      quizPoints = Math.round((avgPct / 100) * 10 * completionFactor * 10) / 10
     }
 
     // 2. Points Exercices Plateforme (6 × 10 = 60 pts)
@@ -945,7 +955,7 @@ export const userStore = {
 
     const exercisesTotal = exerciseDetails.reduce((acc, e) => acc + e.points, 0)
 
-    // Sous-total Pilier 1 (Travaux sur la Plateforme : max 80 pts)
+    // Sous-total Pilier 1 (Travaux sur la Plateforme : max 70 pts)
     const pillar1Total = Math.round((quizPoints + exercisesTotal) * 10) / 10
 
     // Pilier 2 : Création du Jeu de Société Didactique (max 100 pts)
@@ -971,18 +981,18 @@ export const userStore = {
     // Pilier 3 : Soutenance Orale devant la classe (max 30 pts)
     const pillar3Total = evalRec.oralDefenseScore || 0
 
-    // Total Général sur 210 points
+    // Total Général sur 200 points (70 + 100 + 30)
     const totalScore = Math.round((pillar1Total + pillar2Total + pillar3Total) * 10) / 10
-    const totalOutOf20 = Math.round(((totalScore / 210) * 20) * 10) / 10
-    const percentage = Math.round((totalScore / 210) * 100)
+    const totalOutOf20 = Math.round((totalScore / 10) * 10) / 10
+    const percentage = Math.round((totalScore / 200) * 100)
 
     return {
       user,
       pillar1: {
         total: pillar1Total,
-        max: 80,
+        max: 70,
         quizPoints,
-        quizMax: 20,
+        quizMax: 10,
         exercisesTotal,
         exercisesMax: 60,
         exerciseDetails
@@ -997,10 +1007,10 @@ export const userStore = {
         max: 30
       },
       totalScore,
-      totalMax: 210,
+      totalMax: 200,
       totalOutOf20,
       percentage,
-      isPassing: totalScore >= 105,
+      isPassing: totalScore >= 100,
       feedback: evalRec.teacherFeedback || '',
       adjustNotice: "La pondération pourra être revue en fonction du déroulement du cours."
     }

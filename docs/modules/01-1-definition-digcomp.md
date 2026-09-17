@@ -89,7 +89,7 @@ Cette dimension critique est particulièrement visible dans le domaine de l'info
   
   <div style="margin: 1rem 0; display: flex; flex-direction: column; gap: 0.6rem;">
     <div>
-      👉 <strong>Consignes détaillées de l'atelier :</strong> <a href="/ateliers/exercice-01">Accéder à la page de l'Atelier 1 (Consignes & 10 Profils)</a>
+      👉 <strong>Consignes détaillées de l'atelier :</strong> <a href="https://docs.google.com/document/d/1b1QhnOoDNyCSdAIEAZx_xq96hQxZsUJH/preview" target="_blank" rel="noopener">Consulter et télécharger l'Exercice 1 sur Google Docs ↗</a>
     </div>
     <div>
       📄 <strong>Document de travail officiel (Google Docs) :</strong> <a href="https://docs.google.com/document/d/1b1QhnOoDNyCSdAIEAZx_xq96hQxZsUJH/edit?usp=sharing&ouid=112995252347605114249&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">Consulter et télécharger la grille d'analyse officielle</a>

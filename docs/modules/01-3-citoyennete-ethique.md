@@ -50,4 +50,4 @@ Trouver une image sur Google Images ne confère aucun droit de la réutiliser li
 Enseigner aux élèves l'utilisation des banques d'images libres de droit (Unsplash, Pixabay, Wikimedia Commons) et l'application des filtres de droits d'usage dans les moteurs de recherche.
 :::
 
-👉 **Atelier pratique associé** : [Atelier 3 : Concevoir un guide numérique pour les élèves](/ateliers/exercice-03)
+👉 **Atelier pratique associé** : [Consulter et télécharger l'Exercice 3 sur Google Docs ↗](https://docs.google.com/document/d/12XENuZM1WVyeCnRfu62Oh1_tG8Gkc1Z1/preview)

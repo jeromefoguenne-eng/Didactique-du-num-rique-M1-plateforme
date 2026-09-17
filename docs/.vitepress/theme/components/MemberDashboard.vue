@@ -49,15 +49,51 @@ const courseModules = [
 ]
 
 const availableExercises = [
-  { id: 'exercice-01', title: 'Atelier 1 : Diagnostic de compétences numériques' },
-  { id: 'exercice-02', title: 'Atelier 2 : Peut-on faire confiance à cette information ?' },
-  { id: 'exercice-03', title: 'Atelier 3 : Concevoir un guide numérique pour les élèves' },
-  { id: 'exercice-04', title: 'Atelier 4 : Escape Game FMTTN (Cyber-Enquête)' },
-  { id: 'exercice-05', title: 'Atelier 5 : Défi 20 minutes (Affiche Canva mot de passe)' },
-  { id: 'exercice-06', title: 'Atelier 6 : Défi Hardware (Démonter et remonter un PC)' },
-  { id: 'exercice-video', title: 'Atelier 7 : Capsule Vidéo du jeu' },
-  { id: 'projet-jeu', title: 'Projet : Dossier pédagogique du Jeu de société' },
-  { id: 'autre-travail', title: 'Autre travail ou document didactique libre' }
+  { 
+    id: 'exercice-01', 
+    title: 'Exercice 1 : Diagnostic de compétences numériques (DigComp 2.2)',
+    docUrl: 'https://docs.google.com/document/d/1b1QhnOoDNyCSdAIEAZx_xq96hQxZsUJH/preview'
+  },
+  { 
+    id: 'exercice-02', 
+    title: 'Exercice 2 : Peut-on faire confiance à cette information ?',
+    docUrl: 'https://docs.google.com/document/d/1o9vsf5fptzG1EH56oycz7SkD_UwmUKXm/preview'
+  },
+  { 
+    id: 'exercice-03', 
+    title: 'Exercice 3 : Concevoir un guide numérique pour les élèves',
+    docUrl: 'https://docs.google.com/document/d/12XENuZM1WVyeCnRfu62Oh1_tG8Gkc1Z1/preview'
+  },
+  { 
+    id: 'exercice-04', 
+    title: 'Exercice 4 : Escape Game FMTTN (Cyber-Enquête)',
+    docUrl: 'https://docs.google.com/document/d/1kUSfjlioxrG-i-ZrVbzQOpxH072f_2db/preview'
+  },
+  { 
+    id: 'exercice-05', 
+    title: 'Exercice 5 : Défi 20 minutes (Affiche Canva mot de passe)',
+    docUrl: 'https://docs.google.com/document/d/1GuqhxxFNJllg4vR_wLeD5A4CtYNyJ4mj/preview'
+  },
+  { 
+    id: 'exercice-06', 
+    title: 'Exercice 6 : Défi Hardware (Démonter et remonter un PC)',
+    docUrl: 'https://docs.google.com/document/d/1mfCTqwo-2l9k_wdLzIu3qRWOJuBxrqJv/preview'
+  },
+  { 
+    id: 'exercice-video', 
+    title: 'Présentation vidéo du jeu (Pitch & Règles)',
+    docUrl: 'https://docs.google.com/document/d/1PPtRyTN24HPU6ANKzkntr8e2sF0Dl2bm/preview'
+  },
+  { 
+    id: 'projet-jeu', 
+    title: 'Projet : Dossier pédagogique du Jeu de société',
+    docUrl: 'https://docs.google.com/document/d/1PPtRyTN24HPU6ANKzkntr8e2sF0Dl2bm/preview'
+  },
+  { 
+    id: 'autre-travail', 
+    title: 'Autre travail ou document didactique libre',
+    docUrl: 'https://docs.google.com/document/d/1PPtRyTN24HPU6ANKzkntr8e2sF0Dl2bm/preview'
+  }
 ]
 
 const currentUser = computed(() => userStore.currentUser)
@@ -67,6 +103,11 @@ const studentQuizzes = computed(() => userStore.getUserQuizAttempts())
 const myEvaluation = computed(() => userStore.getStudentEvaluation())
 
 // Aperçu en temps réel du nom de fichier généré
+function getExerciseDocUrl(exId) {
+  const ex = availableExercises.find(e => e.id === exId)
+  return ex?.docUrl || 'https://docs.google.com/document/d/1PPtRyTN24HPU6ANKzkntr8e2sF0Dl2bm/preview'
+}
+
 const previewFormattedName = computed(() => {
   if (!selectedFile.value) return ''
   const ex = availableExercises.find(e => e.id === selectedExerciseForUpload.value)
@@ -606,7 +647,7 @@ function formatSize(bytes) {
               </div>
               <h3 class="eval-title">Bilan d'Évaluation Didactique M1</h3>
               <p class="eval-desc">
-                Pondération officielle : <strong>80 points</strong> pour les travaux sur la plateforme en ligne, <strong>100 points</strong> pour la création du jeu de société didactique, et <strong>30 points</strong> pour la soutenance orale devant la classe.
+                Pondération officielle : <strong>70 points</strong> pour les travaux sur la plateforme en ligne (10 pts Quiz + 60 pts Devoirs), <strong>100 points</strong> pour la création du jeu de société didactique, et <strong>30 points</strong> pour la soutenance orale devant la classe.
               </p>
               <div class="eval-link-wrapper">
                 <a :href="withBase('/guide/evaluation')" class="link-eval-guide">
@@ -630,8 +671,8 @@ function formatSize(bytes) {
             <!-- PILIER 1 -->
             <div class="pillar-card p1">
               <div class="pillar-header">
-                <div class="pillar-badge">Pilier 1 • 80 Pts</div>
-                <div class="pillar-score-badge">{{ myEvaluation.pillar1.total }} / 80 pts</div>
+                <div class="pillar-badge">Pilier 1 • 70 Pts</div>
+                <div class="pillar-score-badge">{{ myEvaluation.pillar1.total }} / 70 pts</div>
               </div>
               <h4 class="pillar-title">Travaux sur la Plateforme</h4>
               <p class="pillar-summary">Auto-évaluations diagnostiques continues et devoirs pratiques déposés.</p>
@@ -647,7 +688,7 @@ function formatSize(bytes) {
                     </div>
                   </div>
                   <div class="sp-score">
-                    <strong>{{ myEvaluation.pillar1.quizPoints }}</strong> / 20 pts
+                    <strong>{{ myEvaluation.pillar1.quizPoints }}</strong> / 10 pts
                   </div>
                 </div>
 
@@ -680,6 +721,15 @@ function formatSize(bytes) {
                       <span class="ee-name">{{ ex.title }}</span>
                     </div>
                     <div class="ee-right">
+                      <a 
+                        :href="getExerciseDocUrl(ex.id)" 
+                        target="_blank" 
+                        rel="noopener"
+                        class="link-doc-drive"
+                        title="Consulter et télécharger le document officiel Google Docs"
+                      >
+                        📥 Google Doc ↗
+                      </a>
                       <span :class="['ee-status', ex.completed ? 'ok' : 'pending']">
                         {{ ex.completed ? 'Déposé (10/10)' : 'Non déposé (0/10)' }}
                       </span>
@@ -832,7 +882,12 @@ function formatSize(bytes) {
             class="exercise-box-card"
           >
             <div class="ex-card-header">
-              <h4>{{ ex.title }}</h4>
+              <div>
+                <h4>{{ ex.title }}</h4>
+                <a :href="ex.docUrl" target="_blank" rel="noopener" class="link-doc-drive-inline">
+                  📥 Télécharger / Consulter le document Google Docs ↗
+                </a>
+              </div>
               <span v-if="getAnswer(ex.id)" class="badge-submitted">Répondu ✓</span>
               <span v-else class="badge-pending">À rédiger</span>
             </div>
@@ -2547,4 +2602,32 @@ function formatSize(bytes) {
 }
 .notice-icon {
   font-size: 1.2rem;
+}
+
+
+.link-doc-drive {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #0284c7;
+  text-decoration: none;
+  background: rgba(2, 132, 199, 0.08);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid rgba(2, 132, 199, 0.2);
+  white-space: nowrap;
+}
+.link-doc-drive:hover {
+  background: rgba(2, 132, 199, 0.18);
+  text-decoration: underline;
+}
+.link-doc-drive-inline {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #0284c7;
+  margin-top: 0.2rem;
+  text-decoration: none;
+}
+.link-doc-drive-inline:hover {
+  text-decoration: underline;
 }

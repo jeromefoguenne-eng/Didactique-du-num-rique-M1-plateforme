@@ -1,51 +1,40 @@
 ---
-title: "Ateliers & Travaux Pratiques"
-description: "Hub des ateliers d'application et devoirs de Didactique du numérique (10 points chacun dans l'évaluation)"
+title: "Exercices Pratiques & Documents Google Docs"
+description: "Documents officiels Google Docs à télécharger pour les 6 devoirs obligatoires du cours de Didactique du numérique"
 ---
 
-<script setup>
-const subCategories = [
-  {
-    title: "Ateliers d'analyse et d'investigation didactique",
-    tag: "Ateliers 1 à 3 (30 pts)",
-    desc: "Diagnostic de compétences, évaluation critique d'une information virale et guide d'organisation numérique.",
-    link: "/ateliers/exercice-01",
-    image: "/images/subcategories/sub-6-1-diagnostic.jpg"
-  },
-  {
-    title: "Ateliers de création, ludification et matériel",
-    tag: "Ateliers 4 à 6 (30 pts)",
-    desc: "Escape Game FMTTN, défi express Canva 20 min et hardware / démontage d'unité centrale.",
-    link: "/ateliers/exercice-04",
-    image: "/images/subcategories/sub-6-5-poster20m.jpg"
-  }
-]
-</script>
+# Exercices Pratiques (Documents Google Docs)
 
-# Ateliers & Travaux Pratiques
-
-::: info 🎯 Exercices pratiques et évaluation continue (60 points sur 200)
-Les 6 exercices pratiques constituent des travaux d'application concrets. **Chaque exercice est valorisé à hauteur de 10 points** dans votre note finale sur 200 (soit un total de 60 points pour les 6 ateliers).
+::: info 🎯 Accès direct aux documents de travail (60 points sur 200)
+Les 6 exercices pratiques constituent vos devoirs d'application tout au long du quadrimestre (**10 points par devoir**, soit **60 points sur 200**).
+Conformément aux consignes, accédez directement ci-dessous à chaque document officiel Google Docs en mode consultation et téléchargez-le (`Fichier → Télécharger → Microsoft Word (.docx)` ou `.pdf`) pour rédiger vos réponses sur votre copie personnelle.
 :::
 
 ---
 
-## 📋 Modalités d'Accès et de Dépôt
+## 📥 Les 6 Documents Google Docs à Télécharger
 
-1. **Accès aux consignes via Google Docs** : Pour chaque atelier, vous accédez directement au document de travail officiel en **mode lecture seule**. Vous pouvez le consulter en ligne ou le télécharger (`Fichier → Télécharger → Word`).
-2. **Dépôt sécurisé** : Une fois rédigé, déposez votre document Word (`.docx`) ou PDF sur votre **[Espace Membre personnel](/espace-membre)** (onglet *« Dépôt de Travaux »*).
-3. **Suivi des points** : Vos dépôts sont synchronisés pour l'enseignant et apparaissent dans votre bilan d'évaluation sur 200 points.
+| Devoir | Intitulé de l'Exercice | Compétence FMTTN / Thème | Lien Google Docs Officiel |
+| :---: | :--- | :--- | :---: |
+| **Ex. 1** | Diagnostic de compétences numériques | Cadre DigComp 2.2, profils & besoins | [📥 Consulter / Télécharger l'Exercice 1 ↗](https://docs.google.com/document/d/1b1QhnOoDNyCSdAIEAZx_xq96hQxZsUJH/preview) |
+| **Ex. 2** | Peut-on faire confiance à cette information ? | Esprit critique & évaluation des sources | [📥 Consulter / Télécharger l'Exercice 2 ↗](https://docs.google.com/document/d/1o9vsf5fptzG1EH56oycz7SkD_UwmUKXm/preview) |
+| **Ex. 3** | Concevoir un guide numérique pour les élèves | Citoyenneté numérique & charte éthique | [📥 Consulter / Télécharger l'Exercice 3 ↗](https://docs.google.com/document/d/12XENuZM1WVyeCnRfu62Oh1_tG8Gkc1Z1/preview) |
+| **Ex. 4** | Escape Game FMTTN (Cyber-Enquête) | Ludification & résolution de problème | [📥 Consulter / Télécharger l'Exercice 4 ↗](https://docs.google.com/document/d/1kUSfjlioxrG-i-ZrVbzQOpxH072f_2db/preview) |
+| **Ex. 5** | Défi 20 minutes (Affiche Canva mot de passe) | Infographie & sécurité informatique | [📥 Consulter / Télécharger l'Exercice 5 ↗](https://docs.google.com/document/d/1GuqhxxFNJllg4vR_wLeD5A4CtYNyJ4mj/preview) |
+| **Ex. 6** | Défi Hardware (Démonter et remonter un PC) | Architecture matérielle & composants | [📥 Consulter / Télécharger l'Exercice 6 ↗](https://docs.google.com/document/d/1mfCTqwo-2l9k_wdLzIu3qRWOJuBxrqJv/preview) |
 
 ---
 
-### 🎯 Accéder aux ateliers :
+## 📤 Modalités de Réalisation et de Dépôt
 
-<SubCategoryTiles :items="subCategories" />
+1. **Téléchargez votre document** depuis le lien Google Docs ci-dessus.
+2. **Complétez vos analyses et réponses** sur votre copie Word ou PDF.
+3. **Déposez votre document finalisé** dans votre **[Espace Membre personnel](/espace-membre)** (onglet *« Dépôt de Travaux »*).
+4. Le système le nomme automatiquement à vos nom et prénom (`NOM_Prenom_Exercice...`) et le synchronise sur le dossier de l'enseignant.
 
 ---
 
 ## Navigation
-- 🏠 **[Accueil du Cours](/)**
-- 👤 **[Mon Espace Membre](/espace-membre)**
-- 📖 **[Modalités officielles de l'évaluation sur 200](/guide/evaluation)**
-
+- 👤 **[Déposer mes travaux sur mon Espace Membre](/espace-membre)**
+- 📖 **[Consulter les modalités d'évaluation sur 200 points](/guide/evaluation)**
+- 🏠 **[Retourner à l'Accueil du Cours](/)**

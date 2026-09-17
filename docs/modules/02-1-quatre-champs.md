@@ -49,8 +49,38 @@ Le champ Création de contenus considère l'élève non plus uniquement comme un
 Enfin, le champ Sécurité concerne la capacité à évoluer de manière responsable dans les environnements numériques. Il comprend notamment la protection des données personnelles, la gestion de l'identité numérique et des traces laissées en ligne, la protection des appareils et des comptes, mais également les comportements à adopter face aux risques et aux interactions problématiques. L'objectif est de permettre à l'élève de comprendre les risques auxquels il peut être confronté et de développer progressivement des stratégies pour les prévenir ou y réagir.
 
 
+<div class="callout-concept">
+  <div class="callout-title">🗺️ Synthèse Didactique — Les 4 Piliers du Volet Numérique FMTTN</div>
+  <ul>
+    <li><strong>Champ 1 : Informations et données</strong> (recherche critique, organisation, bases de données).</li>
+    <li><strong>Champ 2 : Communication et collaboration</strong> (espaces partagés, étiquette, droit à l'image, respect).</li>
+    <li><strong>Champ 3 : Création de contenus</strong> (texte, image, son, vidéo, pensée algorithmique et programmation).</li>
+    <li><strong>Champ 4 : Sécurité et citoyenneté</strong> (protection des données, hygiène numérique, traces, e-réputation).</li>
+  </ul>
+</div>
+
 Ces quatre champs montrent que la compétence numérique dépasse largement la simple maîtrise technique d'un appareil ou d'un logiciel. Elle suppose de pouvoir s'informer, communiquer, créer et agir de manière responsable dans un environnement numérique.
 
+<div class="callout-example">
+  <div class="callout-title">💡 Exemple d'Articulation Transversale en Classe</div>
+  <p>
+    Dans une leçon de création d'un dépliant d'information sur la biodiversité locale :
+  </p>
+  <ul>
+    <li>L'élève sélectionne des données fiables (<strong>Champ 1</strong>).</li>
+    <li>Il utilise Canva ou un traitement de texte pour mettre en page (<strong>Champ 3</strong>).</li>
+    <li>Il veille aux licences libres d'utilisation des photographies et cite ses sources (<strong>Champ 4</strong>).</li>
+    <li>Il partage sa maquette en ligne pour recueillir les commentaires de son groupe (<strong>Champ 2</strong>).</li>
+  </ul>
+</div>
+
+---
+
+## 🎓 Évaluation Diagnostique du Module 2.1
+
+<ClientOnly>
+  <QuizBox moduleId="02-1" moduleTitle="2.1 Les quatre champs d'apprentissage du numérique" />
+</ClientOnly>
 
 ---
 

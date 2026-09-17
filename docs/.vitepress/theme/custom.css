@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --tile-bg: var(--vp-c-bg-soft);
   --tile-border: var(--vp-c-divider);
   --tile-hover-border: var(--vp-c-brand-1);
@@ -120,3 +120,129 @@
   align-items: center;
   gap: 8px;
 }
+
+/* ============================================================
+   JUSTIFICATION DU TEXTE SUR TOUTES LES PAGES DU SITE
+   ============================================================ */
+.vp-doc p,
+.vp-doc li,
+.vp-doc dd,
+.vp-doc blockquote {
+  text-align: justify !important;
+  text-justify: inter-word !important;
+  hyphens: auto;
+}
+
+/* ============================================================
+   CADRES DE COULEUR ENRICHIS (CALLOUTS DIDACTIQUES)
+   ============================================================ */
+/* 1. Cadre Concept & Définition Clé (Bleu Indigo / Violet) */
+.callout-concept,
+.box-concept {
+  margin: 1.8rem 0;
+  border-left: 5px solid #6366f1;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.07) 0%, rgba(79, 70, 229, 0.02) 100%);
+  border-radius: 0 12px 12px 0;
+  padding: 1.25rem 1.6rem;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.05);
+}
+
+.callout-concept .callout-title,
+.box-concept .box-title {
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: #4f46e5;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 2. Cadre Exemple Concret de Classe (Vert Émeraude) */
+.callout-example,
+.box-example {
+  margin: 1.8rem 0;
+  border-left: 5px solid #10b981;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.07) 0%, rgba(5, 150, 105, 0.02) 100%);
+  border-radius: 0 12px 12px 0;
+  padding: 1.25rem 1.6rem;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.05);
+}
+
+.callout-example .callout-title,
+.box-example .box-title {
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: #059669;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 3. Cadre Vigilance & Piège Didactique (Orange Ambre) */
+.callout-vigilance,
+.box-vigilance {
+  margin: 1.8rem 0;
+  border-left: 5px solid #f59e0b;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(217, 119, 6, 0.02) 100%);
+  border-radius: 0 12px 12px 0;
+  padding: 1.25rem 1.6rem;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.05);
+}
+
+.callout-vigilance .callout-title,
+.box-vigilance .box-title {
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: #d97706;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 4. Cadre Exercice Pratique & Consigne (Bleu Ciel / Océan) */
+.callout-exercise,
+.box-exercise {
+  margin: 2rem 0;
+  border: 2px solid #3b82f6;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.07) 0%, rgba(37, 99, 235, 0.03) 100%);
+  border-radius: 12px;
+  padding: 1.5rem 1.8rem;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.08);
+}
+
+.callout-exercise .callout-title,
+.box-exercise .box-title {
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: #2563eb;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 5. Cadre Citation & Repères Théoriques (Violet / Pourpre) */
+.callout-quote,
+.box-quote {
+  margin: 1.8rem 0;
+  border-left: 5px solid #8b5cf6;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.07) 0%, rgba(124, 58, 237, 0.02) 100%);
+  border-radius: 0 12px 12px 0;
+  padding: 1.25rem 1.6rem;
+  font-style: normal;
+}
+
+.callout-quote .callout-title,
+.box-quote .box-title {
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: #7c3aed;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+

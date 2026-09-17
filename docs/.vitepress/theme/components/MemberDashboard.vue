@@ -6,8 +6,31 @@ import { withBase } from 'vitepress'
 const firstName = ref('')
 const lastName = ref('')
 const email = ref('')
+const registerPassword = ref('')
 const loginEmail = ref('')
-const activeTab = ref('progress') // 'progress' | 'exercises' | 'files'
+const loginPassword = ref('')
+const activeTab = ref('progress') // 'progress' | 'exercises' | 'files' | 'quizzes'
+
+// Gestion de l'authentification et mots de passe
+const authViewMode = ref('login') // 'login' | 'first-login' | 'forgot-password' | 'reset-code'
+const authPendingUser = ref(null)
+const initialPassword = ref('')
+const confirmInitialPassword = ref('')
+const initialPassFeedback = ref('')
+
+const forgotEmail = ref('')
+const recoveryCode = ref('')
+const newRecoveredPassword = ref('')
+const confirmRecoveredPassword = ref('')
+const recoverySimulatedCode = ref('')
+const recoveryFeedback = ref('')
+
+// Modal de changement de mot de passe en cours de session
+const showChangePassModal = ref(false)
+const oldPasswordCurrent = ref('')
+const newPasswordCurrent = ref('')
+const confirmPasswordCurrent = ref('')
+const changePassFeedback = ref({ type: '', message: '' })
 
 // Dépôt de fichiers
 const selectedExerciseForUpload = ref('exercice-01')
@@ -41,6 +64,7 @@ const availableExercises = [
 const currentUser = computed(() => userStore.currentUser)
 const progressPercent = computed(() => userStore.calculateUserProgressPercent())
 const userFiles = computed(() => userStore.getUserFiles())
+const studentQuizzes = computed(() => userStore.getUserQuizAttempts())
 
 // Aperçu en temps réel du nom de fichier généré
 const previewFormattedName = computed(() => {
@@ -55,7 +79,10 @@ function handleRegister() {
     alert('Veuillez remplir tous les champs.')
     return
   }
-  userStore.register(firstName.value, lastName.value, email.value)
+  const reg = userStore.register(firstName.value, lastName.value, email.value)
+  if (reg.success && registerPassword.value.trim()) {
+    userStore.setInitialPassword(email.value, registerPassword.value, registerPassword.value)
+  }
 }
 
 function handleLogin() {
@@ -63,9 +90,129 @@ function handleLogin() {
     alert('Veuillez entrer votre adresse email.')
     return
   }
-  const res = userStore.login(loginEmail.value)
+
+  // Vérifier d'abord le statut du compte
+  const status = userStore.checkStudentStatus(loginEmail.value)
+  if (!status.exists) {
+    alert("Aucun compte étudiant trouvé avec cette adresse email. Vérifiez votre saisie ou inscrivez-vous.")
+    return
+  }
+
+  // Si c'est sa toute première connexion et qu'aucun mot de passe n'est défini
+  if (!status.passwordSet) {
+    authPendingUser.value = status.user
+    authViewMode.value = 'first-login'
+    return
+  }
+
+  // Si le mot de passe est déjà requis
+  if (!loginPassword.value) {
+    alert('Veuillez saisir votre mot de passe personnel.')
+    return
+  }
+
+  const res = userStore.loginStudentWithPassword(loginEmail.value, loginPassword.value)
   if (!res.success) {
+    if (res.requireInitialPassword) {
+      authPendingUser.value = res.user
+      authViewMode.value = 'first-login'
+    } else {
+      alert(res.message)
+    }
+  }
+}
+
+function handleSetInitialPassword() {
+  if (!authPendingUser.value) return
+  initialPassFeedback.value = ''
+
+  const res = userStore.setInitialPassword(
+    authPendingUser.value.email,
+    initialPassword.value,
+    confirmInitialPassword.value
+  )
+
+  if (res.success) {
+    alert("Votre mot de passe a été configuré avec succès ! Bienvenue sur votre espace.")
+    authViewMode.value = 'login'
+    authPendingUser.value = null
+    initialPassword.value = ''
+    confirmInitialPassword.value = ''
+  } else {
+    initialPassFeedback.value = res.message
+  }
+}
+
+function handleStartForgotPassword() {
+  forgotEmail.value = loginEmail.value || ''
+  recoveryFeedback.value = ''
+  recoverySimulatedCode.value = ''
+  authViewMode.value = 'forgot-password'
+}
+
+function handleRequestRecoveryCode() {
+  if (!forgotEmail.value) {
+    recoveryFeedback.value = "Veuillez renseigner votre adresse email."
+    return
+  }
+
+  const res = userStore.requestPasswordRecovery(forgotEmail.value)
+  if (res.success) {
+    recoverySimulatedCode.value = res.code
+    recoveryFeedback.value = res.message
+    authViewMode.value = 'reset-code'
+  } else {
+    recoveryFeedback.value = res.message
+  }
+}
+
+function handleResetPasswordWithCode() {
+  if (!forgotEmail.value || !recoveryCode.value || !newRecoveredPassword.value) {
+    alert("Veuillez renseigner le code et le nouveau mot de passe.")
+    return
+  }
+
+  const res = userStore.resetPasswordWithCode(
+    forgotEmail.value,
+    recoveryCode.value,
+    newRecoveredPassword.value,
+    confirmRecoveredPassword.value
+  )
+
+  if (res.success) {
+    alert("Votre mot de passe a été réinitialisé avec succès ! Vous êtes désormais connecté.")
+    authViewMode.value = 'login'
+    recoveryCode.value = ''
+    newRecoveredPassword.value = ''
+    confirmRecoveredPassword.value = ''
+    recoverySimulatedCode.value = ''
+  } else {
     alert(res.message)
+  }
+}
+
+function handleChangePasswordInSession() {
+  changePassFeedback.value = { type: '', message: '' }
+  if (!currentUser.value) return
+
+  const res = userStore.changeStudentPassword(
+    currentUser.value.email,
+    oldPasswordCurrent.value,
+    newPasswordCurrent.value,
+    confirmPasswordCurrent.value
+  )
+
+  if (res.success) {
+    changePassFeedback.value = { type: 'success', message: res.message }
+    setTimeout(() => {
+      showChangePassModal.value = false
+      oldPasswordCurrent.value = ''
+      newPasswordCurrent.value = ''
+      confirmPasswordCurrent.value = ''
+      changePassFeedback.value = { type: '', message: '' }
+    }, 2000)
+  } else {
+    changePassFeedback.value = { type: 'error', message: res.message }
   }
 }
 
@@ -173,11 +320,12 @@ function formatSize(bytes) {
         <p>Inscrivez-vous pour enregistrer vos réponses aux exercices, déposer vos documents Word ou PDF et suivre votre progression tout au long du quadrimestre.</p>
       </div>
 
-      <div class="auth-forms-grid">
+      <!-- SOUS-VUE 1 : FORMULAIRE STANDARD (INSCRIPTION + CONNEXION AVEC MOT DE PASSE) -->
+      <div v-if="authViewMode === 'login'" class="auth-forms-grid">
         <!-- INSCRIPTION -->
         <div class="form-box">
           <h3>Nouvelle Inscription</h3>
-          <p class="form-desc">Créez votre profil étudiant en quelques secondes :</p>
+          <p class="form-desc">Créez votre profil étudiant et sécurisez votre espace :</p>
           <div class="input-group">
             <label>Prénom</label>
             <input v-model="firstName" type="text" placeholder="Ex: Sarah" />
@@ -190,22 +338,147 @@ function formatSize(bytes) {
             <label>Adresse Email HECh</label>
             <input v-model="email" type="email" placeholder="Ex: sarah.dubois@student.hech.be" />
           </div>
+          <div class="input-group">
+            <label>Définir un Mot de passe personnel</label>
+            <input v-model="registerPassword" type="password" placeholder="Minimum 4 caractères" />
+          </div>
           <button @click="handleRegister" class="btn-primary">
             S'inscrire & Démarrer mon suivi →
           </button>
         </div>
 
-        <!-- RE-CONNEXION -->
+        <!-- RE-CONNEXION AVEC MOT DE PASSE -->
         <div class="form-box secondary">
-          <h3>Déjà inscrit ?</h3>
-          <p class="form-desc">Connectez-vous avec votre adresse email :</p>
+          <h3>Connexion Étudiant</h3>
+          <p class="form-desc">Accédez à votre espace personnel sécurisé :</p>
           <div class="input-group">
-            <label>Votre Adresse Email</label>
-            <input v-model="loginEmail" type="email" placeholder="sarah.dubois@student.hech.be" />
+            <label>Votre Adresse Email HECh</label>
+            <input v-model="loginEmail" type="email" placeholder="sarah.dubois@student.hech.be" @keyup.enter="handleLogin" />
+          </div>
+          <div class="input-group">
+            <div class="label-with-link">
+              <label>Mot de passe</label>
+              <button type="button" class="link-forgot-pass" @click="handleStartForgotPassword">
+                Mot de passe oublié ?
+              </button>
+            </div>
+            <input v-model="loginPassword" type="password" placeholder="Votre mot de passe personnel" @keyup.enter="handleLogin" />
           </div>
           <button @click="handleLogin" class="btn-secondary">
             Accéder à mon espace →
           </button>
+
+          <div class="demo-hints">
+            <span class="hint-title">💡 Comptes démo :</span>
+            <span class="hint-text">sarah.dubois@student.hech.be (1ère connexion sans MDP) • maxime.lambert@student.hech.be (mdp: etudiant2026)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SOUS-VUE 2 : PREMIÈRE CONNEXION (DÉFINITION DU MOT DE PASSE) -->
+      <div v-else-if="authViewMode === 'first-login'" class="first-login-panel">
+        <div class="first-login-box">
+          <div class="badge-first-time">🎉 PREMIÈRE CONNEXION</div>
+          <h3>Bienvenue {{ authPendingUser?.firstName }} {{ authPendingUser?.lastName }} !</h3>
+          <p class="first-time-text">
+            Votre compte a été créé par votre enseignant. Afin de garantir la confidentialité de vos devoirs et de vos résultats aux quiz, veuillez choisir votre <strong>mot de passe personnel</strong> pour finaliser l'activation de votre espace.
+          </p>
+
+          <div v-if="initialPassFeedback" class="alert-error">
+            {{ initialPassFeedback }}
+          </div>
+
+          <div class="input-group">
+            <label>Choisissez votre mot de passe (min. 4 caractères)</label>
+            <input v-model="initialPassword" type="password" placeholder="Ex: monMotDePasse2026!" />
+          </div>
+
+          <div class="input-group">
+            <label>Confirmez votre mot de passe</label>
+            <input v-model="confirmInitialPassword" type="password" placeholder="Répétez le même mot de passe" />
+          </div>
+
+          <div class="first-login-actions">
+            <button @click="handleSetInitialPassword" class="btn-primary full">
+              Enregistrer mon mot de passe et entrer →
+            </button>
+            <button @click="authViewMode = 'login'" class="btn-cancel-link">
+              ← Retour à la connexion
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SOUS-VUE 3 : DEMANDE DE RÉCUPÉRATION DU MOT DE PASSE OUBLIÉ -->
+      <div v-else-if="authViewMode === 'forgot-password'" class="forgot-pass-panel">
+        <div class="first-login-box">
+          <div class="badge-recover">🔑 RÉCUPÉRATION DE MOT DE PASSE</div>
+          <h3>Mot de passe oublié ?</h3>
+          <p class="first-time-text">
+            Saisissez votre adresse email institutionnelle. Un code de réinitialisation à 6 chiffres va être généré et envoyé pour sécuriser votre compte.
+          </p>
+
+          <div v-if="recoveryFeedback" class="alert-error">
+            {{ recoveryFeedback }}
+          </div>
+
+          <div class="input-group">
+            <label>Votre adresse email HECh</label>
+            <input v-model="forgotEmail" type="email" placeholder="sarah.dubois@student.hech.be" />
+          </div>
+
+          <div class="first-login-actions">
+            <button @click="handleRequestRecoveryCode" class="btn-primary full">
+              Envoyer le code de vérification →
+            </button>
+            <button @click="authViewMode = 'login'" class="btn-cancel-link">
+              ← Annuler et revenir
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SOUS-VUE 4 : SAISIE DU CODE ET NOUVEAU MOT DE PASSE -->
+      <div v-else-if="authViewMode === 'reset-code'" class="forgot-pass-panel">
+        <div class="first-login-box">
+          <div class="badge-recover">📧 CODE ENVOYÉ</div>
+          <h3>Réinitialisez votre mot de passe</h3>
+          <p class="first-time-text">
+            Un email contenant un code de confirmation a été simulé à l'adresse <strong>{{ forgotEmail }}</strong>.
+          </p>
+
+          <!-- Notification simulation mail visible pour démonstration -->
+          <div v-if="recoverySimulatedCode" class="simulated-mail-card">
+            <span class="mail-icon">📩</span>
+            <div class="mail-body">
+              <strong>Simulation email HECh reçu :</strong>
+              <p>Votre code de vérification à 6 chiffres est : <span class="simulated-code">{{ recoverySimulatedCode }}</span></p>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label>Code de vérification (6 chiffres)</label>
+            <input v-model="recoveryCode" type="text" placeholder="Ex: 123456" maxlength="6" />
+          </div>
+
+          <div class="input-group">
+            <label>Nouveau mot de passe personnel</label>
+            <input v-model="newRecoveredPassword" type="password" placeholder="Minimum 4 caractères" />
+          </div>
+
+          <div class="input-group">
+            <label>Confirmez le nouveau mot de passe</label>
+            <input v-model="confirmRecoveredPassword" type="password" placeholder="Répétez le mot de passe" />
+          </div>
+
+          <div class="first-login-actions">
+            <button @click="handleResetPasswordWithCode" class="btn-primary full">
+              Valider le nouveau mot de passe →
+            </button>
+            <button @click="authViewMode = 'login'" class="btn-cancel-link">
+              ← Annuler
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -223,12 +496,53 @@ function formatSize(bytes) {
             <p class="user-email">{{ currentUser.email }} • Étudiant M1 Math-Numérique</p>
           </div>
         </div>
-        <button @click="handleLogout" class="btn-logout">
-          Déconnexion
-        </button>
+        <div class="profile-header-actions">
+          <button @click="showChangePassModal = !showChangePassModal" class="btn-change-pass">
+            🔐 Modifier mon mot de passe
+          </button>
+          <button @click="handleLogout" class="btn-logout">
+            Déconnexion
+          </button>
+        </div>
       </div>
 
       <!-- PROGRESSION GLOBALE -->
+      
+      <!-- MODAL / BLOC CHANGEMENT DE MOT DE PASSE CONNECTÉ -->
+      <div v-if="showChangePassModal" class="in-session-pass-card">
+        <div class="in-session-header">
+          <h4>🔐 Modifier mon mot de passe</h4>
+          <button class="btn-close-mini" @click="showChangePassModal = false">✕</button>
+        </div>
+
+        <div v-if="changePassFeedback.message" :class="['alert-inline', changePassFeedback.type]">
+          {{ changePassFeedback.message }}
+        </div>
+
+        <div class="mini-form-row">
+          <div class="input-group">
+            <label>Ancien mot de passe</label>
+            <input v-model="oldPasswordCurrent" type="password" placeholder="Mot de passe actuel" />
+          </div>
+          <div class="input-group">
+            <label>Nouveau mot de passe</label>
+            <input v-model="newPasswordCurrent" type="password" placeholder="Nouveau mot de passe" />
+          </div>
+          <div class="input-group">
+            <label>Confirmation</label>
+            <input v-model="confirmPasswordCurrent" type="password" placeholder="Répéter nouveau mot de passe" />
+          </div>
+        </div>
+        <div class="mini-form-actions">
+          <button class="btn-primary small" @click="handleChangePasswordInSession">
+            Enregistrer le nouveau mot de passe
+          </button>
+          <button class="btn-secondary small" @click="showChangePassModal = false">
+            Annuler
+          </button>
+        </div>
+      </div>
+
       <div class="progress-banner">
         <div class="progress-labels">
           <span class="progress-title">Progression générale du cours</span>
@@ -258,6 +572,12 @@ function formatSize(bytes) {
           @click="activeTab = 'files'"
         >
           📁 Dépôt de Travaux (Word / PDF) ({{ userFiles.length }})
+        </button>
+        <button 
+          :class="['tab-btn', { active: activeTab === 'quizzes' }]"
+          @click="activeTab = 'quizzes'"
+        >
+          📝 Mes Évaluations Diagnostiques ({{ studentQuizzes.length }})
         </button>
       </div>
 
@@ -408,6 +728,91 @@ function formatSize(bytes) {
                 </button>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- VUE 4 : MES ÉVALUATIONS DIAGNOSTIQUES & QUIZ -->
+      <div v-if="activeTab === 'quizzes'" class="tab-content">
+        <div class="tab-intro">
+          <div>
+            <h3>📝 Vos Évaluations Diagnostiques & Quiz</h3>
+            <p>Retrouvez l'historique détaillé de tous les questionnaires de vérification de compréhension réalisés à la fin des modules de cours.</p>
+          </div>
+          <a href="/modules/01-1-definition-digcomp" class="btn-action-primary">
+            Accéder aux modules de cours →
+          </a>
+        </div>
+
+        <div v-if="studentQuizzes.length === 0" class="empty-state-card">
+          <span class="empty-icon">📝</span>
+          <h4>Aucun quiz complété pour le moment</h4>
+          <p>Rendez-vous à la fin de chaque partie du syllabus pour valider vos acquis par un quiz diagnostic (QCM et questions ouvertes de réflexion didactique).</p>
+          <a href="/modules/01-1-definition-digcomp" class="btn-primary small">
+            Faire le quiz du Module 1.1 →
+          </a>
+        </div>
+
+        <div v-else class="quiz-history-list">
+          <div 
+            v-for="att in studentQuizzes" 
+            :key="att.id" 
+            class="quiz-history-card"
+          >
+            <div class="q-hist-header">
+              <div class="q-hist-module-info">
+                <span class="q-mod-badge">{{ att.moduleId }}</span>
+                <h4 class="q-mod-title">{{ att.moduleTitle }}</h4>
+              </div>
+              <div class="q-hist-score-badge" :class="att.percentage >= 80 ? 'good' : (att.percentage >= 50 ? 'medium' : 'low')">
+                <span class="q-score-val">{{ att.score }} / {{ att.totalPoints }}</span>
+                <span class="q-pct-val">{{ att.percentage }}%</span>
+              </div>
+            </div>
+
+            <div class="q-hist-meta">
+              <span class="q-date">🗓️ Complété le {{ att.submittedAt }}</span>
+              <span class="q-type-badge">Évaluation diagnostique formative</span>
+            </div>
+
+            <!-- Détail des réponses -->
+            <details class="q-answers-details">
+              <summary class="q-details-summary">
+                Consulter mes réponses et les critères didactiques ({{ att.answers.length }} questions)
+              </summary>
+              <div class="q-answers-breakdown">
+                <div 
+                  v-for="(ans, aIdx) in att.answers" 
+                  :key="ans.questionId || aIdx"
+                  class="q-answer-item"
+                  :class="ans.type === 'qcm' ? (ans.isCorrect ? 'ans-correct' : 'ans-wrong') : 'ans-open'"
+                >
+                  <div class="ans-header">
+                    <span class="ans-num">Question {{ aIdx + 1 }} ({{ ans.type === 'qcm' ? 'QCM' : 'Question ouverte' }})</span>
+                    <span class="ans-pts">{{ ans.points }} / {{ ans.maxPoints }} pt{{ ans.maxPoints > 1 ? 's' : '' }}</span>
+                  </div>
+                  <p class="ans-text"><strong>Intitulé :</strong> {{ ans.questionText }}</p>
+                  
+                  <div class="ans-student-box">
+                    <strong>Votre réponse :</strong>
+                    <p>{{ ans.userAnswer }}</p>
+                  </div>
+
+                  <div v-if="ans.type === 'qcm' && !ans.isCorrect" class="ans-expected-box">
+                    <strong>Bonne réponse attendue :</strong>
+                    <p>{{ ans.correctAnswer }}</p>
+                    <p v-if="ans.explanation" class="ans-exp">💡 {{ ans.explanation }}</p>
+                  </div>
+
+                  <div v-else-if="ans.type === 'open'" class="ans-expected-box">
+                    <strong>Critères du syllabus & Corrigé type :</strong>
+                    <p>{{ ans.explanation }}</p>
+                    <p v-if="ans.openFeedback" class="ans-exp">💬 {{ ans.openFeedback }}</p>
+                  </div>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
       </div>
@@ -1068,4 +1473,400 @@ function formatSize(bytes) {
   background: #fee2e2;
   border-color: #fca5a5;
 }
+
+/* NOUVEAUX STYLES POUR L'AUTHENTIFICATION & MOTS DE PASSE ÉTUDIANTS */
+.label-with-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link-forgot-pass {
+  background: none;
+  border: none;
+  color: var(--vp-c-brand-1);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.link-forgot-pass:hover {
+  color: #4338ca;
+}
+
+.demo-hints {
+  margin-top: 1.2rem;
+  padding: 0.8rem;
+  background: rgba(99, 102, 241, 0.06);
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.4;
+}
+
+.hint-title {
+  font-weight: 700;
+  color: #4f46e5;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.first-login-panel,
+.forgot-pass-panel {
+  max-width: 540px;
+  margin: 1.5rem auto;
+}
+
+.first-login-box {
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.badge-first-time {
+  display: inline-block;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.8rem;
+}
+
+.badge-recover {
+  display: inline-block;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.8rem;
+}
+
+.first-time-text {
+  font-size: 0.92rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.5;
+  margin-bottom: 1.4rem;
+}
+
+.first-login-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 1.5rem;
+}
+
+.btn-primary.full {
+  width: 100%;
+}
+
+.btn-cancel-link {
+  background: none;
+  border: none;
+  color: var(--vp-c-text-2);
+  font-size: 0.88rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-cancel-link:hover {
+  color: var(--vp-c-text-1);
+}
+
+.simulated-mail-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px dashed #10b981;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.2rem;
+}
+
+.simulated-code {
+  font-family: monospace;
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: #065f46;
+  letter-spacing: 2px;
+  background: white;
+  padding: 2px 8px;
+  border-radius: 6px;
+  border: 1px solid #10b981;
+}
+
+.profile-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-change-pass {
+  background: var(--vp-c-default-soft);
+  border: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-1);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-change-pass:hover {
+  background: var(--vp-c-bg);
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+}
+
+.in-session-pass-card {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  margin: 1.2rem 0;
+  animation: fadeIn 0.2s ease;
+}
+
+.in-session-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.in-session-header h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.btn-close-mini {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--vp-c-text-2);
+}
+
+.mini-form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mini-form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-primary.small {
+  padding: 6px 14px;
+  font-size: 0.85rem;
+}
+
+.btn-secondary.small {
+  padding: 6px 14px;
+  font-size: 0.85rem;
+}
+
+/* HISTORIQUE DES QUIZ ÉTUDIANT */
+.quiz-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+.quiz-history-card {
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 1.4rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.q-hist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.q-hist-module-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.q-mod-badge {
+  background: rgba(99, 102, 241, 0.12);
+  color: #4f46e5;
+  font-weight: 800;
+  font-size: 0.8rem;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.q-mod-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+}
+
+.q-hist-score-badge {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.q-hist-score-badge.good {
+  background: rgba(16, 185, 129, 0.12);
+  color: #065f46;
+}
+
+.q-hist-score-badge.medium {
+  background: rgba(245, 158, 11, 0.12);
+  color: #92400e;
+}
+
+.q-hist-score-badge.low {
+  background: rgba(239, 68, 68, 0.12);
+  color: #991b1b;
+}
+
+.q-score-val {
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.q-pct-val {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.q-hist-meta {
+  display: flex;
+  gap: 15px;
+  font-size: 0.82rem;
+  color: var(--vp-c-text-2);
+  margin: 0.6rem 0 1rem 0;
+}
+
+.q-type-badge {
+  background: var(--vp-c-default-soft);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.q-answers-details {
+  border-top: 1px dashed var(--vp-c-divider);
+  padding-top: 0.8rem;
+}
+
+.q-details-summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--vp-c-brand-1);
+}
+
+.q-answers-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.q-answer-item {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.q-answer-item.ans-correct {
+  border-left: 4px solid #10b981;
+}
+
+.q-answer-item.ans-wrong {
+  border-left: 4px solid #ef4444;
+}
+
+.q-answer-item.ans-open {
+  border-left: 4px solid #3b82f6;
+}
+
+.ans-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+
+.ans-num {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--vp-c-text-2);
+}
+
+.ans-pts {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--vp-c-brand-1);
+}
+
+.ans-text {
+  font-size: 0.9rem;
+  margin: 0 0 0.6rem 0;
+  color: var(--vp-c-text-1);
+}
+
+.ans-student-box {
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.88rem;
+  margin-bottom: 0.5rem;
+}
+
+.ans-student-box p {
+  margin: 4px 0 0 0;
+  color: var(--vp-c-text-1);
+}
+
+.ans-expected-box {
+  background: rgba(99, 102, 241, 0.05);
+  border-left: 3px solid #6366f1;
+  padding: 0.6rem 0.8rem;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.86rem;
+}
+
+.ans-expected-box p {
+  margin: 4px 0 0 0;
+  color: var(--vp-c-text-1);
+}
+
+.ans-exp {
+  font-style: italic;
+  color: var(--vp-c-text-2) !important;
+  margin-top: 4px !important;
+}
+
 </style>

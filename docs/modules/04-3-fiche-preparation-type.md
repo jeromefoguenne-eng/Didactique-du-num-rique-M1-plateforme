@@ -115,8 +115,29 @@ Définition de la tâche observable (auto-évaluation guidée, test croisé entr
 Élaboration d'une grille critériée analytique (rubric) distinguant les critères minimaux de conformité et des indicateurs de réussite directement constatables, déclinés en trois ou quatre degrés d'acquisition (Non acquis, En voie d'acquisition, Acquis, Dépassé/Expert).
 
 
+<div class="callout-concept">
+  <div class="callout-title">📋 Règle d'Or Didactique — L'Alignement Constructif</div>
+  <p>
+    Dans une leçon FMTTN, le choix du logiciel ou du matériel ne précède jamais l'objectif didactique. L'enseignant définit d'abord <strong>l'attendu officiel</strong> et <strong>les indicateurs de réussite observables</strong>, puis sélectionne le dispositif numérique le plus pertinent pour provoquer l'apprentissage.
+  </p>
+</div>
+
 Modalité explicite de rétroaction (feedback constructif et formatif) permettant à l'élève d'identifier immédiatement ses erreurs et les leviers pour progresser.
 
+<div class="callout-vigilance">
+  <div class="callout-title">⚠️ Piège à Éviter — La Surcharge Cognitive Instrumentale</div>
+  <p>
+    N'introduisez jamais un nouvel outil logiciel complexe le jour même d'une évaluation certificative ou sommative d'une notion disciplinaire : vous évalueriez la débrouillardise informatique de l'élève plutôt que la compétence ciblée.
+  </p>
+</div>
+
+---
+
+## 🎓 Évaluation Diagnostique du Module 4.1
+
+<ClientOnly>
+  <QuizBox moduleId="04-1" moduleTitle="4.1 Les éléments indispensables d'une préparation FMTTN" />
+</ClientOnly>
 
 ---
 

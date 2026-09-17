@@ -8,6 +8,37 @@ export interface User {
   role: 'student' | 'admin'
   registeredAt: string
   status?: 'active' | 'archived'
+  password?: string
+  passwordSet?: boolean
+  recoveryCode?: string
+}
+
+export interface QuizAnswer {
+  questionId: string
+  questionText: string
+  type: 'qcm' | 'open'
+  userAnswer: string | number
+  correctAnswer?: string | number
+  isCorrect?: boolean
+  points: number
+  maxPoints: number
+  explanation?: string
+  openFeedback?: string
+}
+
+export interface QuizAttempt {
+  id: string
+  userId: string
+  userName: string
+  userEmail: string
+  moduleId: string
+  moduleTitle: string
+  score: number
+  totalPoints: number
+  percentage: number
+  answers: QuizAnswer[]
+  submittedAt: string
+  evaluationType: 'diagnostic'
 }
 
 export interface Submission {
@@ -44,6 +75,7 @@ const STORAGE_KEY_SUBMISSIONS = 'hech_didac_submissions'
 const STORAGE_KEY_ADMIN_PIN = 'hech_didac_admin_pin'
 const STORAGE_KEY_FILES = 'hech_didac_files'
 const STORAGE_KEY_WEBHOOK = 'hech_didac_drive_webhook'
+const STORAGE_KEY_QUIZZES = 'hech_didac_quiz_attempts'
 
 // Helper de nettoyage pour le nommage des fichiers
 export function formatFileName(
@@ -87,7 +119,9 @@ const DEFAULT_USERS: User[] = [
     email: 'sarah.dubois@student.hech.be',
     role: 'student',
     registeredAt: '2026-09-15 14:30',
-    status: 'active'
+    status: 'active',
+    password: '',
+    passwordSet: false
   },
   {
     id: 'user-2',
@@ -96,7 +130,9 @@ const DEFAULT_USERS: User[] = [
     email: 'maxime.lambert@student.hech.be',
     role: 'student',
     registeredAt: '2026-09-15 16:15',
-    status: 'active'
+    status: 'active',
+    password: 'etudiant2026',
+    passwordSet: true
   },
   {
     id: 'user-3',
@@ -105,7 +141,104 @@ const DEFAULT_USERS: User[] = [
     email: 'thomas.bastien@student.hech.be',
     role: 'student',
     registeredAt: '2026-09-16 08:45',
-    status: 'active'
+    status: 'active',
+    password: 'etudiant2026',
+    passwordSet: true
+  }
+]
+
+const DEFAULT_QUIZZES: QuizAttempt[] = [
+  {
+    id: 'quiz-att-1',
+    userId: 'user-2',
+    userName: 'Maxime Lambert',
+    userEmail: 'maxime.lambert@student.hech.be',
+    moduleId: '01-1',
+    moduleTitle: "1.1 Qu'est-ce qu'une compétence numérique ?",
+    score: 8,
+    totalPoints: 10,
+    percentage: 80,
+    evaluationType: 'diagnostic',
+    submittedAt: '2026-09-16 14:10',
+    answers: [
+      {
+        questionId: 'q1',
+        questionText: "Selon le cadre DigComp 2.2, qu'est-ce qui distingue une compétence numérique d'une simple habileté technique ?",
+        type: 'qcm',
+        userAnswer: 2,
+        correctAnswer: 2,
+        isCorrect: true,
+        points: 3,
+        maxPoints: 3,
+        explanation: "La compétence intègre la mobilisation critique, le jugement et l'action responsable en situation complexe."
+      },
+      {
+        questionId: 'q2',
+        questionText: "Pourquoi dit-on que la compétence numérique est « située » ?",
+        type: 'qcm',
+        userAnswer: 1,
+        correctAnswer: 1,
+        isCorrect: true,
+        points: 3,
+        maxPoints: 3,
+        explanation: "On ne peut évaluer la compétence hors contexte réel : elle dépend des objectifs et contraintes de la tâche."
+      },
+      {
+        questionId: 'q3',
+        questionText: "En tant que futur enseignant, comment diagnostiquez-vous un élève qui copie-colle un texte d'une IA sans vérification ?",
+        type: 'open',
+        userAnswer: "Cet élève possède une habileté technique instrumentale (prompter et copier) mais manque de la dimension critique et de responsabilité du modèle DigComp.",
+        points: 2,
+        maxPoints: 4,
+        openFeedback: "Très bon repérage du triptyque outil/habileté/compétence. N'oubliez pas de proposer un dispositif de remédiation didactique."
+      }
+    ]
+  },
+  {
+    id: 'quiz-att-2',
+    userId: 'user-3',
+    userName: 'Thomas Bastien',
+    userEmail: 'thomas.bastien@student.hech.be',
+    moduleId: '01-1',
+    moduleTitle: "1.1 Qu'est-ce qu'une compétence numérique ?",
+    score: 10,
+    totalPoints: 10,
+    percentage: 100,
+    evaluationType: 'diagnostic',
+    submittedAt: '2026-09-16 15:45',
+    answers: [
+      {
+        questionId: 'q1',
+        questionText: "Selon le cadre DigComp 2.2, qu'est-ce qui distingue une compétence numérique d'une simple habileté technique ?",
+        type: 'qcm',
+        userAnswer: 2,
+        correctAnswer: 2,
+        isCorrect: true,
+        points: 3,
+        maxPoints: 3,
+        explanation: "La compétence intègre la mobilisation critique, le jugement et l'action responsable en situation complexe."
+      },
+      {
+        questionId: 'q2',
+        questionText: "Pourquoi dit-on que la compétence numérique est « située » ?",
+        type: 'qcm',
+        userAnswer: 1,
+        correctAnswer: 1,
+        isCorrect: true,
+        points: 3,
+        maxPoints: 3,
+        explanation: "On ne peut évaluer la compétence hors contexte réel : elle dépend des objectifs et contraintes de la tâche."
+      },
+      {
+        questionId: 'q3',
+        questionText: "En tant que futur enseignant, comment diagnostiquez-vous un élève qui copie-colle un texte d'une IA sans vérification ?",
+        type: 'open',
+        userAnswer: "L'élève montre une bonne aisance opératoire mais une carence sur la dimension épistémique et éthique. Il prend l'outil pour une vérité absolue.",
+        points: 4,
+        maxPoints: 4,
+        openFeedback: "Analyse remarquable des dimensions cognitives et de la posture critique attendue au niveau M1."
+      }
+    ]
   }
 ]
 
@@ -218,7 +351,8 @@ const state = reactive({
   submissions: getStorage<Submission[]>(STORAGE_KEY_SUBMISSIONS, DEFAULT_SUBMISSIONS),
   submittedFiles: getStorage<SubmittedFile[]>(STORAGE_KEY_FILES, DEFAULT_FILES),
   driveWebhook: getStorage<string>(STORAGE_KEY_WEBHOOK, ''),
-  adminPin: getStorage<string>(STORAGE_KEY_ADMIN_PIN, 'hech2026')
+  adminPin: getStorage<string>(STORAGE_KEY_ADMIN_PIN, 'hech2026'),
+  quizAttempts: getStorage<QuizAttempt[]>(STORAGE_KEY_QUIZZES, DEFAULT_QUIZZES)
 })
 
 export const userStore = {
@@ -239,6 +373,9 @@ export const userStore = {
   },
   get adminPin() {
     return state.adminPin
+  },
+  get quizAttempts() {
+    return state.quizAttempts
   },
 
   register(firstName: string, lastName: string, email: string) {
@@ -706,6 +843,262 @@ export const userStore = {
   updateAdminPin(newPin: string) {
     state.adminPin = newPin.trim()
     setStorage(STORAGE_KEY_ADMIN_PIN, state.adminPin)
+  },
+
+  // ==========================================
+  // GESTION DES MOTS DE PASSE ÉTUDIANTS
+  // ==========================================
+
+  checkStudentStatus(email: string) {
+    const cleanEmail = email.trim().toLowerCase()
+    const user = state.users.find(u => u.email === cleanEmail)
+    if (!user) {
+      return { exists: false, message: "Aucun compte étudiant trouvé avec cette adresse." }
+    }
+    return {
+      exists: true,
+      user,
+      passwordSet: user.passwordSet === true && !!user.password,
+      name: `${user.firstName} ${user.lastName}`
+    }
+  },
+
+  loginStudentWithPassword(email: string, password?: string) {
+    const cleanEmail = email.trim().toLowerCase()
+    const user = state.users.find(u => u.email === cleanEmail)
+    if (!user) {
+      return { success: false, message: "Adresse email non reconnue." }
+    }
+    if (user.status === 'archived') {
+      return { success: false, message: "Ce compte étudiant est archivé. Veuillez contacter l'enseignant." }
+    }
+
+    // Première connexion : le mot de passe n'a pas encore été défini
+    if (!user.passwordSet || !user.password) {
+      return {
+        success: false,
+        requireInitialPassword: true,
+        user,
+        message: "Première connexion détectée : vous devez définir votre mot de passe personnel."
+      }
+    }
+
+    // Vérification du mot de passe
+    if (user.password !== (password || '').trim()) {
+      return { success: false, message: "Mot de passe incorrect." }
+    }
+
+    state.currentUser = user
+    setStorage(STORAGE_KEY_CURRENT, state.currentUser)
+    return { success: true, user, message: "Connexion réussie !" }
+  },
+
+  setInitialPassword(email: string, newPass: string, confirmPass: string) {
+    const cleanEmail = email.trim().toLowerCase()
+    const user = state.users.find(u => u.email === cleanEmail)
+    if (!user) return { success: false, message: "Étudiant non trouvé." }
+
+    const p = (newPass || '').trim()
+    if (p.length < 4) {
+      return { success: false, message: "Le mot de passe doit comporter au moins 4 caractères." }
+    }
+    if (p !== (confirmPass || '').trim()) {
+      return { success: false, message: "Les deux mots de passe ne correspondent pas." }
+    }
+
+    user.password = p
+    user.passwordSet = true
+    user.recoveryCode = undefined
+    state.currentUser = user
+
+    setStorage(STORAGE_KEY_USERS, state.users)
+    setStorage(STORAGE_KEY_CURRENT, state.currentUser)
+    return { success: true, user, message: "Votre mot de passe a été défini avec succès. Bienvenue !" }
+  },
+
+  changeStudentPassword(email: string, oldPass: string, newPass: string, confirmPass: string) {
+    const cleanEmail = email.trim().toLowerCase()
+    const user = state.users.find(u => u.email === cleanEmail)
+    if (!user) return { success: false, message: "Étudiant non trouvé." }
+
+    if (user.password && user.password !== oldPass.trim()) {
+      return { success: false, message: "L'ancien mot de passe est incorrect." }
+    }
+
+    const p = (newPass || '').trim()
+    if (p.length < 4) {
+      return { success: false, message: "Le nouveau mot de passe doit comporter au moins 4 caractères." }
+    }
+    if (p !== (confirmPass || '').trim()) {
+      return { success: false, message: "La confirmation ne correspond pas au nouveau mot de passe." }
+    }
+
+    user.password = p
+    user.passwordSet = true
+    setStorage(STORAGE_KEY_USERS, state.users)
+    if (state.currentUser?.email === cleanEmail) {
+      state.currentUser = user
+      setStorage(STORAGE_KEY_CURRENT, state.currentUser)
+    }
+    return { success: true, message: "Mot de passe modifié avec succès !" }
+  },
+
+  requestPasswordRecovery(email: string) {
+    const cleanEmail = email.trim().toLowerCase()
+    const user = state.users.find(u => u.email === cleanEmail)
+    if (!user) {
+      return { success: false, message: "Aucun compte étudiant trouvé avec cette adresse email." }
+    }
+
+    // Génère un code de récupération aléatoire à 6 chiffres
+    const code = Math.floor(100000 + Math.random() * 900000).toString()
+    user.recoveryCode = code
+    setStorage(STORAGE_KEY_USERS, state.users)
+
+    return {
+      success: true,
+      code, // Simulé dans l'interface et par mail
+      email: user.email,
+      message: `Un code de vérification à 6 chiffres a été généré pour ${user.firstName} ${user.lastName}.`
+    }
+  },
+
+  resetPasswordWithCode(email: string, code: string, newPass: string, confirmPass: string) {
+    const cleanEmail = email.trim().toLowerCase()
+    const user = state.users.find(u => u.email === cleanEmail)
+    if (!user) return { success: false, message: "Étudiant non trouvé." }
+
+    const inputCode = (code || '').trim()
+    // Autoriser le code stocké ou '123456' en code de secours démo
+    if (!user.recoveryCode || (user.recoveryCode !== inputCode && inputCode !== '123456')) {
+      return { success: false, message: "Le code de vérification est invalide ou a expiré." }
+    }
+
+    const p = (newPass || '').trim()
+    if (p.length < 4) {
+      return { success: false, message: "Le mot de passe doit comporter au moins 4 caractères." }
+    }
+    if (p !== (confirmPass || '').trim()) {
+      return { success: false, message: "Les mots de passe ne correspondent pas." }
+    }
+
+    user.password = p
+    user.passwordSet = true
+    user.recoveryCode = undefined
+    state.currentUser = user
+
+    setStorage(STORAGE_KEY_USERS, state.users)
+    setStorage(STORAGE_KEY_CURRENT, state.currentUser)
+    return { success: true, user, message: "Mot de passe réinitialisé avec succès !" }
+  },
+
+  adminResetStudentPassword(email: string, newTempPass?: string) {
+    const cleanEmail = email.trim().toLowerCase()
+    const user = state.users.find(u => u.email === cleanEmail)
+    if (!user) return { success: false, message: "Étudiant non trouvé." }
+
+    const temp = newTempPass?.trim() || 'hech2026'
+    user.password = temp
+    user.passwordSet = false // Obligera l'étudiant à reconfigurer ou tester
+    user.recoveryCode = undefined
+
+    setStorage(STORAGE_KEY_USERS, state.users)
+    return {
+      success: true,
+      temporaryPassword: temp,
+      message: `Le mot de passe de ${user.firstName} ${user.lastName} a été réinitialisé à '${temp}' (en attente de nouvelle définition par l'étudiant).`
+    }
+  },
+
+  // ==========================================
+  // GESTION DES QUIZ & ÉVALUATIONS DIAGNOSTIQUES
+  // ==========================================
+
+  saveQuizAttempt(attempt: {
+    moduleId: string
+    moduleTitle: string
+    score: number
+    totalPoints: number
+    percentage: number
+    answers: QuizAnswer[]
+    evaluationType?: 'diagnostic'
+    userName?: string
+    userEmail?: string
+  }) {
+    const email = attempt.userEmail || state.currentUser?.email || 'anonyme@student.hech.be'
+    const name = attempt.userName || (state.currentUser ? `${state.currentUser.firstName} ${state.currentUser.lastName}` : 'Étudiant Démo')
+    const userId = state.currentUser?.id || `user-${Date.now()}`
+
+    const newAttempt: QuizAttempt = {
+      id: `quiz-att-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
+      userId,
+      userName: name,
+      userEmail: email,
+      moduleId: attempt.moduleId,
+      moduleTitle: attempt.moduleTitle,
+      score: attempt.score,
+      totalPoints: attempt.totalPoints,
+      percentage: attempt.percentage,
+      answers: attempt.answers,
+      submittedAt: new Date().toISOString().replace('T', ' ').substring(0, 16),
+      evaluationType: attempt.evaluationType || 'diagnostic'
+    }
+
+    state.quizAttempts.unshift(newAttempt)
+    setStorage(STORAGE_KEY_QUIZZES, state.quizAttempts)
+
+    // Marquer aussi dans la progression si seuil réussi >= 50%
+    if (attempt.percentage >= 50 && state.currentUser) {
+      this.toggleProgress(`quiz-${attempt.moduleId}`)
+    }
+
+    return {
+      success: true,
+      attempt: newAttempt,
+      message: "Résultats du quiz enregistrés avec succès !"
+    }
+  },
+
+  getUserQuizAttempts(email?: string): QuizAttempt[] {
+    const targetEmail = email || state.currentUser?.email
+    if (!targetEmail) return []
+    return state.quizAttempts.filter(q => q.userEmail.toLowerCase() === targetEmail.toLowerCase())
+  },
+
+  getAllQuizAttempts(): QuizAttempt[] {
+    return state.quizAttempts
+  },
+
+  deleteQuizAttempt(id: string) {
+    const idx = state.quizAttempts.findIndex(q => q.id === id)
+    if (idx >= 0) {
+      state.quizAttempts.splice(idx, 1)
+      setStorage(STORAGE_KEY_QUIZZES, state.quizAttempts)
+      return { success: true }
+    }
+    return { success: false }
+  },
+
+  getQuizStats(moduleId?: string) {
+    const list = moduleId 
+      ? state.quizAttempts.filter(q => q.moduleId === moduleId)
+      : state.quizAttempts
+
+    if (list.length === 0) {
+      return { count: 0, averagePercentage: 0, averageScore: 0, maxScore: 0, minScore: 0 }
+    }
+
+    const totalPct = list.reduce((acc, q) => acc + q.percentage, 0)
+    const totalSc = list.reduce((acc, q) => acc + q.score, 0)
+    const pcts = list.map(q => q.percentage)
+
+    return {
+      count: list.length,
+      averagePercentage: Math.round(totalPct / list.length),
+      averageScore: Math.round((totalSc / list.length) * 10) / 10,
+      maxScore: Math.max(...pcts),
+      minScore: Math.min(...pcts)
+    }
   },
 
   changeAdminPassword(oldPin: string, newPin: string, confirmPin: string) {

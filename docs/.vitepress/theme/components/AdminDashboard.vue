@@ -4,7 +4,41 @@ import { userStore } from '../stores/userStore'
 
 const enteredPin = ref('')
 const isAuthenticated = ref(false)
-const adminTab = ref('students') // 'students' | 'submissions' | 'files' | 'export'
+const adminTab = ref('students') // 'students' | 'quizzes' | 'submissions' | 'files' | 'export'
+
+// Quiz et évaluations diagnostiques
+const quizAttempts = computed(() => userStore.quizAttempts)
+const totalQuizzesCount = computed(() => quizAttempts.value.length)
+const averageQuizPct = computed(() => {
+  if (quizAttempts.value.length === 0) return 0
+  const total = quizAttempts.value.reduce((acc, q) => acc + q.percentage, 0)
+  return Math.round(total / quizAttempts.value.length)
+})
+
+const quizModuleFilter = ref('all')
+const quizStudentFilter = ref('all')
+const selectedQuizDetail = ref(null)
+
+const availableQuizModules = [
+  { id: 'all', title: 'Tous les modules' },
+  { id: '01-1', title: '1.1 Définition & DigComp' },
+  { id: '01-2', title: '1.2 Éducation aux médias' },
+  { id: '02-1', title: '2.1 Quatre champs FMTTN' },
+  { id: '02-3', title: '2.3 Progression spiralaire' },
+  { id: '03-1', title: '3.1 Situation-problème' },
+  { id: '04-1', title: '4.1 Fiche de préparation' },
+  { id: '04-2', title: '4.2 Taxonomie de Bloom' },
+  { id: '04-4', title: '4.4 Assistant IA HECh' },
+  { id: '05', title: '5.0 Projet jeu de société' }
+]
+
+const filteredQuizAttempts = computed(() => {
+  return quizAttempts.value.filter(q => {
+    const matchMod = quizModuleFilter.value === 'all' || q.moduleId === quizModuleFilter.value
+    const matchStd = quizStudentFilter.value === 'all' || q.userEmail === quizStudentFilter.value
+    return matchMod && matchStd
+  })
+})
 
 // Filtres et recherche pour l'onglet étudiants
 const studentStatusFilter = ref('active') // 'all' | 'active' | 'archived'
@@ -100,6 +134,38 @@ const filteredFiles = computed(() => {
     return matchStudent && matchEx
   })
 })
+
+function handleAdminResetStudentPassword(email) {
+  if (confirm(`Voulez-vous réinitialiser le mot de passe de l'étudiant ${email} ?\nUn mot de passe temporaire sera défini et l'étudiant devra obligatoirement configurer son mot de passe lors de sa prochaine connexion.`)) {
+    const res = userStore.adminResetStudentPassword(email, 'hech2026')
+    alert(res.message)
+  }
+}
+
+function handleDeleteQuizAttempt(id) {
+  if (confirm("Voulez-vous supprimer cette tentative d'évaluation diagnostique ? L'étudiant pourra repasser le test.")) {
+    userStore.deleteQuizAttempt(id)
+    if (selectedQuizDetail.value?.id === id) {
+      selectedQuizDetail.value = null
+    }
+  }
+}
+
+function exportQuizResultsToCSV() {
+  let csv = "Nom de l'étudiant;Email institutionnel;Module ID;Titre du module;Note obtenue;Total points;Pourcentage;Date de passage;Type d'évaluation;Détail des réponses\n"
+  filteredQuizAttempts.value.forEach(q => {
+    const cleanAnswers = q.answers.map(a => `[${a.questionId}] ${a.questionText.substring(0,30)}... -> Rep: ${a.userAnswer} (Pts: ${a.points}/${a.maxPoints})`).join(" | ").replace(/"/g, '""')
+    csv += `"${q.userName}";"${q.userEmail}";"${q.moduleId}";"${q.moduleTitle}";"${q.score}";"${q.totalPoints}";"${q.percentage}%";"${q.submittedAt}";"${q.evaluationType}";"${cleanAnswers}"\n`
+  })
+
+  const blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8;' })
+  const link = document.createElement('a')
+  link.href = URL.createObjectURL(blob)
+  link.setAttribute('download', `Didactique_M1_Resultats_Quiz_${new Date().toISOString().substring(0,10)}.csv`)
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+}
 
 function checkPin() {
   if (userStore.verifyAdminPin(enteredPin.value)) {
@@ -361,6 +427,13 @@ function formatSize(bytes) {
             <div class="kpi-label">Fichiers Word / PDF</div>
           </div>
         </div>
+        <div class="kpi-card">
+          <span class="kpi-icon">🎯</span>
+          <div>
+            <div class="kpi-value">{{ averageQuizPct }}%</div>
+            <div class="kpi-label">Moyenne Quiz ({{ totalQuizzesCount }})</div>
+          </div>
+        </div>
       </div>
 
       <!-- ONGLETS ADMIN -->
@@ -370,6 +443,12 @@ function formatSize(bytes) {
           @click="adminTab = 'students'"
         >
           👥 Gestion de la Classe ({{ users.length }})
+        </button>
+        <button 
+          :class="['admin-tab-btn', { active: adminTab === 'quizzes' }]"
+          @click="adminTab = 'quizzes'"
+        >
+          🎓 Résultats des Quiz ({{ totalQuizzesCount }})
         </button>
         <button 
           :class="['admin-tab-btn', { active: adminTab === 'submissions' }]"
@@ -496,6 +575,7 @@ function formatSize(bytes) {
                 <th>Statut</th>
                 <th>Adresse Email</th>
                 <th>Inscrit le</th>
+                <th>Sécurité MDP</th>
                 <th>Progression</th>
                 <th>Exercices</th>
                 <th style="text-align: right;">Actions</th>
@@ -519,6 +599,14 @@ function formatSize(bytes) {
                 <td class="email-cell">{{ u.email }}</td>
                 <td>{{ u.registeredAt }}</td>
                 <td>
+                  <span v-if="u.passwordSet" class="badge-pwd active" title="Mot de passe personnel actif">
+                    ✓ Défini
+                  </span>
+                  <span v-else class="badge-pwd pending" title="En attente de 1ère connexion">
+                    ⏳ Non défini
+                  </span>
+                </td>
+                <td>
                   <div class="table-progress">
                     <div class="table-progress-bar">
                       <div 
@@ -536,6 +624,13 @@ function formatSize(bytes) {
                 </td>
                 <td style="text-align: right;">
                   <div class="action-buttons-group">
+                    <button 
+                      @click="handleAdminResetStudentPassword(u.email)" 
+                      class="btn-row-action reset-pwd" 
+                      title="Réinitialiser le mot de passe de cet étudiant (mot de passe temporaire hech2026)"
+                    >
+                      🔑 MDP
+                    </button>
                     <button 
                       v-if="u.status !== 'archived'" 
                       @click="handleToggleArchive(u.email)" 
@@ -565,6 +660,167 @@ function formatSize(bytes) {
               </tr>
             </tbody>
           </table>
+        </div>
+      </div>
+
+
+      <!-- VUE : RÉSULTATS DES QUIZ & ÉVALUATIONS DIAGNOSTIQUES -->
+      <div v-if="adminTab === 'quizzes'" class="tab-panel">
+        <div class="students-toolbar">
+          <div class="toolbar-left">
+            <div class="filter-group">
+              <label>Module :</label>
+              <select v-model="quizModuleFilter" class="select-filter">
+                <option v-for="m in availableQuizModules" :key="m.id" :value="m.id">
+                  {{ m.title }}
+                </option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label>Étudiant :</label>
+              <select v-model="quizStudentFilter" class="select-filter">
+                <option value="all">Tous les étudiants</option>
+                <option v-for="u in users" :key="u.id" :value="u.email">
+                  {{ u.lastName }} {{ u.firstName }} ({{ u.email }})
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="toolbar-right">
+            <button @click="exportQuizResultsToCSV" class="btn-action-tool secondary" title="Exporter les résultats des quiz en CSV compatible Excel">
+              📥 Exporter les Quiz (CSV)
+            </button>
+          </div>
+        </div>
+
+        <!-- STATS BANNER DE LA SÉLECTION -->
+        <div class="quiz-stats-strip">
+          <div class="stat-pill">
+            <span class="stat-lbl">Tentatives enregistrées :</span>
+            <span class="stat-val">{{ filteredQuizAttempts.length }}</span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-lbl">Moyenne de la sélection :</span>
+            <span class="stat-val bold">{{ filteredQuizAttempts.length > 0 ? Math.round(filteredQuizAttempts.reduce((a,b)=>a+b.percentage, 0)/filteredQuizAttempts.length) : 0 }}%</span>
+          </div>
+        </div>
+
+        <!-- TABLE DES RÉSULTATS -->
+        <div v-if="filteredQuizAttempts.length === 0" class="empty-state">
+          <p>Aucun résultat de quiz ne correspond aux filtres sélectionnés.</p>
+        </div>
+
+        <div v-else class="table-responsive">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Étudiant</th>
+                <th>Module</th>
+                <th>Score Obtenu</th>
+                <th>Date</th>
+                <th style="text-align: right;">Détails & Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="att in filteredQuizAttempts" :key="att.id">
+                <td>
+                  <div class="student-cell">
+                    <span class="student-avatar">{{ att.userName ? att.userName.charAt(0) : '?' }}</span>
+                    <div>
+                      <div class="student-name">{{ att.userName }}</div>
+                      <div class="student-email">{{ att.userEmail }}</div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <span class="quiz-mod-tag">{{ att.moduleId }}</span>
+                  <span class="quiz-mod-name">{{ att.moduleTitle }}</span>
+                </td>
+                <td>
+                  <div class="quiz-score-pill" :class="att.percentage >= 80 ? 'good' : (att.percentage >= 50 ? 'medium' : 'low')">
+                    <strong>{{ att.score }} / {{ att.totalPoints }}</strong> ({{ att.percentage }}%)
+                  </div>
+                </td>
+                <td>{{ att.submittedAt }}</td>
+                <td style="text-align: right;">
+                  <div class="action-buttons-group">
+                    <button 
+                      class="btn-row-action primary" 
+                      @click="selectedQuizDetail = att"
+                      title="Consulter les réponses de l'étudiant et la grille"
+                    >
+                      👁️ Voir réponses
+                    </button>
+                    <button 
+                      class="btn-row-action delete" 
+                      @click="handleDeleteQuizAttempt(att.id)"
+                      title="Supprimer cette tentative"
+                    >
+                      🗑️
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- MODAL DÉTAIL D'UN QUIZ ÉTUDIANT -->
+        <div v-if="selectedQuizDetail" class="admin-modal-overlay" @click.self="selectedQuizDetail = null">
+          <div class="admin-modal-card">
+            <div class="admin-modal-header">
+              <div>
+                <h3>📝 Détail de l'évaluation diagnostique</h3>
+                <p>{{ selectedQuizDetail.userName }} ({{ selectedQuizDetail.userEmail }}) • {{ selectedQuizDetail.moduleTitle }}</p>
+              </div>
+              <button class="btn-close-modal" @click="selectedQuizDetail = null">✕</button>
+            </div>
+
+            <div class="modal-score-summary">
+              <span class="score-badge-large" :class="selectedQuizDetail.percentage >= 80 ? 'good' : 'medium'">
+                Score : {{ selectedQuizDetail.score }} / {{ selectedQuizDetail.totalPoints }} ({{ selectedQuizDetail.percentage }}%)
+              </span>
+              <span class="submitted-date">Passé le {{ selectedQuizDetail.submittedAt }}</span>
+            </div>
+
+            <div class="modal-questions-list">
+              <div 
+                v-for="(ans, idx) in selectedQuizDetail.answers" 
+                :key="idx" 
+                class="modal-question-item"
+                :class="ans.type === 'qcm' ? (ans.isCorrect ? 'correct' : 'wrong') : 'open'"
+              >
+                <div class="modal-q-head">
+                  <span class="q-badge">{{ ans.type === 'qcm' ? 'QCM' : 'Question ouverte' }}</span>
+                  <span class="q-pts">{{ ans.points }} / {{ ans.maxPoints }} pt{{ ans.maxPoints > 1 ? 's' : '' }}</span>
+                </div>
+                <h5 class="modal-q-text">{{ ans.questionText }}</h5>
+
+                <div class="modal-answer-box">
+                  <strong>Réponse de l'étudiant :</strong>
+                  <p>{{ ans.userAnswer }}</p>
+                </div>
+
+                <div v-if="ans.type === 'qcm' && !ans.isCorrect" class="modal-feedback-box error">
+                  <strong>Bonne réponse attendue :</strong>
+                  <p>{{ ans.correctAnswer }}</p>
+                  <p v-if="ans.explanation" class="expl-text">💡 {{ ans.explanation }}</p>
+                </div>
+
+                <div v-else-if="ans.type === 'open'" class="modal-feedback-box info">
+                  <strong>Éléments attendus du syllabus & Corrigé type :</strong>
+                  <p>{{ ans.explanation }}</p>
+                  <p v-if="ans.openFeedback" class="expl-text">💬 {{ ans.openFeedback }}</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="admin-modal-footer">
+              <button class="btn-action-tool primary" @click="selectedQuizDetail = null">Fermer</button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1634,4 +1890,256 @@ function formatSize(bytes) {
   font-size: 0.92rem;
   cursor: pointer;
 }
+
+/* STYLES DES QUIZ DANS L'ADMIN */
+.badge-pwd {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.badge-pwd.active {
+  background: rgba(16, 185, 129, 0.12);
+  color: #065f46;
+}
+
+.badge-pwd.pending {
+  background: rgba(245, 158, 11, 0.12);
+  color: #92400e;
+}
+
+.btn-row-action.reset-pwd {
+  background: rgba(99, 102, 241, 0.1);
+  color: #4f46e5;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.btn-row-action.reset-pwd:hover {
+  background: #4f46e5;
+  color: white;
+}
+
+.quiz-stats-strip {
+  display: flex;
+  gap: 20px;
+  margin: 1.2rem 0;
+  padding: 0.8rem 1.2rem;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+}
+
+.stat-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+}
+
+.stat-lbl {
+  color: var(--vp-c-text-2);
+}
+
+.stat-val {
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+}
+
+.stat-val.bold {
+  color: var(--vp-c-brand-1);
+  font-size: 1.05rem;
+}
+
+.quiz-mod-tag {
+  background: rgba(99, 102, 241, 0.12);
+  color: #4f46e5;
+  font-weight: 800;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.quiz-mod-name {
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+.quiz-score-pill {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.quiz-score-pill.good {
+  background: rgba(16, 185, 129, 0.12);
+  color: #065f46;
+}
+
+.quiz-score-pill.medium {
+  background: rgba(245, 158, 11, 0.12);
+  color: #92400e;
+}
+
+.quiz-score-pill.low {
+  background: rgba(239, 68, 68, 0.12);
+  color: #991b1b;
+}
+
+.admin-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 1.5rem;
+}
+
+.admin-modal-card {
+  background: var(--vp-c-bg);
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.admin-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--vp-c-divider);
+  padding-bottom: 1rem;
+}
+
+.admin-modal-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.admin-modal-header p {
+  margin: 4px 0 0 0;
+  font-size: 0.88rem;
+  color: var(--vp-c-text-2);
+}
+
+.btn-close-modal {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--vp-c-text-2);
+}
+
+.modal-score-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1.2rem 0;
+  padding: 0.8rem 1.2rem;
+  background: var(--vp-c-bg-soft);
+  border-radius: 8px;
+}
+
+.score-badge-large {
+  font-weight: 800;
+  font-size: 1.1rem;
+  padding: 4px 12px;
+  border-radius: 6px;
+}
+
+.score-badge-large.good {
+  background: #10b981;
+  color: white;
+}
+
+.score-badge-large.medium {
+  background: #f59e0b;
+  color: white;
+}
+
+.modal-questions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.modal-question-item {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  padding: 1.2rem;
+  background: var(--vp-c-bg-soft);
+}
+
+.modal-question-item.correct {
+  border-left: 5px solid #10b981;
+}
+
+.modal-question-item.wrong {
+  border-left: 5px solid #ef4444;
+}
+
+.modal-question-item.open {
+  border-left: 5px solid #3b82f6;
+}
+
+.modal-q-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+
+.modal-q-text {
+  margin: 0 0 0.8rem 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.modal-answer-box {
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  padding: 0.8rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+}
+
+.modal-answer-box p {
+  margin: 4px 0 0 0;
+}
+
+.modal-feedback-box {
+  padding: 0.8rem;
+  border-radius: 6px;
+  font-size: 0.88rem;
+}
+
+.modal-feedback-box.error {
+  background: rgba(239, 68, 68, 0.08);
+  border-left: 3px solid #ef4444;
+}
+
+.modal-feedback-box.info {
+  background: rgba(59, 130, 246, 0.08);
+  border-left: 3px solid #3b82f6;
+}
+
+.admin-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid var(--vp-c-divider);
+  padding-top: 1rem;
+}
+
 </style>

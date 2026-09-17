@@ -103,8 +103,50 @@ Face à ces contenus, l’élève doit développer un esprit critique : ne pas s
 Cette capacité suppose l’acquisition d’une littératie médiatique et numérique : comprendre que les médias ne sont pas de simples « fenêtres ouvertes sur le monde », mais des dispositifs qui sélectionnent, hiérarchisent et mettent en forme l'information. L'élève apprend progressivement à identifier les codes médiatiques, les intentions des producteurs, les logiques d'audience et les mécanismes susceptibles d'influencer sa réception. Il devient ainsi capable de lire les médias, et pas seulement de les consommer.
 
 
+<div class="callout-concept">
+  <div class="callout-title">📺 Éducation aux Médias (EAM) — Finalité Citoyenne</div>
+  <p>
+    L'éducation aux médias ne se réduit pas à apprendre à « bien utiliser Internet ». Elle vise l'<strong>autonomie intellectuelle et citoyenne</strong> : donner aux apprenants les clés pour déconstruire la fabrique des messages médiatiques, repérer les intentions sous-jacentes et agir de manière responsable dans l'espace public numérique.
+  </p>
+</div>
+
 Cette littératie contribue directement à l'autonomie. L'objectif n'est pas que l'élève attende que l'enseignant lui dise si une information est fiable, mais qu'il puisse lui-même rechercher des sources, les comparer, vérifier une affirmation et construire son propre jugement. L'autonomie numérique ne consiste donc pas uniquement à savoir utiliser un outil ; elle consiste aussi à savoir quoi faire face à l'information que cet outil nous donne accès.
 
+<div class="callout-vigilance">
+  <div class="callout-title">⚠️ Vigilance Pédagogique — Les Pièges du Sensationnalisme et des Bulles de Filtres</div>
+  <p>
+    Face aux algorithmes de recommandation et aux titres sensationnalistes (« clickbaits »), l'élève doit acquérir le réflexe de poser deux questions fondamentales :
+  </p>
+  <ul>
+    <li><em>« Pourquoi cette information est-elle mise en scène de cette manière précise ? »</em></li>
+    <li><em>« Quel effet émotionnel ou comportemental cette publication cherche-t-elle à provoquer chez moi ? »</em></li>
+  </ul>
+</div>
+
+---
+
+## 🛠️ Atelier Pratique Associé
+
+<div class="callout-exercise">
+  <div class="callout-title">📝 Atelier 2 : Peut-on faire confiance à cette information ?</div>
+  <p>
+    Mise en situation d'évaluation critique de sources journalistiques, scientifiques et réseaux sociaux.
+  </p>
+  <div>
+    👉 <strong>Consignes de l'atelier :</strong> <a href="/ateliers/exercice-02">Accéder à l'Atelier 2 (Enquête critique et analyse des sources)</a>
+  </div>
+  <div style="margin-top: 0.8rem; font-size: 0.88rem; color: var(--vp-c-text-2);">
+    ℹ️ Déposez votre synthèse d'atelier sur votre <a href="/espace-membre">Espace Membre Étudiant</a>.
+  </div>
+</div>
+
+---
+
+## 🎓 Évaluation Diagnostique du Module 1.2
+
+<ClientOnly>
+  <QuizBox moduleId="01-2" moduleTitle="1.2 L'éducation aux médias dans les compétences numériques" />
+</ClientOnly>
 
 ---
 

@@ -136,6 +136,31 @@ Construire cette littératie signifie donc apprendre à lire le numérique, mais
   </p>
 </div>
 
+<div class="callout-example" style="margin: 1.5rem 0;">
+  <div class="callout-title">🏛️ Exemple 2 de post-vérité : La guerre des chiffres d'investiture (Obama 2009 vs Trump 2017)</div>
+  <p>
+    <strong>Cas d'étude emblématique des « faits alternatifs » (Kellyanne Conway / Donald Trump) :</strong><br />
+    La comparaison visuelle sans appel de la foule rassemblée sur le National Mall à Washington lors de l'investiture de Barack Obama en 2009 et celle de Donald Trump en 2017. Malgré l'évidence photographique aérienne, l'administration présidentielle a affirmé qu'il s'agissait de <em>« la plus grande foule ayant jamais assisté à une investiture, point barre »</em>, illustrant la substitution délibérée du fait objectif par un récit politique et émotionnel.
+  </p>
+
+  <div style="text-align: center; margin: 1.2rem 0;">
+    <div style="display: inline-block; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.18); border: 2px solid var(--vp-c-divider); max-width: 680px; width: 100%;">
+      <img 
+        src="/images/obama-trump-inauguration.jpg" 
+        alt="Comparaison de l'affluence à Washington : Obama 2009 vs Trump 2017" 
+        style="width: 100%; height: auto; display: block; object-fit: cover;" 
+      />
+      <div style="background: rgba(15, 23, 42, 0.88); color: white; padding: 10px 14px; font-size: 0.88rem; text-align: center;">
+        <span>📸 Comparatif National Mall : 2009 Obama (Getty Images) vs 2017 Trump (58th Presidential Inaugural Committee)</span>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size: 0.85rem; color: var(--vp-c-text-2); text-align: center; margin: 0.5rem 0 0 0;">
+    💡 <em>Exemple fondateur du concept de post-vérité contemporaine et de fabrication de « vérités alternatives » face aux preuves factuelles.</em>
+  </p>
+</div>
+
 
 Produire pour mieux déconstruire
 
@@ -155,7 +180,100 @@ L'éducation aux médias contribue enfin au développement de l'autonomie numér
 Cette autonomie doit cependant être associée à une capacité de jugement. Être autonome ne signifie pas seulement savoir-faire seul, mais également savoir choisir et décider. Face à une information, une application ou une IA, l'élève doit pouvoir déterminer s'il peut faire confiance à la ressource, s'il doit la vérifier, s'il est pertinent de l'utiliser et quelles peuvent être les conséquences de son choix. On passe ainsi d'une autonomie technique à une autonomie critique : l'élève devient progressivement capable d'agir dans les environnements numériques sans dépendre systématiquement de l'enseignant, tout en conservant une capacité de recul sur ses propres pratiques.
 
 
-Exemple de la récompense aléatoire : Télé-réalité
+Exemple : La télé-réalité
+
+<div class="callout-example" style="margin: 1.5rem 0;">
+  <div class="callout-title">🎬 Extrait 1 — Vis ma vie : « Arrête de te prendre pour Johnny »</div>
+  <p>
+    <strong>Mise en scène du sensationnel et caricature du réel :</strong><br />
+    Analyse de la scénarisation télévisuelle, des effets de montage et de la posture des protagonistes dans l'émission culte <em>Vis ma vie</em>.
+  </p>
+
+  <div style="text-align: center; margin: 1.2rem 0;">
+    <a 
+      href="https://drive.google.com/file/d/1J5Uuy08BiacBxRMnRyvd_25Jdt57m2mq/view?usp=sharing" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display: inline-block; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.18); border: 2px solid var(--vp-c-divider); max-width: 560px; width: 100%; text-decoration: none;"
+      title="Cliquer pour visionner la vidéo Vis ma vie sur Google Drive"
+    >
+      <img 
+        src="/images/vignette-vis-ma-vie-johnny.jpg" 
+        alt="Vidéo Vis ma vie : Arrête de te prendre pour Johnny" 
+        style="width: 100%; height: auto; display: block; object-fit: cover;" 
+      />
+      <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white; padding: 12px 16px; font-size: 0.92rem; font-weight: 700; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <span>▶️ Cliquer pour lancer la vidéo « Arrête de te prendre pour Johnny » (Google Drive) ↗</span>
+      </div>
+    </a>
+  </div>
+
+  <p style="font-size: 0.85rem; color: var(--vp-c-text-2); text-align: center; margin: 0.5rem 0 0 0;">
+    💡 <em>Support d'analyse sur le cadrage télévisuel, la dramatisation et la frontière entre réel et spectacle.</em>
+  </p>
+</div>
+
+<div class="callout-example" style="margin: 1.5rem 0;">
+  <div class="callout-title">🍽️ Extrait 2 — Télé-réalité : « Cauchemar en cuisine »</div>
+  <p>
+    <strong>Dramatisation, montage choc et gestion des émotions :</strong><br />
+    Étude des procédés de mise sous tension (musique anxiogène, bruitages de couteaux, répétitions de plans, rupture de rythme) caractéristiques des formats de divertissement immersif.
+  </p>
+
+  <div style="text-align: center; margin: 1.2rem 0;">
+    <a 
+      href="https://drive.google.com/file/d/1aeqMxpLwNOipeQU9KfjHO6qTQn6TMajF/view?usp=sharing" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display: inline-block; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.18); border: 2px solid var(--vp-c-divider); max-width: 560px; width: 100%; text-decoration: none;"
+      title="Cliquer pour visionner l'extrait Cauchemar en cuisine sur Google Drive"
+    >
+      <img 
+        src="/images/vignette-cauchemar-cuisine.jpg" 
+        alt="Vidéo Cauchemar en cuisine" 
+        style="width: 100%; height: auto; display: block; object-fit: cover;" 
+      />
+      <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white; padding: 12px 16px; font-size: 0.92rem; font-weight: 700; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <span>▶️ Cliquer pour lancer l'extrait « Cauchemar en cuisine » (Google Drive) ↗</span>
+      </div>
+    </a>
+  </div>
+
+  <p style="font-size: 0.85rem; color: var(--vp-c-text-2); text-align: center; margin: 0.5rem 0 0 0;">
+    💡 <em>Ressource didactique pour identifier la scénarisation artificielle des conflits et des émotions en milieu télévisuel.</em>
+  </p>
+</div>
+
+<div class="callout-concept" style="margin: 1.5rem 0;">
+  <div class="callout-title">📽️ Extrait 3 — Documentaire culte : Strip-Tease — « Scarface »</div>
+  <p>
+    <strong>Le réel à l'état brut sans voix-off : « l'anti-télé-réalité » :</strong><br />
+    Le regard documentaire sans commentaire de <em>Strip-Tease</em> (RTBF/France 3) : observer comment le simple dispositif de tournage (caméra directe, absence de narration explicative) capture la réalité tout en interrogeant la place du spectateur et l'éthique de la diffusion.
+  </p>
+
+  <div style="text-align: center; margin: 1.2rem 0;">
+    <a 
+      href="https://drive.google.com/file/d/1ih4cOF-YHh0XthfabbzFZVWCldkxUzpQ/view?usp=sharing" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display: inline-block; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.18); border: 2px solid var(--vp-c-divider); max-width: 560px; width: 100%; text-decoration: none;"
+      title="Cliquer pour visionner le reportage Strip-Tease Scarface sur Google Drive"
+    >
+      <img 
+        src="/images/vignette-strip-tease-scarface.jpg" 
+        alt="Vidéo Strip-Tease Scarface" 
+        style="width: 100%; height: auto; display: block; object-fit: cover;" 
+      />
+      <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white; padding: 12px 16px; font-size: 0.92rem; font-weight: 700; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <span>▶️ Cliquer pour lancer « Strip-Tease - Scarface » (Google Drive) ↗</span>
+      </div>
+    </a>
+  </div>
+
+  <p style="font-size: 0.85rem; color: var(--vp-c-text-2); text-align: center; margin: 0.5rem 0 0 0;">
+    💡 <em>Document exceptionnel pour comparer la neutralité apparente du cinéma direct et la manipulation assumée des formats de télé-réalité modernes.</em>
+  </p>
+</div>
 
 
 L’adaptation

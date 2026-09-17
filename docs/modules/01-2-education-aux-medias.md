@@ -132,7 +132,7 @@ Construire cette littératie signifie donc apprendre à lire le numérique, mais
   </div>
 
   <p style="font-size: 0.85rem; color: var(--vp-c-text-2); text-align: center; margin: 0.5rem 0 0 0;">
-    💡 <em>Ressource didactique pour initier les élèves à la vigilance épistémique et à la déconstruction des bulles de filtres.</em>
+    💡 <em>Ressource didactique pour initier les élèves à la vigilance épistémique et à la déconstruction des manipulations informationnelles.</em>
   </p>
 </div>
 
@@ -379,17 +379,6 @@ Cette capacité suppose l’acquisition d’une littératie médiatique et numé
 </div>
 
 Cette littératie contribue directement à l'autonomie. L'objectif n'est pas que l'élève attende que l'enseignant lui dise si une information est fiable, mais qu'il puisse lui-même rechercher des sources, les comparer, vérifier une affirmation et construire son propre jugement. L'autonomie numérique ne consiste donc pas uniquement à savoir utiliser un outil ; elle consiste aussi à savoir quoi faire face à l'information que cet outil nous donne accès.
-
-<div class="callout-vigilance">
-  <div class="callout-title">⚠️ Vigilance Pédagogique — Les Pièges du Sensationnalisme et des Bulles de Filtres</div>
-  <p>
-    Face aux algorithmes de recommandation et aux titres sensationnalistes (« clickbaits »), l'élève doit acquérir le réflexe de poser deux questions fondamentales :
-  </p>
-  <ul>
-    <li><em>« Pourquoi cette information est-elle mise en scène de cette manière précise ? »</em></li>
-    <li><em>« Quel effet émotionnel ou comportemental cette publication cherche-t-elle à provoquer chez moi ? »</em></li>
-  </ul>
-</div>
 
 ---
 

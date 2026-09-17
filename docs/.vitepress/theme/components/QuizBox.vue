@@ -68,44 +68,44 @@ const MODULE_QUESTIONS = {
     {
       id: 'q1',
       type: 'qcm',
-      title: "1. Enjeux de l'Éducation aux Médias (EAM)",
-      text: "Dans le cadre de l'Éducation aux Médias (EAM), quel est l'objectif prioritaire d'une analyse critique de l'information en ligne ?",
+      title: "1. Post-vérité et communication politique (Cas des investitures 2009 vs 2017)",
+      text: "Dans le concept de « post-vérité » illustré par la comparaison photographique des foules entre Obama (2009) et Trump (2017), quelle est la caractéristique centrale du discours médiatique ?",
       options: [
-        "Interdire catégoriquement l'accès aux réseaux sociaux en milieu scolaire.",
-        "Déconstruire les logiques de fabrication de l'information, repérer les modèles économiques et identifier les intentions de l'émetteur.",
-        "Obliger chaque élève à créer un blog journalistique professionnel.",
-        "Apprendre par cœur la liste des sites d'actualité officiels."
+        "L'utilisation exclusive de caméras à très haute résolution pour compter les personnes.",
+        "Le fait que les faits objectifs et vérifiables ont moins d'influence que les récits faisant appel à l'émotion et aux croyances personnelles (« faits alternatifs »).",
+        "L'interdiction légale de diffuser des photographies aériennes lors des cérémonies d'État.",
+        "L'absence totale de journalistes sur place le jour de l'investiture."
       ],
       correctIndex: 1,
       points: 3,
-      explanation: "L'EAM vise l'émancipation intellectuelle : comprendre comment et pourquoi un message médiatique est fabriqué pour ne pas être un récepteur passif."
+      explanation: "La post-vérité se caractérise par la primauté accordée à l'émotion et à l'affirmation identitaire sur l'évidence factuelle et matérielle (création délibérée de vérités alternatives)."
     },
     {
       id: 'q2',
       type: 'qcm',
-      title: "2. Phénomène de caisse de résonance",
-      text: "Quel mécanisme algorithmique favorise l'enfermement des apprenants dans une « bulle de filtres » ?",
+      title: "2. Fabrique du réel : Télé-réalité vs Cinéma direct (Cauchemar en cuisine vs Strip-Tease)",
+      text: "En confrontant l'extrait de « Cauchemar en cuisine » et le documentaire « Strip-Tease (Scarface) », quel contraste didactique fondamental mettez-vous en évidence auprès des élèves ?",
       options: [
-        "L'utilisation d'un mot de passe trop court sur les réseaux sociaux.",
-        "La personnalisation continue des flux basée sur les préférences antérieures, le temps de visionnage et le taux de clic.",
-        "Le protocole HTTPS de sécurisation des pages web.",
-        "La mise à jour automatique des applications sur smartphone."
+        "Cauchemar en cuisine est tourné en direct sans aucun montage, alors que Strip-Tease utilise des effets spéciaux numériques.",
+        "Dans Cauchemar en cuisine, la dramatisation est sur-écrite (bruitages anxiogènes, musique de tension, coupes rapides), alors que Strip-Tease utilise le cinéma direct sans voix-off ni commentaire pour laisser le spectateur construire son regard critique.",
+        "Les deux formats appliquent exactement la même déontologie journalistique neutre.",
+        "Strip-Tease rémunère des comédiens professionnels pour jouer des scènes de fiction."
       ],
       correctIndex: 1,
       points: 3,
-      explanation: "Les algorithmes maximisent l'engagement en fournissant des contenus qui confortent les biais cognitifs existants de l'utilisateur."
+      explanation: "La télé-réalité scénarise et manipule le rythme émotionnel par le montage et les ambiances sonores, tandis que Strip-Tease adopte le dispositif brut du cinéma direct sans narration prescriptive."
     },
     {
       id: 'q3',
       type: 'open',
-      title: "3. Dispositif didactique d'analyse des algorithmes",
-      text: "Comment organiseriez-vous une séance d'EAM pour faire comprendre concrètement à des élèves de secondaire la non-neutralité des résultats d'un moteur de recherche ou d'un réseau social ?",
+      title: "3. Analyse critique du sensationnalisme télévisuel (Hanouna / Images à l'appui / Enquête Bolloré)",
+      text: "À partir des extraits étudiés (l'émission d'Hanouna, le reportage « Images à l'appui : Fifi » et le grand reportage sur la télévision industrielle), comment expliqueriez-vous à des élèves la différence entre une information journalistique rigoureuse et un contenu sensationnaliste axé sur l'audience ?",
       points: 4,
-      modelAnswer: "Faire travailler les élèves en binômes sur deux profils d'utilisateurs distincts (ou deux historiques de navigation contrastés) en tapant la même requête controversée. Les élèves comparent les 5 premiers résultats, constatent les divergences d'ordre et de sources, puis débattent sur les critères invisibles de hiérarchisation.",
+      modelAnswer: "Un contenu journalistique rigoureux repose sur l'enquête contradictoire, la vérification méthodique des sources, la mise en contexte et la modération des propos. À l'inverse, le sensationnalisme (comme dans Hanouna ou Images à l'appui) dramatise la narration par des musiques anxiogènes, des plans resserrés et la mise en spectacle de l'indignation ou du conflit en direct. Cette mécanique vise avant tout à capter l'attention et à générer de l'audience (logique marchande et d'influence) plutôt qu'à éclairer le citoyen de façon rationnelle.",
       rubricCriteria: [
-        "Mise en situation comparative (2 comptes ou contextes différents).",
-        "Confrontation des résultats observés par les élèves.",
-        "Institutionnalisation sur la non-neutralité algorithmique."
+        "Repérage précis des procédés formels de dramatisation (musique, cadrage, polarisation, spectacle du clash).",
+        "Distinction explicite entre la démarche journalistique d'enquête et la logique d'audience / marchande.",
+        "Mise en lien avec l'autonomie critique et le jugement citoyen de l'élève."
       ]
     }
   ],

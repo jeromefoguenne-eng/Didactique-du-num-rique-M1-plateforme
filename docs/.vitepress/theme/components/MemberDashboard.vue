@@ -38,6 +38,60 @@ const selectedFile = ref(null)
 const uploadFeedback = ref({ type: '', message: '' })
 const isUploading = ref(false)
 
+// Dépôt de fichiers individualisé par exercice
+const exerciseUploadFiles = ref({})
+const exerciseUploadFeedbacks = ref({})
+const exerciseUploading = ref({})
+
+function getFileForExercise(exId) {
+  return userFiles.value.find(f => f.exerciseId === exId)
+}
+
+function onExerciseFileChange(event, exId) {
+  if (!exerciseUploadFeedbacks.value) exerciseUploadFeedbacks.value = {}
+  exerciseUploadFeedbacks.value[exId] = { type: '', message: '' }
+  const file = event.target.files?.[0]
+  if (file) {
+    if (!exerciseUploadFiles.value) exerciseUploadFiles.value = {}
+    exerciseUploadFiles.value[exId] = file
+  }
+}
+
+function getExerciseFilePreview(exTitle, exId) {
+  const file = exerciseUploadFiles.value?.[exId]
+  if (!file) return ''
+  return userStore.getFormattedNamePreview(exTitle, file.name)
+}
+
+async function handleExerciseFileUpload(exId, exTitle) {
+  const file = exerciseUploadFiles.value?.[exId]
+  if (!file) {
+    if (!exerciseUploadFeedbacks.value) exerciseUploadFeedbacks.value = {}
+    exerciseUploadFeedbacks.value[exId] = { type: 'error', message: 'Veuillez sélectionner un document Word (.docx) ou PDF (.pdf).' }
+    return
+  }
+
+  if (!exerciseUploading.value) exerciseUploading.value = {}
+  exerciseUploading.value[exId] = true
+  exerciseUploadFeedbacks.value[exId] = { type: '', message: '' }
+
+  try {
+    const res = await userStore.uploadStudentFile(exId, exTitle, file)
+    if (res.success) {
+      exerciseUploadFeedbacks.value[exId] = { type: 'success', message: res.message }
+      exerciseUploadFiles.value[exId] = null
+      const inputEl = document.getElementById('file-input-' + exId)
+      if (inputEl) inputEl.value = ''
+    } else {
+      exerciseUploadFeedbacks.value[exId] = { type: 'error', message: res.message }
+    }
+  } catch (err) {
+    exerciseUploadFeedbacks.value[exId] = { type: 'error', message: 'Erreur lors du dépôt du document. Veuillez réessayer.' }
+  } finally {
+    exerciseUploading.value[exId] = false
+  }
+}
+
 const courseModules = [
   { id: 'mod-1', title: '1. Compétences Numériques', link: '/modules/01-competences-numeriques' },
   { id: 'mod-2', title: '2. Référentiel FMTTN (FWB)', link: '/modules/02-referentiel-fmttn' },
@@ -612,13 +666,13 @@ function formatSize(bytes) {
           :class="['tab-btn', { active: activeTab === 'exercises' }]"
           @click="activeTab = 'exercises'"
         >
-          ✏️ Réponses Rédigées
+          ✏️ Devoirs & Dépôts par Exercice ({{ userFiles.length }})
         </button>
         <button 
           :class="['tab-btn', { active: activeTab === 'files' }]"
           @click="activeTab = 'files'"
         >
-          📁 Dépôt de Travaux (Word / PDF) ({{ userFiles.length }})
+          📁 Tous mes Documents ({{ userFiles.length }})
         </button>
         <button 
           :class="['tab-btn', { active: activeTab === 'quizzes' }]"
@@ -735,7 +789,7 @@ function formatSize(bytes) {
                       </span>
                       <button 
                         v-if="!ex.completed" 
-                        @click="activeTab = 'files'; selectedExerciseForUpload = ex.id"
+                        @click="activeTab = 'exercises'"
                         class="btn-quick-upload"
                       >
                         Déposer →
@@ -799,8 +853,8 @@ function formatSize(bytes) {
                 <div class="criteria-check-item">
                   <span class="crit-icon">📸</span>
                   <div class="crit-text">
-                    <strong>Intégration des photos (15 pts)</strong>
-                    <span>Prises de vue du matériel physique et intégration visuelle soignée.</span>
+                    <strong>Intégration des photos & prototypes (15 pts)</strong>
+                    <span>Documentation visuelle du processus de fabrication et du jeu final.</span>
                   </div>
                   <span class="crit-sub-score">{{ myEvaluation.pillar2.details.photos }} / 15</span>
                 </div>
@@ -873,47 +927,134 @@ function formatSize(bytes) {
         </div>
       </div>
 
-      <!-- VUE 2 : MES RÉPONSES AUX EXERCICES -->
+      <!-- VUE 2 : MES DEVOIRS ET DÉPÔT DÉDIÉ PAR EXERCICE -->
       <div v-if="activeTab === 'exercises'" class="tab-content">
+        <div class="exercises-tab-intro">
+          <h3>📂 Espace de Dépôt des Devoirs & Ateliers</h3>
+          <p>
+            Chaque exercice dispose de son <strong>espace de dépôt dédié</strong>. Vous pouvez y déposer directement votre document finalisé au format <strong>Word (.docx / .doc)</strong> ou <strong>PDF (.pdf)</strong>. Il sera automatiquement identifié, normalisé et transmis à l'enseignant.
+          </p>
+        </div>
+
         <div class="exercises-list">
           <div 
             v-for="ex in availableExercises" 
             :key="ex.id"
             class="exercise-box-card"
           >
+            <!-- En-tête de la fiche exercice -->
             <div class="ex-card-header">
-              <div>
+              <div class="ex-card-title-block">
                 <h4>{{ ex.title }}</h4>
                 <a :href="ex.docUrl" target="_blank" rel="noopener" class="link-doc-drive-inline">
-                  📥 Télécharger / Consulter le document Google Docs ↗
+                  📥 Télécharger / Consulter le document officiel de consignes (Google Docs) ↗
                 </a>
               </div>
-              <span v-if="getAnswer(ex.id)" class="badge-submitted">Répondu ✓</span>
-              <span v-else class="badge-pending">À rédiger</span>
-            </div>
-
-            <div v-if="editAnswerId === ex.id" class="edit-area">
-              <textarea 
-                v-model="editAnswerText" 
-                rows="4" 
-                placeholder="Rédigez ou modifiez votre réponse..."
-              ></textarea>
-              <div class="edit-actions">
-                <button @click="saveEdit(ex.id, ex.title)" class="btn-save">Enregistrer</button>
-                <button @click="editAnswerId = null" class="btn-cancel">Annuler</button>
+              <div class="ex-status-badges">
+                <span v-if="getFileForExercise(ex.id)" class="badge-submitted">
+                  ✓ Document déposé
+                </span>
+                <span v-else class="badge-pending">
+                  ⏳ En attente de document
+                </span>
               </div>
             </div>
 
-            <div v-else class="saved-answer-view">
-              <div v-if="getAnswer(ex.id)" class="answer-content">
-                <p>{{ getAnswer(ex.id) }}</p>
-                <button @click="startEdit(ex.id)" class="btn-edit-link">Modifier ma réponse ✎</button>
+            <!-- ZONE DÉDIÉE AU FICHIER DE CET EXERCICE -->
+            <div class="ex-dedicated-upload-zone">
+              <div class="zone-label">
+                <span class="zone-label-icon">📎</span>
+                <strong>Document Word ou PDF pour cet exercice :</strong>
               </div>
-              <div v-else class="empty-answer">
-                <p>Aucune réponse textuelle enregistrée pour cet exercice.</p>
-                <button @click="startEdit(ex.id)" class="btn-add-answer">+ Rédiger une réponse</button>
+
+              <!-- Cas 1 : Un fichier est déjà déposé pour cet exercice -->
+              <div v-if="getFileForExercise(ex.id)" class="ex-file-active-card">
+                <div class="ef-left">
+                  <span class="ef-icon">{{ getFileForExercise(ex.id).formattedFileName.endsWith('.pdf') ? '📕' : '📘' }}</span>
+                  <div class="ef-meta">
+                    <div class="ef-filename">{{ getFileForExercise(ex.id).formattedFileName }}</div>
+                    <div class="ef-subtext">
+                      <span>Taille : {{ formatSize(getFileForExercise(ex.id).fileSize) }}</span>
+                      <span>•</span>
+                      <span>Déposé le {{ getFileForExercise(ex.id).submittedAt }}</span>
+                      <span v-if="getFileForExercise(ex.id).driveSynced" class="ef-sync-tag">✓ Synchronisé Drive</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="ef-actions">
+                  <button @click="downloadFile(getFileForExercise(ex.id))" class="btn-ef-dl" title="Télécharger mon document">
+                    📥 Télécharger
+                  </button>
+                  <button @click="deleteFile(getFileForExercise(ex.id).id)" class="btn-ef-del" title="Supprimer ou remplacer ce fichier">
+                    🗑️ Remplacer
+                  </button>
+                </div>
+              </div>
+
+              <!-- Cas 2 : Aucun fichier n'est déposé, formulaire individuel immédiat -->
+              <div v-else class="ex-file-picker-slot">
+                <div v-if="exerciseUploadFeedbacks[ex.id]?.message" :class="['feedback-inline', exerciseUploadFeedbacks[ex.id].type]">
+                  {{ exerciseUploadFeedbacks[ex.id].type === 'success' ? '✅ ' : '⚠️ ' }}
+                  {{ exerciseUploadFeedbacks[ex.id].message }}
+                </div>
+
+                <div class="ex-upload-row">
+                  <div class="file-input-wrapper">
+                    <input 
+                      :id="'file-input-' + ex.id"
+                      type="file" 
+                      accept=".pdf,.docx,.doc,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                      @change="(e) => onExerciseFileChange(e, ex.id)"
+                    />
+                  </div>
+                  <button 
+                    @click="handleExerciseFileUpload(ex.id, ex.title)"
+                    :disabled="!exerciseUploadFiles[ex.id] || exerciseUploading[ex.id]"
+                    class="btn-ex-upload-action"
+                  >
+                    {{ exerciseUploading[ex.id] ? 'Envoi en cours...' : 'Déposer ce fichier →' }}
+                  </button>
+                </div>
+
+                <!-- Aperçu dynamique du nom officiel pour cet exercice -->
+                <div v-if="getExerciseFilePreview(ex.title, ex.id)" class="ex-file-preview-tag">
+                  <span class="tag-title">Nom officiel normalisé :</span>
+                  <code>{{ getExerciseFilePreview(ex.title, ex.id) }}</code>
+                </div>
               </div>
             </div>
+
+            <!-- ACCORDÉON NOTES & RÉPONSES ÉCRITES EN LIGNE (OPTIONNEL) -->
+            <details class="notes-accordion">
+              <summary class="notes-summary">
+                <span>✍️ Notes personnelles ou réponse rédigée en ligne (facultatif)</span>
+                <span v-if="getAnswer(ex.id)" class="notes-done-tag">Note enregistrée ✓</span>
+              </summary>
+              <div class="notes-panel-content">
+                <div v-if="editAnswerId === ex.id" class="edit-area">
+                  <textarea 
+                    v-model="editAnswerText" 
+                    rows="3" 
+                    placeholder="Rédigez ou collez une note textuelle pour cet exercice..."
+                  ></textarea>
+                  <div class="edit-actions">
+                    <button @click="saveEdit(ex.id, ex.title)" class="btn-save">Enregistrer</button>
+                    <button @click="editAnswerId = null" class="btn-cancel">Annuler</button>
+                  </div>
+                </div>
+
+                <div v-else class="saved-answer-view">
+                  <div v-if="getAnswer(ex.id)" class="answer-content">
+                    <p>{{ getAnswer(ex.id) }}</p>
+                    <button @click="startEdit(ex.id)" class="btn-edit-link">Modifier ma réponse écrite ✎</button>
+                  </div>
+                  <div v-else class="empty-answer">
+                    <p>Aucune note textuelle en ligne pour cet exercice.</p>
+                    <button @click="startEdit(ex.id)" class="btn-add-answer">+ Ajouter une note écrite</button>
+                  </div>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
       </div>
@@ -1408,6 +1549,27 @@ function formatSize(bytes) {
   gap: 1.2rem;
 }
 
+.exercises-tab-intro {
+  background: var(--vp-c-bg-alt);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.exercises-tab-intro h3 {
+  margin: 0 0 0.4rem 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.exercises-tab-intro p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.5;
+}
+
 .exercise-box-card {
   background: var(--vp-c-bg-alt);
   border: 1px solid var(--vp-c-divider);
@@ -1420,12 +1582,37 @@ function formatSize(bytes) {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.8rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.ex-card-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .ex-card-header h4 {
   margin: 0;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 700;
+}
+
+.link-doc-drive-inline {
+  font-size: 0.82rem;
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.link-doc-drive-inline:hover {
+  text-decoration: underline;
+}
+
+.ex-status-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .badge-submitted {
@@ -1433,7 +1620,7 @@ function formatSize(bytes) {
   color: #065f46;
   font-size: 0.75rem;
   font-weight: 700;
-  padding: 3px 8px;
+  padding: 4px 10px;
   border-radius: 6px;
 }
 
@@ -1442,8 +1629,234 @@ function formatSize(bytes) {
   color: #92400e;
   font-size: 0.75rem;
   font-weight: 700;
-  padding: 3px 8px;
+  padding: 4px 10px;
   border-radius: 6px;
+}
+
+/* ZONE DÉDIÉE AU DÉPÔT D'UN DEVOIR */
+.ex-dedicated-upload-zone {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+}
+
+.zone-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+  margin-bottom: 0.8rem;
+  color: var(--vp-c-text-1);
+}
+
+.zone-label-icon {
+  font-size: 1.1rem;
+}
+
+/* FICHIER DÉJÀ DÉPOSÉ */
+.ex-file-active-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(16, 185, 129, 0.06);
+  border: 1px solid #10b981;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.ef-left {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.ef-icon {
+  font-size: 1.8rem;
+}
+
+.ef-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.ef-filename {
+  font-family: monospace;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+  word-break: break-all;
+}
+
+.ef-subtext {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--vp-c-text-2);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ef-sync-tag {
+  background: #d1fae5;
+  color: #065f46;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.ef-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-ef-dl {
+  background: var(--vp-c-brand-1);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-ef-del {
+  background: none;
+  border: 1px solid #fca5a5;
+  color: #ef4444;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-ef-del:hover {
+  background: #fee2e2;
+}
+
+/* CAS FORMULAIRE DÉPÔT INDIVIDUEL */
+.ex-file-picker-slot {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.ex-upload-row {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.file-input-wrapper {
+  flex: 1;
+  min-width: 240px;
+}
+
+.file-input-wrapper input {
+  width: 100%;
+  padding: 7px 10px;
+  border-radius: 6px;
+  border: 1px dashed var(--vp-c-brand-1);
+  background: var(--vp-c-bg-alt);
+  font-size: 0.85rem;
+  color: var(--vp-c-text-1);
+}
+
+.btn-ex-upload-action {
+  background: var(--vp-c-brand-1);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+
+.btn-ex-upload-action:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ex-file-preview-tag {
+  background: rgba(37, 99, 235, 0.05);
+  border: 1px dashed var(--vp-c-brand-1);
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.ex-file-preview-tag .tag-title {
+  font-weight: 700;
+  color: var(--vp-c-brand-1);
+}
+
+.ex-file-preview-tag code {
+  font-family: monospace;
+  font-size: 0.82rem;
+  color: var(--vp-c-text-1);
+}
+
+.feedback-inline {
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.feedback-inline.success {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.feedback-inline.error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* ACCORDÉON NOTES */
+.notes-accordion {
+  margin-top: 0.8rem;
+  border-top: 1px dashed var(--vp-c-divider);
+  padding-top: 0.6rem;
+}
+
+.notes-summary {
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--vp-c-text-2);
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notes-summary:hover {
+  color: var(--vp-c-brand-1);
+}
+
+.notes-done-tag {
+  font-size: 0.75rem;
+  color: #10b981;
+  font-weight: 700;
+}
+
+.notes-panel-content {
+  margin-top: 0.8rem;
 }
 
 .edit-area textarea {

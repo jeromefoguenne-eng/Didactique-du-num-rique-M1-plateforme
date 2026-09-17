@@ -43,16 +43,16 @@ const tiles = [
     image: "/images/tile-5-projet-jeu.jpg"
   },
   {
-    id: 7,
-    title: "7. Guide & Évaluation",
-    tag: "Organisation & Jalons",
-    desc: "Suivi en présentiel ou distanciel, calendrier des jalons et critères de l'évaluation finale.",
+    id: 6,
+    title: "6. Guide & Évaluation",
+    tag: "Modalités sur 200 pts",
+    desc: "Rôle de la plateforme, organisation du travail, calendrier et modalités de l'évaluation sur 200 points.",
     link: "/guide/",
     image: "/images/tile-7-evaluation.jpg"
   },
   {
-    id: 8,
-    title: "8. Ressources & Outils",
+    id: 7,
+    title: "7. Ressources & Outils",
     tag: "Syllabus, Docs & Slides",
     desc: "Syllabus Google Docs, référentiels officiels (FMTTN, CSEM), présentations PowerPoint et bibliographie APA.",
     link: "/ressources/",

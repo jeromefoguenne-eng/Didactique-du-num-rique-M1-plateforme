@@ -1,20 +1,25 @@
 ---
-title: "Guide de l'étudiant à distance"
-description: "Méthodologie de travail, organisation en autonomie et communication pour les étudiants absents en présentiel"
+title: "6.1 Guide de la Plateforme & Méthodologie"
+description: "Rôle de la plateforme, outil complémentaire au présentiel, auto-évaluation diagnostique et organisation"
 ---
 
-# 🎓 Guide de l'étudiant à distance & en horaire adapté
+# 6.1. Guide de la Plateforme & Méthodologie de Travail
 
-Ce guide est spécialement rédigé pour vous qui ne pouvez pas être physiquement présents à toutes les séances en auditoire ou en atelier (étudiants déjà en poste d'enseignement, horaires décalés, dispenses partielles).
+::: info 💡 Rôle fondamental de la plateforme
+Cette plateforme **ne remplace pas les cours en présentiel** à la Haute École Charlemagne. Elle constitue un **outil pédagogique supplémentaire** conçu pour accompagner votre apprentissage, centraliser les ressources officielles, vous permettre de tester votre compréhension tout au long du quadrimestre et sécuriser le dépôt de vos travaux.
+:::
 
-## 1. La philosophie du cours hybride
+## 1. Une plateforme d'accompagnement au service du présentiel
 
-Le cours est conçu selon une logique de **parcours scénarisé (type MOOC)**. Vous disposez de la totalité des ressources théoriques, des documents institutionnels officiels et des ateliers pratiques directement sur cette plateforme.
+L'enseignement de la Didactique du numérique repose sur des dynamiques collaboratives, des mises en situation de classe et des échanges directs entre pairs et avec le formateur.
 
-Être à distance ne signifie pas travailler seul de façon isolée :
-- Vous intégrerez une **équipe projet** (de 3 à 4 étudiants) pour le projet fil rouge de création du jeu de société.
-- Vous avancerez au rythme des **jalons hebdomadaires**.
-- Des permanences en ligne et des retours formatifs asynchrones sont organisés.
+À ce titre :
+- **La présence active aux séances en présentiel est indispensable** et fait l'objet d'une valorisation directe dans votre note finale (**20 points sur 200**).
+- **La plateforme intervient en complément** pour vous offrir un espace d'étude asynchrone permanent :
+  1. **Accéder à toutes les ressources officielles** : Notes de cours exhaustives du syllabus, référentiels de la Fédération Wallonie-Bruxelles (FMTTN, CSEM), présentations PowerPoint projetées aux cours et modèles de fiches didactiques.
+  2. **Se tester et s'auto-évaluer en continu** : Vérifier immédiatement l'assimilation des notions clés grâce aux quiz interactifs (QCM et questions ouvertes de réflexion pédagogique) situés à la fin de chaque grand thème.
+  3. **Déposer ses travaux dans un coffre-fort sécurisé** : Transmettre ses devoirs et productions (Word `.docx` ou PDF) sur son Espace Membre personnel protégé par mot de passe. Les fichiers sont automatiquement renommés et archivés dans le Google Drive de l'enseignant.
+  4. **Suivre en toute transparence l'évolution de ses points** : Visualiser sur son tableau de bord l'acquisition de ses points sur le barème global de 200 points.
 
 ---
 

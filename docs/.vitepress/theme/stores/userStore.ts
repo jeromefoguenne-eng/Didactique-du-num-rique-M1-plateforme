@@ -76,6 +76,15 @@ const STORAGE_KEY_ADMIN_PIN = 'hech_didac_admin_pin'
 const STORAGE_KEY_FILES = 'hech_didac_files'
 const STORAGE_KEY_WEBHOOK = 'hech_didac_drive_webhook'
 const STORAGE_KEY_QUIZZES = 'hech_didac_quiz_attempts'
+const STORAGE_KEY_EVALUATIONS = 'hech_didac_evaluations_200'
+
+export interface EvaluationRecord {
+  userEmail: string
+  attendanceScore: number // max 20
+  gameProjectScore: number // max 70
+  oralDefenseScore: number // max 30
+  teacherFeedback?: string
+}
 
 // Helper de nettoyage pour le nommage des fichiers
 export function formatFileName(
@@ -322,6 +331,31 @@ const DEFAULT_FILES: SubmittedFile[] = [
   }
 ]
 
+
+const DEFAULT_EVALUATIONS: Record<string, EvaluationRecord> = {
+  'sarah.dubois@student.hech.be': {
+    userEmail: 'sarah.dubois@student.hech.be',
+    attendanceScore: 20,
+    gameProjectScore: 56,
+    oralDefenseScore: 24,
+    teacherFeedback: "Excellent investissement en cours et démarche ludo-éducative très prometteuse."
+  },
+  'maxime.lambert@student.hech.be': {
+    userEmail: 'maxime.lambert@student.hech.be',
+    attendanceScore: 18,
+    gameProjectScore: 50,
+    oralDefenseScore: 22,
+    teacherFeedback: "Bonne implication. Poursuivre l'approfondissement sur la dimension critique."
+  },
+  'thomas.bastien@student.hech.be': {
+    userEmail: 'thomas.bastien@student.hech.be',
+    attendanceScore: 20,
+    gameProjectScore: 63,
+    oralDefenseScore: 27,
+    teacherFeedback: "Travail remarquable et excellente maîtrise de la fabrication FabLab."
+  }
+}
+
 function getStorage<T>(key: string, defaultVal: T): T {
   if (typeof window === 'undefined') return defaultVal
   try {
@@ -352,7 +386,8 @@ const state = reactive({
   submittedFiles: getStorage<SubmittedFile[]>(STORAGE_KEY_FILES, DEFAULT_FILES),
   driveWebhook: getStorage<string>(STORAGE_KEY_WEBHOOK, ''),
   adminPin: getStorage<string>(STORAGE_KEY_ADMIN_PIN, 'hech2026'),
-  quizAttempts: getStorage<QuizAttempt[]>(STORAGE_KEY_QUIZZES, DEFAULT_QUIZZES)
+  quizAttempts: getStorage<QuizAttempt[]>(STORAGE_KEY_QUIZZES, DEFAULT_QUIZZES),
+  evaluations: getStorage<Record<string, EvaluationRecord>>(STORAGE_KEY_EVALUATIONS, DEFAULT_EVALUATIONS)
 })
 
 export const userStore = {
@@ -835,6 +870,119 @@ export const userStore = {
   // ==========================================
   // SÉCURITÉ ADMIN
   // ==========================================
+
+
+  // ==========================================
+  // MODALITÉS DE L'ÉVALUATION OFFICIELLE (200 POINTS)
+  // ==========================================
+
+  getStudentEvaluation(email?: string) {
+    const targetEmail = (email || state.currentUser?.email || '').trim().toLowerCase()
+    const user = state.users.find(u => u.email.toLowerCase() === targetEmail)
+    const evalRec = state.evaluations[targetEmail] || {
+      userEmail: targetEmail,
+      attendanceScore: 20,
+      gameProjectScore: 0,
+      oralDefenseScore: 0
+    }
+
+    // 1. Points Quiz (max 20)
+    const userQuizzes = state.quizAttempts.filter(q => q.userEmail.toLowerCase() === targetEmail)
+    let quizPoints = 0
+    if (userQuizzes.length > 0) {
+      const avgPct = userQuizzes.reduce((acc, q) => acc + q.percentage, 0) / userQuizzes.length
+      // Proportionnel au nombre de quiz réalisés et réussis
+      const completionFactor = Math.min(1, userQuizzes.length / 2) // 2 quiz suffisent pour évaluer l'engagement
+      quizPoints = Math.round((avgPct / 100) * 20 * completionFactor * 10) / 10
+    }
+
+    // 2. Points Présence (max 20)
+    const attendancePoints = evalRec.attendanceScore ?? 20
+
+    // 3. Points Exercices (6 × 10 = 60 pts)
+    const exercisesList = [
+      { id: 'exercice-01', title: 'Exercice 1 : Diagnostic de compétences (10 pts)' },
+      { id: 'exercice-02', title: 'Exercice 2 : Évaluation critique info (10 pts)' },
+      { id: 'exercice-03', title: 'Exercice 3 : Guide numérique élèves (10 pts)' },
+      { id: 'exercice-04', title: 'Exercice 4 : Escape Game FMTTN (10 pts)' },
+      { id: 'exercice-05', title: 'Exercice 5 : Défi Canva mot de passe (10 pts)' },
+      { id: 'exercice-06', title: 'Exercice 6 : Défi Hardware PC (10 pts)' }
+    ]
+
+    const exerciseDetails = exercisesList.map(ex => {
+      const hasFile = state.submittedFiles.some(f => f.userEmail.toLowerCase() === targetEmail && f.exerciseId === ex.id)
+      const hasSub = state.submissions.some(s => s.userEmail.toLowerCase() === targetEmail && s.exerciseId === ex.id && s.answer.trim().length > 10)
+      const isDone = hasFile || hasSub
+      return {
+        id: ex.id,
+        title: ex.title,
+        points: isDone ? 10 : 0,
+        maxPoints: 10,
+        completed: isDone
+      }
+    })
+
+    const exercisesTotal = exerciseDetails.reduce((acc, e) => acc + e.points, 0)
+
+    // Sous-total Pilier 1 (Plateforme & Cours : max 100 pts)
+    const pillar1Total = Math.round((quizPoints + attendancePoints + exercisesTotal) * 10) / 10
+
+    // Pilier 2 : Projet Jeu de Société (max 70 pts)
+    const pillar2Total = evalRec.gameProjectScore || 0
+
+    // Pilier 3 : Soutenance orale devant la classe (max 30 pts)
+    const pillar3Total = evalRec.oralDefenseScore || 0
+
+    // Total Général sur 200 points
+    const totalScore = Math.round((pillar1Total + pillar2Total + pillar3Total) * 10) / 10
+    const totalOutOf20 = Math.round((totalScore / 10) * 10) / 10
+    const percentage = Math.round((totalScore / 200) * 100)
+
+    return {
+      user,
+      pillar1: {
+        total: pillar1Total,
+        max: 100,
+        quizPoints,
+        quizMax: 20,
+        attendancePoints,
+        attendanceMax: 20,
+        exercisesTotal,
+        exercisesMax: 60,
+        exerciseDetails
+      },
+      pillar2: {
+        total: pillar2Total,
+        max: 70
+      },
+      pillar3: {
+        total: pillar3Total,
+        max: 30
+      },
+      totalScore,
+      totalMax: 200,
+      totalOutOf20,
+      percentage,
+      isPassing: totalScore >= 100,
+      feedback: evalRec.teacherFeedback || ''
+    }
+  },
+
+  updateStudentEvaluation(email: string, update: Partial<EvaluationRecord>) {
+    const targetEmail = email.trim().toLowerCase()
+    if (!state.evaluations[targetEmail]) {
+      state.evaluations[targetEmail] = {
+        userEmail: targetEmail,
+        attendanceScore: 20,
+        gameProjectScore: 0,
+        oralDefenseScore: 0
+      }
+    }
+
+    Object.assign(state.evaluations[targetEmail], update)
+    setStorage(STORAGE_KEY_EVALUATIONS, state.evaluations)
+    return { success: true, message: "Évaluation mise à jour avec succès !" }
+  },
 
   verifyAdminPin(pin: string): boolean {
     return pin.trim() === state.adminPin

@@ -1,97 +1,65 @@
 ---
-title: "Atelier 5 : Défi 20 minutes — Affiche Canva mot de passe sécurisé"
-description: "Méthodologie du défi pédagogique express sous contrainte de temps et d'épuration visuelle"
+title: "Atelier 5 : Défi 20 minutes Canva (Affiche mot de passe)"
+description: "Défi express de communication visuelle : concevoir une affiche percutante sur la sécurité des mots de passe."
 ---
 
-# Atelier 5 : Défi pédagogique express — L'Affiche Canva
+# Atelier 5 : Défi 20 minutes Canva (Affiche mot de passe)
 
-<Badge type="danger" text="Chrono 20 min" /> <Badge type="warning" text="Méthode Péda : Défi" />
+<Badge type="info" text="Exercice 5 (10 points)" /> <Badge type="tip" text="Document Officiel" />
 
-Exercice 5 - Défi — Créer une affiche numérique
+Défi express de communication visuelle : concevoir une affiche percutante sur la sécurité des mots de passe.
 
-Votre mission
+---
 
-En 20 minutes, créez avec Canva une affiche numérique qui permette à un élève de comprendre en moins de 30 secondes comment créer un mot de passe sécurisé.
+## 📄 Document de Travail Officiel (Google Docs)
 
-Contraintes
+<div class="callout-exercise">
+  <div class="callout-title">📋 Consignes & Document de Travail en Ligne</div>
+  <p>
+    Le sujet intégral et la grille d'analyse de cet exercice sont mis à disposition sur le Google Docs officiel du cours en <strong>mode lecture seule</strong> :
+  </p>
+  <div style="margin: 1.2rem 0;">
+    <a 
+      href="https://docs.google.com/document/d/1GuqhxxFNJllg4vR_wLeD5A4CtYNyJ4mj/preview" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="btn-primary"
+      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: white !important;"
+    >
+      <span>📄 Ouvrir le document officiel sur Google Docs →</span>
+    </a>
+  </div>
+  <div style="font-size: 0.88rem; color: var(--vp-c-text-2); line-height: 1.5; background: var(--vp-c-bg-soft); padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid var(--vp-c-divider);">
+    ℹ️ <strong>Modalités d'utilisation :</strong><br />
+    Le document est configuré en <em>mode lecture seule</em> (non modifiable directement). Pour rédiger vos réponses, ouvrez le lien ci-dessus puis :
+    <ul>
+      <li>Soit téléchargez le fichier sur votre ordinateur : <strong>Fichier → Télécharger → Microsoft Word (.docx)</strong> ou <strong>Document PDF (.pdf)</strong>.</li>
+      <li>Soit créez votre propre copie dans votre Google Drive : <strong>Fichier → Créer une copie</strong>.</li>
+    </ul>
+  </div>
+</div>
 
-Utilisez Canva pour réaliser votre affiche.
+---
 
-Votre affiche doit comporter maximum 30 mots.
+## 📤 Dépôt de votre Travail Réalisé
 
-Vous pouvez utiliser maximum 3 éléments visuels (images, icônes, illustrations…).
-
-Le message doit être compréhensible immédiatement par votre public cible.
-
-Vous êtes libres de choisir la mise en page et les éléments graphiques.
-
-À la fin du défi
-
-Présentez votre affiche au groupe en 1 minute et expliquez :
-
-vos principaux choix ;
-
-comment vous avez respecté les contraintes ;
-
-ce qui rend votre affiche efficace pour le public visé.
-
+<div class="callout-vigilance">
+  <div class="callout-title">⚠️ Dépôt obligatoire sur votre Espace Personnel</div>
+  <p>
+    Une fois votre devoir rédigé, vous devez <strong>impérativement le déposer au format Word (<code>.docx</code>) ou PDF</strong> sur votre <a href="/espace-membre"><strong>Espace Membre Étudiant</strong></a> (onglet <em>« Dépôt de Travaux »</em>) ou directement via le module interactif ci-dessous.
+  </p>
+  <p style="margin-bottom: 0; font-size: 0.88rem;">
+    Le fichier sera automatiquement libellé selon la nomenclature officielle (<code>NOM_Prenom_exercice-05_...</code>) et transmis à votre enseignant. Cet exercice est valorisé à hauteur de <strong>10 points</strong> dans votre évaluation continue.
+  </p>
+</div>
 
 <ClientOnly>
-  <ExerciseBox exerciseId="exercice-05" exerciseTitle="Atelier 5 : Défi 20 minutes (Affiche Canva mot de passe)" />
+  <ExerciseBox exerciseId="exercice-05" exerciseTitle="Atelier 5 : Défi 20 minutes Canva (Affiche mot de passe)" />
 </ClientOnly>
 
-::: details 💡 Consulter le débriefing méthodologique & Correctif
-Intérêt méthodologique
+---
 
-Cet exercice permet aux étudiants de vivre concrètement la logique du défi pédagogique : ils disposent d'un objectif clair, mais doivent trouver eux-mêmes la meilleure manière de l'atteindre dans un temps limité et avec des contraintes précises.
-
-La contrainte des 20 minutes, des 30 mots maximum et des 3 éléments visuels maximum crée une situation qui oblige à faire des choix. Les étudiants doivent notamment :
-
-sélectionner les informations essentielles ;
-
-hiérarchiser le contenu ;
-
-expérimenter différentes solutions ;
-
-prendre des décisions rapidement ;
-
-mobiliser leur créativité ;
-
-utiliser leurs compétences numériques pour produire une réponse ;
-
-évaluer l'efficacité de leur production par rapport au public cible.
-
-L'activité laisse également une place importante au tâtonnement et à l'erreur : il faut essayer, modifier, simplifier et parfois recommencer pour parvenir à une production efficace.
-
-Le défi introduit ainsi une dynamique différente de celle d'un exercice classique :
-
-Une contrainte → un objectif → une recherche de solution → des choix → une production.
-
-La dimension temporelle et ludique peut également renforcer l'engagement, mais le défi n'est pas intéressant uniquement parce qu'il est amusant : sa valeur pédagogique vient surtout du fait que les contraintes provoquent une activité cognitive et nécessitent des choix.
-
-Lien avec le référentiel FMTTN
-
-L'activité peut être directement reliée au volet numérique du FMTTN, puisqu'elle demande aux étudiants de produire un contenu numérique avec un outil adapté à une intention de communication.
-
-En utilisant Canva, ils doivent notamment :
-
-utiliser un outil numérique de création ;
-
-sélectionner et organiser des contenus ;
-
-produire un contenu numérique ;
-
-communiquer une information à un public déterminé ;
-
-faire des choix en fonction d'une intention ;
-
-réfléchir à l'efficacité et à la lisibilité de leur production.
-
-L'exercice permet donc de travailler le numérique dans une situation de production et de communication, plutôt que de simplement apprendre les fonctionnalités de Canva.
-
-Il illustre une logique importante pour le FMTTN :
-
-La compétence numérique ne consiste pas seulement à savoir utiliser un outil ; elle consiste à être capable de mobiliser cet outil de manière pertinente pour répondre à un besoin ou relever un défi.
-
-Enfin, le choix de Canva n'est pas l'objectif de l'activité. Canva est le moyen permettant de relever le défi. Cette distinction est essentielle pour les futurs enseignants : partir d'un outil et chercher ensuite quoi en faire conduit facilement à une activité technocentrée ; partir d'un objectif et choisir ensuite l'outil approprié conduit davantage à une situation d'apprentissage centrée sur la compétence.
-:::
+## Navigation
+- 🏠 **[Accueil du Cours](/)**
+- 👤 **[Mon Espace Membre (Dépôt & Notes)](/espace-membre)**
+- 📖 **[Guide & Modalités de l'évaluation](/guide/evaluation)**

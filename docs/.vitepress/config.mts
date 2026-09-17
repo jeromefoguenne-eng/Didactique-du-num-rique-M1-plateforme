@@ -98,7 +98,7 @@ export default defineConfig({
           ]
         },
         {
-          text: "6. Exercices & Défis Pratiques",
+          text: "Ateliers & Travaux Pratiques",
           items: [
             { text: "📌 Vue d'ensemble des ateliers", link: "/ateliers/" },
             { text: "Atelier 1 : Diagnostic compétences", link: "/ateliers/exercice-01" },
@@ -121,11 +121,11 @@ export default defineConfig({
           ]
         },
         {
-          text: "7. Guide & Évaluation",
+          text: "6. Guide & Évaluation",
           items: [
             { text: "📌 Vue d'ensemble (Hub)", link: "/guide/" },
-            { text: "7.1 Guide de l'étudiant à distance", link: "/guide/distanciel" },
-            { text: "7.2 Modalités d'évaluation & Grille", link: "/guide/evaluation" }
+            { text: "6.1 Guide de la plateforme & de l'étudiant", link: "/guide/distanciel" },
+            { text: "6.2 Modalités d'évaluation (sur 200 pts)", link: "/guide/evaluation" }
           ]
         }
       ],
@@ -139,13 +139,13 @@ export default defineConfig({
           ]
         },
         {
-          text: "8. Ressources & Boîte à Outils",
+          text: "7. Ressources & Boîte à Outils",
           items: [
             { text: "📌 Vue d'ensemble (Hub)", link: "/ressources/" },
-            { text: "8.1 Syllabus officiel du cours", link: "/ressources/syllabus" },
-            { text: "8.2 Documents & Référentiels PDF", link: "/ressources/documents" },
-            { text: "8.3 Bibliographie sélective (APA)", link: "/ressources/bibliographie" },
-            { text: "8.4 Présentations PowerPoint", link: "/ressources/powerpoints" }
+            { text: "7.1 Syllabus officiel du cours", link: "/ressources/syllabus" },
+            { text: "7.2 Documents & Référentiels PDF", link: "/ressources/documents" },
+            { text: "7.3 Bibliographie sélective (APA)", link: "/ressources/bibliographie" },
+            { text: "7.4 Présentations PowerPoint", link: "/ressources/powerpoints" }
           ]
         }
       ]

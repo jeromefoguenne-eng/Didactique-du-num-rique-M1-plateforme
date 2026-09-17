@@ -4,7 +4,67 @@ import { userStore } from '../stores/userStore'
 
 const enteredPin = ref('')
 const isAuthenticated = ref(false)
-const adminTab = ref('students') // 'students' | 'quizzes' | 'submissions' | 'files' | 'export'
+const adminTab = ref('students') // 'students' | 'evaluation' | 'quizzes' | 'submissions' | 'files' | 'export'
+
+// Gestion de la notation sur 200 points
+const selectedStudentEval = ref(null)
+const evalForm = ref({
+  email: '',
+  name: '',
+  attendanceScore: 20,
+  gameProjectScore: 0,
+  oralDefenseScore: 0,
+  teacherFeedback: ''
+})
+
+function getStudentEvalData(email) {
+  return userStore.getStudentEvaluation(email)
+}
+
+function openEditEvalModal(u) {
+  const ev = userStore.getStudentEvaluation(u.email)
+  evalForm.value = {
+    email: u.email,
+    name: `${u.firstName} ${u.lastName}`,
+    attendanceScore: ev.pillar1.attendancePoints,
+    gameProjectScore: ev.pillar2.total,
+    oralDefenseScore: ev.pillar3.total,
+    teacherFeedback: ev.feedback || ''
+  }
+  selectedStudentEval.value = ev
+}
+
+function saveStudentEval() {
+  if (!evalForm.value.email) return
+  userStore.updateStudentEvaluation(evalForm.value.email, {
+    attendanceScore: Number(evalForm.value.attendanceScore),
+    gameProjectScore: Number(evalForm.value.gameProjectScore),
+    oralDefenseScore: Number(evalForm.value.oralDefenseScore),
+    teacherFeedback: evalForm.value.teacherFeedback
+  })
+  alert(`Notes enregistrées avec succès pour ${evalForm.value.name} !`)
+  selectedStudentEval.value = null
+}
+
+function exportEvaluationsToCSV() {
+  let csv = "Nom de l'étudiant;Email institutionnel;Quiz (/20);Présence (/20);Devoirs (/60);Total Pilier 1 (/100);Jeu Société (/70);Oral (/30);Total Général (/200);Note finale (/20);Pourcentage;Statut;Feedback Enseignant\n"
+  
+  users.value.forEach(u => {
+    const ev = userStore.getStudentEvaluation(u.email)
+    const status = ev.isPassing ? 'Admis' : 'En cours'
+    const cleanFb = (ev.feedback || '').replace(/"/g, '""')
+    csv += `"${u.lastName} ${u.firstName}";"${u.email}";"${ev.pillar1.quizPoints}";"${ev.pillar1.attendancePoints}";"${ev.pillar1.exercisesTotal}";"${ev.pillar1.total}";"${ev.pillar2.total}";"${ev.pillar3.total}";"${ev.totalScore}";"${ev.totalOutOf20}";"${ev.percentage}%";"${status}";"${cleanFb}"\n`
+  })
+
+  const blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8;' })
+  const link = document.createElement('a')
+  link.href = URL.createObjectURL(blob)
+  link.setAttribute('download', `Didactique_M1_Releve_Notes_200pts_${new Date().toISOString().substring(0,10)}.csv`)
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+}
+
 
 // Quiz et évaluations diagnostiques
 const quizAttempts = computed(() => userStore.quizAttempts)
@@ -445,6 +505,12 @@ function formatSize(bytes) {
           👥 Gestion de la Classe ({{ users.length }})
         </button>
         <button 
+          :class="['admin-tab-btn eval-tab-highlight', { active: adminTab === 'evaluation' }]"
+          @click="adminTab = 'evaluation'"
+        >
+          🏆 Notes & Évaluation (/ 200 pts)
+        </button>
+        <button 
           :class="['admin-tab-btn', { active: adminTab === 'quizzes' }]"
           @click="adminTab = 'quizzes'"
         >
@@ -578,6 +644,7 @@ function formatSize(bytes) {
                 <th>Sécurité MDP</th>
                 <th>Progression</th>
                 <th>Exercices</th>
+                <th>Note (/ 200 pts)</th>
                 <th style="text-align: right;">Actions</th>
               </tr>
             </thead>
@@ -619,8 +686,14 @@ function formatSize(bytes) {
                 </td>
                 <td>
                   <span class="sub-count-badge">
-                    {{ submissions.filter(s => s.userEmail === u.email).length }} / 7
+                    {{ submittedFiles.filter(f => f.userEmail.toLowerCase() === u.email.toLowerCase()).length }} / 6
                   </span>
+                </td>
+                <td>
+                  <div class="table-grade-badge" @click="openEditEvalModal(u)" title="Cliquer pour modifier les notes">
+                    <strong>{{ getStudentEvalData(u.email).totalScore }}</strong> / 200
+                    <span class="grade-out-of-20">({{ getStudentEvalData(u.email).totalOutOf20 }}/20)</span>
+                  </div>
                 </td>
                 <td style="text-align: right;">
                   <div class="action-buttons-group">
@@ -665,6 +738,130 @@ function formatSize(bytes) {
 
 
       <!-- VUE : RÉSULTATS DES QUIZ & ÉVALUATIONS DIAGNOSTIQUES -->
+            <!-- VUE ÉVALUATION ET NOTES (SUR 200 POINTS) -->
+      <div v-if="adminTab === 'evaluation'" class="tab-panel">
+        <div class="eval-admin-toolbar">
+          <div>
+            <h3>🏆 Suivi Global des Notes & Modalités d'Évaluation (200 Points)</h3>
+            <p>Pondération officielle : <strong>100 pts</strong> Plateforme & Présence • <strong>70 pts</strong> Dossier Jeu de Société • <strong>30 pts</strong> Présentation Orale devant la classe.</p>
+          </div>
+          <button @click="exportEvaluationsToCSV" class="btn-action-tool brand" title="Télécharger le relevé complet des notes sous format Excel CSV">
+            📊 Exporter les Notes (CSV)
+          </button>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table eval-matrix-table">
+            <thead>
+              <tr>
+                <th>Étudiant</th>
+                <th>Quiz (/20)</th>
+                <th>Présence (/20)</th>
+                <th>Devoirs (/60)</th>
+                <th>Pilier 1 (/100)</th>
+                <th>Jeu (/70)</th>
+                <th>Oral (/30)</th>
+                <th>Total (/200)</th>
+                <th>Note (/20)</th>
+                <th>Statut</th>
+                <th style="text-align: right;">Éditer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="u in displayedUsers" :key="u.id" :class="{ 'row-archived': u.status === 'archived' }">
+                <td>
+                  <strong>{{ u.lastName }}</strong> {{ u.firstName }}
+                  <div class="student-sub-mail">{{ u.email }}</div>
+                </td>
+                <td class="num-cell">{{ getStudentEvalData(u.email).pillar1.quizPoints }}</td>
+                <td class="num-cell">{{ getStudentEvalData(u.email).pillar1.attendancePoints }}</td>
+                <td class="num-cell">
+                  <span :class="['duty-badge', getStudentEvalData(u.email).pillar1.exercisesTotal >= 60 ? 'full' : 'partial']">
+                    {{ getStudentEvalData(u.email).pillar1.exercisesTotal }} / 60
+                  </span>
+                </td>
+                <td class="num-cell pillar1-cell">
+                  <strong>{{ getStudentEvalData(u.email).pillar1.total }}</strong>
+                </td>
+                <td class="num-cell">{{ getStudentEvalData(u.email).pillar2.total }}</td>
+                <td class="num-cell">{{ getStudentEvalData(u.email).pillar3.total }}</td>
+                <td class="num-cell total-200-cell">
+                  <strong>{{ getStudentEvalData(u.email).totalScore }}</strong>
+                </td>
+                <td class="num-cell grade-20-cell">
+                  <strong>{{ getStudentEvalData(u.email).totalOutOf20 }}</strong>
+                </td>
+                <td>
+                  <span :class="['status-badge', getStudentEvalData(u.email).isPassing ? 'active' : 'archived']">
+                    {{ getStudentEvalData(u.email).isPassing ? 'Admis' : 'En cours' }}
+                  </span>
+                </td>
+                <td style="text-align: right;">
+                  <button @click="openEditEvalModal(u)" class="btn-row-action edit-grade" title="Modifier les points et le feedback">
+                    ✏️ Noter
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- MODAL D'ÉDITION DES POINTS ET DU FEEDBACK -->
+        <div v-if="selectedStudentEval" class="modal-overlay" @click.self="selectedStudentEval = null">
+          <div class="modal-card eval-modal">
+            <div class="modal-header">
+              <h4>🎯 Barème & Évaluation : {{ evalForm.name }}</h4>
+              <button class="btn-close" @click="selectedStudentEval = null">✕</button>
+            </div>
+
+            <div class="eval-modal-body">
+              <div class="eval-modal-summary">
+                <div class="sum-box">
+                  <span class="sum-label">Quiz Plateforme (Auto)</span>
+                  <span class="sum-val">{{ selectedStudentEval.pillar1.quizPoints }} / 20</span>
+                </div>
+                <div class="sum-box">
+                  <span class="sum-label">Devoirs Déposés (Auto)</span>
+                  <span class="sum-val">{{ selectedStudentEval.pillar1.exercisesTotal }} / 60</span>
+                </div>
+                <div class="sum-box highlight">
+                  <span class="sum-label">Note Actuelle</span>
+                  <span class="sum-val">{{ selectedStudentEval.totalScore }} / 200</span>
+                </div>
+              </div>
+
+              <div class="form-group-eval">
+                <label>🙋 Présence & Implication active au cours (max 20 pts)</label>
+                <p class="field-hint">Présence hebdomadaire obligatoire en présentiel (déduire en cas d'absences injustifiées).</p>
+                <input v-model.number="evalForm.attendanceScore" type="number" min="0" max="20" />
+              </div>
+
+              <div class="form-group-eval">
+                <label>🎲 Pilier 2 : Création du Jeu de Société Didactique (max 70 pts)</label>
+                <p class="field-hint">Dossier didactique (25 pts), mécaniques ludo-pédagogiques (25 pts), prototypage FabLab (20 pts).</p>
+                <input v-model.number="evalForm.gameProjectScore" type="number" min="0" max="70" />
+              </div>
+
+              <div class="form-group-eval">
+                <label>🎤 Pilier 3 : Présentation Orale & Playtest (max 30 pts)</label>
+                <p class="field-hint">Animation de la table de jeu (15 pts), défense didactique (10 pts), capsule vidéo (5 pts).</p>
+                <input v-model.number="evalForm.oralDefenseScore" type="number" min="0" max="30" />
+              </div>
+
+              <div class="form-group-eval">
+                <label>💬 Observation & Feedback pédagogique pour l'étudiant</label>
+                <textarea v-model="evalForm.teacherFeedback" rows="3" placeholder="Commentaire visible par l'étudiant dans son espace personnel..."></textarea>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button @click="saveStudentEval" class="btn-primary">Enregistrer les notes</button>
+              <button @click="selectedStudentEval = null" class="btn-secondary">Annuler</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div v-if="adminTab === 'quizzes'" class="tab-panel">
         <div class="students-toolbar">
           <div class="toolbar-left">
@@ -2143,3 +2340,165 @@ function formatSize(bytes) {
 }
 
 </style>
+
+
+/* STYLES DE L'ÉVALUATION ADMIN (200 PTS) */
+.admin-tab-btn.eval-tab-highlight {
+  border-bottom-color: #ea580c;
+  color: #ea580c;
+  font-weight: 700;
+}
+.admin-tab-btn.eval-tab-highlight.active {
+  background: rgba(234, 88, 12, 0.1);
+}
+
+.eval-admin-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.eval-admin-toolbar h3 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.25rem;
+}
+.eval-admin-toolbar p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--vp-c-text-2);
+}
+
+.eval-matrix-table th {
+  white-space: nowrap;
+  font-size: 0.82rem;
+}
+.eval-matrix-table .num-cell {
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.9rem;
+}
+.student-sub-mail {
+  font-size: 0.75rem;
+  color: var(--vp-c-text-2);
+}
+.duty-badge {
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.duty-badge.full {
+  background: rgba(34, 197, 94, 0.15);
+  color: #16a34a;
+}
+.duty-badge.partial {
+  background: rgba(234, 88, 12, 0.12);
+  color: #ea580c;
+}
+.pillar1-cell strong {
+  color: #0284c7;
+}
+.total-200-cell strong {
+  font-size: 1.05rem;
+  color: #ea580c;
+}
+.grade-20-cell strong {
+  font-size: 1.05rem;
+  color: #16a34a;
+}
+.table-grade-badge {
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  background: rgba(2, 132, 199, 0.08);
+  border: 1px solid rgba(2, 132, 199, 0.2);
+  display: inline-block;
+  font-size: 0.85rem;
+}
+.table-grade-badge:hover {
+  background: rgba(2, 132, 199, 0.15);
+}
+.grade-out-of-20 {
+  color: #16a34a;
+  font-weight: 700;
+  margin-left: 4px;
+}
+.btn-row-action.edit-grade {
+  background: rgba(234, 88, 12, 0.1);
+  color: #ea580c;
+  border: 1px solid rgba(234, 88, 12, 0.3);
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+}
+.btn-row-action.edit-grade:hover {
+  background: #ea580c;
+  color: #ffffff;
+}
+
+.eval-modal {
+  max-width: 600px;
+}
+.eval-modal-summary {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.sum-box {
+  flex: 1;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  padding: 0.8rem;
+  text-align: center;
+}
+.sum-box.highlight {
+  background: rgba(234, 88, 12, 0.08);
+  border-color: rgba(234, 88, 12, 0.3);
+}
+.sum-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--vp-c-text-2);
+  margin-bottom: 0.2rem;
+}
+.sum-val {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--vp-c-text-1);
+}
+.sum-box.highlight .sum-val {
+  color: #ea580c;
+}
+.form-group-eval {
+  margin-bottom: 1.25rem;
+}
+.form-group-eval label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+  color: var(--vp-c-text-1);
+}
+.form-group-eval .field-hint {
+  font-size: 0.8rem;
+  color: var(--vp-c-text-2);
+  margin: 0 0 0.4rem 0;
+}
+.form-group-eval input, .form-group-eval textarea {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+.form-group-eval input:focus, .form-group-eval textarea:focus {
+  border-color: #ea580c;
+  outline: none;
+}

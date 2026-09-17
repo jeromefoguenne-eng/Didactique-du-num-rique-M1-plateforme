@@ -1,41 +1,51 @@
 ---
-title: "6. Exercices & Ateliers Pratiques"
-description: "Hub des 7 ateliers d'application et défis pédagogiques avec débriefings méthodologiques"
+title: "Ateliers & Travaux Pratiques"
+description: "Hub des ateliers d'application et devoirs de Didactique du numérique (10 points chacun dans l'évaluation)"
 ---
 
 <script setup>
 const subCategories = [
   {
-    title: "6.1 Ateliers d'analyse et d'investigation didactique",
-    tag: "Ateliers 1 à 4",
-    desc: "Diagnostic de compétences, évaluation critique d'une information virale, guide d'organisation numérique et escape game FMTTN.",
+    title: "Ateliers d'analyse et d'investigation didactique",
+    tag: "Ateliers 1 à 3 (30 pts)",
+    desc: "Diagnostic de compétences, évaluation critique d'une information virale et guide d'organisation numérique.",
     link: "/ateliers/exercice-01",
     image: "/images/subcategories/sub-6-1-diagnostic.jpg"
   },
   {
-    title: "6.2 Ateliers de création, matériel et valorisation",
-    tag: "Ateliers 5 à 7",
-    desc: "Défi express Canva 20 min, hardware / démontage d'unité centrale et réalisation de la capsule vidéo du jeu.",
-    link: "/ateliers/exercice-05",
+    title: "Ateliers de création, ludification et matériel",
+    tag: "Ateliers 4 à 6 (30 pts)",
+    desc: "Escape Game FMTTN, défi express Canva 20 min et hardware / démontage d'unité centrale.",
+    link: "/ateliers/exercice-04",
     image: "/images/subcategories/sub-6-5-poster20m.jpg"
   }
 ]
 </script>
 
-# 06. Exercices & Ateliers Pratiques
+# Ateliers & Travaux Pratiques
 
-::: info Espaces d'entraînement en présentiel et distanciel
-Ces 7 ateliers sont conçus pour être menés en séance ou **en totale autonomie à distance**.  
-Chaque atelier vous permet de soumettre votre réponse écrite ou de **déposer votre document Word / PDF** qui sera automatiquement libellé avec votre nom et accessible à votre enseignant.
+::: info 🎯 Exercices pratiques et évaluation continue (60 points sur 200)
+Les 6 exercices pratiques constituent des travaux d'application concrets. **Chaque exercice est valorisé à hauteur de 10 points** dans votre note finale sur 200 (soit un total de 60 points pour les 6 ateliers).
 :::
 
-### 🎯 Choisissez un atelier pour démarrer :
+---
+
+## 📋 Modalités d'Accès et de Dépôt
+
+1. **Accès aux consignes via Google Docs** : Pour chaque atelier, vous accédez directement au document de travail officiel en **mode lecture seule**. Vous pouvez le consulter en ligne ou le télécharger (`Fichier → Télécharger → Word`).
+2. **Dépôt sécurisé** : Une fois rédigé, déposez votre document Word (`.docx`) ou PDF sur votre **[Espace Membre personnel](/espace-membre)** (onglet *« Dépôt de Travaux »*).
+3. **Suivi des points** : Vos dépôts sont synchronisés pour l'enseignant et apparaissent dans votre bilan d'évaluation sur 200 points.
+
+---
+
+### 🎯 Accéder aux ateliers :
 
 <SubCategoryTiles :items="subCategories" />
 
 ---
 
-## Fonctionnement des Ateliers
-1. **Consigne contextualisée** : Une situation scolaire authentique.
-2. **Zone de réponse intégrée** : Rédigez en ligne ou joignez votre fichier (.docx, .pdf).
-3. **Débriefing méthodologique sous accordéon** : Une fois votre réponse soumise, déployez le débriefing pour confronter votre analyse aux repères didactiques officiels.
+## Navigation
+- 🏠 **[Accueil du Cours](/)**
+- 👤 **[Mon Espace Membre](/espace-membre)**
+- 📖 **[Modalités officielles de l'évaluation sur 200](/guide/evaluation)**
+

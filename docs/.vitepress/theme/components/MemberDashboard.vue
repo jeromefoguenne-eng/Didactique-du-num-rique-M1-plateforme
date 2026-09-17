@@ -44,9 +44,8 @@ const courseModules = [
   { id: 'mod-3', title: '3. Méthodologies pédagogiques', link: '/modules/03-pedagogies-actives' },
   { id: 'mod-4', title: '4. Préparer une Leçon FMTTN', link: '/modules/04-preparation-lecon-fmttn' },
   { id: 'mod-5', title: '5. Projet Jeu de société', link: '/modules/05-projet-jeu-societe' },
-  { id: 'mod-6', title: '6. Exercices pratiques', link: '/ateliers/' },
-  { id: 'mod-7', title: '7. Guide & Évaluation', link: '/guide/distanciel' },
-  { id: 'mod-8', title: '8. Ressources & Outils', link: '/ressources/documents' }
+  { id: 'mod-6', title: '6. Guide & Évaluation', link: '/guide/distanciel' },
+  { id: 'mod-7', title: '7. Ressources & Outils', link: '/ressources/documents' }
 ]
 
 const availableExercises = [
@@ -65,6 +64,7 @@ const currentUser = computed(() => userStore.currentUser)
 const progressPercent = computed(() => userStore.calculateUserProgressPercent())
 const userFiles = computed(() => userStore.getUserFiles())
 const studentQuizzes = computed(() => userStore.getUserQuizAttempts())
+const myEvaluation = computed(() => userStore.getStudentEvaluation())
 
 // Aperçu en temps réel du nom de fichier généré
 const previewFormattedName = computed(() => {
@@ -556,6 +556,12 @@ function formatSize(bytes) {
       <!-- ONGLETS DE NAVIGATION -->
       <div class="tab-bar">
         <button 
+          :class="['tab-btn eval-highlight', { active: activeTab === 'evaluation' }]"
+          @click="activeTab = 'evaluation'"
+        >
+          🏆 Mon Bilan & Notes (/ 200 pts)
+        </button>
+        <button 
           :class="['tab-btn', { active: activeTab === 'progress' }]"
           @click="activeTab = 'progress'"
         >
@@ -579,6 +585,210 @@ function formatSize(bytes) {
         >
           📝 Mes Évaluations Diagnostiques ({{ studentQuizzes.length }})
         </button>
+      </div>
+
+      <!-- VUE 0 : MON BILAN D'ÉVALUATION (SUR 200 POINTS) -->
+      <div v-if="activeTab === 'evaluation'" class="tab-content">
+        <div class="eval-overview-card">
+          <div class="eval-hero-banner">
+            <div class="eval-score-circle">
+              <div class="score-big">{{ myEvaluation.totalScore }}</div>
+              <div class="score-denom">/ 200 pts</div>
+              <div class="score-sub">{{ myEvaluation.totalOutOf20 }} / 20</div>
+            </div>
+
+            <div class="eval-hero-info">
+              <div class="eval-badge-line">
+                <span :class="['grade-status-pill', myEvaluation.isPassing ? 'pass' : 'ongoing']">
+                  {{ myEvaluation.isPassing ? '✓ Seuil de réussite atteint' : '⏳ En cours de validation' }}
+                </span>
+                <span class="pct-pill">{{ myEvaluation.percentage }}%</span>
+              </div>
+              <h3 class="eval-title">Bilan Officiel d'Évaluation Didactique M1</h3>
+              <p class="eval-desc">
+                La note globale sur 200 points sanctionne votre quadrimestre. Elle se compose de <strong>100 points continus</strong> (plateforme, présence et exercices), <strong>70 points</strong> pour la création de votre jeu de société didactique, et <strong>30 points</strong> pour sa présentation orale devant la classe.
+              </p>
+              <div class="eval-link-wrapper">
+                <a :href="withBase('/guide/evaluation')" class="link-eval-guide">
+                  Consulter les modalités et critères détaillés de l'évaluation →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feedback enseignant -->
+          <div v-if="myEvaluation.feedback" class="teacher-feedback-callout">
+            <div class="fb-icon">👨‍🏫</div>
+            <div class="fb-body">
+              <strong>Observation & Feedback de l'enseignant :</strong>
+              <p>{{ myEvaluation.feedback }}</p>
+            </div>
+          </div>
+
+          <!-- DÉTAIL DES 3 PILIERS -->
+          <div class="pillars-grid">
+            <!-- PILIER 1 -->
+            <div class="pillar-card p1">
+              <div class="pillar-header">
+                <div class="pillar-badge">Pilier 1 • 100 Pts</div>
+                <div class="pillar-score-badge">{{ myEvaluation.pillar1.total }} / 100 pts</div>
+              </div>
+              <h4 class="pillar-title">Plateforme, Présence & Devoirs</h4>
+              <p class="pillar-summary">Travail continu, assiduité et validation des acquis tout au long du quadrimestre.</p>
+
+              <div class="sub-pillars-list">
+                <!-- 1.1 Quiz -->
+                <div class="sub-pillar-row">
+                  <div class="sp-info">
+                    <span class="sp-icon">📝</span>
+                    <div>
+                      <span class="sp-name">Évaluations diagnostiques (Quiz en ligne)</span>
+                      <span class="sp-sub">{{ studentQuizzes.length }} quiz passé(s)</span>
+                    </div>
+                  </div>
+                  <div class="sp-score">
+                    <strong>{{ myEvaluation.pillar1.quizPoints }}</strong> / 20 pts
+                  </div>
+                </div>
+
+                <!-- 1.2 Présence -->
+                <div class="sub-pillar-row">
+                  <div class="sp-info">
+                    <span class="sp-icon">🙋</span>
+                    <div>
+                      <span class="sp-name">Présence active & assiduité aux cours</span>
+                      <span class="sp-sub">Présentiel obligatoire (sauf absence justifiée)</span>
+                    </div>
+                  </div>
+                  <div class="sp-score">
+                    <strong>{{ myEvaluation.pillar1.attendancePoints }}</strong> / 20 pts
+                  </div>
+                </div>
+
+                <!-- 1.3 Exercices pratiques -->
+                <div class="sub-pillar-row highlight">
+                  <div class="sp-info">
+                    <span class="sp-icon">📂</span>
+                    <div>
+                      <span class="sp-name">Ateliers pratiques & devoirs (6 × 10 pts)</span>
+                      <span class="sp-sub">Documents Word / PDF déposés sur l'espace</span>
+                    </div>
+                  </div>
+                  <div class="sp-score">
+                    <strong>{{ myEvaluation.pillar1.exercisesTotal }}</strong> / 60 pts
+                  </div>
+                </div>
+              </div>
+
+              <!-- Liste détaillée des 6 exercices -->
+              <div class="eval-exercises-box">
+                <div class="ee-title">État d'avancement des 6 devoirs obligatoires :</div>
+                <div class="ee-list">
+                  <div 
+                    v-for="ex in myEvaluation.pillar1.exerciseDetails" 
+                    :key="ex.id"
+                    :class="['ee-item', { done: ex.completed }]"
+                  >
+                    <div class="ee-left">
+                      <span class="ee-check">{{ ex.completed ? '✅' : '⚪' }}</span>
+                      <span class="ee-name">{{ ex.title }}</span>
+                    </div>
+                    <div class="ee-right">
+                      <span :class="['ee-status', ex.completed ? 'ok' : 'pending']">
+                        {{ ex.completed ? 'Déposé (10/10)' : 'Non déposé (0/10)' }}
+                      </span>
+                      <button 
+                        v-if="!ex.completed" 
+                        @click="activeTab = 'files'; selectedExerciseForUpload = ex.id"
+                        class="btn-quick-upload"
+                      >
+                        Déposer →
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PILIER 2 -->
+            <div class="pillar-card p2">
+              <div class="pillar-header">
+                <div class="pillar-badge">Pilier 2 • 70 Pts</div>
+                <div class="pillar-score-badge">{{ myEvaluation.pillar2.total }} / 70 pts</div>
+              </div>
+              <h4 class="pillar-title">Création du Jeu de Société Didactique</h4>
+              <p class="pillar-summary">Projet central ludo-éducatif conçu pour enseigner une compétence FMTTN.</p>
+
+              <div class="pillar-details-box">
+                <div class="criteria-check-item">
+                  <span class="crit-icon">🎯</span>
+                  <div class="crit-text">
+                    <strong>Dossier didactique complet (25 pts) :</strong>
+                    <span>Ancrage référentiel FWB, compétences visées, fiche d'activité élève.</span>
+                  </div>
+                </div>
+                <div class="criteria-check-item">
+                  <span class="crit-icon">🎲</span>
+                  <div class="crit-text">
+                    <strong>Mécaniques ludo-pédagogiques (25 pts) :</strong>
+                    <span>Équilibre des règles, rejouabilité, différenciation pédagogique.</span>
+                  </div>
+                </div>
+                <div class="criteria-check-item">
+                  <span class="crit-icon">🛠️</span>
+                  <div class="crit-text">
+                    <strong>Prototypage & fabrication FabLab (20 pts) :</strong>
+                    <span>Matériel physique soigné, découpe laser, modélisation 3D, cartes.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pillar-note-box">
+                <span class="pnb-label">Note attribuée au dossier final :</span>
+                <span class="pnb-val">{{ myEvaluation.pillar2.total }} / 70 pts</span>
+              </div>
+            </div>
+
+            <!-- PILIER 3 -->
+            <div class="pillar-card p3">
+              <div class="pillar-header">
+                <div class="pillar-badge">Pilier 3 • 30 Pts</div>
+                <div class="pillar-score-badge">{{ myEvaluation.pillar3.total }} / 30 pts</div>
+              </div>
+              <h4 class="pillar-title">Présentation Orale & Playtest</h4>
+              <p class="pillar-summary">Soutenance devant les pairs et démonstration interactive en conditions réelles.</p>
+
+              <div class="pillar-details-box">
+                <div class="criteria-check-item">
+                  <span class="crit-icon">🎤</span>
+                  <div class="crit-text">
+                    <strong>Animation de la table de jeu (15 pts) :</strong>
+                    <span>Explication vivante des règles, gestion du temps et engagement des joueurs.</span>
+                  </div>
+                </div>
+                <div class="criteria-check-item">
+                  <span class="crit-icon">💡</span>
+                  <div class="crit-text">
+                    <strong>Défense didactique & réflexive (10 pts) :</strong>
+                    <span>Justification des choix didactiques et réponses aux questions de l'enseignant.</span>
+                  </div>
+                </div>
+                <div class="criteria-check-item">
+                  <span class="crit-icon">🎬</span>
+                  <div class="crit-text">
+                    <strong>Capsule vidéo de présentation (5 pts) :</strong>
+                    <span>Teaser ou vidéo pitch (max 2 minutes) résumant le jeu et son intérêt didactique.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pillar-note-box">
+                <span class="pnb-label">Note attribuée à la présentation :</span>
+                <span class="pnb-val">{{ myEvaluation.pillar3.total }} / 30 pts</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- VUE 1 : CHECKLIST DES CHAPITRES -->
@@ -1870,3 +2080,417 @@ function formatSize(bytes) {
 }
 
 </style>
+
+
+/* ========================================================
+   STYLES DU BILAN D'ÉVALUATION (SUR 200 POINTS)
+   ======================================================== */
+.tab-btn.eval-highlight {
+  background: linear-gradient(135deg, rgba(234, 88, 12, 0.1), rgba(217, 119, 6, 0.15));
+  border-color: rgba(234, 88, 12, 0.3);
+  font-weight: 700;
+  color: #ea580c;
+}
+.tab-btn.eval-highlight.active {
+  background: linear-gradient(135deg, #ea580c, #d97706);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.3);
+}
+
+.eval-overview-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.eval-hero-banner {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 2rem;
+  color: #f8fafc;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .eval-hero-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+}
+
+.eval-score-circle {
+  min-width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #1e293b, #0f172a);
+  border: 4px solid #38bdf8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+}
+
+.score-big {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #38bdf8;
+  line-height: 1;
+}
+
+.score-denom {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.score-sub {
+  font-size: 0.85rem;
+  color: #34d399;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.eval-hero-info {
+  flex: 1;
+}
+
+.eval-badge-line {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.grade-status-pill {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.grade-status-pill.pass {
+  background: rgba(52, 211, 153, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.4);
+}
+
+.grade-status-pill.ongoing {
+  background: rgba(251, 191, 36, 0.2);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.4);
+}
+
+.pct-pill {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.3rem 0.6rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #f1f5f9;
+}
+
+.eval-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 0.3rem 0 0.5rem 0;
+  color: #ffffff;
+}
+
+.eval-desc {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.link-eval-guide {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #38bdf8;
+  text-decoration: none;
+}
+.link-eval-guide:hover {
+  text-decoration: underline;
+}
+
+.teacher-feedback-callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  color: #166534;
+}
+:root.dark .teacher-feedback-callout {
+  background: rgba(22, 101, 52, 0.2);
+  border-color: rgba(34, 197, 94, 0.4);
+  color: #86efac;
+}
+
+.fb-icon {
+  font-size: 1.6rem;
+}
+.fb-body p {
+  margin: 0.3rem 0 0 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.pillar-card {
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+}
+
+.pillar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.pillar-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  background: rgba(2, 132, 199, 0.1);
+  color: #0284c7;
+}
+
+.pillar-score-badge {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--vp-c-brand);
+}
+
+.pillar-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 0.4rem 0;
+  color: var(--vp-c-text-1);
+}
+
+.pillar-summary {
+  font-size: 0.85rem;
+  color: var(--vp-c-text-2);
+  margin-bottom: 1.25rem;
+  line-height: 1.4;
+}
+
+.sub-pillars-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.sub-pillar-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+}
+
+.sub-pillar-row.highlight {
+  border-color: rgba(2, 132, 199, 0.3);
+  background: rgba(2, 132, 199, 0.04);
+}
+
+.sp-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sp-icon {
+  font-size: 1.2rem;
+}
+
+.sp-name {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+}
+
+.sp-sub {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--vp-c-text-2);
+}
+
+.sp-score {
+  font-size: 0.95rem;
+  color: var(--vp-c-text-2);
+  white-space: nowrap;
+}
+.sp-score strong {
+  font-size: 1.1rem;
+  color: var(--vp-c-text-1);
+}
+
+.eval-exercises-box {
+  border-top: 1px solid var(--vp-c-divider);
+  padding-top: 1rem;
+  margin-top: auto;
+}
+
+.ee-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--vp-c-text-2);
+  margin-bottom: 0.6rem;
+}
+
+.ee-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ee-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  background: var(--vp-c-bg-soft);
+  font-size: 0.82rem;
+}
+
+.ee-item.done {
+  background: rgba(34, 197, 94, 0.06);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.ee-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ee-check {
+  font-size: 0.9rem;
+}
+
+.ee-name {
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+}
+
+.ee-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ee-status.ok {
+  color: #16a34a;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.ee-status.pending {
+  color: #ea580c;
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+
+.btn-quick-upload {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background: #0284c7;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+.btn-quick-upload:hover {
+  background: #0369a1;
+}
+
+.pillar-details-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.criteria-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  background: var(--vp-c-bg-soft);
+}
+
+.crit-icon {
+  font-size: 1.1rem;
+}
+
+.crit-text strong {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--vp-c-text-1);
+}
+
+.crit-text span {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.3;
+}
+
+.pillar-note-box {
+  margin-top: auto;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  background: rgba(2, 132, 199, 0.06);
+  border: 1px solid rgba(2, 132, 199, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pnb-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+}
+
+.pnb-val {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--vp-c-brand);
+}

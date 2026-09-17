@@ -1,87 +1,65 @@
 ---
 title: "Atelier 4 : Escape Game FMTTN (Cyber-Enquête)"
-description: "Jeu d'évasion pédagogique en ligne pour découvrir les attendus du référentiel FMTTN"
+description: "Conception d'une séquence ludifiée de type Escape Game mobilisant les quatre champs du référentiel FMTTN."
 ---
 
-# Atelier 4 : Escape Game FMTTN — Cyber-Enquête
+# Atelier 4 : Escape Game FMTTN (Cyber-Enquête)
 
-<Badge type="tip" text="Ludification" /> <Badge type="info" text="À faire en ligne" />
+<Badge type="info" text="Exercice 4 (10 points)" /> <Badge type="tip" text="Document Officiel" />
 
-::: info Mission Cyber-Enquête
-Plongez dans l'escape game conçu pour faire vivre les concepts clés du référentiel FMTTN de manière ludique et immersive.
-:::
+Conception d'une séquence ludifiée de type Escape Game mobilisant les quatre champs du référentiel FMTTN.
 
-## Jouer au jeu
+---
 
-👉 **[Accéder directement à l'Escape Game FMTTN](https://jeromefoguenne-eng.github.io/FMTTN---Escape-Game/)**
+## 📄 Document de Travail Officiel (Google Docs)
 
-<div style="margin: 2rem 0; text-align: center;">
-  <a href="https://jeromefoguenne-eng.github.io/FMTTN---Escape-Game/" target="_blank" style="background: #3b82f6; color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
-    🚀 Lancer l'Escape Game FMTTN en plein écran ↗
-  </a>
+<div class="callout-exercise">
+  <div class="callout-title">📋 Consignes & Document de Travail en Ligne</div>
+  <p>
+    Le sujet intégral et la grille d'analyse de cet exercice sont mis à disposition sur le Google Docs officiel du cours en <strong>mode lecture seule</strong> :
+  </p>
+  <div style="margin: 1.2rem 0;">
+    <a 
+      href="https://docs.google.com/document/d/1kUSfjlioxrG-i-ZrVbzQOpxH072f_2db/preview" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="btn-primary"
+      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: white !important;"
+    >
+      <span>📄 Ouvrir le document officiel sur Google Docs →</span>
+    </a>
+  </div>
+  <div style="font-size: 0.88rem; color: var(--vp-c-text-2); line-height: 1.5; background: var(--vp-c-bg-soft); padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid var(--vp-c-divider);">
+    ℹ️ <strong>Modalités d'utilisation :</strong><br />
+    Le document est configuré en <em>mode lecture seule</em> (non modifiable directement). Pour rédiger vos réponses, ouvrez le lien ci-dessus puis :
+    <ul>
+      <li>Soit téléchargez le fichier sur votre ordinateur : <strong>Fichier → Télécharger → Microsoft Word (.docx)</strong> ou <strong>Document PDF (.pdf)</strong>.</li>
+      <li>Soit créez votre propre copie dans votre Google Drive : <strong>Fichier → Créer une copie</strong>.</li>
+    </ul>
+  </div>
 </div>
 
-Escape Game FMTTN
+---
 
-Joue au jeu et termine-le :
+## 📤 Dépôt de votre Travail Réalisé
 
-https://jeromefoguenne-eng.github.io/FMTTN---Escape-Game/
-
+<div class="callout-vigilance">
+  <div class="callout-title">⚠️ Dépôt obligatoire sur votre Espace Personnel</div>
+  <p>
+    Une fois votre devoir rédigé, vous devez <strong>impérativement le déposer au format Word (<code>.docx</code>) ou PDF</strong> sur votre <a href="/espace-membre"><strong>Espace Membre Étudiant</strong></a> (onglet <em>« Dépôt de Travaux »</em>) ou directement via le module interactif ci-dessous.
+  </p>
+  <p style="margin-bottom: 0; font-size: 0.88rem;">
+    Le fichier sera automatiquement libellé selon la nomenclature officielle (<code>NOM_Prenom_exercice-04_...</code>) et transmis à votre enseignant. Cet exercice est valorisé à hauteur de <strong>10 points</strong> dans votre évaluation continue.
+  </p>
+</div>
 
 <ClientOnly>
   <ExerciseBox exerciseId="exercice-04" exerciseTitle="Atelier 4 : Escape Game FMTTN (Cyber-Enquête)" />
 </ClientOnly>
 
-::: details 💡 Consulter le débriefing méthodologique & Correctif
-ntérêt méthodologique
+---
 
-L’escape game Cyber-Enquête permet de faire vivre l’apprentissage par investigation de manière particulièrement immersive. Les étudiants ne reçoivent pas directement les informations nécessaires pour résoudre l’enquête : ils doivent chercher, sélectionner, croiser et interpréter des indices afin de construire progressivement une réponse.
-
-La démarche repose sur une logique d’enquête :
-
-Questionnement → hypothèses → recherche → analyse des indices → confrontation → conclusion
-
-L'activité favorise ainsi :
-
-la curiosité et l'engagement, grâce à une situation scénarisée et ludique ;
-
-la recherche autonome, les étudiants devant déterminer eux-mêmes quelles informations sont pertinentes ;
-
-le raisonnement et l'esprit critique, puisqu'un indice isolé ne suffit pas nécessairement à établir une conclusion ;
-
-la collaboration, les membres du groupe pouvant confronter leurs observations et leurs hypothèses ;
-
-la résolution de problèmes, chaque découverte permettant de progresser dans l'enquête ;
-
-la métacognition, lorsque les étudiants reviennent sur la stratégie qui leur a permis de résoudre l'enquête.
-
-L'escape game présente également un intérêt didactique important : l'erreur devient productive. Une hypothèse incorrecte n'est pas simplement sanctionnée ; elle invite les étudiants à réexaminer les indices et à modifier leur stratégie.
-
-Lien avec le référentiel FMTTN
-
-L'activité s'inscrit particulièrement bien dans le volet numérique du FMTTN, puisqu'elle place les étudiants dans une situation où ils doivent mobiliser le numérique pour rechercher, analyser, évaluer et exploiter des informations.
-
-Selon le scénario de Cyber-Enquête, les étudiants peuvent notamment être amenés à :
-
-rechercher des informations dans différents environnements numériques ;
-
-identifier les informations pertinentes ;
-
-croiser plusieurs sources ;
-
-évaluer la fiabilité ou la pertinence d'une information ;
-
-résoudre un problème à l'aide de ressources numériques ;
-
-collaborer et partager leurs découvertes ;
-
-exercer leur esprit critique face aux informations rencontrées.
-
-L'intérêt est donc de travailler plusieurs compétences simultanément dans une situation contextualisée, plutôt que de les aborder sous forme d'exercices isolés.
-
-On retrouve finalement une logique très proche de celle que l'on souhaite faire développer aux élèves en FMTTN :
-
-Ne pas donner la réponse à l'élève, mais lui donner une situation qui lui donne une raison de chercher, de vérifier, de raisonner et de construire la réponse.
-
-L'escape game constitue ainsi un exemple particulièrement visible de la démarche d'investigation : le jeu fournit le contexte et la motivation, tandis que la recherche et l'analyse des indices constituent le véritable moteur des apprentissages.
-:::
+## Navigation
+- 🏠 **[Accueil du Cours](/)**
+- 👤 **[Mon Espace Membre (Dépôt & Notes)](/espace-membre)**
+- 📖 **[Guide & Modalités de l'évaluation](/guide/evaluation)**

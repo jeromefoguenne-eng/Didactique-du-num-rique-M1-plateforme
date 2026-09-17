@@ -1,189 +1,65 @@
 ---
-title: "Atelier 6 : Défi Hardware — Démonter et remonter un PC"
-description: "Méthodologie de l'apprentissage expérientiel : ouvrir la machine, identifier les composants et reconstruire"
+title: "Atelier 6 : Défi Hardware PC (Architecture matérielle)"
+description: "Atelier de démontage et identification des composants physiques d'une unité centrale (Champ 1 & FMTT)."
 ---
 
-# Atelier 6 : Défi Hardware — Architecture physique d'un ordinateur
+# Atelier 6 : Défi Hardware PC (Architecture matérielle)
 
-<Badge type="warning" text="Apprentissage expérientiel" /> <Badge type="info" text="Hands-on atelier" />
+<Badge type="info" text="Exercice 6 (10 points)" /> <Badge type="tip" text="Document Officiel" />
 
-Exercice 07 - DÉFI HARDWARE
+Atelier de démontage et identification des composants physiques d'une unité centrale (Champ 1 & FMTT).
 
-Démonter, comprendre et reconstruire un ordinateur
+---
 
-Votre mission
+## 📄 Document de Travail Officiel (Google Docs)
 
-Par groupes de 2 à 3, vous allez devoir démonter un ordinateur, comprendre son architecture, puis le remonter pour le rendre à nouveau fonctionnel.
+<div class="callout-exercise">
+  <div class="callout-title">📋 Consignes & Document de Travail en Ligne</div>
+  <p>
+    Le sujet intégral et la grille d'analyse de cet exercice sont mis à disposition sur le Google Docs officiel du cours en <strong>mode lecture seule</strong> :
+  </p>
+  <div style="margin: 1.2rem 0;">
+    <a 
+      href="https://docs.google.com/document/d/1mfCTqwo-2l9k_wdLzIu3qRWOJuBxrqJv/preview" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="btn-primary"
+      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: white !important;"
+    >
+      <span>📄 Ouvrir le document officiel sur Google Docs →</span>
+    </a>
+  </div>
+  <div style="font-size: 0.88rem; color: var(--vp-c-text-2); line-height: 1.5; background: var(--vp-c-bg-soft); padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid var(--vp-c-divider);">
+    ℹ️ <strong>Modalités d'utilisation :</strong><br />
+    Le document est configuré en <em>mode lecture seule</em> (non modifiable directement). Pour rédiger vos réponses, ouvrez le lien ci-dessus puis :
+    <ul>
+      <li>Soit téléchargez le fichier sur votre ordinateur : <strong>Fichier → Télécharger → Microsoft Word (.docx)</strong> ou <strong>Document PDF (.pdf)</strong>.</li>
+      <li>Soit créez votre propre copie dans votre Google Drive : <strong>Fichier → Créer une copie</strong>.</li>
+    </ul>
+  </div>
+</div>
 
-Vous ne recevrez pas de procédure détaillée : à vous de chercher, expérimenter, collaborer et résoudre les problèmes.
+---
 
-Règle d'or : si vous ne savez pas → cherchez.
-Si vous bloquez → demandez à un pair.
-Si cela ne fonctionne pas → analysez, testez et recommencez.
+## 📤 Dépôt de votre Travail Réalisé
 
-1. OBSERVER
-
-Avant toute manipulation :
-
-identifiez les principaux composants ;
-
-observez leurs connexions ;
-
-photographiez l'intérieur du PC ;
-
-formulez des hypothèses sur le rôle de chaque composant.
-
-Trace : complétez un tableau Composant → Fonction → Connexions.
-
-2. DÉMONTER
-
-Démontez progressivement le PC.
-
-À chaque étape :
-
-observez avant d'agir ;
-
-identifiez ce que vous allez retirer ou débrancher ;
-
-photographiez les étapes importantes ;
-
-notez les informations utiles pour le remontage ;
-
-conservez soigneusement les vis et composants.
-
-Ne forcez jamais un composant. En cas de doute, arrêtez-vous et recherchez l'information.
-
-3. APPRENDRE AVEC SES PAIRS
-
-Vous pouvez utiliser :
-
-des ressources en ligne ;
-
-des manuels ou documentations techniques ;
-
-l'aide des autres groupes.
-
-Lorsqu'un groupe rencontre une difficulté, il doit d'abord chercher une solution, puis éventuellement demander l'aide d'un autre groupe.
-
-Lorsque vous aidez un pair, expliquez votre raisonnement plutôt que de réaliser la manipulation à sa place.
-
-4. RECONSTRUIRE
-
-Remontez le PC en vous appuyant sur vos observations et vos recherches.
-
-Vous devez être capables d'expliquer :
-
-où replacer chaque composant ;
-
-quelles connexions effectuer ;
-
-comment les composants communiquent ;
-
-pourquoi chaque branchement est nécessaire.
-
-5. RÉSOUDRE LE PROBLÈME
-
-Le PC ne redémarre pas ?
-
-C'est maintenant à vous de jouer.
-
-Formulez des hypothèses, testez-les et analysez les résultats.
-
-Avant de solliciter l'enseignant :
-
-1. J'observe → 2. Je cherche → 3. Je demande à un pair → 4. Je teste → 5. Je demande à l'enseignant.
-
-6. BILAN
-
-À la fin de l'activité, répondez en groupe :
-
-Quelle difficulté avons-nous rencontrée ?
-
-Comment avons-nous trouvé la solution ?
-
-Qu'avons-nous appris grâce à nos erreurs ?
-
-Qu'est-ce qu'un autre groupe nous a appris ?
-
-Qu'avons-nous compris grâce à la manipulation que nous aurions difficilement compris avec un cours théorique ?
-
-À REMETTRE
-
-1. Schéma annoté du PC
-2. Tableau Composant → Fonction → Connexions
-3. Photos des principales étapes
-4. Problèmes rencontrés et solutions trouvées
-5. Bilan réflexif
-
-LE DÉFI
-
-La réussite ne consiste pas uniquement à faire redémarrer le PC.
-
-Vous devez être capables de comprendre, expliquer et justifier vos choix.
-
-Problème → Recherche → Expérimentation → Peer learning → Résolution → Réflexion
-
+<div class="callout-vigilance">
+  <div class="callout-title">⚠️ Dépôt obligatoire sur votre Espace Personnel</div>
+  <p>
+    Une fois votre devoir rédigé, vous devez <strong>impérativement le déposer au format Word (<code>.docx</code>) ou PDF</strong> sur votre <a href="/espace-membre"><strong>Espace Membre Étudiant</strong></a> (onglet <em>« Dépôt de Travaux »</em>) ou directement via le module interactif ci-dessous.
+  </p>
+  <p style="margin-bottom: 0; font-size: 0.88rem;">
+    Le fichier sera automatiquement libellé selon la nomenclature officielle (<code>NOM_Prenom_exercice-06_...</code>) et transmis à votre enseignant. Cet exercice est valorisé à hauteur de <strong>10 points</strong> dans votre évaluation continue.
+  </p>
+</div>
 
 <ClientOnly>
-  <ExerciseBox exerciseId="exercice-06" exerciseTitle="Atelier 6 : Défi Hardware (Démonter et remonter un PC)" />
+  <ExerciseBox exerciseId="exercice-06" exerciseTitle="Atelier 6 : Défi Hardware PC (Architecture matérielle)" />
 </ClientOnly>
 
-::: details 💡 Consulter le débriefing méthodologique & Correctif
-Intérêt méthodologique
+---
 
-Cet exercice permet aux étudiants de vivre le principe fondamental de la conception itérative : une première production n'est pas considérée comme définitive. Elle constitue un prototype qui doit être testé, analysé puis amélioré.
-
-La démarche introduit une logique de travail différente :
-
-Concevoir → tester → recueillir des données → analyser → améliorer → tester à nouveau.
-
-L'intérêt est notamment de montrer que les concepteurs ne sont pas toujours les mieux placés pour identifier les problèmes de leur propre production. Le regard des utilisateurs permet de faire apparaître des difficultés que le groupe n'avait pas anticipées.
-
-L'utilisation du Google Forms est particulièrement intéressante : les étudiants ne se contentent pas de demander un avis général. Ils doivent concevoir un outil de recueil de données, déterminer ce qu'ils souhaitent évaluer et analyser ensuite les réponses obtenues pour décider des modifications à apporter.
-
-L'activité développe ainsi :
-
-l'analyse des besoins ;
-
-la créativité ;
-
-la résolution de problèmes ;
-
-la collaboration ;
-
-l'évaluation d'une production ;
-
-l'exploitation de feedbacks ;
-
-la capacité à justifier des choix ;
-
-une posture réflexive.
-
-Elle permet également de travailler des niveaux élevés de Bloom : analyser les retours, évaluer la production et créer une nouvelle version.
-
-Lien avec le référentiel FMTTN
-
-L'exercice est particulièrement cohérent avec le volet numérique du FMTTN puisqu'il place les étudiants dans une situation où ils doivent concevoir et produire un objet numérique, puis utiliser le numérique pour recueillir et analyser des informations afin de l'améliorer.
-
-Ils mobilisent notamment :
-
-la création de contenus numériques ;
-
-l'utilisation d'outils numériques adaptés à une intention ;
-
-la collaboration dans un environnement numérique ;
-
-la communication ;
-
-la collecte et l'analyse de données ;
-
-la résolution de problèmes liés à une production numérique.
-
-L'activité permet surtout de montrer aux futurs enseignants qu'une compétence numérique peut être travaillée dans une démarche complète, plutôt qu'à travers l'apprentissage isolé d'un outil.
-
-Le choix de Genially et Google Forms est donc secondaire : ce qui importe est la démarche :
-
-Créer une solution numérique → la confronter à de véritables utilisateurs → recueillir des données → interpréter ces données → améliorer la solution.
-
-Cette logique correspond particulièrement bien à l'objectif du FMTTN de former des élèves capables non seulement d'utiliser des outils numériques, mais aussi de concevoir, évaluer et améliorer des productions numériques en fonction d'un besoin et d'un public.
-:::
+## Navigation
+- 🏠 **[Accueil du Cours](/)**
+- 👤 **[Mon Espace Membre (Dépôt & Notes)](/espace-membre)**
+- 📖 **[Guide & Modalités de l'évaluation](/guide/evaluation)**

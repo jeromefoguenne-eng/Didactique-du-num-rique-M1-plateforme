@@ -77,35 +77,222 @@ const MODULE_QUESTIONS = {
         "L'absence totale de journalistes sur place le jour de l'investiture."
       ],
       correctIndex: 1,
-      points: 3,
+      points: 2,
       explanation: "La post-vérité se caractérise par la primauté accordée à l'émotion et à l'affirmation identitaire sur l'évidence factuelle et matérielle (création délibérée de vérités alternatives)."
     },
     {
       id: 'q2',
       type: 'qcm',
-      title: "2. Fabrique du réel : Télé-réalité vs Cinéma direct (Cauchemar en cuisine vs Strip-Tease)",
-      text: "En confrontant l'extrait de « Cauchemar en cuisine » et le documentaire « Strip-Tease (Scarface) », quel contraste didactique fondamental mettez-vous en évidence auprès des élèves ?",
+      title: "2. Théorie du complot et montage vidéo (Cas de l'extrait « Secret Dieu »)",
+      text: "Dans les vidéos conspirationnistes comme celle illustrée par « Secret Dieu », quel procédé technique de réalisation est systématiquement mobilisé pour convaincre le spectateur d'un complot ?",
       options: [
-        "Cauchemar en cuisine est tourné en direct sans aucun montage, alors que Strip-Tease utilise des effets spéciaux numériques.",
-        "Dans Cauchemar en cuisine, la dramatisation est sur-écrite (bruitages anxiogènes, musique de tension, coupes rapides), alors que Strip-Tease utilise le cinéma direct sans voix-off ni commentaire pour laisser le spectateur construire son regard critique.",
-        "Les deux formats appliquent exactement la même déontologie journalistique neutre.",
-        "Strip-Tease rémunère des comédiens professionnels pour jouer des scènes de fiction."
+        "La présentation exhaustive et neutre de toutes les sources scientifiques contradictoires.",
+        "L'association arbitraire d'images disparates liée par une voix mystérieuse, une musique anxiogène et l'illusion d'une causalité cachée.",
+        "Le refus délibéré d'utiliser des images d'archives ou des ralentis.",
+        "L'absence totale de musique ou d'effets sonores afin de laisser le spectateur juger en silence."
       ],
       correctIndex: 1,
-      points: 3,
-      explanation: "La télé-réalité scénarise et manipule le rythme émotionnel par le montage et les ambiances sonores, tandis que Strip-Tease adopte le dispositif brut du cinéma direct sans narration prescriptive."
+      points: 2,
+      explanation: "Les vidéos complotistes fabriquent un faux sentiment de révélation en associant des symboles et des images sorties de leur contexte à grand renfort d'ambiances sonores dramatisées."
     },
     {
       id: 'q3',
+      type: 'qcm',
+      title: "3. Fact-checking et manipulation visuelle (Cas France 24 « Info ou Intox » : Zelensky)",
+      text: "Dans la chronique « Info ou Intox » de France 24 analysant la prétendue publicité anti-Zelensky à New York, quelle a été la démarche journalistique décisive pour prouver l'intox ?",
+      options: [
+        "Se fier aux commentaires anonymes sous la vidéo virale sur Twitter/X.",
+        "Interroger la régie publicitaire locale, analyser la météo, la circulation réelle et les caméras fixes en direct de Times Square.",
+        "Interdire aux citoyens américains de filmer les panneaux d'affichage urbains.",
+        "Attendre un communiqué officiel de l'ONU avant de regarder la vidéo."
+      ],
+      correctIndex: 1,
+      points: 2,
+      explanation: "Le fact-checking rigoureux croise les indices matériels (météo, webcam de circulation en direct) et contacte les gestionnaires officiels de l'espace publicitaire pour authentifier la réalité de la diffusion."
+    },
+    {
+      id: 'q4',
+      type: 'qcm',
+      title: "4. Mécanisme de la rumeur et viralité numérique",
+      text: "Dans le reportage « Post-vérité et théorie du complot : la vérité en danger sur Internet », pourquoi une fausse information circule-t-elle généralement plus vite qu'un démenti ?",
+      options: [
+        "Parce que les câbles de télécommunication sous-marins privilégient les faux fichiers.",
+        "Parce qu'elle suscite des émotions vives (indignation, surprise, peur) qui stimulent le partage instantané, alors que la vérification demande du temps et de l'effort cognitif.",
+        "Parce que les journalistes professionnels sont absents d'Internet.",
+        "Parce que les démentis sont écrits uniquement en latin."
+      ],
+      correctIndex: 1,
+      points: 2,
+      explanation: "La viralité repose sur la charge émotionnelle : l'indignation et la stupéfaction court-circuitent la réflexion critique et favorisent la transmission immédiate."
+    },
+    {
+      id: 'q5',
+      type: 'qcm',
+      title: "5. Mise en scène de la réalité (Cas de « Cauchemar en cuisine »)",
+      text: "Dans l'extrait de « Cauchemar en cuisine », comment la réalisation fabrique-t-elle une atmosphère d'urgence et de catastrophe permanente ?",
+      options: [
+        "En filmant en plan-séquence continu sans coupure pendant 45 minutes.",
+        "Par un montage ultra-rapide, des zooms brutaux, des effets de cordes grinçantes et des bruitages de lames ou d'impacts métalliques.",
+        "En diffusant uniquement des voix douces et apaisantes pour rassurer les restaurateurs.",
+        "En demandant aux clients de lire des poèmes à voix haute."
+      ],
+      correctIndex: 1,
+      points: 2,
+      explanation: "La télé-réalité utilise la grammaire du thriller (sound design oppressant, inserts saccadés, silences surjoués) pour transformer une péripétie banale en crise existentielle."
+    },
+    {
+      id: 'q6',
+      type: 'qcm',
+      title: "6. Dispositif du cinéma direct (Cas de « Strip-Tease : Scarface »)",
+      text: "Quelle est la particularité fondamentale du dispositif documentaire de l'émission culte belge « Strip-Tease » dans l'épisode Scarface ?",
+      options: [
+        "Une voix-off omniprésente qui dicte en permanence au spectateur ce qu'il doit penser.",
+        "L'absence totale de commentaire, d'interview dirigée et de musique d'illustration, laissant émerger le réel sans filtre prescriptif.",
+        "L'utilisation de comédiens professionnels payés par la RTBF.",
+        "Le floutage intégral de tous les protagonistes."
+      ],
+      correctIndex: 1,
+      points: 2,
+      explanation: "Strip-Tease applique le principe du cinéma direct : pas de voix-off moralisatrice, pas d'habillage musical imposé ; c'est au spectateur de construire son analyse critique du comportement des personnes filmées."
+    },
+    {
+      id: 'q7',
+      type: 'qcm',
+      title: "7. Éthique et stéréotypes télévisuels (Cas de « Arrête de te prendre pour Johnny »)",
+      text: "Dans l'extrait de télé-réalité « Arrête de te prendre pour Johnny », quel enjeu critique majeur d'éducation aux médias est soulevé concernant le traitement des participants ?",
+      options: [
+        "Le volume sonore des amplificateurs de guitare électrique.",
+        "L'enfermement du sujet dans une caricature ridicule au détriment de sa dignité, transformant sa passion en objet de moquerie pour l'audimat.",
+        "La météo pluvieuse le jour du tournage en région liégeoise.",
+        "L'absence de licence officielle de la maison de disque de Johnny Hallyday."
+      ],
+      correctIndex: 1,
+      points: 2,
+      explanation: "L'EAM interroge l'éthique de la captation : la télé-réalité exploite souvent la naïveté ou la vulnérabilité de personnes réelles pour produire un spectacle condescendant à forte audience."
+    },
+    {
+      id: 'q8',
+      type: 'qcm',
+      title: "8. Mécanique du clash et débat d'opinion (Cas Cyril Hanouna / TPMP)",
+      text: "Dans les émissions de plateau comme celles présentées par Cyril Hanouna, quel est l'objectif poursuivi par la sur-polarisation et l'orchestration du « clash » en direct ?",
+      options: [
+        "Permettre une synthèse scientifique consensuelle et apaisée entre experts reconnus.",
+        "Maximiser l'attention et l'engagement émotionnel du public par le spectacle de l'affrontement, quitte à dégrader la qualité du débat démocratique.",
+        "Enseigner la grammaire française avancée aux téléspectateurs.",
+        "Présenter des rapports statistiques vérifiés par l'institut national de la statistique."
+      ],
+      correctIndex: 1,
+      points: 2,
+      explanation: "Le clash est un produit marchand : il génère du bruit sur les réseaux sociaux, des extraits viraux et fidélise une audience captive au détriment de l'argumentation rationnelle."
+    },
+    {
+      id: 'q9',
+      type: 'qcm',
+      title: "9. Sensationnalisme de proximité (Cas « Images à l'appui : Fifi »)",
+      text: "Dans l'émission « Images à l'appui » (reportage Fifi), comment la forme journalistique traite-t-elle les conflits locaux ou de voisinage ?",
+      options: [
+        "Sous l'angle d'une sociologie rigoureuse sans jamais nommer les protagonistes.",
+        "En dramatisant les faits par une narration mélodramatique, une posture de justicier et une division manichéenne (la victime innocente contre les coupables).",
+        "En faisant appel à un tribunal arbitral officiel de droit civil.",
+        "En refusant de diffuser la moindre image de conflit."
+      ],
+      correctIndex: 1,
+      points: 2,
+      explanation: "L'émission adopte les codes du mélodrame de proximité : musique d'émotion, empathie surjouée, posture d'avocat des humbles pour capter l'attachement affectif du téléspectateur."
+    },
+    {
+      id: 'q10',
+      type: 'qcm',
+      title: "10. Concentration des médias et dépendance économique (Cas de la « Bollorisation »)",
+      text: "Dans le grand reportage sur l'industrialisation et la concentration des groupes de médias privés, quel risque démocratique majeur est identifié pour l'information citoyenne ?",
+      options: [
+        "Le manque d'écrans de télévision dans les foyers modestes.",
+        "La soumission de la ligne éditoriale aux intérêts économiques ou idéologiques du propriétaire du groupe, limitant le pluralisme et l'indépendance des rédactions.",
+        "L'obligation de ne diffuser que des documentaires animaliers en noir et blanc.",
+        "Le remplacement des journalistes par des présentateurs météo sous-payés."
+      ],
+      correctIndex: 1,
+      points: 2,
+      explanation: "La concentration médiatique met en péril l'indépendance journalistique : lorsque quelques conglomérats détiennent chaînes, journaux et maisons d'édition, l'information risque de devenir un instrument d'influence privée."
+    },
+    {
+      id: 'q11',
+      type: 'qcm',
+      title: "11. Vérification des vidéos et intelligence artificielle générative",
+      text: "Face à la prolifération de vidéos générées ou modifiées par IA (deepfakes), quel réflexe didactique de base devez-vous transmettre en priorité aux élèves ?",
+      options: [
+        "Considérer que tout document vidéo est automatiquement un faux et ne plus jamais regarder les informations.",
+        "Appliquer le triptyque de vérification : rechercher la source première, inverser la recherche d'images et repérer les incohérences physiques (regards, mains, reflets, décalages audio).",
+        "Croire uniquement les vidéos qui dépassent un million de partages sur TikTok.",
+        "Demander à l'auteur de la vidéo par message privé s'il a menti."
+      ],
+      correctIndex: 1,
+      points: 2,
+      explanation: "L'EAM ne doit pas conduire au complotisme ou au relativisme absolu, mais à une méthodologie critique outillée (recherche inversée, corroboration de sources fiables, examen des artefacts visuels)."
+    },
+    {
+      id: 'q12',
       type: 'open',
-      title: "3. Analyse critique du sensationnalisme télévisuel (Hanouna / Images à l'appui / Enquête Bolloré)",
-      text: "À partir des extraits étudiés (l'émission d'Hanouna, le reportage « Images à l'appui : Fifi » et le grand reportage sur la télévision industrielle), comment expliqueriez-vous à des élèves la différence entre une information journalistique rigoureuse et un contenu sensationnaliste axé sur l'audience ?",
+      title: "12. Didactique de la post-vérité (Cas pratique : Les foules d'Obama vs Trump)",
+      text: "En classe de secondaire, comment utiliseriez-vous la confrontation photographique des investitures d'Obama (2009) et de Trump (2017) pour faire comprendre aux élèves le concept de « fait alternatif » sans transformer le cours en polémique politique partisane ?",
       points: 4,
-      modelAnswer: "Un contenu journalistique rigoureux repose sur l'enquête contradictoire, la vérification méthodique des sources, la mise en contexte et la modération des propos. À l'inverse, le sensationnalisme (comme dans Hanouna ou Images à l'appui) dramatise la narration par des musiques anxiogènes, des plans resserrés et la mise en spectacle de l'indignation ou du conflit en direct. Cette mécanique vise avant tout à capter l'attention et à générer de l'audience (logique marchande et d'influence) plutôt qu'à éclairer le citoyen de façon rationnelle.",
+      modelAnswer: "L'enseignant place les élèves en posture de chercheurs méthodologiques : 1° Observer les deux clichés aériens pris à la même heure sous le même angle et noter les faits matériels bruts (densité au sol, gazon visible). 2° Lire la déclaration officielle parlant de 'la plus grande foule de l'histoire'. 3° Définir le concept de 'fait alternatif' : ce n'est pas une simple erreur de bonne foi, mais la substitution délibérée d'une évidence factuelle vérifiable par un récit politique affectif. L'objectif est d'analyser le procédé discursif et non d'émettre un jugement partisan.",
       rubricCriteria: [
-        "Repérage précis des procédés formels de dramatisation (musique, cadrage, polarisation, spectacle du clash).",
-        "Distinction explicite entre la démarche journalistique d'enquête et la logique d'audience / marchande.",
-        "Mise en lien avec l'autonomie critique et le jugement citoyen de l'élève."
+        "Méthode d'observation comparative fondée sur des indices matériels neutres (angles, horaires, espaces vides).",
+        "Définition précise du 'fait alternatif' et de la post-vérité (primauté de l'affect sur la preuve).",
+        "Neutralité pédagogique et centration sur les compétences d'analyse critique de l'élève."
+      ]
+    },
+    {
+      id: 'q13',
+      type: 'open',
+      title: "13. Analyse des procédés de réalisation : « Cauchemar en cuisine » vs « Strip-Tease »",
+      text: "Comparez les intentions et les procédés techniques de mise en scène entre un épisode de « Cauchemar en cuisine » et un épisode de « Strip-Tease » (Scarface). Comment cette comparaison permet-elle d'éveiller l'esprit critique d'un apprenant face à la « télé-réalité » ?",
+      points: 4,
+      modelAnswer: "D'un côté, 'Cauchemar en cuisine' sur-écrit le réel : le montage raccourcit le temps, les bruitages métalliques et musiques angoissantes prescrivent l'émotion que le spectateur doit ressentir à chaque seconde pour dramatiser l'enjeu commercial. De l'autre, 'Strip-Tease' adopte le cinéma direct : le temps est laissé au silence, aucun commentaire en voix-off ne juge les personnages, aucune musique n'oriente l'affect. Cette confrontation fait comprendre aux élèves que toute image filmée est un choix de fabrication et qu'un récit télévisuel n'est jamais la réalité brute, mais une reconstruction orientée.",
+      rubricCriteria: [
+        "Repérage explicite des choix formels de Cauchemar en cuisine (sonorisation, sur-découpage, dramatisation).",
+        "Caractérisation du dispositif de Strip-Tease (cinéma direct, absence de voix-off, posture d'observation).",
+        "Déduction didactique : la 'réalité' télévisuelle est toujours une construction médiatique orientée."
+      ]
+    },
+    {
+      id: 'q14',
+      type: 'open',
+      title: "14. Déconstruction du sensationnalisme et du « clash » (Cyril Hanouna & Images à l'appui)",
+      text: "À partir des extraits de Cyril Hanouna et d'« Images à l'appui : Fifi », explicitez à de futurs enseignants en quoi le sensationnalisme s'oppose à la démarche d'information citoyenne. Quels sont les ressorts psychologiques et économiques exploités ?",
+      points: 4,
+      modelAnswer: "L'information citoyenne vise à éclairer le discernement du public par des faits vérifiés, la pluralité des perspectives, la contextualisation et la nuance. Le sensationnalisme (Hanouna, Images à l'appui) poursuit une finalité marchande d'audimat : il exploite des biais cognitifs (biais de négativité, besoin d'indignation morale, manichéisme bon/méchant) et met en scène le conflit en direct. En privilégiant l'émotion viscérale et le clash à l'analyse raisonnée, le sensationnalisme dégrade le débat démocratique en un spectacle de divertissement rentable.",
+      rubricCriteria: [
+        "Opposition claire entre démarche d'information éclairée et logique marchande de captation d'audience.",
+        "Identification des ressorts psychologiques (polarisation, indignation, simplification manichéenne).",
+        "Conséquence civique : affaiblissement du recul critique et du débat démocratique argumenté."
+      ]
+    },
+    {
+      id: 'q15',
+      type: 'open',
+      title: "15. Éthique, respect de la personne et réseaux sociaux (« Arrête de te prendre pour Johnny »)",
+      text: "En analysant l'extrait « Arrête de te prendre pour Johnny », quelle réflexion éthique devez-vous mener avec des adolescents concernant l'exposition de personnes vulnérables dans les médias traditionnels et sur les réseaux sociaux (TikTok, Instagram, etc.) ?",
+      points: 4,
+      modelAnswer: "L'extrait montre la fabrication d'une risée publique : la caméra valorise l'excentricité et l'intimité d'un individu passionné mais candide pour susciter la dérision d'un large public. Transposé aux réseaux sociaux actuels, ce phénomène est démultiplié (harcèlement en ligne, mèmes moqueurs, vidéos virales non consenties). En classe, l'enseignant doit faire réfléchir les élèves à la frontière entre liberté d'expression et respect de la dignité humaine, au consentement éclairé à l'image et aux conséquences psychologiques durables de la viralité humiliante.",
+      rubricCriteria: [
+        "Analyse de la mise en spectacle de la naïveté ou vulnérabilité du sujet filmé.",
+        "Pont direct vers les usages numériques des jeunes (cyberharcèlement, viralité moqueuse, partage sans consentement).",
+        "Sensibilisation au respect de la dignité, à la responsabilité civique et à la législation sur le droit à l'image."
+      ]
+    },
+    {
+      id: 'q16',
+      type: 'open',
+      title: "16. Scénario pédagogique de Fact-checking en classe (Inspiré de France 24 « Info ou Intox »)",
+      text: "Proposez les 3 étapes d'un atelier pratique d'une heure que vous animeriez avec des élèves de 12 à 15 ans pour leur apprendre à vérifier une vidéo virale suspecte, en vous inspirant de la méthodologie de l'émission « Info ou Intox ».",
+      points: 4,
+      modelAnswer: "Étape 1 - Doute méthodique et audit initial (15 min) : Les élèves visionnent une courte vidéo virale non vérifiée. Ils listent les indices visuels visibles (enseignes, langue parlée, météo, plaques d'immatriculation, anomalies de cadrage) et formulent une hypothèse. Étape 2 - Enquête outillée par binômes (25 min) : Utilisation d'outils simples de fact-checking (capture d'écran d'une image clé et recherche inversée sur Google Images/TinEye, consultation d'archives de presse ou de webcams publiques). Étape 3 - Restitution et institutionnalisation (20 min) : Chaque groupe expose ses preuves (vrai, faux ou trompeur) et l'enseignant formalise la règle d'or : 'Avant de partager, vérifier la source d'origine et le contexte temporel/géographique'.",
+      rubricCriteria: [
+        "Étape 1 : Observation indiciaire concrète (repérage d'indices spatio-temporels dans la vidéo).",
+        "Étape 2 : Recours à des outils réels de vérification (recherche inversée d'images, recoupement documentaire).",
+        "Étape 3 : Institutionnalisation méthodologique et règle de conduite civique face au partage."
       ]
     }
   ],

@@ -210,11 +210,113 @@ const filteredSubmissions = computed(() => {
   })
 })
 
+// Gestion de la correction IA et de l'évaluation enseignant des devoirs déposés
+const isBatchAnalyzing = ref(false)
+const isAnalyzingFile = ref({})
+const selectedFileForAiReport = ref(null)
+const teacherGradeForm = ref({})
+const gradeSaveFeedbacks = ref({})
+const fileEvaluationFilter = ref('all') // 'all' | 'ai-analyzed' | 'ai-pending' | 'teacher-graded' | 'teacher-pending'
+
+const totalAiAnalyzedFiles = computed(() => {
+  return submittedFiles.value.filter(f => f.aiCorrection?.status === 'analyzed').length
+})
+
+const totalTeacherGradedFiles = computed(() => {
+  return submittedFiles.value.filter(f => f.teacherGrade?.status === 'graded').length
+})
+
+function getTeacherScore(file) {
+  if (teacherGradeForm.value[file.id]?.score !== undefined) {
+    return teacherGradeForm.value[file.id].score
+  }
+  return file.teacherGrade?.score ?? (file.aiCorrection?.suggestedScore ?? 10)
+}
+
+function getTeacherFeedback(file) {
+  if (teacherGradeForm.value[file.id]?.feedback !== undefined) {
+    return teacherGradeForm.value[file.id].feedback
+  }
+  return file.teacherGrade?.feedback ?? ''
+}
+
+function setTeacherScore(file, val) {
+  if (!teacherGradeForm.value[file.id]) {
+    teacherGradeForm.value[file.id] = {
+      score: file.teacherGrade?.score ?? (file.aiCorrection?.suggestedScore ?? 10),
+      feedback: file.teacherGrade?.feedback ?? ''
+    }
+  }
+  teacherGradeForm.value[file.id].score = Number(val)
+}
+
+function setTeacherFeedback(file, val) {
+  if (!teacherGradeForm.value[file.id]) {
+    teacherGradeForm.value[file.id] = {
+      score: file.teacherGrade?.score ?? (file.aiCorrection?.suggestedScore ?? 10),
+      feedback: file.teacherGrade?.feedback ?? ''
+    }
+  }
+  teacherGradeForm.value[file.id].feedback = val
+}
+
+function adoptAiScore(file) {
+  if (!file.aiCorrection) return
+  if (!teacherGradeForm.value[file.id]) {
+    teacherGradeForm.value[file.id] = { score: 10, feedback: '' }
+  }
+  teacherGradeForm.value[file.id].score = file.aiCorrection.suggestedScore
+  if (!teacherGradeForm.value[file.id].feedback || !teacherGradeForm.value[file.id].feedback.trim()) {
+    teacherGradeForm.value[file.id].feedback = file.aiCorrection.summary
+  }
+}
+
+async function runAiAnalysis(fileId) {
+  isAnalyzingFile.value[fileId] = true
+  try {
+    await userStore.analyzeFileWithAi(fileId)
+  } finally {
+    isAnalyzingFile.value[fileId] = false
+  }
+}
+
+async function runBatchAiAnalysis() {
+  isBatchAnalyzing.value = true
+  try {
+    const res = await userStore.batchAnalyzeAllFilesWithAi()
+    alert(`Correction IA terminée : ${res.analyzed} document(s) analysé(s) par l'IA sur ${res.total} au total.`)
+  } finally {
+    isBatchAnalyzing.value = false
+  }
+}
+
+function saveTeacherGradeForFile(file) {
+  const score = getTeacherScore(file)
+  const feedback = getTeacherFeedback(file)
+  const res = userStore.saveTeacherGrade(file.id, score, feedback)
+  gradeSaveFeedbacks.value[file.id] = res.message
+  setTimeout(() => {
+    delete gradeSaveFeedbacks.value[file.id]
+  }, 3500)
+}
+
 const filteredFiles = computed(() => {
   return submittedFiles.value.filter(file => {
     const matchStudent = fileStudentFilter.value === 'all' || file.userEmail === fileStudentFilter.value
     const matchEx = fileExerciseFilter.value === 'all' || file.exerciseId === fileExerciseFilter.value
-    return matchStudent && matchEx
+    
+    let matchEval = true
+    if (fileEvaluationFilter.value === 'ai-analyzed') {
+      matchEval = file.aiCorrection?.status === 'analyzed'
+    } else if (fileEvaluationFilter.value === 'ai-pending') {
+      matchEval = !file.aiCorrection || file.aiCorrection.status !== 'analyzed'
+    } else if (fileEvaluationFilter.value === 'teacher-graded') {
+      matchEval = file.teacherGrade?.status === 'graded'
+    } else if (fileEvaluationFilter.value === 'teacher-pending') {
+      matchEval = !file.teacherGrade || file.teacherGrade.status !== 'graded'
+    }
+
+    return matchStudent && matchEx && matchEval
   })
 })
 
@@ -552,7 +654,7 @@ function formatSize(bytes) {
           :class="['admin-tab-btn', { active: adminTab === 'files' }]"
           @click="adminTab = 'files'"
         >
-          📁 Travaux Déposés ({{ totalFilesCount }})
+          📁 Devoirs Déposés & Correction IA ({{ totalFilesCount }})
         </button>
         <button 
           :class="['admin-tab-btn', { active: adminTab === 'export' }]"
@@ -1123,24 +1225,61 @@ function formatSize(bytes) {
         </div>
       </div>
 
-      <!-- VUE 3 : FICHIERS DÉPOSÉS & SYNCHRONISATION GOOGLE DRIVE -->
+      <!-- VUE 3 : FICHIERS DÉPOSÉS, CORRECTION IA & ÉVALUATION ENSEIGNANT -->
       <div v-if="adminTab === 'files'" class="tab-panel">
-        <!-- BANNIÈRE D'ACTIONS GOOGLE DRIVE -->
-        <div class="drive-action-banner">
-          <div class="banner-text">
-            <h4>📁 Synchronisation vers le dossier local Google Drive</h4>
-            <p>
-              Dossier cible : <code>C:\Google Drive\Prépas light\HECh\Péda\Math-Num\M1\Didactique et numérique\Exercices étudiants Plateforme</code>
-            </p>
+        
+        <!-- BANNIÈRE PRINCIPALE : STATS & CORRECTION IA EN LOT -->
+        <div class="ai-correction-hero-card">
+          <div class="hero-left">
+            <div class="hero-icon-badge">🤖</div>
+            <div class="hero-text-content">
+              <h3>Correction Didactique Automatique par IA & Évaluation Enseignant</h3>
+              <p>
+                L'IA analyse le contenu des devoirs déposés (Word / PDF) selon les critères officiels de didactique HECh (DigComp 2.2, FMTTN, rigueur critique, faisabilité en classe). Vous gardez la main complète pour ajuster la note et rédiger votre évaluation dans la colonne dédiée.
+              </p>
+            </div>
           </div>
-          <div class="banner-buttons">
+
+          <div class="hero-right-actions">
+            <button 
+              @click="runBatchAiAnalysis" 
+              :disabled="isBatchAnalyzing || submittedFiles.length === 0"
+              class="btn-batch-ai"
+              title="Lancer l'analyse automatique sur tous les devoirs non encore corrigés"
+            >
+              <span v-if="isBatchAnalyzing" class="spinner-inline">⏳</span>
+              <span v-else>🤖</span>
+              {{ isBatchAnalyzing ? 'Correction IA en cours...' : 'Corriger tous les devoirs avec l\'IA' }}
+            </button>
+
             <button 
               @click="handleSyncToDrive" 
               :disabled="isSyncing || submittedFiles.length === 0"
-              class="btn-sync-drive"
+              class="btn-sync-drive-subtle"
+              title="Sauvegarder dans votre dossier local Google Drive"
             >
-              {{ isSyncing ? 'Synchronisation en cours...' : '💾 Enregistrer dans mon dossier Google Drive' }}
+              {{ isSyncing ? 'Synchronisation...' : '💾 Sauvegarder sur Google Drive' }}
             </button>
+          </div>
+        </div>
+
+        <!-- COMPTEURS D'ÉTAT D'ÉVALUATION -->
+        <div class="eval-metrics-strip">
+          <div class="metric-box">
+            <span class="m-val">{{ totalFilesCount }}</span>
+            <span class="m-lbl">Devoirs déposés</span>
+          </div>
+          <div class="metric-box green">
+            <span class="m-val">{{ totalAiAnalyzedFiles }}</span>
+            <span class="m-lbl">Analysés par l'IA</span>
+          </div>
+          <div class="metric-box blue">
+            <span class="m-val">{{ totalTeacherGradedFiles }}</span>
+            <span class="m-lbl">Évalués par l'enseignant</span>
+          </div>
+          <div class="metric-box orange">
+            <span class="m-val">{{ totalFilesCount - totalTeacherGradedFiles }}</span>
+            <span class="m-lbl">À évaluer par l'enseignant</span>
           </div>
         </div>
 
@@ -1151,7 +1290,7 @@ function formatSize(bytes) {
         <!-- FILTRES DES FICHIERS -->
         <div class="filters-row">
           <div class="filter-group">
-            <label>Filtrer par Atelier / Exercice :</label>
+            <label>Filtrer par Atelier :</label>
             <select v-model="fileExerciseFilter">
               <option v-for="opt in exerciseOptions" :key="opt.id" :value="opt.id">
                 {{ opt.title }}
@@ -1168,45 +1307,165 @@ function formatSize(bytes) {
               </option>
             </select>
           </div>
+
+          <div class="filter-group">
+            <label>Statut d'évaluation :</label>
+            <select v-model="fileEvaluationFilter">
+              <option value="all">Tous les statuts</option>
+              <option value="ai-analyzed">✓ Analysés par l'IA</option>
+              <option value="ai-pending">⏳ En attente d'analyse IA</option>
+              <option value="teacher-graded">✅ Notés par l'enseignant</option>
+              <option value="teacher-pending">⏳ À noter par l'enseignant</option>
+            </select>
+          </div>
         </div>
 
-        <!-- TABLEAU DES FICHIERS DÉPOSÉS -->
+        <!-- TABLEAU DES FICHIERS DÉPOSÉS AVEC CORRECTION IA ET ÉVALUATION ENSEIGNANT -->
         <div class="table-responsive">
-          <table class="data-table">
+          <table class="data-table files-eval-table">
             <thead>
               <tr>
-                <th>Étudiant</th>
-                <th>Atelier</th>
-                <th>Libellé Officiel du Document</th>
-                <th>Taille</th>
-                <th>Date Dépôt</th>
-                <th style="text-align: right;">Actions</th>
+                <th style="width: 20%;">Étudiant</th>
+                <th style="width: 20%;">Atelier & Document</th>
+                <th style="width: 28%;">🤖 Correction Automatique IA</th>
+                <th style="width: 24%;">👨‍🏫 Votre Évaluation (Enseignant)</th>
+                <th style="width: 8%; text-align: right;">Actions</th>
               </tr>
             </thead>
             <tbody>
               <tr v-if="filteredFiles.length === 0">
-                <td colspan="6" class="empty-table-msg">
-                  Aucun fichier Word ou PDF déposé ne correspond aux filtres.
+                <td colspan="5" class="empty-table-msg">
+                  Aucun fichier déposé ne correspond aux critères de filtre.
                 </td>
               </tr>
-              <tr v-for="f in filteredFiles" :key="f.id">
+              <tr v-for="f in filteredFiles" :key="f.id" class="file-eval-row">
+                <!-- 1. ÉTUDIANT -->
                 <td>
-                  <strong>{{ f.userName }}</strong>
-                  <div class="email-subtext">{{ f.userEmail }}</div>
+                  <div class="student-profile-cell">
+                    <span class="student-avatar-round">{{ f.userName ? f.userName.charAt(0) : '?' }}</span>
+                    <div>
+                      <strong>{{ f.userName }}</strong>
+                      <div class="email-subtext">{{ f.userEmail }}</div>
+                    </div>
+                  </div>
                 </td>
+
+                <!-- 2. ATELIER & FICHIER -->
                 <td>
-                  <span class="exercise-badge-sm">{{ f.exerciseTitle }}</span>
+                  <div class="file-info-cell">
+                    <span class="exercise-badge-sm">{{ f.exerciseTitle }}</span>
+                    <div class="file-name-line">
+                      <span class="file-icon-inline">{{ f.formattedFileName.endsWith('.pdf') ? '📕' : '📘' }}</span>
+                      <code class="formatted-name-text">{{ f.formattedFileName }}</code>
+                    </div>
+                    <div class="file-sub-meta">
+                      <span>{{ formatSize(f.fileSize) }}</span>
+                      <span>•</span>
+                      <span>{{ f.submittedAt }}</span>
+                      <span v-if="f.driveSynced" class="synced-tag">✓ Drive</span>
+                    </div>
+                  </div>
                 </td>
+
+                <!-- 3. CORRECTION AUTOMATIQUE IA -->
                 <td>
-                  <span class="file-icon-inline">{{ f.formattedFileName.endsWith('.pdf') ? '📕' : '📘' }}</span>
-                  <code class="formatted-name-text">{{ f.formattedFileName }}</code>
+                  <!-- Cas A : Fichier déjà analysé par l'IA -->
+                  <div v-if="f.aiCorrection && f.aiCorrection.status === 'analyzed'" class="ai-cell-card">
+                    <div class="ai-score-line">
+                      <span class="ai-score-pill">
+                        🎯 Note suggérée : <strong>{{ f.aiCorrection.suggestedScore }} / {{ f.aiCorrection.maxScore }}</strong>
+                      </span>
+                      <span class="ai-model-tag">{{ f.aiCorrection.modelUsed.includes('Ollama') ? 'Ollama' : 'IA HECh' }}</span>
+                    </div>
+
+                    <div class="ai-summary-quote">
+                      « {{ f.aiCorrection.summary }} »
+                    </div>
+
+                    <div class="ai-cell-actions">
+                      <button @click="selectedFileForAiReport = f" class="btn-ai-details" title="Consulter la grille complète, points forts et pistes d'amélioration">
+                        👁️ Rapport IA détaillé
+                      </button>
+                      <button @click="runAiAnalysis(f.id)" :disabled="isAnalyzingFile[f.id]" class="btn-ai-reanalyze" title="Relancer une analyse IA fraîche">
+                        {{ isAnalyzingFile[f.id] ? 'Analyse...' : '🔄 Ré-analyser' }}
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Cas B : Fichier en attente d'analyse IA -->
+                  <div v-else class="ai-pending-box">
+                    <span class="pending-text">Non corrigé par l'IA</span>
+                    <button 
+                      @click="runAiAnalysis(f.id)" 
+                      :disabled="isAnalyzingFile[f.id]"
+                      class="btn-run-single-ai"
+                    >
+                      <span v-if="isAnalyzingFile[f.id]" class="spinner-mini">⏳</span>
+                      <span v-else>🤖</span>
+                      {{ isAnalyzingFile[f.id] ? 'Analyse en cours...' : 'Corriger avec l\'IA' }}
+                    </button>
+                  </div>
                 </td>
-                <td>{{ formatSize(f.fileSize) }}</td>
-                <td>{{ f.submittedAt }}</td>
+
+                <!-- 4. VOTRE ÉVALUATION (ENSEIGNANT) -->
+                <td>
+                  <div class="teacher-eval-card">
+                    <div class="teacher-score-row">
+                      <div class="score-input-group">
+                        <label class="lbl-mini">Note :</label>
+                        <input 
+                          type="number" 
+                          min="0" 
+                          max="10" 
+                          step="0.5" 
+                          class="input-teacher-score"
+                          :value="getTeacherScore(f)"
+                          @input="(e) => setTeacherScore(f, e.target.value)"
+                        />
+                        <span class="denom-mini">/ 10 pts</span>
+                      </div>
+
+                      <button 
+                        v-if="f.aiCorrection" 
+                        @click="adoptAiScore(f)"
+                        class="btn-adopt-ai-mini"
+                        title="Pré-remplir avec la note et le résumé de l'IA"
+                      >
+                        ⚡ Reprendre IA
+                      </button>
+                    </div>
+
+                    <div class="teacher-feedback-row">
+                      <textarea 
+                        class="input-teacher-feedback"
+                        rows="2"
+                        placeholder="Votre feedback formatif pour l'étudiant..."
+                        :value="getTeacherFeedback(f)"
+                        @input="(e) => setTeacherFeedback(f, e.target.value)"
+                      ></textarea>
+                    </div>
+
+                    <div class="teacher-save-row">
+                      <span :class="['teacher-status-pill', f.teacherGrade?.status === 'graded' ? 'graded' : 'pending']">
+                        {{ f.teacherGrade?.status === 'graded' ? '✓ Validé' : '⏳ À valider' }}
+                      </span>
+
+                      <button @click="saveTeacherGradeForFile(f)" class="btn-save-teacher-eval">
+                        💾 Enregistrer
+                      </button>
+                    </div>
+
+                    <div v-if="gradeSaveFeedbacks[f.id]" class="grade-saved-msg">
+                      ✅ {{ gradeSaveFeedbacks[f.id] }}
+                    </div>
+                  </div>
+                </td>
+
+                <!-- 5. ACTIONS -->
                 <td style="text-align: right;">
-                  <div class="action-buttons-group">
-                    <button @click="downloadFile(f)" class="btn-row-action dl" title="Télécharger le fichier">
-                      📥 Télécharger
+                  <div class="action-buttons-group vertical">
+                    <button @click="downloadFile(f)" class="btn-row-action dl" title="Télécharger le fichier original">
+                      📥
                     </button>
                     <button @click="deleteFile(f.id)" class="btn-row-action delete" title="Supprimer ce document">
                       🗑️
@@ -1217,6 +1476,105 @@ function formatSize(bytes) {
             </tbody>
           </table>
         </div>
+
+        <!-- MODAL : RAPPORT D'ANALYSE IA DÉTAILLÉ -->
+        <div v-if="selectedFileForAiReport" class="modal-overlay" @click.self="selectedFileForAiReport = null">
+          <div class="modal-card ai-report-modal">
+            <div class="modal-header">
+              <div class="modal-title-group">
+                <span class="modal-ai-badge">🤖 RAPPORT D'ÉVALUATION IA DIDACTIQUE</span>
+                <h4>{{ selectedFileForAiReport.exerciseTitle }}</h4>
+                <p class="modal-sub">
+                  Étudiant : <strong>{{ selectedFileForAiReport.userName }}</strong> ({{ selectedFileForAiReport.userEmail }}) • Document : <code>{{ selectedFileForAiReport.formattedFileName }}</code>
+                </p>
+              </div>
+              <button class="btn-close" @click="selectedFileForAiReport = null">✕</button>
+            </div>
+
+            <div v-if="selectedFileForAiReport.aiCorrection" class="ai-report-body">
+              <!-- Score banner -->
+              <div class="ai-score-hero">
+                <div class="ash-left">
+                  <span class="ash-label">NOTE GLOBALE SUGGÉRÉE</span>
+                  <div class="ash-score-big">
+                    {{ selectedFileForAiReport.aiCorrection.suggestedScore }} <span class="ash-denom">/ 10 pts</span>
+                  </div>
+                  <span class="ash-model">Modèle : {{ selectedFileForAiReport.aiCorrection.modelUsed }}</span>
+                </div>
+                <div class="ash-right">
+                  <div class="ash-summary-box">
+                    <strong>Synthèse de l'IA :</strong>
+                    <p>{{ selectedFileForAiReport.aiCorrection.summary }}</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Barème 4 dimensions -->
+              <div class="rubric-grid">
+                <div class="rubric-card">
+                  <span class="rc-title">1. Concordance programme & DigComp</span>
+                  <div class="rc-score">{{ selectedFileForAiReport.aiCorrection.rubricScores.concordance }} / 3 pts</div>
+                  <p class="rc-desc">Respect des attendus du référentiel et précision des concepts.</p>
+                </div>
+                <div class="rubric-card">
+                  <span class="rc-title">2. Intégration didactique</span>
+                  <div class="rc-score">{{ selectedFileForAiReport.aiCorrection.rubricScores.didacticQuality }} / 3 pts</div>
+                  <p class="rc-desc">Faisabilité pédagogique et clarté des consignes pour les élèves.</p>
+                </div>
+                <div class="rubric-card">
+                  <span class="rc-title">3. Rigueur de l'analyse critique</span>
+                  <div class="rc-score">{{ selectedFileForAiReport.aiCorrection.rubricScores.criticalAnalysis }} / 2.5 pts</div>
+                  <p class="rc-desc">Capacité de recul réflexif et déconstruction des procédés.</p>
+                </div>
+                <div class="rubric-card">
+                  <span class="rc-title">4. Forme, structure & clarté</span>
+                  <div class="rc-score">{{ selectedFileForAiReport.aiCorrection.rubricScores.formAndStructure }} / 1.5 pts</div>
+                  <p class="rc-desc">Qualité de la mise en page, soin typographique et rigueur rédactionnelle.</p>
+                </div>
+              </div>
+
+              <!-- Points forts et axes d'amélioration -->
+              <div class="strengths-improvements-grid">
+                <div class="panel-box strengths">
+                  <h5>✅ Points forts constatés :</h5>
+                  <ul>
+                    <li v-for="(str, sIdx) in selectedFileForAiReport.aiCorrection.strengths" :key="sIdx">
+                      {{ str }}
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="panel-box improvements">
+                  <h5>⚠️ Axes d'amélioration & vigilance didactique :</h5>
+                  <ul>
+                    <li v-for="(imp, iIdx) in selectedFileForAiReport.aiCorrection.improvements" :key="iIdx">
+                      {{ imp }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Commentaire formatif global -->
+              <div class="detailed-feedback-card">
+                <h5>💬 Commentaire formatif détaillé pour l'étudiant :</h5>
+                <p>{{ selectedFileForAiReport.aiCorrection.detailedFeedback }}</p>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button 
+                @click="adoptAiScore(selectedFileForAiReport); saveTeacherGradeForFile(selectedFileForAiReport); selectedFileForAiReport = null" 
+                class="btn-primary"
+              >
+                ⚡ Valider et enregistrer cette note IA pour l'étudiant
+              </button>
+              <button @click="selectedFileForAiReport = null" class="btn-secondary">
+                Fermer
+              </button>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <!-- VUE 4 : SÉCURITÉ & GOOGLE DRIVE -->
@@ -2611,4 +2969,608 @@ function formatSize(bytes) {
 .btn-danger-del:hover {
   background: #ef4444;
   color: #ffffff;
+}
+
+/* NOUVEAUX STYLES : CORRECTION AUTOMATIQUE IA & ÉVALUATION ENSEIGNANT */
+.ai-correction-hero-card {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(59, 130, 246, 0.02) 100%);
+  border: 1px solid rgba(37, 99, 235, 0.25);
+  border-radius: 14px;
+  padding: 1.5rem 1.8rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-left {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex: 1;
+  min-width: 320px;
+}
+
+.hero-icon-badge {
+  font-size: 2.2rem;
+  background: var(--vp-c-bg);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+}
+
+.hero-text-content h3 {
+  margin: 0 0 0.4rem 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--vp-c-text-1);
+}
+
+.hero-text-content p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.5;
+}
+
+.hero-right-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: flex-end;
+}
+
+.btn-batch-ai {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.btn-batch-ai:hover:not(:disabled) {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+.btn-batch-ai:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-sync-drive-subtle {
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-2);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-sync-drive-subtle:hover {
+  background: var(--vp-c-bg-alt);
+  color: var(--vp-c-text-1);
+}
+
+.eval-metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.metric-box {
+  background: var(--vp-c-bg-alt);
+  border: 1px solid var(--vp-c-divider);
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.metric-box .m-val {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--vp-c-text-1);
+}
+
+.metric-box .m-lbl {
+  font-size: 0.8rem;
+  color: var(--vp-c-text-2);
+  font-weight: 600;
+}
+
+.metric-box.green .m-val { color: #10b981; }
+.metric-box.blue .m-val { color: #2563eb; }
+.metric-box.orange .m-val { color: #f59e0b; }
+
+.files-eval-table th {
+  background: var(--vp-c-bg-alt);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 12px 10px;
+}
+
+.file-eval-row td {
+  vertical-align: top;
+  padding: 14px 10px;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.student-profile-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.student-avatar-round {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.file-info-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.file-name-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.file-sub-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--vp-c-text-3);
+}
+
+.synced-tag {
+  background: #d1fae5;
+  color: #065f46;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+/* BLOC IA CELL */
+.ai-cell-card {
+  background: rgba(37, 99, 235, 0.04);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ai-score-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ai-score-pill {
+  font-size: 0.82rem;
+  color: #1e40af;
+  background: #dbeafe;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.ai-score-pill strong {
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.ai-model-tag {
+  font-size: 0.7rem;
+  color: var(--vp-c-text-3);
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.ai-summary-quote {
+  font-size: 0.8rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.4;
+  font-style: italic;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ai-cell-actions {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.2rem;
+}
+
+.btn-ai-details {
+  background: var(--vp-c-brand-1);
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-ai-reanalyze {
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-2);
+  padding: 4px 7px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.ai-pending-box {
+  padding: 12px;
+  border: 1px dashed var(--vp-c-divider);
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pending-text {
+  font-size: 0.78rem;
+  color: var(--vp-c-text-3);
+}
+
+.btn-run-single-ai {
+  background: var(--vp-c-brand-1);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* BLOC ENSEIGNANT */
+.teacher-eval-card {
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.teacher-score-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.score-input-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.lbl-mini {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.input-teacher-score {
+  width: 54px;
+  padding: 4px 6px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+  background: var(--vp-c-bg-alt);
+}
+
+.denom-mini {
+  font-size: 0.8rem;
+  color: var(--vp-c-text-3);
+}
+
+.btn-adopt-ai-mini {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.input-teacher-feedback {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-family: inherit;
+  background: var(--vp-c-bg-alt);
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.teacher-save-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.teacher-status-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 6px;
+}
+
+.teacher-status-pill.graded {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.teacher-status-pill.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.btn-save-teacher-eval {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.grade-saved-msg {
+  font-size: 0.75rem;
+  color: #065f46;
+  font-weight: 600;
+}
+
+.action-buttons-group.vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-end;
+}
+
+/* MODAL RAPPORT IA */
+.ai-report-modal {
+  max-width: 850px;
+}
+
+.modal-title-group h4 {
+  margin: 4px 0 2px 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.modal-ai-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #2563eb;
+  background: #dbeafe;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.modal-sub {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--vp-c-text-2);
+}
+
+.ai-report-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  margin-top: 1.2rem;
+}
+
+.ai-score-hero {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(59, 130, 246, 0.02));
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ash-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 170px;
+}
+
+.ash-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--vp-c-brand-1);
+  letter-spacing: 0.5px;
+}
+
+.ash-score-big {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--vp-c-brand-1);
+  line-height: 1;
+}
+
+.ash-denom {
+  font-size: 1.1rem;
+  color: var(--vp-c-text-3);
+}
+
+.ash-model {
+  font-size: 0.75rem;
+  color: var(--vp-c-text-3);
+}
+
+.ash-right {
+  flex: 1;
+  min-width: 260px;
+}
+
+.ash-summary-box p {
+  margin: 4px 0 0 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--vp-c-text-1);
+}
+
+.rubric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.8rem;
+}
+
+.rubric-card {
+  background: var(--vp-c-bg-alt);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.rc-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--vp-c-text-2);
+}
+
+.rc-score {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--vp-c-brand-1);
+}
+
+.rc-desc {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--vp-c-text-3);
+  line-height: 1.3;
+}
+
+.strengths-improvements-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .strengths-improvements-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel-box {
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+}
+
+.panel-box h5 {
+  margin: 0 0 0.6rem 0;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.panel-box ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.panel-box.strengths {
+  background: rgba(16, 185, 129, 0.06);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  color: var(--vp-c-text-1);
+}
+
+.panel-box.strengths h5 { color: #065f46; }
+
+.panel-box.improvements {
+  background: rgba(245, 158, 11, 0.06);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  color: var(--vp-c-text-1);
+}
+
+.panel-box.improvements h5 { color: #92400e; }
+
+.detailed-feedback-card {
+  background: var(--vp-c-bg-alt);
+  border-left: 4px solid var(--vp-c-brand-1);
+  padding: 1rem 1.2rem;
+  border-radius: 0 10px 10px 0;
+}
+
+.detailed-feedback-card h5 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.detailed-feedback-card p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--vp-c-text-1);
 }

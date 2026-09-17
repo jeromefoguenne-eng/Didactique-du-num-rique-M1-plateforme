@@ -34,7 +34,35 @@ L'esprit critique constitue une dimension essentielle des compétences numériqu
 Cette compétence devient encore plus importante avec l'essor de l'intelligence artificielle générative. Les outils d'IA permettent aujourd'hui de produire très facilement des textes, des images, des vidéos ou des voix artificielles qui peuvent paraître crédibles. La facilité et la rapidité de production augmentent donc la quantité de contenus auxquels nous sommes confrontés et rendent parfois plus difficile la distinction entre information, opinion, fiction et contenu généré artificiellement. Dans ce contexte, la compétence numérique ne peut plus se limiter à savoir utiliser l'IA : elle doit également permettre de questionner ses productions, d'en vérifier les informations et d'identifier ses limites.
 
 
-Exemple : théories du complot : « Le secret des dieux »
+<div class="callout-example">
+  <div class="callout-title">🎬 Exemple Didactique — Théories du complot : « Le secret des dieux »</div>
+  <p>
+    Support d'analyse critique utilisé en classe pour déconstruire les procédés rhétoriques, les montages sensationnalistes et les biais de confirmation propres aux vidéos conspirationnistes.
+  </p>
+
+  <div style="text-align: center; margin: 1.2rem 0;">
+    <a 
+      href="https://drive.google.com/file/d/0B6swcumZhqMeSEpXV29UaGR3RFk/view?usp=sharing&resourcekey=0-t1K7ecZsCDF8QE2xlEZ8ew" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display: inline-block; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.18); border: 2px solid var(--vp-c-divider); max-width: 560px; width: 100%; text-decoration: none;"
+      title="Cliquer pour visionner la vidéo sur Google Drive"
+    >
+      <img 
+        src="/images/secret-dieu.png" 
+        alt="Vidéo Le Secret des Dieux - Théorie du complot" 
+        style="width: 100%; height: auto; display: block; object-fit: cover;" 
+      />
+      <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white; padding: 12px 16px; font-size: 0.92rem; font-weight: 700; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <span>▶️ Cliquer sur l'image pour lancer la vidéo (Google Drive) ↗</span>
+      </div>
+    </a>
+  </div>
+
+  <p style="font-size: 0.85rem; color: var(--vp-c-text-2); text-align: center; margin: 0.5rem 0 0 0;">
+    💡 <em>Cliquez sur l'affiche ci-dessus pour ouvrir et visionner la vidéo complète sur Google Drive.</em>
+  </p>
+</div>
 
 
 La littératie numérique

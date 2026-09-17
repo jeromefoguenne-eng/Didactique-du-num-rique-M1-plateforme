@@ -17,11 +17,14 @@ La notion de compétence numérique occupe aujourd’hui une place centrale dans
 <div class="callout-concept">
   <div class="callout-title">📌 Définition Clé — Cadre Européen DigComp 2.2</div>
   <p>
-    Le cadre européen <strong>DigComp</strong> définit la compétence numérique comme la capacité à s'engager avec les technologies numériques de manière <strong>confiante, critique et responsable</strong>, notamment dans les domaines de l’apprentissage, du travail et de la participation à la société.
+    Le cadre européen <a href="https://joint-research-centre.ec.europa.eu/scientific-activities/key-competences-lifelong-learning/digital-competence-framework-digcomp/digcomp-30_en" target="_blank" rel="noopener noreferrer"><strong>DigComp (Digital Competence Framework)</strong> ↗</a> définit la compétence numérique comme la capacité à s'engager avec les technologies numériques de manière <strong>confiante, critique et responsable</strong>, notamment dans les domaines de l’apprentissage, du travail et de la participation à la société.
   </p>
   <p>
     Elle associe quatre dimensions indissociables : <em>la connaissance</em>, <em>l'action</em>, <em>le jugement</em> et <em>la responsabilité</em>.
   </p>
+  <div style="margin-top: 0.6rem; font-size: 0.9rem;">
+    🔗 <strong>Portail officiel de l'Union Européenne :</strong> <a href="https://joint-research-centre.ec.europa.eu/scientific-activities/key-competences-lifelong-learning/digital-competence-framework-digcomp/digcomp-30_en" target="_blank" rel="noopener noreferrer">Consulter le cadre européen DigComp (Joint Research Centre) ↗</a>
+  </div>
 </div>
 
 Le cadre européen DigComp constitue une référence importante pour dépasser cette conception instrumentale. Il définit la compétence numérique comme la capacité à s'engager avec les technologies numériques de manière confiante, critique et responsable, notamment dans les domaines de l’apprentissage, du travail et de la participation à la société. Cette définition est importante parce qu'elle associe explicitement plusieurs dimensions qui sont parfois dissociées dans les apprentissages scolaires : la connaissance, l'action, le jugement et la responsabilité. La compétence numérique ne consiste donc pas seulement à savoir utiliser une technologie ; elle implique de savoir mobiliser cette technologie de manière pertinente dans une situation donnée et d'être capable d'en apprécier les possibilités et les limites (Vuorikari et al., 2022).
@@ -87,13 +90,8 @@ Cette dimension critique est particulièrement visible dans le domaine de l'info
     Afin d'ancrer ces concepts dans la réalité de vos futures classes, vous devez analyser 10 profils d'élèves confrontés au numérique et déterminer pour chacun s'il est <strong>compétent</strong>, <strong>partiellement compétent</strong> ou <strong>incompétent</strong>.
   </p>
   
-  <div style="margin: 1rem 0; display: flex; flex-direction: column; gap: 0.6rem;">
-    <div>
-      👉 <strong>Consignes détaillées de l'atelier :</strong> <a href="https://docs.google.com/document/d/1b1QhnOoDNyCSdAIEAZx_xq96hQxZsUJH/preview" target="_blank" rel="noopener">Consulter et télécharger l'Exercice 1 sur Google Docs ↗</a>
-    </div>
-    <div>
-      📄 <strong>Document de travail officiel (Google Docs) :</strong> <a href="https://docs.google.com/document/d/1b1QhnOoDNyCSdAIEAZx_xq96hQxZsUJH/edit?usp=sharing&ouid=112995252347605114249&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">Consulter et télécharger la grille d'analyse officielle</a>
-    </div>
+  <div style="margin: 1rem 0;">
+    📄 <strong>Document de travail officiel (Google Docs) :</strong> <a href="https://docs.google.com/document/d/1b1QhnOoDNyCSdAIEAZx_xq96hQxZsUJH/preview" target="_blank" rel="noopener noreferrer">Consulter et télécharger la grille d'analyse officielle ↗</a>
   </div>
 
   <div style="margin-top: 1rem; padding: 0.8rem; background: rgba(245, 158, 11, 0.1); border-left: 4px solid #f59e0b; border-radius: 6px;">

@@ -133,7 +133,7 @@ Cette littératie contribue directement à l'autonomie. L'objectif n'est pas que
     Mise en situation d'évaluation critique de sources journalistiques, scientifiques et réseaux sociaux.
   </p>
   <div>
-    👉 <strong>Consignes de l'atelier :</strong> <a href="https://docs.google.com/document/d/1o9vsf5fptzG1EH56oycz7SkD_UwmUKXm/preview" target="_blank" rel="noopener">Consulter et télécharger l'Exercice 2 sur Google Docs ↗</a>
+    📄 <strong>Document de travail officiel (Google Docs) :</strong> <a href="https://docs.google.com/document/d/1o9vsf5fptzG1EH56oycz7SkD_UwmUKXm/preview" target="_blank" rel="noopener noreferrer">Consulter et télécharger l'Exercice 2 sur Google Docs ↗</a>
   </div>
   <div style="margin-top: 0.8rem; font-size: 0.88rem; color: var(--vp-c-text-2);">
     ℹ️ Déposez votre synthèse d'atelier sur votre <a href="/espace-membre">Espace Membre Étudiant</a>.

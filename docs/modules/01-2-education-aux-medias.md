@@ -297,7 +297,69 @@ Cette différence est essentielle pour comprendre la logique d'un référentiel 
 La compétence numérique peut finalement être envisagée comme l'articulation de plusieurs dimensions : comprendre, faire, choisir, évaluer, s'adapter et agir de manière responsable. Elle ne correspond donc ni à une simple maîtrise technique ni à une connaissance théorique du numérique. Elle constitue une capacité d'action dans des environnements numériques complexes.
 
 
+<div class="callout-example" style="margin: 1.5rem 0;">
+  <div class="callout-title">⚡ Exemple : Le sensationnalisme télévisuel — Émission Hanouna (TPMP)</div>
+  <p>
+    <strong>La polarisation du débat et le spectacle du clash en direct :</strong><br />
+    Analyse de la dramatisation en plateau : interpellation virulente, mise en scène des oppositions, exploitation des pulsions émotionnelles du public au détriment de l'analyse posée et contradictoire des faits.
+  </p>
+
+  <div style="text-align: center; margin: 1.2rem 0;">
+    <a 
+      href="https://drive.google.com/file/d/1BamthZ5XjebsvDT3xGLGM0CzQ0pmGMMB/view?usp=sharing" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display: inline-block; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.18); border: 2px solid var(--vp-c-divider); max-width: 560px; width: 100%; text-decoration: none;"
+      title="Cliquer pour visionner l'extrait Hanouna sur Google Drive"
+    >
+      <img 
+        src="/images/vignette-hanouna.jpg" 
+        alt="Vidéo Hanouna - Sensationnalisme télévisuel" 
+        style="width: 100%; height: auto; display: block; object-fit: cover;" 
+      />
+      <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white; padding: 12px 16px; font-size: 0.92rem; font-weight: 700; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <span>▶️ Cliquer pour lancer l'extrait « Hanouna » (Google Drive) ↗</span>
+      </div>
+    </a>
+  </div>
+
+  <p style="font-size: 0.85rem; color: var(--vp-c-text-2); text-align: center; margin: 0.5rem 0 0 0;">
+    💡 <em>Support didactique pour identifier la mise en scène du conflit permanent et la logique d'audience par l'indignation.</em>
+  </p>
+</div>
+
 Exemple : le sensationnalisme dans les médias – Images à l’appui : « Fifi et Annie »
+
+<div class="callout-example" style="margin: 1.5rem 0;">
+  <div class="callout-title">📺 Extrait — Images à l'appui : « Fifi et Annie »</div>
+  <p>
+    <strong>Dramatisation du quotidien et musique anxiogène :</strong><br />
+    Analyse de l'émission <em>Images à l'appui</em> (RTL-TVI) : utilisation de plans resserrés, d'effets sonores dramatiques et de narration victimisante pour transformer un conflit de voisinage ordinaire en drame spectaculaire.
+  </p>
+
+  <div style="text-align: center; margin: 1.2rem 0;">
+    <a 
+      href="https://drive.google.com/file/d/17v0h6zj4Azng0inzlL0yo4Ir8ZAun349/view?usp=sharing" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display: inline-block; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.18); border: 2px solid var(--vp-c-divider); max-width: 560px; width: 100%; text-decoration: none;"
+      title="Cliquer pour visionner le reportage Images à l'appui - Fifi sur Google Drive"
+    >
+      <img 
+        src="/images/vignette-images-a-lappui-fifi.jpg" 
+        alt="Vidéo Images à l'appui - Fifi et Annie" 
+        style="width: 100%; height: auto; display: block; object-fit: cover;" 
+      />
+      <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white; padding: 12px 16px; font-size: 0.92rem; font-weight: 700; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <span>▶️ Cliquer pour lancer « Images à l'appui : Fifi » (Google Drive) ↗</span>
+      </div>
+    </a>
+  </div>
+
+  <p style="font-size: 0.85rem; color: var(--vp-c-text-2); text-align: center; margin: 0.5rem 0 0 0;">
+    💡 <em>Exemple emblématique du paysage audiovisuel belge francophone pour déconstruire les ficelles du sensationnalisme de proximité.</em>
+  </p>
+</div>
 
 
 Le sensationnalisme permet d’illustrer concrètement pourquoi l’éducation aux médias est une composante essentielle des compétences numériques. Pour attirer l’attention du public, certains contenus médiatiques peuvent recourir à la dramatisation et à la scénarisation de l’information : titres alarmistes, images spectaculaires, vocabulaire émotionnel, répétition d’images, sélection de témoignages ou mise en récit d’un événement comme une succession de moments forts. L’information n’est pas nécessairement fausse, mais elle fait l’objet de choix de présentation qui peuvent influencer la manière dont le public va la percevoir.
@@ -327,6 +389,41 @@ Cette littératie contribue directement à l'autonomie. L'objectif n'est pas que
     <li><em>« Pourquoi cette information est-elle mise en scène de cette manière précise ? »</em></li>
     <li><em>« Quel effet émotionnel ou comportemental cette publication cherche-t-elle à provoquer chez moi ? »</em></li>
   </ul>
+</div>
+
+---
+
+## 📚 Ressources Complémentaires & Enquête Médias
+
+<div class="callout-concept" style="margin: 1.5rem 0;">
+  <div class="callout-title">🔍 Enquête d'investigation : Télévision, infox et « bolorisation » des médias</div>
+  <p>
+    <strong>Documentaire d'analyse critique : Le système médiatique contemporain en question.</strong><br />
+    Grande enquête sur les coulisses de la télévision industrielle : concentration des médias, fabrique de l'opinion, influence éditoriale, culture du clash et circulation de contre-vérités au service d'agendas idéologiques et marchands.
+  </p>
+
+  <div style="text-align: center; margin: 1.2rem 0;">
+    <a 
+      href="https://drive.google.com/file/d/1_BMwZz2VcCbkg3R3fAA96JKLyPYjG1zy/view?usp=sharing" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display: inline-block; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.18); border: 2px solid var(--vp-c-divider); max-width: 620px; width: 100%; text-decoration: none;"
+      title="Cliquer pour visionner le grand reportage d'enquête sur Google Drive"
+    >
+      <img 
+        src="/images/vignette-bollore-media.jpg" 
+        alt="Reportage Enquête Hanouna Show, Intox et Bollorisation des Médias" 
+        style="width: 100%; height: auto; display: block; object-fit: cover;" 
+      />
+      <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white; padding: 12px 16px; font-size: 0.92rem; font-weight: 700; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <span>▶️ Cliquer pour lancer le grand reportage d'investigation (Google Drive) ↗</span>
+      </div>
+    </a>
+  </div>
+
+  <p style="font-size: 0.85rem; color: var(--vp-c-text-2); text-align: center; margin: 0.5rem 0 0 0;">
+    💡 <em>Enquête essentielle pour appréhender les enjeux d'indépendance de la presse, d'actionnariat des médias et d'éducation aux médias à grande échelle.</em>
+  </p>
 </div>
 
 ---

@@ -47,16 +47,32 @@ function openEditEvalModal(u) {
   // Chargement des 6 exercices pour notation et commentaire individuel
   evalFormExercises.value = (ev.pillar1.exerciseDetails || []).map(ex => {
     const existingFb = userStore.getExerciseFeedback(ex.id, u.email)
+    const ai = ex.file?.aiCorrection
     return {
       id: ex.id,
       title: ex.title,
       completed: ex.completed,
-      score: existingFb?.score ?? (ex.teacherGrade?.score ?? (ex.completed ? 10 : 0)),
+      file: ex.file,
+      aiScore: ai?.suggestedScore ?? null,
+      aiMaxScore: ai?.maxScore ?? 10,
+      aiSummary: ai?.summary ?? '',
+      aiModel: ai?.modelUsed ?? '',
+      aiStatus: ai?.status ?? 'pending',
+      score: existingFb?.score ?? (ex.teacherGrade?.score ?? (ai?.suggestedScore ?? (ex.completed ? 10 : 0))),
       feedback: existingFb?.feedback ?? (ex.teacherGrade?.feedback ?? '')
     }
   })
 
   selectedStudentEval.value = ev
+}
+
+function adoptAiScoreInModal(ex) {
+  if (ex.aiScore !== null && ex.aiScore !== undefined) {
+    ex.score = ex.aiScore
+    if (!ex.feedback || !ex.feedback.trim()) {
+      ex.feedback = ex.aiSummary
+    }
+  }
 }
 
 function saveStudentEval() {
@@ -1047,31 +1063,79 @@ function formatSize(bytes) {
                 </div>
               </div>
 
-              <!-- DÉTAIL ET COMMENTAIRES INDIVIDUELS DES 6 EXERCICES (6 × 10 pts) -->
+              <!-- DÉTAIL ET NOTATION PAR ATELIER : COLONNE POINTS IA & COLONNE POINTS ENSEIGNANT -->
               <details class="modal-exercises-accordion" open>
                 <summary class="mea-summary">
-                  <span>📂 Commentaires & Notes par Atelier / Devoir (6 × 10 pts)</span>
-                  <span class="mea-badge">{{ evalFormExercises.length }} exercices</span>
+                  <span>📂 Ateliers & Devoirs (6 × 10 pts) : Points IA, Points Enseignant & Commentaires</span>
+                  <span class="mea-badge">{{ evalFormExercises.length }} ateliers</span>
                 </summary>
                 <div class="mea-body">
-                  <div v-for="ex in evalFormExercises" :key="ex.id" class="mea-card">
-                    <div class="mea-header">
-                      <div class="mea-title-block">
-                        <span class="mea-icon">{{ ex.completed ? '✅' : '⏳' }}</span>
-                        <strong>{{ ex.title }}</strong>
+                  <div v-for="ex in evalFormExercises" :key="ex.id" class="mea-exercise-row-card">
+                    <!-- EN-TÊTE : 3 COLONNES (ATELIER / POINTS IA / POINTS ENSEIGNANT) -->
+                    <div class="mea-columns-grid">
+                      <!-- COLONNE 1 : ATELIER & ÉTAT -->
+                      <div class="mea-col-title">
+                        <div class="mea-title-line">
+                          <span class="mea-icon">{{ ex.completed ? '✅' : '⏳' }}</span>
+                          <strong class="mea-exercise-name">{{ ex.title }}</strong>
+                        </div>
+                        <div v-if="ex.file" class="mea-file-indicator">
+                          <span>📎 Document remis : <code>{{ ex.file.formattedFileName }}</code></span>
+                        </div>
+                        <div v-else class="mea-file-pending">
+                          <span>⚠️ Aucun fichier déposé pour l'instant</span>
+                        </div>
                       </div>
-                      <div class="mea-score-input-block">
-                        <label>Note :</label>
-                        <input v-model.number="ex.score" type="number" min="0" max="10" step="0.5" class="mea-score-input" />
-                        <span>/ 10 pts</span>
+
+                      <!-- COLONNE 2 : POINTS REMIS PAR L'IA -->
+                      <div class="mea-col-ai">
+                        <span class="mea-col-header-label">🤖 Points remis par l'IA :</span>
+                        <div v-if="ex.aiScore !== null && ex.aiScore !== undefined" class="mea-ai-score-box">
+                          <span class="mea-ai-score-val"><strong>{{ ex.aiScore }}</strong> / {{ ex.aiMaxScore }} pts</span>
+                          <button 
+                            type="button"
+                            @click="adoptAiScoreInModal(ex)" 
+                            class="btn-adopt-ai-modal" 
+                            title="Reprendre la note et le résumé suggérés par l'IA"
+                          >
+                            ⚡ Reprendre IA
+                          </button>
+                        </div>
+                        <div v-else class="mea-ai-pending-box">
+                          <span class="mea-ai-none-tag">⏳ Non analysé par l'IA</span>
+                        </div>
+                        <div v-if="ex.aiSummary" class="mea-ai-summary-snippet" :title="ex.aiSummary">
+                          « {{ ex.aiSummary.length > 80 ? ex.aiSummary.substring(0, 80) + '...' : ex.aiSummary }} »
+                        </div>
+                      </div>
+
+                      <!-- COLONNE 3 : POINTS À INSCRIRE (ENSEIGNANT) -->
+                      <div class="mea-col-teacher">
+                        <span class="mea-col-header-label">👨‍🏫 Note Enseignant (à inscrire) :</span>
+                        <div class="mea-teacher-input-group">
+                          <input 
+                            v-model.number="ex.score" 
+                            type="number" 
+                            min="0" 
+                            max="10" 
+                            step="0.5" 
+                            class="mea-score-input" 
+                          />
+                          <span class="mea-denom-tag">/ 10 pts</span>
+                        </div>
                       </div>
                     </div>
-                    <div class="mea-feedback-block">
+
+                    <!-- ESPACE COMMENTAIRE : PREND TOUTE LA LIGNE -->
+                    <div class="mea-comment-fullwidth">
+                      <label class="mea-comment-label">
+                        💬 Commentaire formatif pour cet exercice (prend toute la ligne) :
+                      </label>
                       <textarea 
                         v-model="ex.feedback" 
-                        rows="2" 
-                        placeholder="Votre commentaire pour cet exercice (visible instantanément par l'étudiant)..."
-                        class="mea-textarea"
+                        rows="3" 
+                        placeholder="Rédigez ici votre commentaire personnalisé pour cet exercice. Il apparaîtra instantanément dans l'espace personnel de l'étudiant..."
+                        class="mea-textarea-fullwidth"
                       ></textarea>
                     </div>
                   </div>
@@ -1120,9 +1184,14 @@ function formatSize(bytes) {
                 <input v-model.number="evalForm.oralDefenseScore" type="number" min="0" max="30" />
               </div>
 
-              <div class="form-group-eval">
-                <label>💬 Observation & Feedback pédagogique pour l'étudiant</label>
-                <textarea v-model="evalForm.teacherFeedback" rows="3" placeholder="Commentaire visible par l'étudiant dans son espace personnel..."></textarea>
+              <div class="form-group-eval fullwidth-eval-comment-group">
+                <label>💬 Observation & Feedback pédagogique global pour l'étudiant (prend toute la ligne)</label>
+                <textarea 
+                  v-model="evalForm.teacherFeedback" 
+                  rows="4" 
+                  class="fullwidth-comment-textarea"
+                  placeholder="Rédigez ici votre synthèse d'évaluation globale visible par l'étudiant dans son espace personnel..."
+                ></textarea>
               </div>
             </div>
 
@@ -1487,11 +1556,11 @@ function formatSize(bytes) {
           <table class="data-table files-eval-table">
             <thead>
               <tr>
-                <th style="width: 20%;">Étudiant</th>
-                <th style="width: 20%;">Atelier & Document</th>
-                <th style="width: 28%;">🤖 Correction Automatique IA</th>
-                <th style="width: 24%;">👨‍🏫 Votre Évaluation (Enseignant)</th>
-                <th style="width: 8%; text-align: right;">Actions</th>
+                <th style="width: 22%;">Étudiant</th>
+                <th style="width: 22%;">Atelier & Document</th>
+                <th style="width: 24%;">🤖 Points remis par l'IA</th>
+                <th style="width: 22%;">👨‍🏫 Note Enseignant (à inscrire)</th>
+                <th style="width: 10%; text-align: right;">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -1500,141 +1569,159 @@ function formatSize(bytes) {
                   Aucun fichier déposé ne correspond aux critères de filtre.
                 </td>
               </tr>
-              <tr v-for="f in filteredFiles" :key="f.id" class="file-eval-row">
-                <!-- 1. ÉTUDIANT -->
-                <td>
-                  <div class="student-profile-cell">
-                    <span class="student-avatar-round">{{ f.userName ? f.userName.charAt(0) : '?' }}</span>
-                    <div>
-                      <strong>{{ f.userName }}</strong>
-                      <div class="email-subtext">{{ f.userEmail }}</div>
+              <template v-for="f in filteredFiles" :key="f.id">
+                <tr class="file-eval-row">
+                  <!-- 1. ÉTUDIANT -->
+                  <td>
+                    <div class="student-profile-cell">
+                      <span class="student-avatar-round">{{ f.userName ? f.userName.charAt(0) : '?' }}</span>
+                      <div>
+                        <strong>{{ f.userName }}</strong>
+                        <div class="email-subtext">{{ f.userEmail }}</div>
+                      </div>
                     </div>
-                  </div>
-                </td>
+                  </td>
 
-                <!-- 2. ATELIER & FICHIER -->
-                <td>
-                  <div class="file-info-cell">
-                    <span class="exercise-badge-sm">{{ f.exerciseTitle }}</span>
-                    <div class="file-name-line">
-                      <span class="file-icon-inline">{{ f.formattedFileName.endsWith('.pdf') ? '📕' : '📘' }}</span>
-                      <code class="formatted-name-text">{{ f.formattedFileName }}</code>
+                  <!-- 2. ATELIER & FICHIER -->
+                  <td>
+                    <div class="file-info-cell">
+                      <span class="exercise-badge-sm">{{ f.exerciseTitle }}</span>
+                      <div class="file-name-line">
+                        <span class="file-icon-inline">{{ f.formattedFileName.endsWith('.pdf') ? '📕' : '📘' }}</span>
+                        <code class="formatted-name-text">{{ f.formattedFileName }}</code>
+                      </div>
+                      <div class="file-sub-meta">
+                        <span>{{ formatSize(f.fileSize) }}</span>
+                        <span>•</span>
+                        <span>{{ f.submittedAt }}</span>
+                        <span v-if="f.driveSynced" class="synced-tag">✓ Drive</span>
+                      </div>
                     </div>
-                    <div class="file-sub-meta">
-                      <span>{{ formatSize(f.fileSize) }}</span>
-                      <span>•</span>
-                      <span>{{ f.submittedAt }}</span>
-                      <span v-if="f.driveSynced" class="synced-tag">✓ Drive</span>
-                    </div>
-                  </div>
-                </td>
+                  </td>
 
-                <!-- 3. CORRECTION AUTOMATIQUE IA -->
-                <td>
-                  <!-- Cas A : Fichier déjà analysé par l'IA -->
-                  <div v-if="f.aiCorrection && f.aiCorrection.status === 'analyzed'" class="ai-cell-card">
-                    <div class="ai-score-line">
-                      <span class="ai-score-pill">
-                        🎯 Note suggérée : <strong>{{ f.aiCorrection.suggestedScore }} / {{ f.aiCorrection.maxScore }}</strong>
-                      </span>
-                      <span class="ai-model-tag">{{ f.aiCorrection.modelUsed.includes('Ollama') ? 'Ollama' : 'IA HECh' }}</span>
-                    </div>
-
-                    <div class="ai-summary-quote">
-                      « {{ f.aiCorrection.summary }} »
-                    </div>
-
-                    <div class="ai-cell-actions">
-                      <button @click="selectedFileForAiReport = f" class="btn-ai-details" title="Consulter la grille complète, points forts et pistes d'amélioration">
-                        👁️ Rapport IA détaillé
-                      </button>
-                      <button @click="runAiAnalysis(f.id)" :disabled="isAnalyzingFile[f.id]" class="btn-ai-reanalyze" title="Relancer une analyse IA fraîche">
-                        {{ isAnalyzingFile[f.id] ? 'Analyse...' : '🔄 Ré-analyser' }}
-                      </button>
-                    </div>
-                  </div>
-
-                  <!-- Cas B : Fichier en attente d'analyse IA -->
-                  <div v-else class="ai-pending-box">
-                    <span class="pending-text">Non corrigé par l'IA</span>
-                    <button 
-                      @click="runAiAnalysis(f.id)" 
-                      :disabled="isAnalyzingFile[f.id]"
-                      class="btn-run-single-ai"
-                    >
-                      <span v-if="isAnalyzingFile[f.id]" class="spinner-mini">⏳</span>
-                      <span v-else>🤖</span>
-                      {{ isAnalyzingFile[f.id] ? 'Analyse en cours...' : 'Corriger avec l\'IA' }}
-                    </button>
-                  </div>
-                </td>
-
-                <!-- 4. VOTRE ÉVALUATION (ENSEIGNANT) -->
-                <td>
-                  <div class="teacher-eval-card">
-                    <div class="teacher-score-row">
-                      <div class="score-input-group">
-                        <label class="lbl-mini">Note :</label>
-                        <input 
-                          type="number" 
-                          min="0" 
-                          max="10" 
-                          step="0.5" 
-                          class="input-teacher-score"
-                          :value="getTeacherScore(f)"
-                          @input="(e) => setTeacherScore(f, e.target.value)"
-                        />
-                        <span class="denom-mini">/ 10 pts</span>
+                  <!-- 3. POINTS REMIS PAR L'IA -->
+                  <td>
+                    <!-- Cas A : Fichier déjà analysé par l'IA -->
+                    <div v-if="f.aiCorrection && f.aiCorrection.status === 'analyzed'" class="ai-cell-card">
+                      <div class="ai-score-line">
+                        <span class="ai-score-pill">
+                          🎯 Note suggérée : <strong>{{ f.aiCorrection.suggestedScore }} / {{ f.aiCorrection.maxScore }}</strong>
+                        </span>
+                        <span class="ai-model-tag">{{ f.aiCorrection.modelUsed.includes('Ollama') ? 'Ollama' : 'IA HECh' }}</span>
                       </div>
 
-                      <button 
-                        v-if="f.aiCorrection" 
-                        @click="adoptAiScore(f)"
-                        class="btn-adopt-ai-mini"
-                        title="Pré-remplir avec la note et le résumé de l'IA"
-                      >
-                        ⚡ Reprendre IA
-                      </button>
+                      <div class="ai-summary-quote" :title="f.aiCorrection.summary">
+                        « {{ f.aiCorrection.summary.length > 90 ? f.aiCorrection.summary.substring(0, 90) + '...' : f.aiCorrection.summary }} »
+                      </div>
+
+                      <div class="ai-cell-actions">
+                        <button @click="selectedFileForAiReport = f" class="btn-ai-details" title="Consulter la grille complète, points forts et pistes d'amélioration">
+                          👁️ Rapport IA détaillé
+                        </button>
+                        <button @click="runAiAnalysis(f.id)" :disabled="isAnalyzingFile[f.id]" class="btn-ai-reanalyze" title="Relancer une analyse IA fraîche">
+                          {{ isAnalyzingFile[f.id] ? 'Analyse...' : '🔄 Ré-analyser' }}
+                        </button>
+                      </div>
                     </div>
 
-                    <div class="teacher-feedback-row">
+                    <!-- Cas B : Fichier en attente d'analyse IA -->
+                    <div v-else class="ai-pending-box">
+                      <span class="pending-text">Non corrigé par l'IA</span>
+                      <button 
+                        @click="runAiAnalysis(f.id)" 
+                        :disabled="isAnalyzingFile[f.id]"
+                        class="btn-run-single-ai"
+                      >
+                        <span v-if="isAnalyzingFile[f.id]" class="spinner-mini">⏳</span>
+                        <span v-else>🤖</span>
+                        {{ isAnalyzingFile[f.id] ? 'Analyse en cours...' : 'Corriger avec l\'IA' }}
+                      </button>
+                    </div>
+                  </td>
+
+                  <!-- 4. NOTE ENSEIGNANT (À INSCRIRE) -->
+                  <td>
+                    <div class="teacher-eval-card">
+                      <div class="teacher-score-row">
+                        <div class="score-input-group">
+                          <label class="lbl-mini">Note :</label>
+                          <input 
+                            type="number" 
+                            min="0" 
+                            max="10" 
+                            step="0.5" 
+                            class="input-teacher-score"
+                            :value="getTeacherScore(f)"
+                            @input="(e) => setTeacherScore(f, e.target.value)"
+                          />
+                          <span class="denom-mini">/ 10 pts</span>
+                        </div>
+
+                        <button 
+                          v-if="f.aiCorrection" 
+                          @click="adoptAiScore(f)"
+                          class="btn-adopt-ai-mini"
+                          title="Pré-remplir avec la note et le résumé de l'IA"
+                        >
+                          ⚡ Reprendre IA
+                        </button>
+                      </div>
+
+                      <div class="teacher-save-row">
+                        <span :class="['teacher-status-pill', f.teacherGrade?.status === 'graded' ? 'graded' : 'pending']">
+                          {{ f.teacherGrade?.status === 'graded' ? '✓ Validé' : '⏳ À valider' }}
+                        </span>
+
+                        <button @click="saveTeacherGradeForFile(f)" class="btn-save-teacher-eval">
+                          💾 Enregistrer
+                        </button>
+                      </div>
+
+                      <div v-if="gradeSaveFeedbacks[f.id]" class="grade-saved-msg">
+                        ✅ {{ gradeSaveFeedbacks[f.id] }}
+                      </div>
+                    </div>
+                  </td>
+
+                  <!-- 5. ACTIONS -->
+                  <td style="text-align: right;">
+                    <div class="action-buttons-group vertical">
+                      <button @click="downloadFile(f)" class="btn-row-action dl" title="Télécharger le fichier original">
+                        📥
+                      </button>
+                      <button @click="deleteFile(f.id)" class="btn-row-action delete" title="Supprimer ce document">
+                        🗑️
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- LIGNE COMMENTAIRE : PREND TOUTE LA LIGNE -->
+                <tr class="file-comment-full-row">
+                  <td colspan="5">
+                    <div class="file-comment-fullwidth-box">
+                      <div class="fcf-header">
+                        <span class="fcf-label">💬 Commentaire formatif de l'enseignant pour cet exercice (prend toute la ligne) :</span>
+                        <div class="fcf-actions">
+                          <button @click="saveTeacherGradeForFile(f)" class="btn-save-comment-inline">
+                            💾 Enregistrer le commentaire
+                          </button>
+                          <span v-if="gradeSaveFeedbacks[f.id]" class="grade-saved-msg">
+                            ✅ {{ gradeSaveFeedbacks[f.id] }}
+                          </span>
+                        </div>
+                      </div>
                       <textarea 
-                        class="input-teacher-feedback"
-                        rows="2"
-                        placeholder="Votre feedback formatif pour l'étudiant..."
+                        class="input-teacher-feedback-fullwidth"
+                        rows="3"
+                        placeholder="Rédigez ici votre feedback formatif détaillé pour ce travail. Il sera visible instantanément dans l'espace personnel de l'étudiant..."
                         :value="getTeacherFeedback(f)"
                         @input="(e) => setTeacherFeedback(f, e.target.value)"
                       ></textarea>
                     </div>
-
-                    <div class="teacher-save-row">
-                      <span :class="['teacher-status-pill', f.teacherGrade?.status === 'graded' ? 'graded' : 'pending']">
-                        {{ f.teacherGrade?.status === 'graded' ? '✓ Validé' : '⏳ À valider' }}
-                      </span>
-
-                      <button @click="saveTeacherGradeForFile(f)" class="btn-save-teacher-eval">
-                        💾 Enregistrer
-                      </button>
-                    </div>
-
-                    <div v-if="gradeSaveFeedbacks[f.id]" class="grade-saved-msg">
-                      ✅ {{ gradeSaveFeedbacks[f.id] }}
-                    </div>
-                  </div>
-                </td>
-
-                <!-- 5. ACTIONS -->
-                <td style="text-align: right;">
-                  <div class="action-buttons-group vertical">
-                    <button @click="downloadFile(f)" class="btn-row-action dl" title="Télécharger le fichier original">
-                      📥
-                    </button>
-                    <button @click="deleteFile(f.id)" class="btn-row-action delete" title="Supprimer ce document">
-                      🗑️
-                    </button>
-                  </div>
-                </td>
-              </tr>
+                  </td>
+                </tr>
+              </template>
             </tbody>
           </table>
         </div>
@@ -3135,7 +3222,8 @@ function formatSize(bytes) {
 }
 
 .eval-modal {
-  max-width: 600px;
+  max-width: 980px;
+  width: 95vw;
 }
 .eval-modal-summary {
   display: flex;
@@ -3201,15 +3289,15 @@ function formatSize(bytes) {
 /* ACCORDÉON EXERCICES DANS LA MODAL D'ÉVALUATION */
 .modal-exercises-accordion {
   margin-bottom: 1.5rem;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 8px;
+  border: 1.5px solid var(--vp-c-brand-1);
+  border-radius: 10px;
   background: var(--vp-c-bg-soft);
   overflow: hidden;
 }
 
 .mea-summary {
-  padding: 0.8rem 1rem;
-  font-size: 0.9rem;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.95rem;
   font-weight: 700;
   cursor: pointer;
   display: flex;
@@ -3221,70 +3309,293 @@ function formatSize(bytes) {
 
 .mea-badge {
   font-size: 0.75rem;
-  background: #2563eb;
+  background: var(--vp-c-brand-1);
   color: white;
-  padding: 2px 8px;
+  padding: 3px 10px;
   border-radius: 999px;
   font-weight: 600;
 }
 
 .mea-body {
-  padding: 1rem;
+  padding: 1.2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1.2rem;
 }
 
-.mea-card {
+.mea-exercise-row-card {
   background: var(--vp-c-bg);
   border: 1px solid var(--vp-c-divider);
-  border-radius: 8px;
-  padding: 0.8rem;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 }
 
-.mea-header {
+.mea-columns-grid {
+  display: grid;
+  grid-template-columns: 2fr 1.3fr 1.3fr;
+  gap: 1.2rem;
+  align-items: start;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+@media (max-width: 768px) {
+  .mea-columns-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+}
+
+.mea-col-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.mea-title-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mea-exercise-name {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+}
+
+.mea-file-indicator {
+  font-size: 0.78rem;
+  color: #16a34a;
+}
+
+.mea-file-indicator code {
+  font-size: 0.75rem;
+  background: rgba(34, 197, 94, 0.1);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.mea-file-pending {
+  font-size: 0.76rem;
+  color: var(--vp-c-text-3);
+  font-style: italic;
+}
+
+.mea-col-ai, .mea-col-teacher {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.mea-col-header-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--vp-c-text-2);
+}
+
+.mea-ai-score-box {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.mea-ai-score-val {
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  color: #166534;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.88rem;
+}
+
+.btn-adopt-ai-modal {
+  background: #fef08a;
+  color: #854d0e;
+  border: 1px solid #facc15;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-adopt-ai-modal:hover {
+  background: #fde047;
+}
+
+.mea-ai-none-tag {
+  font-size: 0.78rem;
+  color: var(--vp-c-text-3);
+  background: var(--vp-c-bg-soft);
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-style: italic;
+}
+
+.mea-ai-summary-snippet {
+  font-size: 0.76rem;
+  color: #15803d;
+  font-style: italic;
+  line-height: 1.3;
+}
+
+.mea-teacher-input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.mea-score-input {
+  width: 70px !important;
+  padding: 5px 8px !important;
+  font-size: 0.95rem !important;
+  font-weight: 800 !important;
+  text-align: center;
+  border: 1.5px solid var(--vp-c-brand-1) !important;
+  border-radius: 6px !important;
+  color: var(--vp-c-brand-1) !important;
+  background: var(--vp-c-bg) !important;
+}
+
+.mea-denom-tag {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--vp-c-text-2);
+}
+
+/* ESPACE COMMENTAIRE PRENANT TOUTE LA LIGNE */
+.mea-comment-fullwidth {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.mea-comment-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--vp-c-text-2);
+}
+
+.mea-textarea-fullwidth {
+  width: 100% !important;
+  min-height: 80px;
+  padding: 10px 12px !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5;
+  border-radius: 8px !important;
+  border: 1px solid var(--vp-c-divider) !important;
+  background: var(--vp-c-bg-alt) !important;
+  color: var(--vp-c-text-1) !important;
+  box-sizing: border-box;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.mea-textarea-fullwidth:focus {
+  border-color: var(--vp-c-brand-1) !important;
+  background: var(--vp-c-bg) !important;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+.fullwidth-eval-comment-group {
+  width: 100%;
+}
+
+.fullwidth-comment-textarea {
+  width: 100% !important;
+  min-height: 95px;
+  padding: 10px 12px !important;
+  font-size: 0.92rem !important;
+  line-height: 1.5;
+  border-radius: 8px !important;
+  border: 1px solid var(--vp-c-divider) !important;
+  background: var(--vp-c-bg-alt) !important;
+  color: var(--vp-c-text-1) !important;
+  box-sizing: border-box;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.fullwidth-comment-textarea:focus {
+  border-color: #ea580c !important;
+  outline: none;
+}
+
+/* COMMENTAIRES EN PLEINE LARGEUR DANS LE TABLEAU DES FICHIERS */
+.file-comment-full-row td {
+  background: var(--vp-c-bg-soft) !important;
+  padding: 0.8rem 1.2rem 1.2rem 1.2rem !important;
+  border-bottom: 2px solid var(--vp-c-divider) !important;
+}
+
+.file-comment-fullwidth-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100%;
+}
+
+.fcf-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
+  gap: 0.6rem;
 }
 
-.mea-title-block {
+.fcf-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #166534;
+}
+
+.fcf-actions {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.85rem;
+  gap: 0.8rem;
 }
 
-.mea-icon {
-  font-size: 1rem;
-}
-
-.mea-score-input-block {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.82rem;
-}
-
-.mea-score-input {
-  width: 60px !important;
-  padding: 3px 6px !important;
-  font-size: 0.85rem !important;
-  text-align: center;
-  border-radius: 4px !important;
-}
-
-.mea-feedback-block textarea {
-  width: 100%;
-  font-size: 0.85rem;
-  padding: 6px 8px;
+.btn-save-comment-inline {
+  background: #166534;
+  color: white;
+  border: none;
+  padding: 4px 12px;
   border-radius: 6px;
-  border: 1px solid var(--vp-c-divider);
-  background: var(--vp-c-bg-alt);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-save-comment-inline:hover {
+  background: #14532d;
+}
+
+.input-teacher-feedback-fullwidth {
+  width: 100% !important;
+  min-height: 75px;
+  padding: 10px 12px !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5;
+  border-radius: 8px !important;
+  border: 1px solid #86efac !important;
+  background: white !important;
+  color: #14532d !important;
   box-sizing: border-box;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.input-teacher-feedback-fullwidth:focus {
+  outline: none;
+  border-color: #22c55e !important;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
 }
 
 

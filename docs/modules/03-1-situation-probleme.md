@@ -48,17 +48,50 @@ Dans cette approche, l'enseignant construit une situation suffisamment complexe 
 
 Une inversion de la logique traditionnelle
 
-
 Dans une approche transmissive, la séquence pourrait suivre le schéma :
 
+<div style="background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider); padding: 1rem; border-radius: 8px; margin: 1rem 0; font-weight: 600; text-align: center;">
+  Présentation de l'outil ➔ Démonstration ➔ Exercice d'application ➔ Évaluation
+</div>
 
 #### La situation-problème inverse cette logique :
 
+<div style="background: var(--vp-c-bg-soft); border-left: 4px solid var(--vp-c-brand-1); padding: 1rem; border-radius: 8px; margin: 1rem 0; font-weight: 600;">
+  Problème ➔ Recherche ➔ Hypothèses ➔ Expérimentation ➔ Résolution ➔ Formalisation des apprentissages
+</div>
 
 Cette distinction est particulièrement importante dans le volet numérique du FMTTN. Il ne s'agit pas seulement de savoir utiliser un logiciel ou une application, mais de savoir identifier un besoin, choisir une solution numérique pertinente et l'utiliser de manière réfléchie.
 
+---
+
+## 📝 Exercice Pratique Associé : Méthode Péda 1 (Situation-Problème)
+
+<div class="callout-exercise" style="margin: 1.5rem 0;">
+  <div class="callout-title">📋 Exercice 02 — Peut-on faire confiance à cette information ?</div>
+  <p>
+    Cet exercice d'application met directement en œuvre la démarche de situation-problème : confronté à une affirmation scientifique virale sur les écrans et le sommeil, vous devez enquêter, vérifier la source primaire et déterminer la fiabilité du message avant tout partage.
+  </p>
+  <div style="margin: 1.2rem 0; display: flex; gap: 10px; flex-wrap: wrap;">
+    <a 
+      href="https://docs.google.com/document/d/1o9vsf5fptzG1EH56oycz7SkD_UwmUKXm/preview" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="btn-primary"
+      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: white !important; padding: 9px 16px; border-radius: 8px; font-weight: 600; background: var(--vp-c-brand-1);"
+    >
+      <span>📄 Ouvrir l'Exercice 02 sur Google Docs (Lecture seule) →</span>
+    </a>
+    <a 
+      href="/ateliers/exercice-02" 
+      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: var(--vp-c-text-1) !important; padding: 9px 16px; border-radius: 8px; font-weight: 600; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);"
+    >
+      <span>📤 Fiche Atelier & Dépôt dans l'Espace Membre →</span>
+    </a>
+  </div>
+</div>
 
 ---
 
 ## Navigation
 - 🏠 **[03. Hub Méthodologies Pédagogiques](/modules/03-pedagogies-actives)**
+- ➡️ **[3.2 Apprentissage par projet](/modules/03-2-pedagogie-projet)**

@@ -33,8 +33,37 @@ L'élève, quant à lui, devient acteur et responsable d'une partie du processus
 
 Cette démarche est particulièrement intéressante pour l'enseignement du numérique. Les environnements numériques offrent en effet de nombreuses possibilités de création, de collaboration et de communication. Les élèves peuvent par exemple concevoir un podcast, réaliser une vidéo, créer un site Internet, produire une infographie, développer un jeu ou élaborer une campagne de sensibilisation. Le numérique devient alors à la fois objet d'apprentissage et moyen de réalisation du projet.
 
+---
+
+## 📝 Exercice Pratique Associé : Méthode Péda 2 (Pédagogie de projet)
+
+<div class="callout-exercise" style="margin: 1.5rem 0;">
+  <div class="callout-title">📋 Exercice 03 — Concevoir un guide numérique pour les élèves</div>
+  <p>
+    Cet atelier met en pratique la démarche de projet : par groupes de travail, vous concevez un guide numérique interactif et structuré destiné aux nouveaux élèves de votre établissement afin de faciliter leur intégration et leur autonomie dans leur environnement numérique d'apprentissage.
+  </p>
+  <div style="margin: 1.2rem 0; display: flex; gap: 10px; flex-wrap: wrap;">
+    <a 
+      href="https://docs.google.com/document/d/12XENuZM1WVyeCnRfu62Oh1_tG8Gkc1Z1/preview" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="btn-primary"
+      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: white !important; padding: 9px 16px; border-radius: 8px; font-weight: 600; background: var(--vp-c-brand-1);"
+    >
+      <span>📄 Ouvrir l'Exercice 03 sur Google Docs (Lecture seule) →</span>
+    </a>
+    <a 
+      href="/ateliers/exercice-03" 
+      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: var(--vp-c-text-1) !important; padding: 9px 16px; border-radius: 8px; font-weight: 600; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);"
+    >
+      <span>📤 Fiche Atelier & Dépôt dans l'Espace Membre →</span>
+    </a>
+  </div>
+</div>
 
 ---
 
 ## Navigation
+- ⬅️ **[3.1 La situation-problème](/modules/03-1-situation-probleme)**
 - 🏠 **[03. Hub Méthodologies Pédagogiques](/modules/03-pedagogies-actives)**
+- ➡️ **[3.3 Apprentissage par investigation](/modules/03-3-investigation-enquete)**

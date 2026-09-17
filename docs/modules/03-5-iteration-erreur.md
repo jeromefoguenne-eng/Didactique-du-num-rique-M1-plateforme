@@ -33,5 +33,25 @@ Par exemple, les élèves peuvent créer une première version d'un jeu numériq
 
 ---
 
+## 📝 Exercice Pratique Associé : Méthode Péda 5 (Conception Itérative)
+
+<div class="callout-exercise" style="margin: 1.5rem 0;">
+  <div class="callout-title">📋 Méthode Péda 5 — Concevoir, Tester & Améliorer (Boucle Itérative & Retours Utilisateurs)</div>
+  <p>
+    Cet atelier met en pratique le principe fondamental de la démarche de conception itérative : une première production n'est jamais définitive, elle constitue un prototype destiné à être éprouvé.
+  </p>
+  <div style="background: var(--vp-c-bg-soft); border-left: 4px solid var(--vp-c-brand-1); padding: 1rem; border-radius: 8px; margin: 1rem 0; font-size: 0.95rem;">
+    <strong>Cycle de travail de l'activité :</strong><br />
+    <code>Concevoir un prototype numérique (Genially, Canva interactif)</code> ➔ <code>Élaborer un questionnaire d'évaluation (Google Forms)</code> ➔ <code>Faire tester par un groupe d'utilisateurs</code> ➔ <code>Analyser les métriques et feedbacks</code> ➔ <code>Développer la version 2 optimisée</code>.
+  </div>
+  <p style="font-size: 0.9rem; color: var(--vp-c-text-2);">
+    🎯 <strong>Mobilisation FMTTN :</strong> Création de contenus numériques, collecte et analyse de données utilisateur, posture réflexive et résolution de problèmes en équipe.
+  </p>
+</div>
+
+---
+
 ## Navigation
 - 🏠 **[03. Hub Méthodologies Pédagogiques](/modules/03-pedagogies-actives)**
+- ⬅️ **[3.4 Le défi express](/modules/03-4-defis-express)**
+- ➡️ **[3.6 Peer learning & apprentissage expérientiel](/modules/03-6-peer-learning)**

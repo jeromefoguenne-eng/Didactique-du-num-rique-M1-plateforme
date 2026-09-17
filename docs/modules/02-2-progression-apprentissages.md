@@ -15,6 +15,17 @@ Ce chapitre reproduit fidèlement et dans son intégralité le texte du syllabus
 
 Le référentiel FMTTN organise les apprentissages numériques selon une logique de progression. Les compétences ne sont pas considérées comme acquises après une seule activité : elles sont travaillées sur plusieurs années et deviennent progressivement plus complexes. Cette progression concerne à la fois les connaissances mobilisées, la difficulté des tâches, la variété des situations rencontrées et le degré d'autonomie laissé à l'élève.
 
+<div style="text-align: center; margin: 1.8rem 0;">
+  <img 
+    src="/images/syllabus/image3.png" 
+    alt="Matrice de progression curriculaire des apprentissages FMTTN de P1 à S3" 
+    style="max-width: 650px; width: 100%; border-radius: 10px; border: 1px solid var(--vp-c-divider); box-shadow: 0 4px 14px rgba(0,0,0,0.08); display: inline-block;"
+  />
+  <p style="font-size: 0.85rem; color: var(--vp-c-text-2); margin-top: 0.5rem; font-style: italic;">
+    Figure 3 : Matrice de progression curriculaire des apprentissages FMTTN (de P1 à S3).
+  </p>
+</div>
+
 
 La progression peut ainsi être envisagée selon plusieurs dimensions. Une tâche peut d'abord être réalisée avec un guidage important de l'enseignant, puis être progressivement confiée à l'élève. De même, une première activité peut demander simplement d'appliquer une procédure, tandis que des activités ultérieures demanderont de choisir une procédure, de comparer différentes possibilités ou encore de justifier un choix. L'élève passe donc progressivement de la réalisation guidée à la prise de décision autonome.
 
@@ -24,6 +35,14 @@ Cette logique est particulièrement visible dans les apprentissages numériques.
 
 La progression ne doit donc pas être comprise comme une simple augmentation du nombre d'outils maîtrisés. Un élève de sixième primaire n'est pas nécessairement « compétent » parce qu'il connaît davantage de logiciels qu'un élève de troisième primaire. Ce qui évolue surtout est la complexité des situations dans lesquelles il doit mobiliser ses compétences et le degré d'autonomie avec lequel il doit le faire.
 
+
+---
+
+## 🎓 Auto-évaluation du Module 2.2
+
+<ClientOnly>
+  <QuizBox moduleId="02-2" moduleTitle="2.2 La progression des apprentissages numériques" />
+</ClientOnly>
 
 ---
 

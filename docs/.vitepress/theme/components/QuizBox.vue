@@ -341,6 +341,66 @@ const MODULE_QUESTIONS = {
       ]
     }
   ],
+  '02-2': [
+    {
+      id: 'q1',
+      type: 'qcm',
+      title: "1. Logique curriculaire de progression",
+      text: "Selon le référentiel FMTTN, comment les compétences numériques sont-elles construites tout au long du tronc commun (P1 à S3) ?",
+      options: [
+        "Elles sont acquises définitivement après une séance d'initiation technique en début d'année.",
+        "Elles sont travaillées de manière continue et progressive sur plusieurs années, en augmentant la complexité des situations et l'autonomie de l'élève.",
+        "Elles dépendent exclusivement du nombre d'heures passées devant un écran d'ordinateur.",
+        "Elles doivent être enseignées sous la forme d'une liste fixe de logiciels à valider un par un."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Une compétence numérique ne se valide pas en une seule fois : elle s'approfondit par étapes successives (guidage initial, transfert, autonomie croissante dans des situations complexes)."
+    },
+    {
+      id: 'q2',
+      type: 'qcm',
+      title: "2. Évolution de la compétence vs accumulation d'outils",
+      text: "Pourquoi un élève de 6e primaire n'est-il pas considéré comme compétent uniquement parce qu'il connaîtrait plus de logiciels qu'un élève de 3e primaire ?",
+      options: [
+        "Parce que les élèves de primaire ne devraient utiliser qu'un seul traitement de texte agréé.",
+        "Parce que la compétence réside dans la capacité à résoudre des problèmes complexes et à décider de manière autonome, et non dans le nombre d'outils mémorisés.",
+        "Parce que les logiciels changent tous les ans et doivent être réappris de zéro.",
+        "Parce que seuls les élèves du secondaire peuvent être déclarés compétents numériquement."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Ce qui évolue entre les cycles n'est pas une simple addition de logiciels, mais la complexité des contextes de mobilisation et le niveau de prise de décision confié à l'apprenant."
+    },
+    {
+      id: 'q3',
+      type: 'qcm',
+      title: "3. La trajectoire de l'étayage enseignant",
+      text: "Quelle trajectoire caractérise le passage de la dépendance à l'autonomie dans les apprentissages numériques ?",
+      options: [
+        "Laisser l'élève totalement seul dès la première manipulation pour favoriser l'instinct.",
+        "Une diminution progressive du guidage de l'enseignant : de la réalisation guidée d'une procédure vers le choix stratégique et la justification autonome.",
+        "Interdire toute question à l'enseignant dès la 4e primaire.",
+        "Fournir systématiquement un tutoriel pas-à-pas pour chaque clic jusqu'à la fin du secondaire."
+      ],
+      correctIndex: 1,
+      points: 2,
+      explanation: "L'enseignant débute par un étayage important (démonstration, procédure guidée), puis amène progressivement l'élève à choisir ses outils, tester des solutions et réguler son action."
+    },
+    {
+      id: 'q4',
+      type: 'open',
+      title: "4. Scénario de progression didactique (Recherche d'information)",
+      text: "Illustrez concrètement comment la compétence de recherche d'information peut progresser entre un élève de début de primaire (P1-P2) et un élève de fin de primaire (P5-P6) en précisant l'évolution de la tâche, des contraintes et du degré d'autonomie.",
+      points: 4,
+      modelAnswer: "En début de primaire (P1-P2), l'élève découvre l'environnement numérique dans un cadre fortement guidé : recherche sur un site présélectionné par l'enseignant avec des mots-clés imposés ou des icônes visuelles, l'enseignant accompagnant la manipulation. En fin de primaire (P5-P6), la tâche devient complexe et ouverte : l'élève formule lui-même sa requête avec des opérateurs, compare plusieurs sources contradictoires, identifie l'auteur et la date d'une publication, justifie la fiabilité de son choix et synthétise l'information de manière autonome.",
+      rubricCriteria: [
+        "Différenciation claire de la tâche entre début et fin de primaire.",
+        "Évolution explicite du degré de guidage de l'enseignant vers l'autonomie.",
+        "Intégration de critères de complexité (choix des mots-clés, comparaison de sources, esprit critique)."
+      ]
+    }
+  ],
   '04-1': [
     {
       id: 'q1',
@@ -383,6 +443,246 @@ const MODULE_QUESTIONS = {
         "Verbe d'action observable et univoque (identifier, comparer, concevoir...).",
         "Conditions de réalisation précisées (supports, outils, contexte).",
         "Critère d'évaluation mesurable ou seuil de réussite défini."
+      ]
+    }
+  ],
+  '05': [
+    {
+      id: 'q1',
+      type: 'qcm',
+      title: "1. Finalité de l'évaluation dans le référentiel FMTTN",
+      text: "Dans le cadre du référentiel FMTTN, à partir de quoi l'évaluation didactique doit-elle être prioritairement pensée ?",
+      options: [
+        "À partir du logiciel ou du matériel informatique mis à disposition dans la salle de classe.",
+        "À partir de la vérification de l'atteinte des attendus (ce que l'élève doit apprendre, démontrer et mobiliser).",
+        "À partir de la vitesse de frappe au clavier et de la beauté visuelle des productions.",
+        "À partir de la seule note attribuée lors d'un examen théorique de fin d'année."
+      ],
+      correctIndex: 1,
+      points: 2,
+      explanation: "L'évaluation se fonde sur les résultats d'apprentissage (attendus du référentiel) et non sur les outils techniques mobilisés ou une simple conformité cosmétique."
+    },
+    {
+      id: 'q2',
+      type: 'qcm',
+      title: "2. Évaluation des savoir-faire et des compétences",
+      text: "Pourquoi les savoir-faire et les compétences numériques doivent-ils être prioritairement évalués en situation complexe (projets, défis, manipulations) plutôt que par un quiz théorique isolé ?",
+      options: [
+        "Parce que les quiz écrits sont interdits par le décret Paysage.",
+        "Parce qu'une compétence implique la mobilisation et la combinaison en contexte de plusieurs ressources (cognitives, techniques, critiques), ce qu'un QCM théorique ne peut mesurer.",
+        "Uniquement pour éviter d'imprimer des feuilles de papier en classe.",
+        "Parce que les élèves savent toujours utiliser un logiciel sans qu'on ait besoin de vérifier leur démarche."
+      ],
+      correctIndex: 1,
+      points: 2,
+      explanation: "Connaître une règle (savoir) ne garantit pas la capacité à la mobiliser dans l'action : l'évaluation en situation permet d'observer la démarche authentique et l'adaptation de l'élève face à un problème concret."
+    },
+    {
+      id: 'q3',
+      type: 'qcm',
+      title: "3. Spécificité de l'évaluation en éducation aux médias",
+      text: "Pourquoi est-il insuffisant de demander à un élève de définir ce qu'est une « fake news » ou la « désinformation » pour évaluer ses compétences en éducation aux médias ?",
+      options: [
+        "Parce que l'éducation aux médias relève du développement d'une posture (réflexivité, esprit critique, discernement) qui se manifeste dans la justification de choix réels et non dans la récitation d'une définition.",
+        "Parce que les définitions changent selon les pays et ne sont pas universelles.",
+        "Parce que les fake news n'existent plus sur les moteurs de recherche modernes.",
+        "Parce que seuls les journalistes professionnels peuvent repérer des fausses informations."
+      ],
+      correctIndex: 0,
+      points: 2,
+      explanation: "L'esprit critique est une posture : l'élève doit démontrer sa démarche de doute méthodique, de recoupement de sources et d'argumentation face à un contenu réel (analyses de cas, débats, portfolios)."
+    },
+    {
+      id: 'q4',
+      type: 'qcm',
+      title: "4. Les objectifs de l'évaluation par les pairs",
+      text: "Selon le syllabus, quel est l'un des bénéfices majeurs de l'évaluation par les pairs pour l'élève évaluateur ?",
+      options: [
+        "L'élève évaluateur remplace définitivement l'enseignant et gagne du temps de correction.",
+        "En analysant le travail d'un camarade à l'aide de critères explicites, l'élève développe sa réflexivité et porte un regard plus critique sur sa propre production.",
+        "L'élève apprend à sanctionner sévèrement ses camarades avec des notes pénalisantes.",
+        "L'évaluation par les pairs sert uniquement à classer les élèves du meilleur au moins bon."
+      ],
+      correctIndex: 1,
+      points: 2,
+      explanation: "Évaluer autrui avec une grille critériée oblige l'apprenant à s'approprier les critères de réussite, ce qui stimule directement sa propre métacognition et son autorégulation."
+    },
+    {
+      id: 'q5',
+      type: 'qcm',
+      title: "5. Structuration d'un feedback formatif exploitable",
+      text: "Pour qu'un retour d'évaluation par les pairs soit véritablement formateur et actionnable avant la remise finale, quelle formulation doit-on privilégier ?",
+      options: [
+        "Attribuer une note globale sur 20 sans commentaire écrit.",
+        "Écrire des remarques générales comme « Très bien » ou « Pas terrible ».",
+        "Fournir un retour qualitatif structuré : identifier au moins une réussite, un point précis d'amélioration et une proposition concrète de modification.",
+        "Corriger directement le document à la place de son camarade sans lui expliquer ses erreurs."
+      ],
+      correctIndex: 2,
+      points: 2,
+      explanation: "Le triptyque formatif (une réussite, un axe de progression, une recommandation concrète) permet à l'élève récepteur de comprendre exactement comment réviser son prototype."
+    },
+    {
+      id: 'q6',
+      type: 'qcm',
+      title: "6. Distinction entre critère et indicateur (Jonsson & Svingby, Brookhart & Chen)",
+      text: "Dans une grille critériée, quelle est la distinction fondamentale entre un « critère » et un « indicateur » ?",
+      options: [
+        "Le critère est le barème chiffré en points, tandis que l'indicateur est la moyenne générale.",
+        "Le critère désigne la dimension générale de l'apprentissage évaluée (ex. esprit critique), tandis que les indicateurs précisent les comportements et éléments concrets directement observables (ex. vérifie les sources, compare les dates, repère les biais).",
+        "Les critères s'adressent à l'enseignant, alors que les indicateurs s'adressent aux parents d'élèves.",
+        "Critère et indicateur sont deux termes parfaitement synonymes et interchangeables."
+      ],
+      correctIndex: 1,
+      points: 2,
+      explanation: "Le critère pose la dimension évaluée (ex. autonomie, esprit critique) ; les indicateurs fournissent les preuves observables qui attestent de sa maîtrise concrète."
+    },
+    {
+      id: 'q7',
+      type: 'qcm',
+      title: "7. La concordance pédagogique d'une grille",
+      text: "Quel principe garantit la cohérence didactique d'un dispositif d'évaluation dans une leçon FMTTN ?",
+      options: [
+        "Changer de critères d'évaluation sans prévenir les élèves le jour de l'épreuve.",
+        "La chaîne de concordance : Attendu du référentiel ➔ Activité d'apprentissage ➔ Situation d'évaluation ➔ Critère ➔ Indicateur ➔ Niveau de maîtrise.",
+        "Évaluer uniquement les compétences acquises en dehors de l'école par les élèves.",
+        "Régler la note finale au hasard pour obtenir une courbe de Gauss parfaite."
+      ],
+      correctIndex: 1,
+      points: 2,
+      explanation: "Une évaluation valide aligne étroitement l'attendu institutionnel, la tâche vécue en classe, le critère d'observation et les descripteurs qualitatifs de progression."
+    },
+    {
+      id: 'q8',
+      type: 'open',
+      title: "8. Conception d'un critère et de ses descripteurs de maîtrise (Atelier 8)",
+      text: "Dans le cadre d'un projet de création d'une capsule vidéo explicative en FMTTN, choisissez le critère « Qualité de la communication » ou « Autonomie ». Définissez pour ce critère 2 indicateurs observables concrets, puis rédigez les descripteurs pour 3 niveaux de maîtrise distincts (À renforcer / En développement / Maîtrisé).",
+      points: 6,
+      modelAnswer: "Exemple pour le critère 'Qualité de la communication' :\\n- Indicateurs observables : 1. Clarté et intelligibilité de la prise de son (voix audible sans souffle ni saturation) ; 2. Pertinence du rythme et de la lisibilité des textes/schémas affichés à l'écran.\\n- Descripteurs par niveau :\\n  * À renforcer : Le son est inaudible ou saturé, le rythme trop rapide ou confus, les textes à l'écran sont illisibles ou absents.\\n  * En développement : Le son est compréhensible mais avec des bruits parasites ; les explications sont présentes mais le montage manque de fluidité ou les schémas restent surchargés.\\n  * Maîtrisé : Prise de son nette et articulée ; découpage dynamique et équilibré ; les incrustations visuelles complètent et renforcent efficacement le propos oral sans surcharge cognitive.",
+      rubricCriteria: [
+        "Choix d'un critère pertinent et formulation de 2 indicateurs concrets et observables.",
+        "Descripteurs qualitatifs précis évitant les jugements vagues ('bon', 'bien fait').",
+        "Progression logique et visible entre les trois niveaux de maîtrise."
+      ]
+    }
+  ],
+  'evaluer-cours': [
+    {
+      id: 'q1',
+      type: 'qcm',
+      title: "1. Finalité de l'évaluation dans le référentiel FMTTN",
+      text: "Dans le cadre du référentiel FMTTN, à partir de quoi l'évaluation didactique doit-elle être prioritairement pensée ?",
+      options: [
+        "À partir du logiciel ou du matériel informatique mis à disposition dans la salle de classe.",
+        "À partir de la vérification de l'atteinte des attendus (ce que l'élève doit apprendre, démontrer et mobiliser).",
+        "À partir de la vitesse de frappe au clavier et de la beauté visuelle des productions.",
+        "À partir de la seule note attribuée lors d'un examen théorique de fin d'année."
+      ],
+      correctIndex: 1,
+      points: 2,
+      explanation: "L'évaluation se fonde sur les résultats d'apprentissage (attendus du référentiel) et non sur les outils techniques mobilisés ou une simple conformité cosmétique."
+    },
+    {
+      id: 'q2',
+      type: 'qcm',
+      title: "2. Évaluation des savoir-faire et des compétences",
+      text: "Pourquoi les savoir-faire et les compétences numériques doivent-ils être prioritairement évalués en situation complexe (projets, défis, manipulations) plutôt que par un quiz théorique isolé ?",
+      options: [
+        "Parce que les quiz écrits sont interdits par le décret Paysage.",
+        "Parce qu'une compétence implique la mobilisation et la combinaison en contexte de plusieurs ressources (cognitives, techniques, critiques), ce qu'un QCM théorique ne peut mesurer.",
+        "Uniquement pour éviter d'imprimer des feuilles de papier en classe.",
+        "Parce que les élèves savent toujours utiliser un logiciel sans qu'on ait besoin de vérifier leur démarche."
+      ],
+      correctIndex: 1,
+      points: 2,
+      explanation: "Connaître une règle (savoir) ne garantit pas la capacité à la mobiliser dans l'action : l'évaluation en situation permet d'observer la démarche authentique et l'adaptation de l'élève face à un problème concret."
+    },
+    {
+      id: 'q3',
+      type: 'qcm',
+      title: "3. Spécificité de l'évaluation en éducation aux médias",
+      text: "Pourquoi est-il insuffisant de demander à un élève de définir ce qu'est une « fake news » ou la « désinformation » pour évaluer ses compétences en éducation aux médias ?",
+      options: [
+        "Parce que l'éducation aux médias relève du développement d'une posture (réflexivité, esprit critique, discernement) qui se manifeste dans la justification de choix réels et non dans la récitation d'une définition.",
+        "Parce que les définitions changent selon les pays et ne sont pas universelles.",
+        "Parce que les fake news n'existent plus sur les moteurs de recherche modernes.",
+        "Parce que seuls les journalistes professionnels peuvent repérer des fausses informations."
+      ],
+      correctIndex: 0,
+      points: 2,
+      explanation: "L'esprit critique est une posture : l'élève doit démontrer sa démarche de doute méthodique, de recoupement de sources et d'argumentation face à un contenu réel (analyses de cas, débats, portfolios)."
+    },
+    {
+      id: 'q4',
+      type: 'qcm',
+      title: "4. Les objectifs de l'évaluation par les pairs",
+      text: "Selon le syllabus, quel est l'un des bénéfices majeurs de l'évaluation par les pairs pour l'élève évaluateur ?",
+      options: [
+        "L'élève évaluateur remplace définitivement l'enseignant et gagne du temps de correction.",
+        "En analysant le travail d'un camarade à l'aide de critères explicites, l'élève développe sa réflexivité et porte un regard plus critique sur sa propre production.",
+        "L'élève apprend à sanctionner sévèrement ses camarades avec des notes pénalisantes.",
+        "L'évaluation par les pairs sert uniquement à classer les élèves du meilleur au moins bon."
+      ],
+      correctIndex: 1,
+      points: 2,
+      explanation: "Évaluer autrui avec une grille critériée oblige l'apprenant à s'approprier les critères de réussite, ce qui stimule directement sa propre métacognition et son autorégulation."
+    },
+    {
+      id: 'q5',
+      type: 'qcm',
+      title: "5. Structuration d'un feedback formatif exploitable",
+      text: "Pour qu'un retour d'évaluation par les pairs soit véritablement formateur et actionnable avant la remise finale, quelle formulation doit-on privilégier ?",
+      options: [
+        "Attribuer une note globale sur 20 sans commentaire écrit.",
+        "Écrire des remarques générales comme « Très bien » ou « Pas terrible ».",
+        "Fournir un retour qualitatif structuré : identifier au moins une réussite, un point précis d'amélioration et une proposition concrète de modification.",
+        "Corriger directement le document à la place de son camarade sans lui expliquer ses erreurs."
+      ],
+      correctIndex: 2,
+      points: 2,
+      explanation: "Le triptyque formatif (une réussite, un axe de progression, une recommandation concrète) permet à l'élève récepteur de comprendre exactement comment réviser son prototype."
+    },
+    {
+      id: 'q6',
+      type: 'qcm',
+      title: "6. Distinction entre critère et indicateur (Jonsson & Svingby, Brookhart & Chen)",
+      text: "Dans une grille critériée, quelle est la distinction fondamentale entre un « critère » et un « indicateur » ?",
+      options: [
+        "Le critère est le barème chiffré en points, tandis que l'indicateur est la moyenne générale.",
+        "Le critère désigne la dimension générale de l'apprentissage évaluée (ex. esprit critique), tandis que les indicateurs précisent les comportements et éléments concrets directement observables (ex. vérifie les sources, compare les dates, repère les biais).",
+        "Les critères s'adressent à l'enseignant, alors que les indicateurs s'adressent aux parents d'élèves.",
+        "Critère et indicateur sont deux termes parfaitement synonymes et interchangeables."
+      ],
+      correctIndex: 1,
+      points: 2,
+      explanation: "Le critère pose la dimension évaluée (ex. autonomie, esprit critique) ; les indicateurs fournissent les preuves observables qui attestent de sa maîtrise concrète."
+    },
+    {
+      id: 'q7',
+      type: 'qcm',
+      title: "7. La concordance pédagogique d'une grille",
+      text: "Quel principe garantit la cohérence didactique d'un dispositif d'évaluation dans une leçon FMTTN ?",
+      options: [
+        "Changer de critères d'évaluation sans prévenir les élèves le jour de l'épreuve.",
+        "La chaîne de concordance : Attendu du référentiel ➔ Activité d'apprentissage ➔ Situation d'évaluation ➔ Critère ➔ Indicateur ➔ Niveau de maîtrise.",
+        "Évaluer uniquement les compétences acquises en dehors de l'école par les élèves.",
+        "Régler la note finale au hasard pour obtenir une courbe de Gauss parfaite."
+      ],
+      correctIndex: 1,
+      points: 2,
+      explanation: "Une évaluation valide aligne étroitement l'attendu institutionnel, la tâche vécue en classe, le critère d'observation et les descripteurs qualitatifs de progression."
+    },
+    {
+      id: 'q8',
+      type: 'open',
+      title: "8. Conception d'un critère et de ses descripteurs de maîtrise (Atelier 8)",
+      text: "Dans le cadre d'un projet de création d'une capsule vidéo explicative en FMTTN, choisissez le critère « Qualité de la communication » ou « Autonomie ». Définissez pour ce critère 2 indicateurs observables concrets, puis rédigez les descripteurs pour 3 niveaux de maîtrise distincts (À renforcer / En développement / Maîtrisé).",
+      points: 6,
+      modelAnswer: "Exemple pour le critère 'Qualité de la communication' :\\n- Indicateurs observables : 1. Clarté et intelligibilité de la prise de son (voix audible sans souffle ni saturation) ; 2. Pertinence du rythme et de la lisibilité des textes/schémas affichés à l'écran.\\n- Descripteurs par niveau :\\n  * À renforcer : Le son est inaudible ou saturé, le rythme trop rapide ou confus, les textes à l'écran sont illisibles ou absents.\\n  * En développement : Le son est compréhensible mais avec des bruits parasites ; les explications sont présentes mais le montage manque de fluidité ou les schémas restent surchargés.\\n  * Maîtrisé : Prise de son nette et articulée ; découpage dynamique et équilibré ; les incrustations visuelles complètent et renforcent efficacement le propos oral sans surcharge cognitive.",
+      rubricCriteria: [
+        "Choix d'un critère pertinent et formulation de 2 indicateurs concrets et observables.",
+        "Descripteurs qualitatifs précis évitant les jugements vagues ('bon', 'bien fait').",
+        "Progression logique et visible entre les trois niveaux de maîtrise."
       ]
     }
   ]

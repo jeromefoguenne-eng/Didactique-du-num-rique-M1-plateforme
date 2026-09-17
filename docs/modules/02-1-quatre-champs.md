@@ -15,8 +15,29 @@ Ce chapitre reproduit fidèlement et dans son intégralité le texte du syllabus
 
 Le référentiel FMTTN s’organise autour de deux grands volets complémentaires : la formation manuelle, technique et technologique (FMTT) et la formation au numérique. Le premier vise à développer chez l’élève une compréhension du monde matériel et technologique, à travers l’observation, l’analyse, la conception, la manipulation et la réalisation. Il concerne notamment les matières et matériaux, les objets technologiques, les techniques de culture ainsi que les domaines liés à l’alimentation et à l’habitat. Le second volet porte spécifiquement sur le développement d’une culture numérique. Il vise à permettre à l’élève de comprendre, utiliser et produire avec le numérique de manière pertinente, critique, créative et responsable. Il s’organise notamment autour des informations et données, de la communication et de la collaboration, de la création de contenus et de la sécurité.
 
+<div style="text-align: center; margin: 1.8rem 0;">
+  <img 
+    src="/images/syllabus/image1.png" 
+    alt="Les deux volets complémentaires du référentiel FMTTN : FMTT et Numérique" 
+    style="max-width: 460px; width: 100%; border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.08); display: inline-block;"
+  />
+  <p style="font-size: 0.85rem; color: var(--vp-c-text-2); margin-top: 0.5rem; font-style: italic;">
+    Figure 1 : Les deux volets complémentaires du référentiel FMTTN (FMTT et Numérique).
+  </p>
+</div>
 
 Ces deux volets ne doivent cependant pas être envisagés comme deux enseignements totalement séparés. Une même situation d’apprentissage peut mobiliser les deux. Par exemple, la réalisation d’un objet connecté peut amener les élèves à concevoir et fabriquer un dispositif technique tout en développant des compétences numériques liées à la programmation, au traitement des données ou à la communication numérique.
+
+<div style="text-align: center; margin: 1.8rem 0;">
+  <img 
+    src="/images/syllabus/image2.png" 
+    alt="Distinction entre savoirs, savoir-faire, compétences et attendus dans le référentiel FMTTN" 
+    style="max-width: 680px; width: 100%; border-radius: 10px; border: 1px solid var(--vp-c-divider); box-shadow: 0 4px 14px rgba(0,0,0,0.08); display: inline-block;"
+  />
+  <p style="font-size: 0.85rem; color: var(--vp-c-text-2); margin-top: 0.5rem; font-style: italic;">
+    Figure 2 : Exemples d'articulation entre Savoirs, Savoir-faire, Compétences et Attendus dans le référentiel.
+  </p>
+</div>
 
 
 Pour comprendre la logique du référentiel, il est ensuite nécessaire de distinguer les savoirs, les savoir-faire, les compétences et les attendus. Les savoirs correspondent aux connaissances que l’élève doit acquérir. Ils concernent par exemple des concepts, des notions, des principes, des règles, du vocabulaire ou encore des caractéristiques techniques. Dans une activité consacrée au matériel informatique, connaître la fonction d'un processeur, d'une mémoire vive ou d'un disque de stockage relève ainsi des savoirs.

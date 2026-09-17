@@ -17,6 +17,7 @@ export default defineConfig({
       { text: "Accueil", link: "/" },
       { text: "👤 Espace Membre", link: "/espace-membre" },
       { text: "Guide", link: "/guide/" },
+      { text: "Tutoriels", link: "/tutos" },
       { text: "Ressources", link: "/ressources/" },
       { text: "🔒 Admin", link: "/admin" }
     ],

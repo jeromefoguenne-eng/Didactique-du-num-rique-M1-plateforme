@@ -5,25 +5,35 @@ description: "Diaporamas et supports de cours officiels présentés lors des sé
 
 # 8.4. Présentations PowerPoint du Cours
 
-::: info Supports officiels des cours magistraux et ateliers
-Retrouvez ci-dessous l'ensemble des diaporamas utilisés en séance. De nouvelles présentations viendront enrichir cet espace au fur et à mesure de l'avancée du quadrimestre.
+::: info ⚡ Téléchargement externe & Allègement du stockage
+Afin de préserver la fluidité de la plateforme et de **stocker le moins de mémoire possible sur le site web**, les diaporamas du cours sont hébergés sur le Google Drive officiel et proposés au **téléchargement direct**. 
+
+Vous pouvez ainsi récupérer les fichiers `.pptx` complets sur votre ordinateur pour les ouvrir, les étudier et les annoter confortablement hors-ligne dans PowerPoint ou votre suite bureautique habituelle.
 :::
 
 ---
 
 ## 📽️ Support 1 : Présentation d'introduction & Fondements
 
-- **Thématique** : Introduction à la didactique du numérique, contextualisation institutionnelle et cadre du Master 1.
-- **Accès direct en ligne** : Consultation et lecture en diaporama via Google Slides :
+- **Thématique** : Introduction à la didactique du numérique, contextualisation institutionnelle, compétences numériques et cadre du Master 1.
+- **Format** : Diaporama Microsoft PowerPoint (`.pptx`) hébergé sur Google Drive.
 
-<div style="margin: 1.2rem 0 2rem 0;">
+<div style="margin: 1.2rem 0 2rem 0; display: flex; gap: 12px; flex-wrap: wrap;">
   <a 
-    href="https://docs.google.com/presentation/d/1ZWQL6l07GftrzZbUYcgj-A7LtIC1TFqU/edit?usp=sharing&ouid=112995252347605114249&rtpof=true&sd=true" 
+    href="https://drive.google.com/uc?export=download&id=1ZWQL6l07GftrzZbUYcgj-A7LtIC1TFqU" 
     target="_blank" 
     rel="noopener noreferrer"
-    style="background: var(--vp-c-brand-1); color: #ffffff; padding: 10px 20px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-size: 0.95rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+    style="background: var(--vp-c-brand-1); color: #ffffff; padding: 11px 22px; border-radius: 8px; font-weight: 600; text-decoration: none !important; display: inline-flex; align-items: center; gap: 8px; font-size: 0.95rem; box-shadow: 0 2px 8px rgba(0,0,0,0.12);"
   >
-    📊 Ouvrir la Présentation 01 (Google Slides) ↗
+    <span>📥 Télécharger le Diaporama 01 (.pptx via Google Drive) ↗</span>
+  </a>
+  <a 
+    href="https://drive.google.com/file/d/1ZWQL6l07GftrzZbUYcgj-A7LtIC1TFqU/view?usp=sharing" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    style="background: var(--vp-c-bg-soft); color: var(--vp-c-text-1); padding: 11px 20px; border-radius: 8px; font-weight: 600; text-decoration: none !important; display: inline-flex; align-items: center; gap: 8px; font-size: 0.92rem; border: 1px solid var(--vp-c-divider);"
+  >
+    <span>📂 Ouvrir le fichier dans Google Drive ↗</span>
   </a>
 </div>
 
@@ -31,16 +41,25 @@ Retrouvez ci-dessous l'ensemble des diaporamas utilisés en séance. De nouvelle
 
 ## 📽️ Support 2 : Référentiel FMTTN & Méthodologies
 
-- **Thématique** : Les 4 champs curriculaires du FMTTN, la progression spiralaire, les 7 méthodologies actives et l'ingénierie de préparation.
-- **Support téléchargeable** : Fichier PowerPoint officiel (.pptx) :
+- **Thématique** : Les 4 champs curriculaires du FMTTN, la progression spiralaire, les 7 méthodologies pédagogiques actives et l'ingénierie de préparation de leçon.
+- **Format** : Diaporama Microsoft PowerPoint (`.pptx`) hébergé sur Google Drive.
 
-<div style="margin: 1.2rem 0 2rem 0;">
+<div style="margin: 1.2rem 0 2rem 0; display: flex; gap: 12px; flex-wrap: wrap;">
   <a 
-    href="/documents/02-Referentiel-FMTTN-et-methodo.pptx" 
-    download="02-Referentiel-FMTTN-et-methodo.pptx"
-    style="background: #ea580c; color: #ffffff; padding: 10px 20px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-size: 0.95rem; box-shadow: 0 2px 8px rgba(234, 88, 12, 0.2);"
+    href="https://drive.google.com/uc?export=download&id=1wqulr627s9GmKiAQlCkDCk9pWOSn-HMH" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    style="background: #ea580c; color: #ffffff; padding: 11px 22px; border-radius: 8px; font-weight: 600; text-decoration: none !important; display: inline-flex; align-items: center; gap: 8px; font-size: 0.95rem; box-shadow: 0 2px 8px rgba(234, 88, 12, 0.2);"
   >
-    📥 Télécharger le support : 02 - Référentiel FMTTN et méthodo (.pptx)
+    <span>📥 Télécharger le Diaporama 02 (.pptx via Google Drive) ↗</span>
+  </a>
+  <a 
+    href="https://drive.google.com/file/d/1wqulr627s9GmKiAQlCkDCk9pWOSn-HMH/view?usp=sharing" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    style="background: var(--vp-c-bg-soft); color: var(--vp-c-text-1); padding: 11px 20px; border-radius: 8px; font-weight: 600; text-decoration: none !important; display: inline-flex; align-items: center; gap: 8px; font-size: 0.92rem; border: 1px solid var(--vp-c-divider);"
+  >
+    <span>📂 Ouvrir le fichier dans Google Drive ↗</span>
   </a>
 </div>
 

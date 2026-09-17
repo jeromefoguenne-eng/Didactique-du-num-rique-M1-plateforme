@@ -203,15 +203,31 @@ Cet exercice est extrait directement du dossier des travaux pratiques du cours (
     <li><strong>Production attendue :</strong> Pour chacun des trois cas retenus, vous construisez une grille critériée complète et formulez la justification de vos choix didactiques.</li>
   </ul>
 
-  <div style="margin: 1.2rem 0;">
+  <div style="margin: 1.2rem 0; display: flex; gap: 12px; flex-wrap: wrap;">
     <a 
-      href="/documents/Exercice-08-Creer-une-grille-criteriee.docx" 
-      download
+      href="https://docs.google.com/document/d/1MV1xWWb5ZtcuRhFn_JIVG6UHeFle6IUI/edit?usp=sharing&ouid=112995252347605114249&rtpof=true&sd=true" 
+      target="_blank" 
+      rel="noopener noreferrer"
       class="btn-primary"
       style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: white !important; padding: 10px 18px; border-radius: 8px; font-weight: 600; background: var(--vp-c-brand-1);"
     >
-      <span>📥 Télécharger le Document Officiel de l'Exercice 08 (.docx) →</span>
+      <span>📄 Ouvrir l'Exercice 08 sur Google Docs (Officiel) →</span>
     </a>
+    <a 
+      href="/documents/Exercice-08-Creer-une-grille-criteriee.docx" 
+      download
+      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: var(--vp-c-text-1) !important; padding: 10px 18px; border-radius: 8px; font-weight: 600; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);"
+    >
+      <span>📥 Télécharger le fichier (.docx)</span>
+    </a>
+  </div>
+  <div style="font-size: 0.88rem; color: var(--vp-c-text-2); line-height: 1.5; background: var(--vp-c-bg-soft); padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid var(--vp-c-divider); margin-top: 0.8rem;">
+    ℹ️ <strong>Modalités d'utilisation du Google Docs :</strong><br />
+    Le document est configuré en mode consultation / copie. Pour rédiger vos grilles, ouvrez le lien Google Docs ci-dessus puis effectuez au choix :
+    <ul>
+      <li><strong>Fichier → Créer une copie</strong> pour travailler directement dans votre propre Google Drive.</li>
+      <li><strong>Fichier → Télécharger → Microsoft Word (.docx)</strong> pour rédiger votre devoir hors-ligne.</li>
+    </ul>
   </div>
 </div>
 

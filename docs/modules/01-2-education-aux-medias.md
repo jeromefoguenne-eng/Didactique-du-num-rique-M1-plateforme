@@ -74,7 +74,67 @@ L'éducation aux médias participe à la construction d'une littératie numériq
 Construire cette littératie signifie donc apprendre à lire le numérique, mais aussi à y agir et à y produire. L'élève doit pouvoir comprendre comment une information est produite, comment elle circule, comment elle est sélectionnée et pourquoi certains contenus deviennent plus visibles que d'autres. Cette compréhension constitue une condition importante pour pouvoir exercer son jugement et participer pleinement à la société numérique. La littératie numérique permet ainsi de passer progressivement du statut de simple utilisateur à celui d'un utilisateur capable de comprendre les mécanismes qui structurent son environnement numérique.
 
 
-Exemple : la post-vérité : communication de Donald Trump
+<div class="callout-example" style="margin: 1.5rem 0;">
+  <div class="callout-title">📺 Exemple : Les fake news et la post-vérité — Info ou Intox (France 24)</div>
+  <p>
+    <strong>Cas d'étude : Une fausse publicité contre Volodymyr Zelensky à Times Square (New York).</strong><br />
+    Déconstruction méthodique d'un faux reportage vidéo viral : analyse des images tronquées, recherche inversée, vérification des sources journalistiques et détection des procédés de désinformation.
+  </p>
+
+  <div style="text-align: center; margin: 1.2rem 0;">
+    <a 
+      href="https://drive.google.com/file/d/1xzcsOtegajzYU2__qbl68WkO22P4DU5h/view?usp=sharing" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display: inline-block; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.18); border: 2px solid var(--vp-c-divider); max-width: 560px; width: 100%; text-decoration: none;"
+      title="Cliquer pour visionner la vidéo France 24 sur Google Drive"
+    >
+      <img 
+        src="/images/vignette-zelensky-france24.jpg" 
+        alt="Vidéo France 24 Info ou Intox : Fausse publicité Zelensky à New York" 
+        style="width: 100%; height: auto; display: block; object-fit: cover;" 
+      />
+      <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white; padding: 12px 16px; font-size: 0.92rem; font-weight: 700; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <span>▶️ Cliquer sur l'image pour lancer la vidéo Info ou Intox (France 24) ↗</span>
+      </div>
+    </a>
+  </div>
+
+  <p style="font-size: 0.85rem; color: var(--vp-c-text-2); text-align: center; margin: 0.5rem 0 0 0;">
+    💡 <em>Support pédagogique France 24 (Info ou Intox) pour entraîner les élèves au Fact-Checking et au décryptage des infox.</em>
+  </p>
+</div>
+
+<div class="callout-concept" style="margin: 1.5rem 0;">
+  <div class="callout-title">🧠 Exemple : La post-vérité et les théories du complot sur Internet</div>
+  <p>
+    <strong>Analyse didactique : La vérité en danger dans l'espace public numérique.</strong><br />
+    Comprendre le mécanisme de la post-vérité où l'émotion, les croyances personnelles et la viralité algorithmique prennent le pas sur les faits scientifiques et rationnels.
+  </p>
+
+  <div style="text-align: center; margin: 1.2rem 0;">
+    <a 
+      href="https://drive.google.com/file/d/1yA-yqefVZPCppBjud6msVkkcTarYiJLr/view?usp=sharing" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display: inline-block; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.18); border: 2px solid var(--vp-c-divider); max-width: 560px; width: 100%; text-decoration: none;"
+      title="Cliquer pour visionner la vidéo sur Google Drive"
+    >
+      <img 
+        src="/images/vignette-post-verite.jpg" 
+        alt="Vidéo : Post-vérité et théorie du complot, la vérité en danger sur Internet" 
+        style="width: 100%; height: auto; display: block; object-fit: cover;" 
+      />
+      <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white; padding: 12px 16px; font-size: 0.92rem; font-weight: 700; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <span>▶️ Cliquer sur l'image pour lancer la vidéo sur la post-vérité (Google Drive) ↗</span>
+      </div>
+    </a>
+  </div>
+
+  <p style="font-size: 0.85rem; color: var(--vp-c-text-2); text-align: center; margin: 0.5rem 0 0 0;">
+    💡 <em>Ressource didactique pour initier les élèves à la vigilance épistémique et à la déconstruction des bulles de filtres.</em>
+  </p>
+</div>
 
 
 Produire pour mieux déconstruire

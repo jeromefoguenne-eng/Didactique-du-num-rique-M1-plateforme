@@ -78,6 +78,18 @@ export interface TeacherGrade {
   status: 'graded' | 'pending'
 }
 
+export interface ExerciseTeacherFeedback {
+  userEmail: string
+  userName?: string
+  exerciseId: string
+  exerciseTitle?: string
+  score?: number
+  maxScore: number
+  feedback: string
+  gradedAt: string
+  status: 'graded' | 'pending'
+}
+
 export interface SubmittedFile {
   id: string
   userId: string
@@ -105,6 +117,7 @@ const STORAGE_KEY_FILES = 'hech_didac_files'
 const STORAGE_KEY_WEBHOOK = 'hech_didac_drive_webhook'
 const STORAGE_KEY_QUIZZES = 'hech_didac_quiz_attempts'
 const STORAGE_KEY_EVALUATIONS = 'hech_didac_evaluations_200'
+const STORAGE_KEY_EXERCISE_FEEDBACKS = 'hech_didac_exercise_feedbacks'
 
 export interface EvaluationRecord {
   userEmail: string
@@ -644,6 +657,75 @@ const DEFAULT_EVALUATIONS: Record<string, EvaluationRecord> = {
   }
 }
 
+const DEFAULT_EXERCISE_FEEDBACKS: Record<string, ExerciseTeacherFeedback> = {
+  'sarah.dubois@student.hech.be_exercice-01': {
+    userEmail: 'sarah.dubois@student.hech.be',
+    userName: 'Sarah Dubois',
+    exerciseId: 'exercice-01',
+    exerciseTitle: 'Exercice 1 : Diagnostic de compétences numériques (DigComp 2.2)',
+    score: 9.5,
+    maxScore: 10,
+    feedback: "Excellente analyse des situations DigComp. Votre distinction entre habileté technique opératoire et discernement critique est particulièrement bien argumentée.",
+    gradedAt: '2026-09-16 14:00',
+    status: 'graded'
+  },
+  'sarah.dubois@student.hech.be_exercice-02': {
+    userEmail: 'sarah.dubois@student.hech.be',
+    userName: 'Sarah Dubois',
+    exerciseId: 'exercice-02',
+    exerciseTitle: 'Exercice 2 : Peut-on faire confiance à cette information ?',
+    score: 9.0,
+    maxScore: 10,
+    feedback: "Très bon réflexe d'investigation : la déconstruction du titre sensationnaliste et l'identification du décalage de mélatonine sont rigoureux.",
+    gradedAt: '2026-09-16 14:15',
+    status: 'graded'
+  },
+  'sarah.dubois@student.hech.be_exercice-03': {
+    userEmail: 'sarah.dubois@student.hech.be',
+    userName: 'Sarah Dubois',
+    exerciseId: 'exercice-03',
+    exerciseTitle: 'Exercice 3 : Concevoir un guide numérique pour les élèves',
+    score: 9.5,
+    maxScore: 10,
+    feedback: "Exemple parfait de guide pour les élèves. Bravo pour le soin apporté à la typographie et à la clarté des consignes !",
+    gradedAt: '2026-09-16 14:30',
+    status: 'graded'
+  },
+  'maxime.lambert@student.hech.be_exercice-01': {
+    userEmail: 'maxime.lambert@student.hech.be',
+    userName: 'Maxime Lambert',
+    exerciseId: 'exercice-01',
+    exerciseTitle: 'Exercice 1 : Diagnostic de compétences numériques (DigComp 2.2)',
+    score: 8.0,
+    maxScore: 10,
+    feedback: "Bonne réflexion sur les limites des modèles de langage comme ChatGPT. Pensez à formaliser une activité concrète de remédiation en classe.",
+    gradedAt: '2026-09-16 15:00',
+    status: 'graded'
+  },
+  'maxime.lambert@student.hech.be_exercice-05': {
+    userEmail: 'maxime.lambert@student.hech.be',
+    userName: 'Maxime Lambert',
+    exerciseId: 'exercice-05',
+    exerciseTitle: 'Exercice 5 : Défi 20 minutes (Affiche Canva mot de passe)',
+    score: 8.5,
+    maxScore: 10,
+    feedback: "Affiche percutante et visuelle. L'explication des règles de sécurité est claire pour des adolescents.",
+    gradedAt: '2026-09-16 15:20',
+    status: 'graded'
+  },
+  'thomas.bastien@student.hech.be_exercice-02': {
+    userEmail: 'thomas.bastien@student.hech.be',
+    userName: 'Thomas Bastien',
+    exerciseId: 'exercice-02',
+    exerciseTitle: 'Exercice 2 : Peut-on faire confiance à cette information ?',
+    score: 10.0,
+    maxScore: 10,
+    feedback: "Analyse critique irréprochable de l'article viral. La remontée aux données brutes de l'échantillon démontre une grande maturité méthodologique.",
+    gradedAt: '2026-09-16 16:00',
+    status: 'graded'
+  }
+}
+
 function getStorage<T>(key: string, defaultVal: T): T {
   if (typeof window === 'undefined') return defaultVal
   try {
@@ -672,6 +754,7 @@ const state = reactive({
   progress: getStorage<Record<string, string[]>>(STORAGE_KEY_PROGRESS, DEFAULT_PROGRESS),
   submissions: getStorage<Submission[]>(STORAGE_KEY_SUBMISSIONS, DEFAULT_SUBMISSIONS),
   submittedFiles: getStorage<SubmittedFile[]>(STORAGE_KEY_FILES, DEFAULT_FILES),
+  exerciseFeedbacks: getStorage<Record<string, ExerciseTeacherFeedback>>(STORAGE_KEY_EXERCISE_FEEDBACKS, DEFAULT_EXERCISE_FEEDBACKS),
   driveWebhook: getStorage<string>(STORAGE_KEY_WEBHOOK, ''),
   adminPin: getStorage<string>(STORAGE_KEY_ADMIN_PIN, 'hech2026'),
   quizAttempts: getStorage<QuizAttempt[]>(STORAGE_KEY_QUIZZES, DEFAULT_QUIZZES),
@@ -1271,20 +1354,139 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
     if (!file) return { success: false, message: "Document non trouvé." }
 
     const numScore = Math.max(0, Math.min(10, Number(score) || 0))
+    const now = new Date().toISOString().replace('T', ' ').substring(0, 16)
+    
     file.teacherGrade = {
       score: numScore,
       maxScore: 10,
       feedback: feedback.trim(),
-      gradedAt: new Date().toISOString().replace('T', ' ').substring(0, 16),
+      gradedAt: now,
+      status: 'graded'
+    }
+
+    // Synchronisation automatique dans les retours d'exercices de l'étudiant
+    const fbKey = `${file.userEmail.toLowerCase()}_${file.exerciseId}`
+    state.exerciseFeedbacks[fbKey] = {
+      userEmail: file.userEmail.toLowerCase(),
+      userName: file.userName,
+      exerciseId: file.exerciseId,
+      exerciseTitle: file.exerciseTitle,
+      score: numScore,
+      maxScore: 10,
+      feedback: feedback.trim(),
+      gradedAt: now,
       status: 'graded'
     }
 
     setStorage(STORAGE_KEY_FILES, state.submittedFiles)
+    setStorage(STORAGE_KEY_EXERCISE_FEEDBACKS, state.exerciseFeedbacks)
     return { 
       success: true, 
       file,
       message: `Évaluation enseignant enregistrée : ${numScore}/10 pour ${file.userName}` 
     }
+  },
+
+  saveExerciseFeedback(
+    userEmail: string, 
+    exerciseId: string, 
+    feedback: string, 
+    score?: number, 
+    exerciseTitle?: string
+  ): { success: boolean; message: string; feedbackRecord: ExerciseTeacherFeedback } {
+    const cleanEmail = (userEmail || '').trim().toLowerCase()
+    if (!cleanEmail) {
+      return { success: false, message: "Email étudiant manquant.", feedbackRecord: null as any }
+    }
+
+    const user = state.users.find(u => u.email.toLowerCase() === cleanEmail)
+    const userName = user ? `${user.firstName} ${user.lastName}` : cleanEmail
+    const now = new Date().toISOString().replace('T', ' ').substring(0, 16)
+    const numScore = (score !== undefined && score !== null && !isNaN(Number(score))) 
+      ? Math.max(0, Math.min(10, Number(score))) 
+      : undefined
+
+    const fbKey = `${cleanEmail}_${exerciseId}`
+    const record: ExerciseTeacherFeedback = {
+      userEmail: cleanEmail,
+      userName,
+      exerciseId,
+      exerciseTitle: exerciseTitle || `Exercice ${exerciseId}`,
+      score: numScore,
+      maxScore: 10,
+      feedback: (feedback || '').trim(),
+      gradedAt: now,
+      status: 'graded'
+    }
+
+    state.exerciseFeedbacks[fbKey] = record
+
+    // Synchroniser avec un éventuel fichier déposé par cet étudiant pour cet exercice
+    const file = state.submittedFiles.find(
+      f => f.userEmail.toLowerCase() === cleanEmail && f.exerciseId === exerciseId
+    )
+    if (file) {
+      file.teacherGrade = {
+        score: numScore ?? file.teacherGrade?.score ?? 0,
+        maxScore: 10,
+        feedback: (feedback || '').trim(),
+        gradedAt: now,
+        status: 'graded'
+      }
+      setStorage(STORAGE_KEY_FILES, state.submittedFiles)
+    }
+
+    // Persistance dans le stockage local
+    setStorage(STORAGE_KEY_EXERCISE_FEEDBACKS, state.exerciseFeedbacks)
+
+    return {
+      success: true,
+      message: `Commentaire et note enregistrés instantanément pour ${userName} !`,
+      feedbackRecord: record
+    }
+  },
+
+  getExerciseFeedback(exerciseId: string, email?: string): ExerciseTeacherFeedback | null {
+    const targetEmail = (email || state.currentUser?.email || '').trim().toLowerCase()
+    if (!targetEmail) return null
+
+    const fbKey = `${targetEmail}_${exerciseId}`
+    if (state.exerciseFeedbacks && state.exerciseFeedbacks[fbKey]) {
+      return state.exerciseFeedbacks[fbKey]
+    }
+
+    // Repli vers teacherGrade du fichier déposé si existant
+    const file = state.submittedFiles.find(
+      f => f.userEmail.toLowerCase() === targetEmail && f.exerciseId === exerciseId
+    )
+    if (file?.teacherGrade && (file.teacherGrade.feedback || file.teacherGrade.status === 'graded')) {
+      return {
+        userEmail: targetEmail,
+        userName: file.userName,
+        exerciseId,
+        exerciseTitle: file.exerciseTitle,
+        score: file.teacherGrade.score,
+        maxScore: 10,
+        feedback: file.teacherGrade.feedback,
+        gradedAt: file.teacherGrade.gradedAt || file.submittedAt,
+        status: file.teacherGrade.status
+      }
+    }
+
+    return null
+  },
+
+  getAllExerciseFeedbacks(email?: string): Record<string, ExerciseTeacherFeedback> {
+    const targetEmail = (email || state.currentUser?.email || '').trim().toLowerCase()
+    const result: Record<string, ExerciseTeacherFeedback> = {}
+    if (!targetEmail || !state.exerciseFeedbacks) return result
+
+    Object.entries(state.exerciseFeedbacks).forEach(([k, v]) => {
+      if (v.userEmail.toLowerCase() === targetEmail) {
+        result[v.exerciseId] = v
+      }
+    })
+    return result
   },
 
   async batchAnalyzeAllFilesWithAi(): Promise<{ total: number; analyzed: number }> {
@@ -1347,8 +1549,11 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
       const isDone = !!file || hasSub
       
       // Note personnalisée de l'enseignant si validée, sinon note complète si déposé
+      const fb = this.getExerciseFeedback(ex.id, targetEmail)
       let pts = 0
-      if (file?.teacherGrade && file.teacherGrade.status === 'graded') {
+      if (fb && fb.score !== undefined && fb.score !== null) {
+        pts = fb.score
+      } else if (file?.teacherGrade && file.teacherGrade.status === 'graded') {
         pts = file.teacherGrade.score
       } else {
         pts = isDone ? 10 : 0
@@ -1361,6 +1566,7 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
         maxPoints: 10,
         completed: isDone,
         file,
+        teacherFeedback: fb,
         teacherGrade: file?.teacherGrade,
         aiCorrection: file?.aiCorrection
       }

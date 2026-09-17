@@ -33,6 +33,11 @@ const attachedFile = computed(() => {
   return files.find(f => f.exerciseId === props.exerciseId)
 })
 
+// Commentaire & note de l'enseignant
+const teacherFeedback = computed(() => {
+  return userStore.getExerciseFeedback(props.exerciseId)
+})
+
 // Aperçu du nom de fichier normalisé
 const previewFileName = computed(() => {
   if (!selectedExerciseFile.value) return ''
@@ -151,6 +156,27 @@ function formatSize(bytes) {
 
     <div v-else class="logged-as-row">
       Connecté en tant que <strong>{{ currentUser.firstName }} {{ currentUser.lastName }}</strong> ({{ currentUser.email }})
+    </div>
+
+    <!-- COMMENTAIRE & ÉVALUATION TRANSMIS PAR L'ENSEIGNANT -->
+    <div v-if="teacherFeedback" class="box-teacher-feedback">
+      <div class="btf-header">
+        <div class="btf-title-group">
+          <span class="btf-icon">👨‍🏫</span>
+          <div>
+            <div class="btf-title">Commentaire & Évaluation de votre enseignant</div>
+            <div class="btf-date">Transmis le {{ teacherFeedback.gradedAt }}</div>
+          </div>
+        </div>
+        <div v-if="teacherFeedback.score !== undefined && teacherFeedback.score !== null" class="btf-score-badge">
+          Note : <strong>{{ teacherFeedback.score }}</strong> / 10 pts
+        </div>
+      </div>
+      <div class="btf-body">
+        <div class="btf-quote">
+          « {{ teacherFeedback.feedback }} »
+        </div>
+      </div>
     </div>
 
     <!-- ZONE DE TEXTE -->
@@ -488,5 +514,72 @@ function formatSize(bytes) {
   font-size: 0.85rem;
   font-weight: 600;
   color: #15803d;
+}
+
+/* ENCART FEEDBACK ENSEIGNANT */
+.box-teacher-feedback {
+  background: #f0fdf4;
+  border: 1.5px solid #86efac;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.btf-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.btf-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.btf-icon {
+  font-size: 1.4rem;
+}
+
+.btf-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #166534;
+}
+
+.btf-date {
+  font-size: 0.78rem;
+  color: #15803d;
+}
+
+.btf-score-badge {
+  background: #166534;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.btf-score-badge strong {
+  font-size: 1rem;
+}
+
+.btf-body {
+  margin-top: 0.2rem;
+}
+
+.btf-quote {
+  font-style: italic;
+  font-size: 0.92rem;
+  color: #14532d;
+  line-height: 1.5;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 0.6rem 0.9rem;
+  border-left: 3px solid #22c55e;
+  border-radius: 4px;
 }
 </style>

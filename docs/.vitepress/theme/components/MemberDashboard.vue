@@ -47,6 +47,10 @@ function getFileForExercise(exId) {
   return userFiles.value.find(f => f.exerciseId === exId)
 }
 
+function getTeacherFeedbackForExercise(exId) {
+  return userStore.getExerciseFeedback(exId)
+}
+
 function onExerciseFileChange(event, exId) {
   if (!exerciseUploadFeedbacks.value) exerciseUploadFeedbacks.value = {}
   exerciseUploadFeedbacks.value[exId] = { type: '', message: '' }
@@ -784,8 +788,16 @@ function formatSize(bytes) {
                       >
                         📥 Google Doc ↗
                       </a>
-                      <span :class="['ee-status', ex.completed ? 'ok' : 'pending']">
-                        {{ ex.completed ? 'Déposé (10/10)' : 'Non déposé (0/10)' }}
+                      <span :class="['ee-status', ex.completed ? 'ok' : 'pending', { graded: !!ex.teacherFeedback }]">
+                        <template v-if="ex.teacherFeedback">
+                          👨‍🏫 Noté : {{ ex.points }}/10
+                        </template>
+                        <template v-else-if="ex.completed">
+                          Déposé ({{ ex.points }}/10)
+                        </template>
+                        <template v-else>
+                          Non déposé (0/10)
+                        </template>
                       </span>
                       <button 
                         v-if="!ex.completed" 
@@ -1055,6 +1067,27 @@ function formatSize(bytes) {
                 </div>
               </div>
             </details>
+
+            <!-- RETOUR & ÉVALUATION DE L'ENSEIGNANT -->
+            <div v-if="getTeacherFeedbackForExercise(ex.id)" class="ex-teacher-feedback-card">
+              <div class="tf-card-header">
+                <div class="tf-author-block">
+                  <span class="tf-avatar">👨‍🏫</span>
+                  <div>
+                    <div class="tf-author-title">Évaluation & Commentaire de votre enseignant</div>
+                    <div class="tf-author-date">Transmis le {{ getTeacherFeedbackForExercise(ex.id).gradedAt }}</div>
+                  </div>
+                </div>
+                <div v-if="getTeacherFeedbackForExercise(ex.id).score !== undefined && getTeacherFeedbackForExercise(ex.id).score !== null" class="tf-score-badge">
+                  Note : <strong>{{ getTeacherFeedbackForExercise(ex.id).score }}</strong> / 10 pts
+                </div>
+              </div>
+              <div class="tf-card-body">
+                <div class="tf-quote-bubble">
+                  <p class="tf-comment-text">« {{ getTeacherFeedbackForExercise(ex.id).feedback }} »</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1132,6 +1165,19 @@ function formatSize(bytes) {
                     <span>•</span>
                     <span>Déposé le {{ file.submittedAt }}</span>
                   </div>
+                </div>
+              </div>
+
+              <!-- ÉVALUATION & COMMENTAIRE ENSEIGNANT POUR CE FICHIER -->
+              <div v-if="file.teacherGrade && (file.teacherGrade.feedback || file.teacherGrade.status === 'graded')" class="file-teacher-eval-box">
+                <div class="fte-header">
+                  <span class="fte-badge">👨‍🏫 Évaluation Enseignant</span>
+                  <span v-if="file.teacherGrade.score !== undefined" class="fte-score">
+                    Note : <strong>{{ file.teacherGrade.score }}</strong> / 10 pts
+                  </span>
+                </div>
+                <div v-if="file.teacherGrade.feedback" class="fte-quote">
+                  « {{ file.teacherGrade.feedback }} »
                 </div>
               </div>
 
@@ -1931,6 +1977,115 @@ function formatSize(bytes) {
   border-radius: 6px;
   font-size: 0.8rem;
   cursor: pointer;
+}
+
+/* ENCART RETOUR & COMMENTAIRE ENSEIGNANT PAR EXERCICE */
+.ex-teacher-feedback-card {
+  margin-top: 1rem;
+  background: #f0fdf4;
+  border: 1.5px solid #86efac;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.08);
+}
+
+.tf-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.tf-author-block {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.tf-avatar {
+  font-size: 1.4rem;
+}
+
+.tf-author-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #166534;
+}
+
+.tf-author-date {
+  font-size: 0.76rem;
+  color: #15803d;
+}
+
+.tf-score-badge {
+  background: #166534;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.tf-score-badge strong {
+  font-size: 0.95rem;
+}
+
+.tf-quote-bubble {
+  background: rgba(255, 255, 255, 0.75);
+  border-left: 3px solid #22c55e;
+  border-radius: 4px;
+  padding: 0.6rem 0.9rem;
+}
+
+.tf-comment-text {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #14532d;
+  font-style: italic;
+}
+
+/* CARTOUCHE ÉVALUATION ENSEIGNANT DANS LA FICHE FICHIER */
+.file-teacher-eval-box {
+  margin: 0.8rem 0;
+  padding: 0.75rem 1rem;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+}
+
+.fte-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.fte-badge {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #166534;
+}
+
+.fte-score {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #15803d;
+}
+
+.fte-quote {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #14532d;
+  line-height: 1.4;
+}
+
+.ee-status.graded {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
 }
 
 /* SECTION DÉPÔT DE FICHIERS */

@@ -22,6 +22,8 @@ const evalForm = ref({
   teacherFeedback: ''
 })
 
+const evalFormExercises = ref([])
+
 function getStudentEvalData(email) {
   return userStore.getStudentEvaluation(email)
 }
@@ -41,6 +43,19 @@ function openEditEvalModal(u) {
     oralDefenseScore: ev.pillar3.total,
     teacherFeedback: ev.feedback || ''
   }
+
+  // Chargement des 6 exercices pour notation et commentaire individuel
+  evalFormExercises.value = (ev.pillar1.exerciseDetails || []).map(ex => {
+    const existingFb = userStore.getExerciseFeedback(ex.id, u.email)
+    return {
+      id: ex.id,
+      title: ex.title,
+      completed: ex.completed,
+      score: existingFb?.score ?? (ex.teacherGrade?.score ?? (ex.completed ? 10 : 0)),
+      feedback: existingFb?.feedback ?? (ex.teacherGrade?.feedback ?? '')
+    }
+  })
+
   selectedStudentEval.value = ev
 }
 
@@ -54,6 +69,17 @@ function saveStudentEval() {
   const pho = Number(evalForm.value.gamePhotosScore || 0)
   const calcTotalGame = ped + laser + p3d + ai + vid + pho
 
+  // Enregistrer chaque retour d'exercice individuellement dans le store
+  evalFormExercises.value.forEach(ex => {
+    userStore.saveExerciseFeedback(
+      evalForm.value.email,
+      ex.id,
+      ex.feedback,
+      Number(ex.score),
+      ex.title
+    )
+  })
+
   userStore.updateStudentEvaluation(evalForm.value.email, {
     gamePedagogyScore: ped,
     gameBoardLaserScore: laser,
@@ -65,7 +91,7 @@ function saveStudentEval() {
     oralDefenseScore: Number(evalForm.value.oralDefenseScore || 0),
     teacherFeedback: evalForm.value.teacherFeedback
   })
-  alert(`Notes enregistrées avec succès pour ${evalForm.value.name} !`)
+  alert(`Notes et commentaires enregistrés avec succès pour ${evalForm.value.name} !`)
   selectedStudentEval.value = null
 }
 
@@ -209,6 +235,66 @@ const filteredSubmissions = computed(() => {
     return matchEx && matchStudent
   })
 })
+
+// Gestion des commentaires et notes sur les réponses écrites
+const subGradeForm = ref({})
+const subFeedbackSaved = ref({})
+
+function getSubFeedbackRecord(sub) {
+  return userStore.getExerciseFeedback(sub.exerciseId, sub.userEmail)
+}
+
+function getSubScore(sub) {
+  if (subGradeForm.value[sub.id]?.score !== undefined) {
+    return subGradeForm.value[sub.id].score
+  }
+  const existing = getSubFeedbackRecord(sub)
+  return existing?.score ?? 10
+}
+
+function setSubScore(sub, val) {
+  if (!subGradeForm.value[sub.id]) {
+    subGradeForm.value[sub.id] = {
+      score: getSubScore(sub),
+      feedback: getSubFeedback(sub)
+    }
+  }
+  subGradeForm.value[sub.id].score = Number(val)
+}
+
+function getSubFeedback(sub) {
+  if (subGradeForm.value[sub.id]?.feedback !== undefined) {
+    return subGradeForm.value[sub.id].feedback
+  }
+  const existing = getSubFeedbackRecord(sub)
+  return existing?.feedback ?? ''
+}
+
+function setSubFeedback(sub, val) {
+  if (!subGradeForm.value[sub.id]) {
+    subGradeForm.value[sub.id] = {
+      score: getSubScore(sub),
+      feedback: getSubFeedback(sub)
+    }
+  }
+  subGradeForm.value[sub.id].feedback = val
+}
+
+function saveSubFeedback(sub) {
+  const score = getSubScore(sub)
+  const feedback = getSubFeedback(sub)
+  const res = userStore.saveExerciseFeedback(
+    sub.userEmail, 
+    sub.exerciseId, 
+    feedback, 
+    score, 
+    sub.exerciseTitle
+  )
+  subFeedbackSaved.value[sub.id] = res.message
+  setTimeout(() => {
+    delete subFeedbackSaved.value[sub.id]
+  }, 3500)
+}
 
 // Gestion de la correction IA et de l'évaluation enseignant des devoirs déposés
 const isBatchAnalyzing = ref(false)
@@ -961,6 +1047,37 @@ function formatSize(bytes) {
                 </div>
               </div>
 
+              <!-- DÉTAIL ET COMMENTAIRES INDIVIDUELS DES 6 EXERCICES (6 × 10 pts) -->
+              <details class="modal-exercises-accordion" open>
+                <summary class="mea-summary">
+                  <span>📂 Commentaires & Notes par Atelier / Devoir (6 × 10 pts)</span>
+                  <span class="mea-badge">{{ evalFormExercises.length }} exercices</span>
+                </summary>
+                <div class="mea-body">
+                  <div v-for="ex in evalFormExercises" :key="ex.id" class="mea-card">
+                    <div class="mea-header">
+                      <div class="mea-title-block">
+                        <span class="mea-icon">{{ ex.completed ? '✅' : '⏳' }}</span>
+                        <strong>{{ ex.title }}</strong>
+                      </div>
+                      <div class="mea-score-input-block">
+                        <label>Note :</label>
+                        <input v-model.number="ex.score" type="number" min="0" max="10" step="0.5" class="mea-score-input" />
+                        <span>/ 10 pts</span>
+                      </div>
+                    </div>
+                    <div class="mea-feedback-block">
+                      <textarea 
+                        v-model="ex.feedback" 
+                        rows="2" 
+                        placeholder="Votre commentaire pour cet exercice (visible instantanément par l'étudiant)..."
+                        class="mea-textarea"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </details>
+
               <div class="form-group-eval">
                 <label>📋 1. Préparation & Intégration pédagogique (max 20 pts)</label>
                 <p class="field-hint">Dossier didactique, intention pédagogique et concordance FMTTN.</p>
@@ -1220,6 +1337,51 @@ function formatSize(bytes) {
             <div class="sub-exercise-tag">{{ sub.exerciseTitle }}</div>
             <div class="sub-body">
               <p>{{ sub.answer }}</p>
+            </div>
+
+            <!-- ÉVALUATION & COMMENTAIRE ENSEIGNANT SUR CETTE SOUMISSION -->
+            <div class="sub-eval-box">
+              <div class="seb-header">
+                <span class="seb-title">👨‍🏫 Votre Évaluation & Commentaire pour cet exercice</span>
+                <span v-if="getSubFeedbackRecord(sub)" class="seb-status-pill">
+                  ✓ Transmis à l'étudiant ({{ getSubFeedbackRecord(sub).gradedAt }})
+                </span>
+              </div>
+
+              <div class="seb-form-grid">
+                <div class="seb-score-row">
+                  <label class="seb-label">Note :</label>
+                  <input 
+                    type="number" 
+                    min="0" 
+                    max="10" 
+                    step="0.5" 
+                    class="seb-score-input"
+                    :value="getSubScore(sub)"
+                    @input="(e) => setSubScore(sub, e.target.value)"
+                  />
+                  <span class="seb-denom">/ 10 pts</span>
+                </div>
+
+                <div class="seb-textarea-row">
+                  <textarea 
+                    class="seb-textarea"
+                    rows="2"
+                    placeholder="Saisissez un commentaire personnalisé pour l'étudiant (apparaîtra instantanément dans son espace)..."
+                    :value="getSubFeedback(sub)"
+                    @input="(e) => setSubFeedback(sub, e.target.value)"
+                  ></textarea>
+                </div>
+
+                <div class="seb-actions-row">
+                  <button @click="saveSubFeedback(sub)" class="btn-save-sub-eval">
+                    💾 Enregistrer l'évaluation & le commentaire
+                  </button>
+                  <span v-if="subFeedbackSaved[sub.id]" class="seb-save-confirm">
+                    ✅ {{ subFeedbackSaved[sub.id] }}
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2339,6 +2501,123 @@ function formatSize(bytes) {
   border-left: 3px solid #3b82f6;
 }
 
+/* ENCART ÉVALUATION & COMMENTAIRE ENSEIGNANT SUR LES RÉPONSES */
+.sub-eval-box {
+  margin-top: 1rem;
+  background: #f0fdf4;
+  border: 1.5px solid #86efac;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+}
+
+.seb-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.seb-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #166534;
+}
+
+.seb-status-pill {
+  font-size: 0.76rem;
+  color: #15803d;
+  background: #dcfce7;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.seb-form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.seb-score-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.seb-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #166534;
+}
+
+.seb-score-input {
+  width: 70px;
+  padding: 4px 8px;
+  border: 1px solid #86efac;
+  border-radius: 6px;
+  background: white;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #166534;
+  text-align: center;
+}
+
+.seb-denom {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #15803d;
+}
+
+.seb-textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #86efac;
+  border-radius: 8px;
+  background: white;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  color: #14532d;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.seb-textarea:focus {
+  outline: none;
+  border-color: #22c55e;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+}
+
+.seb-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+.btn-save-sub-eval {
+  background: #166534;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-save-sub-eval:hover {
+  background: #14532d;
+}
+
+.seb-save-confirm {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #15803d;
+}
+
 /* SÉCURITÉ & EXPORT */
 .security-box, .export-box {
   background: var(--vp-c-bg-alt);
@@ -2917,6 +3196,95 @@ function formatSize(bytes) {
 .form-group-eval input:focus, .form-group-eval textarea:focus {
   border-color: #ea580c;
   outline: none;
+}
+
+/* ACCORDÉON EXERCICES DANS LA MODAL D'ÉVALUATION */
+.modal-exercises-accordion {
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background: var(--vp-c-bg-soft);
+  overflow: hidden;
+}
+
+.mea-summary {
+  padding: 0.8rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--vp-c-bg-alt);
+  user-select: none;
+}
+
+.mea-badge {
+  font-size: 0.75rem;
+  background: #2563eb;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.mea-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.mea-card {
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  padding: 0.8rem;
+}
+
+.mea-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.mea-title-block {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.mea-icon {
+  font-size: 1rem;
+}
+
+.mea-score-input-block {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+}
+
+.mea-score-input {
+  width: 60px !important;
+  padding: 3px 6px !important;
+  font-size: 0.85rem !important;
+  text-align: center;
+  border-radius: 4px !important;
+}
+
+.mea-feedback-block textarea {
+  width: 100%;
+  font-size: 0.85rem;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-alt);
+  box-sizing: border-box;
 }
 
 

@@ -1,6 +1,6 @@
 ---
 title: "06. Guide & Évaluation"
-description: "Rôle de la plateforme, organisation du travail, méthodologie de l'enseignement à distance et modalités officielles de l'évaluation sur 200 points"
+description: "Rôle de la plateforme, organisation du travail, méthodologie de l'enseignement à distance et modalités officielles de l'évaluation sur 210 points"
 ---
 
 <script setup>
@@ -13,9 +13,9 @@ const subCategories = [
     image: "/images/subcategories/sub-7-1-distanciel.jpg"
   },
   {
-    title: "6.2 Modalités d'Évaluation (sur 200 points)",
+    title: "6.2 Modalités d'Évaluation (sur 210 points)",
     tag: "Barème & Pondération",
-    desc: "Répartition officielle des 200 points : 100 pts sur la plateforme & cours, 70 pts création du jeu de société, 30 pts présentation orale.",
+    desc: "Répartition officielle des 200 points : 80 pts plateforme, 100 pts création du jeu de société, 30 pts soutenance orale.",
     link: "/guide/evaluation",
     image: "/images/subcategories/sub-7-2-evaluation.jpg"
   }
@@ -35,7 +35,7 @@ Cette plateforme pédagogique **ne se substitue en aucun cas aux cours et atelie
 <div class="callout-concept">
   <div class="callout-title">1. Un Outil Supplémentaire, Non Substitutif au Présentiel</div>
   <p>
-    L'apprentissage de la didactique du numérique se nourrit avant tout des interactions humaines, des débats méthodologiques, des travaux de groupe et des manipulations physiques en classe. La présence aux séances reste obligatoire et fait partie intégrante de votre évaluation (<strong>20 points sur 200</strong>). La plateforme vient en soutien pour réviser, approfondir et structurer vos acquis à votre rythme.
+    L'apprentissage de la didactique du numérique se nourrit avant tout des interactions humaines, des débats méthodologiques, des travaux de groupe et des manipulations physiques en classe. La présence aux séances reste obligatoire et fait partie intégrante de votre évaluation (évaluations continues). La plateforme vient en soutien pour réviser, approfondir et structurer vos acquis à votre rythme.
   </p>
 </div>
 
@@ -56,7 +56,7 @@ Cette plateforme pédagogique **ne se substitue en aucun cas aux cours et atelie
 <div class="callout-vigilance">
   <div class="callout-title">4. Un Espace Sécurisé de Dépôt de Travaux & Suivi des Notes</div>
   <p>
-    Chaque étudiant dispose d'un <strong>Espace Membre sécurisé par mot de passe personnel</strong>. Vous y déposez vos productions (formats Word <code>.docx</code> ou PDF) automatiquement libellées et archivées dans le Drive de l'enseignant, et vous suivez en direct votre bilan d'évaluation officiel sur 200 points.
+    Chaque étudiant dispose d'un <strong>Espace Membre sécurisé par mot de passe personnel</strong>. Vous y déposez vos productions (formats Word <code>.docx</code> ou PDF) automatiquement libellées et archivées dans le Drive de l'enseignant, et vous suivez en direct votre bilan d'évaluation officiel sur 210 points.
   </p>
 </div>
 

@@ -11,9 +11,14 @@ const selectedStudentEval = ref(null)
 const evalForm = ref({
   email: '',
   name: '',
-  attendanceScore: 20,
-  gameProjectScore: 0,
-  oralDefenseScore: 0,
+  gamePedagogyScore: 20,
+  gameBoardLaserScore: 15,
+  gamePawns3dScore: 15,
+  gameAiCardsScore: 15,
+  gameVideoScore: 20,
+  gamePhotosScore: 15,
+  gameProjectScore: 100,
+  oralDefenseScore: 30,
   teacherFeedback: ''
 })
 
@@ -26,7 +31,12 @@ function openEditEvalModal(u) {
   evalForm.value = {
     email: u.email,
     name: `${u.firstName} ${u.lastName}`,
-    attendanceScore: ev.pillar1.attendancePoints,
+    gamePedagogyScore: ev.pillar2.details?.pedagogy ?? 0,
+    gameBoardLaserScore: ev.pillar2.details?.boardLaser ?? 0,
+    gamePawns3dScore: ev.pillar2.details?.pawns3d ?? 0,
+    gameAiCardsScore: ev.pillar2.details?.aiCards ?? 0,
+    gameVideoScore: ev.pillar2.details?.video ?? 0,
+    gamePhotosScore: ev.pillar2.details?.photos ?? 0,
     gameProjectScore: ev.pillar2.total,
     oralDefenseScore: ev.pillar3.total,
     teacherFeedback: ev.feedback || ''
@@ -36,10 +46,23 @@ function openEditEvalModal(u) {
 
 function saveStudentEval() {
   if (!evalForm.value.email) return
+  const ped = Number(evalForm.value.gamePedagogyScore || 0)
+  const laser = Number(evalForm.value.gameBoardLaserScore || 0)
+  const p3d = Number(evalForm.value.gamePawns3dScore || 0)
+  const ai = Number(evalForm.value.gameAiCardsScore || 0)
+  const vid = Number(evalForm.value.gameVideoScore || 0)
+  const pho = Number(evalForm.value.gamePhotosScore || 0)
+  const calcTotalGame = ped + laser + p3d + ai + vid + pho
+
   userStore.updateStudentEvaluation(evalForm.value.email, {
-    attendanceScore: Number(evalForm.value.attendanceScore),
-    gameProjectScore: Number(evalForm.value.gameProjectScore),
-    oralDefenseScore: Number(evalForm.value.oralDefenseScore),
+    gamePedagogyScore: ped,
+    gameBoardLaserScore: laser,
+    gamePawns3dScore: p3d,
+    gameAiCardsScore: ai,
+    gameVideoScore: vid,
+    gamePhotosScore: pho,
+    gameProjectScore: calcTotalGame > 0 ? calcTotalGame : Number(evalForm.value.gameProjectScore || 0),
+    oralDefenseScore: Number(evalForm.value.oralDefenseScore || 0),
     teacherFeedback: evalForm.value.teacherFeedback
   })
   alert(`Notes enregistrées avec succès pour ${evalForm.value.name} !`)
@@ -47,13 +70,13 @@ function saveStudentEval() {
 }
 
 function exportEvaluationsToCSV() {
-  let csv = "Nom de l'étudiant;Email institutionnel;Quiz (/20);Présence (/20);Devoirs (/60);Total Pilier 1 (/100);Jeu Société (/70);Oral (/30);Total Général (/200);Note finale (/20);Pourcentage;Statut;Feedback Enseignant\n"
+  let csv = "Nom de l'étudiant;Email institutionnel;Quiz (/20);Devoirs (/60);Total Pilier 1 (/80);Jeu Prépa (/20);Plateau Laser (/15);Pions 3D (/15);Cartes IA (/15);Vidéo (/20);Photos (/15);Total Jeu (/100);Soutenance Oral (/30);Total Général (/210);Note finale (/20);Pourcentage;Statut;Feedback Enseignant\n"
   
   users.value.forEach(u => {
     const ev = userStore.getStudentEvaluation(u.email)
     const status = ev.isPassing ? 'Admis' : 'En cours'
     const cleanFb = (ev.feedback || '').replace(/"/g, '""')
-    csv += `"${u.lastName} ${u.firstName}";"${u.email}";"${ev.pillar1.quizPoints}";"${ev.pillar1.attendancePoints}";"${ev.pillar1.exercisesTotal}";"${ev.pillar1.total}";"${ev.pillar2.total}";"${ev.pillar3.total}";"${ev.totalScore}";"${ev.totalOutOf20}";"${ev.percentage}%";"${status}";"${cleanFb}"\n`
+    csv += `"${u.lastName} ${u.firstName}";"${u.email}";"${ev.pillar1.quizPoints}";"${ev.pillar1.exercisesTotal}";"${ev.pillar1.total}";"${ev.pillar2.details.pedagogy}";"${ev.pillar2.details.boardLaser}";"${ev.pillar2.details.pawns3d}";"${ev.pillar2.details.aiCards}";"${ev.pillar2.details.video}";"${ev.pillar2.details.photos}";"${ev.pillar2.total}";"${ev.pillar3.total}";"${ev.totalScore}";"${ev.totalOutOf20}";"${ev.percentage}%";"${status}";"${cleanFb}"\n`
   })
 
   const blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8;' })
@@ -743,7 +766,7 @@ function formatSize(bytes) {
         <div class="eval-admin-toolbar">
           <div>
             <h3>🏆 Suivi Global des Notes & Modalités d'Évaluation (200 Points)</h3>
-            <p>Pondération officielle : <strong>100 pts</strong> Plateforme & Présence • <strong>70 pts</strong> Dossier Jeu de Société • <strong>30 pts</strong> Présentation Orale devant la classe.</p>
+            <p>Pondération officielle : <strong>80 pts</strong> Travaux Plateforme • <strong>100 pts</strong> Création Jeu de Société (FabLab/IA/Vidéo/Photos) • <strong>30 pts</strong> Soutenance Orale.</p>
           </div>
           <button @click="exportEvaluationsToCSV" class="btn-action-tool brand" title="Télécharger le relevé complet des notes sous format Excel CSV">
             📊 Exporter les Notes (CSV)
@@ -756,12 +779,11 @@ function formatSize(bytes) {
               <tr>
                 <th>Étudiant</th>
                 <th>Quiz (/20)</th>
-                <th>Présence (/20)</th>
                 <th>Devoirs (/60)</th>
-                <th>Pilier 1 (/100)</th>
-                <th>Jeu (/70)</th>
+                <th>Pilier 1 (/80)</th>
+                <th>Jeu (/100)</th>
                 <th>Oral (/30)</th>
-                <th>Total (/200)</th>
+                <th>Total (/210)</th>
                 <th>Note (/20)</th>
                 <th>Statut</th>
                 <th style="text-align: right;">Éditer</th>
@@ -774,7 +796,6 @@ function formatSize(bytes) {
                   <div class="student-sub-mail">{{ u.email }}</div>
                 </td>
                 <td class="num-cell">{{ getStudentEvalData(u.email).pillar1.quizPoints }}</td>
-                <td class="num-cell">{{ getStudentEvalData(u.email).pillar1.attendancePoints }}</td>
                 <td class="num-cell">
                   <span :class="['duty-badge', getStudentEvalData(u.email).pillar1.exercisesTotal >= 60 ? 'full' : 'partial']">
                     {{ getStudentEvalData(u.email).pillar1.exercisesTotal }} / 60
@@ -831,20 +852,44 @@ function formatSize(bytes) {
               </div>
 
               <div class="form-group-eval">
-                <label>🙋 Présence & Implication active au cours (max 20 pts)</label>
-                <p class="field-hint">Présence hebdomadaire obligatoire en présentiel (déduire en cas d'absences injustifiées).</p>
-                <input v-model.number="evalForm.attendanceScore" type="number" min="0" max="20" />
+                <label>📋 1. Préparation & Intégration pédagogique (max 20 pts)</label>
+                <p class="field-hint">Dossier didactique, intention pédagogique et concordance FMTTN.</p>
+                <input v-model.number="evalForm.gamePedagogyScore" type="number" min="0" max="20" />
               </div>
 
               <div class="form-group-eval">
-                <label>🎲 Pilier 2 : Création du Jeu de Société Didactique (max 70 pts)</label>
-                <p class="field-hint">Dossier didactique (25 pts), mécaniques ludo-pédagogiques (25 pts), prototypage FabLab (20 pts).</p>
-                <input v-model.number="evalForm.gameProjectScore" type="number" min="0" max="70" />
+                <label>🪚 2. Plateau de jeu - Découpe laser FabLab (max 15 pts)</label>
+                <p class="field-hint">Fichier vectoriel .svg, gravure bois/plexiglas et finitions.</p>
+                <input v-model.number="evalForm.gameBoardLaserScore" type="number" min="0" max="15" />
               </div>
 
               <div class="form-group-eval">
-                <label>🎤 Pilier 3 : Présentation Orale & Playtest (max 30 pts)</label>
-                <p class="field-hint">Animation de la table de jeu (15 pts), défense didactique (10 pts), capsule vidéo (5 pts).</p>
+                <label>🎲 3. Pions de jeu - Impression 3D (max 15 pts)</label>
+                <p class="field-hint">Modélisation 3D originale et qualité d'impression.</p>
+                <input v-model.number="evalForm.gamePawns3dScore" type="number" min="0" max="15" />
+              </div>
+
+              <div class="form-group-eval">
+                <label>🤖 4. Cartes de jeu conçues avec l'IA (max 15 pts)</label>
+                <p class="field-hint">Prompts, génération visuelle et formulation didactique des cartes.</p>
+                <input v-model.number="evalForm.gameAiCardsScore" type="number" min="0" max="15" />
+              </div>
+
+              <div class="form-group-eval">
+                <label>🎬 5. Présentation vidéo du jeu (max 20 pts)</label>
+                <p class="field-hint">Capsule vidéo explicative (2-3 min), pitch et règles en images.</p>
+                <input v-model.number="evalForm.gameVideoScore" type="number" min="0" max="20" />
+              </div>
+
+              <div class="form-group-eval">
+                <label>📸 6. Intégration des photos (max 15 pts)</label>
+                <p class="field-hint">Prises de vue du matériel et intégration graphique.</p>
+                <input v-model.number="evalForm.gamePhotosScore" type="number" min="0" max="15" />
+              </div>
+
+              <div class="form-group-eval highlight-oral">
+                <label>🎤 Pilier 3 : Soutenance Orale devant la classe (max 30 pts)</label>
+                <p class="field-hint">Animation de la table de jeu, argumentation didactique et échange réflexif.</p>
                 <input v-model.number="evalForm.oralDefenseScore" type="number" min="0" max="30" />
               </div>
 

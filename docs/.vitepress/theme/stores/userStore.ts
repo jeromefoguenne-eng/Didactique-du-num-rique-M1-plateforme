@@ -80,9 +80,14 @@ const STORAGE_KEY_EVALUATIONS = 'hech_didac_evaluations_200'
 
 export interface EvaluationRecord {
   userEmail: string
-  attendanceScore: number // max 20
-  gameProjectScore: number // max 70
-  oralDefenseScore: number // max 30
+  gamePedagogyScore?: number // max 20 (prépa et intégration pédagogique)
+  gameBoardLaserScore?: number // max 15 (plateau découpe laser)
+  gamePawns3dScore?: number // max 15 (pions impression 3D)
+  gameAiCardsScore?: number // max 15 (cartes de jeu IA)
+  gameVideoScore?: number // max 20 (présentation vidéo du jeu)
+  gamePhotosScore?: number // max 15 (intégration des photos)
+  gameProjectScore: number // max 100
+  oralDefenseScore: number // max 30 (soutenance orale)
   teacherFeedback?: string
 }
 
@@ -335,24 +340,39 @@ const DEFAULT_FILES: SubmittedFile[] = [
 const DEFAULT_EVALUATIONS: Record<string, EvaluationRecord> = {
   'sarah.dubois@student.hech.be': {
     userEmail: 'sarah.dubois@student.hech.be',
-    attendanceScore: 20,
-    gameProjectScore: 56,
-    oralDefenseScore: 24,
-    teacherFeedback: "Excellent investissement en cours et démarche ludo-éducative très prometteuse."
+    gamePedagogyScore: 18,
+    gameBoardLaserScore: 14,
+    gamePawns3dScore: 13,
+    gameAiCardsScore: 14,
+    gameVideoScore: 18,
+    gamePhotosScore: 13,
+    gameProjectScore: 90,
+    oralDefenseScore: 26,
+    teacherFeedback: "Excellent investissement, intégration pédagogique remarquable et maîtrise exemplaire du FabLab."
   },
   'maxime.lambert@student.hech.be': {
     userEmail: 'maxime.lambert@student.hech.be',
-    attendanceScore: 18,
-    gameProjectScore: 50,
+    gamePedagogyScore: 15,
+    gameBoardLaserScore: 12,
+    gamePawns3dScore: 11,
+    gameAiCardsScore: 12,
+    gameVideoScore: 15,
+    gamePhotosScore: 11,
+    gameProjectScore: 76,
     oralDefenseScore: 22,
-    teacherFeedback: "Bonne implication. Poursuivre l'approfondissement sur la dimension critique."
+    teacherFeedback: "Bonne implication globale. Poursuivre l'effort sur la finition des cartes IA."
   },
   'thomas.bastien@student.hech.be': {
     userEmail: 'thomas.bastien@student.hech.be',
-    attendanceScore: 20,
-    gameProjectScore: 63,
-    oralDefenseScore: 27,
-    teacherFeedback: "Travail remarquable et excellente maîtrise de la fabrication FabLab."
+    gamePedagogyScore: 19,
+    gameBoardLaserScore: 15,
+    gamePawns3dScore: 14,
+    gameAiCardsScore: 14,
+    gameVideoScore: 19,
+    gamePhotosScore: 14,
+    gameProjectScore: 95,
+    oralDefenseScore: 28,
+    teacherFeedback: "Projet de jeu exceptionnel, prototypage soigné et excellente soutenance."
   }
 }
 
@@ -873,7 +893,7 @@ export const userStore = {
 
 
   // ==========================================
-  // MODALITÉS DE L'ÉVALUATION OFFICIELLE (200 POINTS)
+  // MODALITÉS DE L'ÉVALUATION DU COURS (210 POINTS)
   // ==========================================
 
   getStudentEvaluation(email?: string) {
@@ -881,25 +901,26 @@ export const userStore = {
     const user = state.users.find(u => u.email.toLowerCase() === targetEmail)
     const evalRec = state.evaluations[targetEmail] || {
       userEmail: targetEmail,
-      attendanceScore: 20,
+      gamePedagogyScore: 0,
+      gameBoardLaserScore: 0,
+      gamePawns3dScore: 0,
+      gameAiCardsScore: 0,
+      gameVideoScore: 0,
+      gamePhotosScore: 0,
       gameProjectScore: 0,
       oralDefenseScore: 0
     }
 
-    // 1. Points Quiz (max 20)
+    // 1. Points Quiz & Diagnostic (max 20)
     const userQuizzes = state.quizAttempts.filter(q => q.userEmail.toLowerCase() === targetEmail)
     let quizPoints = 0
     if (userQuizzes.length > 0) {
       const avgPct = userQuizzes.reduce((acc, q) => acc + q.percentage, 0) / userQuizzes.length
-      // Proportionnel au nombre de quiz réalisés et réussis
-      const completionFactor = Math.min(1, userQuizzes.length / 2) // 2 quiz suffisent pour évaluer l'engagement
+      const completionFactor = Math.min(1, userQuizzes.length / 2)
       quizPoints = Math.round((avgPct / 100) * 20 * completionFactor * 10) / 10
     }
 
-    // 2. Points Présence (max 20)
-    const attendancePoints = evalRec.attendanceScore ?? 20
-
-    // 3. Points Exercices (6 × 10 = 60 pts)
+    // 2. Points Exercices Plateforme (6 × 10 = 60 pts)
     const exercisesList = [
       { id: 'exercice-01', title: 'Exercice 1 : Diagnostic de compétences (10 pts)' },
       { id: 'exercice-02', title: 'Exercice 2 : Évaluation critique info (10 pts)' },
@@ -924,47 +945,64 @@ export const userStore = {
 
     const exercisesTotal = exerciseDetails.reduce((acc, e) => acc + e.points, 0)
 
-    // Sous-total Pilier 1 (Plateforme & Cours : max 100 pts)
-    const pillar1Total = Math.round((quizPoints + attendancePoints + exercisesTotal) * 10) / 10
+    // Sous-total Pilier 1 (Travaux sur la Plateforme : max 80 pts)
+    const pillar1Total = Math.round((quizPoints + exercisesTotal) * 10) / 10
 
-    // Pilier 2 : Projet Jeu de Société (max 70 pts)
-    const pillar2Total = evalRec.gameProjectScore || 0
+    // Pilier 2 : Création du Jeu de Société Didactique (max 100 pts)
+    const gameDetails = {
+      pedagogy: evalRec.gamePedagogyScore ?? 0,
+      pedagogyMax: 20,
+      boardLaser: evalRec.gameBoardLaserScore ?? 0,
+      boardLaserMax: 15,
+      pawns3d: evalRec.gamePawns3dScore ?? 0,
+      pawns3dMax: 15,
+      aiCards: evalRec.gameAiCardsScore ?? 0,
+      aiCardsMax: 15,
+      video: evalRec.gameVideoScore ?? 0,
+      videoMax: 20,
+      photos: evalRec.gamePhotosScore ?? 0,
+      photosMax: 15
+    }
 
-    // Pilier 3 : Soutenance orale devant la classe (max 30 pts)
+    // Calcul du total jeu : soit somme des sous-items si saisis, soit note globale
+    const sumGameDetails = gameDetails.pedagogy + gameDetails.boardLaser + gameDetails.pawns3d + gameDetails.aiCards + gameDetails.video + gameDetails.photos
+    const pillar2Total = sumGameDetails > 0 ? sumGameDetails : (evalRec.gameProjectScore || 0)
+
+    // Pilier 3 : Soutenance Orale devant la classe (max 30 pts)
     const pillar3Total = evalRec.oralDefenseScore || 0
 
-    // Total Général sur 200 points
+    // Total Général sur 210 points
     const totalScore = Math.round((pillar1Total + pillar2Total + pillar3Total) * 10) / 10
-    const totalOutOf20 = Math.round((totalScore / 10) * 10) / 10
-    const percentage = Math.round((totalScore / 200) * 100)
+    const totalOutOf20 = Math.round(((totalScore / 210) * 20) * 10) / 10
+    const percentage = Math.round((totalScore / 210) * 100)
 
     return {
       user,
       pillar1: {
         total: pillar1Total,
-        max: 100,
+        max: 80,
         quizPoints,
         quizMax: 20,
-        attendancePoints,
-        attendanceMax: 20,
         exercisesTotal,
         exercisesMax: 60,
         exerciseDetails
       },
       pillar2: {
         total: pillar2Total,
-        max: 70
+        max: 100,
+        details: gameDetails
       },
       pillar3: {
         total: pillar3Total,
         max: 30
       },
       totalScore,
-      totalMax: 200,
+      totalMax: 210,
       totalOutOf20,
       percentage,
-      isPassing: totalScore >= 100,
-      feedback: evalRec.teacherFeedback || ''
+      isPassing: totalScore >= 105,
+      feedback: evalRec.teacherFeedback || '',
+      adjustNotice: "La pondération pourra être revue en fonction du déroulement du cours."
     }
   },
 
@@ -973,7 +1011,12 @@ export const userStore = {
     if (!state.evaluations[targetEmail]) {
       state.evaluations[targetEmail] = {
         userEmail: targetEmail,
-        attendanceScore: 20,
+        gamePedagogyScore: 0,
+        gameBoardLaserScore: 0,
+        gamePawns3dScore: 0,
+        gameAiCardsScore: 0,
+        gameVideoScore: 0,
+        gamePhotosScore: 0,
         gameProjectScore: 0,
         oralDefenseScore: 0
       }

@@ -559,7 +559,7 @@ function formatSize(bytes) {
           :class="['tab-btn eval-highlight', { active: activeTab === 'evaluation' }]"
           @click="activeTab = 'evaluation'"
         >
-          🏆 Mon Bilan & Notes (/ 200 pts)
+          🏆 Mon Bilan & Notes
         </button>
         <button 
           :class="['tab-btn', { active: activeTab === 'progress' }]"
@@ -593,7 +593,7 @@ function formatSize(bytes) {
           <div class="eval-hero-banner">
             <div class="eval-score-circle">
               <div class="score-big">{{ myEvaluation.totalScore }}</div>
-              <div class="score-denom">/ 200 pts</div>
+              <div class="score-denom">/ {{ myEvaluation.totalMax }} pts</div>
               <div class="score-sub">{{ myEvaluation.totalOutOf20 }} / 20</div>
             </div>
 
@@ -604,9 +604,9 @@ function formatSize(bytes) {
                 </span>
                 <span class="pct-pill">{{ myEvaluation.percentage }}%</span>
               </div>
-              <h3 class="eval-title">Bilan Officiel d'Évaluation Didactique M1</h3>
+              <h3 class="eval-title">Bilan d'Évaluation Didactique M1</h3>
               <p class="eval-desc">
-                La note globale sur 200 points sanctionne votre quadrimestre. Elle se compose de <strong>100 points continus</strong> (plateforme, présence et exercices), <strong>70 points</strong> pour la création de votre jeu de société didactique, et <strong>30 points</strong> pour sa présentation orale devant la classe.
+                Pondération officielle : <strong>80 points</strong> pour les travaux sur la plateforme en ligne, <strong>100 points</strong> pour la création du jeu de société didactique, et <strong>30 points</strong> pour la soutenance orale devant la classe.
               </p>
               <div class="eval-link-wrapper">
                 <a :href="withBase('/guide/evaluation')" class="link-eval-guide">
@@ -630,11 +630,11 @@ function formatSize(bytes) {
             <!-- PILIER 1 -->
             <div class="pillar-card p1">
               <div class="pillar-header">
-                <div class="pillar-badge">Pilier 1 • 100 Pts</div>
-                <div class="pillar-score-badge">{{ myEvaluation.pillar1.total }} / 100 pts</div>
+                <div class="pillar-badge">Pilier 1 • 80 Pts</div>
+                <div class="pillar-score-badge">{{ myEvaluation.pillar1.total }} / 80 pts</div>
               </div>
-              <h4 class="pillar-title">Plateforme, Présence & Devoirs</h4>
-              <p class="pillar-summary">Travail continu, assiduité et validation des acquis tout au long du quadrimestre.</p>
+              <h4 class="pillar-title">Travaux sur la Plateforme</h4>
+              <p class="pillar-summary">Auto-évaluations diagnostiques continues et devoirs pratiques déposés.</p>
 
               <div class="sub-pillars-list">
                 <!-- 1.1 Quiz -->
@@ -642,7 +642,7 @@ function formatSize(bytes) {
                   <div class="sp-info">
                     <span class="sp-icon">📝</span>
                     <div>
-                      <span class="sp-name">Évaluations diagnostiques (Quiz en ligne)</span>
+                      <span class="sp-name">Évaluations diagnostiques (Quiz de cours)</span>
                       <span class="sp-sub">{{ studentQuizzes.length }} quiz passé(s)</span>
                     </div>
                   </div>
@@ -651,27 +651,13 @@ function formatSize(bytes) {
                   </div>
                 </div>
 
-                <!-- 1.2 Présence -->
-                <div class="sub-pillar-row">
-                  <div class="sp-info">
-                    <span class="sp-icon">🙋</span>
-                    <div>
-                      <span class="sp-name">Présence active & assiduité aux cours</span>
-                      <span class="sp-sub">Présentiel obligatoire (sauf absence justifiée)</span>
-                    </div>
-                  </div>
-                  <div class="sp-score">
-                    <strong>{{ myEvaluation.pillar1.attendancePoints }}</strong> / 20 pts
-                  </div>
-                </div>
-
-                <!-- 1.3 Exercices pratiques -->
+                <!-- 1.2 Exercices pratiques -->
                 <div class="sub-pillar-row highlight">
                   <div class="sp-info">
                     <span class="sp-icon">📂</span>
                     <div>
-                      <span class="sp-name">Ateliers pratiques & devoirs (6 × 10 pts)</span>
-                      <span class="sp-sub">Documents Word / PDF déposés sur l'espace</span>
+                      <span class="sp-name">6 Ateliers pratiques obligatoires (6 × 10 pts)</span>
+                      <span class="sp-sub">Documents Word / PDF déposés sur votre espace</span>
                     </div>
                   </div>
                   <div class="sp-score">
@@ -713,39 +699,66 @@ function formatSize(bytes) {
             <!-- PILIER 2 -->
             <div class="pillar-card p2">
               <div class="pillar-header">
-                <div class="pillar-badge">Pilier 2 • 70 Pts</div>
-                <div class="pillar-score-badge">{{ myEvaluation.pillar2.total }} / 70 pts</div>
+                <div class="pillar-badge">Pilier 2 • 100 Pts</div>
+                <div class="pillar-score-badge">{{ myEvaluation.pillar2.total }} / 100 pts</div>
               </div>
               <h4 class="pillar-title">Création du Jeu de Société Didactique</h4>
-              <p class="pillar-summary">Projet central ludo-éducatif conçu pour enseigner une compétence FMTTN.</p>
+              <p class="pillar-summary">Projet central ludo-éducatif, fabrication FabLab, cartes IA et vidéo.</p>
 
               <div class="pillar-details-box">
                 <div class="criteria-check-item">
-                  <span class="crit-icon">🎯</span>
+                  <span class="crit-icon">📋</span>
                   <div class="crit-text">
-                    <strong>Dossier didactique complet (25 pts) :</strong>
-                    <span>Ancrage référentiel FWB, compétences visées, fiche d'activité élève.</span>
+                    <strong>Prépa & intégration pédagogique (20 pts)</strong>
+                    <span>Dossier didactique, intention pédagogique, règles et concordance FMTTN.</span>
                   </div>
+                  <span class="crit-sub-score">{{ myEvaluation.pillar2.details.pedagogy }} / 20</span>
+                </div>
+                <div class="criteria-check-item">
+                  <span class="crit-icon">🪚</span>
+                  <div class="crit-text">
+                    <strong>Plateau de jeu - Découpe laser (15 pts)</strong>
+                    <span>Fichiers vectoriels .svg, gravure bois/plexiglas et ergonomie FabLab.</span>
+                  </div>
+                  <span class="crit-sub-score">{{ myEvaluation.pillar2.details.boardLaser }} / 15</span>
                 </div>
                 <div class="criteria-check-item">
                   <span class="crit-icon">🎲</span>
                   <div class="crit-text">
-                    <strong>Mécaniques ludo-pédagogiques (25 pts) :</strong>
-                    <span>Équilibre des règles, rejouabilité, différenciation pédagogique.</span>
+                    <strong>Pions de jeu - Impression 3D (15 pts)</strong>
+                    <span>Modélisation 3D originale et qualité d'impression matérielle.</span>
                   </div>
+                  <span class="crit-sub-score">{{ myEvaluation.pillar2.details.pawns3d }} / 15</span>
                 </div>
                 <div class="criteria-check-item">
-                  <span class="crit-icon">🛠️</span>
+                  <span class="crit-icon">🤖</span>
                   <div class="crit-text">
-                    <strong>Prototypage & fabrication FabLab (20 pts) :</strong>
-                    <span>Matériel physique soigné, découpe laser, modélisation 3D, cartes.</span>
+                    <strong>Cartes de jeu conçues avec l'IA (15 pts)</strong>
+                    <span>Génération éthique des visuels IA, cartes questions/défis didactiques.</span>
                   </div>
+                  <span class="crit-sub-score">{{ myEvaluation.pillar2.details.aiCards }} / 15</span>
+                </div>
+                <div class="criteria-check-item">
+                  <span class="crit-icon">🎬</span>
+                  <div class="crit-text">
+                    <strong>Présentation vidéo du jeu (20 pts)</strong>
+                    <span>Capsule vidéo explicative (2-3 min), pitch dynamique et démonstration.</span>
+                  </div>
+                  <span class="crit-sub-score">{{ myEvaluation.pillar2.details.video }} / 20</span>
+                </div>
+                <div class="criteria-check-item">
+                  <span class="crit-icon">📸</span>
+                  <div class="crit-text">
+                    <strong>Intégration des photos (15 pts)</strong>
+                    <span>Prises de vue du matériel physique et intégration visuelle soignée.</span>
+                  </div>
+                  <span class="crit-sub-score">{{ myEvaluation.pillar2.details.photos }} / 15</span>
                 </div>
               </div>
 
               <div class="pillar-note-box">
-                <span class="pnb-label">Note attribuée au dossier final :</span>
-                <span class="pnb-val">{{ myEvaluation.pillar2.total }} / 70 pts</span>
+                <span class="pnb-label">Total projet Jeu de société :</span>
+                <span class="pnb-val">{{ myEvaluation.pillar2.total }} / 100 pts</span>
               </div>
             </div>
 
@@ -755,38 +768,35 @@ function formatSize(bytes) {
                 <div class="pillar-badge">Pilier 3 • 30 Pts</div>
                 <div class="pillar-score-badge">{{ myEvaluation.pillar3.total }} / 30 pts</div>
               </div>
-              <h4 class="pillar-title">Présentation Orale & Playtest</h4>
-              <p class="pillar-summary">Soutenance devant les pairs et démonstration interactive en conditions réelles.</p>
+              <h4 class="pillar-title">Soutenance Orale devant la Classe</h4>
+              <p class="pillar-summary">Présentation devant les pairs, animation de la table de jeu et échange didactique.</p>
 
-              <div class="pillar-details-box">
-                <div class="criteria-check-item">
+              <div class="pillar-details-box single-defense">
+                <div class="criteria-check-item highlight-defense">
                   <span class="crit-icon">🎤</span>
                   <div class="crit-text">
-                    <strong>Animation de la table de jeu (15 pts) :</strong>
-                    <span>Explication vivante des règles, gestion du temps et engagement des joueurs.</span>
+                    <strong>Soutenance orale globale (30 points)</strong>
+                    <span>Animation de la table de jeu, argumentation réflexive et réponses aux questions de l'enseignant.</span>
                   </div>
                 </div>
-                <div class="criteria-check-item">
-                  <span class="crit-icon">💡</span>
-                  <div class="crit-text">
-                    <strong>Défense didactique & réflexive (10 pts) :</strong>
-                    <span>Justification des choix didactiques et réponses aux questions de l'enseignant.</span>
-                  </div>
-                </div>
-                <div class="criteria-check-item">
-                  <span class="crit-icon">🎬</span>
-                  <div class="crit-text">
-                    <strong>Capsule vidéo de présentation (5 pts) :</strong>
-                    <span>Teaser ou vidéo pitch (max 2 minutes) résumant le jeu et son intérêt didactique.</span>
-                  </div>
-                </div>
+                <p class="defense-clarification">
+                  <em>Les critères détaillés de soutenance vous seront communiqués lors de la préparation des passages oraux.</em>
+                </p>
               </div>
 
               <div class="pillar-note-box">
-                <span class="pnb-label">Note attribuée à la présentation :</span>
+                <span class="pnb-label">Note attribuée à la soutenance :</span>
                 <span class="pnb-val">{{ myEvaluation.pillar3.total }} / 30 pts</span>
               </div>
             </div>
+          </div>
+
+          <!-- PHRASE DE RÉSERVE OFFICIELLE -->
+          <div class="eval-adjustment-notice">
+            <span class="notice-icon">⚠️</span>
+            <span class="notice-text">
+              <strong>Note importante :</strong> La pondération pourra être revue en fonction du déroulement du cours.
+            </span>
           </div>
         </div>
       </div>
@@ -2493,4 +2503,48 @@ function formatSize(bytes) {
   font-size: 1.15rem;
   font-weight: 800;
   color: var(--vp-c-brand);
+}
+
+
+.crit-sub-score {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--vp-c-brand);
+  background: var(--vp-c-bg);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--vp-c-divider);
+  white-space: nowrap;
+}
+
+.defense-clarification {
+  font-size: 0.8rem;
+  color: var(--vp-c-text-2);
+  margin: 0.5rem 0 0 0;
+  line-height: 1.4;
+}
+
+.highlight-defense {
+  border-left: 3px solid #0284c7;
+}
+
+.eval-adjustment-notice {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.25rem;
+  border-radius: 8px;
+  background: rgba(234, 88, 12, 0.08);
+  border: 1px solid rgba(234, 88, 12, 0.25);
+  font-size: 0.88rem;
+  color: #c2410c;
+  margin-top: 0.5rem;
+}
+:root.dark .eval-adjustment-notice {
+  background: rgba(234, 88, 12, 0.15);
+  border-color: rgba(234, 88, 12, 0.4);
+  color: #fdba74;
+}
+.notice-icon {
+  font-size: 1.2rem;
 }

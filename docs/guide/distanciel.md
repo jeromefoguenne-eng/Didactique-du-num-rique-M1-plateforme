@@ -8,7 +8,7 @@ description: "Fonctionnement de la plateforme, méthodologie de l'enseignement �
 ::: warning ⚠️ Règle Fondamentale : Non-substitution aux Cours en Présentiel
 L'utilisation de cette plateforme numérique **ne se substitue en aucun cas au fait d'assister aux cours en présentiel** à la Haute École Charlemagne. 
 
-La plateforme constitue un **outil supplémentaire d'accompagnement**, conçu pour compiler les ressources, centraliser les exercices, proposer des auto-évaluations diagnostiques et offrir des repères méthodologiques pour approfondir et consolider ce qui est travaillé ensemble en salle de cours. La présence active aux séances présentielles est obligatoire et fait d'ailleurs l'objet d'une **valorisation directe de 20 points sur 200** dans votre évaluation globale.
+La plateforme constitue un **outil supplémentaire d'accompagnement**, conçu pour compiler les ressources, centraliser les exercices, proposer des auto-évaluations diagnostiques et offrir des repères méthodologiques pour approfondir et consolider ce qui est travaillé ensemble en salle de cours. La présence active aux séances présentielles est obligatoire et fait d'ailleurs l'objet d'une **valorisation directe de évaluation continue** dans votre évaluation globale.
 :::
 
 ---
@@ -62,7 +62,7 @@ La section *07. Ressources & Outils* compile en permanence :
 En créant votre profil étudiant avec votre adresse `@student.hech.be` :
 * Vous définissez votre **mot de passe personnel** dès votre première connexion (modifiable à tout moment, avec procédure de récupération par code email simulé en cas d'oubli).
 * Vous suivez votre **jauge de progression générale** dans les modules.
-* Vous accédez à **Mon Bilan & Notes (/ 200 pts)** : visualisation transparente de votre total sur 200 points (et sur 20), du détail des 3 piliers d'évaluation et des observations de votre enseignant.
+* Vous accédez à **Mon Bilan & Notes (/ 200 pts)** : visualisation transparente de votre total sur 210 points (et sur 20), du détail des 3 piliers d'évaluation et des observations de votre enseignant.
 * Vous disposez d'un **coffre-fort de dépôt de documents (Word / PDF)** : le système applique automatiquement la nomenclature officielle (`NOM_Prenom_Atelier_Date.pdf`) et assure la transmission sécurisée vers le Google Drive de l'enseignant.
 
 ---
@@ -85,7 +85,7 @@ L'enseignement à distance exige une compétence clé : l'**autorégulation**. S
 ### 3.3. La Posture Réflexive du Futur Enseignant
 Observez la structure de cette plateforme d'un œil critique et professionnel :
 * *Comment les consignes sont-elles formulées pour éviter les ambiguïtés à distance ?*
-* *Comment la triple concordance (Objectifs - Méthodes - Évaluation) est-elle matérialisée entre les chapitres, les ateliers et le barème sur 200 points ?*
+* *Comment la triple concordance (Objectifs - Méthodes - Évaluation) est-elle matérialisée entre les chapitres, les ateliers et le barème sur 210 points ?*
 * *Comment pourriez-vous transposer ces principes d'accompagnement hybride dans vos futures classes de l'enseignement secondaire pour soutenir vos élèves en difficulté ou organiser des devoirs motivants ?*
 
 ---
@@ -104,7 +104,7 @@ Pour progresser sereinement tout au long du quadrimestre sans subir de surcharge
 │ TEMPS 2 : Pendant la séance présentielle à la HECh (Présence active)    │
 │ • Participer aux débats, poser des questions ciblées                   │
 │ • Expérimenter en équipe, manipuler les composants ou le jeu           │
-│ • Valider sa présence active (comptabilisée sur les 20 pts du cours)   │
+│ • Valider sa présence active (comptabilisée dans le suivi continu)   │
 ├────────────────────────────────────────────────────────────────────────┤
 │ TEMPS 3 : Après le cours présentiel (1h à 1h30 sur la plateforme)      │
 │ • Compléter le quiz d'évaluation diagnostique en fin de module         │
@@ -117,7 +117,7 @@ Pour progresser sereinement tout au long du quadrimestre sans subir de surcharge
 
 ## 5. Gestion du Travail Collaboratif à Distance (Projet Jeu de Société)
 
-La création de votre jeu de société didactique (Pilier 2 - 70 points) et sa préparation à la soutenance orale (Pilier 3 - 30 points) nécessitent une coordination étroite au sein de votre équipe entre les séances de cours.
+La création de votre jeu de société didactique (Pilier 2 - 100 points) et sa préparation à la soutenance orale (Pilier 3 - 30 points) nécessitent une coordination étroite au sein de votre équipe entre les séances de cours.
 
 ### Outils Recommandés pour Collaborer Efficacement :
 * **Coordination & Communication** : Teams institutionnel, Discord ou groupe WhatsApp dédié à votre équipe.
@@ -153,6 +153,6 @@ Si vous rencontrez une difficulté technique sur la plateforme, une interrogatio
 ---
 
 ## Navigation Rapide
-* 📊 **[Consulter les Modalités d'Évaluation Officielles (sur 200 points)](/guide/evaluation)**
+* 📊 **[Consulter les Modalités d'Évaluation Officielles (sur 210 points)](/guide/evaluation)**
 * 👤 **[Accéder à mon Espace Membre (Mon Suivi & Dépôts)](/espace-membre)**
 * 🏠 **[Retourner à l'Accueil du Cours](/)**

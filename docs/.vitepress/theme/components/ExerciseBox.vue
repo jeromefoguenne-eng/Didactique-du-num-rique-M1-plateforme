@@ -85,6 +85,7 @@ const previewFileName = computed(() => {
 })
 
 onMounted(() => {
+  userStore.syncFromStorage()
   if (currentUser.value) {
     answerText.value = userStore.getUserSubmission(props.exerciseId)
   }
@@ -196,7 +197,6 @@ function formatSize(bytes) {
           {{ lateAlert.alarmInfo.icon }} {{ lateAlert.alarmInfo.label }} (+{{ lateAlert.daysLate }}j)
         </span>
         <span v-else-if="deadlineInfo.isDefined" class="bds-badge-pending">⏳ À rendre</span>
-        <span v-else class="bds-badge-open">🟢 Dépôt ouvert</span>
       </div>
     </div>
 

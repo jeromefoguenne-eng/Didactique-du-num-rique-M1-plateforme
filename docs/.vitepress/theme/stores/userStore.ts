@@ -1479,30 +1479,27 @@ function setStorage<T>(key: string, val: T): boolean {
 }
 
 function initInitialDeadlines(): Record<string, { deadline: string, deadlineLabel?: string }> {
-  const v2 = getStorage<Record<string, { deadline: string, deadlineLabel?: string }>>(STORAGE_KEY_DEADLINES, null as any)
-  if (v2 && typeof v2 === 'object' && Object.keys(v2).length > 0) {
-    return v2
-  }
-  
-  // Si v2 est vide, vérifier l'ancien stockage v1 : ne conserver QUE les dates futures légitimes, supprimer les anciennes dates par défaut échues
-  const old = getStorage<Record<string, { deadline: string, deadlineLabel?: string }>>('hech_didac_deadlines', null as any)
-  const clean: Record<string, { deadline: string, deadlineLabel?: string }> = {}
-  if (old && typeof old === 'object') {
-    const now = new Date()
-    for (const [k, v] of Object.entries(old)) {
-      if (v && v.deadline) {
-        const parsed = parseDeadline(v.deadline)
-        if (parsed && parsed > now) {
-          clean[k] = {
-            deadline: v.deadline,
-            deadlineLabel: v.deadlineLabel || formatDeadlineDisplay(v.deadline)
-          }
-        }
+  if (typeof window === 'undefined') return {}
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY_DEADLINES)
+    if (raw !== null) {
+      const parsed = JSON.parse(raw)
+      if (parsed && typeof parsed === 'object') {
+        return parsed
       }
     }
-  }
-  setStorage(STORAGE_KEY_DEADLINES, clean)
-  return clean
+  } catch (e) {}
+  return {}
+}
+
+if (typeof window !== 'undefined') {
+  window.addEventListener('storage', (event) => {
+    if (event.key === STORAGE_KEY_DEADLINES && event.newValue) {
+      try {
+        state.deadlines = JSON.parse(event.newValue)
+      } catch (e) {}
+    }
+  })
 }
 
 const state = reactive({
@@ -1611,6 +1608,20 @@ export const userStore = {
     state.deadlines = {}
     setStorage(STORAGE_KEY_DEADLINES, {})
     return { success: true, message: 'Toutes les échéances ont été effacées.' }
+  },
+
+  // Recharger les échéances depuis le stockage local (synchronisation à chaud)
+  syncFromStorage() {
+    if (typeof window === 'undefined') return
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY_DEADLINES)
+      if (raw !== null) {
+        const parsed = JSON.parse(raw)
+        if (parsed && typeof parsed === 'object') {
+          state.deadlines = parsed
+        }
+      }
+    } catch (e) {}
   },
 
   register(firstName: string, lastName: string, email: string) {

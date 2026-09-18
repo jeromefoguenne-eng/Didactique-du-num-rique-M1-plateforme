@@ -1,7 +1,11 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { userStore, formatDeadlineDisplay, getAlarmLevelInfo, parseDeadline } from '../stores/userStore'
 import { withBase } from 'vitepress'
+
+onMounted(() => {
+  userStore.syncFromStorage()
+})
 
 const firstName = ref('')
 const lastName = ref('')
@@ -1196,9 +1200,6 @@ function formatSize(bytes) {
                 <span v-else-if="getExerciseDeadlineInfo(ex.id).isDefined" class="badge-pending">
                   ⏳ À rendre
                 </span>
-                <span v-else class="badge-pending">
-                  🟢 Dépôt ouvert
-                </span>
               </div>
             </div>
 
@@ -1225,9 +1226,6 @@ function formatSize(bytes) {
                 <span v-else class="edb-status-passed">
                   ⏳ Rendu en attente
                 </span>
-              </div>
-              <div class="edb-right" v-else>
-                <span class="edb-status-open">🟢 Dépôt ouvert</span>
               </div>
             </div>
 

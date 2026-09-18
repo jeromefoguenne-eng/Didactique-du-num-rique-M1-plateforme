@@ -228,30 +228,75 @@ const activeStudentLateInfo = computed(() => {
 // GESTION DU CALENDRIER D'ÉCHÉANCES ADMIN
 // ==========================================
 const deadlinesForm = ref({})
+const deadlineDates = ref({})
+const deadlineTimes = ref({})
 const deadlineFeedback = ref({})
 const saveAllDeadlinesStatus = ref('')
 
 function initDeadlinesForm() {
+  userStore.syncFromStorage()
   const form = {}
+  const dates = {}
+  const times = {}
   for (const item of OFFICIAL_EVALUATION_ITEMS) {
     const eff = userStore.getExerciseDeadline(item.id)
     if (eff.isDefined && eff.deadline) {
-      const parts = eff.deadline.replace(' ', 'T')
-      form[item.id] = parts.length >= 16 ? parts.substring(0, 16) : parts
+      const parsed = parseDeadline(eff.deadline)
+      if (parsed) {
+        const yyyy = parsed.getFullYear()
+        const mm = String(parsed.getMonth() + 1).padStart(2, '0')
+        const dd = String(parsed.getDate()).padStart(2, '0')
+        const hh = String(parsed.getHours()).padStart(2, '0')
+        const min = String(parsed.getMinutes()).padStart(2, '0')
+        dates[item.id] = `${yyyy}-${mm}-${dd}`
+        times[item.id] = `${hh}:${min}`
+        form[item.id] = `${yyyy}-${mm}-${dd}T${hh}:${min}`
+      } else {
+        dates[item.id] = ''
+        times[item.id] = '23:59'
+        form[item.id] = ''
+      }
     } else {
+      dates[item.id] = ''
+      times[item.id] = '23:59'
       form[item.id] = ''
     }
   }
+  deadlineDates.value = dates
+  deadlineTimes.value = times
   deadlinesForm.value = form
 }
 
+function handleDateOrTimeChange(itemId) {
+  const date = deadlineDates.value[itemId]
+  if (!date || !date.trim()) {
+    deadlinesForm.value[itemId] = ''
+    saveSingleDeadline(itemId)
+    return
+  }
+  const time = (deadlineTimes.value[itemId] && deadlineTimes.value[itemId].trim()) || '23:59'
+  deadlineTimes.value[itemId] = time
+  deadlinesForm.value[itemId] = `${date.trim()}T${time}`
+  saveSingleDeadline(itemId)
+}
+
 function saveSingleDeadline(itemId) {
-  const val = deadlinesForm.value[itemId] || ''
-  userStore.setExerciseDeadline(itemId, val)
-  deadlineFeedback.value[itemId] = '✅ Enregistré !'
+  const date = deadlineDates.value[itemId]
+  if (!date || !date.trim()) {
+    userStore.setExerciseDeadline(itemId, '')
+    deadlinesForm.value[itemId] = ''
+    deadlineFeedback.value[itemId] = '⚪ Échéance retirée'
+  } else {
+    const time = (deadlineTimes.value[itemId] && deadlineTimes.value[itemId].trim()) || '23:59'
+    const fullIso = `${date.trim()}T${time}`
+    deadlinesForm.value[itemId] = fullIso
+    userStore.setExerciseDeadline(itemId, fullIso)
+    const formatted = formatDeadlineDisplay(fullIso)
+    deadlineFeedback.value[itemId] = `✅ Sauvegardé : ${formatted}`
+  }
   setTimeout(() => {
     delete deadlineFeedback.value[itemId]
-  }, 3000)
+  }, 3500)
 }
 
 function setRelativeDeadline(itemId, daysToAdd) {
@@ -260,11 +305,14 @@ function setRelativeDeadline(itemId, daysToAdd) {
   const yyyy = d.getFullYear()
   const mm = String(d.getMonth() + 1).padStart(2, '0')
   const dd = String(d.getDate()).padStart(2, '0')
-  deadlinesForm.value[itemId] = `${yyyy}-${mm}-${dd}T23:59`
+  deadlineDates.value[itemId] = `${yyyy}-${mm}-${dd}`
+  deadlineTimes.value[itemId] = '23:59'
   saveSingleDeadline(itemId)
 }
 
 function clearDeadline(itemId) {
+  deadlineDates.value[itemId] = ''
+  deadlineTimes.value[itemId] = '23:59'
   deadlinesForm.value[itemId] = ''
   userStore.setExerciseDeadline(itemId, '')
   deadlineFeedback.value[itemId] = '⚪ Échéance retirée'
@@ -274,8 +322,20 @@ function clearDeadline(itemId) {
 }
 
 function saveAllDeadlines() {
-  const res = userStore.setAllExerciseDeadlines(deadlinesForm.value)
-  saveAllDeadlinesStatus.value = `✅ Les ${res.count} échéances ont été enregistrées et appliquées en temps réel à toute la plateforme !`
+  const map = {}
+  for (const item of OFFICIAL_EVALUATION_ITEMS) {
+    const date = deadlineDates.value[item.id]
+    if (date && date.trim()) {
+      const time = (deadlineTimes.value[item.id] && deadlineTimes.value[item.id].trim()) || '23:59'
+      map[item.id] = `${date.trim()}T${time}`
+      deadlinesForm.value[item.id] = map[item.id]
+    } else {
+      map[item.id] = ''
+      deadlinesForm.value[item.id] = ''
+    }
+  }
+  const res = userStore.setAllExerciseDeadlines(map)
+  saveAllDeadlinesStatus.value = `✅ Les ${res.count} échéance(s) ont été enregistrées avec succès et sont actives sur toute la plateforme !`
   setTimeout(() => {
     saveAllDeadlinesStatus.value = ''
   }, 4500)
@@ -1565,12 +1625,24 @@ function exportAllResultsToExcel() {
 
                 <td>
                   <div class="deadline-input-group">
-                    <input 
-                      type="datetime-local" 
-                      v-model="deadlinesForm[item.id]" 
-                      class="input-datetime" 
-                      @change="saveSingleDeadline(item.id)"
-                    />
+                    <div class="deadline-picker-composite">
+                      <input 
+                        type="date" 
+                        v-model="deadlineDates[item.id]" 
+                        class="input-date-clean" 
+                        @input="handleDateOrTimeChange(item.id)"
+                        @change="handleDateOrTimeChange(item.id)"
+                        title="Date limite"
+                      />
+                      <input 
+                        type="time" 
+                        v-model="deadlineTimes[item.id]" 
+                        class="input-time-clean" 
+                        @input="handleDateOrTimeChange(item.id)"
+                        @change="handleDateOrTimeChange(item.id)"
+                        title="Heure limite (par défaut 23:59)"
+                      />
+                    </div>
                     <div class="deadline-current-label">
                       📅 Actuel : <strong>{{ userStore.getExerciseDeadline(item.id).deadlineLabel }}</strong>
                     </div>
@@ -1671,12 +1743,24 @@ function exportAllResultsToExcel() {
 
                 <td>
                   <div class="deadline-input-group">
-                    <input 
-                      type="datetime-local" 
-                      v-model="deadlinesForm[item.id]" 
-                      class="input-datetime" 
-                      @change="saveSingleDeadline(item.id)"
-                    />
+                    <div class="deadline-picker-composite">
+                      <input 
+                        type="date" 
+                        v-model="deadlineDates[item.id]" 
+                        class="input-date-clean" 
+                        @input="handleDateOrTimeChange(item.id)"
+                        @change="handleDateOrTimeChange(item.id)"
+                        title="Date limite"
+                      />
+                      <input 
+                        type="time" 
+                        v-model="deadlineTimes[item.id]" 
+                        class="input-time-clean" 
+                        @input="handleDateOrTimeChange(item.id)"
+                        @change="handleDateOrTimeChange(item.id)"
+                        title="Heure limite (par défaut 23:59)"
+                      />
+                    </div>
                     <div class="deadline-current-label">
                       📅 Actuel : <strong>{{ userStore.getExerciseDeadline(item.id).deadlineLabel }}</strong>
                     </div>
@@ -6330,6 +6414,44 @@ span.is-late {
   display: flex;
   flex-direction: column;
   gap: 4px;
+}
+
+.deadline-picker-composite {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.input-date-clean {
+  padding: 6px 8px;
+  border: 1.5px solid var(--vp-c-divider);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  box-sizing: border-box;
+  min-width: 135px;
+}
+.input-date-clean:focus {
+  border-color: #0284c7;
+  outline: none;
+}
+
+.input-time-clean {
+  width: 80px;
+  padding: 6px 6px;
+  border: 1.5px solid var(--vp-c-divider);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  box-sizing: border-box;
+}
+.input-time-clean:focus {
+  border-color: #0284c7;
+  outline: none;
 }
 
 .input-datetime {

@@ -16,8 +16,16 @@ Ce chapitre reproduit fidèlement et dans son intégralité le texte du syllabus
 Une méthodologie efficace consiste à faire construire les règles à partir des mécanismes du jeu, plutôt que de demander directement aux étudiants de rédiger un règlement. L’objectif est qu’ils passent progressivement de l’idée de jeu à un système de règles cohérent, jouable et compréhensible par un joueur qui ne connaît pas le projet.
 
 
-Méthodologie en 6 étapes : « Du prototype à la règle »
+### Méthodologie en 6 étapes : « Du prototype à la règle »
 
+| Étape | Travail des étudiants | Exemple |
+| :--- | :--- | :--- |
+| **1. Définir l’objectif** | Identifier ce que le joueur doit accomplir pour gagner. | « Être le premier à atteindre 20 points. » |
+| **2. Définir la boucle de jeu** | Décrire ce que fait un joueur à chaque tour. | « Je pioche → je joue une carte → j'applique son effet → je passe au joueur suivant. » |
+| **3. Identifier les contraintes** | Déterminer ce que le joueur peut ou ne peut pas faire. | « Un joueur ne peut jouer qu'une carte Action par tour. » |
+| **4. Définir les conséquences** | Préciser ce qui se produit après chaque action. | « Si le joueur répond correctement, il gagne 2 points. En cas d'erreur, il recule d'une case. » |
+| **5. Tester par le jeu** | Faire jouer le prototype sans expliquer oralement les règles au maximum. Les joueurs repèrent les ambiguïtés. | « Que se passe-t-il si deux joueurs arrivent sur la même case ? » |
+| **6. Rédiger et simplifier** | Transformer les décisions prises en règles courtes, précises et non ambiguës. | Remplacer « Vous pouvez éventuellement… » par « Le joueur peut… » |
 
 ---
 

@@ -84,6 +84,28 @@ const subCategories = [
 Retrouvez ci-dessous l'ensemble des modules méthodologiques et des fiches d'exercices pratiques guidant la réalisation de votre jeu de société, de l'idéation ludique jusqu'à la soutenance finale.
 :::
 
+<div class="callout-concept" style="margin: 1.8rem 0 2rem 0;">
+  <div class="callout-title">📋 Démarche du Projet : Du concept à l'expérimentation</div>
+  <p style="margin-top: 0.8rem; font-size: 0.98rem; line-height: 1.6;">
+    Le projet proposé consiste à placer les étudiants dans la situation de concepteurs d'un jeu de société intégrant des apprentissages liés au numérique, aux médias et aux technologies. L'objectif n'est pas simplement de fabriquer un objet amusant. Les étudiants doivent concevoir un dispositif pédagogique cohérent, depuis l'idée initiale jusqu'à l'expérimentation avec des joueurs.
+  </p>
+  <p style="font-size: 0.98rem; line-height: 1.6;">
+    Cette démarche est particulièrement intéressante parce qu'elle transforme l'étudiant en designer, producteur, technicien, communicant et évaluateur de sa propre production.
+  </p>
+  <p style="font-size: 0.98rem; line-height: 1.6; font-weight: 600; margin-bottom: 0.6rem;">
+    Le projet se déroule en 7 étapes, depuis la conception jusqu’à l’expérimentation :
+  </p>
+  <ol style="margin-bottom: 0; line-height: 1.7; font-size: 0.93rem;">
+    <li><strong>Imaginer le concept et les règles :</strong> par groupes, les étudiants définissent le thème, le public cible, l’objectif du jeu, les mécanismes ludiques, les règles, les conditions de victoire et les différents éléments nécessaires. Ils doivent justifier leurs choix et veiller à la cohérence entre le jeu et les apprentissages visés.</li>
+    <li><strong>Intégrer la photographie :</strong> les notions abordées dans le cours de photographie deviennent des éléments du jeu. Les étudiants peuvent notamment créer des cartes permettant d’identifier, analyser ou produire des photographies selon différentes contraintes : cadrage, composition, lumière, point de vue, etc.</li>
+    <li><strong>Créer les cartes avec l’IA :</strong> les étudiants utilisent des outils d’intelligence artificielle pour générer ou retravailler les illustrations des cartes. Ils apprennent à formuler des prompts, sélectionner et modifier les productions et exercer leur esprit critique face aux contenus générés.</li>
+    <li><strong>Fabriquer le plateau avec la découpeuse laser :</strong> le plateau est conçu numériquement puis fabriqué à l’aide de la découpeuse laser. Cette étape permet de travailler la conception, les contraintes techniques, les dimensions et le passage du modèle numérique à l’objet physique.</li>
+    <li><strong>Fabriquer les pions en 3D :</strong> les étudiants conçoivent ou adaptent des modèles de pions, préparent les fichiers puis réalisent leur impression en 3D. Ils expérimentent ainsi l'ensemble de la chaîne de fabrication numérique.</li>
+    <li><strong>Présenter le jeu en vidéo :</strong> chaque groupe réalise une courte vidéo présentant le concept, les règles, les mécanismes et les différents éléments du jeu. Cette production permet de travailler la communication audiovisuelle et la capacité à expliquer clairement une réalisation.</li>
+    <li><strong>Tester, évaluer et améliorer :</strong> les groupes organisent une phase de playtest avec d’autres étudiants. Ils observent la compréhension des règles, la jouabilité, l’équilibre, l'intérêt et les éventuels problèmes. À partir des retours obtenus, ils améliorent leur prototype.</li>
+  </ol>
+</div>
+
 ### 🎯 Choisissez une étape du projet pour explorer les ressources et consignes :
 
 <SubCategoryTiles :items="subCategories" />

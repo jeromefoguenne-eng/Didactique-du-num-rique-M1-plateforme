@@ -23,39 +23,22 @@ Les grandes étapes de la chaîne de fabrication additive comprennent :
 
 ---
 
-<div class="callout-exercise" style="margin: 2.2rem 0;">
-  <div class="callout-title" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
-    <span>🧱 Exercice 13 — Impression 3D : Réalisation des pions de jeu</span>
-    <span style="font-size: 0.82rem; font-weight: 600; padding: 4px 10px; border-radius: 6px; background: rgba(59, 130, 246, 0.15); color: var(--vp-c-brand-1);">Travail en groupe au FabLab</span>
-  </div>
-
-  <p style="margin-top: 0.8rem; font-size: 0.98rem; line-height: 1.6;">
-    <strong>Objectif :</strong> Modéliser et imprimer en 3D un jeu complet de pions personnalisés adaptés aux mécanismes et à la thématique d'éducation aux médias de votre jeu.
+<div class="callout-exercise" style="margin: 2rem 0;">
+  <div class="callout-title">🧱 Exercice 13 — Impression 3D : Réalisation des pions de jeu</div>
+  <p>
+    En groupe, modélisez et imprimez en 3D un jeu complet de pions personnalisés adaptés aux mécanismes et à la thématique d'éducation aux médias de votre jeu de société.
   </p>
-
-  <div style="margin: 1.4rem 0; display: flex; flex-wrap: wrap; gap: 12px;">
-    <a 
-      href="/documents/Exercice-13-Impression-3D.docx" 
-      download
-      class="btn-primary"
-      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: white !important; padding: 10px 18px; border-radius: 8px; font-weight: 600; background: var(--vp-c-brand-1);"
-    >
-      <span>📥 Télécharger la fiche de l'Exercice 13 (.docx)</span>
-    </a>
-
+  <div style="margin-top: 1.2rem;">
     <a 
       href="https://docs.google.com/document/d/1H_88UJvPPezdUXw1Vt8_U9wtsaFouepU/edit?usp=sharing" 
       target="_blank" 
       rel="noopener noreferrer"
-      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: var(--vp-c-text-1) !important; padding: 10px 18px; border-radius: 8px; font-weight: 600; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);"
+      class="btn-primary"
+      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: white !important; padding: 10px 18px; border-radius: 8px; font-weight: 600; background: var(--vp-c-brand-1);"
     >
       <span>📄 Ouvrir l'Exercice 13 sur Google Docs ↗</span>
     </a>
   </div>
-
-  <p style="margin-top: 1rem; margin-bottom: 0; font-size: 0.92rem; color: var(--vp-c-text-2);">
-    📤 <strong>Dépôt du travail :</strong> Déposez vos fichiers de modèles 3D (.stl) ainsi qu'une photo de vos pions imprimés dans votre <a href="/espace-membre"><strong>Espace Membre</strong></a> (onglet <em>« Dépôt de Travaux »</em>).
-  </p>
 </div>
 
 ---

@@ -604,65 +604,22 @@ La règle des 30° : lorsqu'un même sujet est présent dans deux plans qui se s
 ---
 
 
-<div class="callout-exercise" style="margin: 2.5rem 0;">
-  <div class="callout-title" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
-    <span>📹 Exercice 14 — Créer une capsule vidéo</span>
-    <span style="font-size: 0.82rem; font-weight: 600; padding: 4px 10px; border-radius: 6px; background: rgba(59, 130, 246, 0.15); color: var(--vp-c-brand-1);">Groupes de 2 ou 3 étudiants</span>
-  </div>
-
-  <p style="margin-top: 0.8rem; font-size: 0.98rem; line-height: 1.6;">
-    <strong>Objectif :</strong> Produire une courte vidéo destinée à présenter et valoriser votre jeu de société en mobilisant les techniques de prise de vue et de montage vues au cours.
+<div class="callout-exercise" style="margin: 2rem 0;">
+  <div class="callout-title">📹 Exercice 14 — Créer une capsule vidéo</div>
+  <p>
+    En groupe, produisez une courte vidéo destinée à présenter et valoriser votre jeu de société en mobilisant les techniques de prise de vue et de montage vues au cours.
   </p>
-
-  <div style="background: var(--vp-c-bg-soft); border-left: 4px solid var(--vp-c-brand-1); padding: 1.2rem; border-radius: 8px; margin: 1.2rem 0;">
-    <h4 style="margin-top: 0; color: var(--vp-c-brand-1);">1. Format de la vidéo</h4>
-    <ul style="font-size: 0.92rem; margin-bottom: 0.8rem;">
-      <li>Réalisez une capsule vidéo de <strong>2 à 3 minutes</strong> (ou 3 courtes vidéos d’environ 1 minute formant un ensemble cohérent).</li>
-      <li>Format adapté aux réseaux sociaux : vertical (9:16) ou horizontal (16:9), image nette, son soigné et rythme dynamique.</li>
-    </ul>
-
-    <h4 style="margin-top: 1rem; color: var(--vp-c-brand-1);">2. Angles de présentation au choix</h4>
-    <ul style="font-size: 0.92rem; margin-bottom: 0.8rem;">
-      <li><strong>Présentation générale :</strong> concept, public cible, règles clés et objectifs pédagogiques.</li>
-      <li><strong>Tutoriel de jeu :</strong> démonstration pas-à-pas d'un tour de jeu et des mécaniques.</li>
-      <li><strong>Présentation du matériel :</strong> plateau découpé laser, pions 3D, cartes générées par IA.</li>
-      <li><strong>Teaser promotionnel :</strong> bande-annonce dynamique donnant envie de tester le jeu.</li>
-    </ul>
-
-    <h4 style="margin-top: 1rem; color: var(--vp-c-brand-1);">3. Qualité technique et intentions audiovisuelles</h4>
-    <p style="font-size: 0.92rem; margin-bottom: 0.5rem;">
-      Mobilisez activement les notions abordées : variété de l'échelle des plans, angles signifiants, mouvements fluides, montage rythmé (transitions, titrage) et ambiance sonore adaptée (musique, bruitages, voix-off claire).
-    </p>
-
-    <h4 style="margin-top: 1rem; color: var(--vp-c-brand-1);">4. Fiche réflexive de justification</h4>
-    <p style="font-size: 0.92rem; margin-bottom: 0;">
-      Joignez une courte note explicitant : le choix du format, les intentions associées aux plans et angles, le travail du rythme de montage et la cohérence de la bande sonore avec l'identité de votre jeu.
-    </p>
-  </div>
-
-  <div style="margin: 1.4rem 0; display: flex; flex-wrap: wrap; gap: 12px;">
-    <a 
-      href="/documents/Exercice-14-Video.docx" 
-      download
-      class="btn-primary"
-      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: white !important; padding: 10px 18px; border-radius: 8px; font-weight: 600; background: var(--vp-c-brand-1);"
-    >
-      <span>📥 Télécharger la fiche de l'Exercice 14 (.docx)</span>
-    </a>
-
+  <div style="margin-top: 1.2rem;">
     <a 
       href="https://docs.google.com/document/d/1JO_9ayYt3IqZfStfUPkzT3GDOF65VBxQ/edit?usp=sharing" 
       target="_blank" 
       rel="noopener noreferrer"
-      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: var(--vp-c-text-1) !important; padding: 10px 18px; border-radius: 8px; font-weight: 600; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);"
+      class="btn-primary"
+      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: white !important; padding: 10px 18px; border-radius: 8px; font-weight: 600; background: var(--vp-c-brand-1);"
     >
       <span>📄 Ouvrir l'Exercice 14 sur Google Docs ↗</span>
     </a>
   </div>
-
-  <p style="margin-top: 1rem; margin-bottom: 0; font-size: 0.92rem; color: var(--vp-c-text-2);">
-    📤 <strong>Dépôt du travail :</strong> Déposez votre lien vidéo (ou fichier MP4) accompagné de votre fiche justificative dans votre <a href="/espace-membre"><strong>Espace Membre</strong></a> (onglet <em>« Dépôt de Travaux »</em>).
-  </p>
 </div>
 
 

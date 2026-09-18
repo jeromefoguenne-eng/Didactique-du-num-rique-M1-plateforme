@@ -122,65 +122,22 @@ Les étudiants peuvent alors :
 ---
 
 
-<div class="callout-exercise" style="margin: 2.5rem 0;">
-  <div class="callout-title" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
-    <span>📊 Exercice 15 — Tester et améliorer son jeu de société</span>
-    <span style="font-size: 0.82rem; font-weight: 600; padding: 4px 10px; border-radius: 6px; background: rgba(59, 130, 246, 0.15); color: var(--vp-c-brand-1);">Groupes de 2 ou 3 étudiants</span>
-  </div>
-
-  <p style="margin-top: 0.8rem; font-size: 0.98rem; line-height: 1.6;">
-    <strong>Objectif :</strong> Avant de finaliser votre jeu, confrontez-le à de véritables joueurs afin d’identifier ses points forts, ses éventuelles difficultés et les améliorations prioritaires à apporter grâce à un recueil de données rigoureux.
+<div class="callout-exercise" style="margin: 2rem 0;">
+  <div class="callout-title">📊 Exercice 15 — Tester et améliorer son jeu de société</div>
+  <p>
+    En groupe, faites tester votre jeu auprès de vos pairs et de testeurs externes, recueillez leurs retours via un Google Forms et analysez les données sur Google Sheets pour identifier des pistes concrètes d'amélioration.
   </p>
-
-  <div style="background: var(--vp-c-bg-soft); border-left: 4px solid var(--vp-c-brand-1); padding: 1.2rem; border-radius: 8px; margin: 1.2rem 0;">
-    <h4 style="margin-top: 0; color: var(--vp-c-brand-1);">1. Organiser les sessions de test</h4>
-    <p style="font-size: 0.93rem; margin-bottom: 0.5rem;">
-      Votre groupe doit impérativement faire tester son jeu dans des conditions authentiques :
-    </p>
-    <ul style="font-size: 0.92rem; margin-bottom: 0.8rem;">
-      <li>Par <strong>au moins un autre groupe</strong> de la classe ;</li>
-      <li>Par <strong>au moins deux personnes extérieures</strong> à l’école.</li>
-    </ul>
-
-    <h4 style="margin-top: 1rem; color: var(--vp-c-brand-1);">2. Élaborer le Google Forms</h4>
-    <p style="font-size: 0.92rem; margin-bottom: 0.5rem;">
-      Concevez un formulaire structuré selon une <strong>échelle de Likert</strong> (1 = Pas du tout d'accord à 5 = Tout à fait d'accord) couvrant les 5 dimensions clés (compréhension des règles, jouabilité/mécanismes, matériel, dimension pédagogique, engagement) et comportant <strong>au moins 3 questions ouvertes</strong> qualitatives.
-    </p>
-
-    <h4 style="margin-top: 1rem; color: var(--vp-c-brand-1);">3. Recueil et passation</h4>
-    <p style="font-size: 0.92rem; margin-bottom: 0.5rem;">
-      Chaque joueur remplit individuellement le questionnaire immédiatement après la partie. Vous devez collecter un minimum de 3 retours complets (1 groupe pairs + 2 externes).
-    </p>
-
-    <h4 style="margin-top: 1rem; color: var(--vp-c-brand-1);">4. Analyse statistique sur Google Sheets</h4>
-    <p style="font-size: 0.92rem; margin-bottom: 0;">
-      Exportez vos données dans <strong>Google Sheets</strong>. Calculez les moyennes par dimension, observez la dispersion, analysez les verbatims qualitatifs et formulez <strong>au moins trois améliorations concrètes</strong> apportées à votre prototype à partir des données probantes.
-    </p>
-  </div>
-
-  <div style="margin: 1.4rem 0; display: flex; flex-wrap: wrap; gap: 12px;">
-    <a 
-      href="/documents/Exercice-15-Faire-tester-le-jeu.docx" 
-      download
-      class="btn-primary"
-      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: white !important; padding: 10px 18px; border-radius: 8px; font-weight: 600; background: var(--vp-c-brand-1);"
-    >
-      <span>📥 Télécharger la fiche de l'Exercice 15 (.docx)</span>
-    </a>
-
+  <div style="margin-top: 1.2rem;">
     <a 
       href="https://docs.google.com/document/d/1uIheBr_KU2Dh2TjYkegz7lHixsUNxs4t/edit?usp=sharing" 
       target="_blank" 
       rel="noopener noreferrer"
-      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: var(--vp-c-text-1) !important; padding: 10px 18px; border-radius: 8px; font-weight: 600; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);"
+      class="btn-primary"
+      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: white !important; padding: 10px 18px; border-radius: 8px; font-weight: 600; background: var(--vp-c-brand-1);"
     >
       <span>📄 Ouvrir l'Exercice 15 sur Google Docs ↗</span>
     </a>
   </div>
-
-  <p style="margin-top: 1rem; margin-bottom: 0; font-size: 0.92rem; color: var(--vp-c-text-2);">
-    📤 <strong>Dépôt du travail :</strong> Déposez le lien de votre formulaire Google Forms, votre feuille Google Sheets d'analyse et votre bilan des 3 améliorations dans votre <a href="/espace-membre"><strong>Espace Membre</strong></a> (onglet <em>« Dépôt de Travaux »</em>).
-  </p>
 </div>
 
 

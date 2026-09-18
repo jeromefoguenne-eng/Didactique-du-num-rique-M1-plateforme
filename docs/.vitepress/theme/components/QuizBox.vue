@@ -1316,6 +1316,186 @@ const MODULE_QUESTIONS = {
       ]
     }
   ],
+  '05-1': [
+    {
+      id: 'q1',
+      type: 'qcm',
+      title: "1. La ludopédagogie selon les sciences de l'éducation",
+      text: "Selon le syllabus (notamment les travaux de l'Université de Bordeaux), qu'est-ce qui distingue une véritable démarche de ludopédagogie d'un simple habillage ludique ?",
+      options: [
+        "Le fait de donner des récompenses en bonbons ou des points bonus aux élèves gagnants.",
+        "Les apprentissages doivent être construits à travers l'expérience de jeu elle-même, et non par un vernis superficiel plaqué sur un cours magistral.",
+        "L'obligation d'utiliser des consoles de jeux vidéo plutôt que des jeux de plateau.",
+        "L'absence totale d'intervention ou de consignes de la part de l'enseignant."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Pour qu'il y ait ludopédagogie, les savoirs et compétences doivent émerger organiquement des interactions et décisions requises par le jeu."
+    },
+    {
+      id: 'q2',
+      type: 'qcm',
+      title: "2. Johan Huizinga et le « cercle magique » (Homo ludens)",
+      text: "Dans Homo ludens (1938), quel principe fondamental Johan Huizinga met-il en évidence à propos de l'espace de jeu ?",
+      options: [
+        "Le jeu est une activité mercantile réservée au spectacle télévisé.",
+        "Le jeu crée un espace-temps séparé de la vie ordinaire (« cercle magique »), régi par ses propres règles, où l'erreur est dédramatisée et permet d'expérimenter sans danger.",
+        "Le jeu est exclusivement destiné aux jeunes enfants et disparaît à l'âge adulte.",
+        "Le jeu doit impérativement interdire toute règle écrite pour préserver l'improvisation totale."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Le cercle magique suspend temporairement les conséquences du réel, autorisant l'essai, le tâtonnement et la liberté d'action."
+    },
+    {
+      id: 'q3',
+      type: 'qcm',
+      title: "3. La classification de Roger Caillois (Les jeux et les hommes)",
+      text: "Quelles sont les 4 grandes catégories d'attitudes ludiques définies par Roger Caillois ?",
+      options: [
+        "Cartes, dés, pions et plateaux de bois.",
+        "Agôn (compétition), Alea (hasard), Mimicry (simulation/rôle) et Ilinx (vertige/rupture de perception).",
+        "Jeux d'intérieur, jeux de cour, jeux vidéo et jeux de cartes.",
+        "Jeux solitaires, jeux de duel, jeux coopératifs et jeux en ligne."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Caillois distingue ces 4 attitudes et les articule entre Paidia (spontanéité libre) et Ludus (règles et discipline construite)."
+    },
+    {
+      id: 'q4',
+      type: 'qcm',
+      title: "4. La boucle expérientielle et le droit à l'erreur",
+      text: "Comment la situation de jeu favorise-t-elle le traitement positif de l'erreur dans l'apprentissage ?",
+      options: [
+        "En pénalisant immédiatement l'erreur par une baisse de la note scolaire.",
+        "En intégrant l'erreur comme une information utile au sein d'une boucle authentique : décision → conséquence immédiate → analyse → régulation.",
+        "En empêchant matériellement les élèves de faire le moindre mauvais choix.",
+        "En éliminant définitivement le joueur dès la première erreur sans lui permettre de rejouer."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Dans un jeu, perdre une manche n'est pas un stigmate d'incompétence : c'est un feedback immédiat qui pousse à comprendre le système."
+    },
+    {
+      id: 'q5',
+      type: 'qcm',
+      title: "5. L'ingénierie ludopédagogique contre le mythe de la motivation spontanée",
+      text: "Pourquoi le syllabus précise-t-il qu'il faut rejeter l'équation simpliste « jeu = motivation = meilleur apprentissage » ?",
+      options: [
+        "Parce que le jeu ne produit aucun effet d'apprentissage sans un alignement didactique rigoureux entre mécanismes, objectifs, consignes et phase de débriefing.",
+        "Parce que les élèves détestent jouer en classe et préfèrent toujours les cours magistraux.",
+        "Parce que les jeux de société sont trop chers pour les budgets des écoles.",
+        "Uniquement pour des motifs légaux liés aux droits d'auteur des éditeurs de jeux."
+      ],
+      correctIndex: 0,
+      points: 3,
+      explanation: "Le jeu n'est pas magique en soi : sans ingénierie pédagogique pensée et sans débriefing réflexif formalisé, il reste une récréation vide de sens didactique."
+    },
+    {
+      id: 'q6',
+      type: 'open',
+      title: "6. Réflexivité sur la posture de concepteur ludo-éducatif",
+      text: "En vous appuyant sur les concepts de Huizinga (cercle magique) et de Caillois (Agôn, Alea, Mimicry, Ilinx), analysez comment vous envisagez de concevoir votre jeu sur l'éducation aux médias. Pourquoi placer l'étudiant dans la posture de créateur de jeu est-il pédagogiquement plus puissant que de simplement le faire jouer ?",
+      points: 5,
+      modelAnswer: "Passer de la posture de joueur à celle de créateur inverse le rapport au savoir : l'étudiant ne subit plus des règles préétablies, il doit modéliser la complexité d'un enjeu d'éducation aux médias (infox, algorithmes, bulles de filtres) sous forme de mécanismes interactifs cohérents. Par exemple, mobiliser l'Agôn (défi critique entre joueurs) ou la Mimicry (incarner un journaliste vs un propagateur de rumeurs) dans le cadre d'un cercle magique protégé force les concepteurs à décomposer les notions didactiques, à anticiper les incompréhensions d'autrui et à formaliser une ingénierie de règles rigoureuse.",
+      rubricCriteria: [
+        "Mobilisation pertinente des concepts théoriques du cours (Huizinga, Caillois, cercle magique).",
+        "Analyse comparative entre la posture passive de joueur et la posture active de concepteur.",
+        "Lien explicite avec les enjeux pédagogiques de l'éducation aux médias."
+      ]
+    }
+  ],
+  '07': [
+    {
+      id: 'q1',
+      type: 'qcm',
+      title: "1. Le droit à l'image dans l'espace public",
+      text: "En droit belge et européen (RGPD), dans quelle condition peut-on photographier et diffuser l'image d'une personne sans son autorisation écrite préalable ?",
+      options: [
+        "Dès que la personne est dans la rue, aucune autorisation n'est jamais requise.",
+        "Lorsque la personne se trouve fortuitement dans une vue d'ensemble d'un lieu public lors d'un événement d'actualité ou d'une manifestation publique, sans être isolée ni visée au premier plan de façon préjudiciable.",
+        "Uniquement si la personne a plus de 65 ans.",
+        "Il est strictement interdit de prendre la moindre photo dans un lieu public sans faire signer un formulaire à chaque passant."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "La jurisprudence reconnaît une exception pour le droit à l'information et les vues d'ensemble de foules, à condition que le cadrage n'individualise pas la personne de manière abusive."
+    },
+    {
+      id: 'q2',
+      type: 'qcm',
+      title: "2. La règle des tiers en composition photographique",
+      text: "Quel est le rôle technique et visuel de la règle des tiers dans la composition d'une image ?",
+      options: [
+        "Obliger à placer le sujet exactement au centre géométrique du cliché.",
+        "Découper le cadre par deux lignes horizontales et deux lignes verticales pour positionner les points d'intérêt sur les lignes de force et dynamiser la lecture visuelle.",
+        "Prendre trois photos successives pour choisir la plus nette.",
+        "Diviser le temps d'exposition par trois pour éviter le flou de bougé."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "La règle des tiers rompt avec la symétrie statique du centrage pour créer un parcours visuel dynamique guidant l'œil vers les points d'accroche."
+    },
+    {
+      id: 'q3',
+      type: 'qcm',
+      title: "3. La technique du surcadrage",
+      text: "En quoi consiste le surcadrage et quel effet esthétique et sémiotique permet-il de produire ?",
+      options: [
+        "Utiliser un cadre physique en plastique autour de l'écran du smartphone.",
+        "Utiliser un élément de l'environnement (embrasure de porte, arche, feuillage, fenêtre) pour encadrer le sujet à l'intérieur de l'image, créant de la profondeur et focalisant le regard.",
+        "Rogner la photo pour ne garder que le visage en gros plan.",
+        "Ajouter une bordure blanche épaisse autour de l'image imprimée."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Le surcadrage structure la composition en isolant le sujet et en créant une impression de tableau dans le tableau qui théâtralise la scène."
+    },
+    {
+      id: 'q4',
+      type: 'qcm',
+      title: "4. L'instant prégnant et la composition narrative",
+      text: "Que désigne la notion d'« instant prégnant » en photographie et en analyse d'image ?",
+      options: [
+        "Le moment précis où la batterie de l'appareil est totalement chargée.",
+        "Le moment unique où les éléments spatiaux, les gestes et la lumière s'alignent pour synthétiser et exprimer toute la tension et le sens de l'action.",
+        "Le délai nécessaire pour que le capteur numérique traite les pixels d'une image RAW.",
+        "Le moment où le photographe demande aux personnes de poser et de sourire."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Hérité de Lessing et magnifié par Cartier-Bresson, l'instant prégnant fige le moment décisif qui résume le passé et annonce le futur de la scène."
+    },
+    {
+      id: 'q5',
+      type: 'qcm',
+      title: "5. La Gestalt-théorie appliquée à la lecture d'image",
+      text: "Selon la Gestalt-théorie présentée dans le syllabus, comment notre cerveau appréhende-t-il une image complexe ?",
+      options: [
+        "Le cerveau analyse chaque pixel séparément sans chercher de lien global.",
+        "Le tout est perçu comme différent de la simple somme des parties : le cerveau comble les manques et reconstruit une structure globale dotée de sens.",
+        "Le cerveau rejette toute image qui n'est pas parfaitement symétrique.",
+        "Seules les couleurs primaires sont perçues par le système cognitif humain."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "La théorie de la forme (Gestalt) démontre que notre perception organise spontanément les stimuli visuels en touts cohérents (comme le fusil reconstitué avec des ossements)."
+    },
+    {
+      id: 'q6',
+      type: 'open',
+      title: "6. Réflexivité sur l'Exercice 10 (Photographier le numérique)",
+      text: "Dans le cadre de l'Exercice 10, parmi les 6 techniques de composition réalisées (surcadrage, tiers, regard, instant prégnant, opposition, analogie), choisissez celle qui a le plus renforcé votre message critique sur la société numérique. Décrivez votre cliché (mise en scène, sujet) et justifiez l'effet produit sur le spectateur.",
+      points: 5,
+      modelAnswer: "Exemple de retour réflexif : Nous avons mobilisé l'opposition dans l'image et le jeu sur le regard pour dénoncer l'isolement provoqué par l'hyperconnexion. Au premier plan, un adolescent est absorbé par la lumière bleue de son smartphone dans une posture prostrée ; en arrière-plan flou mais identifiable, un groupe d'amis rit autour d'une table sans qu'il ne lève les yeux. L'opposition entre la lumière froide de l'écran et la chaleur du groupe crée un contraste émotionnel saisissant : le cadrage ne documente pas simplement un fait, il met en tension visuelle l'illusion de connexion numérique face à la rupture du lien social réel.",
+      rubricCriteria: [
+        "Identification précise de la technique de composition photographique mobilisée.",
+        "Description concrète de la scène photographiée et de ses choix esthétiques (lumière, plans, sujet).",
+        "Analyse rigoureuse de l'articulation entre la forme visuelle et le message critique sur le numérique."
+      ]
+    }
+  ],
   '08': [
     {
       id: 'q1',

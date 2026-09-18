@@ -133,62 +133,22 @@ flowchart LR
 
 ## 📝 Exercice Pratique Associé : Exercice 11 (Supports du jeu avec l'IA)
 
-<div class="callout-exercise" style="margin: 1.5rem 0;">
-  <div class="callout-title">📋 EXERCICE 11 — CRÉER LES SUPPORTS DE VOTRE JEU AVEC L’IA</div>
-  
+<div class="callout-exercise" style="margin: 2rem 0;">
+  <div class="callout-title">📋 Exercice 11 — Créer les supports de votre jeu avec l’IA</div>
   <p>
-    <strong>Objectif de l'atelier :</strong> À partir du concept et des règles de votre jeu de société, vous allez produire en binôme les principaux supports nécessaires à sa présentation et à son utilisation en classe. Vous utiliserez de manière articulée plusieurs outils d’IA et de conception graphique. L’objectif n’est pas seulement de générer du contenu brut, mais de <strong>concevoir, sélectionner, vérifier, critiquer et améliorer</strong> les productions obtenues.
+    À partir du concept et des règles de votre jeu de société, produisez en groupe les principaux supports nécessaires à sa présentation et à son utilisation en classe (logo, livret de règles, cartes de jeu) en combinant les outils d’IA générative et de conception graphique.
   </p>
-
-  <div style="background: var(--vp-c-bg); border: 1px solid var(--vp-c-divider); border-radius: 8px; padding: 1.2rem; margin: 1.2rem 0;">
-    <h4 style="margin-top: 0; color: var(--vp-c-brand-1); display: flex; align-items: center; gap: 8px;">
-      <span>🎨 Volet 1 : Créer le logo du jeu — Recraft + Canva</span>
-    </h4>
-    <p style="margin-bottom: 0.5rem; font-size: 0.93rem;">
-      Concevez une identité visuelle originale. Définissez ce que doit transmettre le logo (nom, thème, public cible, ambiance). Générez des pistes sur <strong>Recraft</strong>, sélectionnez la meilleure proposition, importez-la dans <strong>Canva</strong> pour caler la typographie et la lisibilité.<br/>
-      <strong>Livrable attendu :</strong> 1 logo final haute résolution + variantes (fond transparent, monochrome).
-    </p>
-
-    <h4 style="margin-top: 1rem; color: var(--vp-c-brand-1); display: flex; align-items: center; gap: 8px;">
-      <span>📖 Volet 2 : Créer le manuel de règles — ChatGPT + Canva</span>
-    </h4>
-    <p style="margin-bottom: 0.5rem; font-size: 0.93rem;">
-      Rédigez le manuel permettant à un joueur autonome de comprendre et jouer sans aide extérieure. Utilisez <strong>ChatGPT</strong> pour structurer les rubriques (objectif, matériel, mise en place, déroulement du tour, conditions de victoire, exemples). Corrigez impérativement les erreurs et hallucinations, puis mettez en page sous forme de livret/brochure dans <strong>Canva</strong>.<br/>
-      <strong>Livrable attendu :</strong> 1 livret de règles complet et prêt à être distribué aux joueurs.
-    </p>
-
-    <h4 style="margin-top: 1rem; color: var(--vp-c-brand-1); display: flex; align-items: center; gap: 8px;">
-      <span>🃏 Volet 3 : Créer les cartes du jeu — Gemini + Canva</span>
-    </h4>
-    <p style="margin-bottom: 0.5rem; font-size: 0.93rem;">
-      Produisez le deck complet de cartes nécessaires au jeu (Questions, Défis, Événements, Objets, Rôles). Utilisez <strong>Gemini</strong> pour formuler les textes et générer les visuels selon la grille des 8 paramètres. Créez un gabarit de carte homogène dans <strong>Canva</strong> et déclinez l'ensemble du jeu en veillant aux contrastes et à la jouabilité.<br/>
-      <strong>Livrable attendu :</strong> 1 jeu complet de cartes prêt à être imprimé et découpé.
-    </p>
-  </div>
-
-  <div style="margin: 1.2rem 0; display: flex; flex-wrap: wrap; gap: 12px;">
-    <a 
-      href="/documents/Exercice-11-Supports-IA.docx" 
-      download
-      class="btn-primary"
-      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: white !important; padding: 10px 18px; border-radius: 8px; font-weight: 600; background: var(--vp-c-brand-1);"
-    >
-      <span>📥 Télécharger la fiche de l'Exercice 11 (.docx)</span>
-    </a>
-
+  <div style="margin-top: 1.2rem;">
     <a 
       href="https://docs.google.com/document/d/1CzyMJRbjyvYVh7XP83Lx4tjxnq23oHXX/edit?usp=sharing" 
       target="_blank" 
       rel="noopener noreferrer"
-      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: var(--vp-c-text-1) !important; padding: 10px 18px; border-radius: 8px; font-weight: 600; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);"
+      class="btn-primary"
+      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: white !important; padding: 10px 18px; border-radius: 8px; font-weight: 600; background: var(--vp-c-brand-1);"
     >
       <span>📄 Ouvrir l'Exercice 11 sur Google Docs ↗</span>
     </a>
   </div>
-
-  <p style="margin-top: 1rem; margin-bottom: 0; font-size: 0.92rem; color: var(--vp-c-text-2);">
-    📤 <strong>Dépôt du travail :</strong> Une fois vos maquettes finalisées, déposez vos fichiers (logo, livret de règles PDF et planches de cartes) directement dans votre <a href="/espace-membre"><strong>Espace Membre</strong></a> (onglet <em>« Dépôt de Travaux »</em>).
-  </p>
 </div>
 
 ---

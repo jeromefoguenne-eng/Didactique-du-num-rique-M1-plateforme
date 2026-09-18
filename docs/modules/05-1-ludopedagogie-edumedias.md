@@ -108,29 +108,15 @@ Il convient toutefois d'éviter une vision trop simpliste selon laquelle « jeu 
 
 ---
 
+## 🎓 Auto-évaluation & Réflexivité (6.1)
 
-### Créer un jeu de société d’édu. Médias. au cours
+Testez votre compréhension des théories du jeu (Huizinga, Caillois) et de la démarche de ludopédagogie :
 
-
-Le projet proposé consiste à placer les étudiants dans la situation de concepteurs d'un jeu de société intégrant des apprentissages liés au numérique, aux médias et aux technologies. L'objectif n'est pas simplement de fabriquer un objet amusant. Les étudiants doivent concevoir un dispositif pédagogique cohérent, depuis l'idée initiale jusqu'à l'expérimentation avec des joueurs.
-
-
-Cette démarche est particulièrement intéressante parce qu'elle transforme l'étudiant en designer, producteur, technicien, communicant et évaluateur de sa propre production.
-
-
-Le projet se déroule en **7 étapes**, depuis la conception jusqu’à l’expérimentation :
-
-1. **Imaginer le concept et les règles :** par groupes, les étudiants définissent le thème, le public cible, l’objectif du jeu, les mécanismes ludiques, les règles, les conditions de victoire et les différents éléments nécessaires. Ils doivent justifier leurs choix et veiller à la cohérence entre le jeu et les apprentissages visés.
-2. **Intégrer la photographie :** les notions abordées dans le cours de photographie deviennent des éléments du jeu. Les étudiants peuvent notamment créer des cartes permettant d’identifier, analyser ou produire des photographies selon différentes contraintes : cadrage, composition, lumière, point de vue, etc.
-3. **Créer les cartes avec l’IA :** les étudiants utilisent des outils d’intelligence artificielle pour générer ou retravailler les illustrations des cartes. Ils apprennent à formuler des prompts, sélectionner et modifier les productions et exercer leur esprit critique face aux contenus générés.
-4. **Fabriquer le plateau avec la découpeuse laser :** le plateau est conçu numériquement puis fabriqué à l’aide de la découpeuse laser. Cette étape permet de travailler la conception, les contraintes techniques, les dimensions et le passage du modèle numérique à l’objet physique.
-5. **Fabriquer les pions en 3D :** les étudiants conçoivent ou adaptent des modèles de pions, préparent les fichiers puis réalisent leur impression en 3D. Ils expérimentent ainsi l'ensemble de la chaîne de fabrication numérique.
-6. **Présenter le jeu en vidéo :** chaque groupe réalise une courte vidéo présentant le concept, les règles, les mécanismes et les différents éléments du jeu. Cette production permet de travailler la communication audiovisuelle et la capacité à expliquer clairement une réalisation.
-7. **Tester, évaluer et améliorer :** les groupes organisent une phase de playtest avec d’autres étudiants. Ils observent la compréhension des règles, la jouabilité, l’équilibre, l'intérêt et les éventuels problèmes. À partir des retours obtenus, ils améliorent leur prototype.
-
+<ClientOnly>
+  <QuizBox moduleId="05-1" moduleTitle="6.1 Ludopédagogie & Édumédias" />
+</ClientOnly>
 
 ---
-
 
 ## Navigation
 - ⬅️ **[06. Hub Projet Jeu de société](/modules/05-projet-jeu-societe)**

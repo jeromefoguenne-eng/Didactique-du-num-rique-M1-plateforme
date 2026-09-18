@@ -1,4 +1,4 @@
-import { reactive, computed } from 'vue'
+import { reactive, computed, ref } from 'vue'
 
 export interface User {
   id: string
@@ -1478,6 +1478,8 @@ function setStorage<T>(key: string, val: T): boolean {
   }
 }
 
+const deadlinesTrigger = ref(0)
+
 function initInitialDeadlines(): Record<string, { deadline: string, deadlineLabel?: string }> {
   if (typeof window === 'undefined') return {}
   try {
@@ -1490,16 +1492,6 @@ function initInitialDeadlines(): Record<string, { deadline: string, deadlineLabe
     }
   } catch (e) {}
   return {}
-}
-
-if (typeof window !== 'undefined') {
-  window.addEventListener('storage', (event) => {
-    if (event.key === STORAGE_KEY_DEADLINES && event.newValue) {
-      try {
-        state.deadlines = JSON.parse(event.newValue)
-      } catch (e) {}
-    }
-  })
 }
 
 const state = reactive({
@@ -1518,6 +1510,20 @@ const state = reactive({
   evaluations: getStorage<Record<string, EvaluationRecord>>(STORAGE_KEY_EVALUATIONS, DEFAULT_EVALUATIONS),
   deadlines: initInitialDeadlines()
 })
+
+if (typeof window !== 'undefined') {
+  window.addEventListener('storage', (event) => {
+    if (event.key === STORAGE_KEY_DEADLINES && event.newValue) {
+      try {
+        state.deadlines = JSON.parse(event.newValue)
+        deadlinesTrigger.value++
+      } catch (e) {}
+    }
+  })
+  window.addEventListener('focus', () => {
+    userStore.syncFromStorage()
+  })
+}
 
 export const userStore = {
   get currentUser() {
@@ -1545,12 +1551,23 @@ export const userStore = {
     return state.quizAttempts
   },
   get deadlines() {
+    void deadlinesTrigger.value
     return state.deadlines
+  },
+  get deadlinesRevision() {
+    return deadlinesTrigger.value
   },
 
   // Récupérer l'échéance effective d'un exercice (fixée par l'enseignant, aucune par défaut)
   getExerciseDeadline(exerciseId: string): { deadline: string, deadlineLabel: string, isDefined: boolean, isCustom: boolean } {
-    const custom = state.deadlines[exerciseId]
+    void deadlinesTrigger.value
+    const key = (exerciseId === 'exercice-video' && !state.deadlines['exercice-video'] && state.deadlines['exercice-14'])
+      ? 'exercice-14'
+      : (exerciseId === 'exercice-14' && !state.deadlines['exercice-14'] && state.deadlines['exercice-video'])
+        ? 'exercice-video'
+        : exerciseId
+
+    const custom = state.deadlines[key]
     if (custom && custom.deadline && custom.deadline.trim() !== '') {
       return {
         deadline: custom.deadline,
@@ -1572,15 +1589,21 @@ export const userStore = {
     const newDeadlines = { ...state.deadlines }
     if (!deadline || !deadline.trim()) {
       delete newDeadlines[exerciseId]
+      if (exerciseId === 'exercice-video') delete newDeadlines['exercice-14']
+      if (exerciseId === 'exercice-14') delete newDeadlines['exercice-video']
     } else {
       const cleanDate = deadline.trim()
-      newDeadlines[exerciseId] = {
+      const entry = {
         deadline: cleanDate,
         deadlineLabel: deadlineLabel || formatDeadlineDisplay(cleanDate)
       }
+      newDeadlines[exerciseId] = entry
+      if (exerciseId === 'exercice-video') newDeadlines['exercice-14'] = entry
+      if (exerciseId === 'exercice-14') newDeadlines['exercice-video'] = entry
     }
     state.deadlines = newDeadlines
     setStorage(STORAGE_KEY_DEADLINES, state.deadlines)
+    deadlinesTrigger.value++
     return { success: true, message: !deadline || !deadline.trim() ? 'Échéance retirée avec succès.' : 'Échéance enregistrée avec succès.' }
   },
 
@@ -1591,15 +1614,19 @@ export const userStore = {
     for (const [id, dateStr] of Object.entries(map)) {
       if (dateStr && dateStr.trim()) {
         const clean = dateStr.trim()
-        newDeadlines[id] = {
+        const entry = {
           deadline: clean,
           deadlineLabel: formatDeadlineDisplay(clean)
         }
+        newDeadlines[id] = entry
+        if (id === 'exercice-video') newDeadlines['exercice-14'] = entry
+        if (id === 'exercice-14') newDeadlines['exercice-video'] = entry
         count++
       }
     }
     state.deadlines = newDeadlines
     setStorage(STORAGE_KEY_DEADLINES, state.deadlines)
+    deadlinesTrigger.value++
     return { success: true, count }
   },
 
@@ -1607,6 +1634,7 @@ export const userStore = {
   resetDeadlinesToDefault() {
     state.deadlines = {}
     setStorage(STORAGE_KEY_DEADLINES, {})
+    deadlinesTrigger.value++
     return { success: true, message: 'Toutes les échéances ont été effacées.' }
   },
 
@@ -1619,6 +1647,7 @@ export const userStore = {
         const parsed = JSON.parse(raw)
         if (parsed && typeof parsed === 'object') {
           state.deadlines = parsed
+          deadlinesTrigger.value++
         }
       }
     } catch (e) {}

@@ -269,33 +269,34 @@ function initDeadlinesForm() {
 
 function handleDateOrTimeChange(itemId) {
   const date = deadlineDates.value[itemId]
-  if (!date || !date.trim()) {
-    deadlinesForm.value[itemId] = ''
+  // Ne JAMAIS effacer automatiquement pendant la saisie !
+  if (date && date.trim()) {
+    const time = (deadlineTimes.value[itemId] && deadlineTimes.value[itemId].trim()) || '23:59'
+    deadlineTimes.value[itemId] = time
+    const fullIso = `${date.trim()}T${time}`
+    deadlinesForm.value = { ...deadlinesForm.value, [itemId]: fullIso }
     saveSingleDeadline(itemId)
-    return
   }
-  const time = (deadlineTimes.value[itemId] && deadlineTimes.value[itemId].trim()) || '23:59'
-  deadlineTimes.value[itemId] = time
-  deadlinesForm.value[itemId] = `${date.trim()}T${time}`
-  saveSingleDeadline(itemId)
 }
 
 function saveSingleDeadline(itemId) {
   const date = deadlineDates.value[itemId]
   if (!date || !date.trim()) {
     userStore.setExerciseDeadline(itemId, '')
-    deadlinesForm.value[itemId] = ''
-    deadlineFeedback.value[itemId] = '⚪ Échéance retirée'
+    deadlinesForm.value = { ...deadlinesForm.value, [itemId]: '' }
+    deadlineFeedback.value = { ...deadlineFeedback.value, [itemId]: '⚪ Échéance retirée' }
   } else {
     const time = (deadlineTimes.value[itemId] && deadlineTimes.value[itemId].trim()) || '23:59'
     const fullIso = `${date.trim()}T${time}`
-    deadlinesForm.value[itemId] = fullIso
+    deadlinesForm.value = { ...deadlinesForm.value, [itemId]: fullIso }
     userStore.setExerciseDeadline(itemId, fullIso)
     const formatted = formatDeadlineDisplay(fullIso)
-    deadlineFeedback.value[itemId] = `✅ Sauvegardé : ${formatted}`
+    deadlineFeedback.value = { ...deadlineFeedback.value, [itemId]: `✅ Sauvegardé : ${formatted}` }
   }
   setTimeout(() => {
-    delete deadlineFeedback.value[itemId]
+    const next = { ...deadlineFeedback.value }
+    delete next[itemId]
+    deadlineFeedback.value = next
   }, 3500)
 }
 
@@ -305,19 +306,21 @@ function setRelativeDeadline(itemId, daysToAdd) {
   const yyyy = d.getFullYear()
   const mm = String(d.getMonth() + 1).padStart(2, '0')
   const dd = String(d.getDate()).padStart(2, '0')
-  deadlineDates.value[itemId] = `${yyyy}-${mm}-${dd}`
-  deadlineTimes.value[itemId] = '23:59'
+  deadlineDates.value = { ...deadlineDates.value, [itemId]: `${yyyy}-${mm}-${dd}` }
+  deadlineTimes.value = { ...deadlineTimes.value, [itemId]: '23:59' }
   saveSingleDeadline(itemId)
 }
 
 function clearDeadline(itemId) {
-  deadlineDates.value[itemId] = ''
-  deadlineTimes.value[itemId] = '23:59'
-  deadlinesForm.value[itemId] = ''
+  deadlineDates.value = { ...deadlineDates.value, [itemId]: '' }
+  deadlineTimes.value = { ...deadlineTimes.value, [itemId]: '23:59' }
+  deadlinesForm.value = { ...deadlinesForm.value, [itemId]: '' }
   userStore.setExerciseDeadline(itemId, '')
-  deadlineFeedback.value[itemId] = '⚪ Échéance retirée'
+  deadlineFeedback.value = { ...deadlineFeedback.value, [itemId]: '⚪ Échéance retirée' }
   setTimeout(() => {
-    delete deadlineFeedback.value[itemId]
+    const next = { ...deadlineFeedback.value }
+    delete next[itemId]
+    deadlineFeedback.value = next
   }, 3000)
 }
 
@@ -328,12 +331,11 @@ function saveAllDeadlines() {
     if (date && date.trim()) {
       const time = (deadlineTimes.value[item.id] && deadlineTimes.value[item.id].trim()) || '23:59'
       map[item.id] = `${date.trim()}T${time}`
-      deadlinesForm.value[item.id] = map[item.id]
     } else {
       map[item.id] = ''
-      deadlinesForm.value[item.id] = ''
     }
   }
+  deadlinesForm.value = { ...map }
   const res = userStore.setAllExerciseDeadlines(map)
   saveAllDeadlinesStatus.value = `✅ Les ${res.count} échéance(s) ont été enregistrées avec succès et sont actives sur toute la plateforme !`
   setTimeout(() => {
@@ -1545,7 +1547,7 @@ function exportAllResultsToExcel() {
           <div class="dkpi-card green">
             <span class="dkpi-icon">🟢</span>
             <div>
-              <div class="dkpi-val">{{ Object.values(deadlinesForm).filter(d => !!d).length }} / {{ OFFICIAL_EVALUATION_ITEMS.length }}</div>
+              <div class="dkpi-val">{{ OFFICIAL_EVALUATION_ITEMS.filter(item => userStore.getExerciseDeadline(item.id).isDefined).length }} / {{ OFFICIAL_EVALUATION_ITEMS.length }}</div>
               <div class="dkpi-lbl">Échéances actives fixées</div>
             </div>
           </div>
@@ -1630,7 +1632,6 @@ function exportAllResultsToExcel() {
                         type="date" 
                         v-model="deadlineDates[item.id]" 
                         class="input-date-clean" 
-                        @input="handleDateOrTimeChange(item.id)"
                         @change="handleDateOrTimeChange(item.id)"
                         title="Date limite"
                       />
@@ -1638,7 +1639,6 @@ function exportAllResultsToExcel() {
                         type="time" 
                         v-model="deadlineTimes[item.id]" 
                         class="input-time-clean" 
-                        @input="handleDateOrTimeChange(item.id)"
                         @change="handleDateOrTimeChange(item.id)"
                         title="Heure limite (par défaut 23:59)"
                       />
@@ -1651,7 +1651,7 @@ function exportAllResultsToExcel() {
 
                 <td>
                   <div class="deadline-state-cell">
-                    <span v-if="!deadlinesForm[item.id]" class="dstate-pill empty">
+                    <span v-if="!userStore.getExerciseDeadline(item.id).isDefined" class="dstate-pill empty">
                       ⚪ Non fixée
                     </span>
                     <span v-else-if="!getItemLateBreakdown(item.id).isPast" class="dstate-pill upcoming">
@@ -1748,7 +1748,6 @@ function exportAllResultsToExcel() {
                         type="date" 
                         v-model="deadlineDates[item.id]" 
                         class="input-date-clean" 
-                        @input="handleDateOrTimeChange(item.id)"
                         @change="handleDateOrTimeChange(item.id)"
                         title="Date limite"
                       />
@@ -1756,7 +1755,6 @@ function exportAllResultsToExcel() {
                         type="time" 
                         v-model="deadlineTimes[item.id]" 
                         class="input-time-clean" 
-                        @input="handleDateOrTimeChange(item.id)"
                         @change="handleDateOrTimeChange(item.id)"
                         title="Heure limite (par défaut 23:59)"
                       />
@@ -1769,7 +1767,7 @@ function exportAllResultsToExcel() {
 
                 <td>
                   <div class="deadline-state-cell">
-                    <span v-if="!deadlinesForm[item.id]" class="dstate-pill empty">
+                    <span v-if="!userStore.getExerciseDeadline(item.id).isDefined" class="dstate-pill empty">
                       ⚪ Non fixée
                     </span>
                     <span v-else-if="!getItemLateBreakdown(item.id).isPast" class="dstate-pill upcoming">

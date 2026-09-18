@@ -140,8 +140,165 @@ export interface EvaluationRecord {
   gamePhotosScore?: number // max 15 (intégration des photos)
   gameProjectScore: number // max 100
   oralDefenseScore: number // max 30 (soutenance orale)
+  gameEx09RulesScore?: number
+  gameEx10PhotosScore?: number
+  gameEx11AiCardsScore?: number
+  gameEx12LaserScore?: number
+  gameEx13Pawns3dScore?: number
+  gameEx14VideoScore?: number
+  gameEx15PlaytestScore?: number
+  gameEx16PresentationScore?: number
   teacherFeedback?: string
 }
+
+export interface EvaluationItemDefinition {
+  id: string
+  title: string
+  shortTitle: string
+  part: 1 | 2
+  partLabel: string
+  maxPoints: number
+  docLink?: string
+}
+
+export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
+  // Partie 1 : Travaux plateforme (70 pts)
+  {
+    id: 'quiz',
+    title: 'Évaluations diagnostiques en ligne (Quiz de cours)',
+    shortTitle: 'Quiz Diagnostiques',
+    part: 1,
+    partLabel: 'Partie 1 : Travaux Plateforme (70 pts)',
+    maxPoints: 10
+  },
+  {
+    id: 'exercice-01',
+    title: 'Exercice 1 : Diagnostic de compétences (DigComp 2.2)',
+    shortTitle: 'Ex 1 (DigComp)',
+    part: 1,
+    partLabel: 'Partie 1 : Travaux Plateforme (70 pts)',
+    maxPoints: 10,
+    docLink: 'https://docs.google.com/document/d/1b1QhnOoDNyCSdAIEAZx_xq96hQxZsUJH/edit?usp=sharing'
+  },
+  {
+    id: 'exercice-02',
+    title: 'Exercice 2 : Évaluation critique d\'une information',
+    shortTitle: 'Ex 2 (Esprit Critique)',
+    part: 1,
+    partLabel: 'Partie 1 : Travaux Plateforme (70 pts)',
+    maxPoints: 10,
+    docLink: 'https://docs.google.com/document/d/1o9vsf5fptzG1EH56oycz7SkD_UwmUKXm/edit?usp=sharing'
+  },
+  {
+    id: 'exercice-03',
+    title: 'Exercice 3 : Conception d\'un guide numérique élèves',
+    shortTitle: 'Ex 3 (Guide Élèves)',
+    part: 1,
+    partLabel: 'Partie 1 : Travaux Plateforme (70 pts)',
+    maxPoints: 10,
+    docLink: 'https://docs.google.com/document/d/12XENuZM1WVyeCnRfu62Oh1_tG8Gkc1Z1/edit?usp=sharing'
+  },
+  {
+    id: 'exercice-04',
+    title: 'Exercice 4 : Escape Game FMTTN (Cyber-Enquête)',
+    shortTitle: 'Ex 4 (Escape Game)',
+    part: 1,
+    partLabel: 'Partie 1 : Travaux Plateforme (70 pts)',
+    maxPoints: 10,
+    docLink: 'https://docs.google.com/document/d/1kUSfjlioxrG-i-ZrVbzQOpxH072f_2db/edit?usp=sharing'
+  },
+  {
+    id: 'exercice-05',
+    title: 'Exercice 5 : Défi 20 min Canva (Affiche mot de passe)',
+    shortTitle: 'Ex 5 (Canva Sécurité)',
+    part: 1,
+    partLabel: 'Partie 1 : Travaux Plateforme (70 pts)',
+    maxPoints: 10,
+    docLink: 'https://docs.google.com/document/d/1GuqhxxFNJllg4vR_wLeD5A4CtYNyJ4mj/edit?usp=sharing'
+  },
+  {
+    id: 'exercice-06',
+    title: 'Exercice 6 : Défi Hardware PC (Architecture matérielle)',
+    shortTitle: 'Ex 6 (Hardware PC)',
+    part: 1,
+    partLabel: 'Partie 1 : Travaux Plateforme (70 pts)',
+    maxPoints: 10,
+    docLink: 'https://docs.google.com/document/d/1Vjy9xrqLG-xuktmMmmOQ6Kh8I-hXiIzV/edit?usp=sharing'
+  },
+  // Partie 2 : Projet Jeu de Société Didactique & Restitution (130 pts)
+  {
+    id: 'exercice-09',
+    title: 'Exercice 9 : Règles du jeu & dossier pédagogique (FMTTN / CSEM)',
+    shortTitle: 'Ex 9 (Règles & Pédagogie)',
+    part: 2,
+    partLabel: 'Partie 2 : Projet Jeu de Société (130 pts)',
+    maxPoints: 20,
+    docLink: 'https://docs.google.com/document/d/1af3aH5FiR31N4FB99VrFq6628kiFFbly/edit?usp=sharing'
+  },
+  {
+    id: 'exercice-10',
+    title: 'Exercice 10 : Photographier le numérique (visuels & matériel)',
+    shortTitle: 'Ex 10 (Photographie)',
+    part: 2,
+    partLabel: 'Partie 2 : Projet Jeu de Société (130 pts)',
+    maxPoints: 15,
+    docLink: 'https://docs.google.com/document/d/1kSoMRpjySi0DvjA0S1W4b8BoaDQrXNZh/edit?usp=sharing'
+  },
+  {
+    id: 'exercice-11',
+    title: 'Exercice 11 : Supports de jeu & cartes conçues avec l\'IA',
+    shortTitle: 'Ex 11 (Cartes IA)',
+    part: 2,
+    partLabel: 'Partie 2 : Projet Jeu de Société (130 pts)',
+    maxPoints: 15,
+    docLink: 'https://docs.google.com/document/d/1CzyMJRbjyvYVh7XP83Lx4tjxnq23oHXX/edit?usp=sharing'
+  },
+  {
+    id: 'exercice-12',
+    title: 'Exercice 12 : Plateau de jeu à la découpeuse laser (FabLab)',
+    shortTitle: 'Ex 12 (Plateau Laser)',
+    part: 2,
+    partLabel: 'Partie 2 : Projet Jeu de Société (130 pts)',
+    maxPoints: 15,
+    docLink: 'https://docs.google.com/document/d/1Ov_huVW9al2DKuoBmW89QO3ZqE5E-nzU/edit?usp=sharing'
+  },
+  {
+    id: 'exercice-13',
+    title: 'Exercice 13 : Pions de jeu modélisés et imprimés en 3D (FabLab)',
+    shortTitle: 'Ex 13 (Pions 3D)',
+    part: 2,
+    partLabel: 'Partie 2 : Projet Jeu de Société (130 pts)',
+    maxPoints: 15,
+    docLink: 'https://docs.google.com/document/d/1H_88UJvPPezdUXw1Vt8_U9wtsaFouepU/edit?usp=sharing'
+  },
+  {
+    id: 'exercice-14',
+    title: 'Exercice 14 : Présentation vidéo du jeu (Capsule 2-3 min)',
+    shortTitle: 'Ex 14 (Capsule Vidéo)',
+    part: 2,
+    partLabel: 'Partie 2 : Projet Jeu de Société (130 pts)',
+    maxPoints: 20,
+    docLink: 'https://docs.google.com/document/d/1JO_9ayYt3IqZfStfUPkzT3GDOF65VBxQ/edit?usp=sharing'
+  },
+  {
+    id: 'exercice-15',
+    title: 'Exercice 15 : Playtest & Grille d\'évaluation du jeu',
+    shortTitle: 'Ex 15 (Playtest & Données)',
+    part: 2,
+    partLabel: 'Partie 2 : Projet Jeu de Société (130 pts)',
+    maxPoints: 15,
+    docLink: 'https://docs.google.com/document/d/1uIheBr_KU2Dh2TjYkegz7lHixsUNxs4t/edit?usp=sharing'
+  },
+  {
+    id: 'exercice-16',
+    title: 'Exercice 16 : Présentation finale et leçon FMTTN devant la classe',
+    shortTitle: 'Ex 16 (Soutenance & Leçon)',
+    part: 2,
+    partLabel: 'Partie 2 : Projet Jeu de Société (130 pts)',
+    maxPoints: 15,
+    docLink: 'https://docs.google.com/document/d/1Tm15GqKSwutH1MDbaGYJaWByliC17iRT/edit?usp=sharing'
+  }
+]
 
 // ==========================================
 // OUTILS DE SÉCURITÉ & HACHAGE (ZÉRO LATENCE)
@@ -1885,10 +2042,14 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
   // MODALITÉS DE L'ÉVALUATION DU COURS (200 POINTS)
   // ==========================================
 
+  get OFFICIAL_EVALUATION_ITEMS() {
+    return OFFICIAL_EVALUATION_ITEMS
+  },
+
   getStudentEvaluation(email?: string) {
     const targetEmail = (email || state.currentUser?.email || '').trim().toLowerCase()
     const user = state.users.find(u => u.email.toLowerCase() === targetEmail)
-    const evalRec = state.evaluations[targetEmail] || {
+    const evalRec: any = state.evaluations[targetEmail] || {
       userEmail: targetEmail,
       gamePedagogyScore: 0,
       gameBoardLaserScore: 0,
@@ -1900,114 +2061,248 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
       oralDefenseScore: 0
     }
 
-    // 1. Points Quiz & Diagnostic (max 10 points)
+    // 1. Calcul du Quiz Diagnostique (max 10 pts)
     const userQuizzes = state.quizAttempts.filter(q => q.userEmail.toLowerCase() === targetEmail)
-    let quizPoints = 0
+    let quizAiScore = 0
     if (userQuizzes.length > 0) {
       const avgPct = userQuizzes.reduce((acc, q) => acc + q.percentage, 0) / userQuizzes.length
-      const completionFactor = Math.min(1, userQuizzes.length / 2)
-      quizPoints = Math.round((avgPct / 100) * 10 * completionFactor * 10) / 10
+      const factor = Math.min(1, userQuizzes.length / 2)
+      quizAiScore = Math.round((avgPct / 100) * 10 * factor * 10) / 10
     }
 
-    // 2. Points Exercices Plateforme (6 × 10 = 60 pts)
-    const exercisesList = [
-      { id: 'exercice-01', title: 'Exercice 1 : Diagnostic de compétences (10 pts)' },
-      { id: 'exercice-02', title: 'Exercice 2 : Évaluation critique info (10 pts)' },
-      { id: 'exercice-03', title: 'Exercice 3 : Guide numérique élèves (10 pts)' },
-      { id: 'exercice-04', title: 'Exercice 4 : Escape Game FMTTN (10 pts)' },
-      { id: 'exercice-05', title: 'Exercice 5 : Défi Canva mot de passe (10 pts)' },
-      { id: 'exercice-06', title: 'Exercice 6 : Défi Hardware PC (10 pts)' }
-    ]
+    // 2. Construction dynamique des 15 composantes de l'évaluation
+    const allEvaluationItems = OFFICIAL_EVALUATION_ITEMS.map(def => {
+      if (def.id === 'quiz') {
+        const fbQuiz = this.getExerciseFeedback('quiz', targetEmail)
+        let teacherPts = fbQuiz?.score !== undefined ? fbQuiz.score : quizAiScore
+        return {
+          id: 'quiz',
+          title: def.title,
+          shortTitle: def.shortTitle,
+          part: def.part,
+          partLabel: def.partLabel,
+          maxPoints: def.maxPoints,
+          aiScore: quizAiScore,
+          aiSummary: `${userQuizzes.length} quiz passé(s) • Moyenne: ${quizAiScore}/10`,
+          teacherScore: Math.min(def.maxPoints, Math.max(0, Number(teacherPts || 0))),
+          feedback: fbQuiz?.feedback || '',
+          completed: userQuizzes.length > 0,
+          file: null,
+          docLink: ''
+        }
+      }
 
-    const exerciseDetails = exercisesList.map(ex => {
-      const file = state.submittedFiles.find(f => f.userEmail.toLowerCase() === targetEmail && f.exerciseId === ex.id)
-      const hasSub = state.submissions.some(s => s.userEmail.toLowerCase() === targetEmail && s.exerciseId === ex.id && s.answer.trim().length > 10)
+      // Exercices 1 à 6 et 9 à 16
+      const file = state.submittedFiles.find(f => f.userEmail.toLowerCase() === targetEmail && f.exerciseId === def.id)
+      const hasSub = state.submissions.some(s => s.userEmail.toLowerCase() === targetEmail && s.exerciseId === def.id && s.answer.trim().length > 10)
       const isDone = !!file || hasSub
-      
-      // Note personnalisée de l'enseignant si validée, sinon note complète si déposé
-      const fb = this.getExerciseFeedback(ex.id, targetEmail)
-      let pts = 0
-      if (fb && fb.score !== undefined && fb.score !== null) {
-        pts = fb.score
-      } else if (file?.teacherGrade && file.teacherGrade.status === 'graded') {
-        pts = file.teacherGrade.score
-      } else {
-        pts = isDone ? 10 : 0
+
+      // Calcul de la cote IA suggérée
+      let aiScore: number | null = null
+      let aiSummary = ''
+      if (file?.aiCorrection?.suggestedScore !== undefined) {
+        const rawScore = Number(file.aiCorrection.suggestedScore) || 8.5
+        // Mise à l'échelle sur le barème max de l'élément (ex: 20 pts ou 15 pts)
+        aiScore = Math.round(((rawScore / 10) * def.maxPoints) * 10) / 10
+        aiSummary = file.aiCorrection.summary || 'Devoir analysé par l\'IA'
+      } else if (isDone) {
+        // Devoir remis sans rapport IA spécifique : note formative par défaut à 85% du max
+        aiScore = Math.round((def.maxPoints * 0.85) * 10) / 10
+        aiSummary = 'Travail déposé en attente de validation'
+      }
+
+      // Cote enseignant enregistrée (ou reprise de l'ancienne évaluation)
+      const fb = this.getExerciseFeedback(def.id, targetEmail)
+      let teacherPts: number | undefined = fb?.score
+
+      if (teacherPts === undefined || teacherPts === null) {
+        if (file?.teacherGrade?.score !== undefined) {
+          teacherPts = file.teacherGrade.score
+        } else if (def.id === 'exercice-09' && (evalRec.gameEx09RulesScore !== undefined || evalRec.gamePedagogyScore !== undefined)) {
+          teacherPts = evalRec.gameEx09RulesScore ?? evalRec.gamePedagogyScore
+        } else if (def.id === 'exercice-10' && (evalRec.gameEx10PhotosScore !== undefined || evalRec.gamePhotosScore !== undefined)) {
+          teacherPts = evalRec.gameEx10PhotosScore ?? evalRec.gamePhotosScore
+        } else if (def.id === 'exercice-11' && (evalRec.gameEx11AiCardsScore !== undefined || evalRec.gameAiCardsScore !== undefined)) {
+          teacherPts = evalRec.gameEx11AiCardsScore ?? evalRec.gameAiCardsScore
+        } else if (def.id === 'exercice-12' && (evalRec.gameEx12LaserScore !== undefined || evalRec.gameBoardLaserScore !== undefined)) {
+          teacherPts = evalRec.gameEx12LaserScore ?? evalRec.gameBoardLaserScore
+        } else if (def.id === 'exercice-13' && (evalRec.gameEx13Pawns3dScore !== undefined || evalRec.gamePawns3dScore !== undefined)) {
+          teacherPts = evalRec.gameEx13Pawns3dScore ?? evalRec.gamePawns3dScore
+        } else if (def.id === 'exercice-14' && (evalRec.gameEx14VideoScore !== undefined || evalRec.gameVideoScore !== undefined)) {
+          teacherPts = evalRec.gameEx14VideoScore ?? evalRec.gameVideoScore
+        } else if (def.id === 'exercice-15' && evalRec.gameEx15PlaytestScore !== undefined) {
+          teacherPts = evalRec.gameEx15PlaytestScore
+        } else if (def.id === 'exercice-16' && (evalRec.gameEx16PresentationScore !== undefined || evalRec.oralDefenseScore !== undefined)) {
+          teacherPts = evalRec.gameEx16PresentationScore ?? Math.min(15, evalRec.oralDefenseScore)
+        } else {
+          teacherPts = aiScore !== null ? aiScore : (isDone ? def.maxPoints : 0)
+        }
       }
 
       return {
-        id: ex.id,
-        title: ex.title,
-        points: pts,
-        maxPoints: 10,
+        id: def.id,
+        title: def.title,
+        shortTitle: def.shortTitle,
+        part: def.part,
+        partLabel: def.partLabel,
+        maxPoints: def.maxPoints,
+        aiScore,
+        aiSummary,
+        teacherScore: Math.min(def.maxPoints, Math.max(0, Number(teacherPts || 0))),
+        feedback: fb?.feedback || (file?.teacherGrade?.feedback || ''),
         completed: isDone,
         file,
-        teacherFeedback: fb,
-        teacherGrade: file?.teacherGrade,
-        aiCorrection: file?.aiCorrection
+        docLink: def.docLink
       }
     })
 
-    const exercisesTotal = exerciseDetails.reduce((acc, e) => acc + e.points, 0)
+    // Séparation et calcul des deux piliers officiels
+    const part1Items = allEvaluationItems.filter(i => i.part === 1)
+    const part2Items = allEvaluationItems.filter(i => i.part === 2)
 
-    // Sous-total Pilier 1 (Travaux sur la Plateforme : max 70 pts)
-    const pillar1Total = Math.round((quizPoints + exercisesTotal) * 10) / 10
-
-    // Pilier 2 : Création du Jeu de Société Didactique (max 100 pts)
-    const gameDetails = {
-      pedagogy: evalRec.gamePedagogyScore ?? 0,
-      pedagogyMax: 20,
-      boardLaser: evalRec.gameBoardLaserScore ?? 0,
-      boardLaserMax: 15,
-      pawns3d: evalRec.gamePawns3dScore ?? 0,
-      pawns3dMax: 15,
-      aiCards: evalRec.gameAiCardsScore ?? 0,
-      aiCardsMax: 15,
-      video: evalRec.gameVideoScore ?? 0,
-      videoMax: 20,
-      photos: evalRec.gamePhotosScore ?? 0,
-      photosMax: 15
-    }
-
-    // Calcul du total jeu : soit somme des sous-items si saisis, soit note globale
-    const sumGameDetails = gameDetails.pedagogy + gameDetails.boardLaser + gameDetails.pawns3d + gameDetails.aiCards + gameDetails.video + gameDetails.photos
-    const pillar2Total = sumGameDetails > 0 ? sumGameDetails : (evalRec.gameProjectScore || 0)
-
-    // Pilier 3 : Soutenance Orale devant la classe (max 30 pts)
-    const pillar3Total = evalRec.oralDefenseScore || 0
-
-    // Total Général sur 200 points (70 + 100 + 30)
-    const totalScore = Math.round((pillar1Total + pillar2Total + pillar3Total) * 10) / 10
+    const part1Total = Math.round(part1Items.reduce((acc, i) => acc + i.teacherScore, 0) * 10) / 10
+    const part2Total = Math.round(part2Items.reduce((acc, i) => acc + i.teacherScore, 0) * 10) / 10
+    const totalScore = Math.round((part1Total + part2Total) * 10) / 10
     const totalOutOf20 = Math.round((totalScore / 10) * 10) / 10
     const percentage = Math.round((totalScore / 200) * 100)
+    const isPassing = totalScore >= 100
+
+    let mention = 'Ajourné'
+    if (totalOutOf20 >= 18) mention = 'La plus grande distinction'
+    else if (totalOutOf20 >= 16) mention = 'Grande distinction'
+    else if (totalOutOf20 >= 14) mention = 'Distinction'
+    else if (totalOutOf20 >= 10) mention = 'Satisfaction (Réussite)'
 
     return {
       user,
-      pillar1: {
-        total: pillar1Total,
+      email: targetEmail,
+      items: allEvaluationItems,
+      part1: {
+        total: part1Total,
         max: 70,
-        quizPoints,
-        quizMax: 10,
-        exercisesTotal,
-        exercisesMax: 60,
-        exerciseDetails
+        items: part1Items
       },
-      pillar2: {
-        total: pillar2Total,
-        max: 100,
-        details: gameDetails
-      },
-      pillar3: {
-        total: pillar3Total,
-        max: 30
+      part2: {
+        total: part2Total,
+        max: 130,
+        items: part2Items
       },
       totalScore,
       totalMax: 200,
       totalOutOf20,
       percentage,
-      isPassing: totalScore >= 100,
+      isPassing,
+      mention,
       feedback: evalRec.teacherFeedback || '',
-      adjustNotice: "La pondération pourra être revue en fonction du déroulement du cours."
+      // Compatibilité rétroactive avec les anciens composants
+      pillar1: {
+        total: part1Total,
+        max: 70,
+        quizPoints: allEvaluationItems.find(i => i.id === 'quiz')?.teacherScore || 0,
+        exercisesTotal: Math.round(allEvaluationItems.filter(i => i.part === 1 && i.id !== 'quiz').reduce((acc, i) => acc + i.teacherScore, 0) * 10) / 10,
+        exerciseDetails: part1Items.filter(i => i.id !== 'quiz')
+      },
+      pillar2: {
+        total: part2Total,
+        max: 130,
+        details: {
+          pedagogy: allEvaluationItems.find(i => i.id === 'exercice-09')?.teacherScore || 0,
+          photos: allEvaluationItems.find(i => i.id === 'exercice-10')?.teacherScore || 0,
+          aiCards: allEvaluationItems.find(i => i.id === 'exercice-11')?.teacherScore || 0,
+          boardLaser: allEvaluationItems.find(i => i.id === 'exercice-12')?.teacherScore || 0,
+          pawns3d: allEvaluationItems.find(i => i.id === 'exercice-13')?.teacherScore || 0,
+          video: allEvaluationItems.find(i => i.id === 'exercice-14')?.teacherScore || 0,
+          playtest: allEvaluationItems.find(i => i.id === 'exercice-15')?.teacherScore || 0,
+          presentation: allEvaluationItems.find(i => i.id === 'exercice-16')?.teacherScore || 0
+        }
+      },
+      pillar3: {
+        total: allEvaluationItems.find(i => i.id === 'exercice-16')?.teacherScore || 0,
+        max: 15
+      }
+    }
+  },
+
+  // Statistiques globales de la classe calculées en temps réel
+  getClassEvaluationStats() {
+    const activeUsers = state.users.filter(u => u.status !== 'archived')
+    if (activeUsers.length === 0) {
+      return {
+        averageOutOf20: 0,
+        averageScore200: 0,
+        passingCount: 0,
+        totalStudents: 0,
+        passingRate: 0,
+        highestNote: 0,
+        lowestNote: 0
+      }
+    }
+
+    const evals = activeUsers.map(u => this.getStudentEvaluation(u.email))
+    const notes20 = evals.map(e => e.totalOutOf20)
+    const scores200 = evals.map(e => e.totalScore)
+    const sum20 = notes20.reduce((acc, n) => acc + n, 0)
+    const sum200 = scores200.reduce((acc, s) => acc + s, 0)
+    const passingCount = evals.filter(e => e.isPassing).length
+
+    return {
+      averageOutOf20: Math.round((sum20 / activeUsers.length) * 10) / 10,
+      averageScore200: Math.round((sum200 / activeUsers.length) * 10) / 10,
+      passingCount,
+      totalStudents: activeUsers.length,
+      passingRate: Math.round((passingCount / activeUsers.length) * 100),
+      highestNote: Math.max(...notes20),
+      lowestNote: Math.min(...notes20)
+    }
+  },
+
+  // Enregistrement complet de la grille des 15 composantes pour un étudiant
+  saveFullStudentEvaluation(
+    email: string, 
+    itemsGrades: { id: string; score: number; feedback?: string }[], 
+    generalFeedback?: string
+  ) {
+    const cleanEmail = (email || '').trim().toLowerCase()
+    if (!cleanEmail) return { success: false, message: "Email manquant." }
+
+    // 1. Enregistrer chaque élément individuel dans exerciseFeedbacks
+    itemsGrades.forEach(item => {
+      this.saveExerciseFeedback(cleanEmail, item.id, item.feedback || '', item.score)
+    })
+
+    // 2. Mettre à jour l'enregistrement global
+    const ex09 = itemsGrades.find(i => i.id === 'exercice-09')?.score
+    const ex10 = itemsGrades.find(i => i.id === 'exercice-10')?.score
+    const ex11 = itemsGrades.find(i => i.id === 'exercice-11')?.score
+    const ex12 = itemsGrades.find(i => i.id === 'exercice-12')?.score
+    const ex13 = itemsGrades.find(i => i.id === 'exercice-13')?.score
+    const ex14 = itemsGrades.find(i => i.id === 'exercice-14')?.score
+    const ex15 = itemsGrades.find(i => i.id === 'exercice-15')?.score
+    const ex16 = itemsGrades.find(i => i.id === 'exercice-16')?.score
+
+    this.updateStudentEvaluation(cleanEmail, {
+      gameEx09RulesScore: ex09,
+      gamePedagogyScore: ex09,
+      gameEx10PhotosScore: ex10,
+      gamePhotosScore: ex10,
+      gameEx11AiCardsScore: ex11,
+      gameAiCardsScore: ex11,
+      gameEx12LaserScore: ex12,
+      gameBoardLaserScore: ex12,
+      gameEx13Pawns3dScore: ex13,
+      gamePawns3dScore: ex13,
+      gameEx14VideoScore: ex14,
+      gameVideoScore: ex14,
+      gameEx15PlaytestScore: ex15,
+      gameEx16PresentationScore: ex16,
+      oralDefenseScore: ex16,
+      teacherFeedback: generalFeedback !== undefined ? sanitizeText(generalFeedback, 10000) : undefined
+    })
+
+    return { 
+      success: true, 
+      message: "Grille d'évaluation et cotes officielles enregistrées avec succès !",
+      evaluation: this.getStudentEvaluation(cleanEmail)
     }
   },
 

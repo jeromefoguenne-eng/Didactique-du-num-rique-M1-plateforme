@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import { userStore } from '../stores/userStore'
 
 const enteredPin = ref('')
@@ -728,6 +728,174 @@ function formatSize(bytes) {
   if (bytes < 1024 * 1024) return Math.round(bytes / 1024) + ' Ko'
   return (bytes / (1024 * 1024)).toFixed(1) + ' Mo'
 }
+
+// =========================================================
+// GESTION AVANCÉE DE LA GRILLE D'ÉVALUATION (15 COMPOSANTES / 200 PTS)
+// =========================================================
+const selectedGridStudentEmail = ref('')
+const activeGridItems = ref([])
+const activeGridGeneralFeedback = ref('')
+const saveGridStatus = ref('')
+
+const classStats = computed(() => userStore.getClassEvaluationStats())
+
+function initGridForFirstStudent() {
+  const activeUsers = users.value.filter(u => u.status !== 'archived')
+  if (activeUsers.length > 0 && (!selectedGridStudentEmail.value || !activeUsers.some(u => u.email === selectedGridStudentEmail.value))) {
+    loadStudentForGrid(activeUsers[0].email)
+  }
+}
+
+watch(adminTab, (newTab) => {
+  if (newTab === 'evaluation') {
+    initGridForFirstStudent()
+  }
+})
+
+watch(users, () => {
+  initGridForFirstStudent()
+}, { immediate: true })
+
+function loadStudentForGrid(email) {
+  if (!email) return
+  selectedGridStudentEmail.value = email
+  const ev = userStore.getStudentEvaluation(email)
+  activeGridItems.value = (ev.items || []).map(item => ({
+    id: item.id,
+    title: item.title,
+    shortTitle: item.shortTitle,
+    part: item.part,
+    partLabel: item.partLabel,
+    maxPoints: item.maxPoints,
+    aiScore: item.aiScore,
+    aiSummary: item.aiSummary || '',
+    teacherScore: item.teacherScore !== undefined ? item.teacherScore : (item.aiScore ?? 0),
+    feedback: item.feedback || '',
+    completed: item.completed,
+    file: item.file,
+    docLink: item.docLink
+  }))
+  activeGridGeneralFeedback.value = ev.feedback || ''
+  saveGridStatus.value = ''
+}
+
+function onSelectGridStudent() {
+  loadStudentForGrid(selectedGridStudentEmail.value)
+}
+
+function adoptAiScoreForItem(item) {
+  if (item.aiScore !== null && item.aiScore !== undefined) {
+    item.teacherScore = item.aiScore
+    if (!item.feedback && item.aiSummary) {
+      item.feedback = item.aiSummary
+    }
+  }
+}
+
+function adoptAllAiScoresForActiveStudent() {
+  let count = 0
+  activeGridItems.value.forEach(item => {
+    if (item.aiScore !== null && item.aiScore !== undefined) {
+      item.teacherScore = item.aiScore
+      if (!item.feedback && item.aiSummary) {
+        item.feedback = item.aiSummary
+      }
+      count++
+    }
+  })
+  saveGridStatus.value = `✓ ${count} note(s) reprise(s) depuis l'IA avec succès ! N'oubliez pas d'enregistrer.`
+  setTimeout(() => { saveGridStatus.value = '' }, 4000)
+}
+
+const currentGridPart1Total = computed(() => {
+  const p1 = activeGridItems.value.filter(i => i.part === 1)
+  const sum = p1.reduce((acc, i) => acc + Number(i.teacherScore || 0), 0)
+  return Math.round(sum * 10) / 10
+})
+
+const currentGridPart2Total = computed(() => {
+  const p2 = activeGridItems.value.filter(i => i.part === 2)
+  const sum = p2.reduce((acc, i) => acc + Number(i.teacherScore || 0), 0)
+  return Math.round(sum * 10) / 10
+})
+
+const currentGridTotalScore = computed(() => {
+  return Math.round((currentGridPart1Total.value + currentGridPart2Total.value) * 10) / 10
+})
+
+const currentGridTotalOutOf20 = computed(() => {
+  return Math.round((currentGridTotalScore.value / 10) * 10) / 10
+})
+
+const currentGridMention = computed(() => {
+  const n = currentGridTotalOutOf20.value
+  if (n >= 18) return { label: 'La plus grande distinction', class: 'mention-pgd' }
+  if (n >= 16) return { label: 'Grande distinction', class: 'mention-gd' }
+  if (n >= 14) return { label: 'Distinction', class: 'mention-d' }
+  if (n >= 10) return { label: 'Satisfaction (Admis)', class: 'mention-sat' }
+  return { label: 'Ajourné (< 10/20)', class: 'mention-fail' }
+})
+
+function saveActiveStudentGrid() {
+  if (!selectedGridStudentEmail.value) return
+  const result = userStore.saveFullStudentEvaluation(
+    selectedGridStudentEmail.value,
+    activeGridItems.value.map(i => ({
+      id: i.id,
+      score: Number(i.teacherScore || 0),
+      feedback: i.feedback
+    })),
+    activeGridGeneralFeedback.value
+  )
+
+  const studentName = users.value.find(u => u.email.toLowerCase() === selectedGridStudentEmail.value.toLowerCase())
+  const nameLabel = studentName ? `${studentName.firstName} ${studentName.lastName}` : selectedGridStudentEmail.value
+  saveGridStatus.value = `✓ Notes & grille enregistrées avec succès pour ${nameLabel} (${currentGridTotalOutOf20.value}/20) !`
+  setTimeout(() => { saveGridStatus.value = '' }, 4000)
+}
+
+function exportAllResultsToExcel() {
+  let csv = `Nom de famille;Prénom;Email institutionnel;Quiz (/10);Ex 1 DigComp (/10);Ex 2 Info critique (/10);Ex 3 Guide élèves (/10);Ex 4 Escape Game (/10);Ex 5 Canva mot de passe (/10);Ex 6 Hardware PC (/10);SOUS-TOTAL PLATEFORME (/70);Ex 9 Règles & Dossier (/20);Ex 10 Photographie (/15);Ex 11 Supports IA (/15);Ex 12 Découpe Laser (/15);Ex 13 Pions 3D (/15);Ex 14 Vidéo (/20);Ex 15 Playtest (/15);Ex 16 Soutenance & Leçon (/15);SOUS-TOTAL PROJET JEU (/130);TOTAL GÉNÉRAL (/200);NOTE FINALE (/20);POURCENTAGE;RÉSULTAT;MENTION;FEEDBACK GÉNÉRAL\n`
+
+  users.value.forEach(u => {
+    const ev = userStore.getStudentEvaluation(u.email)
+    const items = ev.items || []
+
+    const q = items.find(i => i.id === 'quiz')?.teacherScore ?? 0
+    const ex1 = items.find(i => i.id === 'exercice-01')?.teacherScore ?? 0
+    const ex2 = items.find(i => i.id === 'exercice-02')?.teacherScore ?? 0
+    const ex3 = items.find(i => i.id === 'exercice-03')?.teacherScore ?? 0
+    const ex4 = items.find(i => i.id === 'exercice-04')?.teacherScore ?? 0
+    const ex5 = items.find(i => i.id === 'exercice-05')?.teacherScore ?? 0
+    const ex6 = items.find(i => i.id === 'exercice-06')?.teacherScore ?? 0
+    const p1Total = ev.part1.total
+
+    const ex9 = items.find(i => i.id === 'exercice-09')?.teacherScore ?? 0
+    const ex10 = items.find(i => i.id === 'exercice-10')?.teacherScore ?? 0
+    const ex11 = items.find(i => i.id === 'exercice-11')?.teacherScore ?? 0
+    const ex12 = items.find(i => i.id === 'exercice-12')?.teacherScore ?? 0
+    const ex13 = items.find(i => i.id === 'exercice-13')?.teacherScore ?? 0
+    const ex14 = items.find(i => i.id === 'exercice-14')?.teacherScore ?? 0
+    const ex15 = items.find(i => i.id === 'exercice-15')?.teacherScore ?? 0
+    const ex16 = items.find(i => i.id === 'exercice-16')?.teacherScore ?? 0
+    const p2Total = ev.part2.total
+
+    const status = ev.isPassing ? 'Admis' : 'Ajourné'
+    const cleanFb = (ev.feedback || '').replace(/"/g, '""').replace(/\n/g, ' ')
+
+    csv += `"${u.lastName}";"${u.firstName}";"${u.email}";"${q}";"${ex1}";"${ex2}";"${ex3}";"${ex4}";"${ex5}";"${ex6}";"${p1Total}";"${ex9}";"${ex10}";"${ex11}";"${ex12}";"${ex13}";"${ex14}";"${ex15}";"${ex16}";"${p2Total}";"${ev.totalScore}";"${ev.totalOutOf20}";"${ev.percentage}%";"${status}";"${ev.mention}";"${cleanFb}"\n`
+  })
+
+  // Encodage UTF-8 BOM pour ouverture directe parfaite dans Microsoft Excel
+  const blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8;' })
+  const link = document.createElement('a')
+  link.href = URL.createObjectURL(blob)
+  link.setAttribute('download', `Didactique_M1_Notes_Officielles_HECh_sur_20_${new Date().toISOString().substring(0,10)}.csv`)
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+}
+
 </script>
 
 <template>
@@ -1052,73 +1220,338 @@ function formatSize(bytes) {
       <!-- VUE : RÉSULTATS DES QUIZ & ÉVALUATIONS DIAGNOSTIQUES -->
             <!-- VUE ÉVALUATION ET NOTES (SUR 200 POINTS) -->
       <div v-if="adminTab === 'evaluation'" class="tab-panel">
+        <!-- BARRE D'OUTILS PRINCIPALE & EXPORT EXCEL -->
         <div class="eval-admin-toolbar">
           <div>
-            <h3>🏆 Suivi Global des Notes & Modalités d'Évaluation (200 Points)</h3>
-            <p>Pondération officielle : <strong>70 pts</strong> Travaux Plateforme (10 pts Quiz + 60 pts Devoirs) • <strong>100 pts</strong> Création Jeu de Société (FabLab/IA/Vidéo/Photos) • <strong>30 pts</strong> Soutenance Orale.</p>
+            <h3>🏆 Grille d'Évaluation & Relevé Officiel des Notes (200 Pts / 20)</h3>
+            <p class="eval-toolbar-sub">15 composantes d'apprentissage • Cotes IA & Enseignant • Calcul automatique du Total /200 et de la <strong>Note finale sur /20</strong>.</p>
           </div>
-          <button @click="exportEvaluationsToCSV" class="btn-action-tool brand" title="Télécharger le relevé complet des notes sous format Excel CSV">
-            📊 Exporter les Notes (CSV)
+          <button @click="exportAllResultsToExcel" class="btn-export-excel-highlight" title="Télécharger le fichier Excel officiel avec les notes sur 20 de toute la classe">
+            📊 Exporter tous les résultats (Excel)
           </button>
         </div>
 
-        <div class="table-responsive">
-          <table class="data-table eval-matrix-table">
-            <thead>
-              <tr>
-                <th>Étudiant</th>
-                <th>Quiz (/10)</th>
-                <th>Devoirs (/60)</th>
-                <th>Pilier 1 (/70)</th>
-                <th>Jeu (/100)</th>
-                <th>Oral (/30)</th>
-                <th>Total (/200)</th>
-                <th>Note (/20)</th>
-                <th>Statut</th>
-                <th style="text-align: right;">Éditer</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="u in displayedUsers" :key="u.id" :class="{ 'row-archived': u.status === 'archived' }">
-                <td>
-                  <strong>{{ u.lastName }}</strong> {{ u.firstName }}
-                  <div class="student-sub-mail">{{ u.email }}</div>
-                </td>
-                <td class="num-cell">{{ getStudentEvalData(u.email).pillar1.quizPoints }}</td>
-                <td class="num-cell">
-                  <span :class="['duty-badge', getStudentEvalData(u.email).pillar1.exercisesTotal >= 60 ? 'full' : 'partial']">
-                    {{ getStudentEvalData(u.email).pillar1.exercisesTotal }} / 60
-                  </span>
-                </td>
-                <td class="num-cell pillar1-cell">
-                  <strong>{{ getStudentEvalData(u.email).pillar1.total }}</strong>
-                </td>
-                <td class="num-cell">{{ getStudentEvalData(u.email).pillar2.total }}</td>
-                <td class="num-cell">{{ getStudentEvalData(u.email).pillar3.total }}</td>
-                <td class="num-cell total-200-cell">
-                  <strong>{{ getStudentEvalData(u.email).totalScore }}</strong>
-                </td>
-                <td class="num-cell grade-20-cell">
-                  <strong>{{ getStudentEvalData(u.email).totalOutOf20 }}</strong>
-                </td>
-                <td>
-                  <span :class="['status-badge', getStudentEvalData(u.email).isPassing ? 'active' : 'archived']">
-                    {{ getStudentEvalData(u.email).isPassing ? 'Admis' : 'En cours' }}
-                  </span>
-                </td>
-                <td style="text-align: right;">
-                  <div class="action-buttons-group">
-                    <button @click="openEditEvalModal(u)" class="btn-row-action edit-grade" title="Modifier les points et le feedback">
-                      ✏️ Noter
+        <!-- KPI STATISTIQUES DE LA CLASSE -->
+        <div class="eval-kpi-grid">
+          <div class="eval-kpi-card highlight-moy">
+            <span class="ekpi-icon">📊</span>
+            <div>
+              <div class="ekpi-val"><strong>{{ classStats.averageOutOf20 }}</strong> / 20</div>
+              <div class="ekpi-label">Moyenne générale de la classe ({{ classStats.averageScore200 }} / 200 pts)</div>
+            </div>
+          </div>
+          <div class="eval-kpi-card highlight-pass">
+            <span class="ekpi-icon">🎓</span>
+            <div>
+              <div class="ekpi-val"><strong>{{ classStats.passingRate }}%</strong> de réussite</div>
+              <div class="ekpi-label">{{ classStats.passingCount }} admis sur {{ classStats.totalStudents }} étudiants</div>
+            </div>
+          </div>
+          <div class="eval-kpi-card highlight-high">
+            <span class="ekpi-icon">🌟</span>
+            <div>
+              <div class="ekpi-val"><strong>{{ classStats.highestNote }}</strong> / 20</div>
+              <div class="ekpi-label">Note la plus haute</div>
+            </div>
+          </div>
+          <div class="eval-kpi-card highlight-low">
+            <span class="ekpi-icon">📉</span>
+            <div>
+              <div class="ekpi-val"><strong>{{ classStats.lowestNote }}</strong> / 20</div>
+              <div class="ekpi-label">Note la plus basse</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FICHE D'ÉVALUATION DÉTAILLÉE PAR ÉTUDIANT -->
+        <div class="grid-eval-card-container">
+          <div class="gec-header-row">
+            <div class="gec-selector-group">
+              <label>👤 Sélectionner l'étudiant à évaluer :</label>
+              <select v-model="selectedGridStudentEmail" @change="onSelectGridStudent" class="student-eval-select">
+                <option v-for="u in users.filter(x => x.status !== 'archived')" :key="u.email" :value="u.email">
+                  {{ u.lastName }} {{ u.firstName }} ({{ u.email }}) — Note actuelle : {{ getStudentEvalData(u.email).totalOutOf20 }}/20
+                </option>
+              </select>
+            </div>
+            <div class="gec-actions-group">
+              <button @click="adoptAllAiScoresForActiveStudent" class="btn-bulk-adopt-ai" type="button" title="Reprendre en 1 clic toutes les suggestions de l'IA pour cet étudiant">
+                ⚡ Reprendre toutes les cotes IA
+              </button>
+              <button @click="saveActiveStudentGrid" class="btn-save-grid-main" type="button">
+                💾 Enregistrer la grille
+              </button>
+            </div>
+          </div>
+
+          <div v-if="saveGridStatus" class="grid-save-feedback-banner">
+            {{ saveGridStatus }}
+          </div>
+
+          <!-- TABLEAU COMPARATIF DES 15 COMPOSANTES -->
+          <div class="table-responsive">
+            <table class="data-table detailed-15-table">
+              <thead>
+                <tr>
+                  <th style="width: 32%;">Composante d'Évaluation (15 éléments)</th>
+                  <th style="width: 10%; text-align: center;">Barème Max</th>
+                  <th style="width: 18%; text-align: center;">🤖 Cote de l'IA</th>
+                  <th style="width: 16%; text-align: center;">👨‍🏫 Cote Enseignant</th>
+                  <th style="width: 24%;">💬 Commentaire formatif</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- SECTION PARTIE 1 : TRAVAUX PLATEFORME (70 PTS) -->
+                <tr class="section-divider-row">
+                  <td colspan="5">
+                    <strong>📘 PARTIE 1 : TRAVAUX RÉALISÉS SUR LA PLATEFORME (70 PTS / 35%)</strong>
+                  </td>
+                </tr>
+
+                <tr v-for="item in activeGridItems.filter(i => i.part === 1)" :key="item.id" class="grid-item-row">
+                  <td>
+                    <div class="item-title-group">
+                      <span class="item-status-icon">{{ item.completed ? '✅' : '⏳' }}</span>
+                      <div>
+                        <strong>{{ item.title }}</strong>
+                        <div v-if="item.file" class="item-file-link">
+                          📎 Document : <code>{{ item.file.formattedFileName }}</code>
+                        </div>
+                        <div v-else-if="item.id === 'quiz'" class="item-file-link quiz-sub">
+                          💡 Évaluation automatique via les quiz du cours
+                        </div>
+                        <div v-else class="item-file-link missing">
+                          ⚠️ En attente de dépôt étudiant
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td style="text-align: center;">
+                    <span class="max-badge">/ {{ item.maxPoints }} pts</span>
+                  </td>
+                  <!-- COLONNE COTE IA -->
+                  <td style="text-align: center;">
+                    <div v-if="item.aiScore !== null && item.aiScore !== undefined" class="ai-score-cell-wrap">
+                      <span class="ai-pill"><strong>{{ item.aiScore }}</strong> / {{ item.maxPoints }}</span>
+                      <button 
+                        @click="adoptAiScoreForItem(item)" 
+                        type="button" 
+                        class="btn-adopt-mini"
+                        title="Copier la note de l'IA"
+                      >
+                        ⚡ Reprendre
+                      </button>
+                    </div>
+                    <div v-else class="ai-none-cell">
+                      <span class="ai-pending-text">⏳ En attente</span>
+                    </div>
+                  </td>
+                  <!-- COLONNE COTE ENSEIGNANT (ÉDITABLE) -->
+                  <td style="text-align: center;">
+                    <div class="teacher-input-cell-wrap">
+                      <input 
+                        v-model.number="item.teacherScore" 
+                        type="number" 
+                        :min="0" 
+                        :max="item.maxPoints" 
+                        step="0.5" 
+                        class="teacher-score-input"
+                      />
+                      <span class="pts-denom">/ {{ item.maxPoints }}</span>
+                    </div>
+                  </td>
+                  <!-- COMMENTAIRE FORMATIF -->
+                  <td>
+                    <input 
+                      v-model="item.feedback" 
+                      type="text" 
+                      placeholder="Commentaire personnalisé..." 
+                      class="teacher-comment-input"
+                    />
+                  </td>
+                </tr>
+
+                <!-- LIGNE SOUS-TOTAL PARTIE 1 -->
+                <tr class="subtotal-row p1-subtotal">
+                  <td><strong>SOUS-TOTAL TRAVAUX PLATEFORME (Quiz + Exercices 1 à 6)</strong></td>
+                  <td style="text-align: center;"><strong>70 pts</strong></td>
+                  <td style="text-align: center;">—</td>
+                  <td style="text-align: center;">
+                    <strong class="subtotal-badge">{{ currentGridPart1Total }} / 70 pts</strong>
+                  </td>
+                  <td><em>Pondération : 35% de la note finale</em></td>
+                </tr>
+
+                <!-- SECTION PARTIE 2 : PROJET JEU DE SOCIÉTÉ (130 PTS) -->
+                <tr class="section-divider-row part2-divider">
+                  <td colspan="5">
+                    <strong>🎲 PARTIE 2 : PROJET JEU DE SOCIÉTÉ DIDACTIQUE & RESTITUTION (130 PTS / 65%)</strong>
+                  </td>
+                </tr>
+
+                <tr v-for="item in activeGridItems.filter(i => i.part === 2)" :key="item.id" class="grid-item-row">
+                  <td>
+                    <div class="item-title-group">
+                      <span class="item-status-icon">{{ item.completed ? '✅' : '⏳' }}</span>
+                      <div>
+                        <strong>{{ item.title }}</strong>
+                        <div v-if="item.file" class="item-file-link">
+                          📎 Document : <code>{{ item.file.formattedFileName }}</code>
+                        </div>
+                        <div v-else class="item-file-link missing">
+                          ⚠️ En attente de dépôt du livrable
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td style="text-align: center;">
+                    <span class="max-badge">/ {{ item.maxPoints }} pts</span>
+                  </td>
+                  <!-- COLONNE COTE IA -->
+                  <td style="text-align: center;">
+                    <div v-if="item.aiScore !== null && item.aiScore !== undefined" class="ai-score-cell-wrap">
+                      <span class="ai-pill"><strong>{{ item.aiScore }}</strong> / {{ item.maxPoints }}</span>
+                      <button 
+                        @click="adoptAiScoreForItem(item)" 
+                        type="button" 
+                        class="btn-adopt-mini"
+                        title="Copier la note de l'IA"
+                      >
+                        ⚡ Reprendre
+                      </button>
+                    </div>
+                    <div v-else class="ai-none-cell">
+                      <span class="ai-pending-text">⏳ En attente</span>
+                    </div>
+                  </td>
+                  <!-- COLONNE COTE ENSEIGNANT (ÉDITABLE) -->
+                  <td style="text-align: center;">
+                    <div class="teacher-input-cell-wrap">
+                      <input 
+                        v-model.number="item.teacherScore" 
+                        type="number" 
+                        :min="0" 
+                        :max="item.maxPoints" 
+                        step="0.5" 
+                        class="teacher-score-input"
+                      />
+                      <span class="pts-denom">/ {{ item.maxPoints }}</span>
+                    </div>
+                  </td>
+                  <!-- COMMENTAIRE FORMATIF -->
+                  <td>
+                    <input 
+                      v-model="item.feedback" 
+                      type="text" 
+                      placeholder="Commentaire personnalisé..." 
+                      class="teacher-comment-input"
+                    />
+                  </td>
+                </tr>
+
+                <!-- LIGNE SOUS-TOTAL PARTIE 2 -->
+                <tr class="subtotal-row p2-subtotal">
+                  <td><strong>SOUS-TOTAL PROJET JEU (Exercices 9 à 16)</strong></td>
+                  <td style="text-align: center;"><strong>130 pts</strong></td>
+                  <td style="text-align: center;">—</td>
+                  <td style="text-align: center;">
+                    <strong class="subtotal-badge">{{ currentGridPart2Total }} / 130 pts</strong>
+                  </td>
+                  <td><em>Pondération : 65% de la note finale</em></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- CARTOUCHE DE RÉCAPITULATIF & NOTE SUR 20 -->
+          <div class="grid-recap-footer">
+            <div class="grf-scores-box">
+              <div class="grf-score-item">
+                <span class="grf-label">Plateforme (Partie 1)</span>
+                <span class="grf-val">{{ currentGridPart1Total }} / 70</span>
+              </div>
+              <div class="grf-score-item">
+                <span class="grf-label">Projet Jeu (Partie 2)</span>
+                <span class="grf-val">{{ currentGridPart2Total }} / 130</span>
+              </div>
+              <div class="grf-score-item total-200">
+                <span class="grf-label">TOTAL GÉNÉRAL</span>
+                <span class="grf-val">{{ currentGridTotalScore }} / 200 pts</span>
+              </div>
+              <div class="grf-score-item final-20">
+                <span class="grf-label">NOTE FINALE OFFICIELLE</span>
+                <span class="grf-val-huge">{{ currentGridTotalOutOf20 }} / 20</span>
+                <span :class="['grf-mention-badge', currentGridMention.class]">{{ currentGridMention.label }}</span>
+              </div>
+            </div>
+
+            <div class="grf-feedback-box">
+              <label>💬 Observation générale & synthèse pour le bulletin / carnet :</label>
+              <textarea 
+                v-model="activeGridGeneralFeedback" 
+                rows="3" 
+                placeholder="Rédigez ici votre synthèse d'évaluation globale..."
+                class="grf-textarea"
+              ></textarea>
+              <div class="grf-btn-row">
+                <button @click="saveActiveStudentGrid" class="btn-save-grid-large">
+                  💾 Enregistrer les cotes & commentaires pour cet étudiant
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TABLEAU RÉCAPITULATIF DE TOUTE LA CLASSE -->
+        <div class="class-summary-section">
+          <div class="css-header">
+            <h4>📋 Vue d'ensemble de la classe (Relevé récapitulatif)</h4>
+            <span class="css-count">{{ users.filter(u => u.status !== 'archived').length }} étudiants inscrits</span>
+          </div>
+
+          <div class="table-responsive">
+            <table class="data-table class-overview-table">
+              <thead>
+                <tr>
+                  <th>Étudiant</th>
+                  <th style="text-align: center;">Quiz (/10)</th>
+                  <th style="text-align: center;">Devoirs (/60)</th>
+                  <th style="text-align: center;">Partie 1 (/70)</th>
+                  <th style="text-align: center;">Projet Jeu (/130)</th>
+                  <th style="text-align: center;">Total (/200)</th>
+                  <th style="text-align: center; background: #e0f2fe;">Note Finale (/20)</th>
+                  <th style="text-align: center;">Statut</th>
+                  <th style="text-align: right;">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="u in users.filter(u => u.status !== 'archived')" :key="u.id">
+                  <td>
+                    <strong>{{ u.lastName }}</strong> {{ u.firstName }}
+                    <div class="student-sub-mail">{{ u.email }}</div>
+                  </td>
+                  <td style="text-align: center;">{{ getStudentEvalData(u.email).pillar1.quizPoints }}</td>
+                  <td style="text-align: center;">{{ getStudentEvalData(u.email).pillar1.exercisesTotal }}</td>
+                  <td style="text-align: center;"><strong>{{ getStudentEvalData(u.email).part1.total }}</strong></td>
+                  <td style="text-align: center;"><strong>{{ getStudentEvalData(u.email).part2.total }}</strong></td>
+                  <td style="text-align: center;" class="total-200-cell"><strong>{{ getStudentEvalData(u.email).totalScore }}</strong></td>
+                  <td style="text-align: center;" class="grade-20-cell-highlight">
+                    <strong>{{ getStudentEvalData(u.email).totalOutOf20 }}</strong> / 20
+                  </td>
+                  <td style="text-align: center;">
+                    <span :class="['status-badge', getStudentEvalData(u.email).isPassing ? 'active' : 'archived']">
+                      {{ getStudentEvalData(u.email).isPassing ? 'Admis' : 'Ajourné' }}
+                    </span>
+                  </td>
+                  <td style="text-align: right;">
+                    <button @click="loadStudentForGrid(u.email)" class="btn-row-action edit-grade" title="Ouvrir la grille détaillée">
+                      ✏️ Évaluer
                     </button>
-                    <button @click="handleDeleteStudent(u)" class="btn-row-action delete-mini" title="Supprimer cet étudiant">
-                      🗑️
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <!-- MODAL D'ÉDITION DES POINTS ET DU FEEDBACK -->
@@ -3230,6 +3663,483 @@ function formatSize(bytes) {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.8; }
 }
+
+/* Evaluation 15-item Grid & Excel Export Styles */
+.eval-toolbar-sub {
+  margin: 0.3rem 0 0 0;
+  font-size: 0.88rem;
+  color: var(--vp-c-text-2);
+}
+
+.btn-export-excel-highlight {
+  background: #15803d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(21, 128, 61, 0.25);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-export-excel-highlight:hover {
+  background: #166534;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(21, 128, 61, 0.35);
+}
+
+.eval-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.eval-kpi-card {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.highlight-moy {
+  border-left: 4px solid #2563eb;
+  background: #f0f7ff;
+}
+
+.highlight-pass {
+  border-left: 4px solid #16a34a;
+  background: #f0fdf4;
+}
+
+.highlight-high {
+  border-left: 4px solid #eab308;
+  background: #fefce8;
+}
+
+.highlight-low {
+  border-left: 4px solid #dc2626;
+  background: #fef2f2;
+}
+
+.ekpi-icon {
+  font-size: 1.8rem;
+}
+
+.ekpi-val {
+  font-size: 1.3rem;
+  color: var(--vp-c-text-1);
+}
+
+.ekpi-val strong {
+  font-size: 1.5rem;
+}
+
+.ekpi-label {
+  font-size: 0.8rem;
+  color: var(--vp-c-text-2);
+}
+
+.grid-eval-card-container {
+  background: var(--vp-c-bg);
+  border: 1.5px solid var(--vp-c-brand-1);
+  border-radius: 12px;
+  padding: 1.4rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+.gec-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--vp-c-divider);
+  margin-bottom: 1.2rem;
+}
+
+.gec-selector-group {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.gec-selector-group label {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--vp-c-brand-1);
+}
+
+.student-eval-select {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1.5px solid var(--vp-c-brand-1);
+  background: var(--vp-c-bg-soft);
+  font-size: 0.95rem;
+  font-weight: 600;
+  min-width: 320px;
+  cursor: pointer;
+}
+
+.gec-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.btn-bulk-adopt-ai {
+  background: #e0e7ff;
+  color: #3730a3;
+  border: 1px solid #c7d2fe;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-bulk-adopt-ai:hover {
+  background: #c7d2fe;
+}
+
+.btn-save-grid-main {
+  background: var(--vp-c-brand-1);
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-save-grid-main:hover {
+  background: var(--vp-c-brand-2);
+}
+
+.grid-save-feedback-banner {
+  background: #dcfce7;
+  color: #15803d;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #86efac;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.section-divider-row td {
+  background: #e0f2fe !important;
+  color: #0369a1 !important;
+  font-size: 0.9rem;
+  padding: 10px 14px !important;
+  letter-spacing: 0.3px;
+}
+
+.part2-divider td {
+  background: #fef3c7 !important;
+  color: #92400e !important;
+}
+
+.detailed-15-table th {
+  background: #f8fafc;
+  color: #334155;
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+.detailed-15-table td {
+  vertical-align: middle;
+  padding: 10px 12px;
+}
+
+.item-title-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.item-status-icon {
+  font-size: 1.1rem;
+}
+
+.item-file-link {
+  font-size: 0.78rem;
+  color: #0284c7;
+  margin-top: 2px;
+}
+
+.item-file-link.quiz-sub {
+  color: #6366f1;
+}
+
+.item-file-link.missing {
+  color: #9ca3af;
+}
+
+.max-badge {
+  background: #f1f5f9;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: #475569;
+}
+
+.ai-score-cell-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.ai-pill {
+  background: #dbeafe;
+  color: #1e40af;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.ai-pill strong {
+  font-size: 0.95rem;
+}
+
+.btn-adopt-mini {
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-adopt-mini:hover {
+  background: #bbf7d0;
+}
+
+.ai-pending-text {
+  font-size: 0.78rem;
+  color: #94a3b8;
+}
+
+.teacher-input-cell-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.teacher-score-input {
+  width: 65px;
+  padding: 6px 8px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  border: 1.5px solid var(--vp-c-brand-1);
+  border-radius: 6px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+}
+
+.pts-denom {
+  font-size: 0.8rem;
+  color: var(--vp-c-text-2);
+}
+
+.teacher-comment-input {
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  background: var(--vp-c-bg-soft);
+}
+
+.subtotal-row td {
+  padding: 12px 14px;
+  border-top: 2px solid #cbd5e1;
+  border-bottom: 2px solid #cbd5e1;
+}
+
+.p1-subtotal {
+  background: #f0f9ff;
+}
+
+.p2-subtotal {
+  background: #fffbeb;
+}
+
+.subtotal-badge {
+  font-size: 1.05rem;
+  color: var(--vp-c-brand-1);
+}
+
+.grid-recap-footer {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--vp-c-divider);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.grf-scores-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.grf-score-item {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.grf-score-item.total-200 {
+  background: #f1f5f9;
+  border: 1.5px solid #cbd5e1;
+}
+
+.grf-score-item.final-20 {
+  background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
+  border: 2px solid #16a34a;
+  grid-column: span 2;
+  align-items: center;
+  padding: 1.2rem;
+  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.15);
+}
+
+.grf-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--vp-c-text-2);
+  letter-spacing: 0.5px;
+}
+
+.grf-val {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+  margin-top: 4px;
+}
+
+.grf-val-huge {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #166534;
+  margin: 4px 0;
+}
+
+.grf-mention-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.mention-pgd { background: #fef08a; color: #854d0e; }
+.mention-gd { background: #dcfce7; color: #166534; }
+.mention-d { background: #dbeafe; color: #1e40af; }
+.mention-sat { background: #e0e7ff; color: #3730a3; }
+.mention-fail { background: #fee2e2; color: #991b1b; }
+
+.grf-feedback-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.grf-feedback-box label {
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.grf-textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1.5px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-soft);
+  font-size: 0.9rem;
+  resize: vertical;
+  flex-grow: 1;
+}
+
+.grf-btn-row {
+  margin-top: 0.8rem;
+  text-align: right;
+}
+
+.btn-save-grid-large {
+  background: var(--vp-c-brand-1);
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.btn-save-grid-large:hover {
+  background: var(--vp-c-brand-2);
+}
+
+.class-summary-section {
+  margin-top: 2rem;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 1.2rem;
+}
+
+.css-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.css-header h4 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.css-count {
+  font-size: 0.82rem;
+  color: var(--vp-c-text-2);
+}
+
+.grade-20-cell-highlight {
+  background: #e0f2fe;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: #0369a1;
+}
+
 </style>
 
 

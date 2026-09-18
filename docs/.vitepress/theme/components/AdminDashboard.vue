@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
-import { userStore, OFFICIAL_EVALUATION_ITEMS, formatDeadlineDisplay, getAlarmLevelInfo } from '../stores/userStore'
+import { userStore, OFFICIAL_EVALUATION_ITEMS, formatDeadlineDisplay, getAlarmLevelInfo, parseDeadline } from '../stores/userStore'
 
 const enteredPin = ref('')
 const isAuthenticated = ref(false)
@@ -298,7 +298,10 @@ function getItemLateBreakdown(itemId) {
   if (!eff.isDefined || !eff.deadline) {
     return { total: active.length, submitted: 0, overdue: 0, orange: 0, bordeaux: 0, red: 0, recent: 0, isPast: false, daysDiff: 0 }
   }
-  const deadlineDate = new Date(eff.deadline.replace(' ', 'T'))
+  const deadlineDate = parseDeadline(eff.deadline)
+  if (!deadlineDate) {
+    return { total: active.length, submitted: 0, overdue: 0, orange: 0, bordeaux: 0, red: 0, recent: 0, isPast: false, daysDiff: 0 }
+  }
   const now = new Date()
   const isPast = now > deadlineDate
   const daysDiff = Math.floor(Math.abs(now.getTime() - deadlineDate.getTime()) / (1000 * 60 * 60 * 24))

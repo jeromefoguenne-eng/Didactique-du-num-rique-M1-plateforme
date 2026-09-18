@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-import { userStore, formatDeadlineDisplay, getAlarmLevelInfo } from '../stores/userStore'
+import { userStore, formatDeadlineDisplay, getAlarmLevelInfo, parseDeadline } from '../stores/userStore'
 
 const props = defineProps({
   exerciseId: {
@@ -42,8 +42,16 @@ const teacherFeedback = computed(() => {
 // Échéance et alerte de retard graduée (Orange > 1 sem, Bordeaux > 2 sem, Rouge > 1 mois)
 const deadlineInfo = computed(() => {
   const d = userStore.getExerciseDeadline(props.exerciseId)
-  if (!d || !d.deadline) return null
+  if (!d || !d.isDefined || !d.deadline) {
+    return {
+      isDefined: false,
+      deadline: '',
+      display: 'Non fixée',
+      label: ''
+    }
+  }
   return {
+    isDefined: true,
     deadline: d.deadline,
     display: formatDeadlineDisplay(d.deadline),
     label: d.label || ''
@@ -53,13 +61,15 @@ const deadlineInfo = computed(() => {
 const lateAlert = computed(() => {
   if (attachedFile.value) return null
   const d = userStore.getExerciseDeadline(props.exerciseId)
-  if (!d || !d.deadline) return null
+  if (!d || !d.isDefined || !d.deadline) return null
 
-  const due = new Date(d.deadline).getTime()
-  const now = Date.now()
-  if (now <= due) return null
+  const deadlineDate = parseDeadline(d.deadline)
+  if (!deadlineDate) return null
+  const now = new Date()
+  if (now <= deadlineDate) return null
 
-  const daysLate = Math.floor((now - due) / (1000 * 60 * 60 * 24))
+  const daysLate = Math.max(1, Math.floor((now.getTime() - deadlineDate.getTime()) / (1000 * 60 * 60 * 24)))
+  if (daysLate < 7) return null // Alerte uniquement à partir d'1 semaine de retard (Orange, Bordeaux, Rouge)
   const alarmInfo = getAlarmLevelInfo(daysLate)
   return {
     daysLate,
@@ -172,19 +182,21 @@ function formatSize(bytes) {
       <h4>Rédiger ou déposer votre travail pour cet atelier</h4>
     </div>
 
-    <!-- BANDEAU ÉCHÉANCE & STATUT -->
-    <div v-if="deadlineInfo" class="box-deadline-strip" :class="{ 'is-overdue': !!lateAlert }">
+    <!-- BANDEAU ÉCHÉANCE & STATUT TOUJOURS VISIBLE -->
+    <div class="box-deadline-strip" :class="{ 'is-overdue': !!lateAlert, 'no-deadline': !deadlineInfo.isDefined }">
       <div class="bds-left">
         <span class="bds-icon">📅</span>
         <span class="bds-label">Date limite de remise :</span>
-        <strong class="bds-date">{{ deadlineInfo.display }}</strong>
+        <strong v-if="deadlineInfo.isDefined" class="bds-date">{{ deadlineInfo.display }}</strong>
+        <span v-else class="bds-date-empty">⚪ Non fixée par l'enseignant (dépôt libre)</span>
       </div>
       <div class="bds-right">
         <span v-if="attachedFile" class="bds-badge-ok">✓ Document remis</span>
         <span v-else-if="lateAlert" class="bds-badge-late" :style="{ backgroundColor: lateAlert.alarmInfo.color }">
           {{ lateAlert.alarmInfo.icon }} {{ lateAlert.alarmInfo.label }} (+{{ lateAlert.daysLate }}j)
         </span>
-        <span v-else class="bds-badge-pending">⏳ À rendre</span>
+        <span v-else-if="deadlineInfo.isDefined" class="bds-badge-pending">⏳ À rendre</span>
+        <span v-else class="bds-badge-open">🟢 Dépôt ouvert</span>
       </div>
     </div>
 

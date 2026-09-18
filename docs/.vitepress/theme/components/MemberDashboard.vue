@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue'
-import { userStore, formatDeadlineDisplay, getAlarmLevelInfo } from '../stores/userStore'
+import { userStore, formatDeadlineDisplay, getAlarmLevelInfo, parseDeadline } from '../stores/userStore'
 import { withBase } from 'vitepress'
 
 const firstName = ref('')
@@ -240,24 +240,47 @@ const myEvaluation = computed(() => userStore.getStudentEvaluation())
 // Échéances dynamiques et alertes de retard graduées (Orange > 1 sem, Bordeaux > 2 sem, Rouge > 1 mois)
 function getExerciseDeadlineInfo(exId) {
   const d = userStore.getExerciseDeadline(exId)
-  if (!d || !d.deadline) return null
+  if (!d || !d.isDefined || !d.deadline) {
+    return {
+      isDefined: false,
+      deadline: '',
+      display: 'Non fixée',
+      label: '',
+      isPast: false,
+      daysDiff: 0
+    }
+  }
+  const dateObj = parseDeadline(d.deadline)
+  const now = new Date()
+  let daysDiff = 0
+  let isPast = false
+  if (dateObj) {
+    isPast = now > dateObj
+    daysDiff = Math.floor(Math.abs(now.getTime() - dateObj.getTime()) / (1000 * 60 * 60 * 24))
+  }
   return {
+    isDefined: true,
     deadline: d.deadline,
     display: formatDeadlineDisplay(d.deadline),
-    label: d.label || ''
+    label: d.label || '',
+    isPast,
+    daysDiff,
+    dateObj
   }
 }
 
 function getExerciseLateAlert(exId) {
   if (getFileForExercise(exId)) return null
   const d = userStore.getExerciseDeadline(exId)
-  if (!d || !d.deadline) return null
+  if (!d || !d.isDefined || !d.deadline) return null
 
-  const due = new Date(d.deadline).getTime()
-  const now = Date.now()
-  if (now <= due) return null
+  const deadlineDate = parseDeadline(d.deadline)
+  if (!deadlineDate) return null
+  const now = new Date()
+  if (now <= deadlineDate) return null
 
-  const daysLate = Math.floor((now - due) / (1000 * 60 * 60 * 24))
+  const daysLate = Math.max(1, Math.floor((now.getTime() - deadlineDate.getTime()) / (1000 * 60 * 60 * 24)))
+  if (daysLate < 7) return null // Alarme uniquement si retard >= 1 semaine (Orange, Bordeaux, Rouge)
   const alarmInfo = getAlarmLevelInfo(daysLate)
   return {
     daysLate,
@@ -285,7 +308,7 @@ const upcomingDeadlinesList = computed(() => {
       deadlineInfo: dInfo,
       alert
     }
-  }).filter(item => item.deadlineInfo !== null)
+  }).filter(item => item.deadlineInfo && item.deadlineInfo.isDefined)
 })
 
 // Aperçu en temps réel du nom de fichier généré
@@ -935,8 +958,11 @@ function formatSize(bytes) {
                       <span v-if="ex.isOverdue" class="ee-alarm-pill" :style="{ backgroundColor: ex.alarmColor || '#dc2626' }">
                         {{ ex.alarmIcon || '🔔' }} {{ ex.alarmLabel }} (+{{ ex.daysOverdue }}j)
                       </span>
-                      <span v-else-if="ex.effectiveDeadline" class="ee-deadline-pill">
-                        📅 {{ formatDeadlineDisplay(ex.effectiveDeadline) }}
+                      <span v-else-if="ex.deadline" class="ee-deadline-pill">
+                        📅 Échéance : {{ ex.deadlineLabel || formatDeadlineDisplay(ex.deadline) }}
+                      </span>
+                      <span v-else class="ee-deadline-empty">
+                        ⚪ Pas d'échéance fixée
                       </span>
                       <a 
                         :href="getExerciseDocUrl(ex.id)" 
@@ -1158,9 +1184,6 @@ function formatSize(bytes) {
                   <a :href="ex.docUrl" target="_blank" rel="noopener" class="link-doc-drive-inline">
                     📥 Consignes officielles (Google Docs) ↗
                   </a>
-                  <span v-if="getExerciseDeadlineInfo(ex.id)" class="ex-meta-deadline-pill">
-                    📅 Échéance : <strong>{{ getExerciseDeadlineInfo(ex.id).display }}</strong>
-                  </span>
                 </div>
               </div>
               <div class="ex-status-badges">
@@ -1170,9 +1193,41 @@ function formatSize(bytes) {
                 <span v-else-if="getExerciseLateAlert(ex.id)" class="badge-alarm-pill" :style="{ backgroundColor: getExerciseLateAlert(ex.id).alarmInfo.color }">
                   {{ getExerciseLateAlert(ex.id).alarmInfo.icon }} {{ getExerciseLateAlert(ex.id).alarmInfo.label }} (+{{ getExerciseLateAlert(ex.id).daysLate }}j)
                 </span>
-                <span v-else class="badge-pending">
-                  ⏳ En attente de document
+                <span v-else-if="getExerciseDeadlineInfo(ex.id).isDefined" class="badge-pending">
+                  ⏳ À rendre
                 </span>
+                <span v-else class="badge-pending">
+                  🟢 Dépôt ouvert
+                </span>
+              </div>
+            </div>
+
+            <!-- BANDEAU ÉCHÉANCE PROÉMINENT POUR CHAQUE EXERCICE -->
+            <div class="ex-deadline-bar" :class="{ 'has-deadline': getExerciseDeadlineInfo(ex.id).isDefined, 'is-late': !!getExerciseLateAlert(ex.id), 'no-deadline': !getExerciseDeadlineInfo(ex.id).isDefined }">
+              <div class="edb-left">
+                <span class="edb-icon">📅</span>
+                <span class="edb-label">Date limite de remise :</span>
+                <strong v-if="getExerciseDeadlineInfo(ex.id).isDefined" class="edb-val">
+                  {{ getExerciseDeadlineInfo(ex.id).display }}
+                </strong>
+                <span v-else class="edb-val-empty">
+                  ⚪ Non fixée par l'enseignant (dépôt libre sans date limite)
+                </span>
+              </div>
+              <div class="edb-right" v-if="getExerciseDeadlineInfo(ex.id).isDefined">
+                <span v-if="getFileForExercise(ex.id)" class="edb-status-ok">✓ Document déposé</span>
+                <span v-else-if="getExerciseLateAlert(ex.id)" class="edb-status-late">
+                  🚨 Retard de {{ getExerciseLateAlert(ex.id).daysLate }} jour(s)
+                </span>
+                <span v-else-if="!getExerciseDeadlineInfo(ex.id).isPast" class="edb-status-future">
+                  ⏳ Reste {{ getExerciseDeadlineInfo(ex.id).daysDiff }} jour(s)
+                </span>
+                <span v-else class="edb-status-passed">
+                  ⏳ Rendu en attente
+                </span>
+              </div>
+              <div class="edb-right" v-else>
+                <span class="edb-status-open">🟢 Dépôt ouvert</span>
               </div>
             </div>
 
@@ -3738,10 +3793,21 @@ function formatSize(bytes) {
 .ee-deadline-pill {
   font-size: 0.72rem;
   font-weight: 600;
-  color: #64748b;
-  background: #f1f5f9;
-  border: 1px solid #cbd5e1;
-  padding: 2px 6px;
+  color: #0369a1;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  padding: 2px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.ee-deadline-empty {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #94a3b8;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  padding: 2px 7px;
   border-radius: 4px;
   white-space: nowrap;
 }
@@ -4005,5 +4071,114 @@ function formatSize(bytes) {
   font-size: 0.82rem;
   line-height: 1.4;
   opacity: 0.95;
+}
+
+/* BANDEAU PROÉMINENT D'ÉCHÉANCE PAR EXERCICE */
+.ex-deadline-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.6rem 0.85rem;
+  margin: 0.6rem 0 0.8rem 0;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  transition: all 0.2s ease;
+}
+
+.ex-deadline-bar.has-deadline {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+}
+
+.ex-deadline-bar.has-deadline.is-late {
+  background: #fff7ed;
+  border: 1px solid #fdba74;
+  color: #9a3412;
+}
+
+.ex-deadline-bar.no-deadline {
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  color: #64748b;
+}
+
+.edb-left {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.edb-icon {
+  font-size: 1.05rem;
+}
+
+.edb-label {
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.edb-val {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.edb-val-empty {
+  font-style: italic;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.edb-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.edb-status-ok {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #15803d;
+  background: #dcfce7;
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+
+.edb-status-late {
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #c2410c;
+  background: #ffedd5;
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+
+.edb-status-future {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #0284c7;
+  background: #e0f2fe;
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+
+.edb-status-passed {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #b45309;
+  background: #fef3c7;
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+
+.edb-status-open {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #059669;
+  background: #ecfdf5;
+  padding: 2px 8px;
+  border-radius: 9999px;
 }
 </style>

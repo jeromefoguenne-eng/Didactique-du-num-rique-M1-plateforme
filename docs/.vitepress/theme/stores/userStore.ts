@@ -129,7 +129,7 @@ const STORAGE_KEY_WEBHOOK = 'hech_didac_drive_webhook'
 const STORAGE_KEY_QUIZZES = 'hech_didac_quiz_attempts'
 const STORAGE_KEY_EVALUATIONS = 'hech_didac_evaluations_200'
 const STORAGE_KEY_EXERCISE_FEEDBACKS = 'hech_didac_exercise_feedbacks'
-const STORAGE_KEY_DEADLINES = 'hech_didac_deadlines'
+const STORAGE_KEY_DEADLINES = 'hech_didac_deadlines_v2'
 
 export interface EvaluationRecord {
   userEmail: string
@@ -197,20 +197,54 @@ export interface StudentLateStatus {
   message: string
 }
 
-export function formatDeadlineDisplay(dtStr: string): string {
-  if (!dtStr) return 'Non fixée'
-  try {
-    const d = new Date(dtStr.replace(' ', 'T'))
-    if (isNaN(d.getTime())) return dtStr
-    const day = String(d.getDate()).padStart(2, '0')
-    const month = String(d.getMonth() + 1).padStart(2, '0')
-    const year = d.getFullYear()
-    const hours = String(d.getHours()).padStart(2, '0')
-    const minutes = String(d.getMinutes()).padStart(2, '0')
-    return `${day}/${month}/${year} à ${hours}h${minutes}`
-  } catch {
-    return dtStr
+/**
+ * Parse de manière robuste toute date d'échéance :
+ * - Format FR / Européen : JJ/MM/AAAA, JJ/MM/AAAA HH:mm, JJ/MM/AAAA à HH:mm, JJ-MM-AAAA
+ * - Format ISO : YYYY-MM-DD, YYYY-MM-DDTHH:mm, YYYY-MM-DD HH:mm
+ */
+export function parseDeadline(dtStr: string | undefined | null): Date | null {
+  if (!dtStr || typeof dtStr !== 'string' || !dtStr.trim()) return null
+  const clean = dtStr.trim()
+
+  // 1. Format européen / belge : JJ/MM/AAAA ou JJ/MM/AAAA HH:mm ou JJ/MM/AAAA à HH:mm ou JJ-MM-AAAA
+  const frMatch = clean.match(/^(\d{1,2})[\/\-\.](\d{1,2})[\/\-\.](\d{4})(?:(?:\s+|[T\s]+à\s+)(\d{1,2})(?::(\d{1,2}))?)?/)
+  if (frMatch) {
+    const day = parseInt(frMatch[1], 10)
+    const month = parseInt(frMatch[2], 10) - 1 // Mois 0-indexé
+    const year = parseInt(frMatch[3], 10)
+    const hours = frMatch[4] ? parseInt(frMatch[4], 10) : 23
+    const minutes = frMatch[5] ? parseInt(frMatch[5], 10) : 59
+    const d = new Date(year, month, day, hours, minutes, 0)
+    if (!isNaN(d.getTime())) return d
   }
+
+  // 2. Format standard ISO : YYYY-MM-DD ou YYYY-MM-DDTHH:mm ou YYYY-MM-DD HH:mm
+  const isoMatch = clean.match(/^(\d{4})[\/\-](\d{1,2})[\/\-](\d{1,2})(?:[T\s]+(\d{1,2})(?::(\d{1,2}))?)?/)
+  if (isoMatch) {
+    const year = parseInt(isoMatch[1], 10)
+    const month = parseInt(isoMatch[2], 10) - 1
+    const day = parseInt(isoMatch[3], 10)
+    const hours = isoMatch[4] ? parseInt(isoMatch[4], 10) : 23
+    const minutes = isoMatch[5] ? parseInt(isoMatch[5], 10) : 59
+    const d = new Date(year, month, day, hours, minutes, 0)
+    if (!isNaN(d.getTime())) return d
+  }
+
+  // 3. Repli standard
+  const fallback = new Date(clean.replace(' ', 'T'))
+  return isNaN(fallback.getTime()) ? null : fallback
+}
+
+export function formatDeadlineDisplay(dtStr: string): string {
+  if (!dtStr || !dtStr.trim()) return 'Non fixée'
+  const d = parseDeadline(dtStr)
+  if (!d) return dtStr
+  const day = String(d.getDate()).padStart(2, '0')
+  const month = String(d.getMonth() + 1).padStart(2, '0')
+  const year = d.getFullYear()
+  const hours = String(d.getHours()).padStart(2, '0')
+  const minutes = String(d.getMinutes()).padStart(2, '0')
+  return `${day}/${month}/${year} à ${hours}h${minutes}`
 }
 
 export function getAlarmLevelInfo(daysOverdue: number): {
@@ -222,7 +256,8 @@ export function getAlarmLevelInfo(daysOverdue: number): {
   icon: string
   badgeText: string
 } {
-  if (daysOverdue < 0) {
+  // Sécurité absolue contre NaN ou jours négatifs (échéance future)
+  if (isNaN(daysOverdue) || daysOverdue < 0) {
     return {
       level: 'none',
       color: '#10b981',
@@ -1443,6 +1478,33 @@ function setStorage<T>(key: string, val: T): boolean {
   }
 }
 
+function initInitialDeadlines(): Record<string, { deadline: string, deadlineLabel?: string }> {
+  const v2 = getStorage<Record<string, { deadline: string, deadlineLabel?: string }>>(STORAGE_KEY_DEADLINES, null as any)
+  if (v2 && typeof v2 === 'object' && Object.keys(v2).length > 0) {
+    return v2
+  }
+  
+  // Si v2 est vide, vérifier l'ancien stockage v1 : ne conserver QUE les dates futures légitimes, supprimer les anciennes dates par défaut échues
+  const old = getStorage<Record<string, { deadline: string, deadlineLabel?: string }>>('hech_didac_deadlines', null as any)
+  const clean: Record<string, { deadline: string, deadlineLabel?: string }> = {}
+  if (old && typeof old === 'object') {
+    const now = new Date()
+    for (const [k, v] of Object.entries(old)) {
+      if (v && v.deadline) {
+        const parsed = parseDeadline(v.deadline)
+        if (parsed && parsed > now) {
+          clean[k] = {
+            deadline: v.deadline,
+            deadlineLabel: v.deadlineLabel || formatDeadlineDisplay(v.deadline)
+          }
+        }
+      }
+    }
+  }
+  setStorage(STORAGE_KEY_DEADLINES, clean)
+  return clean
+}
+
 const state = reactive({
   currentUser: getStorage<User | null>(STORAGE_KEY_CURRENT, null),
   users: getStorage<User[]>(STORAGE_KEY_USERS, DEFAULT_USERS).map(u => ({
@@ -1457,7 +1519,7 @@ const state = reactive({
   adminPinHash: initAdminPinHash(),
   quizAttempts: getStorage<QuizAttempt[]>(STORAGE_KEY_QUIZZES, DEFAULT_QUIZZES),
   evaluations: getStorage<Record<string, EvaluationRecord>>(STORAGE_KEY_EVALUATIONS, DEFAULT_EVALUATIONS),
-  deadlines: getStorage<Record<string, { deadline: string, deadlineLabel?: string }>>(STORAGE_KEY_DEADLINES, {})
+  deadlines: initInitialDeadlines()
 })
 
 export const userStore = {
@@ -2341,7 +2403,7 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
         const fbQuiz = this.getExerciseFeedback('quiz', targetEmail)
         let teacherPts = fbQuiz?.score !== undefined ? fbQuiz.score : quizAiScore
         const effDeadlineQuiz = this.getExerciseDeadline('quiz')
-        const quizDeadlineDate = effDeadlineQuiz.deadline ? new Date(effDeadlineQuiz.deadline.replace(' ', 'T')) : null
+        const quizDeadlineDate = parseDeadline(effDeadlineQuiz.deadline)
         const isQuizOverdue = userQuizzes.length === 0 && !!quizDeadlineDate && (new Date() > quizDeadlineDate)
         const quizDaysOverdue = isQuizOverdue && quizDeadlineDate ? Math.max(1, Math.floor((new Date().getTime() - quizDeadlineDate.getTime()) / (1000 * 60 * 60 * 24))) : 0
         const quizAlarmInfo = isQuizOverdue ? getAlarmLevelInfo(quizDaysOverdue) : getAlarmLevelInfo(-1)
@@ -2379,7 +2441,7 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
       const isDone = !!file || hasSub
 
       const effDeadline = this.getExerciseDeadline(def.id)
-      const deadlineDate = effDeadline.deadline ? new Date(effDeadline.deadline.replace(' ', 'T')) : null
+      const deadlineDate = parseDeadline(effDeadline.deadline)
       const isOverdue = !isDone && !!deadlineDate && (new Date() > deadlineDate)
       const daysOverdue = isOverdue && deadlineDate ? Math.max(1, Math.floor((new Date().getTime() - deadlineDate.getTime()) / (1000 * 60 * 60 * 24))) : 0
       const alarmInfo = isOverdue ? getAlarmLevelInfo(daysOverdue) : getAlarmLevelInfo(-1)
@@ -2538,8 +2600,8 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
     for (const item of OFFICIAL_EVALUATION_ITEMS) {
       const eff = this.getExerciseDeadline(item.id)
       if (!eff.isDefined || !eff.deadline) continue
-      const deadlineDate = new Date(eff.deadline.replace(' ', 'T'))
-      if (isNaN(deadlineDate.getTime())) continue
+      const deadlineDate = parseDeadline(eff.deadline)
+      if (!deadlineDate) continue
 
       if (now > deadlineDate) {
         let isCompleted = false
@@ -2576,9 +2638,6 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
       }
     }
 
-    const isLate = overdueList.length > 0
-    const lateCount = overdueList.length
-
     // Déterminer le palier d'alarme le plus grave
     let highestAlarmLevel: AlarmLevel = 'none'
     if (overdueList.some(o => o.alarmLevel === 'red')) highestAlarmLevel = 'red'
@@ -2586,11 +2645,16 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
     else if (overdueList.some(o => o.alarmLevel === 'orange')) highestAlarmLevel = 'orange'
     else if (overdueList.some(o => o.alarmLevel === 'recent')) highestAlarmLevel = 'recent'
 
+    // L'alarme de retard étudiante (nom en rouge, cloche) s'applique uniquement à partir d'1 semaine de retard (Orange, Bordeaux, Rouge)
+    const hasAlarm = highestAlarmLevel === 'orange' || highestAlarmLevel === 'bordeaux' || highestAlarmLevel === 'red'
+    const isLate = hasAlarm
+    const lateCount = overdueList.filter(o => o.alarmLevel === 'orange' || o.alarmLevel === 'bordeaux' || o.alarmLevel === 'red').length
+
     const highestAlarmInfo = isLate ? getAlarmLevelInfo(daysOverdueMax) : getAlarmLevelInfo(-1)
     const titles = overdueList.map(o => `${o.shortTitle} (${o.alarmIcon} ${o.daysOverdue} j)`).join(', ')
     const tooltip = isLate 
       ? `🚨 ALARME ${highestAlarmInfo.label.toUpperCase()} : ${lateCount} document(s) non remis (${titles})`
-      : 'Tous les travaux attendus à cette date sont remis à temps'
+      : (overdueList.length > 0 ? `⏳ Retard récent (< 1 semaine) : ${overdueList.map(o => o.shortTitle).join(', ')}` : 'Tous les travaux attendus à cette date sont remis à temps')
 
     return {
       isLate,

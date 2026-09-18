@@ -90,6 +90,16 @@ Cette distinction est particulièrement importante dans le volet numérique du F
 
 ---
 
+## 🎓 Auto-évaluation & Réflexivité (3.1)
+
+Testez votre compréhension didactique de la démarche de situation-problème et effectuez un retour réflexif sur l'Exercice 02 réalisé :
+
+<ClientOnly>
+  <QuizBox moduleId="03-1" moduleTitle="3.1 La situation-problème et l'apprentissage par problème" />
+</ClientOnly>
+
+---
+
 ## Navigation
 - 🏠 **[03. Hub Méthodologies Pédagogiques](/modules/03-pedagogies-actives)**
 - ➡️ **[3.2 Apprentissage par projet](/modules/03-2-pedagogie-projet)**

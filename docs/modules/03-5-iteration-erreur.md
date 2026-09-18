@@ -71,6 +71,16 @@ Par exemple, les élèves peuvent créer une première version d'un jeu numériq
 
 ---
 
+## 🎓 Auto-évaluation & Réflexivité (3.5)
+
+Testez votre compréhension de la démarche itérative et du statut positif de l'erreur, et analysez le playtest de votre jeu numérique (Exercice 06) :
+
+<ClientOnly>
+  <QuizBox moduleId="03-5" moduleTitle="3.5 La démarche de conception itérative" />
+</ClientOnly>
+
+---
+
 ## Navigation
 - 🏠 **[03. Hub Méthodologies Pédagogiques](/modules/03-pedagogies-actives)**
 - ⬅️ **[3.4 Le défi express](/modules/03-4-defis-express)**

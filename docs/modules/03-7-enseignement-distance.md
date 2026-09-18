@@ -79,10 +79,23 @@ Les consignes et les critères de réussite prennent donc une importance particu
 L'évaluation peut être intégrée au parcours sous forme de quiz formatifs, productions, défis, feedback entre pairs, portfolios ou autoévaluations. L'objectif est de rendre les progrès visibles plutôt que d'attendre uniquement une évaluation finale.
 
 
-Exemple : la plateforme du cours
+Exemple : la plateforme du cours
 
+La présente plateforme web de Didactique et Numérique (Master 1) illustre directement cette démarche : scénarisation claire en modules progressifs, documents officiels Google Docs accessibles en lecture seule pour guidage immédiat, rétroaction formative par quiz d'auto-évaluation et suivi personnalisé via l'Espace Membre.
+
+---
+
+## 🎓 Auto-évaluation & Réflexivité (3.7)
+
+Testez votre compréhension des principes de scénarisation et d'interaction à distance, et analysez l'ergonomie de notre plateforme de cours :
+
+<ClientOnly>
+  <QuizBox moduleId="03-7" moduleTitle="3.7 L'enseignement à distance" />
+</ClientOnly>
 
 ---
 
 ## Navigation
+- ⬅️ **[3.6 Peer learning & apprentissage expérientiel](/modules/03-6-peer-learning)**
 - 🏠 **[03. Hub Méthodologies Pédagogiques](/modules/03-pedagogies-actives)**
+- ➡️ **[04. Préparation d'une leçon FMTTN](/modules/04-preparation-lecon-fmttn)**

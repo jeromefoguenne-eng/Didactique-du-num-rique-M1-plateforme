@@ -66,6 +66,16 @@ Exemple : Escape Game FMTTN (Cyber-Enquête)
 
 ---
 
+## 🎓 Auto-évaluation & Réflexivité (3.3)
+
+Testez votre compréhension de la démarche d'investigation et réalisez votre bilan réflexif sur l'Escape Game / Cyber-enquête (Exercice 04) :
+
+<ClientOnly>
+  <QuizBox moduleId="03-3" moduleTitle="3.3 L'apprentissage par investigation & enquête" />
+</ClientOnly>
+
+---
+
 ## Navigation
 - ⬅️ **[3.2 Apprentissage par projet](/modules/03-2-pedagogie-projet)**
 - 🏠 **[03. Hub Méthodologies Pédagogiques](/modules/03-pedagogies-actives)**

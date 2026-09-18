@@ -83,7 +83,17 @@ L'intérêt de ce modèle pour l'enseignement du numérique est donc de déplace
 
 ---
 
+## 🎓 Auto-évaluation & Réflexivité (3.6)
+
+Testez votre compréhension de l'apprentissage expérientiel et du peer learning, et faites votre retour réflexif sur le Défi Hardware (Exercice 07) :
+
+<ClientOnly>
+  <QuizBox moduleId="03-6" moduleTitle="3.6 Apprentissage expérientiel et peer learning" />
+</ClientOnly>
+
+---
+
 ## Navigation
 - 🏠 **[03. Hub Méthodologies Pédagogiques](/modules/03-pedagogies-actives)**
 - ⬅️ **[3.5 Démarche de conception itérative](/modules/03-5-iteration-erreur)**
-- ➡️ **[04. Préparation d'une leçon FMTTN](/modules/04-preparation-lecon-fmttn)**
+- ➡️ **[3.7 L'enseignement à distance](/modules/03-7-enseignement-distance)**

@@ -446,7 +446,637 @@ const MODULE_QUESTIONS = {
       ]
     }
   ],
-  '05': [
+'03-1': [
+    {
+      id: 'q1',
+      type: 'qcm',
+      title: "1. Le principe de l'inversion didactique",
+      text: "En quoi la situation-problème constitue-t-elle une « inversion » par rapport à une démarche transmissive classique dans l'enseignement du numérique ?",
+      options: [
+        "Elle impose à l'élève d'apprendre par cœur le manuel d'utilisation avant d'allumer l'ordinateur.",
+        "Elle part d'un problème ou d'un besoin concret à résoudre pour donner du sens à l'apprentissage, au lieu de commencer par présenter un outil ou une suite de fonctionnalités logicielles.",
+        "Elle oblige l'enseignant à laisser les élèves résoudre les bugs sans aucune intervention.",
+        "Elle supprime toute évaluation pour privilégier le travail en autonomie totale."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Dans la situation-problème, le besoin et l'obstacle créent la nécessité d'apprendre : l'outil numérique n'est plus une fin en soi mais une réponse instrumentée à un problème réel."
+    },
+    {
+      id: 'q2',
+      type: 'qcm',
+      title: "2. Le statut de l'outil numérique dans la démarche",
+      text: "Dans une situation-problème mobilisant le numérique, comment l'outil technique doit-il être considéré par les élèves ?",
+      options: [
+        "Comme un objet d'évaluation sommative dont il faut mémoriser chaque menu.",
+        "Comme une ressource d'investigation ou un levier de résolution sélectionné pour surmonter un obstacle précis.",
+        "Comme un divertissement destiné à récompenser les élèves les plus rapides.",
+        "Comme un substitut complet au raisonnement intellectuel de l'apprenant."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "L'apprentissage ne réside pas dans la récitation des fonctions de l'outil, mais dans la capacité à choisir et exploiter la solution numérique la plus adaptée à la situation."
+    },
+    {
+      id: 'q3',
+      type: 'qcm',
+      title: "3. La posture de l'enseignant pendant la recherche",
+      text: "Pendant que les élèves recherchent activement une solution à la situation-problème, quelle doit être la posture privilégiée de l'enseignant ?",
+      options: [
+        "Donner immédiatement la procédure pas-à-pas pour éviter que les élèves ne fassent des erreurs.",
+        "Observer les stratégies, étayer par des relances sans donner la réponse, et encourager la formulation d'hypothèses.",
+        "Quitter la classe pour laisser une liberté absolue aux groupes de travail.",
+        "Corriger directement les manipulations sur le clavier des élèves."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "L'enseignant régule la tâche sans court-circuiter l'activité cognitive de l'élève : il questionne, guide le regard critique et soutient la persévérance."
+    },
+    {
+      id: 'q4',
+      type: 'qcm',
+      title: "4. Obstacle conceptuel vs blocage technique",
+      text: "Quel est le piège didactique majeur lors de la conception d'une situation-problème numérique ?",
+      options: [
+        "Proposer un problème trop lié à l'actualité des élèves.",
+        "Confondre l'obstacle conceptuel (sur lequel porte l'apprentissage) avec un obstacle purement instrumental (panne, mot de passe perdu, bug d'interface) qui bloque inutilement la tâche.",
+        "Autoriser les élèves à collaborer par binômes.",
+        "Utiliser un logiciel gratuit et libre de droits."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "L'obstacle doit être épistémique (faire progresser la réflexion, l'esprit critique ou la méthode) et non un obstacle parasite matériel qui décourage sans instruire."
+    },
+    {
+      id: 'q5',
+      type: 'qcm',
+      title: "5. La phase d'institutionnalisation",
+      text: "Pourquoi la phase finale d'institutionnalisation (formalisation) est-elle indispensable après la résolution du problème ?",
+      options: [
+        "Pour sanctionner par une note chiffrée les groupes qui n'ont pas terminé dans les temps.",
+        "Pour décontextualiser les découvertes empiriques, formaliser les concepts et démarches transférables et donner aux savoirs un statut de connaissance partagée.",
+        "Pour réécrire le cours magistral initial que les élèves n'ont pas écouté.",
+        "Uniquement pour remplir les documents administratifs de l'établissement."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Sans institutionnalisation, l'expérience vécue reste une anecdote : la formalisation transforme la trouvaille empirique en savoir réutilisable dans d'autres contextes."
+    },
+    {
+      id: 'q6',
+      type: 'open',
+      title: "6. Réflexivité sur l'Exercice 02 (Évaluer l'information & Esprit critique)",
+      text: "À partir de votre réalisation de l'Exercice 02 (« Peut-on faire confiance à cette information ? » sur les écrans et le sommeil), analysez en quoi la confrontation à une affirmation virale séduisante a suscité un conflit cognitif chez l'apprenant. Comment la démarche d'enquête vers la source primaire a-t-elle transformé votre rapport à la preuve numérique, et quelle leçon didactique en tirez-vous pour vos élèves ?",
+      points: 5,
+      modelAnswer: "L'exercice place l'apprenant face à une affirmation pseudo-scientifique plausible qui heurte les préconceptions : la confrontation à la source primaire révèle que les conclusions initiales étaient déformées ou extrapolées. Ce conflit cognitif déstabilise la confiance naïve envers les chiffres partagés en ligne. Sur le plan didactique, cela montre que l'esprit critique ne se décrète pas par une mise en garde théorique : il doit être vécu à travers une enquête concrète qui outille l'élève (remonter à la source primaire, vérifier la méthodologie de l'étude, identifier les conflits d'intérêts et contextualiser la date de publication).",
+      rubricCriteria: [
+        "Explicitation du conflit cognitif entre l'affirmation virale et la réalité de la source primaire.",
+        "Identification de la transformation de la posture (du doute passif à l'enquête méthodique outillée).",
+        "Transposition didactique claire pour une pratique de classe avec des élèves."
+      ]
+    }
+  ],
+  '03-2': [
+    {
+      id: 'q1',
+      type: 'qcm',
+      title: "1. Caractéristiques de l'apprentissage par projet",
+      text: "Qu'est-ce qui caractérise fondamentalement la pédagogie de projet par rapport à des exercices d'application découpés ?",
+      options: [
+        "La réalisation d'une production concrète sur une temporalité longue, mobilisant des compétences transversales et destinée à un public ou usage authentique.",
+        "L'obligation de travailler exclusivement en silence et de façon individuelle.",
+        "L'utilisation obligatoire d'au moins six logiciels payants différents.",
+        "L'absence d'objectifs pédagogiques définis à l'avance."
+      ],
+      correctIndex: 0,
+      points: 3,
+      explanation: "Le projet engage l'élève dans la durée autour d'une œuvre concrète dont la finalité sociale donne du sens à tous les apprentissages intermédiaires."
+    },
+    {
+      id: 'q2',
+      type: 'qcm',
+      title: "2. Mobilisation des savoirs au fil du projet",
+      text: "Comment les connaissances et compétences techniques doivent-elles être introduites dans un projet numérique ?",
+      options: [
+        "Par un cours théorique magistral de 10 heures avant de commencer le projet.",
+        "Au fur et à mesure qu'elles s'avèrent nécessaires pour concevoir ou faire avancer la production collective.",
+        "Uniquement après la fin du projet, lors de la correction finale.",
+        "En demandant aux élèves d'acheter des formations en ligne le soir chez eux."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "L'apprentissage en flux tendu ('just-in-time') confère une utilité immédiate et concrète aux savoirs théoriques et techniques mobilisés."
+    },
+    {
+      id: 'q3',
+      type: 'qcm',
+      title: "3. La régulation du travail d'équipe",
+      text: "Pour éviter l'écueil classique où un seul élève technophile réalise tout le travail pendant que les autres restent passifs, que doit organiser l'enseignant ?",
+      options: [
+        "Supprimer les ordinateurs et revenir au travail sur cahier.",
+        "Définir des rôles complémentaires identifiés, des jalons d'étapes intermédiaires avec livrables individuels et collectifs, et des temps réguliers de régulation.",
+        "Attribuer la même note globale à tout le monde sans distinction d'implication.",
+        "Interdire aux élèves de se parler pendant les séances de projet."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "La coopération ne s'improvise pas : l'enseignant structure la division du travail, la responsabilité mutuelle et la traçabilité des contributions de chacun."
+    },
+    {
+      id: 'q4',
+      type: 'qcm',
+      title: "4. Le piège de la dérive productiviste",
+      text: "Qu'appelle-t-on la « dérive productiviste » en pédagogie de projet appliquée au numérique ?",
+      options: [
+        "Le fait de fabriquer trop d'objets ou de pages web au FabLab de l'école.",
+        "Le fait de se focaliser exclusivement sur l'esthétique et la réussite du produit fini, au détriment des apprentissages réels et du recul réflexif des élèves.",
+        "Le refus de respecter les horaires de cours de l'établissement.",
+        "Le recours abusif à l'impression papier en couleur."
+      ],
+      correctIndex: 3,
+      points: 3,
+      explanation: "Dans un projet, le produit n'est que le prétexte : l'objectif premier demeure l'ensemble des apprentissages, compétences et prises de décision développés au fil du parcours."
+    },
+    {
+      id: 'q5',
+      type: 'qcm',
+      title: "5. L'évaluation formative continue en projet",
+      text: "Quel est l'intérêt d'évaluer des étapes intermédiaires (scénario, maquette, prototype) plutôt que d'attendre la remise finale ?",
+      options: [
+        "Augmenter le nombre de notes dans le bulletin scolaire de l'élève.",
+        "Permettre une rétroaction formative continue, réajuster les démarches en cours de route et valoriser le processus de conception plutôt que le seul résultat fini.",
+        "Éliminer immédiatement les élèves en retard sans possibilité de rattrapage.",
+        "Vérifier que les élèves ne travaillent pas en dehors des heures de cours."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Les jalons intermédiaires permettent à l'enseignant d'orienter, d'encourager et de réguler les apprentissages au moment où l'élève peut encore transformer sa production."
+    },
+    {
+      id: 'q6',
+      type: 'open',
+      title: "6. Réflexivité sur l'Exercice 03 (Conception d'un guide numérique pour les élèves)",
+      text: "En analysant la réalisation de votre Guide numérique (Exercice 03), comment avez-vous arbitré entre la sophistication technique des outils et l'accessibilité réelle pour le public d'élèves visé ? Quels défis d'organisation et de coordination d'équipe avez-vous rencontrés, et quels dispositifs de régulation mettriez-vous en place dans votre propre classe ?",
+      points: 5,
+      modelAnswer: "Dans la conception d'un guide pour élèves, l'écueil fréquent est de multiplier les effets graphiques au détriment de l'ergonomie cognitive. L'arbitrage exige de privilégier la sobriété, la lisibilité typographique et la clarté des chemins d'accès (FAQ, arborescence simple, visuels commentés). Concernant la dynamique de groupe, les tensions portent souvent sur l'alignement éditorial et le rythme de travail. En classe, la remédiation repose sur un carnet de bord de projet, une grille critériée partagée dès le départ et des séances de relecture croisée entre groupes pour tester l'intelligibilité des contenus.",
+      rubricCriteria: [
+        "Analyse de l'arbitrage entre ambition technique/esthétique et utilité didactique pour le public cible.",
+        "Identification lucide des difficultés de gestion de projet rencontrées (répartition des tâches, délais, cohérence).",
+        "Proposition d'outils concrets d'étayage et de régulation pour des élèves (carnet de bord, jalons, relecture)."
+      ]
+    }
+  ],
+  '03-3': [
+    {
+      id: 'q1',
+      type: 'qcm',
+      title: "1. La démarche d'investigation en éducation au numérique",
+      text: "Quelle posture l'apprentissage par investigation vise-t-il à développer en priorité chez les élèves ?",
+      options: [
+        "Une posture d'exécutant docile qui reproduit scrupuleusement les clics d'un tutoriel vidéo.",
+        "Une posture de chercheur/enquêteur qui questionne le fonctionnement des technologies, émet des hypothèses, expérimente et argumente ses conclusions.",
+        "Une posture d'utilisateur passif qui consomme les contenus recommandés par les algorithmes.",
+        "Une posture de hacker cherchant à contourner les filtres de sécurité de l'établissement scolaire."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "L'investigation place l'apprenant au cœur de la démarche scientifique appliquée au numérique : questionner, chercher des indices, tester et valider par la preuve."
+    },
+    {
+      id: 'q2',
+      type: 'qcm',
+      title: "2. La ludification et les jeux d'évasion (Escape Game)",
+      text: "Dans un Escape Game pédagogique tel que la cyber-enquête FMTTN, quel est le véritable rôle de la scénarisation ludique ?",
+      options: [
+        "Faire passer le temps sans que les élèves n'aient à réfléchir à des notions scolaires.",
+        "Servir de moteur narratif et motivationnel stimulant pour placer l'élève en situation de résoudre des problèmes et mobiliser des compétences numériques authentiques.",
+        "Remplacer entièrement les programmes et référentiels officiels de la Fédération Wallonie-Bruxelles.",
+        "Créer une compétition individuelle impitoyable où seul le plus rapide obtient des points."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "La mécanique ludique crée un contexte immersif engageant qui dédramatise la difficulté et incite à la collaboration et au raisonnement rigoureux."
+    },
+    {
+      id: 'q3',
+      type: 'qcm',
+      title: "3. Le traitement de la fausse piste",
+      text: "Dans une démarche d'enquête numérique, comment l'exploration d'une fausse piste ou d'une erreur d'hypothèse doit-elle être traitée didactiquement ?",
+      options: [
+        "Comme un échec définitif justifiant le retrait de points immédiat.",
+        "Comme une donnée informative précieuse qui permet de réfuter une hypothèse, d'analyser les causes de l'erreur et de réorienter la recherche.",
+        "En cachant l'erreur pour ne pas perturber les autres élèves.",
+        "En punissant le groupe responsable pour manque d'attention."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "L'erreur fait partie intégrante de l'enquête : comprendre pourquoi une piste est infructueuse constitue un acte cognitif aussi formateur que trouver la bonne solution."
+    },
+    {
+      id: 'q4',
+      type: 'qcm',
+      title: "4. Le risque du divertissement sans apprentissage",
+      text: "Quel est le risque didactique majeur d'une activité d'enquête ludifiée si l'enseignant omet d'organiser un temps de synthèse ?",
+      options: [
+        "Les élèves risquent de s'ennuyer en classe.",
+        "Les élèves retiennent l'amusement et la mécanique du jeu sans conscientiser ni formaliser les savoirs et compétences numériques sous-jacents.",
+        "Le réseau Internet de l'école risque de saturer.",
+        "Les parents d'élèves vont automatiquement refuser l'évaluation."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Le jeu n'est qu'un vecteur : sans débriefing, l'apprentissage reste invisible et l'élève ne transfère pas les notions travaillées vers d'autres contextes."
+    },
+    {
+      id: 'q5',
+      type: 'qcm',
+      title: "5. Le débriefing pédagogique post-enquête",
+      text: "Quel est l'objectif premier de la phase de débriefing après un Escape Game ou une investigation numérique ?",
+      options: [
+        "Proclamer les vainqueurs et distribuer des friandises.",
+        "Expliciter les démarches de pensée, analyser les stratégies de résolution d'énigmes et relier chaque défi aux attendus curriculaires du référentiel FMTTN.",
+        "Ranger la salle informatique le plus vite possible.",
+        "Vérifier que les ordinateurs ne sont pas tombés en panne."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Le débriefing est le moment clé de l'institutionnalisation : on y décortique les mécanismes techniques, les biais cognitifs et les savoirs mobilisés."
+    },
+    {
+      id: 'q6',
+      type: 'open',
+      title: "6. Réflexivité sur l'Exercice 04 (Escape Game FMTTN - Cyber-Enquête)",
+      text: "À l'issue de votre participation à l'Escape Game FMTTN (Exercice 04), analysez la balance entre l'engagement ludique et l'apprentissage didactique. Quels savoirs ou compétences spécifiques du référentiel avez-vous mobilisés au cours de l'enquête ? Comment mèneriez-vous le débriefing avec vos élèves pour vous assurer que les concepts numériques sont durablement acquis ?",
+      points: 5,
+      modelAnswer: "L'Escape Game suscite une forte adhésion grâce à la tension narrative et aux énigmes progressives. Cependant, le rythme intense peut masquer l'apprentissage si on ne prend pas le temps de déconstruire l'activité. Les compétences mobilisées touchent aux 4 champs du FMTTN : décryptage d'indices, raisonnement logique, sensibilisation à la cybersécurité et esprit critique. Pour le débriefing, j'organiserais un tableau collectif en 3 colonnes : 'Ce que nous avons fait (le jeu)' ➔ 'Le principe informatique ou sociétal sous-jacent' ➔ 'La règle transférable dans la vie quotidienne', garantissant ainsi une véritable cristallisation des acquis.",
+      rubricCriteria: [
+        "Analyse de l'articulation entre immersion ludique et apprentissage rigoureux.",
+        "Identification précise des compétences du référentiel FMTTN mobilisées lors des énigmes.",
+        "Structuration d'une démarche de débriefing concrète favorisant le transfert des connaissances."
+      ]
+    }
+  ],
+  '03-4': [
+    {
+      id: 'q1',
+      type: 'qcm',
+      title: "1. Le moteur pédagogique du défi express",
+      text: "Quel est l'effet didactique premier de l'introduction d'une contrainte temporelle forte (ex : 20 minutes chrono) dans un défi d'apprentissage ?",
+      options: [
+        "Créer un stress éliminatoire pour trier les meilleurs élèves de la classe.",
+        "Pousser l'élève à dépasser le perfectionnisme inhibiteur, à hiérarchiser immédiatement l'essentiel et à s'engager activement dans l'expérimentation sans procrastiner.",
+        "Permettre à l'enseignant de corriger ses copies pendant que les élèves travaillent vite.",
+        "Réduire la facture d'électricité de l'école en allumant moins longtemps les écrans."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "La brièveté du temps imparti focalise l'attention sur l'objectif central : l'élève teste, fait des compromis rapides et entre d'emblée dans la démarche de production."
+    },
+    {
+      id: 'q2',
+      type: 'qcm',
+      title: "2. La contrainte comme levier de créativité",
+      text: "Pourquoi imposer des limites strictes (ex : maximum 30 mots, 3 éléments visuels sur Canva) améliore-t-il la qualité didactique d'une production ?",
+      options: [
+        "Parce que cela évite que les élèves écrivent trop de bêtises sur leur feuille.",
+        "Parce que la contrainte oblige à faire des choix éditoriaux rigoureux, à éliminer le superflu et à concentrer la puissance communicative sur le message essentiel.",
+        "Parce que les serveurs de Canva plantent si l'on dépasse 30 mots.",
+        "Uniquement pour faciliter la relecture par l'enseignant."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "L'abondance de choix paralyse souvent l'élève : restreindre drastiquement les ressources oblige à concevoir une rhétorique visuelle et textuelle percutante."
+    },
+    {
+      id: 'q3',
+      type: 'qcm',
+      title: "3. Le pitch oral de mise en commun",
+      text: "Quel est le but pédagogique de demander un pitch de 1 minute à chaque groupe à l'issue du défi express ?",
+      options: [
+        "Prendre en faute les élèves timides.",
+        "Développer la capacité à expliciter, assumer et justifier oralement ses choix graphiques et didactiques devant ses pairs en un temps limité.",
+        "Remplacer l'évaluation écrite par une note d'éloquence générale.",
+        "Donner le temps aux autres groupes de ranger leur matériel."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "L'explicitation orale oblige l'élève à conscientiser sa démarche : il ne montre pas seulement ce qu'il a fait, il justifie pourquoi il l'a fait."
+    },
+    {
+      id: 'q4',
+      type: 'qcm',
+      title: "4. Le climat sécurisant et le droit à l'imperfection",
+      text: "Quelle condition pédagogique est impérative pour que la contrainte temporelle d'un défi reste stimulante et non anxiogène ?",
+      options: [
+        "Menacer d'un zéro pointé tout groupe n'ayant pas bouclé son affiche.",
+        "Instaurer un climat bienveillant où l'inachevé et l'erreur sont pleinement acceptés, la valeur résidant dans la réflexion engagée et les choix testés.",
+        "Faire le travail à la place des élèves qui prennent du retard.",
+        "Organiser un vote pour éliminer la pire création de la classe."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Le défi est un laboratoire d'audace : si la note sanctionne l'inabouti, l'élève se réfugie dans la prudence banale et perd tout élan créatif."
+    },
+    {
+      id: 'q5',
+      type: 'qcm',
+      title: "5. Domaines d'application dans le FMTTN",
+      text: "Dans quel type d'activités du référentiel FMTTN le défi express est-il particulièrement indiqué ?",
+      options: [
+        "Uniquement lors de la signature du règlement d'ordre intérieur de l'école.",
+        "Pour des activités de communication visuelle, de prototypage rapide d'affiches, de détection d'erreurs de code (débogage flash) ou de synthèse d'idées.",
+        "Pour l'apprentissage de la dactylographie en aveugle sur machine à écrire.",
+        "Uniquement pour les examens certificatifs de fin de secondaire."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Le défi express est idéal pour dynamiser des séances, réactiver des notions ou éprouver la clarté d'un message communicatif sous contrainte."
+    },
+    {
+      id: 'q6',
+      type: 'open',
+      title: "6. Réflexivité sur l'Exercice 05 (Défi 20 minutes Canva : Affiche mot de passe)",
+      text: "À partir de votre expérience lors de l'Exercice 05 (créer en 20 minutes une affiche Canva percutante sur la sécurité des mots de passe avec max 30 mots et 3 visuels), analysez comment ces contraintes radicales ont orienté votre processus de conception. Quels éléments secondaires avez-vous dû sacrifier pour garantir une compréhension immédiate par un élève, et qu'avez-vous appris sur l'efficacité visuelle ?",
+      points: 5,
+      modelAnswer: "La contrainte des 20 minutes interdit de se perdre dans l'exploration infinie des modèles Canva : il a fallu choisir une idée forte immédiatement (ex: la métaphore de la clé de maison ou la phrase secrète). La contrainte des 30 mots et 3 visuels a exigé de renoncer aux explications techniques complexes (longueur en bits, force brute) pour retenir un mot d'ordre mémorisable ('Longueur + Majuscule + Symbole = Mot de passe blindé'). Cette expérience prouve qu'en didactique visuelle, 'moins c'est plus' : épurer un document renforce son impact pédagogique auprès des élèves.",
+      rubricCriteria: [
+        "Analyse de l'impact de la contrainte temporelle sur la prise de décision rapide.",
+        "Explicitation des arbitrages et sacrifices d'informations superflues au profit de la lisibilité.",
+        "Déduction d'une règle d'efficacité didactique pour la communication visuelle en classe."
+      ]
+    }
+  ],
+  '03-5': [
+    {
+      id: 'q1',
+      type: 'qcm',
+      title: "1. Le postulat fondamental de la conception itérative",
+      text: "Quel principe essentiel caractérise la démarche de conception itérative dans le domaine des technologies numériques ?",
+      options: [
+        "Une production numérique doit être livrée parfaite et définitive dès son premier jet.",
+        "Une première production n'est jamais définitive : elle constitue un prototype destiné à être testé auprès de véritables utilisateurs, analysé et progressivement amélioré.",
+        "Le concepteur sait toujours exactement ce que veulent les utilisateurs sans avoir besoin de les consulter.",
+        "L'enseignant ne doit accepter aucune modification sur un devoir déjà remis."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "L'itération repose sur l'humilité du concepteur : c'est la confrontation au réel et l'observation des usages qui révèlent les forces et les faiblesses d'un produit."
+    },
+    {
+      id: 'q2',
+      type: 'qcm',
+      title: "2. Le biais de l'expert (ou illusion du concepteur)",
+      text: "Pourquoi les créateurs d'un jeu ou d'un site sont-ils généralement de mauvais évaluateurs de leur propre production ?",
+      options: [
+        "Parce qu'ils ne possèdent pas de diplôme en informatique.",
+        "Parce qu'ils connaissent déjà la logique de leur création et ne perçoivent plus les incohérences, manques d'ergonomie ou consignes implicites qui bloquent un utilisateur candide.",
+        "Parce qu'ils ont passé trop de temps devant l'ordinateur.",
+        "Parce que les concepteurs refusent systématiquement de relire leur travail."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "L'œil du créateur compense inconsciemment les défauts : seul un utilisateur découvrant l'interface pour la première fois permet d'identifier les vrais obstacles."
+    },
+    {
+      id: 'q3',
+      type: 'qcm',
+      title: "3. L'instrumentation du test par formulaire (Google Forms)",
+      text: "Pourquoi est-il crucial d'outiller le recueil de données par un questionnaire structuré (ex : Google Forms) plutôt que de demander un simple « Qu'en pensez-vous ? » ?",
+      options: [
+        "Pour collecter les adresses email personnelles des testeurs.",
+        "Pour transformer des avis vagues ou de la politesse en données objectives critériées (compréhension, fluidité, pertinence) permettant d'arbitrer rationnellement les correctifs.",
+        "Pour automatiser la notation sans avoir à lire les réponses.",
+        "Uniquement pour respecter le volet tableur du programme scolaire."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Un questionnaire structuré permet de poser des questions fermées (échelles d'utilisabilité) et ouvertes précises pour hiérarchiser les priorités d'amélioration de la V2."
+    },
+    {
+      id: 'q4',
+      type: 'qcm',
+      title: "4. Mobilisation des niveaux cognitifs de Bloom",
+      text: "Quels niveaux élevés de la taxonomie de Bloom révisée sont mobilisés lorsqu'un groupe analyse les retours d'un test pour créer la version 2 de son projet ?",
+      options: [
+        "Uniquement les niveaux Mémoriser et Réciter.",
+        "Les niveaux Analyser (décomposer les retours et déceler les causes), Évaluer (juger l'efficacité des solutions) et Créer (concevoir une version optimisée).",
+        "Aucun niveau de Bloom, car l'ergonomie ne relève pas de la pédagogie.",
+        "Uniquement le niveau Appliquer une consigne sans réfléchir."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "L'itération est un entraînement cognitif d'excellence : l'apprenant doit faire preuve de discernement critique et de créativité pour réinventer sa solution."
+    },
+    {
+      id: 'q5',
+      type: 'qcm',
+      title: "5. Le statut constructif de l'erreur",
+      text: "Dans la boucle itérative « Concevoir ➔ Tester ➔ Analyser ➔ Améliorer », quel est le statut accordé à l'erreur ou au bug ?",
+      options: [
+        "Une honte pédagogique devant être dissimulée aux autres groupes.",
+        "Un signal précieux et constructif qui fournit la matière première indispensable au perfectionnement de la production.",
+        "Un motif de suspension immédiate de l'accès aux ordinateurs.",
+        "Une fatalité incontournable qu'il ne sert à rien de corriger."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "L'erreur devient un levier d'apprentissage : chaque difficulté rencontrée par le joueur renseigne sur ce qui doit être clarifié dans les règles ou l'interface."
+    },
+    {
+      id: 'q6',
+      type: 'open',
+      title: "6. Réflexivité sur l'Exercice 06 (Conception itérative d'un mini-jeu Genially sur le tri des déchets)",
+      text: "En vous fondant sur l'Exercice 06 que vous avez mené (création du prototype Genially, test Google Forms par les pairs, analyse et version 2), quelles difficultés imprévues ont été mises en lumière par les testeurs ? Comment avez-vous sélectionné et appliqué les 3 améliorations majeures de la V2, et qu'avez-vous appris sur la posture d'écoute de l'utilisateur ?",
+      points: 5,
+      modelAnswer: "Lors du test de notre prototype Genially sur le tri des déchets, les retours des testeurs ont révélé que certaines consignes écrites étaient ignorées et que la zone de glisser-déposer manquait de visibilité. En tant que concepteurs, nous pensions que le jeu était limpide, mais l'analyse du Google Forms a objectivé ces incompréhensions. Pour la V2, nous avons retenu 3 améliorations : 1° Ajout d'une consigne audio courte, 2° Renforcement des contrastes visuels des poubelles de tri, 3° Feedback immédiat sonifié en cas d'erreur. Cette démarche apprend l'humilité didactique : enseigner et concevoir avec le numérique exige d'adapter en continu son dispositif en fonction des réactions effectives des apprenants.",
+      rubricCriteria: [
+        "Description lucide d'un décalage entre les intentions des concepteurs et l'expérience réelle des testeurs.",
+        "Explicitation claire et justifiée des 3 améliorations concrètes apportées sur la V2.",
+        "Formulation d'un recul réflexif sur la posture d'écoute, l'adaptation didactique et le statut de l'erreur."
+      ]
+    }
+  ],
+  '03-6': [
+    {
+      id: 'q1',
+      type: 'qcm',
+      title: "1. Le cycle expérientiel de David Kolb",
+      text: "Selon le cycle d'apprentissage expérientiel de David Kolb, quelle étape doit impérativement succéder à l'expérience concrète pour qu'il y ait véritable apprentissage ?",
+      options: [
+        "L'oubli immédiat de l'activité pour passer à un autre cours.",
+        "L'observation réflexive suivie de la conceptualisation abstraite, permettant de donner du sens à ce qui a été vécu et de formuler des règles générales.",
+        "L'attribution mécanique d'une note chiffrée par l'enseignant.",
+        "La copie intégrale d'un résumé théorique dicté au tableau."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "L'action seule ne suffit pas : c'est le temps de recul réflexif ('Qu'avons-nous fait ? Pourquoi ?') qui transforme une manipulation en connaissance transférable."
+    },
+    {
+      id: 'q2',
+      type: 'qcm',
+      title: "2. La règle d'or du Peer Learning (Apprentissage entre pairs)",
+      text: "Dans une classe fonctionnant en apprentissage entre pairs, quelle attitude doit adopter un étudiant lorsqu'un camarade sollicite son aide ?",
+      options: [
+        "Prendre la souris et le clavier des mains de son pair pour exécuter la tâche à sa place le plus vite possible.",
+        "Expliquer son raisonnement, guider le questionnement et amener son pair à trouver lui-même la solution.",
+        "Refuser de répondre pour conserver un avantage compétitif lors de l'évaluation.",
+        "Renvoyer immédiatement son camarade vers l'enseignant sans chercher à comprendre son blocage."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Faire à la place de l'autre empêche l'apprentissage : en explicitant sa méthode, celui qui aide consolide ses propres savoirs tout en rendant son pair autonome."
+    },
+    {
+      id: 'q3',
+      type: 'qcm',
+      title: "3. Le paradigme pédagogique de l'École 42",
+      text: "Quel changement fondamental de posture le modèle de l'École 42 illustre-t-il pour l'enseignement du numérique ?",
+      options: [
+        "L'obligation d'acheter des ordinateurs très coûteux pour chaque élève.",
+        "Le déplacement de la question 'Que dois-je mémoriser ?' vers 'Quel problème dois-je résoudre et comment mobiliser les ressources collectives pour y parvenir ?'.",
+        "L'interdiction d'utiliser Internet pendant les heures d'apprentissage.",
+        "La suppression complète de toute interaction humaine au profit de robots."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Le modèle 42 valorise l'autonomie, l'enquête collective, le droit à l'erreur et l'entraide mutuelle sans cours magistraux magistro-centrés."
+    },
+    {
+      id: 'q4',
+      type: 'qcm',
+      title: "4. Le rôle de l'enseignant-facilitateur",
+      text: "Lorsque les élèves travaillent en résolution de problème coopérative (ex : défi hardware), quel est le rôle prioritaire de l'enseignant ?",
+      options: [
+        "Rester silencieux à son bureau et corriger les examens d'une autre classe.",
+        "Agir comme facilitateur et observateur bienveillant, veillant à la sécurité, régulant les dynamiques de groupe et n'intervenant en étayage que si les ressources des pairs sont épuisées.",
+        "Faire une démonstration magistrale au tableau toutes les 5 minutes.",
+        "Imposer une démarche unique et interdire tout tâtonnement."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "L'enseignant n'est plus le détenteur monopolistique des réponses : il crée le cadre, encourage l'exploration et aide à formaliser le bilan final."
+    },
+    {
+      id: 'q5',
+      type: 'qcm',
+      title: "5. Le conflit sociocognitif au sein des binômes",
+      text: "Pourquoi la confrontation d'idées différentes au sein d'un groupe d'élèves face à une panne informatique est-elle didactiquement féconde ?",
+      options: [
+        "Parce qu'elle provoque des disputes qui distraient la classe.",
+        "Parce que devoir argumenter et défendre ses hypothèses oblige chaque élève à restructurer ses connaissances, à prendre conscience de ses erreurs et à construire une solution plus robuste.",
+        "Parce qu'elle permet d'élire un chef de groupe qui décide de tout.",
+        "Uniquement pour faire du bruit dans la salle d'informatique."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Le conflit sociocognitif est le moteur de l'apprentissage entre pairs : la divergence oblige à expliciter, confronter les preuves et progresser ensemble."
+    },
+    {
+      id: 'q6',
+      type: 'open',
+      title: "6. Réflexivité sur l'Exercice 07 (Défi Hardware : Démonter et remonter un PC)",
+      text: "À partir de votre participation au Défi Hardware (démontage, identification des composants et remontage d'une unité centrale), quelle énigme technique ou difficulté de remontage avez-vous résolue grâce à l'aide d'un pair ou à l'expérimentation collective ? En quoi cette manipulation concrète a-t-elle modifié votre compréhension de l'ordinateur par rapport à un cours purement magistral ?",
+      points: 5,
+      modelAnswer: "Lors du Défi Hardware, notre groupe s'est heurté au branchement des connecteurs du panneau avant (bouton Power, LED, USB) sur la carte mère, ainsi qu'à l'insertion correcte des barrettes de RAM. Bloqués, nous avons sollicité un autre groupe qui nous a orientés vers les repères sérigraphiés de la carte mère et nous a expliqué le détrompeur de la RAM sans faire la manipulation à notre place. Cette expérience physique a transformé des concepts abstraits (carte mère, bus de données, pâte thermique) en réalités matérielles observables et tangibles, rendant l'architecture d'un PC compréhensible et démystifiée de manière bien plus pérenne qu'un schéma 2D sur transparent.",
+      rubricCriteria: [
+        "Description précise d'un problème technique concret résolu lors du démontage ou remontage.",
+        "Mise en valeur d'une interaction authentique de peer learning (aide méthodologique sans confiscation de la tâche).",
+        "Analyse comparative entre l'apprentissage expérientiel concret et l'enseignement abstrait décontextualisé."
+      ]
+    }
+  ],
+  '03-7': [
+    {
+      id: 'q1',
+      type: 'qcm',
+      title: "1. La spécificité de la scénarisation à distance",
+      text: "Pourquoi concevoir un enseignement à distance ne peut-il pas se limiter à enregistrer son cours en amphi ou à déposer des documents PDF en ligne ?",
+      options: [
+        "Parce que les élèves n'ont pas d'imprimante à domicile.",
+        "Parce que l'absence de coprésence physique exige une scénarisation rigoureuse alternant ressources, activités guidées, temps d'interactions et rétroactions explicites.",
+        "Parce que le décret de la FWB interdit le format PDF pour les étudiants.",
+        "Uniquement pour des questions de droits d'auteur sur les vidéos."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "À distance, la simple mise à disposition de documents génère passivité et isolement : la scénarisation organise le rythme d'apprentissage et maintient l'engagement de l'étudiant."
+    },
+    {
+      id: 'q2',
+      type: 'qcm',
+      title: "2. L'usage didactique du temps synchrone",
+      text: "Dans un dispositif de formation hybride ou à distance, quelle est la plus-value essentielle des séances synchrones (visioconférences en direct) ?",
+      options: [
+        "Faire un monologue magistral ininterrompu de deux heures.",
+        "Privilégier les interactions dynamiques : répondre aux questions, débattre, résoudre des études de cas collaboratives et offrir des rétroactions formatives collectives.",
+        "Vérifier la présence des étudiants à la minute près par appel nominal.",
+        "Faire recopier aux étudiants des textes dictés par l'enseignant."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Le temps synchrone est précieux : il doit être réservé aux échanges humains, à l'élucidation des incompréhensions et à la co-construction, les exposés pouvant être consultés en asynchrone."
+    },
+    {
+      id: 'q3',
+      type: 'qcm',
+      title: "3. Les trois dimensions d'interactions (Modèle de Moore)",
+      text: "Quelles sont les trois formes d'interactions indispensables à orchestrer pour rompre le sentiment d'isolement à distance ?",
+      options: [
+        "Interactions entre l'ordinateur, l'imprimante et le routeur Wi-Fi.",
+        "Interactions Étudiant ↔ Enseignant (étayage/feedback), Étudiant ↔ Étudiant (collaboration/pairs) et Étudiant ↔ Contenu (interactivité/tâches concrètes).",
+        "Interactions entre l'école, le ministère et les fournisseurs d'accès Internet.",
+        "Interactions entre les réseaux sociaux, les jeux vidéo et la messagerie instantanée."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "L'isolement ne provient pas de la distance géographique mais de la distance transactionnelle : nourrir ces 3 types d'interactions garantit la présence pédagogique."
+    },
+    {
+      id: 'q4',
+      type: 'qcm',
+      title: "4. L'autonomie et la clarté des consignes",
+      text: "Quelle est la cause majeure de décrochage d'un apprenant lors d'un travail autonome à distance ?",
+      options: [
+        "Le manque de jeux vidéo disponibles en ligne.",
+        "L'ambiguïté des consignes, l'absence de jalons temporels explicites et l'incertitude sur ce qui est attendu pour réussir la tâche.",
+        "L'utilisation d'ordinateurs portables de marque différente.",
+        "La météo pluvieuse qui perturbe la connexion."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Sans enseignant à proximité pour reformuler oralement, une consigne floue génère anxiété et sentiment d'impuissance : les attentes doivent être chirurgicales et exemplifiées."
+    },
+    {
+      id: 'q5',
+      type: 'qcm',
+      title: "5. L'importance du feedback continu",
+      text: "Pourquoi les rétroactions (feedbacks) régulières sont-elles encore plus cruciales à distance qu'en présentiel ?",
+      options: [
+        "Pour justifier le temps de travail hebdomadaire de l'enseignant.",
+        "Pour rassurer l'étudiant sur sa progression, corriger rapidement les représentations erronées et maintenir la motivation intrinsèque dans la durée.",
+        "Pour empêcher les étudiants d'utiliser d'autres sites web.",
+        "Uniquement pour préparer les réclamations d'examens."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Le silence pédagogique est le pire ennemi du distanciel : un retour rapide et constructif donne à l'apprenant le sentiment d'exister et d'être accompagné."
+    },
+    {
+      id: 'q6',
+      type: 'open',
+      title: "6. Réflexivité sur l'ergonomie et la scénarisation de cette plateforme de cours",
+      text: "En analysant votre propre parcours sur cette plateforme numérique de Master 1 (arborescence des 6 catégories, modules progressifs, espace membre, quiz formatifs, fiches d'exercices avec documents Google Docs téléchargeables), évaluez comment les principes de scénarisation à distance ont été appliqués. Quels éléments ont facilité votre autonomie et quelle amélioration concrète proposeriez-vous pour enrichir votre apprentissage ?",
+      points: 5,
+      modelAnswer: "La plateforme applique plusieurs principes clés de l'enseignement à distance : 1° Une scénarisation modulaire claire avec jalons progressifs et balises visuelles uniformes, 2° Une autonomie soutenue par l'accès immédiat aux documents officiels Google Docs (mode consultation/copie) et aux attendus critériés, 3° Une rétroaction immédiate via les QuizBox interactives à correction explicative et le tableau de bord de l'Espace Membre. Pour enrichir le dispositif, on pourrait envisager l'intégration d'un espace d'échange synchrone ou asynchrone entre pairs (forum de discussion par atelier) pour favoriser le co-débriefing et l'entraide communautaire.",
+      rubricCriteria: [
+        "Identification pertinente des dispositifs de scénarisation et d'autonomie présents sur la plateforme.",
+        "Analyse de l'impact des outils formatifs (quiz, espace membre, documents de cadrage) sur l'engagement.",
+        "Proposition constructive et réaliste d'amélioration didactique ou interactionnelle."
+      ]
+    }
+  ],
+    '05': [
     {
       id: 'q1',
       type: 'qcm',

@@ -61,6 +61,16 @@ Cette démarche est particulièrement intéressante pour l'enseignement du numé
 
 ---
 
+## 🎓 Auto-évaluation & Réflexivité (3.2)
+
+Testez votre compréhension didactique de la pédagogie de projet et effectuez un retour réflexif sur la conception du Guide numérique (Exercice 03) :
+
+<ClientOnly>
+  <QuizBox moduleId="03-2" moduleTitle="3.2 L'apprentissage par projet" />
+</ClientOnly>
+
+---
+
 ## Navigation
 - ⬅️ **[3.1 La situation-problème](/modules/03-1-situation-probleme)**
 - 🏠 **[03. Hub Méthodologies Pédagogiques](/modules/03-pedagogies-actives)**

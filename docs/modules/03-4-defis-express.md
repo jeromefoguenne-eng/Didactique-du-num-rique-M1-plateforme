@@ -53,6 +53,16 @@ L'élève est placé dans une posture d'expérimentation et de résolution. Il p
 
 ---
 
+## 🎓 Auto-évaluation & Réflexivité (3.4)
+
+Testez votre compréhension didactique du défi pédagogique express et réalisez votre retour réflexif sur l'Exercice 05 (Affiche Canva 20 min) :
+
+<ClientOnly>
+  <QuizBox moduleId="03-4" moduleTitle="3.4 Le défi pédagogique" />
+</ClientOnly>
+
+---
+
 ## Navigation
 - 🏠 **[03. Hub Méthodologies Pédagogiques](/modules/03-pedagogies-actives)**
 - ⬅️ **[3.3 Démarche d'investigation](/modules/03-3-investigation-enquete)**

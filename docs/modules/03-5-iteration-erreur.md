@@ -64,9 +64,13 @@ Par exemple, les élèves peuvent créer une première version d'un jeu numériq
     </ol>
   </div>
 
-  <p style="margin-top: 1rem; margin-bottom: 0; font-size: 0.92rem; color: var(--vp-c-text-2);">
-    📤 <strong>Dépôt du travail :</strong> Une fois votre compte-rendu rédigé, déposez votre document directement sur votre <a href="/espace-membre"><strong>Espace Membre</strong></a> (onglet <em>« Dépôt de Travaux »</em>).
+  <p style="margin-top: 1rem; margin-bottom: 0.8rem; font-size: 0.92rem; color: var(--vp-c-text-2);">
+    📤 <strong>Dépôt du travail (10 points) :</strong> Une fois votre compte-rendu rédigé, déposez votre document directement ci-dessous ou sur votre <a href="/espace-membre"><strong>Espace Membre</strong></a> (onglet <em>« Devoirs & Dépôts »</em>).
   </p>
+
+  <ClientOnly>
+    <ExerciseBox exerciseId="exercice-06" exerciseTitle="Atelier 6 : Démarche itérative et conception de mini-jeu (Playtest)" />
+  </ClientOnly>
 </div>
 
 ---

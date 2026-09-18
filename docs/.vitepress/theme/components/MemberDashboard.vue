@@ -107,7 +107,7 @@ const courseModules = [
 ]
 
 const availableExercises = [
-  // 1. Travaux sur la Plateforme (Pilier 1 - 60 pts)
+  // 1. Travaux sur la Plateforme (Partie 1 : 80 pts exercices + 20 pts quiz = 100 pts)
   { 
     id: 'exercice-01', 
     title: 'Exercice 1 : Diagnostic de compétences numériques (DigComp 2.2)',
@@ -145,66 +145,88 @@ const availableExercises = [
   },
   { 
     id: 'exercice-06', 
-    title: 'Exercice 6 : Défi Hardware (Démonter et remonter un PC)',
+    title: 'Exercice 6 : Démarche itérative (Concevoir & tester un mini-jeu)',
+    category: 'Plateforme',
+    points: 10,
+    docUrl: 'https://docs.google.com/document/d/1mfCTqwo-2l9k_wdLzIu3qRWOJuBxrqJv/preview'
+  },
+  { 
+    id: 'exercice-07', 
+    title: 'Exercice 7 : Défi Hardware & Peer Learning (Démonter un PC)',
     category: 'Plateforme',
     points: 10,
     docUrl: 'https://docs.google.com/document/d/1Vjy9xrqLG-xuktmMmmOQ6Kh8I-hXiIzV/preview'
   },
-  // 2. Projet Jeu de Société Didactique (Pilier 2 & 3 - 130 pts)
+  { 
+    id: 'exercice-08', 
+    title: 'Exercice 8 : Construire des grilles d\'évaluation critériées',
+    category: 'Plateforme',
+    points: 10,
+    docUrl: 'https://docs.google.com/document/d/1MV1xWWb5ZtcuRhFn_JIVG6UHeFle6IUI/preview'
+  },
+  // 2. Projet Jeu de Société Didactique (Partie 2 : 100 pts global, étapes de suivi formatif)
   { 
     id: 'exercice-09', 
-    title: 'Exercice 9 : Règles du jeu & dossier pédagogique (FMTTN / CSEM)',
+    title: 'Étape 1 (Ex 9) : Règles du jeu & dossier pédagogique (FMTTN / CSEM)',
     category: 'Projet Jeu',
-    points: 20,
+    points: 0,
+    isProjectStep: true,
     docUrl: 'https://docs.google.com/document/d/1af3aH5FiR31N4FB99VrFq6628kiFFbly/preview'
   },
   { 
     id: 'exercice-10', 
-    title: 'Exercice 10 : Photographier le numérique (visuels & matériel)',
+    title: 'Étape 2 (Ex 10) : Photographier le numérique (visuels & matériel)',
     category: 'Projet Jeu',
-    points: 15,
+    points: 0,
+    isProjectStep: true,
     docUrl: 'https://docs.google.com/document/d/1kSoMRpjySi0DvjA0S1W4b8BoaDQrXNZh/preview'
   },
   { 
     id: 'exercice-11', 
-    title: 'Exercice 11 : Supports du jeu & cartes créées avec l\'IA',
+    title: 'Étape 3 (Ex 11) : Supports du jeu & cartes créées avec l\'IA',
     category: 'Projet Jeu',
-    points: 15,
+    points: 0,
+    isProjectStep: true,
     docUrl: 'https://docs.google.com/document/d/1CzyMJRbjyvYVh7XP83Lx4tjxnq23oHXX/preview'
   },
   { 
     id: 'exercice-12', 
-    title: 'Exercice 12 : Plateau de jeu à la découpeuse laser (FabLab)',
+    title: 'Étape 4 (Ex 12) : Plateau de jeu à la découpeuse laser (FabLab)',
     category: 'Projet Jeu',
-    points: 15,
+    points: 0,
+    isProjectStep: true,
     docUrl: 'https://docs.google.com/document/d/1Ov_huVW9al2DKuoBmW89QO3ZqE5E-nzU/preview'
   },
   { 
     id: 'exercice-13', 
-    title: 'Exercice 13 : Réalisation des pions à l\'imprimante 3D (FabLab)',
+    title: 'Étape 5 (Ex 13) : Réalisation des pions à l\'imprimante 3D (FabLab)',
     category: 'Projet Jeu',
-    points: 15,
+    points: 0,
+    isProjectStep: true,
     docUrl: 'https://docs.google.com/document/d/1H_88UJvPPezdUXw1Vt8_U9wtsaFouepU/preview'
   },
   { 
     id: 'exercice-14', 
-    title: 'Exercice 14 : Présentation vidéo du jeu (Capsule 2-3 min)',
+    title: 'Étape 6 (Ex 14) : Présentation vidéo du jeu (Capsule 2-3 min)',
     category: 'Projet Jeu',
-    points: 20,
+    points: 0,
+    isProjectStep: true,
     docUrl: 'https://docs.google.com/document/d/1JO_9ayYt3IqZfStfUPkzT3GDOF65VBxQ/preview'
   },
   { 
     id: 'exercice-15', 
-    title: 'Exercice 15 : Playtest & Grille d\'évaluation formative du jeu',
+    title: 'Étape 7 (Ex 15) : Playtest & Grille d\'évaluation formative du jeu',
     category: 'Projet Jeu',
-    points: 15,
+    points: 0,
+    isProjectStep: true,
     docUrl: 'https://docs.google.com/document/d/1uIheBr_KU2Dh2TjYkegz7lHixsUNxs4t/preview'
   },
   { 
     id: 'exercice-16', 
-    title: 'Exercice 16 : Présentation finale et leçon FMTTN devant la classe',
+    title: 'Étape 8 (Ex 16) : Présentation finale et leçon FMTTN devant la classe',
     category: 'Projet Jeu',
-    points: 15,
+    points: 0,
+    isProjectStep: true,
     docUrl: 'https://docs.google.com/document/d/1Tm15GqKSwutH1MDbaGYJaWByliC17iRT/preview'
   }
 ]
@@ -836,7 +858,7 @@ function formatSize(bytes) {
               </div>
               <h3 class="eval-title">Bilan d'Évaluation Didactique M1</h3>
               <p class="eval-desc">
-                Pondération officielle : <strong>70 points</strong> pour les travaux sur la plateforme en ligne (10 pts Quiz + 60 pts Devoirs), <strong>100 points</strong> pour la création du jeu de société didactique, et <strong>30 points</strong> pour la soutenance orale devant la classe.
+                Pondération officielle : <strong>100 points</strong> pour les travaux sur la plateforme en ligne (20 pts Quiz diagnostiques + 80 pts pour les 8 Ateliers pratiques), et <strong>100 points</strong> pour la totalité du projet de jeu de société didactique (suivi des 8 étapes clés de réalisation et présentation en classe).
               </p>
               <div class="eval-link-wrapper">
                 <a :href="withBase('/guide/evaluation')" class="link-eval-guide">
@@ -855,16 +877,16 @@ function formatSize(bytes) {
             </div>
           </div>
 
-          <!-- DÉTAIL DES 3 PILIERS -->
+          <!-- DÉTAIL DES 2 GRANDES PARTIES (100 PTS + 100 PTS = 200 PTS) -->
           <div class="pillars-grid">
-            <!-- PILIER 1 -->
+            <!-- PARTIE 1 : TRAVAUX SUR LA PLATEFORME (100 PTS) -->
             <div class="pillar-card p1">
               <div class="pillar-header">
-                <div class="pillar-badge">Pilier 1 • 70 Pts</div>
-                <div class="pillar-score-badge">{{ myEvaluation.pillar1.total }} / 70 pts</div>
+                <div class="pillar-badge">Partie 1 • 100 Pts</div>
+                <div class="pillar-score-badge">{{ myEvaluation.pillar1.total }} / 100 pts</div>
               </div>
-              <h4 class="pillar-title">Travaux sur la Plateforme</h4>
-              <p class="pillar-summary">Auto-évaluations diagnostiques continues et devoirs pratiques déposés.</p>
+              <h4 class="pillar-title">Travaux sur la Plateforme en Ligne</h4>
+              <p class="pillar-summary">Auto-évaluations diagnostiques continues et 8 devoirs pratiques déposés.</p>
 
               <div class="sub-pillars-list">
                 <!-- 1.1 Quiz -->
@@ -877,7 +899,7 @@ function formatSize(bytes) {
                     </div>
                   </div>
                   <div class="sp-score">
-                    <strong>{{ myEvaluation.pillar1.quizPoints }}</strong> / 10 pts
+                    <strong>{{ myEvaluation.pillar1.quizPoints }}</strong> / 20 pts
                   </div>
                 </div>
 
@@ -886,19 +908,19 @@ function formatSize(bytes) {
                   <div class="sp-info">
                     <span class="sp-icon">📂</span>
                     <div>
-                      <span class="sp-name">6 Ateliers pratiques obligatoires (6 × 10 pts)</span>
+                      <span class="sp-name">8 Ateliers pratiques obligatoires (8 × 10 pts)</span>
                       <span class="sp-sub">Documents Word / PDF déposés sur votre espace</span>
                     </div>
                   </div>
                   <div class="sp-score">
-                    <strong>{{ myEvaluation.pillar1.exercisesTotal }}</strong> / 60 pts
+                    <strong>{{ myEvaluation.pillar1.exercisesTotal }}</strong> / 80 pts
                   </div>
                 </div>
               </div>
 
-              <!-- Liste détaillée des 6 exercices -->
+              <!-- Liste détaillée des 8 exercices -->
               <div class="eval-exercises-box">
-                <div class="ee-title">État d'avancement des 6 devoirs obligatoires :</div>
+                <div class="ee-title">État d'avancement des 8 devoirs obligatoires :</div>
                 <div class="ee-list">
                   <div 
                     v-for="ex in myEvaluation.pillar1.exerciseDetails" 
@@ -949,97 +971,85 @@ function formatSize(bytes) {
               </div>
             </div>
 
-            <!-- PILIER 2 -->
+            <!-- PARTIE 2 : PROJET JEU DE SOCIÉTÉ DIDACTIQUE (100 PTS) -->
             <div class="pillar-card p2">
               <div class="pillar-header">
-                <div class="pillar-badge">Pilier 2 • 100 Pts</div>
+                <div class="pillar-badge">Partie 2 • 100 Pts</div>
                 <div class="pillar-score-badge">{{ myEvaluation.pillar2.total }} / 100 pts</div>
               </div>
-              <h4 class="pillar-title">Création du Jeu de Société Didactique</h4>
-              <p class="pillar-summary">Projet central ludo-éducatif, fabrication FabLab, cartes IA et vidéo.</p>
+              <h4 class="pillar-title">Projet Jeu de Société Didactique</h4>
+              <p class="pillar-summary">Note globale attribuée par l'enseignant pour la totalité du projet didactique (conception, FabLab, vidéo et leçon en classe).</p>
 
               <div class="pillar-details-box">
                 <div class="criteria-check-item">
                   <span class="crit-icon">📋</span>
                   <div class="crit-text">
-                    <strong>Prépa & intégration pédagogique (20 pts)</strong>
-                    <span>Dossier didactique, intention pédagogique, règles et concordance FMTTN.</span>
+                    <strong>Étape 1 (Ex 9) : Règles du jeu & dossier pédagogique</strong>
+                    <span>Dossier didactique, intention pédagogique, règles et compétences FMTTN / CSEM.</span>
                   </div>
-                  <span class="crit-sub-score">{{ myEvaluation.pillar2.details.pedagogy }} / 20</span>
-                </div>
-                <div class="criteria-check-item">
-                  <span class="crit-icon">🪚</span>
-                  <div class="crit-text">
-                    <strong>Plateau de jeu - Découpe laser (15 pts)</strong>
-                    <span>Fichiers vectoriels .svg, gravure bois/plexiglas et ergonomie FabLab.</span>
-                  </div>
-                  <span class="crit-sub-score">{{ myEvaluation.pillar2.details.boardLaser }} / 15</span>
-                </div>
-                <div class="criteria-check-item">
-                  <span class="crit-icon">🎲</span>
-                  <div class="crit-text">
-                    <strong>Pions de jeu - Impression 3D (15 pts)</strong>
-                    <span>Modélisation 3D originale et qualité d'impression matérielle.</span>
-                  </div>
-                  <span class="crit-sub-score">{{ myEvaluation.pillar2.details.pawns3d }} / 15</span>
-                </div>
-                <div class="criteria-check-item">
-                  <span class="crit-icon">🤖</span>
-                  <div class="crit-text">
-                    <strong>Cartes de jeu conçues avec l'IA (15 pts)</strong>
-                    <span>Génération éthique des visuels IA, cartes questions/défis didactiques.</span>
-                  </div>
-                  <span class="crit-sub-score">{{ myEvaluation.pillar2.details.aiCards }} / 15</span>
-                </div>
-                <div class="criteria-check-item">
-                  <span class="crit-icon">🎬</span>
-                  <div class="crit-text">
-                    <strong>Présentation vidéo du jeu (20 pts)</strong>
-                    <span>Capsule vidéo explicative (2-3 min), pitch dynamique et démonstration.</span>
-                  </div>
-                  <span class="crit-sub-score">{{ myEvaluation.pillar2.details.video }} / 20</span>
+                  <span class="crit-sub-score">Étape de projet</span>
                 </div>
                 <div class="criteria-check-item">
                   <span class="crit-icon">📸</span>
                   <div class="crit-text">
-                    <strong>Intégration des photos & prototypes (15 pts)</strong>
-                    <span>Documentation visuelle du processus de fabrication et du jeu final.</span>
+                    <strong>Étape 2 (Ex 10) : Photographier le numérique</strong>
+                    <span>Documentation visuelle, reportage photo du matériel et composition.</span>
                   </div>
-                  <span class="crit-sub-score">{{ myEvaluation.pillar2.details.photos }} / 15</span>
+                  <span class="crit-sub-score">Étape de projet</span>
                 </div>
-              </div>
-
-              <div class="pillar-note-box">
-                <span class="pnb-label">Total projet Jeu de société :</span>
-                <span class="pnb-val">{{ myEvaluation.pillar2.total }} / 100 pts</span>
-              </div>
-            </div>
-
-            <!-- PILIER 3 -->
-            <div class="pillar-card p3">
-              <div class="pillar-header">
-                <div class="pillar-badge">Pilier 3 • 30 Pts</div>
-                <div class="pillar-score-badge">{{ myEvaluation.pillar3.total }} / 30 pts</div>
-              </div>
-              <h4 class="pillar-title">Soutenance Orale devant la Classe</h4>
-              <p class="pillar-summary">Présentation devant les pairs, animation de la table de jeu et échange didactique.</p>
-
-              <div class="pillar-details-box single-defense">
-                <div class="criteria-check-item highlight-defense">
+                <div class="criteria-check-item">
+                  <span class="crit-icon">🤖</span>
+                  <div class="crit-text">
+                    <strong>Étape 3 (Ex 11) : Supports de jeu & cartes conçues avec l'IA</strong>
+                    <span>Génération de visuels IA, harmonisation Canva et cartes défis pédagogiques.</span>
+                  </div>
+                  <span class="crit-sub-score">Étape de projet</span>
+                </div>
+                <div class="criteria-check-item">
+                  <span class="crit-icon">🪚</span>
+                  <div class="crit-text">
+                    <strong>Étape 4 (Ex 12) : Plateau à la découpeuse laser (FabLab)</strong>
+                    <span>Fichiers vectoriels .svg, gravure bois/plexiglas et ergonomie matérielle.</span>
+                  </div>
+                  <span class="crit-sub-score">Étape de projet</span>
+                </div>
+                <div class="criteria-check-item">
+                  <span class="crit-icon">🎲</span>
+                  <div class="crit-text">
+                    <strong>Étape 5 (Ex 13) : Pions modélisés et imprimés en 3D (FabLab)</strong>
+                    <span>Modélisation 3D originale et fabrication additive FDM au FabLab.</span>
+                  </div>
+                  <span class="crit-sub-score">Étape de projet</span>
+                </div>
+                <div class="criteria-check-item">
+                  <span class="crit-icon">🎬</span>
+                  <div class="crit-text">
+                    <strong>Étape 6 (Ex 14) : Présentation vidéo du jeu (Capsule 2-3 min)</strong>
+                    <span>Pitch dynamique, démonstration, valeurs de plans et son soigné.</span>
+                  </div>
+                  <span class="crit-sub-score">Étape de projet</span>
+                </div>
+                <div class="criteria-check-item">
+                  <span class="crit-icon">🧪</span>
+                  <div class="crit-text">
+                    <strong>Étape 7 (Ex 15) : Playtest & Grille d'évaluation formative</strong>
+                    <span>Tests réels menés auprès des pairs, recueil de données et améliorations itératives.</span>
+                  </div>
+                  <span class="crit-sub-score">Étape de projet</span>
+                </div>
+                <div class="criteria-check-item">
                   <span class="crit-icon">🎤</span>
                   <div class="crit-text">
-                    <strong>Soutenance orale globale (30 points)</strong>
-                    <span>Animation de la table de jeu, argumentation réflexive et réponses aux questions de l'enseignant.</span>
+                    <strong>Étape 8 (Ex 16) : Présentation finale et leçon FMTTN devant la classe</strong>
+                    <span>Animation de la table de jeu, défense didactique et fiche de préparation de leçon.</span>
                   </div>
+                  <span class="crit-sub-score">Étape de projet</span>
                 </div>
-                <p class="defense-clarification">
-                  <em>Les critères détaillés de soutenance vous seront communiqués lors de la préparation des passages oraux.</em>
-                </p>
               </div>
 
               <div class="pillar-note-box">
-                <span class="pnb-label">Note attribuée à la soutenance :</span>
-                <span class="pnb-val">{{ myEvaluation.pillar3.total }} / 30 pts</span>
+                <span class="pnb-label">Total projet Jeu de société didactique :</span>
+                <span class="pnb-val">{{ myEvaluation.pillar2.total }} / 100 pts</span>
               </div>
             </div>
           </div>

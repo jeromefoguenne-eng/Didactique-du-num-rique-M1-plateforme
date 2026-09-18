@@ -15,7 +15,7 @@ const subCategories = [
   {
     title: "Modalités d'Évaluation (sur 200 points)",
     tag: "Barème & Pondération",
-    desc: "Répartition officielle des 200 points : 70 pts plateforme (10 pts Quiz + 60 pts Devoirs), 100 pts création du jeu de société, 30 pts soutenance orale.",
+    desc: "Répartition officielle des 200 points : 100 pts plateforme (20 pts Quiz + 80 pts Devoirs) et 100 pts projet jeu de société didactique.",
     link: "/guide/evaluation",
     image: "/images/subcategories/sub-7-2-evaluation.jpg"
   }

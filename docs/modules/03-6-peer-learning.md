@@ -57,10 +57,10 @@ L'intérêt de ce modèle pour l'enseignement du numérique est donc de déplace
 
 ---
 
-## 📝 Exercice Pratique Associé : Méthode Péda 6 (Défi Hardware & Peer Learning)
+## 📝 Exercice Pratique Associé : Méthode Péda 7 (Défi Hardware & Peer Learning)
 
 <div class="callout-exercise" style="margin: 1.5rem 0;">
-  <div class="callout-title">📋 Exercice 06 — DÉFI HARDWARE : Démonter, comprendre et reconstruire un PC</div>
+  <div class="callout-title">📋 Exercice 07 — DÉFI HARDWARE : Démonter, comprendre et reconstruire un PC</div>
   <p>
     Inspiré de la philosophie de l'École 42 et de l'apprentissage expérientiel : par groupes de 2 à 3, les étudiants démontent une unité centrale, identifient les composants et leurs connexions, s'entraident entre pairs sans procédure préétablie, et résolvent les pannes éventuelles pour relancer la machine.
   </p>
@@ -76,9 +76,13 @@ L'intérêt de ce modèle pour l'enseignement du numérique est donc de déplace
     </a>
   </div>
 
-  <p style="margin-top: 1rem; margin-bottom: 0; font-size: 0.92rem; color: var(--vp-c-text-2);">
-    📤 <strong>Dépôt du travail :</strong> Une fois votre compte-rendu rédigé, déposez votre fichier Word ou PDF directement dans votre <a href="/espace-membre"><strong>Espace Membre</strong></a> (onglet <em>« Dépôt de Travaux »</em>).
+  <p style="margin-top: 1rem; margin-bottom: 0.8rem; font-size: 0.92rem; color: var(--vp-c-text-2);">
+    📤 <strong>Dépôt du travail (10 points) :</strong> Une fois votre compte-rendu rédigé, déposez votre fichier Word ou PDF directement ci-dessous ou dans votre <a href="/espace-membre"><strong>Espace Membre</strong></a> (onglet <em>« Devoirs & Dépôts »</em>).
   </p>
+
+  <ClientOnly>
+    <ExerciseBox exerciseId="exercice-07" exerciseTitle="Atelier 7 : Défi Hardware & Peer Learning (Démonter et remonter un PC)" />
+  </ClientOnly>
 </div>
 
 ---

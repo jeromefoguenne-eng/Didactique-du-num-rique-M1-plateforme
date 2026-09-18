@@ -341,7 +341,7 @@ function formatSize(bytes) {
         </div>
 
         <div class="aifb-disclaimer">
-          ⚖️ <em>Ce diagnostic continu vous guide en temps réel. La note officielle sera validée et réévaluée par l'enseignant en fin de quadrimestre (70 pts plateforme / 130 pts projet).</em>
+          ⚖️ <em>Ce diagnostic continu vous guide en temps réel. La note officielle sera validée et réévaluée par l'enseignant en fin de quadrimestre (100 pts plateforme / 100 pts projet).</em>
           <a href="/guide/criteres-correction-ia" target="_blank" class="aifb-link-rules">Consulter la grille des critères IA ↗</a>
         </div>
       </div>

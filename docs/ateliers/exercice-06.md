@@ -1,13 +1,13 @@
 ---
-title: "Atelier 6 : Défi Hardware PC (Architecture matérielle)"
-description: "Atelier de démontage et identification des composants physiques d'une unité centrale (Champ 1 & FMTT)."
+title: "Atelier 6 : Démarche itérative (Concevoir, tester et améliorer un jeu numérique)"
+description: "Atelier de conception itérative d'un mini-jeu sur Genially, protocole de test par les pairs et boucle d'amélioration réflexive."
 ---
 
-# Atelier 6 : Défi Hardware PC (Architecture matérielle)
+# Atelier 6 : Démarche itérative (Concevoir, tester et améliorer un jeu numérique)
 
 <Badge type="info" text="Exercice 6 (10 points)" /> <Badge type="tip" text="Document Officiel" />
 
-Atelier de démontage et identification des composants physiques d'une unité centrale (Champ 1 & FMTT).
+Atelier de conception itérative d'un mini-jeu sur Genially, protocole de test par les pairs et boucle d'amélioration réflexive.
 
 ---
 
@@ -54,7 +54,7 @@ Atelier de démontage et identification des composants physiques d'une unité ce
 </div>
 
 <ClientOnly>
-  <ExerciseBox exerciseId="exercice-06" exerciseTitle="Atelier 6 : Défi Hardware PC (Architecture matérielle)" />
+  <ExerciseBox exerciseId="exercice-06" exerciseTitle="Atelier 6 : Démarche itérative (Concevoir, tester et améliorer un jeu numérique)" />
 </ClientOnly>
 
 ---

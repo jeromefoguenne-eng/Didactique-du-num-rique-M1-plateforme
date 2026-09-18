@@ -999,7 +999,7 @@ function saveActiveStudentGrid() {
 }
 
 function exportAllResultsToExcel() {
-  let csv = `Nom de famille;Prénom;Email institutionnel;Suivi Délais IA;Quiz (/10);Ex 1 DigComp (/10);Ex 2 Info critique (/10);Ex 3 Guide élèves (/10);Ex 4 Escape Game (/10);Ex 5 Canva mot de passe (/10);Ex 6 Hardware PC (/10);SOUS-TOTAL PLATEFORME (/70);Ex 9 Règles & Dossier (/20);Ex 10 Photographie (/15);Ex 11 Supports IA (/15);Ex 12 Découpe Laser (/15);Ex 13 Pions 3D (/15);Ex 14 Vidéo (/20);Ex 15 Playtest (/15);Ex 16 Soutenance & Leçon (/15);SOUS-TOTAL PROJET JEU (/130);TOTAL GÉNÉRAL (/200);NOTE FINALE (/20);POURCENTAGE;RÉSULTAT;MENTION;FEEDBACK GÉNÉRAL\n`
+  let csv = `Nom de famille;Prénom;Email institutionnel;Suivi Délais IA;Quiz (/20);Ex 1 DigComp (/10);Ex 2 Info critique (/10);Ex 3 Guide élèves (/10);Ex 4 Escape Game (/10);Ex 5 Canva mot de passe (/10);Ex 6 Démarche itérative (/10);Ex 7 Hardware PC (/10);Ex 8 Grilles critériées (/10);SOUS-TOTAL PLATEFORME (/100);PROJET JEU NOTE GLOBALE (/100);Étape 1 Règles;Étape 2 Photos;Étape 3 Cartes IA;Étape 4 Plateau Laser;Étape 5 Pions 3D;Étape 6 Vidéo;Étape 7 Playtest;Étape 8 Présentation & Leçon;SOUS-TOTAL PROJET JEU (/100);TOTAL GÉNÉRAL (/200);NOTE FINALE (/20);POURCENTAGE;RÉSULTAT;MENTION;FEEDBACK GÉNÉRAL\n`
 
   users.value.forEach(u => {
     const ev = userStore.getStudentEvaluation(u.email)
@@ -1014,22 +1014,25 @@ function exportAllResultsToExcel() {
     const ex4 = items.find(i => i.id === 'exercice-04')?.teacherScore ?? 0
     const ex5 = items.find(i => i.id === 'exercice-05')?.teacherScore ?? 0
     const ex6 = items.find(i => i.id === 'exercice-06')?.teacherScore ?? 0
+    const ex7 = items.find(i => i.id === 'exercice-07')?.teacherScore ?? 0
+    const ex8 = items.find(i => i.id === 'exercice-08')?.teacherScore ?? 0
     const p1Total = ev.part1.total
 
-    const ex9 = items.find(i => i.id === 'exercice-09')?.teacherScore ?? 0
-    const ex10 = items.find(i => i.id === 'exercice-10')?.teacherScore ?? 0
-    const ex11 = items.find(i => i.id === 'exercice-11')?.teacherScore ?? 0
-    const ex12 = items.find(i => i.id === 'exercice-12')?.teacherScore ?? 0
-    const ex13 = items.find(i => i.id === 'exercice-13')?.teacherScore ?? 0
-    const ex14 = items.find(i => i.id === 'exercice-14')?.teacherScore ?? 0
-    const ex15 = items.find(i => i.id === 'exercice-15')?.teacherScore ?? 0
-    const ex16 = items.find(i => i.id === 'exercice-16')?.teacherScore ?? 0
+    const projScore = items.find(i => i.id === 'projet-jeu')?.teacherScore ?? ev.part2.total
+    const ex9 = items.find(i => i.id === 'exercice-09')?.completed ? 'Déposé' : 'En attente'
+    const ex10 = items.find(i => i.id === 'exercice-10')?.completed ? 'Déposé' : 'En attente'
+    const ex11 = items.find(i => i.id === 'exercice-11')?.completed ? 'Déposé' : 'En attente'
+    const ex12 = items.find(i => i.id === 'exercice-12')?.completed ? 'Déposé' : 'En attente'
+    const ex13 = items.find(i => i.id === 'exercice-13')?.completed ? 'Déposé' : 'En attente'
+    const ex14 = items.find(i => i.id === 'exercice-14')?.completed ? 'Déposé' : 'En attente'
+    const ex15 = items.find(i => i.id === 'exercice-15')?.completed ? 'Déposé' : 'En attente'
+    const ex16 = items.find(i => i.id === 'exercice-16')?.completed ? 'Déposé' : 'En attente'
     const p2Total = ev.part2.total
 
     const status = ev.isPassing ? 'Admis' : 'Ajourné'
     const cleanFb = (ev.feedback || '').replace(/"/g, '""').replace(/\n/g, ' ')
 
-    csv += `"${u.lastName}";"${u.firstName}";"${u.email}";"${lateText}";"${q}";"${ex1}";"${ex2}";"${ex3}";"${ex4}";"${ex5}";"${ex6}";"${p1Total}";"${ex9}";"${ex10}";"${ex11}";"${ex12}";"${ex13}";"${ex14}";"${ex15}";"${ex16}";"${p2Total}";"${ev.totalScore}";"${ev.totalOutOf20}";"${ev.percentage}%";"${status}";"${ev.mention}";"${cleanFb}"\n`
+    csv += `"${u.lastName}";"${u.firstName}";"${u.email}";"${lateText}";"${q}";"${ex1}";"${ex2}";"${ex3}";"${ex4}";"${ex5}";"${ex6}";"${ex7}";"${ex8}";"${p1Total}";"${projScore}";"${ex9}";"${ex10}";"${ex11}";"${ex12}";"${ex13}";"${ex14}";"${ex15}";"${ex16}";"${p2Total}";"${ev.totalScore}";"${ev.totalOutOf20}";"${ev.percentage}%";"${status}";"${ev.mention}";"${cleanFb}"\n`
   })
 
   // Encodage UTF-8 BOM pour ouverture directe parfaite dans Microsoft Excel
@@ -1533,8 +1536,8 @@ function exportAllResultsToExcel() {
               <tr class="section-divider-row">
                 <td colspan="5">
                   <div class="sec-div-content">
-                    <strong>Partie 1 : Travaux Réalisés sur la Plateforme (70 Points)</strong>
-                    <span class="sec-div-badge">7 Épreuves continues</span>
+                    <strong>Partie 1 : Travaux Réalisés sur la Plateforme (100 Points)</strong>
+                    <span class="sec-div-badge">Quiz (20 pts) + 8 Ateliers (80 pts)</span>
                   </div>
                 </td>
               </tr>
@@ -1639,8 +1642,8 @@ function exportAllResultsToExcel() {
               <tr class="section-divider-row">
                 <td colspan="5">
                   <div class="sec-div-content">
-                    <strong>Partie 2 : Projet Jeu de Société Didactique & Restitution (130 Points)</strong>
-                    <span class="sec-div-badge">8 Épreuves et livrables</span>
+                    <strong>Partie 2 : Projet Jeu de Société Didactique (100 Points)</strong>
+                    <span class="sec-div-badge">Projet global & 8 étapes clés</span>
                   </div>
                 </td>
               </tr>
@@ -1871,10 +1874,10 @@ function exportAllResultsToExcel() {
                 </tr>
               </thead>
               <tbody>
-                <!-- SECTION PARTIE 1 : TRAVAUX PLATEFORME (70 PTS) -->
+                <!-- SECTION PARTIE 1 : TRAVAUX PLATEFORME (100 PTS) -->
                 <tr class="section-divider-row">
                   <td colspan="5">
-                    <strong>📘 PARTIE 1 : TRAVAUX RÉALISÉS SUR LA PLATEFORME (70 PTS / 35%)</strong>
+                    <strong>📘 PARTIE 1 : TRAVAUX RÉALISÉS SUR LA PLATEFORME (100 PTS / 50%)</strong>
                   </td>
                 </tr>
 
@@ -1946,46 +1949,53 @@ function exportAllResultsToExcel() {
 
                 <!-- LIGNE SOUS-TOTAL PARTIE 1 -->
                 <tr class="subtotal-row p1-subtotal">
-                  <td><strong>SOUS-TOTAL TRAVAUX PLATEFORME (Quiz + Exercices 1 à 6)</strong></td>
-                  <td style="text-align: center;"><strong>70 pts</strong></td>
+                  <td><strong>SOUS-TOTAL TRAVAUX PLATEFORME (Quiz 20 pts + Ateliers 1 à 8)</strong></td>
+                  <td style="text-align: center;"><strong>100 pts</strong></td>
                   <td style="text-align: center;">—</td>
                   <td style="text-align: center;">
-                    <strong class="subtotal-badge">{{ currentGridPart1Total }} / 70 pts</strong>
+                    <strong class="subtotal-badge">{{ currentGridPart1Total }} / 100 pts</strong>
                   </td>
-                  <td><em>Pondération : 35% de la note finale</em></td>
+                  <td><em>Pondération : 50% de la note finale</em></td>
                 </tr>
 
-                <!-- SECTION PARTIE 2 : PROJET JEU DE SOCIÉTÉ (130 PTS) -->
+                <!-- SECTION PARTIE 2 : PROJET JEU DE SOCIÉTÉ (100 PTS) -->
                 <tr class="section-divider-row part2-divider">
                   <td colspan="5">
-                    <strong>🎲 PARTIE 2 : PROJET JEU DE SOCIÉTÉ DIDACTIQUE & RESTITUTION (130 PTS / 65%)</strong>
+                    <strong>🎲 PARTIE 2 : PROJET JEU DE SOCIÉTÉ DIDACTIQUE (100 PTS / 50%)</strong>
                   </td>
                 </tr>
 
-                <tr v-for="item in activeGridItems.filter(i => i.part === 2)" :key="item.id" :class="['grid-item-row', { 'row-overdue': item.isOverdue }]">
+                <tr v-for="item in activeGridItems.filter(i => i.part === 2)" :key="item.id" :class="['grid-item-row', { 'row-overdue': item.isOverdue, 'row-project-global': item.id === 'projet-jeu' }]">
                   <td>
                     <div class="item-title-group">
-                      <span class="item-status-icon">{{ item.completed ? '✅' : (item.isOverdue ? '🔔' : '⏳') }}</span>
+                      <span class="item-status-icon">{{ item.completed ? '✅' : (item.isOverdue ? '🔔' : (item.maxPoints > 0 ? '🎯' : '⚪')) }}</span>
                       <div>
-                        <strong :class="{ 'is-late': item.isOverdue }">{{ item.title }}</strong>
+                        <strong :class="{ 'is-late': item.isOverdue, 'highlight-global': item.id === 'projet-jeu' }">{{ item.title }}</strong>
                         <div v-if="item.file" class="item-file-link">
                           📎 Document : <code>{{ item.file.formattedFileName }}</code>
+                        </div>
+                        <div v-else-if="item.id === 'projet-jeu'" class="item-file-link" style="color: #2563eb;">
+                          ⭐ Note globale attribuée à l'ensemble du projet didactique (conception, FabLab, vidéo, leçon en classe)
                         </div>
                         <div v-else-if="item.isOverdue" class="item-file-link overdue">
                           🚨 ALARME RETARD : Document non déposé (Échéance dépassée le {{ item.deadlineLabel }})
                         </div>
                         <div v-else class="item-file-link missing">
-                          ⚠️ En attente de dépôt du livrable (Échéance : {{ item.deadlineLabel || 'Non définie' }})
+                          ℹ️ Étape de projet (Échéance : {{ item.deadlineLabel || '20/11/2026' }})
                         </div>
                       </div>
                     </div>
                   </td>
                   <td style="text-align: center;">
-                    <span class="max-badge">/ {{ item.maxPoints }} pts</span>
+                    <span v-if="item.maxPoints > 0" class="max-badge">/ {{ item.maxPoints }} pts</span>
+                    <span v-else class="max-badge" style="background: #f1f5f9; color: #64748b; font-size: 0.75rem;">Étape</span>
                   </td>
                   <!-- COLONNE COTE IA -->
                   <td style="text-align: center;">
-                    <div v-if="item.aiScore !== null && item.aiScore !== undefined" class="ai-score-cell-wrap">
+                    <div v-if="item.maxPoints === 0" class="ai-none-cell">
+                      <span class="ai-pending-text">{{ item.completed ? '✅ Déposé' : '⏳ En attente' }}</span>
+                    </div>
+                    <div v-else-if="item.aiScore !== null && item.aiScore !== undefined" class="ai-score-cell-wrap">
                       <span class="ai-pill"><strong>{{ item.aiScore }}</strong> / {{ item.maxPoints }}</span>
                       <button 
                         @click="adoptAiScoreForItem(item)" 
@@ -2002,7 +2012,7 @@ function exportAllResultsToExcel() {
                   </td>
                   <!-- COLONNE COTE ENSEIGNANT (ÉDITABLE) -->
                   <td style="text-align: center;">
-                    <div class="teacher-input-cell-wrap">
+                    <div v-if="item.maxPoints > 0" class="teacher-input-cell-wrap">
                       <input 
                         v-model.number="item.teacherScore" 
                         type="number" 
@@ -2012,6 +2022,9 @@ function exportAllResultsToExcel() {
                         class="teacher-score-input"
                       />
                       <span class="pts-denom">/ {{ item.maxPoints }}</span>
+                    </div>
+                    <div v-else class="step-status-tag" style="font-size: 0.78rem; color: #64748b; font-style: italic;">
+                      {{ item.completed ? '✓ Jalon validé' : '⚪ En cours' }}
                     </div>
                   </td>
                   <!-- COMMENTAIRE FORMATIF -->
@@ -2027,13 +2040,13 @@ function exportAllResultsToExcel() {
 
                 <!-- LIGNE SOUS-TOTAL PARTIE 2 -->
                 <tr class="subtotal-row p2-subtotal">
-                  <td><strong>SOUS-TOTAL PROJET JEU (Exercices 9 à 16)</strong></td>
-                  <td style="text-align: center;"><strong>130 pts</strong></td>
+                  <td><strong>SOUS-TOTAL PROJET JEU (Totalité du projet)</strong></td>
+                  <td style="text-align: center;"><strong>100 pts</strong></td>
                   <td style="text-align: center;">—</td>
                   <td style="text-align: center;">
-                    <strong class="subtotal-badge">{{ currentGridPart2Total }} / 130 pts</strong>
+                    <strong class="subtotal-badge">{{ currentGridPart2Total }} / 100 pts</strong>
                   </td>
-                  <td><em>Pondération : 65% de la note finale</em></td>
+                  <td><em>Pondération : 50% de la note finale</em></td>
                 </tr>
               </tbody>
             </table>
@@ -2044,11 +2057,11 @@ function exportAllResultsToExcel() {
             <div class="grf-scores-box">
               <div class="grf-score-item">
                 <span class="grf-label">Plateforme (Partie 1)</span>
-                <span class="grf-val">{{ currentGridPart1Total }} / 70</span>
+                <span class="grf-val">{{ currentGridPart1Total }} / 100</span>
               </div>
               <div class="grf-score-item">
                 <span class="grf-label">Projet Jeu (Partie 2)</span>
-                <span class="grf-val">{{ currentGridPart2Total }} / 130</span>
+                <span class="grf-val">{{ currentGridPart2Total }} / 100</span>
               </div>
               <div class="grf-score-item total-200">
                 <span class="grf-label">TOTAL GÉNÉRAL</span>
@@ -2073,15 +2086,21 @@ function exportAllResultsToExcel() {
                 <button @click="saveActiveStudentGrid" class="btn-save-grid-large">
                   💾 Enregistrer les cotes & commentaires pour cet étudiant
                 </button>
+                <button @click="autoGradeActiveStudentWithAi" type="button" class="btn-batch-ai" title="Appliquer les notes et feedbacks suggérés par l'IA">
+                  🤖 Reprendre toutes les notes suggérées par l'IA
+                </button>
+              </div>
+              <div v-if="saveGridStatus" class="save-grid-status-alert">
+                {{ saveGridStatus }}
               </div>
             </div>
           </div>
         </div>
 
-        <!-- TABLEAU RÉCAPITULATIF DE TOUTE LA CLASSE -->
-        <div class="class-summary-section">
+        <!-- VUE D'ENSEMBLE DE LA CLASSE (MOYENNES & TOTAUX) -->
+        <div class="class-summary-card">
           <div class="css-header">
-            <h4>📋 Vue d'ensemble de la classe (Relevé récapitulatif)</h4>
+            <h4>📊 Tableau Récapitulatif de la Classe (Notes Officielles sur 20)</h4>
             <span class="css-count">{{ users.filter(u => u.status !== 'archived').length }} étudiants inscrits</span>
           </div>
 
@@ -2090,10 +2109,10 @@ function exportAllResultsToExcel() {
               <thead>
                 <tr>
                   <th>Étudiant</th>
-                  <th style="text-align: center;">Quiz (/10)</th>
-                  <th style="text-align: center;">Devoirs (/60)</th>
-                  <th style="text-align: center;">Partie 1 (/70)</th>
-                  <th style="text-align: center;">Projet Jeu (/130)</th>
+                  <th style="text-align: center;">Quiz (/20)</th>
+                  <th style="text-align: center;">Devoirs (/80)</th>
+                  <th style="text-align: center;">Partie 1 (/100)</th>
+                  <th style="text-align: center;">Projet Jeu (/100)</th>
                   <th style="text-align: center;">Total (/200)</th>
                   <th style="text-align: center; background: #e0f2fe;">Note Finale (/20)</th>
                   <th style="text-align: center;">Statut</th>

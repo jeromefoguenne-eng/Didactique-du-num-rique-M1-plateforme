@@ -159,6 +159,7 @@ export interface EvaluationItemDefinition {
   part: 1 | 2
   partLabel: string
   maxPoints: number
+  isProjectStep?: boolean
   docLink?: string
   deadline?: string
   deadlineLabel?: string
@@ -277,14 +278,14 @@ export function getAlarmLevelInfo(daysOverdue: number): {
 }
 
 export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
-  // Partie 1 : Travaux plateforme (70 pts)
+  // Partie 1 : Travaux plateforme (100 pts)
   {
     id: 'quiz',
     title: 'Évaluations diagnostiques en ligne (Quiz de cours)',
     shortTitle: 'Quiz Diagnostiques',
     part: 1,
-    partLabel: 'Partie 1 : Travaux Plateforme (70 pts)',
-    maxPoints: 10,
+    partLabel: 'Partie 1 : Travaux Plateforme (100 pts)',
+    maxPoints: 20,
     deadline: '2026-09-16 23:59',
     deadlineLabel: '16/09/2026'
   },
@@ -293,9 +294,9 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     title: 'Exercice 1 : Diagnostic de compétences (DigComp 2.2)',
     shortTitle: 'Ex 1 (DigComp)',
     part: 1,
-    partLabel: 'Partie 1 : Travaux Plateforme (70 pts)',
+    partLabel: 'Partie 1 : Travaux Plateforme (100 pts)',
     maxPoints: 10,
-    docLink: 'https://docs.google.com/document/d/1b1QhnOoDNyCSdAIEAZx_xq96hQxZsUJH/edit?usp=sharing',
+    docLink: 'https://docs.google.com/document/d/1b1QhnOoDNyCSdAIEAZx_xq96hQxZsUJH/preview',
     deadline: '2026-09-16 23:59',
     deadlineLabel: '16/09/2026'
   },
@@ -304,9 +305,9 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     title: 'Exercice 2 : Évaluation critique d\'une information',
     shortTitle: 'Ex 2 (Esprit Critique)',
     part: 1,
-    partLabel: 'Partie 1 : Travaux Plateforme (70 pts)',
+    partLabel: 'Partie 1 : Travaux Plateforme (100 pts)',
     maxPoints: 10,
-    docLink: 'https://docs.google.com/document/d/1o9vsf5fptzG1EH56oycz7SkD_UwmUKXm/edit?usp=sharing',
+    docLink: 'https://docs.google.com/document/d/1o9vsf5fptzG1EH56oycz7SkD_UwmUKXm/preview',
     deadline: '2026-09-17 23:59',
     deadlineLabel: '17/09/2026'
   },
@@ -315,9 +316,9 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     title: 'Exercice 3 : Conception d\'un guide numérique élèves',
     shortTitle: 'Ex 3 (Guide Élèves)',
     part: 1,
-    partLabel: 'Partie 1 : Travaux Plateforme (70 pts)',
+    partLabel: 'Partie 1 : Travaux Plateforme (100 pts)',
     maxPoints: 10,
-    docLink: 'https://docs.google.com/document/d/12XENuZM1WVyeCnRfu62Oh1_tG8Gkc1Z1/edit?usp=sharing',
+    docLink: 'https://docs.google.com/document/d/12XENuZM1WVyeCnRfu62Oh1_tG8Gkc1Z1/preview',
     deadline: '2026-09-18 12:00',
     deadlineLabel: '18/09/2026 (12h)'
   },
@@ -326,9 +327,9 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     title: 'Exercice 4 : Escape Game FMTTN (Cyber-Enquête)',
     shortTitle: 'Ex 4 (Escape Game)',
     part: 1,
-    partLabel: 'Partie 1 : Travaux Plateforme (70 pts)',
+    partLabel: 'Partie 1 : Travaux Plateforme (100 pts)',
     maxPoints: 10,
-    docLink: 'https://docs.google.com/document/d/1kUSfjlioxrG-i-ZrVbzQOpxH072f_2db/edit?usp=sharing',
+    docLink: 'https://docs.google.com/document/d/1kUSfjlioxrG-i-ZrVbzQOpxH072f_2db/preview',
     deadline: '2026-09-22 23:59',
     deadlineLabel: '22/09/2026'
   },
@@ -337,109 +338,150 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     title: 'Exercice 5 : Défi 20 min Canva (Affiche mot de passe)',
     shortTitle: 'Ex 5 (Canva Sécurité)',
     part: 1,
-    partLabel: 'Partie 1 : Travaux Plateforme (70 pts)',
+    partLabel: 'Partie 1 : Travaux Plateforme (100 pts)',
     maxPoints: 10,
-    docLink: 'https://docs.google.com/document/d/1GuqhxxFNJllg4vR_wLeD5A4CtYNyJ4mj/edit?usp=sharing',
+    docLink: 'https://docs.google.com/document/d/1GuqhxxFNJllg4vR_wLeD5A4CtYNyJ4mj/preview',
     deadline: '2026-09-25 23:59',
     deadlineLabel: '25/09/2026'
   },
   {
     id: 'exercice-06',
-    title: 'Exercice 6 : Défi Hardware PC (Architecture matérielle)',
-    shortTitle: 'Ex 6 (Hardware PC)',
+    title: 'Exercice 6 : Démarche itérative (Concevoir & tester un mini-jeu)',
+    shortTitle: 'Ex 6 (Itération & Jeu)',
     part: 1,
-    partLabel: 'Partie 1 : Travaux Plateforme (70 pts)',
+    partLabel: 'Partie 1 : Travaux Plateforme (100 pts)',
     maxPoints: 10,
-    docLink: 'https://docs.google.com/document/d/1Vjy9xrqLG-xuktmMmmOQ6Kh8I-hXiIzV/edit?usp=sharing',
+    docLink: 'https://docs.google.com/document/d/1mfCTqwo-2l9k_wdLzIu3qRWOJuBxrqJv/preview',
     deadline: '2026-09-29 23:59',
     deadlineLabel: '29/09/2026'
   },
-  // Partie 2 : Projet Jeu de Société Didactique & Restitution (130 pts)
+  {
+    id: 'exercice-07',
+    title: 'Exercice 7 : Défi Hardware & Peer Learning (Démonter un PC)',
+    shortTitle: 'Ex 7 (Hardware PC)',
+    part: 1,
+    partLabel: 'Partie 1 : Travaux Plateforme (100 pts)',
+    maxPoints: 10,
+    docLink: 'https://docs.google.com/document/d/1Vjy9xrqLG-xuktmMmmOQ6Kh8I-hXiIzV/preview',
+    deadline: '2026-10-06 23:59',
+    deadlineLabel: '06/10/2026'
+  },
+  {
+    id: 'exercice-08',
+    title: 'Exercice 8 : Construire des grilles d\'évaluation critériées',
+    shortTitle: 'Ex 8 (Grilles Critériées)',
+    part: 1,
+    partLabel: 'Partie 1 : Travaux Plateforme (100 pts)',
+    maxPoints: 10,
+    docLink: 'https://docs.google.com/document/d/1MV1xWWb5ZtcuRhFn_JIVG6UHeFle6IUI/preview',
+    deadline: '2026-10-13 23:59',
+    deadlineLabel: '13/10/2026'
+  },
+  // Partie 2 : Projet Jeu de Société Didactique (100 pts global)
+  {
+    id: 'projet-jeu',
+    title: 'Projet Jeu de Société Didactique (Note globale du projet)',
+    shortTitle: 'Projet Jeu (Note 100 pts)',
+    part: 2,
+    partLabel: 'Partie 2 : Projet Jeu de Société (100 pts)',
+    maxPoints: 100,
+    deadline: '2026-11-20 23:59',
+    deadlineLabel: '20/11/2026'
+  },
+  // Étapes de suivi & réalisations intermédiaires du projet (sans pondération séparée)
   {
     id: 'exercice-09',
-    title: 'Exercice 9 : Règles du jeu & dossier pédagogique (FMTTN / CSEM)',
-    shortTitle: 'Ex 9 (Règles & Pédagogie)',
+    title: 'Étape 1 (Ex 9) : Règles du jeu & dossier pédagogique (FMTTN / CSEM)',
+    shortTitle: 'Étape 1 (Règles)',
     part: 2,
-    partLabel: 'Partie 2 : Projet Jeu de Société (130 pts)',
-    maxPoints: 20,
-    docLink: 'https://docs.google.com/document/d/1af3aH5FiR31N4FB99VrFq6628kiFFbly/edit?usp=sharing',
+    partLabel: 'Partie 2 : Projet Jeu de Société (100 pts)',
+    maxPoints: 0,
+    isProjectStep: true,
+    docLink: 'https://docs.google.com/document/d/1af3aH5FiR31N4FB99VrFq6628kiFFbly/preview',
     deadline: '2026-11-20 23:59',
     deadlineLabel: '20/11/2026'
   },
   {
     id: 'exercice-10',
-    title: 'Exercice 10 : Photographier le numérique (visuels & matériel)',
-    shortTitle: 'Ex 10 (Photographie)',
+    title: 'Étape 2 (Ex 10) : Photographier le numérique (visuels & matériel)',
+    shortTitle: 'Étape 2 (Photographie)',
     part: 2,
-    partLabel: 'Partie 2 : Projet Jeu de Société (130 pts)',
-    maxPoints: 15,
-    docLink: 'https://docs.google.com/document/d/1kSoMRpjySi0DvjA0S1W4b8BoaDQrXNZh/edit?usp=sharing',
+    partLabel: 'Partie 2 : Projet Jeu de Société (100 pts)',
+    maxPoints: 0,
+    isProjectStep: true,
+    docLink: 'https://docs.google.com/document/d/1kSoMRpjySi0DvjA0S1W4b8BoaDQrXNZh/preview',
     deadline: '2026-11-20 23:59',
     deadlineLabel: '20/11/2026'
   },
   {
     id: 'exercice-11',
-    title: 'Exercice 11 : Supports de jeu & cartes conçues avec l\'IA',
-    shortTitle: 'Ex 11 (Cartes IA)',
+    title: 'Étape 3 (Ex 11) : Supports de jeu & cartes conçues avec l\'IA',
+    shortTitle: 'Étape 3 (Cartes IA)',
     part: 2,
-    partLabel: 'Partie 2 : Projet Jeu de Société (130 pts)',
-    maxPoints: 15,
-    docLink: 'https://docs.google.com/document/d/1CzyMJRbjyvYVh7XP83Lx4tjxnq23oHXX/edit?usp=sharing',
+    partLabel: 'Partie 2 : Projet Jeu de Société (100 pts)',
+    maxPoints: 0,
+    isProjectStep: true,
+    docLink: 'https://docs.google.com/document/d/1CzyMJRbjyvYVh7XP83Lx4tjxnq23oHXX/preview',
     deadline: '2026-11-20 23:59',
     deadlineLabel: '20/11/2026'
   },
   {
     id: 'exercice-12',
-    title: 'Exercice 12 : Plateau de jeu à la découpeuse laser (FabLab)',
-    shortTitle: 'Ex 12 (Plateau Laser)',
+    title: 'Étape 4 (Ex 12) : Plateau de jeu à la découpeuse laser (FabLab)',
+    shortTitle: 'Étape 4 (Plateau Laser)',
     part: 2,
-    partLabel: 'Partie 2 : Projet Jeu de Société (130 pts)',
-    maxPoints: 15,
-    docLink: 'https://docs.google.com/document/d/1Ov_huVW9al2DKuoBmW89QO3ZqE5E-nzU/edit?usp=sharing',
+    partLabel: 'Partie 2 : Projet Jeu de Société (100 pts)',
+    maxPoints: 0,
+    isProjectStep: true,
+    docLink: 'https://docs.google.com/document/d/1Ov_huVW9al2DKuoBmW89QO3ZqE5E-nzU/preview',
     deadline: '2026-11-20 23:59',
     deadlineLabel: '20/11/2026'
   },
   {
     id: 'exercice-13',
-    title: 'Exercice 13 : Pions de jeu modélisés et imprimés en 3D (FabLab)',
-    shortTitle: 'Ex 13 (Pions 3D)',
+    title: 'Étape 5 (Ex 13) : Pions de jeu modélisés et imprimés en 3D (FabLab)',
+    shortTitle: 'Étape 5 (Pions 3D)',
     part: 2,
-    partLabel: 'Partie 2 : Projet Jeu de Société (130 pts)',
-    maxPoints: 15,
-    docLink: 'https://docs.google.com/document/d/1H_88UJvPPezdUXw1Vt8_U9wtsaFouepU/edit?usp=sharing',
+    partLabel: 'Partie 2 : Projet Jeu de Société (100 pts)',
+    maxPoints: 0,
+    isProjectStep: true,
+    docLink: 'https://docs.google.com/document/d/1H_88UJvPPezdUXw1Vt8_U9wtsaFouepU/preview',
     deadline: '2026-11-20 23:59',
     deadlineLabel: '20/11/2026'
   },
   {
     id: 'exercice-14',
-    title: 'Exercice 14 : Présentation vidéo du jeu (Capsule 2-3 min)',
-    shortTitle: 'Ex 14 (Capsule Vidéo)',
+    title: 'Étape 6 (Ex 14) : Présentation vidéo du jeu (Capsule 2-3 min)',
+    shortTitle: 'Étape 6 (Vidéo)',
     part: 2,
-    partLabel: 'Partie 2 : Projet Jeu de Société (130 pts)',
-    maxPoints: 20,
-    docLink: 'https://docs.google.com/document/d/1JO_9ayYt3IqZfStfUPkzT3GDOF65VBxQ/edit?usp=sharing',
+    partLabel: 'Partie 2 : Projet Jeu de Société (100 pts)',
+    maxPoints: 0,
+    isProjectStep: true,
+    docLink: 'https://docs.google.com/document/d/1JO_9ayYt3IqZfStfUPkzT3GDOF65VBxQ/preview',
     deadline: '2026-11-20 23:59',
     deadlineLabel: '20/11/2026'
   },
   {
     id: 'exercice-15',
-    title: 'Exercice 15 : Playtest & Grille d\'évaluation du jeu',
-    shortTitle: 'Ex 15 (Playtest & Données)',
+    title: 'Étape 7 (Ex 15) : Playtest & Grille d\'évaluation formative du jeu',
+    shortTitle: 'Étape 7 (Playtest)',
     part: 2,
-    partLabel: 'Partie 2 : Projet Jeu de Société (130 pts)',
-    maxPoints: 15,
-    docLink: 'https://docs.google.com/document/d/1uIheBr_KU2Dh2TjYkegz7lHixsUNxs4t/edit?usp=sharing',
+    partLabel: 'Partie 2 : Projet Jeu de Société (100 pts)',
+    maxPoints: 0,
+    isProjectStep: true,
+    docLink: 'https://docs.google.com/document/d/1uIheBr_KU2Dh2TjYkegz7lHixsUNxs4t/preview',
     deadline: '2026-11-20 23:59',
     deadlineLabel: '20/11/2026'
   },
   {
     id: 'exercice-16',
-    title: 'Exercice 16 : Présentation finale et leçon FMTTN devant la classe',
-    shortTitle: 'Ex 16 (Soutenance & Leçon)',
+    title: 'Étape 8 (Ex 16) : Présentation finale et leçon FMTTN devant la classe',
+    shortTitle: 'Étape 8 (Soutenance & Leçon)',
     part: 2,
-    partLabel: 'Partie 2 : Projet Jeu de Société (130 pts)',
-    maxPoints: 15,
-    docLink: 'https://docs.google.com/document/d/1Tm15GqKSwutH1MDbaGYJaWByliC17iRT/edit?usp=sharing',
+    partLabel: 'Partie 2 : Projet Jeu de Société (100 pts)',
+    maxPoints: 0,
+    isProjectStep: true,
+    docLink: 'https://docs.google.com/document/d/1Tm15GqKSwutH1MDbaGYJaWByliC17iRT/preview',
     deadline: '2026-11-20 23:59',
     deadlineLabel: '20/11/2026'
   }
@@ -1010,25 +1052,71 @@ function generateDidacticAiCorrection(file: SubmittedFile, textContent: string =
   } else if (exId === 'exercice-06') {
     suggestedScore = 8.5
     concordance = 2.6
-    didacticQuality = 2.5
+    didacticQuality = 2.6
     criticalAnalysis = 2.1
-    formAndStructure = 1.3
-    summary = "Démarche de démythification matérielle de l'ordinateur sécurisée et structurante."
+    formAndStructure = 1.2
+    summary = "Démarche itérative rigoureuse, recueil d'erreurs constructif et ajustement de mini-jeu numérique (Playtest)."
+    strengths = [
+      "Protocole de playtest bien documenté avec recueil direct des feedbacks des pairs.",
+      "Identification lucide des points de blocage et mise en place d'une boucle d'amélioration itérative.",
+      "Valorisation didactique de l'erreur comme tremplin d'apprentissage."
+    ]
+    improvements = [
+      "Préciser les métriques quantitatives (temps moyen par défi, taux de réussite au premier essai)."
+    ]
+    nextSteps = "Formaliser un tableau comparatif 'Version initiale vs Version améliorée' des interactions de jeu."
+    detailedFeedback = "Une excellente appropriation de la démarche itérative. Votre démarche de conception-test-rectification démontre une posture réflexive authentique propice aux apprentissages numériques."
+    criteriaTable = [
+      { name: "Scénarisation ludique & ergonomie (Critère A)", score: 4.4, maxScore: 5, justification: "Interface intuitive et consignes de jeu claires." },
+      { name: "Protocole de test & observation des pairs (Critères B & F)", score: 4.5, maxScore: 5, justification: "Recueil objectif des réactions et comportements des testeurs." },
+      { name: "Intégration du statut de l'erreur (Critères C & D)", score: 4.2, maxScore: 5, justification: "L'erreur est exploitée pour réguler les défis sans pénalisation punitive." },
+      { name: "Réflexivité & Itération didactique (Critères E & H)", score: 4.0, maxScore: 5, justification: "Modifications pertinentes apportées suite aux retours d'expérience." }
+    ]
+  } else if (exId === 'exercice-07') {
+    suggestedScore = 9.0
+    concordance = 2.7
+    didacticQuality = 2.7
+    criticalAnalysis = 2.2
+    formAndStructure = 1.4
+    summary = "Défi Hardware et Peer Learning remarquable : démythification concrète des composants PC et dynamique collaborative."
     strengths = [
       "Protocole de manipulation rigoureux assurant la sécurité électrique et matérielle.",
       "Excellentes analogies pour expliquer le rôle de la RAM, du CPU et de la carte mère.",
-      "Fiche bilan élève synthétique et visuelle."
+      "Fiche bilan élève synthétique et visuelle favorisant l'apprentissage entre pairs."
     ]
     improvements = [
-      "Prévoir une activité alternative sur simulateur virtuel pour les écoles ne disposant pas d'unités centrales à démonter."
+      "Prévoir une activité alternative sur simulateur virtuel pour les élèves en retrait ou absents."
     ]
-    nextSteps = "Créer un schéma fonctionnel fléché résumant le cycle Traitement-Mémoire-Stockage."
-    detailedFeedback = "Ce défi hardware permet aux élèves de dépasser l'aspect magique de la machine pour en comprendre le fonctionnement concret. L'approche tactile et déductive est très bien amenée."
+    nextSteps = "Créer un schéma fonctionnel fléché résumant le cycle Traitement-Mémoire-Stockage pour la classe."
+    detailedFeedback = "Ce défi hardware permet aux élèves de dépasser l'aspect magique de la machine pour en comprendre le fonctionnement concret. L'approche tactile et l'apprentissage par les pairs sont remarquablement articulés."
     criteriaTable = [
-      { name: "Exactitude de l'architecture matérielle (Critère A)", score: 4.5, maxScore: 5, justification: "Identification sans erreur des composants internes et de leurs bus de liaison." },
-      { name: "Dispositif d'apprentissage expérientiel (Critères B & F)", score: 4.4, maxScore: 5, justification: "Manipulation active par les pairs valorisant le tâtonnement expérimental." },
-      { name: "Sécurité & Procédure technique (Critères C & D)", score: 4.2, maxScore: 5, justification: "Consignes de décharge électrostatique et de manipulation claires." },
-      { name: "Documentation & Réflexivité (Critères E & H)", score: 3.9, maxScore: 5, justification: "Fiche d'identification des composants claire et bien légendée." }
+      { name: "Exactitude de l'architecture matérielle (Critère A)", score: 4.7, maxScore: 5, justification: "Identification sans erreur des composants internes et de leurs bus de liaison." },
+      { name: "Dispositif d'apprentissage expérientiel & Peer Learning (Critères B & F)", score: 4.6, maxScore: 5, justification: "Manipulation active par les pairs valorisant le tâtonnement expérimental." },
+      { name: "Sécurité & Procédure technique (Critères C & D)", score: 4.4, maxScore: 5, justification: "Consignes de décharge électrostatique et de manipulation claires." },
+      { name: "Documentation & Réflexivité (Critères E & H)", score: 4.3, maxScore: 5, justification: "Fiche d'identification des composants claire et bien légendée." }
+    ]
+  } else if (exId === 'exercice-08') {
+    suggestedScore = 8.5
+    concordance = 2.6
+    didacticQuality = 2.6
+    criticalAnalysis = 2.1
+    formAndStructure = 1.2
+    summary = "Grille d'évaluation critériée robuste, indicateurs observables précis et respect de la triple concordance didactique."
+    strengths = [
+      "Indicateurs d'observation comportementaux dénués d'ambiguïté subjective.",
+      "Échelons de maîtrise progressifs facilitant l'auto-évaluation et la régulation par l'élève.",
+      "Alignement rigoureux avec les visées du référentiel FMTTN."
+    ]
+    improvements = [
+      "Veiller à équilibrer le barème entre critères de processus et critères de produit fini."
+    ]
+    nextSteps = "Rédiger une fiche d'accompagnement de la grille explicitant comment l'élève peut s'auto-évaluer."
+    detailedFeedback = "Très bon travail d'ingénierie d'évaluation. Votre grille critériée fournit un cadre transparent et formatif qui guide l'apprenant vers la réussite."
+    criteriaTable = [
+      { name: "Rigueur des critères & observables (Critère A)", score: 4.5, maxScore: 5, justification: "Critères univoques et observables sans ambiguïté interprétative." },
+      { name: "Gradation des niveaux de maîtrise (Critères B & F)", score: 4.4, maxScore: 5, justification: "Paliers de progression cohérents et encourageants pour l'élève." },
+      { name: "Triple concordance pédagogique (Critères C & D)", score: 4.3, maxScore: 5, justification: "Parfaite adéquation entre objectifs, activités et modalités d'évaluation." },
+      { name: "Ergonomie & Clarté communicative (Critères E & H)", score: 4.0, maxScore: 5, justification: "Tableau lisible, directement utilisable en situation d'évaluation." }
     ]
   } else if (exId === 'exercice-09') {
     suggestedScore = 9.0
@@ -2153,8 +2241,10 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
     const user = state.users.find(u => u.email.toLowerCase() === cleanEmail)
     const userName = user ? `${user.firstName} ${user.lastName}` : cleanEmail
     const now = new Date().toISOString().replace('T', ' ').substring(0, 16)
+    const def = OFFICIAL_EVALUATION_ITEMS.find(i => i.id === exerciseId)
+    const itemMax = def ? def.maxPoints : 10
     const numScore = (score !== undefined && score !== null && !isNaN(Number(score))) 
-      ? Math.max(0, Math.min(10, Number(score))) 
+      ? Math.max(0, Math.min(itemMax, Number(score))) 
       : undefined
 
     const fbKey = `${cleanEmail}_${exerciseId}`
@@ -2162,9 +2252,9 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
       userEmail: cleanEmail,
       userName,
       exerciseId,
-      exerciseTitle: exerciseTitle || `Exercice ${exerciseId}`,
+      exerciseTitle: exerciseTitle || def?.title || `Exercice ${exerciseId}`,
       score: numScore,
-      maxScore: 10,
+      maxScore: itemMax,
       feedback: sanitizeText(feedback || '', 10000),
       gradedAt: now,
       status: 'graded'
@@ -2179,7 +2269,7 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
     if (file) {
       file.teacherGrade = {
         score: numScore ?? file.teacherGrade?.score ?? 0,
-        maxScore: 10,
+        maxScore: itemMax,
         feedback: (feedback || '').trim(),
         gradedAt: now,
         status: 'graded'
@@ -2279,16 +2369,16 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
       oralDefenseScore: 0
     }
 
-    // 1. Calcul du Quiz Diagnostique (max 10 pts)
+    // 1. Calcul du Quiz Diagnostique (max 20 pts)
     const userQuizzes = state.quizAttempts.filter(q => q.userEmail.toLowerCase() === targetEmail)
     let quizAiScore = 0
     if (userQuizzes.length > 0) {
       const avgPct = userQuizzes.reduce((acc, q) => acc + q.percentage, 0) / userQuizzes.length
       const factor = Math.min(1, userQuizzes.length / 2)
-      quizAiScore = Math.round((avgPct / 100) * 10 * factor * 10) / 10
+      quizAiScore = Math.round((avgPct / 100) * 20 * factor * 10) / 10
     }
 
-    // 2. Construction dynamique des 15 composantes de l'évaluation
+    // 2. Construction dynamique des 17 composantes de l'évaluation
     const allEvaluationItems = OFFICIAL_EVALUATION_ITEMS.map(def => {
       if (def.id === 'quiz') {
         const fbQuiz = this.getExerciseFeedback('quiz', targetEmail)
@@ -2307,7 +2397,7 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
           partLabel: def.partLabel,
           maxPoints: def.maxPoints,
           aiScore: quizAiScore,
-          aiSummary: `${userQuizzes.length} quiz passé(s) • Moyenne: ${quizAiScore}/10`,
+          aiSummary: `${userQuizzes.length} quiz passé(s) • Moyenne: ${quizAiScore}/20`,
           teacherScore: Math.min(def.maxPoints, Math.max(0, Number(teacherPts || 0))),
           feedback: fbQuiz?.feedback || '',
           completed: userQuizzes.length > 0,
@@ -2326,7 +2416,7 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
         }
       }
 
-      // Exercices 1 à 6 et 9 à 16
+      // Exercices 1 à 8, projet-jeu et étapes 9 à 16
       const file = state.submittedFiles.find(f => f.userEmail.toLowerCase() === targetEmail && f.exerciseId === def.id)
       const hasSub = state.submissions.some(s => s.userEmail.toLowerCase() === targetEmail && s.exerciseId === def.id && s.answer.trim().length > 10)
       const isDone = !!file || hasSub
@@ -2342,10 +2432,10 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
       let aiSummary = ''
       if (file?.aiCorrection?.suggestedScore !== undefined) {
         const rawScore = Number(file.aiCorrection.suggestedScore) || 8.5
-        // Mise à l'échelle sur le barème max de l'élément (ex: 20 pts ou 15 pts)
-        aiScore = Math.round(((rawScore / 10) * def.maxPoints) * 10) / 10
+        // Mise à l'échelle sur le barème max de l'élément (ex: 100 pts, 10 pts ou 0 pt)
+        aiScore = def.maxPoints > 0 ? Math.round(((rawScore / 10) * def.maxPoints) * 10) / 10 : 0
         aiSummary = file.aiCorrection.summary || 'Devoir analysé par l\'IA'
-      } else if (isDone) {
+      } else if (isDone && def.maxPoints > 0) {
         // Devoir remis sans rapport IA spécifique : note formative par défaut à 85% du max
         aiScore = Math.round((def.maxPoints * 0.85) * 10) / 10
         aiSummary = 'Travail déposé en attente de validation'
@@ -2356,7 +2446,9 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
       let teacherPts: number | undefined = fb?.score
 
       if (teacherPts === undefined || teacherPts === null) {
-        if (file?.teacherGrade?.score !== undefined) {
+        if (def.id === 'projet-jeu') {
+          teacherPts = evalRec.gameProjectScore !== undefined ? evalRec.gameProjectScore : 0
+        } else if (file?.teacherGrade?.score !== undefined) {
           teacherPts = file.teacherGrade.score
         } else if (def.id === 'exercice-09' && (evalRec.gameEx09RulesScore !== undefined || evalRec.gamePedagogyScore !== undefined)) {
           teacherPts = evalRec.gameEx09RulesScore ?? evalRec.gamePedagogyScore
@@ -2386,6 +2478,7 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
         part: def.part,
         partLabel: def.partLabel,
         maxPoints: def.maxPoints,
+        isProjectStep: def.isProjectStep,
         aiScore,
         aiSummary,
         teacherScore: Math.min(def.maxPoints, Math.max(0, Number(teacherPts || 0))),
@@ -2406,7 +2499,7 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
       }
     })
 
-    // Séparation et calcul des deux piliers officiels
+    // Séparation et calcul des deux piliers officiels (100 pts + 100 pts = 200 pts)
     const part1Items = allEvaluationItems.filter(i => i.part === 1)
     const part2Items = allEvaluationItems.filter(i => i.part === 2)
 
@@ -2432,12 +2525,12 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
       lateInfo,
       part1: {
         total: part1Total,
-        max: 70,
+        max: 100,
         items: part1Items
       },
       part2: {
         total: part2Total,
-        max: 130,
+        max: 100,
         items: part2Items
       },
       totalScore,
@@ -2447,18 +2540,19 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
       isPassing,
       mention,
       feedback: evalRec.teacherFeedback || '',
-      // Compatibilité rétroactive avec les anciens composants
+      // Compatibilité avec les composants d'affichage
       pillar1: {
         total: part1Total,
-        max: 70,
+        max: 100,
         quizPoints: allEvaluationItems.find(i => i.id === 'quiz')?.teacherScore || 0,
         exercisesTotal: Math.round(allEvaluationItems.filter(i => i.part === 1 && i.id !== 'quiz').reduce((acc, i) => acc + i.teacherScore, 0) * 10) / 10,
         exerciseDetails: part1Items.filter(i => i.id !== 'quiz')
       },
       pillar2: {
         total: part2Total,
-        max: 130,
+        max: 100,
         details: {
+          projectScore: allEvaluationItems.find(i => i.id === 'projet-jeu')?.teacherScore || 0,
           pedagogy: allEvaluationItems.find(i => i.id === 'exercice-09')?.teacherScore || 0,
           photos: allEvaluationItems.find(i => i.id === 'exercice-10')?.teacherScore || 0,
           aiCards: allEvaluationItems.find(i => i.id === 'exercice-11')?.teacherScore || 0,
@@ -2470,8 +2564,8 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
         }
       },
       pillar3: {
-        total: allEvaluationItems.find(i => i.id === 'exercice-16')?.teacherScore || 0,
-        max: 15
+        total: allEvaluationItems.find(i => i.id === 'projet-jeu')?.teacherScore || 0,
+        max: 100
       }
     }
   },
@@ -2642,6 +2736,7 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
     })
 
     // 2. Mettre à jour l'enregistrement global
+    const projectScore = itemsGrades.find(i => i.id === 'projet-jeu')?.score
     const ex09 = itemsGrades.find(i => i.id === 'exercice-09')?.score
     const ex10 = itemsGrades.find(i => i.id === 'exercice-10')?.score
     const ex11 = itemsGrades.find(i => i.id === 'exercice-11')?.score
@@ -2652,6 +2747,7 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
     const ex16 = itemsGrades.find(i => i.id === 'exercice-16')?.score
 
     this.updateStudentEvaluation(cleanEmail, {
+      gameProjectScore: projectScore !== undefined ? projectScore : undefined,
       gameEx09RulesScore: ex09,
       gamePedagogyScore: ex09,
       gameEx10PhotosScore: ex10,

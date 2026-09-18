@@ -547,6 +547,18 @@ La règle des 30° : lorsqu'un même sujet est présent dans deux plans qui se s
 ---
 
 
+## 🎓 Auto-évaluation & Réflexivité (6.7)
+
+Testez votre compréhension des techniques de réalisation audiovisuelle (plans, cadrage, angles, règles de continuité, son et voix-off) et portez un regard réflexif sur l'Exercice 14 :
+
+<ClientOnly>
+  <QuizBox moduleId="10" moduleTitle="6.7 Concevoir une capsule vidéo" />
+</ClientOnly>
+
+
+---
+
+
 ## Navigation
 - ⬅️ **[6.6 Concevoir les pions à l'imprimante 3D](/modules/09-pions-3d)**
 - 🏠 **[06. Hub Projet Jeu de société](/modules/05-projet-jeu-societe)**

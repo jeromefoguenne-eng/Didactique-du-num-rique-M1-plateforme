@@ -1585,6 +1585,97 @@ const MODULE_QUESTIONS = {
         "Analyse critique de la valeur ajoutée et des limites de l'IA dans l'ergonomie finale du jeu."
       ]
     }
+  ],
+  '10': [
+    {
+      id: 'q1',
+      type: 'qcm',
+      title: "1. Le dispositif cinématographique et la transparence (Jean-Louis Baudry)",
+      text: "Selon les analyses de Jean-Louis Baudry reprises dans le cours, quel effet produit un niveau élevé de réalisme et d'immersion audiovisuelle ou interactive sur le spectateur ?",
+      options: [
+        "Il stimule immédiatement une analyse critique rigoureuse des choix de cadrage et de lumière.",
+        "Il tend à masquer le dispositif technique de diffusion : le spectateur, absorbé par l'histoire, oublie qu'il regarde une construction orientée et risque d'être plus facilement manipulé.",
+        "Il oblige le spectateur à quitter la salle de projection en raison d'une surcharge sensorielle.",
+        "Il garantit l'objectivité absolue de l'information transmise sans aucune possibilité de trucage."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Plus le dispositif technique s'efface au profit d'un sentiment immersif de réel, moins le spectateur prend de recul critique sur la mise en scène et l'intention idéologique sous-jacente."
+    },
+    {
+      id: 'q2',
+      type: 'qcm',
+      title: "2. L'échelle des plans et leurs fonctions narratives",
+      text: "Dans la grammaire audiovisuelle, quelle est la spécificité du « plan américain » par rapport au « plan moyen » ou au « gros plan » ?",
+      options: [
+        "Il cadre le personnage à partir du front jusqu'au nez pour accentuer le regard.",
+        "Il cadre le personnage de la tête jusqu'à mi-cuisse, historiquement créé dans le western pour laisser visibles les holsters et revolvers des comédiens.",
+        "Il montre le personnage miniature au milieu d'un vaste paysage pour souligner sa solitude.",
+        "Il cadre uniquement les pieds d'un acteur en mouvement lors d'une poursuite."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Le plan américain coupe le personnage à mi-cuisse (au-dessus du genou), équilibrant l'expression corporelle et la visibilité des accessoires d'action (comme les armes dans les westerns)."
+    },
+    {
+      id: 'q3',
+      type: 'qcm',
+      title: "3. Les angles de prise de vue et leurs effets psychologiques",
+      text: "Associez correctement l'angle de prise de vue à son effet psychologique ou esthétique sur le sujet filmé :",
+      options: [
+        "La contre-plongée produit un effet d'écrasement et de vulnérabilité, tandis que la plongée confère grandeur et autorité.",
+        "La plongée (haut vers le bas) produit un effet d'écrasement ou de faiblesse, la contre-plongée (bas vers le haut) confère puissance et domination, et le plan Berkeley (vue zénithale à 90°) génère une mise à plat géométrique désindividualisante.",
+        "Le plan Berkeley accélère le rythme cardiaque des acteurs en raison de l'absence de gravité.",
+        "Tous les angles de caméra produisent strictement le même impact visuel sur le spectateur dès lors que l'image est nette."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "La plongée écrase le sujet (faiblesse/isolement), la contre-plongée le magnifie ou l'impose (puissance), et la vue zénithale orthogonale (Berkeley) déshumanise en réduisant les êtres à des motifs géométriques (ex: La Servante écarlate)."
+    },
+    {
+      id: 'q4',
+      type: 'qcm',
+      title: "4. Les règles de tournage et de continuité : règle des 180° et règle des 30°",
+      text: "Lors du tournage d'une interaction ou d'une explication de jeu, comment applique-t-on la règle des 180° et la règle des 30° pour garantir la continuité visuelle ?",
+      options: [
+        "On doit changer de caméra toutes les 180 secondes et pivoter de 30° par heure de tournage.",
+        "La règle des 180° interdit à la caméra de franchir l'axe imaginaire reliant les protagonistes sous peine d'inverser leurs regards (faux raccord) ; la règle des 30° impose un décalage angulaire minimal de 30° entre deux plans de même échelle pour éviter le jump cut.",
+        "La règle des 180° impose de filmer exclusivement en demi-cercle autour du plateau de jeu sans jamais s'arrêter.",
+        "La règle des 30° est une consigne de température de couleur pour équilibrer la balance des blancs des projecteurs."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Le respect de l'axe des 180° maintient la cohérence directionnelle (les regards se croisent au champ-contre-champ) ; l'écart d'au moins 30° entre deux plans successifs de même sujet évite l'impression de saut ou de saccade (jump cut)."
+    },
+    {
+      id: 'q5',
+      type: 'qcm',
+      title: "5. Traitement sonore : renforcement, contrepoint et voix-off",
+      text: "Dans une vidéo de présentation, quelle est la fonction du « contrepoint sonore » (comme dans Lord of War) et quel avantage pratique offre l'enregistrement d'une « voix-off » ?",
+      options: [
+        "Le contrepoint sonore consiste à couper le son toutes les 5 secondes ; la voix-off est réservée aux films muets.",
+        "Le contrepoint sonore crée un décalage émotionnel en opposant une ambiance musicale joyeuse/légère à une image dramatique ; la voix-off en post-production évite les aléas de prise de son directe et permet d'apporter un commentaire réflexif clair et maîtrisé.",
+        "Le contrepoint sonore oblige le monteur à utiliser uniquement des morceaux de musique classique libres de droits.",
+        "La voix-off est uniquement autorisée si elle est enregistrée en direct pendant la prise de vue avec un mégaphone."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Le contrepoint suscite la dissonance cognitive et la réflexion critique chez le spectateur ; la voix-off enregistrée en studio/post-prod assure une clarté sonore optimale et un recul didactique sur les images du jeu."
+    },
+    {
+      id: 'q6',
+      type: 'open',
+      title: "6. Réflexivité sur l'Exercice 14 (Création de la capsule vidéo du jeu)",
+      text: "Analysez la capsule vidéo réalisée pour valoriser votre jeu de société : Quels choix de plans, d'angles et de rythme de montage avez-vous effectués pour rendre la présentation à la fois claire et stimulante ? Quels obstacles techniques avez-vous surmontés (prise de son, éclairage, raccords) et comment votre mise en scène sert-elle les apprentissages en éducation aux médias ?",
+      points: 5,
+      modelAnswer: "L'étudiant analyse de manière réflexive sa production vidéo : 1° Choix de découpage technique (plans larges pour situer le plateau, gros plans sur les cartes et pions pour expliciter les mécaniques, alternance d'angles respectant la règle des 30° pour dynamiser la démonstration). 2° Traitement du son (choix d'une voix-off posée en post-synchronisation pour garantir l'intelligibilité des règles, sélection d'une musique de fond non intrusive ou en contrepoint). 3° Difficultés réelles et solutions (gestion du faux raccord, réenregistrement audio pour éliminer l'écho de la classe, cadrage stable avec support ou trépied). 4° Dimension didactique et EAM (montrer le jeu en action, valoriser la posture de joueurs actifs et expliciter la problématique citoyenne/médiatique abordée par le jeu).",
+      rubricCriteria: [
+        "Justification technique explicite des plans et des angles mobilisés (gros plan, plongée, dynamique de montage).",
+        "Analyse de la chaîne sonore et des choix de post-production (voix-off, musique, intelligibilité).",
+        "Explicitation des contraintes ou erreurs de tournage surmontées (raccords, éclairage, son).",
+        "Mise en relation avec l'intention pédagogique du jeu et les objectifs d'éducation aux médias."
+      ]
+    }
   ]
 }
 

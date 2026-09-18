@@ -26,7 +26,6 @@ defineProps({
             class="subcat-image" 
             loading="lazy" 
           />
-          <span v-if="item.tag" class="subcat-tag">{{ item.tag }}</span>
         </div>
         <div class="subcat-body">
           <h4 class="subcat-title">{{ item.title }}</h4>

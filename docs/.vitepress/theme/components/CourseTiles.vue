@@ -88,7 +88,6 @@ const tiles = [
       >
         <div class="tile-image-wrapper">
           <img :src="withBase(tile.image)" :alt="tile.title" class="tile-image" loading="lazy" />
-          <span class="tile-tag-badge">{{ tile.tag }}</span>
         </div>
         <div class="tile-body">
           <h3 class="compact-title">{{ tile.title }}</h3>

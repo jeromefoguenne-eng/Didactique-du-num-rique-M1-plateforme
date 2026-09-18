@@ -86,7 +86,7 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: "📌 Vue d'ensemble (Hub)", link: "/modules/05-projet-jeu-societe" },
-            { text: "6.1 Ludopédagogie & Édumédias", link: "/modules/05-projet-jeu-societe#5-1-une-methodologie-pedagogique-fondee-sur-l-experience-ludique" },
+            { text: "6.1 Ludopédagogie & Édumédias", link: "/modules/05-1-ludopedagogie-edumedias" },
             { text: "6.2 Créer les règles du jeu", link: "/modules/06-regles-du-jeu" },
             { text: "6.3 La photographie & composition", link: "/modules/07-photographie-image" },
             { text: "6.4 Créer les cartes & supports avec l'IA", link: "/modules/08-cartes-ia" },

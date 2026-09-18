@@ -92,6 +92,6 @@ Méthodologie en 6 étapes : « Du prototype à la règle »
 ---
 
 ## Navigation
-- ⬅️ **[06. Hub Projet Jeu de société](/modules/05-projet-jeu-societe)**
-- 🏠 **[Accueil du Cours](/)**
+- ⬅️ **[6.1 Ludopédagogie & Édumédias](/modules/05-1-ludopedagogie-edumedias)**
+- 🏠 **[06. Hub Projet Jeu de société](/modules/05-projet-jeu-societe)**
 - ➡️ **[6.3 La photographie & composition](/modules/07-photographie-image)**

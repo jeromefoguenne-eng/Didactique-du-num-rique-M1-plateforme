@@ -122,6 +122,8 @@ const STORAGE_KEY_CURRENT = 'hech_didac_current_user'
 const STORAGE_KEY_PROGRESS = 'hech_didac_progress'
 const STORAGE_KEY_SUBMISSIONS = 'hech_didac_submissions'
 const STORAGE_KEY_ADMIN_PIN = 'hech_didac_admin_pin'
+const STORAGE_KEY_ADMIN_ATTEMPTS = 'hech_didac_admin_attempts'
+const STORAGE_KEY_ADMIN_LOCKOUT = 'hech_didac_admin_lockout'
 const STORAGE_KEY_FILES = 'hech_didac_files'
 const STORAGE_KEY_WEBHOOK = 'hech_didac_drive_webhook'
 const STORAGE_KEY_QUIZZES = 'hech_didac_quiz_attempts'
@@ -139,6 +141,130 @@ export interface EvaluationRecord {
   gameProjectScore: number // max 100
   oralDefenseScore: number // max 30 (soutenance orale)
   teacherFeedback?: string
+}
+
+// ==========================================
+// OUTILS DE SÉCURITÉ & HACHAGE (ZÉRO LATENCE)
+// ==========================================
+
+// Nettoyage et désinfection des entrées utilisateurs (Anti-XSS & Anti-Injection)
+export function sanitizeText(input: string, maxLength = 10000): string {
+  if (!input || typeof input !== 'string') return ''
+  let clean = input
+    .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+    .replace(/<iframe\b[^<]*(?:(?!<\/iframe>)<[^<]*)*<\/iframe>/gi, '')
+    .replace(/<object\b[^<]*(?:(?!<\/object>)<[^<]*)*<\/object>/gi, '')
+    .replace(/<embed\b[^<]*(?:(?!<\/embed>)<[^<]*)*<\/embed>/gi, '')
+    .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '')
+    .replace(/<form\b[^<]*(?:(?!<\/form>)<[^<]*)*<\/form>/gi, '')
+  clean = clean.replace(/\bon\w+\s*=\s*(['"]).*?\1/gi, '')
+  clean = clean.replace(/\bon\w+\s*=\s*[^>\s]+/gi, '')
+  clean = clean.replace(/(javascript|vbscript|data\s*:\s*text\/html)\s*:/gi, 'blocked:')
+  if (clean.length > maxLength) {
+    clean = clean.substring(0, maxLength)
+  }
+  return clean.trim()
+}
+
+export function sanitizeEmail(email: string): string {
+  if (!email || typeof email !== 'string') return ''
+  return email
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-zA-Z0-9._%+-@]/g, '')
+    .substring(0, 150)
+}
+
+export function sanitizeFileName(name: string): string {
+  if (!name || typeof name !== 'string') return 'document.pdf'
+  return name
+    .replace(/[\/\\\?\%\*\:\|\"\<\>\0]/g, '_')
+    .replace(/\.\./g, '_')
+    .trim()
+    .substring(0, 120)
+}
+
+// Hachage SHA-256 natif ultra-rapide et synchrone
+export function sha256Sync(ascii: string): string {
+  function rightRotate(value: number, amount: number) {
+    return (value >>> amount) | (value << (32 - amount))
+  }
+  const mathPow = Math.pow
+  const maxWord = mathPow(2, 32)
+  let lengthProperty = 'length'
+  let i = 0, j = 0
+  let result = ''
+  const words: number[] = []
+  const asciiBitLength = ascii.length * 8
+  const hash: number[] = []
+  const k: number[] = []
+  let primeCounter = 0
+  const isComposite: Record<number, boolean> = {}
+
+  for (let candidate = 2; primeCounter < 64; candidate++) {
+    if (!isComposite[candidate]) {
+      for (i = 0; i < 313; i += candidate) {
+        isComposite[i] = true
+      }
+      hash[primeCounter] = (mathPow(candidate, 0.5) * maxWord) | 0
+      k[primeCounter++] = (mathPow(candidate, 1 / 3) * maxWord) | 0
+    }
+  }
+
+  ascii += '\x80'
+  while ((ascii.length % 64) - 56) ascii += '\x00'
+  for (i = 0; i < ascii.length; i++) {
+    j = ascii.charCodeAt(i)
+    if (j >> 8) return ''
+    words[i >> 2] |= j << (((3 - i) % 4) * 8)
+  }
+  words[words.length] = (asciiBitLength / maxWord) | 0
+  words[words.length] = asciiBitLength
+
+  for (j = 0; j < words.length; ) {
+    const w = words.slice(j, (j += 16))
+    const oldHash = hash.slice(0)
+    for (i = 0; i < 64; i++) {
+      const w15 = w[i - 15], w2 = w[i - 2]
+      const s0 = rightRotate(w15, 7) ^ rightRotate(w15, 18) ^ (w15 >>> 3)
+      const s1 = rightRotate(w2, 17) ^ rightRotate(w2, 19) ^ (w2 >>> 10)
+      const ch = (hash[4] & hash[5]) ^ (~hash[4] & hash[6])
+      const maj = (hash[0] & hash[1]) ^ (hash[0] & hash[2]) ^ (hash[1] & hash[2])
+      const temp1 = (hash[7] + (rightRotate(hash[4], 6) ^ rightRotate(hash[4], 11) ^ rightRotate(hash[4], 25)) + ch + k[i] + (w[i] = (i < 16) ? w[i] : (w[i - 16] + s0 + w[i - 7] + s1) | 0)) | 0
+      const temp2 = ((rightRotate(hash[0], 2) ^ rightRotate(hash[0], 13) ^ rightRotate(hash[0], 22)) + maj) | 0
+
+      hash[7] = hash[6]
+      hash[6] = hash[5]
+      hash[5] = hash[4]
+      hash[4] = (hash[3] + temp1) | 0
+      hash[3] = hash[2]
+      hash[2] = hash[1]
+      hash[1] = hash[0]
+      hash[0] = (temp1 + temp2) | 0
+    }
+    for (i = 0; i < 8; i++) {
+      hash[i] = (hash[i] + oldHash[i]) | 0
+    }
+  }
+
+  for (i = 0; i < 8; i++) {
+    for (j = 3; j >= 0; j--) {
+      const b = (hash[i] >> (8 * j)) & 255
+      result += (b < 16 ? '0' : '') + b.toString(16)
+    }
+  }
+  return result
+}
+
+function initAdminPinHash(): string {
+  const DEFAULT_HASH = '546e8e7d7e5fa8e5a531213806ba7fa4067c4890ee40442649f4f64147b39deb' // sha256('hech2026')
+  const raw = getStorage<string>(STORAGE_KEY_ADMIN_PIN, DEFAULT_HASH)
+  if (raw && raw.length === 64 && /^[0-9a-f]{64}$/i.test(raw)) {
+    return raw.toLowerCase()
+  }
+  const migrated = sha256Sync(raw || 'hech2026')
+  setStorage(STORAGE_KEY_ADMIN_PIN, migrated)
+  return migrated
 }
 
 // Helper de nettoyage pour le nommage des fichiers
@@ -950,12 +1076,16 @@ function getStorage<T>(key: string, defaultVal: T): T {
   }
 }
 
-function setStorage<T>(key: string, val: T): void {
-  if (typeof window === 'undefined') return
+function setStorage<T>(key: string, val: T): boolean {
+  if (typeof window === 'undefined') return false
   try {
     localStorage.setItem(key, JSON.stringify(val))
-  } catch (e) {
-    console.warn(`[userStore] Quota de stockage ou erreur localStorage pour ${key}`)
+    return true
+  } catch (e: any) {
+    if (e && (e.name === 'QuotaExceededError' || e.code === 22)) {
+      console.warn(`[userStore] Quota localStorage dépassé pour la clé ${key}`)
+    }
+    return false
   }
 }
 
@@ -970,7 +1100,7 @@ const state = reactive({
   submittedFiles: getStorage<SubmittedFile[]>(STORAGE_KEY_FILES, DEFAULT_FILES),
   exerciseFeedbacks: getStorage<Record<string, ExerciseTeacherFeedback>>(STORAGE_KEY_EXERCISE_FEEDBACKS, DEFAULT_EXERCISE_FEEDBACKS),
   driveWebhook: getStorage<string>(STORAGE_KEY_WEBHOOK, ''),
-  adminPin: getStorage<string>(STORAGE_KEY_ADMIN_PIN, 'hech2026'),
+  adminPinHash: initAdminPinHash(),
   quizAttempts: getStorage<QuizAttempt[]>(STORAGE_KEY_QUIZZES, DEFAULT_QUIZZES),
   evaluations: getStorage<Record<string, EvaluationRecord>>(STORAGE_KEY_EVALUATIONS, DEFAULT_EVALUATIONS)
 })
@@ -992,14 +1122,22 @@ export const userStore = {
     return state.driveWebhook
   },
   get adminPin() {
-    return state.adminPin
+    return '[PROTÉGÉ]'
+  },
+  get adminPinHash() {
+    return state.adminPinHash
   },
   get quizAttempts() {
     return state.quizAttempts
   },
 
   register(firstName: string, lastName: string, email: string) {
-    const cleanEmail = email.trim().toLowerCase()
+    const cleanEmail = sanitizeEmail(email)
+    const cleanFirst = sanitizeText(firstName, 50)
+    const cleanLast = sanitizeText(lastName, 50)
+    if (!cleanEmail) {
+      return { success: false, message: 'Adresse email invalide.' }
+    }
     const existing = state.users.find(u => u.email === cleanEmail)
     if (existing) {
       if (existing.status === 'archived') {
@@ -1013,8 +1151,8 @@ export const userStore = {
 
     const newUser: User = {
       id: `user-${Date.now()}`,
-      firstName: firstName.trim(),
-      lastName: lastName.trim(),
+      firstName: cleanFirst,
+      lastName: cleanLast,
       email: cleanEmail,
       role: 'student',
       registeredAt: new Date().toISOString().replace('T', ' ').substring(0, 16),
@@ -1035,15 +1173,17 @@ export const userStore = {
   },
 
   addStudent(firstName: string, lastName: string, email: string) {
-    const cleanEmail = email.trim().toLowerCase()
-    if (!cleanEmail || !firstName.trim() || !lastName.trim()) {
+    const cleanEmail = sanitizeEmail(email)
+    const cleanFirst = sanitizeText(firstName, 50)
+    const cleanLast = sanitizeText(lastName, 50)
+    if (!cleanEmail || !cleanFirst || !cleanLast) {
       return { success: false, message: 'Tous les champs sont obligatoires.' }
     }
 
     const existing = state.users.find(u => u.email === cleanEmail)
     if (existing) {
-      existing.firstName = firstName.trim()
-      existing.lastName = lastName.trim()
+      existing.firstName = cleanFirst
+      existing.lastName = cleanLast
       existing.status = 'active'
       setStorage(STORAGE_KEY_USERS, state.users)
       return { success: true, message: 'Étudiant déjà existant : profil réactivé et mis à jour.' }
@@ -1051,8 +1191,8 @@ export const userStore = {
 
     const newUser: User = {
       id: `user-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
-      firstName: firstName.trim(),
-      lastName: lastName.trim(),
+      firstName: cleanFirst,
+      lastName: cleanLast,
       email: cleanEmail,
       role: 'student',
       registeredAt: new Date().toISOString().replace('T', ' ').substring(0, 16),
@@ -1225,8 +1365,9 @@ export const userStore = {
 
     const now = new Date().toISOString().replace('T', ' ').substring(0, 16)
 
+    const cleanAnswer = sanitizeText(answer, 20000)
     if (existingIndex >= 0) {
-      state.submissions[existingIndex].answer = answer.trim()
+      state.submissions[existingIndex].answer = cleanAnswer
       state.submissions[existingIndex].submittedAt = now
     } else {
       state.submissions.push({
@@ -1236,7 +1377,7 @@ export const userStore = {
         userEmail: cleanEmail,
         exerciseId,
         exerciseTitle,
-        answer: answer.trim(),
+        answer: cleanAnswer,
         submittedAt: now
       })
     }
@@ -1286,7 +1427,15 @@ export const userStore = {
       return { success: false, message: "Vous devez être identifié pour déposer un travail." }
     }
 
-    const ext = file.name.split('.').pop()?.toLowerCase() || ''
+    const MAX_FILE_SIZE = 15 * 1024 * 1024 // 15 Mo max
+    if (file.size > MAX_FILE_SIZE) {
+      return { 
+        success: false, 
+        message: "Fichier trop volumineux. La taille maximale autorisée est de 15 Mo pour préserver la réactivité de la plateforme." 
+      }
+    }
+
+    const ext = (file.name || '').split('.').pop()?.toLowerCase() || ''
     const allowed = ['pdf', 'docx', 'doc']
     if (!allowed.includes(ext)) {
       return { 
@@ -1352,7 +1501,13 @@ export const userStore = {
       setStorage(STORAGE_KEY_PROGRESS, state.progress)
     }
 
-    setStorage(STORAGE_KEY_FILES, state.submittedFiles)
+    const savedFiles = setStorage(STORAGE_KEY_FILES, state.submittedFiles)
+    if (!savedFiles) {
+      return {
+        success: false,
+        message: "L'espace de stockage local de votre navigateur est saturé. Veuillez libérer de la place ou supprimer d'anciens documents."
+      }
+    }
 
     // 3. Tentative d'envoi automatique vers le serveur compagnon local (si actif)
     try {
@@ -1635,7 +1790,7 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
       exerciseTitle: exerciseTitle || `Exercice ${exerciseId}`,
       score: numScore,
       maxScore: 10,
-      feedback: (feedback || '').trim(),
+      feedback: sanitizeText(feedback || '', 10000),
       gradedAt: now,
       status: 'graded'
     }
@@ -1878,12 +2033,54 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
   },
 
   verifyAdminPin(pin: string): boolean {
-    return pin.trim() === state.adminPin
+    if (!pin || typeof pin !== 'string') return false
+    const computed = sha256Sync(pin.trim())
+    const target = state.adminPinHash || '546e8e7d7e5fa8e5a531213806ba7fa4067c4890ee40442649f4f64147b39deb'
+    if (computed.length !== target.length) return false
+    let diff = 0
+    for (let i = 0; i < computed.length; i++) {
+      diff |= computed.charCodeAt(i) ^ target.charCodeAt(i)
+    }
+    return diff === 0
   },
 
   updateAdminPin(newPin: string) {
-    state.adminPin = newPin.trim()
-    setStorage(STORAGE_KEY_ADMIN_PIN, state.adminPin)
+    const cleanPin = (newPin || '').trim()
+    state.adminPinHash = sha256Sync(cleanPin)
+    setStorage(STORAGE_KEY_ADMIN_PIN, state.adminPinHash)
+  },
+
+  getAdminLockoutRemaining(): number {
+    if (typeof window === 'undefined') return 0
+    const lockoutUntil = Number(localStorage.getItem(STORAGE_KEY_ADMIN_LOCKOUT) || 0)
+    const remaining = Math.ceil((lockoutUntil - Date.now()) / 1000)
+    return remaining > 0 ? remaining : 0
+  },
+
+  recordAdminAttempt(success: boolean): { allowed: boolean; remainingLockout: number; attempts: number } {
+    if (typeof window === 'undefined') return { allowed: true, remainingLockout: 0, attempts: 0 }
+    const now = Date.now()
+    const lockoutUntil = Number(localStorage.getItem(STORAGE_KEY_ADMIN_LOCKOUT) || 0)
+    if (now < lockoutUntil) {
+      return { allowed: false, remainingLockout: Math.ceil((lockoutUntil - now) / 1000), attempts: 5 }
+    }
+
+    let attempts = Number(localStorage.getItem(STORAGE_KEY_ADMIN_ATTEMPTS) || 0)
+    if (success) {
+      localStorage.removeItem(STORAGE_KEY_ADMIN_ATTEMPTS)
+      localStorage.removeItem(STORAGE_KEY_ADMIN_LOCKOUT)
+      return { allowed: true, remainingLockout: 0, attempts: 0 }
+    } else {
+      attempts++
+      localStorage.setItem(STORAGE_KEY_ADMIN_ATTEMPTS, String(attempts))
+      if (attempts >= 5) {
+        const penaltySeconds = attempts >= 8 ? 120 : 30
+        const until = now + (penaltySeconds * 1000)
+        localStorage.setItem(STORAGE_KEY_ADMIN_LOCKOUT, String(until))
+        return { allowed: false, remainingLockout: penaltySeconds, attempts }
+      }
+      return { allowed: true, remainingLockout: 0, attempts }
+    }
   },
 
   // ==========================================

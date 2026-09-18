@@ -1,9 +1,14 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { userStore } from '../stores/userStore'
 
 const enteredPin = ref('')
 const isAuthenticated = ref(false)
+const lockoutSeconds = ref(0)
+const loginErrorMessage = ref('')
+let lockoutTimer = null
+let inactivityTimer = null
+const INACTIVITY_LIMIT_MS = 30 * 60 * 1000 // Verrouillage auto après 30 min
 const adminTab = ref('students') // 'students' | 'evaluation' | 'quizzes' | 'submissions' | 'files' | 'export'
 
 // Gestion de la notation sur 200 points
@@ -454,12 +459,82 @@ function exportQuizResultsToCSV() {
   document.body.removeChild(link)
 }
 
+function updateLockoutState() {
+  const remaining = userStore.getAdminLockoutRemaining()
+  lockoutSeconds.value = remaining
+  if (remaining > 0 && !lockoutTimer) {
+    lockoutTimer = setInterval(() => {
+      lockoutSeconds.value--
+      if (lockoutSeconds.value <= 0) {
+        clearInterval(lockoutTimer)
+        lockoutTimer = null
+        loginErrorMessage.value = ''
+      }
+    }, 1000)
+  }
+}
+
+function resetInactivityTimer() {
+  if (!isAuthenticated.value) return
+  if (inactivityTimer) clearTimeout(inactivityTimer)
+  inactivityTimer = setTimeout(() => {
+    if (isAuthenticated.value) {
+      isAuthenticated.value = false
+      alert('🔒 Sécurité : Session enseignant verrouillée automatiquement après 30 minutes d\'inactivité.')
+    }
+  }, INACTIVITY_LIMIT_MS)
+}
+
+function lockSession() {
+  isAuthenticated.value = false
+  if (inactivityTimer) clearTimeout(inactivityTimer)
+}
+
+onMounted(() => {
+  updateLockoutState()
+  if (typeof window !== 'undefined') {
+    const events = ['mousemove', 'keydown', 'scroll', 'touchstart']
+    events.forEach(e => window.addEventListener(e, resetInactivityTimer, { passive: true }))
+  }
+})
+
+onUnmounted(() => {
+  if (lockoutTimer) clearInterval(lockoutTimer)
+  if (inactivityTimer) clearTimeout(inactivityTimer)
+  if (typeof window !== 'undefined') {
+    const events = ['mousemove', 'keydown', 'scroll', 'touchstart']
+    events.forEach(e => window.removeEventListener(e, resetInactivityTimer))
+  }
+})
+
 function checkPin() {
+  loginErrorMessage.value = ''
+  updateLockoutState()
+  if (lockoutSeconds.value > 0) {
+    loginErrorMessage.value = `Accès temporairement suspendu. Réessayez dans ${lockoutSeconds.value}s.`
+    return
+  }
+
+  if (!enteredPin.value) {
+    loginErrorMessage.value = 'Veuillez saisir votre mot de passe enseignant.'
+    return
+  }
+
   if (userStore.verifyAdminPin(enteredPin.value)) {
+    userStore.recordAdminAttempt(true)
     isAuthenticated.value = true
     enteredPin.value = ''
+    loginErrorMessage.value = ''
+    resetInactivityTimer()
   } else {
-    alert('Mot de passe enseignant incorrect. Veuillez vérifier votre saisie.')
+    const att = userStore.recordAdminAttempt(false)
+    if (!att.allowed) {
+      updateLockoutState()
+      loginErrorMessage.value = `🔒 Sécurité : trop d'échecs consécutifs. Accès suspendu pendant ${att.remainingLockout} secondes.`
+    } else {
+      const remainingTries = 5 - att.attempts
+      loginErrorMessage.value = `Mot de passe incorrect. (${remainingTries} tentative${remainingTries > 1 ? 's' : ''} restante${remainingTries > 1 ? 's' : ''} avant verrouillage temporaire).`
+    }
   }
 }
 
@@ -668,9 +743,16 @@ function formatSize(bytes) {
           v-model="enteredPin" 
           type="password" 
           placeholder="Mot de passe d'accès enseignant" 
+          :disabled="lockoutSeconds > 0"
           @keyup.enter="checkPin"
         />
-        <button @click="checkPin" class="btn-unlock">Déverrouiller l'Espace Admin →</button>
+        <button @click="checkPin" class="btn-unlock" :disabled="lockoutSeconds > 0">
+          {{ lockoutSeconds > 0 ? `Verrouillé (${lockoutSeconds}s)` : 'Déverrouiller l\'Espace Admin →' }}
+        </button>
+      </div>
+
+      <div v-if="loginErrorMessage" :class="['admin-login-msg', lockoutSeconds > 0 ? 'msg-lockout' : 'msg-error']">
+        {{ loginErrorMessage }}
       </div>
     </div>
 
@@ -682,7 +764,7 @@ function formatSize(bytes) {
           <h2>👨‍🏫 Espace Enseignant — Suivi de la Classe M1</h2>
           <p>Didactique du Numérique • Master 1 Enseignant Math-Numérique (HECh)</p>
         </div>
-        <button @click="isAuthenticated = false" class="btn-lock">
+        <button @click="lockSession" class="btn-lock">
           Verrouiller 🔒
         </button>
       </div>
@@ -3121,6 +3203,33 @@ function formatSize(bytes) {
   padding-top: 1rem;
 }
 
+
+.admin-login-msg {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.msg-error {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.msg-lockout {
+  background: #fffbeb;
+  color: #92400e;
+  border: 1.5px solid #fcd34d;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
 </style>
 
 

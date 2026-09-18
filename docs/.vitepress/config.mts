@@ -9,6 +9,18 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
 
+  head: [
+    ['meta', { 'http-equiv': 'X-Content-Type-Options', content: 'nosniff' }],
+    ['meta', { 'http-equiv': 'X-Frame-Options', content: 'SAMEORIGIN' }],
+    ['meta', { 'http-equiv': 'Referrer-Policy', content: 'strict-origin-when-cross-origin' }],
+    ['meta', { 'http-equiv': 'Permissions-Policy', content: 'camera=(), microphone=(), geolocation=(), payment=()' }],
+    ['meta', {
+      'http-equiv': 'Content-Security-Policy',
+      content: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; media-src 'self' data: blob: https://drive.google.com; frame-src 'self' https://drive.google.com https://docs.google.com; connect-src 'self' http://localhost:* http://127.0.0.1:* https:;"
+    }],
+    ['link', { rel: 'icon', type: 'image/png', href: '/images/logo-hech.png' }]
+  ],
+
   themeConfig: {
     logo: '/images/logo-hech.png',
     siteTitle: "Didactique Numérique",

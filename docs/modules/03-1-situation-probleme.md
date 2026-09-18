@@ -71,7 +71,7 @@ Cette distinction est particulièrement importante dans le volet numérique du F
   <p>
     Cet exercice d'application met directement en œuvre la démarche de situation-problème : confronté à une affirmation scientifique virale sur les écrans et le sommeil, vous devez enquêter, vérifier la source primaire et déterminer la fiabilité du message avant tout partage.
   </p>
-  <div style="margin: 1.2rem 0; display: flex; gap: 10px; flex-wrap: wrap;">
+  <div style="margin: 1.2rem 0;">
     <a 
       href="https://docs.google.com/document/d/1o9vsf5fptzG1EH56oycz7SkD_UwmUKXm/preview" 
       target="_blank" 
@@ -81,13 +81,11 @@ Cette distinction est particulièrement importante dans le volet numérique du F
     >
       <span>📄 Ouvrir l'Exercice 02 sur Google Docs (Lecture seule) →</span>
     </a>
-    <a 
-      href="/ateliers/exercice-02" 
-      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: var(--vp-c-text-1) !important; padding: 9px 16px; border-radius: 8px; font-weight: 600; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);"
-    >
-      <span>📤 Fiche Atelier & Dépôt dans l'Espace Membre →</span>
-    </a>
   </div>
+
+  <p style="margin-top: 1rem; margin-bottom: 0; font-size: 0.92rem; color: var(--vp-c-text-2);">
+    📤 <strong>Dépôt du travail :</strong> Une fois votre exercice rédigé, déposez votre fichier Word ou PDF directement dans votre <a href="/espace-membre"><strong>Espace Membre</strong></a> (onglet <em>« Dépôt de Travaux »</em>).
+  </p>
 </div>
 
 ---

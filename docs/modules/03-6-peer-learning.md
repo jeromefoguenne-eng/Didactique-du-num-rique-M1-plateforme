@@ -64,7 +64,7 @@ L'intérêt de ce modèle pour l'enseignement du numérique est donc de déplace
   <p>
     Inspiré de la philosophie de l'École 42 et de l'apprentissage expérientiel : par groupes de 2 à 3, les étudiants démontent une unité centrale, identifient les composants et leurs connexions, s'entraident entre pairs sans procédure préétablie, et résolvent les pannes éventuelles pour relancer la machine.
   </p>
-  <div style="margin: 1.2rem 0; display: flex; gap: 10px; flex-wrap: wrap;">
+  <div style="margin: 1.2rem 0;">
     <a 
       href="https://docs.google.com/document/d/1mfCTqwo-2l9k_wdLzIu3qRWOJuBxrqJv/preview" 
       target="_blank" 
@@ -74,13 +74,11 @@ L'intérêt de ce modèle pour l'enseignement du numérique est donc de déplace
     >
       <span>📄 Ouvrir le Défi Hardware sur Google Docs (Lecture seule) →</span>
     </a>
-    <a 
-      href="/ateliers/exercice-06" 
-      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: var(--vp-c-text-1) !important; padding: 9px 16px; border-radius: 8px; font-weight: 600; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);"
-    >
-      <span>📤 Fiche Atelier & Dépôt dans l'Espace Membre →</span>
-    </a>
   </div>
+
+  <p style="margin-top: 1rem; margin-bottom: 0; font-size: 0.92rem; color: var(--vp-c-text-2);">
+    📤 <strong>Dépôt du travail :</strong> Une fois votre compte-rendu rédigé, déposez votre fichier Word ou PDF directement dans votre <a href="/espace-membre"><strong>Espace Membre</strong></a> (onglet <em>« Dépôt de Travaux »</em>).
+  </p>
 </div>
 
 ---

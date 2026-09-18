@@ -57,13 +57,11 @@ Exemple : Escape Game FMTTN (Cyber-Enquête)
     >
       <span>🎮 Lancer l'Escape Game FMTTN en ligne ↗</span>
     </a>
-    <a 
-      href="/ateliers/exercice-04" 
-      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: var(--vp-c-text-1) !important; padding: 9px 16px; border-radius: 8px; font-weight: 600; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);"
-    >
-      <span>📤 Fiche Atelier & Dépôt dans l'Espace Membre →</span>
-    </a>
   </div>
+
+  <p style="margin-top: 1rem; margin-bottom: 0; font-size: 0.92rem; color: var(--vp-c-text-2);">
+    📤 <strong>Dépôt du travail :</strong> Une fois votre exercice rédigé, déposez votre fichier Word ou PDF directement dans votre <a href="/espace-membre"><strong>Espace Membre</strong></a> (onglet <em>« Dépôt de Travaux »</em>).
+  </p>
 </div>
 
 ---

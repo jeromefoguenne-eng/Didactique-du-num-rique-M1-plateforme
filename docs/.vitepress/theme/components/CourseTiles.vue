@@ -60,8 +60,8 @@ const tiles = [
   },
   {
     id: 8,
-    title: "Guide & Modalités (200 pts)",
-    tag: "Organisation & Barème",
+    title: "Guide et évaluation du cours",
+    tag: "Organisation & Modalités (200 pts)",
     desc: "Rôle de la plateforme, organisation du travail, calendrier et modalités de l'évaluation sur 200 points.",
     link: "/guide/",
     image: "/images/tile-7-evaluation.jpg"

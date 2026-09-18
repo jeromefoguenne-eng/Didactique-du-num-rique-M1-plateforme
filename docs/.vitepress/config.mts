@@ -115,10 +115,10 @@ export default defineConfig({
           ]
         },
         {
-          text: "Guide & Modalités (200 pts)",
+          text: "Guide et évaluation du cours",
           items: [
             { text: "📌 Vue d'ensemble (Hub)", link: "/guide/" },
-            { text: "Guide de la plateforme & distanciel", link: "/guide/distanciel" },
+            { text: "Guide de la plateforme & de l'étudiant", link: "/guide/distanciel" },
             { text: "Modalités d'évaluation (sur 200 pts)", link: "/guide/evaluation" }
           ]
         }

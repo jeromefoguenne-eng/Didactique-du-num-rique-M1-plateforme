@@ -42,4 +42,4 @@ Remplissez les deux volets ci-dessous. Vos réponses seront sauvegardées dans v
 ## 🧭 Navigation
 * ⬅️ **[6.9 Présentation finale du jeu & leçon FMTTN](/modules/12-presentation-finale)**
 * 🏠 **[Accueil du cours](/)**
-* ➡️ **[Modalités d'évaluation sur 200 points & Guide méthodologique](/guide/)**
+* ➡️ **[Guide et évaluation du cours (Modalités sur 200 pts)](/guide/)**

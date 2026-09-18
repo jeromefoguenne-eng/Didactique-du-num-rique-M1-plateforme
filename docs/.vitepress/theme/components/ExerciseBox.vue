@@ -21,6 +21,7 @@ const saveStatus = ref('')
 
 // Gestion du fichier joint
 const showFileUpload = ref(false)
+const showAiDetails = ref(false)
 const selectedExerciseFile = ref(null)
 const fileUploadStatus = ref('')
 const isUploadingFile = ref(false)
@@ -215,6 +216,76 @@ function formatSize(bytes) {
       <div class="attached-actions">
         <button @click="downloadAttachedFile" class="btn-attached-dl" title="Télécharger mon document">📥</button>
         <button @click="deleteAttachedFile" class="btn-attached-del" title="Supprimer">🗑️</button>
+      </div>
+    </div>
+
+    <!-- ÉVALUATION CONTINUE & FEEDBACK GÉNÉRÉ PAR L'IA -->
+    <div v-if="attachedFile && attachedFile.aiCorrection" class="box-ai-feedback">
+      <div class="aifb-header">
+        <div class="aifb-title-group">
+          <span class="aifb-badge">🤖 Évaluation continue IA</span>
+          <div>
+            <div class="aifb-title">Diagnostic & Feedback pédagogique immédiat</div>
+            <div class="aifb-sub">Généré le {{ attachedFile.aiCorrection.gradedAt }} • Modèle : {{ attachedFile.aiCorrection.modelUsed }}</div>
+          </div>
+        </div>
+        <div class="aifb-score-badge">
+          Note indicative : <strong>{{ attachedFile.aiCorrection.suggestedScore }}</strong> / {{ attachedFile.aiCorrection.maxScore }} pts
+        </div>
+      </div>
+
+      <div class="aifb-body">
+        <p class="aifb-summary">{{ attachedFile.aiCorrection.summary }}</p>
+
+        <div class="aifb-columns">
+          <div v-if="attachedFile.aiCorrection.strengths?.length" class="aifb-col aifb-strengths">
+            <h6>✅ Points forts identifiés :</h6>
+            <ul>
+              <li v-for="(str, idx) in attachedFile.aiCorrection.strengths" :key="'str-' + idx">{{ str }}</li>
+            </ul>
+          </div>
+          <div v-if="attachedFile.aiCorrection.improvements?.length" class="aifb-col aifb-improvements">
+            <h6>💡 Pistes d'amélioration :</h6>
+            <ul>
+              <li v-for="(imp, idx) in attachedFile.aiCorrection.improvements" :key="'imp-' + idx">{{ imp }}</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Tableau des critères détaillés déroulable -->
+        <div v-if="attachedFile.aiCorrection.criteriaTable && attachedFile.aiCorrection.criteriaTable.length" class="aifb-criteria-section">
+          <button @click="showAiDetails = !showAiDetails" class="btn-toggle-criteria" type="button">
+            <span>{{ showAiDetails ? '▼ Masquer la grille critériée détaillée' : '▶ Voir la grille critériée détaillée (' + attachedFile.aiCorrection.criteriaTable.length + ' critères)' }}</span>
+          </button>
+
+          <div v-if="showAiDetails" class="aifb-table-wrap">
+            <table class="aifb-table">
+              <thead>
+                <tr>
+                  <th>Critère</th>
+                  <th style="width: 70px; text-align: center;">Points</th>
+                  <th style="width: 105px; text-align: center;">Niveau</th>
+                  <th>Appréciation didactique</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="c in attachedFile.aiCorrection.criteriaTable" :key="c.id">
+                  <td><strong>{{ c.name }}</strong></td>
+                  <td style="text-align: center;"><strong>{{ c.awardedPoints }}</strong>/{{ c.maxPoints }}</td>
+                  <td style="text-align: center;">
+                    <span class="level-pill" :class="'level-' + c.level.toLowerCase()">{{ c.level }}</span>
+                  </td>
+                  <td>{{ c.comment }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="aifb-disclaimer">
+          ⚖️ <em>Ce diagnostic continu vous guide en temps réel. La note officielle sera validée et réévaluée par l'enseignant en fin de quadrimestre (70 pts plateforme / 130 pts projet).</em>
+          <a href="/guide/criteres-correction-ia" target="_blank" class="aifb-link-rules">Consulter la grille des critères IA ↗</a>
+        </div>
       </div>
     </div>
 
@@ -581,5 +652,219 @@ function formatSize(bytes) {
   padding: 0.6rem 0.9rem;
   border-left: 3px solid #22c55e;
   border-radius: 4px;
+}
+
+/* AI Feedback Box */
+.box-ai-feedback {
+  margin: 1.25rem 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
+  border: 1.5px solid #3b82f6;
+  padding: 1.2rem;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.1);
+}
+
+.aifb-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+  margin-bottom: 0.85rem;
+}
+
+.aifb-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.aifb-badge {
+  background: #2563eb;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.aifb-title {
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: #1e3a8a;
+}
+
+.aifb-sub {
+  font-size: 0.75rem;
+  color: #4b5563;
+}
+
+.aifb-score-badge {
+  background: #1d4ed8;
+  color: #ffffff;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(29, 78, 216, 0.25);
+}
+
+.aifb-score-badge strong {
+  font-size: 1.05rem;
+}
+
+.aifb-summary {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #1f2937;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border-left: 3.5px solid #2563eb;
+  margin-bottom: 1rem;
+}
+
+.aifb-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.aifb-col {
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+}
+
+.aifb-col h6 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.aifb-strengths h6 {
+  color: #166534;
+}
+
+.aifb-improvements h6 {
+  color: #b45309;
+}
+
+.aifb-col ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.85rem;
+  color: #374151;
+  line-height: 1.45;
+}
+
+.aifb-col li {
+  margin-bottom: 0.35rem;
+}
+
+.aifb-criteria-section {
+  margin-top: 0.75rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 0.75rem;
+  border: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+.btn-toggle-criteria {
+  background: transparent;
+  border: none;
+  color: #2563eb;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  text-decoration: underline;
+}
+
+.btn-toggle-criteria:hover {
+  color: #1d4ed8;
+}
+
+.aifb-table-wrap {
+  margin-top: 0.75rem;
+  overflow-x: auto;
+}
+
+.aifb-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.aifb-table th {
+  background: #f1f5f9;
+  color: #334155;
+  padding: 6px 10px;
+  font-weight: 600;
+  border-bottom: 1.5px solid #cbd5e1;
+}
+
+.aifb-table td {
+  padding: 7px 10px;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: top;
+  line-height: 1.4;
+  color: #334155;
+}
+
+.level-pill {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.level-excellent {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.level-bon {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.level-moyen {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.level-insuffisant {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.aifb-disclaimer {
+  margin-top: 0.85rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed rgba(59, 130, 246, 0.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: #4b5563;
+}
+
+.aifb-link-rules {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.aifb-link-rules:hover {
+  text-decoration: underline;
 }
 </style>

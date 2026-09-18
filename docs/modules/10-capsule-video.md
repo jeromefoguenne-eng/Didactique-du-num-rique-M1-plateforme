@@ -48,22 +48,22 @@ Cette expérience conclut qu’avec la même image, on peut exprimer à la fois 
   </p>
 
   <div style="text-align: center; margin: 1.2rem 0;">
-    <a 
-      href="https://drive.google.com/file/d/0B6swcumZhqMeb3Q5eWZmclo2eTQ/view?usp=sharing" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      style="display: inline-block; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.18); border: 2px solid var(--vp-c-divider); max-width: 560px; width: 100%; text-decoration: none;"
+  <a 
+  href="https://drive.google.com/file/d/0B6swcumZhqMeb3Q5eWZmclo2eTQ/view?usp=sharing" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  style="display: inline-block; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.18); border: 2px solid var(--vp-c-divider); max-width: 560px; width: 100%; text-decoration: none;"
       title="Visionner l'Effet Koulechov sur Google Drive"
     >
-      <img 
+  <img 
         src="/images/videos/vignette-koulechov.jpg" 
-        alt="Effet Koulechov - Extrait vidéo" 
-        style="width: 100%; height: auto; display: block; object-fit: cover;" 
+  alt="Effet Koulechov - Extrait vidéo" 
+  style="width: 100%; height: auto; display: block; object-fit: cover;" 
       />
-      <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white; padding: 12px 16px; font-size: 0.92rem; font-weight: 700; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px;">
-        <span>▶️ Cliquer pour visionner l'extrait sur Google Drive ↗</span>
-      </div>
-    </a>
+  <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white; padding: 12px 16px; font-size: 0.92rem; font-weight: 700; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px;">
+  <span>▶️ Cliquer pour visionner l'extrait sur Google Drive ↗</span>
+  </div>
+  </a>
   </div>
 </div>
 
@@ -87,27 +87,27 @@ Cette illusion de la continuité est toujours utilisée aujourd’hui pour réal
   </p>
 
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; margin-top: 1.2rem;">
-    <a href="https://drive.google.com/file/d/0B6swcumZhqMebGxIMW42aHFOS2s/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="border-radius: 10px; overflow: hidden; border: 1px solid var(--vp-c-divider); text-decoration: none; color: inherit; background: var(--vp-c-bg);">
-      <img src="/images/videos/vignette-melies.jpg" alt="Georges Méliès" style="width: 100%; height: 160px; object-fit: cover;" />
-      <div style="padding: 10px 12px;">
-        <strong style="font-size: 0.9rem; color: var(--vp-c-brand-1);">Georges Méliès (1901)</strong>
-        <p style="font-size: 0.82rem; color: var(--vp-c-text-2); margin: 4px 0 0 0;">L'homme à la tête de caoutchouc : l'illusion de discontinuité pionnière.</p>
-      </div>
-    </a>
-    <a href="https://drive.google.com/file/d/0B6swcumZhqMeRnRWUk1ldHluY1E/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="border-radius: 10px; overflow: hidden; border: 1px solid var(--vp-c-divider); text-decoration: none; color: inherit; background: var(--vp-c-bg);">
-      <img src="/images/videos/vignette-zach-king.jpg" alt="Zach King" style="width: 100%; height: 160px; object-fit: cover;" />
-      <div style="padding: 10px 12px;">
-        <strong style="font-size: 0.9rem; color: var(--vp-c-brand-1);">Zach King — Sauveteur</strong>
-        <p style="font-size: 0.82rem; color: var(--vp-c-text-2); margin: 4px 0 0 0;">Trucages modernes et jump-cuts invisibles pour créer l'illusion magique.</p>
-      </div>
-    </a>
-    <a href="https://drive.google.com/file/d/0B6swcumZhqMeeWs0Q1pSR2JHVGc/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="border-radius: 10px; overflow: hidden; border: 1px solid var(--vp-c-divider); text-decoration: none; color: inherit; background: var(--vp-c-bg);">
-      <img src="/images/videos/vignette-house-of-cards.jpg" alt="House of Cards" style="width: 100%; height: 160px; object-fit: cover;" />
-      <div style="padding: 10px 12px;">
-        <strong style="font-size: 0.9rem; color: var(--vp-c-brand-1);">House of Cards (S05 E02)</strong>
-        <p style="font-size: 0.82rem; color: var(--vp-c-text-2); margin: 4px 0 0 0;">Rupture du 4e mur : Frank Underwood s'adresse directement au spectateur.</p>
-      </div>
-    </a>
+  <a href="https://drive.google.com/file/d/0B6swcumZhqMebGxIMW42aHFOS2s/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="border-radius: 10px; overflow: hidden; border: 1px solid var(--vp-c-divider); text-decoration: none; color: inherit; background: var(--vp-c-bg);">
+  <img src="/images/videos/vignette-melies.jpg" alt="Georges Méliès" style="width: 100%; height: 160px; object-fit: cover;" />
+  <div style="padding: 10px 12px;">
+  <strong style="font-size: 0.9rem; color: var(--vp-c-brand-1);">Georges Méliès (1901)</strong>
+  <p style="font-size: 0.82rem; color: var(--vp-c-text-2); margin: 4px 0 0 0;">L'homme à la tête de caoutchouc : l'illusion de discontinuité pionnière.</p>
+  </div>
+  </a>
+  <a href="https://drive.google.com/file/d/0B6swcumZhqMeRnRWUk1ldHluY1E/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="border-radius: 10px; overflow: hidden; border: 1px solid var(--vp-c-divider); text-decoration: none; color: inherit; background: var(--vp-c-bg);">
+  <img src="/images/videos/vignette-zach-king.jpg" alt="Zach King" style="width: 100%; height: 160px; object-fit: cover;" />
+  <div style="padding: 10px 12px;">
+  <strong style="font-size: 0.9rem; color: var(--vp-c-brand-1);">Zach King — Sauveteur</strong>
+  <p style="font-size: 0.82rem; color: var(--vp-c-text-2); margin: 4px 0 0 0;">Trucages modernes et jump-cuts invisibles pour créer l'illusion magique.</p>
+  </div>
+  </a>
+  <a href="https://drive.google.com/file/d/0B6swcumZhqMeeWs0Q1pSR2JHVGc/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="border-radius: 10px; overflow: hidden; border: 1px solid var(--vp-c-divider); text-decoration: none; color: inherit; background: var(--vp-c-bg);">
+  <img src="/images/videos/vignette-house-of-cards.jpg" alt="House of Cards" style="width: 100%; height: 160px; object-fit: cover;" />
+  <div style="padding: 10px 12px;">
+  <strong style="font-size: 0.9rem; color: var(--vp-c-brand-1);">House of Cards (S05 E02)</strong>
+  <p style="font-size: 0.82rem; color: var(--vp-c-text-2); margin: 4px 0 0 0;">Rupture du 4e mur : Frank Underwood s'adresse directement au spectateur.</p>
+  </div>
+  </a>
   </div>
 </div>
 
@@ -133,20 +133,20 @@ Cela peut avoir de l’effet sur la manière dont le spectateur va recevoir l’
   </p>
 
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; margin-top: 1.2rem;">
-    <a href="https://drive.google.com/file/d/0B6swcumZhqMeTE81dlF1T3Y1UXc/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="border-radius: 10px; overflow: hidden; border: 1px solid var(--vp-c-divider); text-decoration: none; color: inherit; background: var(--vp-c-bg);">
-      <img src="/images/videos/vignette-train-ciotat.jpg" alt="Arrivée du train" style="width: 100%; height: 160px; object-fit: cover;" />
-      <div style="padding: 10px 12px;">
-        <strong style="font-size: 0.9rem; color: var(--vp-c-brand-1);">Frères Lumière (1895)</strong>
-        <p style="font-size: 0.82rem; color: var(--vp-c-text-2); margin: 4px 0 0 0;">L'arrivée d'un train en gare de La Ciotat (premier choc d'immersion).</p>
-      </div>
-    </a>
-    <a href="https://drive.google.com/file/d/0B6swcumZhqMeSGxXYWVJZVAyTzg/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="border-radius: 10px; overflow: hidden; border: 1px solid var(--vp-c-divider); text-decoration: none; color: inherit; background: var(--vp-c-bg);">
-      <img src="/images/videos/vignette-vr-reaction.jpg" alt="Réaction VR" style="width: 100%; height: 160px; object-fit: cover;" />
-      <div style="padding: 10px 12px;">
-        <strong style="font-size: 0.9rem; color: var(--vp-c-brand-1);">Réaction d'un joueur en VR</strong>
-        <p style="font-size: 0.82rem; color: var(--vp-c-text-2); margin: 4px 0 0 0;">Immersion sensorielle totale et perte de repères avec le réel.</p>
-      </div>
-    </a>
+  <a href="https://drive.google.com/file/d/0B6swcumZhqMeTE81dlF1T3Y1UXc/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="border-radius: 10px; overflow: hidden; border: 1px solid var(--vp-c-divider); text-decoration: none; color: inherit; background: var(--vp-c-bg);">
+  <img src="/images/videos/vignette-train-ciotat.jpg" alt="Arrivée du train" style="width: 100%; height: 160px; object-fit: cover;" />
+  <div style="padding: 10px 12px;">
+  <strong style="font-size: 0.9rem; color: var(--vp-c-brand-1);">Frères Lumière (1895)</strong>
+  <p style="font-size: 0.82rem; color: var(--vp-c-text-2); margin: 4px 0 0 0;">L'arrivée d'un train en gare de La Ciotat (premier choc d'immersion).</p>
+  </div>
+  </a>
+  <a href="https://drive.google.com/file/d/0B6swcumZhqMeSGxXYWVJZVAyTzg/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="border-radius: 10px; overflow: hidden; border: 1px solid var(--vp-c-divider); text-decoration: none; color: inherit; background: var(--vp-c-bg);">
+  <img src="/images/videos/vignette-vr-reaction.jpg" alt="Réaction VR" style="width: 100%; height: 160px; object-fit: cover;" />
+  <div style="padding: 10px 12px;">
+  <strong style="font-size: 0.9rem; color: var(--vp-c-brand-1);">Réaction d'un joueur en VR</strong>
+  <p style="font-size: 0.82rem; color: var(--vp-c-text-2); margin: 4px 0 0 0;">Immersion sensorielle totale et perte de repères avec le réel.</p>
+  </div>
+  </a>
   </div>
 </div>
 
@@ -237,17 +237,17 @@ Plan Berkeley : la caméra est placée à la verticale par rapport au sujet (eff
   </p>
 
   <div style="text-align: center; margin: 1rem 0;">
-    <a 
-      href="https://drive.google.com/file/d/1NwJdniA8BrTpDblraAWdp7qRPcwoUo94/view?usp=sharing" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      style="display: inline-block; position: relative; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.15); border: 2px solid var(--vp-c-divider); max-width: 520px; width: 100%; text-decoration: none;"
+  <a 
+  href="https://drive.google.com/file/d/1NwJdniA8BrTpDblraAWdp7qRPcwoUo94/view?usp=sharing" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  style="display: inline-block; position: relative; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.15); border: 2px solid var(--vp-c-divider); max-width: 520px; width: 100%; text-decoration: none;"
     >
-      <img src="/images/videos/vignette-plan-berkeley.jpg" alt="Plan Berkeley" style="width: 100%; height: auto; display: block;" />
-      <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white; padding: 10px 14px; font-size: 0.9rem; font-weight: 700;">
+  <img src="/images/videos/vignette-plan-berkeley.jpg" alt="Plan Berkeley" style="width: 100%; height: auto; display: block;" />
+  <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white; padding: 10px 14px; font-size: 0.9rem; font-weight: 700;">
         ▶️ Visionner le plan Berkeley sur Google Drive ↗
-      </div>
-    </a>
+  </div>
+  </a>
   </div>
 </div>
 
@@ -271,17 +271,17 @@ Le zoom : la caméra fait un mouvement optique vers l’avant ou l’arrière (d
   </p>
 
   <div style="text-align: center; margin: 1rem 0;">
-    <a 
-      href="https://drive.google.com/file/d/0B6swcumZhqMeNy1yaFJ1c01YcVU/view?usp=sharing" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      style="display: inline-block; position: relative; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.15); border: 2px solid var(--vp-c-divider); max-width: 520px; width: 100%; text-decoration: none;"
+  <a 
+  href="https://drive.google.com/file/d/0B6swcumZhqMeNy1yaFJ1c01YcVU/view?usp=sharing" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  style="display: inline-block; position: relative; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.15); border: 2px solid var(--vp-c-divider); max-width: 520px; width: 100%; text-decoration: none;"
     >
-      <img src="/images/videos/vignette-dezoom-orange-mecanique.jpg" alt="Orange Mécanique" style="width: 100%; height: auto; display: block;" />
-      <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white; padding: 10px 14px; font-size: 0.9rem; font-weight: 700;">
+  <img src="/images/videos/vignette-dezoom-orange-mecanique.jpg" alt="Orange Mécanique" style="width: 100%; height: auto; display: block;" />
+  <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white; padding: 10px 14px; font-size: 0.9rem; font-weight: 700;">
         ▶️ Visionner l'ouverture d'Orange Mécanique sur Google Drive ↗
-      </div>
-    </a>
+  </div>
+  </a>
   </div>
 </div>
 
@@ -296,27 +296,27 @@ Les travellings : c’est un mouvement de la caméra dans l’espace (elle se d�
   </p>
 
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; margin-top: 1.2rem;">
-    <a href="https://drive.google.com/file/d/0B6swcumZhqMebTh0WlZqdVQ0elE/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="border-radius: 10px; overflow: hidden; border: 1px solid var(--vp-c-divider); text-decoration: none; color: inherit; background: var(--vp-c-bg);">
-      <img src="/images/videos/vignette-shining.jpg" alt="Shining" style="width: 100%; height: 160px; object-fit: cover;" />
-      <div style="padding: 10px 12px;">
-        <strong style="font-size: 0.9rem; color: var(--vp-c-brand-1);">Shining (1980)</strong>
-        <p style="font-size: 0.82rem; color: var(--vp-c-text-2); margin: 4px 0 0 0;">Travelling avant immersif au ras du sol suivant le tricycle de Danny.</p>
-      </div>
-    </a>
-    <a href="https://drive.google.com/file/d/0B6swcumZhqMeUy04Vjk2VEp4NDA/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="border-radius: 10px; overflow: hidden; border: 1px solid var(--vp-c-divider); text-decoration: none; color: inherit; background: var(--vp-c-bg);">
-      <img src="/images/videos/vignette-patients.jpg" alt="Patients" style="width: 100%; height: 160px; object-fit: cover;" />
-      <div style="padding: 10px 12px;">
-        <strong style="font-size: 0.9rem; color: var(--vp-c-brand-1);">Patients (2016)</strong>
-        <p style="font-size: 0.82rem; color: var(--vp-c-text-2); margin: 4px 0 0 0;">Travelling latéral fluide accompagnant la trajectoire du fauteuil roulant.</p>
-      </div>
-    </a>
-    <a href="https://drive.google.com/file/d/1SwSH0tftwrWljNOSdC9dXzHyx19-Z2e8/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="border-radius: 10px; overflow: hidden; border: 1px solid var(--vp-c-divider); text-decoration: none; color: inherit; background: var(--vp-c-bg);">
-      <img src="/images/videos/vignette-cerf-sacre.jpg" alt="Mise à mort du cerf sacré" style="width: 100%; height: 160px; object-fit: cover;" />
-      <div style="padding: 10px 12px;">
-        <strong style="font-size: 0.9rem; color: var(--vp-c-brand-1);">Mise à mort du cerf sacré (2017)</strong>
-        <p style="font-size: 0.82rem; color: var(--vp-c-text-2); margin: 4px 0 0 0;">Travelling arrière angoissant créant une distance troublante.</p>
-      </div>
-    </a>
+  <a href="https://drive.google.com/file/d/0B6swcumZhqMebTh0WlZqdVQ0elE/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="border-radius: 10px; overflow: hidden; border: 1px solid var(--vp-c-divider); text-decoration: none; color: inherit; background: var(--vp-c-bg);">
+  <img src="/images/videos/vignette-shining.jpg" alt="Shining" style="width: 100%; height: 160px; object-fit: cover;" />
+  <div style="padding: 10px 12px;">
+  <strong style="font-size: 0.9rem; color: var(--vp-c-brand-1);">Shining (1980)</strong>
+  <p style="font-size: 0.82rem; color: var(--vp-c-text-2); margin: 4px 0 0 0;">Travelling avant immersif au ras du sol suivant le tricycle de Danny.</p>
+  </div>
+  </a>
+  <a href="https://drive.google.com/file/d/0B6swcumZhqMeUy04Vjk2VEp4NDA/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="border-radius: 10px; overflow: hidden; border: 1px solid var(--vp-c-divider); text-decoration: none; color: inherit; background: var(--vp-c-bg);">
+  <img src="/images/videos/vignette-patients.jpg" alt="Patients" style="width: 100%; height: 160px; object-fit: cover;" />
+  <div style="padding: 10px 12px;">
+  <strong style="font-size: 0.9rem; color: var(--vp-c-brand-1);">Patients (2016)</strong>
+  <p style="font-size: 0.82rem; color: var(--vp-c-text-2); margin: 4px 0 0 0;">Travelling latéral fluide accompagnant la trajectoire du fauteuil roulant.</p>
+  </div>
+  </a>
+  <a href="https://drive.google.com/file/d/1SwSH0tftwrWljNOSdC9dXzHyx19-Z2e8/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="border-radius: 10px; overflow: hidden; border: 1px solid var(--vp-c-divider); text-decoration: none; color: inherit; background: var(--vp-c-bg);">
+  <img src="/images/videos/vignette-cerf-sacre.jpg" alt="Mise à mort du cerf sacré" style="width: 100%; height: 160px; object-fit: cover;" />
+  <div style="padding: 10px 12px;">
+  <strong style="font-size: 0.9rem; color: var(--vp-c-brand-1);">Mise à mort du cerf sacré (2017)</strong>
+  <p style="font-size: 0.82rem; color: var(--vp-c-text-2); margin: 4px 0 0 0;">Travelling arrière angoissant créant une distance troublante.</p>
+  </div>
+  </a>
   </div>
 </div>
 
@@ -331,17 +331,17 @@ Le panoramique : la caméra ne bouge pas mais elle pivote sur elle-même (exempl
   </p>
 
   <div style="text-align: center; margin: 1rem 0;">
-    <a 
-      href="https://drive.google.com/file/d/1TIbGtkTqV-1OSfnar3qRdUxejulDMWMe/view?usp=sharing" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      style="display: inline-block; position: relative; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.15); border: 2px solid var(--vp-c-divider); max-width: 520px; width: 100%; text-decoration: none;"
+  <a 
+  href="https://drive.google.com/file/d/1TIbGtkTqV-1OSfnar3qRdUxejulDMWMe/view?usp=sharing" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  style="display: inline-block; position: relative; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.15); border: 2px solid var(--vp-c-divider); max-width: 520px; width: 100%; text-decoration: none;"
     >
-      <img src="/images/videos/vignette-panoramique-cowboys.jpg" alt="Panoramique Cowboys & Aliens" style="width: 100%; height: auto; display: block;" />
-      <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white; padding: 10px 14px; font-size: 0.9rem; font-weight: 700;">
+  <img src="/images/videos/vignette-panoramique-cowboys.jpg" alt="Panoramique Cowboys & Aliens" style="width: 100%; height: auto; display: block;" />
+  <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white; padding: 10px 14px; font-size: 0.9rem; font-weight: 700;">
         ▶️ Visionner le panoramique sur Google Drive ↗
-      </div>
-    </a>
+  </div>
+  </a>
   </div>
 </div>
 
@@ -362,17 +362,17 @@ Le CUT (exemple : la scène de la douche dans le film Psycho) : Il s'agit d'un r
   </p>
 
   <div style="text-align: center; margin: 1rem 0;">
-    <a 
-      href="https://drive.google.com/file/d/0B6swcumZhqMeOU9pejZ5ZXhHY1k/view?usp=sharing" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      style="display: inline-block; position: relative; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.15); border: 2px solid var(--vp-c-divider); max-width: 520px; width: 100%; text-decoration: none;"
+  <a 
+  href="https://drive.google.com/file/d/0B6swcumZhqMeOU9pejZ5ZXhHY1k/view?usp=sharing" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  style="display: inline-block; position: relative; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.15); border: 2px solid var(--vp-c-divider); max-width: 520px; width: 100%; text-decoration: none;"
     >
-      <img src="/images/videos/vignette-cut-psychose.jpg" alt="Scène de la douche Psycho" style="width: 100%; height: auto; display: block;" />
-      <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white; padding: 10px 14px; font-size: 0.9rem; font-weight: 700;">
+  <img src="/images/videos/vignette-cut-psychose.jpg" alt="Scène de la douche Psycho" style="width: 100%; height: auto; display: block;" />
+  <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white; padding: 10px 14px; font-size: 0.9rem; font-weight: 700;">
         ▶️ Visionner la scène de Psycho sur Google Drive ↗
-      </div>
-    </a>
+  </div>
+  </a>
   </div>
 </div>
 
@@ -387,17 +387,17 @@ Le champ/contrechamp : quand à un premier plan dirigé sur un sujet succède un
   </p>
 
   <div style="text-align: center; margin: 1rem 0;">
-    <a 
-      href="https://drive.google.com/file/d/0B6swcumZhqMeR2htU1ZqRGdFbmM/view?usp=sharing" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      style="display: inline-block; position: relative; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.15); border: 2px solid var(--vp-c-divider); max-width: 520px; width: 100%; text-decoration: none;"
+  <a 
+  href="https://drive.google.com/file/d/0B6swcumZhqMeR2htU1ZqRGdFbmM/view?usp=sharing" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  style="display: inline-block; position: relative; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.15); border: 2px solid var(--vp-c-divider); max-width: 520px; width: 100%; text-decoration: none;"
     >
-      <img src="/images/videos/vignette-champ-contrechamp-got.jpg" alt="Champ contrechamp GoT" style="width: 100%; height: auto; display: block;" />
-      <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white; padding: 10px 14px; font-size: 0.9rem; font-weight: 700;">
+  <img src="/images/videos/vignette-champ-contrechamp-got.jpg" alt="Champ contrechamp GoT" style="width: 100%; height: auto; display: block;" />
+  <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white; padding: 10px 14px; font-size: 0.9rem; font-weight: 700;">
         ▶️ Visionner l'extrait de Game of Thrones sur Google Drive ↗
-      </div>
-    </a>
+  </div>
+  </a>
   </div>
 </div>
 
@@ -415,20 +415,20 @@ Le Faux raccord : (exemple : J-L Godard) : il s'agit d'une incohérence entre de
   </p>
 
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; margin-top: 1.2rem;">
-    <a href="https://drive.google.com/file/d/1QTGG3-9VR3qp5qyaP-SqgUcIag0BysbX/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="border-radius: 10px; overflow: hidden; border: 1px solid var(--vp-c-divider); text-decoration: none; color: inherit; background: var(--vp-c-bg);">
-      <img src="/images/videos/vignette-jumpcut-godard.jpg" alt="À bout de souffle" style="width: 100%; height: 160px; object-fit: cover;" />
-      <div style="padding: 10px 12px;">
-        <strong style="font-size: 0.9rem; color: var(--vp-c-brand-1);">À bout de souffle (1960)</strong>
-        <p style="font-size: 0.82rem; color: var(--vp-c-text-2); margin: 4px 0 0 0;">Jean-Luc Godard invente le jump cut pour dynamiser la déambulation en voiture.</p>
-      </div>
-    </a>
-    <a href="https://drive.google.com/file/d/0B6swcumZhqMebTI4ZlJMblRXcmc/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="border-radius: 10px; overflow: hidden; border: 1px solid var(--vp-c-divider); text-decoration: none; color: inherit; background: var(--vp-c-bg);">
-      <img src="/images/videos/vignette-jumpcut-guihome.jpg" alt="GuiHome vous détend" style="width: 100%; height: 160px; object-fit: cover;" />
-      <div style="padding: 10px 12px;">
-        <strong style="font-size: 0.9rem; color: var(--vp-c-brand-1);">GuiHome vous détend</strong>
-        <p style="font-size: 0.82rem; color: var(--vp-c-text-2); margin: 4px 0 0 0;">Jump cuts ultra-serrés pour donner un rythme humoristique percutant.</p>
-      </div>
-    </a>
+  <a href="https://drive.google.com/file/d/1QTGG3-9VR3qp5qyaP-SqgUcIag0BysbX/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="border-radius: 10px; overflow: hidden; border: 1px solid var(--vp-c-divider); text-decoration: none; color: inherit; background: var(--vp-c-bg);">
+  <img src="/images/videos/vignette-jumpcut-godard.jpg" alt="À bout de souffle" style="width: 100%; height: 160px; object-fit: cover;" />
+  <div style="padding: 10px 12px;">
+  <strong style="font-size: 0.9rem; color: var(--vp-c-brand-1);">À bout de souffle (1960)</strong>
+  <p style="font-size: 0.82rem; color: var(--vp-c-text-2); margin: 4px 0 0 0;">Jean-Luc Godard invente le jump cut pour dynamiser la déambulation en voiture.</p>
+  </div>
+  </a>
+  <a href="https://drive.google.com/file/d/0B6swcumZhqMebTI4ZlJMblRXcmc/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="border-radius: 10px; overflow: hidden; border: 1px solid var(--vp-c-divider); text-decoration: none; color: inherit; background: var(--vp-c-bg);">
+  <img src="/images/videos/vignette-jumpcut-guihome.jpg" alt="GuiHome vous détend" style="width: 100%; height: 160px; object-fit: cover;" />
+  <div style="padding: 10px 12px;">
+  <strong style="font-size: 0.9rem; color: var(--vp-c-brand-1);">GuiHome vous détend</strong>
+  <p style="font-size: 0.82rem; color: var(--vp-c-text-2); margin: 4px 0 0 0;">Jump cuts ultra-serrés pour donner un rythme humoristique percutant.</p>
+  </div>
+  </a>
   </div>
 </div>
 
@@ -458,20 +458,20 @@ Les effets du son : De manière générale, le son vient renforcer le propos de 
   </p>
 
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; margin-top: 1.2rem;">
-    <a href="https://drive.google.com/file/d/0B6swcumZhqMeVkJsMld0al9TSlU/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="border-radius: 10px; overflow: hidden; border: 1px solid var(--vp-c-divider); text-decoration: none; color: inherit; background: var(--vp-c-bg);">
-      <img src="/images/videos/vignette-son-trainspotting.jpg" alt="Trainspotting" style="width: 100%; height: 160px; object-fit: cover;" />
-      <div style="padding: 10px 12px;">
-        <strong style="font-size: 0.9rem; color: var(--vp-c-brand-1);">Trainspotting (Danny Boyle, 1996)</strong>
-        <p style="font-size: 0.82rem; color: var(--vp-c-text-2); margin: 4px 0 0 0;">Lust for Life d'Iggy Pop renforce l'énergie folle de la course-poursuite initiale.</p>
-      </div>
-    </a>
-    <a href="https://drive.google.com/file/d/0B6swcumZhqMedk9GSDZzbmkyVW8/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="border-radius: 10px; overflow: hidden; border: 1px solid var(--vp-c-divider); text-decoration: none; color: inherit; background: var(--vp-c-bg);">
-      <img src="/images/videos/vignette-contrepoint-lord-of-war.jpg" alt="Lord of War" style="width: 100%; height: 160px; object-fit: cover;" />
-      <div style="padding: 10px 12px;">
-        <strong style="font-size: 0.9rem; color: var(--vp-c-brand-1);">Lord of War (Andrew Niccol, 2005)</strong>
-        <p style="font-size: 0.82rem; color: var(--vp-c-text-2); margin: 4px 0 0 0;">Contrepoint sonore : musique légère et joyeuse sur une séquence tragique de vente d'armes.</p>
-      </div>
-    </a>
+  <a href="https://drive.google.com/file/d/0B6swcumZhqMeVkJsMld0al9TSlU/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="border-radius: 10px; overflow: hidden; border: 1px solid var(--vp-c-divider); text-decoration: none; color: inherit; background: var(--vp-c-bg);">
+  <img src="/images/videos/vignette-son-trainspotting.jpg" alt="Trainspotting" style="width: 100%; height: 160px; object-fit: cover;" />
+  <div style="padding: 10px 12px;">
+  <strong style="font-size: 0.9rem; color: var(--vp-c-brand-1);">Trainspotting (Danny Boyle, 1996)</strong>
+  <p style="font-size: 0.82rem; color: var(--vp-c-text-2); margin: 4px 0 0 0;">Lust for Life d'Iggy Pop renforce l'énergie folle de la course-poursuite initiale.</p>
+  </div>
+  </a>
+  <a href="https://drive.google.com/file/d/0B6swcumZhqMedk9GSDZzbmkyVW8/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="border-radius: 10px; overflow: hidden; border: 1px solid var(--vp-c-divider); text-decoration: none; color: inherit; background: var(--vp-c-bg);">
+  <img src="/images/videos/vignette-contrepoint-lord-of-war.jpg" alt="Lord of War" style="width: 100%; height: 160px; object-fit: cover;" />
+  <div style="padding: 10px 12px;">
+  <strong style="font-size: 0.9rem; color: var(--vp-c-brand-1);">Lord of War (Andrew Niccol, 2005)</strong>
+  <p style="font-size: 0.82rem; color: var(--vp-c-text-2); margin: 4px 0 0 0;">Contrepoint sonore : musique légère et joyeuse sur une séquence tragique de vente d'armes.</p>
+  </div>
+  </a>
   </div>
 </div>
 
@@ -495,17 +495,17 @@ Elle permet de créer des effets (narration, commentaire de ce qui se passe à l
   </p>
 
   <div style="text-align: center; margin: 1rem 0;">
-    <a 
-      href="https://drive.google.com/file/d/1BB-TNirgvQEzYh6vSv0KT1RjwmMiEh7V/view?usp=sharing" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      style="display: inline-block; position: relative; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.15); border: 2px solid var(--vp-c-divider); max-width: 520px; width: 100%; text-decoration: none;"
+  <a 
+  href="https://drive.google.com/file/d/1BB-TNirgvQEzYh6vSv0KT1RjwmMiEh7V/view?usp=sharing" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  style="display: inline-block; position: relative; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.15); border: 2px solid var(--vp-c-divider); max-width: 520px; width: 100%; text-decoration: none;"
     >
-      <img src="/images/videos/vignette-voix-off-marriage-story.jpg" alt="Marriage Story" style="width: 100%; height: auto; display: block;" />
-      <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white; padding: 10px 14px; font-size: 0.9rem; font-weight: 700;">
+  <img src="/images/videos/vignette-voix-off-marriage-story.jpg" alt="Marriage Story" style="width: 100%; height: auto; display: block;" />
+  <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white; padding: 10px 14px; font-size: 0.9rem; font-weight: 700;">
         ▶️ Visionner l'extrait de Marriage Story sur Google Drive ↗
-      </div>
-    </a>
+  </div>
+  </a>
   </div>
 </div>
 
@@ -531,15 +531,15 @@ La règle des 30° : lorsqu'un même sujet est présent dans deux plans qui se s
     En groupe, produisez une courte vidéo destinée à présenter et valoriser votre jeu de société en mobilisant les techniques de prise de vue et de montage vues au cours.
   </p>
   <div style="margin-top: 1.2rem;">
-    <a 
-      href="https://docs.google.com/document/d/1JO_9ayYt3IqZfStfUPkzT3GDOF65VBxQ/edit?usp=sharing" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      class="btn-primary"
-      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: white !important; padding: 10px 18px; border-radius: 8px; font-weight: 600; background: var(--vp-c-brand-1);"
+  <a 
+  href="https://docs.google.com/document/d/1JO_9ayYt3IqZfStfUPkzT3GDOF65VBxQ/edit?usp=sharing" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  class="btn-primary"
+  style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: white !important; padding: 10px 18px; border-radius: 8px; font-weight: 600; background: var(--vp-c-brand-1);"
     >
-      <span>📄 Ouvrir l'Exercice 14 sur Google Docs ↗</span>
-    </a>
+  <span>📄 Ouvrir l'Exercice 14 sur Google Docs ↗</span>
+  </a>
   </div>
 </div>
 

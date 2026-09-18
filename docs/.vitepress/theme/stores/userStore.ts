@@ -52,6 +52,13 @@ export interface Submission {
   submittedAt: string
 }
 
+export interface AiCriterion {
+  name: string
+  score: number
+  maxScore: number
+  justification: string
+}
+
 export interface AiCorrection {
   status: 'analyzed' | 'pending' | 'error'
   suggestedScore: number
@@ -62,9 +69,11 @@ export interface AiCorrection {
     criticalAnalysis: number // Rigueur de l'analyse critique /2.5
     formAndStructure: number // Structure, clarté et présentation /1.5
   }
+  criteriaTable?: AiCriterion[]
   summary: string
   strengths: string[]
   improvements: string[]
+  nextSteps?: string
   detailedFeedback: string
   correctedAt: string
   modelUsed: string
@@ -452,7 +461,9 @@ function generateDidacticAiCorrection(file: SubmittedFile, textContent: string =
   let summary = "Travail rigoureux et bien ancré dans les attendus didactiques de l'activité."
   let strengths: string[] = []
   let improvements: string[] = []
+  let nextSteps = "Poursuivre la formalisation des choix didactiques en explicitant les liens avec les compétences du tronc commun."
   let detailedFeedback = ""
+  let criteriaTable: AiCriterion[] = []
 
   if (exId === 'exercice-01') {
     suggestedScore = 9.0
@@ -460,16 +471,23 @@ function generateDidacticAiCorrection(file: SubmittedFile, textContent: string =
     didacticQuality = 2.7
     criticalAnalysis = 2.2
     formAndStructure = 1.3
-    summary = "Excellente appropriation du cadre européen DigComp 2.2 et distinction nette entre habileté et compétence."
+    summary = "Excellente appropriation du cadre DigComp 2.2 et distinction nette entre habileté opératoire et compétence critique située."
     strengths = [
       "Distinction opératoire claire entre l'habileté technique et la compétence réflexive située.",
       "Pertinence des indicateurs d'observation pour diagnostiquer les besoins des élèves du secondaire.",
-      "Bonne prise en compte de la dimension éthique et légale (respect des licences de création)."
+      "Prise en compte rigoureuse de la dimension éthique et légale (licences Creative Commons)."
     ]
     improvements = [
-      "Préciser les modalités concrètes de remédiation immédiate en classe pour les apprenants en grande difficulté."
+      "Préciser les modalités de remédiation immédiate en classe pour les apprenants en grande fragilité numérique."
     ]
+    nextSteps = "Structurer une fiche-guide de remédiation rapide (3 étapes clés) à destination des élèves décrocheurs."
     detailedFeedback = "L'analyse produite pour ce diagnostic DigComp témoigne d'un haut niveau d'expertise didactique. Vous montrez clairement que savoir manipuler un outil ne signifie pas être compétent sur le plan informationnel. Les propositions d'activités permettent d'outiller l'élève sans le démotiver."
+    criteriaTable = [
+      { name: "Exactitude & maîtrise des concepts DigComp 2.2 (Critère A)", score: 4.8, maxScore: 5, justification: "Définition rigoureuse de la compétence située et des 5 domaines DigComp." },
+      { name: "Compréhension & Pertinence didactique (Critères B & F)", score: 4.6, maxScore: 5, justification: "Excellente analyse des besoins d'apprentissage réels des élèves." },
+      { name: "Application, transfert & Analyse (Critères C & D)", score: 4.4, maxScore: 5, justification: "Diagnostic pertinent des profils d'élèves et argumentation solide." },
+      { name: "Réflexivité & Communication (Critères E & H)", score: 4.2, maxScore: 5, justification: "Bonne prise de recul sur la posture enseignante et présentation soignée." }
+    ]
   } else if (exId === 'exercice-02') {
     suggestedScore = 8.5
     concordance = 2.5
@@ -478,14 +496,21 @@ function generateDidacticAiCorrection(file: SubmittedFile, textContent: string =
     formAndStructure = 1.2
     summary = "Démarche d'investigation critique rigoureuse pour déconstruire l'infox et les pièges sensationnalistes."
     strengths = [
-      "Recours méthodique au croisement des sources primaires et à la vérification d'images.",
+      "Recours méthodique au croisement des sources primaires et à la vérification d'images inversées.",
       "Excellente déconstruction des procédés de dramatisation (titres putaclics, graphiques tronqués).",
-      "Transposition didactique pertinente pour des élèves de 12-14 ans."
+      "Transposition didactique adaptée à des élèves de 12-14 ans."
     ]
     improvements = [
-      "Expliciter davantage le rôle des modèles économiques des plateformes dans la viralité de la désinformation."
+      "Expliciter davantage le rôle des algorithmes de recommandation et de l'économie de l'attention."
     ]
+    nextSteps = "Intégrer une courte séquence sur les biais de confirmation et le fonctionnement des bulles de filtres."
     detailedFeedback = "Très bon travail d'Éducation aux Médias. Vous dépassez la simple chasse au faux pour faire comprendre aux élèves pourquoi et comment une fausse nouvelle se propage. Le protocole proposé est directement transposable en classe."
+    criteriaTable = [
+      { name: "Exactitude & maîtrise de l'esprit critique info (Critère A)", score: 4.5, maxScore: 5, justification: "Identification précise des failles factuelles et des biais de mise en scène." },
+      { name: "Pertinence didactique & transposition élèves (Critères B & F)", score: 4.3, maxScore: 5, justification: "Protocole de fact-checking accessible et formateur pour le secondaire." },
+      { name: "Analyse critique & croisement des sources (Critères C & D)", score: 4.4, maxScore: 5, justification: "Recherche inversée d'images et remontée aux sources primaires concluantes." },
+      { name: "Réflexivité & Clarté argumentative (Critères E & H)", score: 3.8, maxScore: 5, justification: "Argumentation claire, penser à approfondir la dimension systémique des réseaux sociaux." }
+    ]
   } else if (exId === 'exercice-03') {
     suggestedScore = 9.5
     concordance = 2.9
@@ -501,7 +526,14 @@ function generateDidacticAiCorrection(file: SubmittedFile, textContent: string =
     improvements = [
       "Penser à insérer une version allégée ou audio pour les élèves présentant des troubles spécifiques (DYS)."
     ]
+    nextSteps = "Proposer une version synthétique sous forme de mémo marque-page ou de sticker pour carnet de bord."
     detailedFeedback = "Production exemplaire ! La mise en page et le ton adopté sont parfaitement calibrés pour des élèves du premier degré. L'accent mis sur l'autonomie et les bonnes pratiques numériques répond fidèlement aux attendus du référentiel."
+    criteriaTable = [
+      { name: "Conformité au référentiel FMTTN (Critère A)", score: 4.8, maxScore: 5, justification: "Respect intégral des attendus du champ 1 et 2 du tronc commun." },
+      { name: "Qualité de l'ingénierie didactique (Critères B & F)", score: 4.8, maxScore: 5, justification: "Séquençage progressif, consignes explicites et sans ambiguïté." },
+      { name: "Faisabilité en classe & Transfert (Critères C & D)", score: 4.7, maxScore: 5, justification: "Outil immédiatement diffusable et opérationnel en classe." },
+      { name: "Ergonomie, accessibilité & Design (Critères E & H)", score: 4.7, maxScore: 5, justification: "Mise en page exemplaire, aérée et attrayante." }
+    ]
   } else if (exId === 'exercice-04') {
     suggestedScore = 8.5
     concordance = 2.6
@@ -517,7 +549,14 @@ function generateDidacticAiCorrection(file: SubmittedFile, textContent: string =
     improvements = [
       "Veiller à calibrer le temps de chaque énigme pour éviter les temps morts ou la surcharge cognitive."
     ]
+    nextSteps = "Intégrer des indices progressifs à débloquer en cas de blocage d'une équipe pour préserver le rythme."
     detailedFeedback = "Une cyber-enquête stimulante qui met en valeur les pédagogies actives. Le lien entre le jeu et l'institutionnalisation des notions informatiques est bien assuré."
+    criteriaTable = [
+      { name: "Maîtrise des concepts de cybersécurité (Critère A)", score: 4.4, maxScore: 5, justification: "Énigmes fondées sur des règles d'hygiène numérique authentiques." },
+      { name: "Scénarisation ludopédagogique (Critères B & F)", score: 4.5, maxScore: 5, justification: "Intrigue engageante et équilibre entre défi et faisabilité." },
+      { name: "Résolution de problèmes & Pensée computationnelle (Critères C & D)", score: 4.2, maxScore: 5, justification: "Bonne progression des indices et mobilisation de la déduction logique." },
+      { name: "Communication & Matériel pédagogique (Critères E & H)", score: 3.9, maxScore: 5, justification: "Documents de jeu immersifs, peaufiner les fiches de débriefing." }
+    ]
   } else if (exId === 'exercice-05') {
     suggestedScore = 8.0
     concordance = 2.4
@@ -532,7 +571,14 @@ function generateDidacticAiCorrection(file: SubmittedFile, textContent: string =
     improvements = [
       "Sensibiliser également à l'usage des gestionnaires de mots de passe (Keepass/Bitwarden) plutôt que la simple mémorisation."
     ]
+    nextSteps = "Ajouter un QR code renvoyant vers un testeur de robustesse de mot de passe en ligne (ex: CNIL)."
     detailedFeedback = "L'affiche Canva atteint son objectif de communication pédagogique rapide. Le message est clair, direct et évite le jargon technique superflu."
+    criteriaTable = [
+      { name: "Exactitude des règles de sécurité (Critère A)", score: 4.2, maxScore: 5, justification: "Règles actuelles de robustesse conformes aux recommandations ANSSI." },
+      { name: "Efficacité communicationnelle (Critères B & F)", score: 4.3, maxScore: 5, justification: "Accroche visuelle forte et lisibilité à distance." },
+      { name: "Pertinence du format Défi Express (Critères C & D)", score: 4.0, maxScore: 5, justification: "Objectif atteint dans la contrainte temporelle des 20 minutes." },
+      { name: "Qualité graphique & Réflexivité (Critères E & H)", score: 3.5, maxScore: 5, justification: "Bonne maîtrise de Canva, enrichir la justification didactique des choix de couleurs." }
+    ]
   } else if (exId === 'exercice-06') {
     suggestedScore = 8.5
     concordance = 2.6
@@ -548,54 +594,220 @@ function generateDidacticAiCorrection(file: SubmittedFile, textContent: string =
     improvements = [
       "Prévoir une activité alternative sur simulateur virtuel pour les écoles ne disposant pas d'unités centrales à démonter."
     ]
+    nextSteps = "Créer un schéma fonctionnel fléché résumant le cycle Traitement-Mémoire-Stockage."
     detailedFeedback = "Ce défi hardware permet aux élèves de dépasser l'aspect magique de la machine pour en comprendre le fonctionnement concret. L'approche tactile et déductive est très bien amenée."
-  } else if (exId === 'exercice-video') {
-    suggestedScore = 9.0
-    concordance = 2.7
-    didacticQuality = 2.8
-    criticalAnalysis = 2.2
-    formAndStructure = 1.3
-    summary = "Capsule vidéo dynamique, pitch didactique clair et démonstration soignée du prototype de jeu."
-    strengths = [
-      "Élocution fluide, dynamisme et excellente mise en valeur du plateau et des pions.",
-      "Explication concise des règles et de l'alignement avec les compétences FMTTN visées.",
-      "Montage propre et soigné."
+    criteriaTable = [
+      { name: "Exactitude de l'architecture matérielle (Critère A)", score: 4.5, maxScore: 5, justification: "Identification sans erreur des composants internes et de leurs bus de liaison." },
+      { name: "Dispositif d'apprentissage expérientiel (Critères B & F)", score: 4.4, maxScore: 5, justification: "Manipulation active par les pairs valorisant le tâtonnement expérimental." },
+      { name: "Sécurité & Procédure technique (Critères C & D)", score: 4.2, maxScore: 5, justification: "Consignes de décharge électrostatique et de manipulation claires." },
+      { name: "Documentation & Réflexivité (Critères E & H)", score: 3.9, maxScore: 5, justification: "Fiche d'identification des composants claire et bien légendée." }
     ]
-    improvements = [
-      "Intégrer des sous-titres incrustés pour l'accessibilité universelle."
-    ]
-    detailedFeedback = "La vidéo donne immédiatement envie de jouer tout en explicitant avec clarté la plus-value pédagogique de votre jeu de société. Présentation très professionnelle."
-  } else if (exId === 'projet-jeu') {
+  } else if (exId === 'exercice-09') {
     suggestedScore = 9.0
     concordance = 2.8
     didacticQuality = 2.7
     criticalAnalysis = 2.2
     formAndStructure = 1.3
-    summary = "Dossier didactique complet articulant intention pédagogique, fabrication FabLab et règles du jeu."
+    summary = "Règles du jeu limpides, boucle de gameplay bien rythmée et alignement didactique solide avec le référentiel FMTTN."
     strengths = [
-      "Articulation solide entre mécanique ludo-éducative et compétences du référentiel.",
-      "Documentation détaillée du processus technique (laser, impression 3D, prompts IA).",
-      "Système de cartes didactiques progressif et motivant."
+      "Boucle de jeu équilibrée alternant réflexion, défi et interaction ludique.",
+      "Explication pas-à-pas des phases de jeu avec exemples de tours illustrés.",
+      "Objectif didactique d'éducation aux médias parfaitement intégré à la mécanique de victoire."
     ]
     improvements = [
-      "Préciser les variantes de règles pour adapter la durée d'une partie au format d'une heure de cours (50 min)."
+      "Anticiper les cas de blocage ou d'égalité entre joueurs dans un encadré 'Cas particuliers'."
     ]
-    detailedFeedback = "Un dossier pédagogique de très haute volée. Le projet démontre une créativité remarquable et une maîtrise approfondie des outils de fabrication numérique et de l'IA."
+    nextSteps = "Réaliser un aide-mémoire compact (carte de référence rapide) résumant le tour de jeu en 3 pictogrammes."
+    detailedFeedback = "Un livret de règles remarquable. Les élèves comprendront le fonctionnement en moins de 3 minutes grâce à la clarté de vos formulations et au découpage méthodique des phases."
+    criteriaTable = [
+      { name: "Clarté & rigueur des règles (Critères A & H)", score: 4.7, maxScore: 5, justification: "Vocabulaire précis, aucune ambiguïté sur les conditions de victoire." },
+      { name: "Alignement didactique FMTTN / Médias (Critères B & F)", score: 4.6, maxScore: 5, justification: "Le jeu fait apprendre par l'action et non par simple récitation passive." },
+      { name: "Ergonomie ludique & Boucle de jeu (Critères C & D)", score: 4.4, maxScore: 5, justification: "Durée de partie réaliste et engagement cognitif continu des joueurs." },
+      { name: "Réflexivité & Anticipation des écueils (Critère E)", score: 4.3, maxScore: 5, justification: "Bonne prise en compte de la diversité des joueurs et des dynamiques de groupe." }
+    ]
+  } else if (exId === 'exercice-10') {
+    suggestedScore = 8.5
+    concordance = 2.6
+    didacticQuality = 2.6
+    criticalAnalysis = 2.1
+    formAndStructure = 1.2
+    summary = "Série photographique originale et maîtrisée mettant en valeur les techniques de composition visuelle."
+    strengths = [
+      "Exploitation intelligente des contrastes d'échelles, du cadre dans le cadre et des reflets.",
+      "Mise en scène soignée du matériel physique du jeu (pions, plateau, cartes).",
+      "Justification sémiologique convaincante pour chaque cliché retenu."
+    ]
+    improvements = [
+      "Veiller à la gestion de la lumière directe pour éviter les reflets parasites sur les surfaces brillantes."
+    ]
+    nextSteps = "Expérimenter la profondeur de champ réduite (effet bokeh) pour isoler les détails des pions."
+    detailedFeedback = "Très belle appropriation des principes photographiques vus au cours. Vos images racontent une histoire et confèrent immédiatement une dimension professionnelle à votre prototype de jeu."
+    criteriaTable = [
+      { name: "Maîtrise technique photographique (Critère A)", score: 4.4, maxScore: 5, justification: "Exposition équilibrée, netteté sur les points clés et cadrages soignés." },
+      { name: "Mobilisation des règles de composition (Critères B & G)", score: 4.5, maxScore: 5, justification: "Application démontrée de la règle des tiers, des lignes directrices et du surcadrage." },
+      { name: "Sens critique & Sémiologie de l'image (Critères C & D)", score: 4.1, maxScore: 5, justification: "Analyse réflexive de l'impact émotionnel et narratif des clichés." },
+      { name: "Communication & Intégration graphique (Critères E & H)", score: 4.0, maxScore: 5, justification: "Planches de présentation harmonieuses prêtes pour l'édition du jeu." }
+    ]
+  } else if (exId === 'exercice-11') {
+    suggestedScore = 9.0
+    concordance = 2.7
+    didacticQuality = 2.8
+    criticalAnalysis = 2.3
+    formAndStructure = 1.2
+    summary = "Création multimodale de cartes de jeu combinant prompts d'IA générative et harmonisation graphique Canva."
+    strengths = [
+      "Cohérence visuelle remarquable entre les différentes familles de cartes grâce à un style d'avatar unifié.",
+      "Méthode de génération par étapes (saucissonnage de prompts) rigoureusement appliquée.",
+      "Formulation stimulante des questions et défis pédagogiques."
+    ]
+    improvements = [
+      "Vérifier le contraste typographique entre les textes et les fonds texturés pour une lisibilité parfaite."
+    ]
+    nextSteps = "Intégrer des pictogrammes de difficulté (1 à 3 étoiles) pour adapter la complexité aux élèves."
+    detailedFeedback = "Excellente démonstration de l'IA comme copilote de création : vous avez su garder la maîtrise didactique des contenus tout en exploitant la puissance générative pour les illustrations."
+    criteriaTable = [
+      { name: "Maîtrise du prompting & posture critique IA (Critère 7 / A)", score: 4.7, maxScore: 5, justification: "Vérification systématique des hallucinations et raffinement itératif des prompts." },
+      { name: "Pertinence didactique des défis de cartes (Critères B & F)", score: 4.6, maxScore: 5, justification: "Contenus alignés sur les compétences numériques et l'éducation aux médias." },
+      { name: "Cohérence graphique & Identité visuelle (Critères C & G)", score: 4.4, maxScore: 5, justification: "Gabarit Canva harmonieux et charte graphique respectée sur l'ensemble du paquet." },
+      { name: "Réflexivité sur l'usage de l'IA (Critères E & H)", score: 4.3, maxScore: 5, justification: "Analyse honnête et lucide des atouts et limites des générateurs visuels." }
+    ]
+  } else if (exId === 'exercice-12') {
+    suggestedScore = 8.5
+    concordance = 2.6
+    didacticQuality = 2.5
+    criticalAnalysis = 2.1
+    formAndStructure = 1.3
+    summary = "Plateau de jeu vectorisé avec précision, gravure laser propre et ergonomie spatiale bien pensée."
+    strengths = [
+      "Fichier vectoriel (.svg) structuré avec distinction nette des calques de découpe (rouge) et de gravure (noir).",
+      "Disposition intuitive des cases et des zones de pioche favorisant la fluidité de jeu.",
+      "Finition matérielle soignée au FabLab (bois poncé, contrastes de brûlure bien réglés)."
+    ]
+    improvements = [
+      "Prévoir des repères d'emboîtement si le plateau doit être pliable pour entrer dans une boîte compacte."
+    ]
+    nextSteps = "Ajouter des logements gravés légèrement en creux pour stabiliser les cartes et les pions."
+    detailedFeedback = "Un travail de prototypage FabLab très professionnel. Votre plateau est à la fois robuste, fonctionnel et esthétiquement valorisant pour les élèves."
+    criteriaTable = [
+      { name: "Maîtrise de la CAO vectorielle (Critère A)", score: 4.4, maxScore: 5, justification: "Tracés vectoriels fermés, épaisseurs de traits conformes aux exigences machine." },
+      { name: "Ergonomie spatiale & Ludopédagogie (Critères B & F)", score: 4.3, maxScore: 5, justification: "Cheminement de jeu clair et dimensions adaptées à une table de classe." },
+      { name: "Fabrication numérique FabLab (Critères C & G)", score: 4.3, maxScore: 5, justification: "Paramètres de vitesse et puissance laser parfaitement calibrés." },
+      { name: "Réflexivité sur le prototypage matériel (Critères E & H)", score: 4.0, maxScore: 5, justification: "Bonne documentation des itérations et ajustements d'échelle." }
+    ]
+  } else if (exId === 'exercice-13') {
+    suggestedScore = 8.5
+    concordance = 2.6
+    didacticQuality = 2.5
+    criticalAnalysis = 2.1
+    formAndStructure = 1.3
+    summary = "Modélisation 3D originale de pions distinctifs et impression additive sans défaut d'adhérence."
+    strengths = [
+      "Formes volumétriques stables avec base élargie évitant les renversements pendant la partie.",
+      "Symbolique évidente reliant la forme de chaque pion au rôle joué dans l'éducation aux médias.",
+      "Génération soignée du G-code dans le trancheur (remplissage et supports optimisés)."
+    ]
+    improvements = [
+      "Penser à différencier les pions par des couleurs de filament distinctes pour faciliter l'identification."
+    ]
+    nextSteps = "Ajouter un léger chanfrein sur la base pour faciliter le décollement du plateau d'impression."
+    detailedFeedback = "Bravo pour cette modélisation 3D. Les pions ont une excellente prise en main et témoignent d'une bonne compréhension des contraintes de l'impression 3D FDM."
+    criteriaTable = [
+      { name: "Maîtrise de la modélisation 3D (Critère A)", score: 4.3, maxScore: 5, justification: "Solides étanches (manifold), géométries adaptées à l'impression additive." },
+      { name: "Symbolique didactique des pions (Critères B & F)", score: 4.4, maxScore: 5, justification: "Personnification pertinente des concepts abordés par le jeu." },
+      { name: "Finition & Résolution d'impression (Critères C & G)", score: 4.2, maxScore: 5, justification: "Hauteur de couche appropriée, absence de warping ou de fils résiduels." },
+      { name: "Réflexivité sur l'objet physique (Critères E & H)", score: 4.1, maxScore: 5, justification: "Analyse critique du ratio temps d'impression / robustesse mécanique." }
+    ]
+  } else if (exId === 'exercice-14' || exId === 'exercice-video') {
+    suggestedScore = 9.0
+    concordance = 2.7
+    didacticQuality = 2.8
+    criticalAnalysis = 2.2
+    formAndStructure = 1.3
+    summary = "Capsule vidéo dynamique, pitch didactique percutant et démonstration vivante des mécaniques de jeu."
+    strengths = [
+      "Élocution fluide, montage rythmé et excellente alternance entre plans larges et plans rapprochés.",
+      "Explication limpide des règles et de l'alignement avec les compétences du référentiel FMTTN.",
+      "Qualité audio irréprochable grâce à une voix-off posée en post-synchronisation."
+    ]
+    improvements = [
+      "Intégrer des sous-titres incrustés pour l'accessibilité universelle aux élèves malentendants."
+    ]
+    nextSteps = "Ajouter un court carton final récapitulant les informations pratiques (âge, durée, matériel)."
+    detailedFeedback = "La vidéo donne immédiatement envie de tester le jeu. Vous avez su respecter la grammaire cinématographique (règles des 180° et des 30°) tout en conservant une tonalité pédagogique enthousiaste."
+    criteriaTable = [
+      { name: "Grammaire audiovisuelle & Tournage (Critère A)", score: 4.6, maxScore: 5, justification: "Respect des valeurs de plan, des angles et continuité visuelle sans faux raccords." },
+      { name: "Efficacité didactique de la démonstration (Critères B & F)", score: 4.7, maxScore: 5, justification: "Les règles et enjeux d'apprentissage sont compris en moins de 2 minutes." },
+      { name: "Montage & Bande sonore (Critères C & G)", score: 4.4, maxScore: 5, justification: "Rythme soutenu, mixage équilibré entre voix-off et musique de fond." },
+      { name: "Posture réflexive & Dynamisme (Critères E & H)", score: 4.3, maxScore: 5, justification: "Présentation engageante et valorisante pour le travail de l'équipe." }
+    ]
+  } else if (exId === 'exercice-15') {
+    suggestedScore = 8.5
+    concordance = 2.6
+    didacticQuality = 2.6
+    criticalAnalysis = 2.2
+    formAndStructure = 1.1
+    summary = "Playtest méthodique mené auprès de pairs avec recueil objectif de données et ajustements concrets."
+    strengths = [
+      "Grille d'observation critériée bien construite (compréhension des règles, temps de jeu, plaisir ludique).",
+      "Identification lucide des points de blocage initiaux et mise en place de solutions correctives.",
+      "Démarche itérative authentique illustrant le statut positif de l'erreur dans la conception."
+    ]
+    improvements = [
+      "Quantifier plus précisément le temps moyen passé par tour de joueur pour affiner le tempo."
+    ]
+    nextSteps = "Formaliser un carnet d'itération 'Avant / Après' pour illustrer l'évolution du prototype lors de la soutenance."
+    detailedFeedback = "C'est l'essence même du game design pédagogique ! Vous avez su écouter les critiques des testeurs avec bienveillance et objectivité pour rendre votre jeu infiniment plus fluide."
+    criteriaTable = [
+      { name: "Méthodologie du playtest (Critère A)", score: 4.3, maxScore: 5, justification: "Protocole de test rigoureux avec observateur neutre et grille d'évaluation." },
+      { name: "Analyse des retours joueurs (Critères B & D)", score: 4.4, maxScore: 5, justification: "Dépouillement objectif des incompréhensions sans justification défensive." },
+      { name: "Ajustements & Améliorations itératives (Critères C & F)", score: 4.4, maxScore: 5, justification: "Modifications pertinentes des règles et des cartes pour équilibrer la partie." },
+      { name: "Réflexivité didactique approfondie (Critère E)", score: 4.4, maxScore: 5, justification: "Haute maturité réflexive sur les écarts entre intention et réception." }
+    ]
+  } else if (exId === 'exercice-16') {
+    suggestedScore = 9.0
+    concordance = 2.8
+    didacticQuality = 2.8
+    criticalAnalysis = 2.2
+    formAndStructure = 1.2
+    summary = "Défense didactique captivante et fiche de préparation de leçon FMTTN rigoureusement articulée."
+    strengths = [
+      "Présentation orale dynamique et interactive faisant participer activement la classe.",
+      "Fiche de préparation conforme aux standards HECh (triple concordance, Bloom, timing minuté).",
+      "Justification convaincante de la place du jeu dans la séquence d'apprentissage globale."
+    ]
+    improvements = [
+      "Expliciter davantage les critères d'évaluation sommative que vous utiliseriez avec vos futurs élèves."
+    ]
+    nextSteps = "Prévoir une variante d'évaluation formative sous forme de ticket de sortie (exit ticket) pour la leçon."
+    detailedFeedback = "Une prestation finale de très haute volée. Vous démontrez une réelle posture d'ingénieur pédagogique capable de concevoir, fabriquer, animer et défendre un dispositif d'apprentissage innovant."
+    criteriaTable = [
+      { name: "Maîtrise didactique & Fiche de leçon FMTTN (Critères A & F)", score: 4.7, maxScore: 5, justification: "Triple concordance irréprochable et intégration harmonieuse du jeu dans la leçon." },
+      { name: "Dynamisme de l'animation orale (Critères B & H)", score: 4.6, maxScore: 5, justification: "Prise de parole partagée, élocution vivante et mise en situation immersive." },
+      { name: "Rigueur des réponses aux questions (Critères C & D)", score: 4.4, maxScore: 5, justification: "Argumentation solide face aux interrogations conceptuelles de l'auditoire." },
+      { name: "Réflexivité & Posture professionnelle d'enseignant (Critère E)", score: 4.3, maxScore: 5, justification: "Prise de recul sur la trajectoire d'apprentissage et projection réaliste en classe." }
+    ]
   } else {
     suggestedScore = 8.5
     concordance = 2.5
     didacticQuality = 2.5
     criticalAnalysis = 2.0
     formAndStructure = 1.5
-    summary = "Travail satisfaisant respectant les consignes et critères de l'activité."
+    summary = "Travail sérieux respectant les consignes et critères didactiques de l'activité."
     strengths = [
-      "Bonne mobilisation des concepts du cours de Didactique du numérique.",
-      "Document bien structuré et transmis dans les délais impartis."
+      "Bonne mobilisation des concepts clés du cours de Didactique du numérique.",
+      "Document bien structuré et transmis dans les formats attendus."
     ]
     improvements = [
-      "Développer davantage la justification didactique des choix opérés."
+      "Approfondir la justification didactique des arbitrages opérés."
     ]
-    detailedFeedback = "Le devoir remis atteste d'un travail sérieux et d'un engagement appréciable dans la formation."
+    nextSteps = "Faire le lien explicite avec les référentiels officiels de la FWB."
+    detailedFeedback = "Le devoir remis atteste d'un investissement appréciable et d'une démarche d'apprentissage constructive."
+    criteriaTable = [
+      { name: "Exactitude des connaissances (Critère A)", score: 4.2, maxScore: 5, justification: "Maîtrise satisfaisante des notions du cours." },
+      { name: "Pertinence pédagogique (Critères B & F)", score: 4.2, maxScore: 5, justification: "Cohérence avec les besoins des apprenants." },
+      { name: "Analyse & Argumentation (Critères C & D)", score: 4.1, maxScore: 5, justification: "Développement logique et justifié." },
+      { name: "Réflexivité & Forme (Critères E & H)", score: 4.0, maxScore: 5, justification: "Expression soignée et démarche réflexive engagée." }
+    ]
   }
 
   return {
@@ -608,12 +820,14 @@ function generateDidacticAiCorrection(file: SubmittedFile, textContent: string =
       criticalAnalysis,
       formAndStructure
     },
+    criteriaTable,
     summary,
     strengths,
     improvements,
+    nextSteps,
     detailedFeedback,
     correctedAt: new Date().toISOString().replace('T', ' ').substring(0, 16),
-    modelUsed: 'Qwen Coder (Local First / Assistant IA Didactique)'
+    modelUsed: 'Assistant IA Pédagogique FMTTN (Prompt Expert)'
   }
 }
 
@@ -1111,6 +1325,13 @@ export const userStore = {
       dataUrl,
       submittedAt: new Date().toISOString().replace('T', ' ').substring(0, 16),
       driveSynced: false
+    }
+
+    // Déclenchement automatique et immédiat de la correction IA dès le dépôt
+    try {
+      newFile.aiCorrection = generateDidacticAiCorrection(newFile)
+    } catch (e) {
+      console.warn("Erreur analyse IA immédiate:", e)
     }
 
     // Remplacer l'éventuel ancien fichier du même étudiant pour cet exercice

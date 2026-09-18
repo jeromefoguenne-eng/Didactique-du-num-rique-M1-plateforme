@@ -107,50 +107,105 @@ const courseModules = [
 ]
 
 const availableExercises = [
+  // 1. Travaux sur la Plateforme (Pilier 1 - 60 pts)
   { 
     id: 'exercice-01', 
     title: 'Exercice 1 : Diagnostic de compétences numériques (DigComp 2.2)',
+    category: 'Plateforme',
+    points: 10,
     docUrl: 'https://docs.google.com/document/d/1b1QhnOoDNyCSdAIEAZx_xq96hQxZsUJH/preview'
   },
   { 
     id: 'exercice-02', 
     title: 'Exercice 2 : Peut-on faire confiance à cette information ?',
+    category: 'Plateforme',
+    points: 10,
     docUrl: 'https://docs.google.com/document/d/1o9vsf5fptzG1EH56oycz7SkD_UwmUKXm/preview'
   },
   { 
     id: 'exercice-03', 
     title: 'Exercice 3 : Concevoir un guide numérique pour les élèves',
+    category: 'Plateforme',
+    points: 10,
     docUrl: 'https://docs.google.com/document/d/12XENuZM1WVyeCnRfu62Oh1_tG8Gkc1Z1/preview'
   },
   { 
     id: 'exercice-04', 
     title: 'Exercice 4 : Escape Game FMTTN (Cyber-Enquête)',
+    category: 'Plateforme',
+    points: 10,
     docUrl: 'https://docs.google.com/document/d/1kUSfjlioxrG-i-ZrVbzQOpxH072f_2db/preview'
   },
   { 
     id: 'exercice-05', 
     title: 'Exercice 5 : Défi 20 minutes (Affiche Canva mot de passe)',
+    category: 'Plateforme',
+    points: 10,
     docUrl: 'https://docs.google.com/document/d/1GuqhxxFNJllg4vR_wLeD5A4CtYNyJ4mj/preview'
   },
   { 
     id: 'exercice-06', 
     title: 'Exercice 6 : Défi Hardware (Démonter et remonter un PC)',
-    docUrl: 'https://docs.google.com/document/d/1mfCTqwo-2l9k_wdLzIu3qRWOJuBxrqJv/preview'
+    category: 'Plateforme',
+    points: 10,
+    docUrl: 'https://docs.google.com/document/d/1Vjy9xrqLG-xuktmMmmOQ6Kh8I-hXiIzV/preview'
+  },
+  // 2. Projet Jeu de Société Didactique (Pilier 2 & 3 - 130 pts)
+  { 
+    id: 'exercice-09', 
+    title: 'Exercice 9 : Règles du jeu & dossier pédagogique (FMTTN / CSEM)',
+    category: 'Projet Jeu',
+    points: 20,
+    docUrl: 'https://docs.google.com/document/d/1af3aH5FiR31N4FB99VrFq6628kiFFbly/preview'
   },
   { 
-    id: 'exercice-video', 
-    title: 'Présentation vidéo du jeu (Pitch & Règles)',
-    docUrl: 'https://docs.google.com/document/d/1PPtRyTN24HPU6ANKzkntr8e2sF0Dl2bm/preview'
+    id: 'exercice-10', 
+    title: 'Exercice 10 : Photographier le numérique (visuels & matériel)',
+    category: 'Projet Jeu',
+    points: 15,
+    docUrl: 'https://docs.google.com/document/d/1kSoMRpjySi0DvjA0S1W4b8BoaDQrXNZh/preview'
   },
   { 
-    id: 'projet-jeu', 
-    title: 'Projet : Dossier pédagogique du Jeu de société',
-    docUrl: 'https://docs.google.com/document/d/1PPtRyTN24HPU6ANKzkntr8e2sF0Dl2bm/preview'
+    id: 'exercice-11', 
+    title: 'Exercice 11 : Supports du jeu & cartes créées avec l\'IA',
+    category: 'Projet Jeu',
+    points: 15,
+    docUrl: 'https://docs.google.com/document/d/1CzyMJRbjyvYVh7XP83Lx4tjxnq23oHXX/preview'
   },
   { 
-    id: 'autre-travail', 
-    title: 'Autre travail ou document didactique libre',
-    docUrl: 'https://docs.google.com/document/d/1PPtRyTN24HPU6ANKzkntr8e2sF0Dl2bm/preview'
+    id: 'exercice-12', 
+    title: 'Exercice 12 : Plateau de jeu à la découpeuse laser (FabLab)',
+    category: 'Projet Jeu',
+    points: 15,
+    docUrl: 'https://docs.google.com/document/d/1Ov_huVW9al2DKuoBmW89QO3ZqE5E-nzU/preview'
+  },
+  { 
+    id: 'exercice-13', 
+    title: 'Exercice 13 : Réalisation des pions à l\'imprimante 3D (FabLab)',
+    category: 'Projet Jeu',
+    points: 15,
+    docUrl: 'https://docs.google.com/document/d/1H_88UJvPPezdUXw1Vt8_U9wtsaFouepU/preview'
+  },
+  { 
+    id: 'exercice-14', 
+    title: 'Exercice 14 : Présentation vidéo du jeu (Capsule 2-3 min)',
+    category: 'Projet Jeu',
+    points: 20,
+    docUrl: 'https://docs.google.com/document/d/1JO_9ayYt3IqZfStfUPkzT3GDOF65VBxQ/preview'
+  },
+  { 
+    id: 'exercice-15', 
+    title: 'Exercice 15 : Playtest & Grille d\'évaluation formative du jeu',
+    category: 'Projet Jeu',
+    points: 15,
+    docUrl: 'https://docs.google.com/document/d/1uIheBr_KU2Dh2TjYkegz7lHixsUNxs4t/preview'
+  },
+  { 
+    id: 'exercice-16', 
+    title: 'Exercice 16 : Présentation finale et leçon FMTTN devant la classe',
+    category: 'Projet Jeu',
+    points: 15,
+    docUrl: 'https://docs.google.com/document/d/1Tm15GqKSwutH1MDbaGYJaWByliC17iRT/preview'
   }
 ]
 
@@ -1067,6 +1122,80 @@ function formatSize(bytes) {
                 </div>
               </div>
             </details>
+
+                        <!-- RETOUR & CORRECTION PÉDAGOGIQUE CONTINUE PAR L'IA -->
+            <div v-if="getFileForExercise(ex.id)?.aiCorrection" class="ex-ai-feedback-card">
+              <div class="ai-card-header">
+                <div class="ai-author-block">
+                  <span class="ai-avatar">🤖</span>
+                  <div>
+                    <div class="ai-author-title">Évaluation formative continue générée par l'IA</div>
+                    <div class="ai-author-date">
+                      Analysé le {{ getFileForExercise(ex.id).aiCorrection.correctedAt }} • {{ getFileForExercise(ex.id).aiCorrection.modelUsed }}
+                    </div>
+                  </div>
+                </div>
+                <div class="ai-score-badge">
+                  Note indicative : <strong>{{ getFileForExercise(ex.id).aiCorrection.suggestedScore }}</strong> / {{ getFileForExercise(ex.id).aiCorrection.maxScore }} pts
+                </div>
+              </div>
+
+              <div class="ai-card-body">
+                <div class="ai-summary-callout">
+                  <strong>Synthèse de l'évaluation :</strong> {{ getFileForExercise(ex.id).aiCorrection.summary }}
+                </div>
+
+                <!-- Grille critériée conforme au prompt section 10 -->
+                <div v-if="getFileForExercise(ex.id).aiCorrection.criteriaTable?.length" class="ai-criteria-box">
+                  <div class="ai-table-title">📊 Évaluation critériée détaillée :</div>
+                  <table class="ai-rubric-table">
+                    <thead>
+                      <tr>
+                        <th>Critère pédagogique</th>
+                        <th>Note</th>
+                        <th>Justification</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr v-for="(crit, cIdx) in getFileForExercise(ex.id).aiCorrection.criteriaTable" :key="cIdx">
+                        <td class="col-name"><strong>{{ crit.name }}</strong></td>
+                        <td class="col-score"><strong>{{ crit.score }}</strong> / {{ crit.maxScore }}</td>
+                        <td class="col-justif">{{ crit.justification }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <!-- Points forts et points à améliorer -->
+                <div class="ai-feedback-columns">
+                  <div v-if="getFileForExercise(ex.id).aiCorrection.strengths?.length" class="ai-col strengths">
+                    <div class="ai-col-heading">✅ Points forts</div>
+                    <ul>
+                      <li v-for="(s, sIdx) in getFileForExercise(ex.id).aiCorrection.strengths" :key="sIdx">{{ s }}</li>
+                    </ul>
+                  </div>
+                  <div v-if="getFileForExercise(ex.id).aiCorrection.improvements?.length" class="ai-col improvements">
+                    <div class="ai-col-heading">🎯 Points à améliorer</div>
+                    <ul>
+                      <li v-for="(imp, iIdx) in getFileForExercise(ex.id).aiCorrection.improvements" :key="iIdx">{{ imp }}</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Piste de progression -->
+                <div v-if="getFileForExercise(ex.id).aiCorrection.nextSteps" class="ai-next-steps">
+                  <span class="ns-icon">💡</span>
+                  <div>
+                    <strong>Piste de progression recommandée :</strong>
+                    <p>{{ getFileForExercise(ex.id).aiCorrection.nextSteps }}</p>
+                  </div>
+                </div>
+
+                <div class="ai-disclaimer">
+                  ⚖️ <em>Correction formative continue basée sur les <a href="/guide/criteres-correction-ia" target="_blank">critères officiels de correction IA</a>. La note finale est réévaluée et arrêtée par l'enseignant à la fin du cours.</em>
+                </div>
+              </div>
+            </div>
 
             <!-- RETOUR & ÉVALUATION DE L'ENSEIGNANT -->
             <div v-if="getTeacherFeedbackForExercise(ex.id)" class="ex-teacher-feedback-card">
@@ -2710,6 +2839,176 @@ function formatSize(bytes) {
   font-style: italic;
   color: var(--vp-c-text-2) !important;
   margin-top: 4px !important;
+}
+
+
+/* STYLES RETOUR & CORRECTION IA */
+.ex-ai-feedback-card {
+  margin-top: 1rem;
+  background: var(--vp-c-bg);
+  border: 1.5px solid #6366f1;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.08);
+}
+.ai-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(139, 92, 246, 0.06));
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.ai-author-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ai-avatar {
+  font-size: 1.5rem;
+  background: white;
+  padding: 4px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+.ai-author-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #4f46e5;
+}
+.ai-author-date {
+  font-size: 0.78rem;
+  color: var(--vp-c-text-2);
+}
+.ai-score-badge {
+  background: #4f46e5;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.ai-card-body {
+  padding: 14px;
+}
+.ai-summary-callout {
+  background: var(--vp-c-bg-soft);
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  border-left: 3px solid #6366f1;
+}
+.ai-criteria-box {
+  margin-bottom: 14px;
+  overflow-x: auto;
+}
+.ai-table-title {
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  color: var(--vp-c-text-1);
+}
+.ai-rubric-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  background: var(--vp-c-bg-soft);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.ai-rubric-table th {
+  background: rgba(99, 102, 241, 0.1);
+  padding: 8px 10px;
+  text-align: left;
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+}
+.ai-rubric-table td {
+  padding: 8px 10px;
+  border-top: 1px solid var(--vp-c-divider);
+  vertical-align: top;
+}
+.ai-rubric-table .col-name {
+  width: 32%;
+}
+.ai-rubric-table .col-score {
+  width: 15%;
+  white-space: nowrap;
+  color: #4f46e5;
+}
+.ai-rubric-table .col-justif {
+  color: var(--vp-c-text-2);
+  line-height: 1.4;
+}
+.ai-feedback-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.ai-col {
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 0.84rem;
+}
+.ai-col.strengths {
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+}
+.ai-col.improvements {
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+.ai-col-heading {
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+}
+.ai-col.strengths .ai-col-heading {
+  color: #16a34a;
+}
+.ai-col.improvements .ai-col-heading {
+  color: #d97706;
+}
+.ai-col ul {
+  margin: 0;
+  padding-left: 16px;
+}
+.ai-col li {
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+.ai-next-steps {
+  display: flex;
+  gap: 10px;
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.84rem;
+  margin-bottom: 12px;
+  align-items: flex-start;
+}
+.ns-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+.ai-next-steps p {
+  margin: 2px 0 0 0;
+  line-height: 1.4;
+  color: var(--vp-c-text-1);
+}
+.ai-disclaimer {
+  font-size: 0.76rem;
+  color: var(--vp-c-text-3);
+  text-align: right;
+  border-top: 1px dashed var(--vp-c-divider);
+  padding-top: 8px;
+  margin-top: 4px;
 }
 
 </style>

@@ -282,10 +282,10 @@ function saveAllDeadlines() {
 }
 
 function handleResetDeadlines() {
-  if (confirm('Voulez-vous vraiment réinitialiser toutes les échéances aux dates de départ du calendrier officiel ?')) {
+  if (confirm('Voulez-vous vraiment effacer toutes les échéances ? Les étudiants n\'auront plus aucune date limite imposée.')) {
     userStore.resetDeadlinesToDefault()
     initDeadlinesForm()
-    saveAllDeadlinesStatus.value = '🔄 Toutes les échéances ont été réinitialisées aux dates initiales.'
+    saveAllDeadlinesStatus.value = '🗑️ Toutes les échéances ont été effacées.'
     setTimeout(() => {
       saveAllDeadlinesStatus.value = ''
     }, 4000)
@@ -1459,8 +1459,8 @@ function exportAllResultsToExcel() {
             <button @click="saveAllDeadlines" class="btn-save-all-deadlines" title="Enregistrer toutes les dates de remise saisies">
               💾 Enregistrer toutes les échéances
             </button>
-            <button @click="handleResetDeadlines" class="btn-reset-deadlines-subtle" title="Rétablir les dates d'origine du cours">
-              🔄 Réinitialiser par défaut
+            <button @click="handleResetDeadlines" class="btn-reset-deadlines-subtle" title="Effacer toutes les dates de remise">
+              🗑️ Effacer toutes les échéances
             </button>
           </div>
         </div>
@@ -1475,14 +1475,14 @@ function exportAllResultsToExcel() {
           <div class="dkpi-card">
             <span class="dkpi-icon">📋</span>
             <div>
-              <div class="dkpi-val">15</div>
+              <div class="dkpi-val">{{ OFFICIAL_EVALUATION_ITEMS.length }}</div>
               <div class="dkpi-lbl">Travaux au programme (200 pts)</div>
             </div>
           </div>
           <div class="dkpi-card green">
             <span class="dkpi-icon">🟢</span>
             <div>
-              <div class="dkpi-val">{{ Object.values(deadlinesForm).filter(d => !!d).length }} / 15</div>
+              <div class="dkpi-val">{{ Object.values(deadlinesForm).filter(d => !!d).length }} / {{ OFFICIAL_EVALUATION_ITEMS.length }}</div>
               <div class="dkpi-lbl">Échéances actives fixées</div>
             </div>
           </div>

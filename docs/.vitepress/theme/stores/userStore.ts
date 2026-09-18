@@ -285,9 +285,7 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     shortTitle: 'Quiz Diagnostiques',
     part: 1,
     partLabel: 'Partie 1 : Travaux Plateforme (100 pts)',
-    maxPoints: 20,
-    deadline: '2026-09-16 23:59',
-    deadlineLabel: '16/09/2026'
+    maxPoints: 20
   },
   {
     id: 'exercice-01',
@@ -296,9 +294,7 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     part: 1,
     partLabel: 'Partie 1 : Travaux Plateforme (100 pts)',
     maxPoints: 10,
-    docLink: 'https://docs.google.com/document/d/1b1QhnOoDNyCSdAIEAZx_xq96hQxZsUJH/preview',
-    deadline: '2026-09-16 23:59',
-    deadlineLabel: '16/09/2026'
+    docLink: 'https://docs.google.com/document/d/1b1QhnOoDNyCSdAIEAZx_xq96hQxZsUJH/preview'
   },
   {
     id: 'exercice-02',
@@ -307,9 +303,7 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     part: 1,
     partLabel: 'Partie 1 : Travaux Plateforme (100 pts)',
     maxPoints: 10,
-    docLink: 'https://docs.google.com/document/d/1o9vsf5fptzG1EH56oycz7SkD_UwmUKXm/preview',
-    deadline: '2026-09-17 23:59',
-    deadlineLabel: '17/09/2026'
+    docLink: 'https://docs.google.com/document/d/1o9vsf5fptzG1EH56oycz7SkD_UwmUKXm/preview'
   },
   {
     id: 'exercice-03',
@@ -318,9 +312,7 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     part: 1,
     partLabel: 'Partie 1 : Travaux Plateforme (100 pts)',
     maxPoints: 10,
-    docLink: 'https://docs.google.com/document/d/12XENuZM1WVyeCnRfu62Oh1_tG8Gkc1Z1/preview',
-    deadline: '2026-09-18 12:00',
-    deadlineLabel: '18/09/2026 (12h)'
+    docLink: 'https://docs.google.com/document/d/12XENuZM1WVyeCnRfu62Oh1_tG8Gkc1Z1/preview'
   },
   {
     id: 'exercice-04',
@@ -329,9 +321,7 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     part: 1,
     partLabel: 'Partie 1 : Travaux Plateforme (100 pts)',
     maxPoints: 10,
-    docLink: 'https://docs.google.com/document/d/1kUSfjlioxrG-i-ZrVbzQOpxH072f_2db/preview',
-    deadline: '2026-09-22 23:59',
-    deadlineLabel: '22/09/2026'
+    docLink: 'https://docs.google.com/document/d/1kUSfjlioxrG-i-ZrVbzQOpxH072f_2db/preview'
   },
   {
     id: 'exercice-05',
@@ -340,9 +330,7 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     part: 1,
     partLabel: 'Partie 1 : Travaux Plateforme (100 pts)',
     maxPoints: 10,
-    docLink: 'https://docs.google.com/document/d/1GuqhxxFNJllg4vR_wLeD5A4CtYNyJ4mj/preview',
-    deadline: '2026-09-25 23:59',
-    deadlineLabel: '25/09/2026'
+    docLink: 'https://docs.google.com/document/d/1GuqhxxFNJllg4vR_wLeD5A4CtYNyJ4mj/preview'
   },
   {
     id: 'exercice-06',
@@ -351,9 +339,7 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     part: 1,
     partLabel: 'Partie 1 : Travaux Plateforme (100 pts)',
     maxPoints: 10,
-    docLink: 'https://docs.google.com/document/d/1mfCTqwo-2l9k_wdLzIu3qRWOJuBxrqJv/preview',
-    deadline: '2026-09-29 23:59',
-    deadlineLabel: '29/09/2026'
+    docLink: 'https://docs.google.com/document/d/1mfCTqwo-2l9k_wdLzIu3qRWOJuBxrqJv/preview'
   },
   {
     id: 'exercice-07',
@@ -362,9 +348,7 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     part: 1,
     partLabel: 'Partie 1 : Travaux Plateforme (100 pts)',
     maxPoints: 10,
-    docLink: 'https://docs.google.com/document/d/1Vjy9xrqLG-xuktmMmmOQ6Kh8I-hXiIzV/preview',
-    deadline: '2026-10-06 23:59',
-    deadlineLabel: '06/10/2026'
+    docLink: 'https://docs.google.com/document/d/1Vjy9xrqLG-xuktmMmmOQ6Kh8I-hXiIzV/preview'
   },
   {
     id: 'exercice-08',
@@ -373,9 +357,7 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     part: 1,
     partLabel: 'Partie 1 : Travaux Plateforme (100 pts)',
     maxPoints: 10,
-    docLink: 'https://docs.google.com/document/d/1MV1xWWb5ZtcuRhFn_JIVG6UHeFle6IUI/preview',
-    deadline: '2026-10-13 23:59',
-    deadlineLabel: '13/10/2026'
+    docLink: 'https://docs.google.com/document/d/1MV1xWWb5ZtcuRhFn_JIVG6UHeFle6IUI/preview'
   },
   // Partie 2 : Projet Jeu de Société Didactique (100 pts global)
   {
@@ -384,9 +366,7 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     shortTitle: 'Projet Jeu (Note 100 pts)',
     part: 2,
     partLabel: 'Partie 2 : Projet Jeu de Société (100 pts)',
-    maxPoints: 100,
-    deadline: '2026-11-20 23:59',
-    deadlineLabel: '20/11/2026'
+    maxPoints: 100
   },
   // Étapes de suivi & réalisations intermédiaires du projet (sans pondération séparée)
   {
@@ -397,9 +377,7 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     partLabel: 'Partie 2 : Projet Jeu de Société (100 pts)',
     maxPoints: 0,
     isProjectStep: true,
-    docLink: 'https://docs.google.com/document/d/1af3aH5FiR31N4FB99VrFq6628kiFFbly/preview',
-    deadline: '2026-11-20 23:59',
-    deadlineLabel: '20/11/2026'
+    docLink: 'https://docs.google.com/document/d/1af3aH5FiR31N4FB99VrFq6628kiFFbly/preview'
   },
   {
     id: 'exercice-10',
@@ -409,9 +387,7 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     partLabel: 'Partie 2 : Projet Jeu de Société (100 pts)',
     maxPoints: 0,
     isProjectStep: true,
-    docLink: 'https://docs.google.com/document/d/1kSoMRpjySi0DvjA0S1W4b8BoaDQrXNZh/preview',
-    deadline: '2026-11-20 23:59',
-    deadlineLabel: '20/11/2026'
+    docLink: 'https://docs.google.com/document/d/1kSoMRpjySi0DvjA0S1W4b8BoaDQrXNZh/preview'
   },
   {
     id: 'exercice-11',
@@ -421,9 +397,7 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     partLabel: 'Partie 2 : Projet Jeu de Société (100 pts)',
     maxPoints: 0,
     isProjectStep: true,
-    docLink: 'https://docs.google.com/document/d/1CzyMJRbjyvYVh7XP83Lx4tjxnq23oHXX/preview',
-    deadline: '2026-11-20 23:59',
-    deadlineLabel: '20/11/2026'
+    docLink: 'https://docs.google.com/document/d/1CzyMJRbjyvYVh7XP83Lx4tjxnq23oHXX/preview'
   },
   {
     id: 'exercice-12',
@@ -433,9 +407,7 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     partLabel: 'Partie 2 : Projet Jeu de Société (100 pts)',
     maxPoints: 0,
     isProjectStep: true,
-    docLink: 'https://docs.google.com/document/d/1Ov_huVW9al2DKuoBmW89QO3ZqE5E-nzU/preview',
-    deadline: '2026-11-20 23:59',
-    deadlineLabel: '20/11/2026'
+    docLink: 'https://docs.google.com/document/d/1Ov_huVW9al2DKuoBmW89QO3ZqE5E-nzU/preview'
   },
   {
     id: 'exercice-13',
@@ -445,9 +417,7 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     partLabel: 'Partie 2 : Projet Jeu de Société (100 pts)',
     maxPoints: 0,
     isProjectStep: true,
-    docLink: 'https://docs.google.com/document/d/1H_88UJvPPezdUXw1Vt8_U9wtsaFouepU/preview',
-    deadline: '2026-11-20 23:59',
-    deadlineLabel: '20/11/2026'
+    docLink: 'https://docs.google.com/document/d/1H_88UJvPPezdUXw1Vt8_U9wtsaFouepU/preview'
   },
   {
     id: 'exercice-14',
@@ -457,9 +427,7 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     partLabel: 'Partie 2 : Projet Jeu de Société (100 pts)',
     maxPoints: 0,
     isProjectStep: true,
-    docLink: 'https://docs.google.com/document/d/1JO_9ayYt3IqZfStfUPkzT3GDOF65VBxQ/preview',
-    deadline: '2026-11-20 23:59',
-    deadlineLabel: '20/11/2026'
+    docLink: 'https://docs.google.com/document/d/1JO_9ayYt3IqZfStfUPkzT3GDOF65VBxQ/preview'
   },
   {
     id: 'exercice-15',
@@ -469,9 +437,7 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     partLabel: 'Partie 2 : Projet Jeu de Société (100 pts)',
     maxPoints: 0,
     isProjectStep: true,
-    docLink: 'https://docs.google.com/document/d/1uIheBr_KU2Dh2TjYkegz7lHixsUNxs4t/preview',
-    deadline: '2026-11-20 23:59',
-    deadlineLabel: '20/11/2026'
+    docLink: 'https://docs.google.com/document/d/1uIheBr_KU2Dh2TjYkegz7lHixsUNxs4t/preview'
   },
   {
     id: 'exercice-16',
@@ -481,9 +447,7 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     partLabel: 'Partie 2 : Projet Jeu de Société (100 pts)',
     maxPoints: 0,
     isProjectStep: true,
-    docLink: 'https://docs.google.com/document/d/1Tm15GqKSwutH1MDbaGYJaWByliC17iRT/preview',
-    deadline: '2026-11-20 23:59',
-    deadlineLabel: '20/11/2026'
+    docLink: 'https://docs.google.com/document/d/1Tm15GqKSwutH1MDbaGYJaWByliC17iRT/preview'
   }
 ]
 
@@ -1525,24 +1489,15 @@ export const userStore = {
     return state.deadlines
   },
 
-  // Récupérer l'échéance effective d'un exercice (modulée par l'admin ou par défaut)
+  // Récupérer l'échéance effective d'un exercice (fixée par l'enseignant, aucune par défaut)
   getExerciseDeadline(exerciseId: string): { deadline: string, deadlineLabel: string, isDefined: boolean, isCustom: boolean } {
     const custom = state.deadlines[exerciseId]
-    if (custom && custom.deadline) {
+    if (custom && custom.deadline && custom.deadline.trim() !== '') {
       return {
         deadline: custom.deadline,
         deadlineLabel: custom.deadlineLabel || formatDeadlineDisplay(custom.deadline),
         isDefined: true,
         isCustom: true
-      }
-    }
-    const def = OFFICIAL_EVALUATION_ITEMS.find(i => i.id === exerciseId)
-    if (def && def.deadline) {
-      return {
-        deadline: def.deadline,
-        deadlineLabel: def.deadlineLabel || formatDeadlineDisplay(def.deadline),
-        isDefined: true,
-        isCustom: false
       }
     }
     return {
@@ -1553,45 +1508,47 @@ export const userStore = {
     }
   },
 
-  // Mettre à jour l'échéance d'un exercice individuel
+  // Mettre à jour l'échéance d'un exercice individuel (ou la retirer si vide)
   setExerciseDeadline(exerciseId: string, deadline: string, deadlineLabel?: string) {
+    const newDeadlines = { ...state.deadlines }
     if (!deadline || !deadline.trim()) {
-      delete state.deadlines[exerciseId]
+      delete newDeadlines[exerciseId]
     } else {
       const cleanDate = deadline.trim()
-      state.deadlines[exerciseId] = {
+      newDeadlines[exerciseId] = {
         deadline: cleanDate,
         deadlineLabel: deadlineLabel || formatDeadlineDisplay(cleanDate)
       }
     }
+    state.deadlines = newDeadlines
     setStorage(STORAGE_KEY_DEADLINES, state.deadlines)
-    return { success: true, message: 'Échéance mise à jour avec succès.' }
+    return { success: true, message: !deadline || !deadline.trim() ? 'Échéance retirée avec succès.' : 'Échéance enregistrée avec succès.' }
   },
 
   // Mettre à jour toutes les échéances en une seule fois
   setAllExerciseDeadlines(map: Record<string, string>) {
     let count = 0
+    const newDeadlines: Record<string, { deadline: string, deadlineLabel?: string }> = {}
     for (const [id, dateStr] of Object.entries(map)) {
       if (dateStr && dateStr.trim()) {
         const clean = dateStr.trim()
-        state.deadlines[id] = {
+        newDeadlines[id] = {
           deadline: clean,
           deadlineLabel: formatDeadlineDisplay(clean)
         }
         count++
-      } else {
-        delete state.deadlines[id]
       }
     }
+    state.deadlines = newDeadlines
     setStorage(STORAGE_KEY_DEADLINES, state.deadlines)
     return { success: true, count }
   },
 
-  // Rétablir toutes les échéances par défaut
+  // Effacer toutes les échéances
   resetDeadlinesToDefault() {
     state.deadlines = {}
     setStorage(STORAGE_KEY_DEADLINES, {})
-    return { success: true, message: 'Toutes les échéances ont été réinitialisées aux dates d\'origine.' }
+    return { success: true, message: 'Toutes les échéances ont été effacées.' }
   },
 
   register(firstName: string, lastName: string, email: string) {

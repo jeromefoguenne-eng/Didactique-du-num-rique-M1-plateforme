@@ -15,8 +15,6 @@ description: "Diaporamas et supports de cours officiels présentés lors des sé
   </p>
 
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
-    
-    <!-- Support 1 -->
     <div style="background: var(--vp-c-bg); border: 1px solid var(--vp-c-divider); border-radius: 10px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
       <div>
         <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 0.4rem;">
@@ -28,27 +26,14 @@ description: "Diaporamas et supports de cours officiels présentés lors des sé
         </p>
       </div>
       <div style="display: flex; flex-direction: column; gap: 8px;">
-        <a 
-          href="https://drive.google.com/uc?export=download&id=1ZWQL6l07GftrzZbUYcgj-A7LtIC1TFqU" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="btn-primary"
-          style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none !important; color: white !important; padding: 9px 16px; border-radius: 6px; font-weight: 600; font-size: 0.9rem; background: var(--vp-c-brand-1);"
-        >
+        <a href="https://drive.google.com/uc?export=download&id=1ZWQL6l07GftrzZbUYcgj-A7LtIC1TFqU" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none !important; color: white !important; padding: 9px 16px; border-radius: 6px; font-weight: 600; font-size: 0.9rem; background: var(--vp-c-brand-1);">
           <span>📥 Télécharger (.pptx) ↗</span>
         </a>
-        <a 
-          href="https://drive.google.com/file/d/1ZWQL6l07GftrzZbUYcgj-A7LtIC1TFqU/view?usp=sharing" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none !important; color: var(--vp-c-text-1) !important; padding: 8px 16px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);"
-        >
+        <a href="https://drive.google.com/file/d/1ZWQL6l07GftrzZbUYcgj-A7LtIC1TFqU/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none !important; color: var(--vp-c-text-1) !important; padding: 8px 16px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);">
           <span>📂 Ouvrir dans Google Drive ↗</span>
         </a>
       </div>
     </div>
-
-    <!-- Support 2 -->
     <div style="background: var(--vp-c-bg); border: 1px solid var(--vp-c-divider); border-radius: 10px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
       <div>
         <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 0.4rem;">
@@ -60,25 +45,14 @@ description: "Diaporamas et supports de cours officiels présentés lors des sé
         </p>
       </div>
       <div style="display: flex; flex-direction: column; gap: 8px;">
-        <a 
-          href="https://drive.google.com/uc?export=download&id=1wqulr627s9GmKiAQlCkDCk9pWOSn-HMH" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none !important; color: white !important; padding: 9px 16px; border-radius: 6px; font-weight: 600; font-size: 0.9rem; background: #ea580c;"
-        >
+        <a href="https://drive.google.com/uc?export=download&id=1wqulr627s9GmKiAQlCkDCk9pWOSn-HMH" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none !important; color: white !important; padding: 9px 16px; border-radius: 6px; font-weight: 600; font-size: 0.9rem; background: #ea580c;">
           <span>📥 Télécharger (.pptx) ↗</span>
         </a>
-        <a 
-          href="https://drive.google.com/file/d/1wqulr627s9GmKiAQlCkDCk9pWOSn-HMH/view?usp=sharing" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none !important; color: var(--vp-c-text-1) !important; padding: 8px 16px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);"
-        >
+        <a href="https://drive.google.com/file/d/1wqulr627s9GmKiAQlCkDCk9pWOSn-HMH/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none !important; color: var(--vp-c-text-1) !important; padding: 8px 16px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);">
           <span>📂 Ouvrir dans Google Drive ↗</span>
         </a>
       </div>
     </div>
-
   </div>
 </div>
 

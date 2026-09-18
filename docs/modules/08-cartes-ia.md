@@ -175,6 +175,15 @@ flowchart LR
     >
       <span>📥 Télécharger la fiche de l'Exercice 11 (.docx)</span>
     </a>
+
+    <a 
+      href="https://docs.google.com/document/d/1CzyMJRbjyvYVh7XP83Lx4tjxnq23oHXX/edit?usp=sharing" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: var(--vp-c-text-1) !important; padding: 10px 18px; border-radius: 8px; font-weight: 600; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);"
+    >
+      <span>📄 Ouvrir l'Exercice 11 sur Google Docs ↗</span>
+    </a>
   </div>
 
   <p style="margin-top: 1rem; margin-bottom: 0; font-size: 0.92rem; color: var(--vp-c-text-2);">
@@ -197,4 +206,5 @@ Testez votre compréhension de la conception de supports avec l'IA et portez un 
 ## Navigation
 - ⬅️ **[6.3 La photographie & composition](/modules/07-photographie-image)**
 - 🏠 **[06. Hub Projet Jeu de société](/modules/05-projet-jeu-societe)**
-- ➡️ **[6.5 Prototypage FabLab (Laser & 3D)](/modules/09-prototypage-fablab)**
+- ➡️ **[6.5 Fabriquer le plateau à la découpeuse laser](/modules/09-prototypage-fablab)**
+

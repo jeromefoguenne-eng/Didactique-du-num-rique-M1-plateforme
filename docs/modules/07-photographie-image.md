@@ -201,7 +201,68 @@ Exemple : campagne de l'organisation “Société pour les peuples menacés”�
 
 ---
 
+<div class="callout-exercise" style="margin: 2.2rem 0;">
+  <div class="callout-title" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+    <span>📸 Exercice 10 — Photographier le numérique</span>
+    <span style="font-size: 0.82rem; font-weight: 600; padding: 4px 10px; border-radius: 6px; background: rgba(59, 130, 246, 0.15); color: var(--vp-c-brand-1);">Seul ou en binôme</span>
+  </div>
+
+  <p style="margin-top: 0.8rem; font-size: 0.98rem; line-height: 1.6;">
+    <strong>Objectif :</strong> Mobiliser les techniques de composition photographique vues au cours pour construire des images qui transmettent un message sur la place du numérique dans notre société.
+  </p>
+
+  <div style="background: var(--vp-c-bg-soft); border-left: 4px solid var(--vp-c-brand-1); padding: 1.2rem; border-radius: 8px; margin: 1.2rem 0;">
+    <h4 style="margin-top: 0; color: var(--vp-c-brand-1);">1. Réalisation (6 photographies originales)</h4>
+    <p style="font-size: 0.93rem; margin-bottom: 0.5rem;">
+      À l’aide de votre smartphone, réalisez <strong>6 photographies originales</strong>. Vous devez appliquer une technique distincte pour chaque cliché :
+    </p>
+    <ol style="font-size: 0.92rem; margin-bottom: 1rem; line-height: 1.7;">
+      <li><strong>Surcadrage :</strong> créer un cadre dans le cadre pour guider le regard.</li>
+      <li><strong>Règle des tiers :</strong> positionner les points forts sur les lignes de force.</li>
+      <li><strong>Jeu sur le regard :</strong> orienter la tension visuelle et le hors-champ.</li>
+      <li><strong>Instant prégnant :</strong> capter le moment charnière qui raconte toute l'action.</li>
+      <li><strong>Opposition dans l’image :</strong> confronter deux éléments antagonistes.</li>
+      <li><strong>Référence ou analogie :</strong> faire écho à une œuvre ou un symbole connu.</li>
+    </ol>
+    <p style="font-size: 0.9rem; color: var(--vp-c-text-2); margin-bottom: 0;">
+      <em>Note :</em> Les photographies doivent nourrir une réflexion critique sur le numérique (hyperconnexion, IA, surveillance, fracture numérique, réseaux sociaux, relations humaines, etc.). Il ne suffit pas de photographier un écran : la composition doit porter le message.
+    </p>
+
+    <h4 style="margin-top: 1.2rem; color: var(--vp-c-brand-1);">2. Justification réflexive</h4>
+    <p style="font-size: 0.93rem; margin-bottom: 0;">
+      Rédigez un texte explicitant votre démarche : le message visé, vos choix de mise en scène, l'analyse de la technique employée pour chacune des six photographies et l'effet recherché sur le spectateur.
+    </p>
+  </div>
+
+  <div style="margin: 1.4rem 0; display: flex; flex-wrap: wrap; gap: 12px;">
+    <a 
+      href="/documents/Exercice-10-Photographie.docx" 
+      download
+      class="btn-primary"
+      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: white !important; padding: 10px 18px; border-radius: 8px; font-weight: 600; background: var(--vp-c-brand-1);"
+    >
+      <span>📥 Télécharger la fiche de l'Exercice 10 (.docx)</span>
+    </a>
+
+    <a 
+      href="https://docs.google.com/document/d/1kSoMRpjySi0DvjA0S1W4b8BoaDQrXNZh/edit?usp=sharing" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: var(--vp-c-text-1) !important; padding: 10px 18px; border-radius: 8px; font-weight: 600; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);"
+    >
+      <span>📄 Ouvrir l'Exercice 10 sur Google Docs ↗</span>
+    </a>
+  </div>
+
+  <p style="margin-top: 1rem; margin-bottom: 0; font-size: 0.92rem; color: var(--vp-c-text-2);">
+    📤 <strong>Dépôt du travail :</strong> Une fois vos 6 clichés et votre texte de justification réunis, déposez votre dossier dans votre <a href="/espace-membre"><strong>Espace Membre</strong></a> (onglet <em>« Dépôt de Travaux »</em>).
+  </p>
+</div>
+
+---
+
 ## Navigation
 - ⬅️ **[6.2 Créer les règles du jeu](/modules/06-regles-du-jeu)**
 - 🏠 **[06. Hub Projet Jeu de société](/modules/05-projet-jeu-societe)**
 - ➡️ **[6.4 Créer les cartes & supports avec l'IA](/modules/08-cartes-ia)**
+

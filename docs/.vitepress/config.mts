@@ -90,9 +90,11 @@ export default defineConfig({
             { text: "6.2 Créer les règles du jeu", link: "/modules/06-regles-du-jeu" },
             { text: "6.3 La photographie & composition", link: "/modules/07-photographie-image" },
             { text: "6.4 Créer les cartes & supports avec l'IA", link: "/modules/08-cartes-ia" },
-            { text: "6.5 [En construction] FabLab (Laser & 3D)", link: "/modules/09-prototypage-fablab" },
-            { text: "6.6 Capsule Vidéo de présentation", link: "/modules/10-capsule-video" },
-            { text: "6.7 [En construction] Tester le jeu", link: "/modules/11-playtest-evaluation" }
+            { text: "6.5 [En construction] Découpeuse laser", link: "/modules/09-prototypage-fablab" },
+            { text: "6.6 [En construction] Imprimante 3D (Pions)", link: "/modules/09-pions-3d" },
+            { text: "6.7 Concevoir une capsule vidéo", link: "/modules/10-capsule-video" },
+            { text: "6.8 Tester et faire tester le jeu", link: "/modules/11-playtest-evaluation" },
+            { text: "6.9 Présentation finale & Leçon FMTTN", link: "/modules/12-presentation-finale" }
           ]
         }
       ],

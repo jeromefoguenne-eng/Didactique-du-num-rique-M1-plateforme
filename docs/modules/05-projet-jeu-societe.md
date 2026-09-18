@@ -5,6 +5,13 @@ description: "Texte intégral du syllabus : Théories du jeu (Huizinga, Caillois
 
 # 06. Projet Jeu de Société : Ludopédagogie & Édumédias
 
+<div class="callout-concept" style="margin: 1.5rem 0 2rem 0;">
+  <div class="callout-title">🎲 Dispositif du Projet : Création d'un jeu de société ludo-éducatif</div>
+  <p>
+    Les étudiants vont constituer des <strong>groupes de 2 ou 3</strong> qui resteront <strong>figés pour tous les exercices</strong> liés à la création d'un jeu de société sur l'éducation aux médias. Vous devrez imaginer une thématique liée à l'éducation aux médias et développer un dispositif intégrant de nombreuses étapes numériques pour la création de ce jeu de société (photographie, IA, découpe laser, impression 3D, vidéo, etc.). Vous devrez enfin tester et faire tester votre dispositif et le présenter devant la classe.
+  </p>
+</div>
+
 ::: info Extrait intégral des Notes de cours
 Ce chapitre reproduit fidèlement et dans son intégralité le texte du syllabus officiel du cours de Didactique du numérique (Master 1 - HECh).
 :::
@@ -178,32 +185,46 @@ const subCategories = [
     image: "/images/subcategories/sub-5-3-graphics.jpg"
   },
   {
-    title: "6.4 Créer des cartes & supports avec l'IA",
+    title: "6.4 Créer les cartes & supports avec l'IA",
     tag: "IA Générative",
     desc: "Génération d'illustrations (Gemini), avatars cohérents, règles (ChatGPT), logo (Recraft) et mise en page (Canva).",
     link: "/modules/08-cartes-ia",
     image: "/images/subcategories/sub-5-4-cards-ai.jpg"
   },
   {
-    title: "6.5 Fabriquer le plateau et les pions (FabLab)",
+    title: "6.5 Fabriquer le plateau à la découpeuse laser",
     tag: "En construction",
-    desc: "Découpeuse laser pour le plateau et impression 3D pour les pions personnalisés au FabLab HECh.",
+    desc: "Découpeuse laser pour le plateau de jeu et gravure vectorielle au FabLab HECh.",
     link: "/modules/09-prototypage-fablab",
     image: "/images/subcategories/sub-5-5-fablab.jpg"
   },
   {
-    title: "6.6 Concevoir une capsule vidéo",
+    title: "6.6 Réaliser des pions grâce à l'imprimante 3D",
+    tag: "En construction",
+    desc: "Modélisation 3D, tranchage et impression des pions personnalisés au FabLab HECh.",
+    link: "/modules/09-pions-3d",
+    image: "/images/subcategories/sub-6-6-hardware.jpg"
+  },
+  {
+    title: "6.7 Concevoir une capsule vidéo",
     tag: "Capsule Vidéo",
-    desc: "Les règles du tournage (11.1), cadrage, prise de son, pitch dynamique de 3 à 5 min pour valoriser votre jeu.",
+    desc: "Les règles du tournage (11.1), cadrage, prise de son, pitch dynamique de 2 à 3 min pour valoriser votre jeu.",
     link: "/modules/10-capsule-video",
     image: "/images/subcategories/sub-5-6-video.jpg"
   },
   {
-    title: "6.7 Tester et faire tester le jeu",
-    tag: "En construction",
-    desc: "Séance de playtest en conditions réelles, récolte des retours des pairs et ajustement des mécaniques.",
+    title: "6.8 Tester et faire tester le jeu",
+    tag: "Playtest & Données",
+    desc: "Test par les pairs en conditions réelles, questionnaire Google Forms, analyse quantitative et qualitative sur Google Sheets.",
     link: "/modules/11-playtest-evaluation",
     image: "/images/subcategories/sub-5-7-playtest.jpg"
+  },
+  {
+    title: "6.9 Présentation finale devant la classe",
+    tag: "Exercice Final",
+    desc: "Présentation de 20 min du dispositif complet, démonstration interactive et articulation avec la leçon FMTTN.",
+    link: "/modules/12-presentation-finale",
+    image: "/images/subcategories/sub-4-3-lessonplan.jpg"
   }
 ]
 </script>

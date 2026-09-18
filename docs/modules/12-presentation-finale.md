@@ -72,4 +72,5 @@ L'objectif est de montrer ce que vous avez créé, comment vous l'avez créé et
 ## Navigation
 - ⬅️ **[6.8 Tester et faire tester le jeu](/modules/11-playtest-evaluation)**
 - 🏠 **[06. Hub Projet Jeu de société](/modules/05-projet-jeu-societe)**
-- ➡️ **[7. Guide & Évaluation du cours](/guide/)**
+- ➡️ **[7. Évaluation du cours & Auto-évaluation](/modules/13-evaluation-cours)**
+

@@ -96,6 +96,13 @@ export default defineConfig({
             { text: "6.8 Tester et faire tester le jeu", link: "/modules/11-playtest-evaluation" },
             { text: "6.9 Présentation finale & Leçon FMTTN", link: "/modules/12-presentation-finale" }
           ]
+        },
+        {
+          text: "7. Évaluation du cours",
+          collapsed: false,
+          items: [
+            { text: "7. Évaluation & Auto-évaluation", link: "/modules/13-evaluation-cours" }
+          ]
         }
       ],
 
@@ -108,11 +115,11 @@ export default defineConfig({
           ]
         },
         {
-          text: "7. Guide & Évaluation",
+          text: "Guide & Modalités (200 pts)",
           items: [
             { text: "📌 Vue d'ensemble (Hub)", link: "/guide/" },
-            { text: "7.1 Guide de la plateforme & de l'étudiant", link: "/guide/distanciel" },
-            { text: "7.2 Modalités d'évaluation (sur 200 pts)", link: "/guide/evaluation" }
+            { text: "Guide de la plateforme & distanciel", link: "/guide/distanciel" },
+            { text: "Modalités d'évaluation (sur 200 pts)", link: "/guide/evaluation" }
           ]
         }
       ],

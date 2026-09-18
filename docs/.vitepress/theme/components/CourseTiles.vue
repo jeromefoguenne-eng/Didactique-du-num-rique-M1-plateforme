@@ -52,15 +52,23 @@ const tiles = [
   },
   {
     id: 7,
-    title: "7. Guide & Évaluation",
-    tag: "Modalités sur 200 pts",
+    title: "7. Évaluation du cours",
+    tag: "Bilan & Auto-évaluation",
+    desc: "Évaluation de la formation, retours sur les ateliers et grille d'auto-évaluation réflexive individuelle pour chaque étudiant.",
+    link: "/modules/13-evaluation-cours",
+    image: "/images/tile-evaluer-cours.jpg"
+  },
+  {
+    id: 8,
+    title: "Guide & Modalités (200 pts)",
+    tag: "Organisation & Barème",
     desc: "Rôle de la plateforme, organisation du travail, calendrier et modalités de l'évaluation sur 200 points.",
     link: "/guide/",
     image: "/images/tile-7-evaluation.jpg"
   },
   {
-    id: 8,
-    title: "8. Ressources & Outils",
+    id: 9,
+    title: "Ressources & Outils",
     tag: "Syllabus, Docs & Slides",
     desc: "Syllabus Google Docs, référentiels officiels (FMTTN, CSEM), présentations PowerPoint et bibliographie APA.",
     link: "/ressources/",

@@ -66,7 +66,7 @@ L'intérêt de ce modèle pour l'enseignement du numérique est donc de déplace
   </p>
   <div style="margin: 1.2rem 0;">
     <a 
-      href="https://docs.google.com/document/d/1mfCTqwo-2l9k_wdLzIu3qRWOJuBxrqJv/preview" 
+      href="https://docs.google.com/document/d/1Vjy9xrqLG-xuktmMmmOQ6Kh8I-hXiIzV/preview" 
       target="_blank" 
       rel="noopener noreferrer"
       class="btn-primary"

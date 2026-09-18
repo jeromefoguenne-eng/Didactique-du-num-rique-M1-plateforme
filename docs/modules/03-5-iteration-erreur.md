@@ -36,16 +36,36 @@ Par exemple, les élèves peuvent créer une première version d'un jeu numériq
 ## 📝 Exercice Pratique Associé : Méthode Péda 5 (Conception Itérative)
 
 <div class="callout-exercise" style="margin: 1.5rem 0;">
-  <div class="callout-title">📋 Méthode Péda 5 — Concevoir, Tester & Améliorer (Boucle Itérative & Retours Utilisateurs)</div>
+  <div class="callout-title">📋 Exercice 06 — Concevoir, tester et améliorer (Démarche itérative & Genially)</div>
   <p>
-    Cet atelier met en pratique le principe fondamental de la démarche de conception itérative : une première production n'est jamais définitive, elle constitue un prototype destiné à être éprouvé.
+    Cet exercice permet d'expérimenter concrètement le principe fondamental de la conception itérative : une première production n'est jamais définitive, elle constitue un prototype destiné à être testé auprès de véritables utilisateurs, analysé puis perfectionné.
   </p>
-  <div style="background: var(--vp-c-bg-soft); border-left: 4px solid var(--vp-c-brand-1); padding: 1rem; border-radius: 8px; margin: 1rem 0; font-size: 0.95rem;">
-    <strong>Cycle de travail de l'activité :</strong><br />
-    <code>Concevoir un prototype numérique (Genially, Canva interactif)</code> ➔ <code>Élaborer un questionnaire d'évaluation (Google Forms)</code> ➔ <code>Faire tester par un groupe d'utilisateurs</code> ➔ <code>Analyser les métriques et feedbacks</code> ➔ <code>Développer la version 2 optimisée</code>.
+
+  <div style="margin: 1.2rem 0;">
+    <a 
+      href="https://docs.google.com/document/d/1mfCTqwo-2l9k_wdLzIu3qRWOJuBxrqJv/preview" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="btn-primary"
+      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: white !important; padding: 9px 16px; border-radius: 8px; font-weight: 600; background: var(--vp-c-brand-1);"
+    >
+      <span>📄 Ouvrir l'Exercice 06 sur Google Docs (Lecture seule) →</span>
+    </a>
   </div>
-  <p style="font-size: 0.9rem; color: var(--vp-c-text-2);">
-    🎯 <strong>Mobilisation FMTTN :</strong> Création de contenus numériques, collecte et analyse de données utilisateur, posture réflexive et résolution de problèmes en équipe.
+
+  <div style="background: var(--vp-c-bg-soft); border-left: 4px solid var(--vp-c-brand-1); padding: 1rem; border-radius: 8px; margin: 1rem 0; font-size: 0.93rem; line-height: 1.6;">
+    <strong>Mission & Déroulement de l'atelier (2 heures) :</strong>
+    <ol style="margin: 0.5rem 0 0 1.2rem; padding: 0;">
+      <li><strong>Concevoir (45 min) :</strong> En groupes de 3 à 4, concevez avec Genially une première version d'un mini-jeu sur le tri des déchets (public 10–12 ans) avec objectifs, règles et scénario.</li>
+      <li><strong>Concevoir le test (15 min) :</strong> Créez avec Google Forms un questionnaire d'évaluation pour les testeurs (compréhension, ergonomie, intérêt, difficultés, améliorations).</li>
+      <li><strong>Faire tester (15 min) :</strong> Échangez votre jeu avec un autre groupe en autonomie complète sans explication préalable.</li>
+      <li><strong>Analyser et améliorer (25 min) :</strong> Analysez les retours du formulaire et appliquez au moins 3 améliorations concrètes sur votre jeu.</li>
+      <li><strong>Présenter & Réfléchir (20 min) :</strong> Présentez la V1, les métriques du test, les ajustements de la V2 et répondez à la question de recul réflexif.</li>
+    </ol>
+  </div>
+
+  <p style="margin-top: 1rem; margin-bottom: 0; font-size: 0.92rem; color: var(--vp-c-text-2);">
+    📤 <strong>Dépôt du travail :</strong> Une fois votre compte-rendu rédigé, déposez votre document directement sur votre <a href="/espace-membre"><strong>Espace Membre</strong></a> (onglet <em>« Dépôt de Travaux »</em>).
   </p>
 </div>
 

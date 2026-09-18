@@ -89,7 +89,7 @@ export default defineConfig({
             { text: "6.1 Ludopédagogie & Édumédias", link: "/modules/05-projet-jeu-societe#5-1-une-methodologie-pedagogique-fondee-sur-l-experience-ludique" },
             { text: "6.2 Créer les règles du jeu", link: "/modules/06-regles-du-jeu" },
             { text: "6.3 La photographie & composition", link: "/modules/07-photographie-image" },
-            { text: "6.4 [En construction] Cartes avec l'IA", link: "/modules/08-cartes-ia" },
+            { text: "6.4 Créer les cartes & supports avec l'IA", link: "/modules/08-cartes-ia" },
             { text: "6.5 [En construction] FabLab (Laser & 3D)", link: "/modules/09-prototypage-fablab" },
             { text: "6.6 Capsule Vidéo de présentation", link: "/modules/10-capsule-video" },
             { text: "6.7 [En construction] Tester le jeu", link: "/modules/11-playtest-evaluation" }

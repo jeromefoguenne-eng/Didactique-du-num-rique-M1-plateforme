@@ -164,42 +164,42 @@ Tester, évaluer et améliorer : les groupes organisent une phase de playtest a
 <script setup>
 const subCategories = [
   {
-    title: "5.2 Créer les règles du jeu",
+    title: "6.2 Créer les règles du jeu",
     tag: "Règles du Jeu",
     desc: "Structure formelle des règles, clarté, accessibilité, équilibre des mécaniques et ergonomie de lecture.",
     link: "/modules/06-regles-du-jeu",
     image: "/images/subcategories/sub-5-2-rules.jpg"
   },
   {
-    title: "5.3 La photographie & composition visuelle",
+    title: "6.3 La photographie & composition visuelle",
     tag: "Photographie",
     desc: "Repères historiques, icônes, droit à l'image (peut-on tout photographier ?) et règles de composition visuelle.",
     link: "/modules/07-photographie-image",
     image: "/images/subcategories/sub-5-3-graphics.jpg"
   },
   {
-    title: "5.4 Créer des cartes avec l'IA",
-    tag: "En construction",
-    desc: "Génération d'illustrations cohérentes, prompts de style et questions éthiques liées aux modèles génératifs.",
+    title: "6.4 Créer des cartes & supports avec l'IA",
+    tag: "IA Générative",
+    desc: "Génération d'illustrations (Gemini), avatars cohérents, règles (ChatGPT), logo (Recraft) et mise en page (Canva).",
     link: "/modules/08-cartes-ia",
     image: "/images/subcategories/sub-5-4-cards-ai.jpg"
   },
   {
-    title: "5.5 Fabriquer le plateau et les pions (FabLab)",
+    title: "6.5 Fabriquer le plateau et les pions (FabLab)",
     tag: "En construction",
     desc: "Découpeuse laser pour le plateau et impression 3D pour les pions personnalisés au FabLab HECh.",
     link: "/modules/09-prototypage-fablab",
     image: "/images/subcategories/sub-5-5-fablab.jpg"
   },
   {
-    title: "5.6 Concevoir une capsule vidéo",
+    title: "6.6 Concevoir une capsule vidéo",
     tag: "Capsule Vidéo",
     desc: "Les règles du tournage (11.1), cadrage, prise de son, pitch dynamique de 3 à 5 min pour valoriser votre jeu.",
     link: "/modules/10-capsule-video",
     image: "/images/subcategories/sub-5-6-video.jpg"
   },
   {
-    title: "5.7 Tester et faire tester le jeu",
+    title: "6.7 Tester et faire tester le jeu",
     tag: "En construction",
     desc: "Séance de playtest en conditions réelles, récolte des retours des pairs et ajustement des mécaniques.",
     link: "/modules/11-playtest-evaluation",

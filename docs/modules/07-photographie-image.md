@@ -199,3 +199,9 @@ Ce mouvement est né en Autriche et en Allemagne vers 1910. Il part du principe 
 
 Exemple : campagne de l'organisation “Société pour les peuples menacés” : le photographe reconstitue un fusil avec des morceaux de squelette humain. Le tout (fusil) prend donc un sens différent que l’ensemble des parties (morceaux de squelettes). Cela donne évidemment un sens différent à l’image en dénonçant la violence et la mort que sème la guerre.
 
+---
+
+## Navigation
+- ⬅️ **[6.2 Créer les règles du jeu](/modules/06-regles-du-jeu)**
+- 🏠 **[06. Hub Projet Jeu de société](/modules/05-projet-jeu-societe)**
+- ➡️ **[6.4 Créer les cartes & supports avec l'IA](/modules/08-cartes-ia)**

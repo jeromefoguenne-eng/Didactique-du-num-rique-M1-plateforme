@@ -1315,6 +1315,96 @@ const MODULE_QUESTIONS = {
         "Progression logique et visible entre les trois niveaux de maîtrise."
       ]
     }
+  ],
+  '08': [
+    {
+      id: 'q1',
+      type: 'qcm',
+      title: "1. Le statut didactique de l'IA dans la conception de supports",
+      text: "Selon le syllabus, comment l'intelligence artificielle générative doit-elle être considérée lors de la création de supports pédagogiques et de jeux ?",
+      options: [
+        "Comme un substitut autonome remplaçant le travail de réflexion de l'enseignant.",
+        "Comme un outil d'assistance à la conception, l'enseignant devant conserver la maîtrise des objectifs, des contenus, de la progression et des choix didactiques.",
+        "Comme un simple gadget récréatif sans aucune plus-value de production.",
+        "Comme un moteur de recherche encyclopédique infaillible ne commettant aucune erreur."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "L'IA fournit une matière première brute ; l'enjeu didactique réside dans la maîtrise humaine des intentions pédagogiques et des arbitrages de contenu."
+    },
+    {
+      id: 'q2',
+      type: 'qcm',
+      title: "2. La méthode du « saucissonner la matière » avec ChatGPT",
+      text: "Pourquoi est-il fortement recommandé de « saucissonner la matière » plutôt que de demander à ChatGPT de générer l'ensemble des règles ou des cartes en un seul prompt ?",
+      options: [
+        "Pour contourner la limite de caractères de l'imprimante de l'école.",
+        "Pour conserver le contrôle cognitif sur le contenu, vérifier chaque unité séparément et éviter qu'une production massive ne devienne confuse ou sujette aux hallucinations.",
+        "Parce que ChatGPT refuse catégoriquement les prompts contenant plus de deux paragraphes.",
+        "Uniquement pour faire durer le projet sur plusieurs semaines de cours."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Le découpage en unités identifiées permet d'ajuster précisément chaque bloc (objectifs, mécaniques, rédaction) avant d'harmoniser l'ensemble."
+    },
+    {
+      id: 'q3',
+      type: 'qcm',
+      title: "3. La démarche multimodale avec Google Gemini",
+      text: "Dans le cadre de la création visuelle des cartes de jeu, que permet spécifiquement l'approche multimodale avec Google Gemini ?",
+      options: [
+        "Traduire des fichiers sonores directement en code binaire.",
+        "Partir d'une image existante (croquis, photo, gabarit), en analyser les caractéristiques visuelles et demander des transformations, des variations stylistiques ou de nouvelles propositions ciblées.",
+        "Copier automatiquement des images protégées par le droit d'auteur sans aucune modification.",
+        "Créer des plateaux de jeu physiques sans passer par le FabLab."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Le multimodal permet d'alimenter l'IA avec ses propres références visuelles pour orienter précisément le rendu graphique souhaité."
+    },
+    {
+      id: 'q4',
+      type: 'qcm',
+      title: "4. La fonction indispensable de Canva dans la chaîne de production",
+      text: "Pourquoi une image brute générée par IA ne constitue-t-elle que rarement un produit final directement exploitable pour un jeu de cartes ?",
+      options: [
+        "Parce que les images d'IA s'effacent automatiquement au bout de 24 heures.",
+        "Parce que l'IA produit une matière première visuelle brute qui nécessite recadrage, détourage, hiérarchie typographique, harmonisation de la charte et gabarit d'impression.",
+        "Parce que le logiciel Canva interdit l'importation de visuels créés par des algorithmes génératifs.",
+        "Parce que les cartes de jeu ne doivent comporter aucun texte écrit."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Canva assure la finalisation ergonomique et éditoriale : calibrage aux formats réels de cartes, contrastes, ajout de pictogrammes et lisibilité des textes."
+    },
+    {
+      id: 'q5',
+      type: 'qcm',
+      title: "5. La cohérence d'un avatar récurrent sur différentes cartes",
+      text: "Pour maintenir la cohérence visuelle d'un personnage de jeu à travers différentes cartes et postures, quelle démarche le syllabus préconise-t-il ?",
+      options: [
+        "Réécrire un prompt totalement imprécis et différent à chaque tirage sans garder de trace.",
+        "Établir une fiche d'identité visuelle détaillée (physique, tenue, palette de couleurs, accessoires, style) et la réutiliser comme ancrage permanent, éventuellement via un agent dédié (Gem ou Mistral).",
+        "Demander à l'IA de choisir elle-même un nouveau personnage à chaque génération.",
+        "Abandonner toute illustration de personnage pour ne mettre que du texte brut sur les cartes."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "L'ancrage d'une fiche d'identité descriptive et la conservation d'images de référence réduisent les dérives stylistiques inhérentes aux modèles génératifs."
+    },
+    {
+      id: 'q6',
+      type: 'open',
+      title: "6. Réflexivité sur l'Exercice 11 (Création des supports du jeu avec l'IA)",
+      text: "À partir de votre travail de conception des cartes, du logo et du manuel de règles de votre jeu (Exercice 11), quelles difficultés majeures avez-vous rencontrées dans l'interaction avec les outils d'IA (ex : hallucinations textuelles de ChatGPT, incohérences visuelles de Gemini, contraintes de cadrage dans Canva) ? Comment vos ajustements successifs de prompts et vos choix de mise en page ont-ils permis de transformer cette matière brute générée en supports ludo-pédagogiques rigoureux et jouables ?",
+      points: 5,
+      modelAnswer: "Exemple de retour réflexif : Lors de la conception de notre jeu, nous avons d'abord été confrontés à des règles trop génériques produites par ChatGPT, qui omettait certaines conditions de victoire. Nous avons appliqué la méthode du saucissonnement en lui faisant rédiger chaque phase de tour isolément, puis en reformulant nous-mêmes les cas litigieux. Côté cartes, Gemini modifiait constamment le style de notre personnage enquêteur ; nous avons stabilisé une fiche d'identité visuelle (3D cartoon, veste jaune, loupe) et importé les fonds sous Canva pour harmoniser les bordures et les cartouches de texte. Ce processus a montré que l'IA ne remplace pas l'intention pédagogique : elle accélère la création graphique et textuelle mais exige un arbitrage critique permanent sur la jouabilité et la clarté des consignes.",
+      rubricCriteria: [
+        "Identification précise d'au moins une difficulté technique ou conceptuelle rencontrée avec les IA.",
+        "Explicitation des stratégies d'ajustement déployées (saucissonnage de prompt, fiche d'identité, post-traitement Canva).",
+        "Analyse critique de la valeur ajoutée et des limites de l'IA dans l'ergonomie finale du jeu."
+      ]
+    }
   ]
 }
 

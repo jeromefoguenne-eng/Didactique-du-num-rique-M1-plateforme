@@ -159,6 +159,22 @@ export interface EvaluationItemDefinition {
   partLabel: string
   maxPoints: number
   docLink?: string
+  deadline?: string // format 'YYYY-MM-DD HH:mm'
+  deadlineLabel?: string
+}
+
+export interface StudentLateStatus {
+  isLate: boolean
+  lateCount: number
+  lateItems: {
+    id: string
+    title: string
+    shortTitle: string
+    deadline: string
+    deadlineLabel: string
+  }[]
+  tooltip: string
+  message: string
 }
 
 export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
@@ -169,7 +185,9 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     shortTitle: 'Quiz Diagnostiques',
     part: 1,
     partLabel: 'Partie 1 : Travaux Plateforme (70 pts)',
-    maxPoints: 10
+    maxPoints: 10,
+    deadline: '2026-09-16 23:59',
+    deadlineLabel: '16/09/2026'
   },
   {
     id: 'exercice-01',
@@ -178,7 +196,9 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     part: 1,
     partLabel: 'Partie 1 : Travaux Plateforme (70 pts)',
     maxPoints: 10,
-    docLink: 'https://docs.google.com/document/d/1b1QhnOoDNyCSdAIEAZx_xq96hQxZsUJH/edit?usp=sharing'
+    docLink: 'https://docs.google.com/document/d/1b1QhnOoDNyCSdAIEAZx_xq96hQxZsUJH/edit?usp=sharing',
+    deadline: '2026-09-16 23:59',
+    deadlineLabel: '16/09/2026'
   },
   {
     id: 'exercice-02',
@@ -187,7 +207,9 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     part: 1,
     partLabel: 'Partie 1 : Travaux Plateforme (70 pts)',
     maxPoints: 10,
-    docLink: 'https://docs.google.com/document/d/1o9vsf5fptzG1EH56oycz7SkD_UwmUKXm/edit?usp=sharing'
+    docLink: 'https://docs.google.com/document/d/1o9vsf5fptzG1EH56oycz7SkD_UwmUKXm/edit?usp=sharing',
+    deadline: '2026-09-17 23:59',
+    deadlineLabel: '17/09/2026'
   },
   {
     id: 'exercice-03',
@@ -196,7 +218,9 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     part: 1,
     partLabel: 'Partie 1 : Travaux Plateforme (70 pts)',
     maxPoints: 10,
-    docLink: 'https://docs.google.com/document/d/12XENuZM1WVyeCnRfu62Oh1_tG8Gkc1Z1/edit?usp=sharing'
+    docLink: 'https://docs.google.com/document/d/12XENuZM1WVyeCnRfu62Oh1_tG8Gkc1Z1/edit?usp=sharing',
+    deadline: '2026-09-18 12:00',
+    deadlineLabel: '18/09/2026 (12h)'
   },
   {
     id: 'exercice-04',
@@ -205,7 +229,9 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     part: 1,
     partLabel: 'Partie 1 : Travaux Plateforme (70 pts)',
     maxPoints: 10,
-    docLink: 'https://docs.google.com/document/d/1kUSfjlioxrG-i-ZrVbzQOpxH072f_2db/edit?usp=sharing'
+    docLink: 'https://docs.google.com/document/d/1kUSfjlioxrG-i-ZrVbzQOpxH072f_2db/edit?usp=sharing',
+    deadline: '2026-09-22 23:59',
+    deadlineLabel: '22/09/2026'
   },
   {
     id: 'exercice-05',
@@ -214,7 +240,9 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     part: 1,
     partLabel: 'Partie 1 : Travaux Plateforme (70 pts)',
     maxPoints: 10,
-    docLink: 'https://docs.google.com/document/d/1GuqhxxFNJllg4vR_wLeD5A4CtYNyJ4mj/edit?usp=sharing'
+    docLink: 'https://docs.google.com/document/d/1GuqhxxFNJllg4vR_wLeD5A4CtYNyJ4mj/edit?usp=sharing',
+    deadline: '2026-09-25 23:59',
+    deadlineLabel: '25/09/2026'
   },
   {
     id: 'exercice-06',
@@ -223,7 +251,9 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     part: 1,
     partLabel: 'Partie 1 : Travaux Plateforme (70 pts)',
     maxPoints: 10,
-    docLink: 'https://docs.google.com/document/d/1Vjy9xrqLG-xuktmMmmOQ6Kh8I-hXiIzV/edit?usp=sharing'
+    docLink: 'https://docs.google.com/document/d/1Vjy9xrqLG-xuktmMmmOQ6Kh8I-hXiIzV/edit?usp=sharing',
+    deadline: '2026-09-29 23:59',
+    deadlineLabel: '29/09/2026'
   },
   // Partie 2 : Projet Jeu de Société Didactique & Restitution (130 pts)
   {
@@ -233,7 +263,9 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     part: 2,
     partLabel: 'Partie 2 : Projet Jeu de Société (130 pts)',
     maxPoints: 20,
-    docLink: 'https://docs.google.com/document/d/1af3aH5FiR31N4FB99VrFq6628kiFFbly/edit?usp=sharing'
+    docLink: 'https://docs.google.com/document/d/1af3aH5FiR31N4FB99VrFq6628kiFFbly/edit?usp=sharing',
+    deadline: '2026-11-20 23:59',
+    deadlineLabel: '20/11/2026'
   },
   {
     id: 'exercice-10',
@@ -242,7 +274,9 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     part: 2,
     partLabel: 'Partie 2 : Projet Jeu de Société (130 pts)',
     maxPoints: 15,
-    docLink: 'https://docs.google.com/document/d/1kSoMRpjySi0DvjA0S1W4b8BoaDQrXNZh/edit?usp=sharing'
+    docLink: 'https://docs.google.com/document/d/1kSoMRpjySi0DvjA0S1W4b8BoaDQrXNZh/edit?usp=sharing',
+    deadline: '2026-11-20 23:59',
+    deadlineLabel: '20/11/2026'
   },
   {
     id: 'exercice-11',
@@ -251,7 +285,9 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     part: 2,
     partLabel: 'Partie 2 : Projet Jeu de Société (130 pts)',
     maxPoints: 15,
-    docLink: 'https://docs.google.com/document/d/1CzyMJRbjyvYVh7XP83Lx4tjxnq23oHXX/edit?usp=sharing'
+    docLink: 'https://docs.google.com/document/d/1CzyMJRbjyvYVh7XP83Lx4tjxnq23oHXX/edit?usp=sharing',
+    deadline: '2026-11-20 23:59',
+    deadlineLabel: '20/11/2026'
   },
   {
     id: 'exercice-12',
@@ -260,7 +296,9 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     part: 2,
     partLabel: 'Partie 2 : Projet Jeu de Société (130 pts)',
     maxPoints: 15,
-    docLink: 'https://docs.google.com/document/d/1Ov_huVW9al2DKuoBmW89QO3ZqE5E-nzU/edit?usp=sharing'
+    docLink: 'https://docs.google.com/document/d/1Ov_huVW9al2DKuoBmW89QO3ZqE5E-nzU/edit?usp=sharing',
+    deadline: '2026-11-20 23:59',
+    deadlineLabel: '20/11/2026'
   },
   {
     id: 'exercice-13',
@@ -269,7 +307,9 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     part: 2,
     partLabel: 'Partie 2 : Projet Jeu de Société (130 pts)',
     maxPoints: 15,
-    docLink: 'https://docs.google.com/document/d/1H_88UJvPPezdUXw1Vt8_U9wtsaFouepU/edit?usp=sharing'
+    docLink: 'https://docs.google.com/document/d/1H_88UJvPPezdUXw1Vt8_U9wtsaFouepU/edit?usp=sharing',
+    deadline: '2026-11-20 23:59',
+    deadlineLabel: '20/11/2026'
   },
   {
     id: 'exercice-14',
@@ -278,7 +318,9 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     part: 2,
     partLabel: 'Partie 2 : Projet Jeu de Société (130 pts)',
     maxPoints: 20,
-    docLink: 'https://docs.google.com/document/d/1JO_9ayYt3IqZfStfUPkzT3GDOF65VBxQ/edit?usp=sharing'
+    docLink: 'https://docs.google.com/document/d/1JO_9ayYt3IqZfStfUPkzT3GDOF65VBxQ/edit?usp=sharing',
+    deadline: '2026-11-20 23:59',
+    deadlineLabel: '20/11/2026'
   },
   {
     id: 'exercice-15',
@@ -287,7 +329,9 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     part: 2,
     partLabel: 'Partie 2 : Projet Jeu de Société (130 pts)',
     maxPoints: 15,
-    docLink: 'https://docs.google.com/document/d/1uIheBr_KU2Dh2TjYkegz7lHixsUNxs4t/edit?usp=sharing'
+    docLink: 'https://docs.google.com/document/d/1uIheBr_KU2Dh2TjYkegz7lHixsUNxs4t/edit?usp=sharing',
+    deadline: '2026-11-20 23:59',
+    deadlineLabel: '20/11/2026'
   },
   {
     id: 'exercice-16',
@@ -296,7 +340,9 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     part: 2,
     partLabel: 'Partie 2 : Projet Jeu de Société (130 pts)',
     maxPoints: 15,
-    docLink: 'https://docs.google.com/document/d/1Tm15GqKSwutH1MDbaGYJaWByliC17iRT/edit?usp=sharing'
+    docLink: 'https://docs.google.com/document/d/1Tm15GqKSwutH1MDbaGYJaWByliC17iRT/edit?usp=sharing',
+    deadline: '2026-11-20 23:59',
+    deadlineLabel: '20/11/2026'
   }
 ]
 
@@ -2088,7 +2134,10 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
           feedback: fbQuiz?.feedback || '',
           completed: userQuizzes.length > 0,
           file: null,
-          docLink: ''
+          docLink: '',
+          deadline: def.deadline,
+          deadlineLabel: def.deadlineLabel,
+          isOverdue: userQuizzes.length === 0 && !!def.deadline && (new Date() > new Date(def.deadline.replace(' ', 'T')))
         }
       }
 
@@ -2096,6 +2145,7 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
       const file = state.submittedFiles.find(f => f.userEmail.toLowerCase() === targetEmail && f.exerciseId === def.id)
       const hasSub = state.submissions.some(s => s.userEmail.toLowerCase() === targetEmail && s.exerciseId === def.id && s.answer.trim().length > 10)
       const isDone = !!file || hasSub
+      const isOverdue = !isDone && !!def.deadline && (new Date() > new Date(def.deadline.replace(' ', 'T')))
 
       // Calcul de la cote IA suggérée
       let aiScore: number | null = null
@@ -2152,7 +2202,10 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
         feedback: fb?.feedback || (file?.teacherGrade?.feedback || ''),
         completed: isDone,
         file,
-        docLink: def.docLink
+        docLink: def.docLink,
+        deadline: def.deadline,
+        deadlineLabel: def.deadlineLabel,
+        isOverdue
       }
     })
 
@@ -2173,10 +2226,13 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
     else if (totalOutOf20 >= 14) mention = 'Distinction'
     else if (totalOutOf20 >= 10) mention = 'Satisfaction (Réussite)'
 
+    const lateInfo = this.getStudentLateStatus(targetEmail)
+
     return {
       user,
       email: targetEmail,
       items: allEvaluationItems,
+      lateInfo,
       part1: {
         total: part1Total,
         max: 70,
@@ -2223,6 +2279,80 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
     }
   },
 
+  // Détection par l'IA des retards et documents non rendus en temps et en heure
+  getStudentLateStatus(email?: string): StudentLateStatus {
+    const targetEmail = (email || state.currentUser?.email || '').trim().toLowerCase()
+    const now = new Date()
+
+    const overdueList: {
+      id: string
+      title: string
+      shortTitle: string
+      deadline: string
+      deadlineLabel: string
+    }[] = []
+
+    for (const item of OFFICIAL_EVALUATION_ITEMS) {
+      if (!item.deadline) continue
+      const deadlineDate = new Date(item.deadline.replace(' ', 'T'))
+      if (now > deadlineDate) {
+        let isCompleted = false
+        if (item.id === 'quiz') {
+          isCompleted = state.quizAttempts.some(q => q.userEmail.toLowerCase() === targetEmail)
+        } else {
+          const hasFile = state.submittedFiles.some(f => f.userEmail.toLowerCase() === targetEmail && f.exerciseId === item.id)
+          const hasSub = state.submissions.some(s => s.userEmail.toLowerCase() === targetEmail && s.exerciseId === item.id && s.answer.trim().length > 10)
+          isCompleted = hasFile || hasSub
+        }
+
+        if (!isCompleted) {
+          overdueList.push({
+            id: item.id,
+            title: item.title,
+            shortTitle: item.shortTitle,
+            deadline: item.deadline,
+            deadlineLabel: item.deadlineLabel || item.deadline
+          })
+        }
+      }
+    }
+
+    const isLate = overdueList.length > 0
+    const lateCount = overdueList.length
+    const titles = overdueList.map(o => o.shortTitle).join(', ')
+    const tooltip = isLate 
+      ? `🚨 ALARME IA : ${lateCount} document(s) non remis en temps et en heure (${titles})`
+      : 'Tous les travaux attendus à cette date sont remis à temps'
+
+    return {
+      isLate,
+      lateCount,
+      lateItems: overdueList,
+      tooltip,
+      message: isLate ? `${lateCount} devoir(s) en retard` : 'À jour'
+    }
+  },
+
+  // Analyse synthétique de tous les retards de la classe
+  getAllStudentsLateStats() {
+    const active = state.users.filter(u => u.status !== 'archived')
+    let lateStudentsCount = 0
+    const byEmail: Record<string, StudentLateStatus> = {}
+
+    for (const u of active) {
+      const status = this.getStudentLateStatus(u.email)
+      byEmail[u.email.toLowerCase()] = status
+      if (status.isLate) lateStudentsCount++
+    }
+
+    return {
+      totalActive: active.length,
+      lateStudentsCount,
+      onTimeStudentsCount: active.length - lateStudentsCount,
+      byEmail
+    }
+  },
+
   // Statistiques globales de la classe calculées en temps réel
   getClassEvaluationStats() {
     const activeUsers = state.users.filter(u => u.status !== 'archived')
@@ -2234,7 +2364,8 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
         totalStudents: 0,
         passingRate: 0,
         highestNote: 0,
-        lowestNote: 0
+        lowestNote: 0,
+        lateStudentsCount: 0
       }
     }
 
@@ -2244,6 +2375,7 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
     const sum20 = notes20.reduce((acc, n) => acc + n, 0)
     const sum200 = scores200.reduce((acc, s) => acc + s, 0)
     const passingCount = evals.filter(e => e.isPassing).length
+    const lateStudentsCount = evals.filter(e => e.lateInfo?.isLate).length
 
     return {
       averageOutOf20: Math.round((sum20 / activeUsers.length) * 10) / 10,
@@ -2252,7 +2384,8 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
       totalStudents: activeUsers.length,
       passingRate: Math.round((passingCount / activeUsers.length) * 100),
       highestNote: Math.max(...notes20),
-      lowestNote: Math.min(...notes20)
+      lowestNote: Math.min(...notes20),
+      lateStudentsCount
     }
   },
 

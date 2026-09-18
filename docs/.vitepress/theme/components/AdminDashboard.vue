@@ -213,10 +213,25 @@ const activeStudentsCount = computed(() => users.value.filter(u => u.status !== 
 const archivedStudentsCount = computed(() => users.value.filter(u => u.status === 'archived').length)
 const totalFilesCount = computed(() => submittedFiles.value.length)
 
+const classLateStats = computed(() => userStore.getAllStudentsLateStats())
+const lateStudentsCount = computed(() => classLateStats.value.lateStudentsCount)
+
+function getStudentLateInfo(email) {
+  return userStore.getStudentLateStatus(email)
+}
+
+const activeStudentLateInfo = computed(() => {
+  return userStore.getStudentLateStatus(selectedGridStudentEmail.value)
+})
+
 const displayedUsers = computed(() => {
   return users.value.filter(u => {
     if (studentStatusFilter.value === 'active' && u.status === 'archived') return false
     if (studentStatusFilter.value === 'archived' && u.status !== 'archived') return false
+    if (studentStatusFilter.value === 'late') {
+      const lateStatus = userStore.getStudentLateStatus(u.email)
+      if (!lateStatus.isLate || u.status === 'archived') return false
+    }
 
     if (studentSearchQuery.value.trim()) {
       const q = studentSearchQuery.value.toLowerCase().trim()
@@ -773,7 +788,10 @@ function loadStudentForGrid(email) {
     feedback: item.feedback || '',
     completed: item.completed,
     file: item.file,
-    docLink: item.docLink
+    docLink: item.docLink,
+    deadline: item.deadline,
+    deadlineLabel: item.deadlineLabel,
+    isOverdue: item.isOverdue
   }))
   activeGridGeneralFeedback.value = ev.feedback || ''
   saveGridStatus.value = ''
@@ -855,11 +873,13 @@ function saveActiveStudentGrid() {
 }
 
 function exportAllResultsToExcel() {
-  let csv = `Nom de famille;Prénom;Email institutionnel;Quiz (/10);Ex 1 DigComp (/10);Ex 2 Info critique (/10);Ex 3 Guide élèves (/10);Ex 4 Escape Game (/10);Ex 5 Canva mot de passe (/10);Ex 6 Hardware PC (/10);SOUS-TOTAL PLATEFORME (/70);Ex 9 Règles & Dossier (/20);Ex 10 Photographie (/15);Ex 11 Supports IA (/15);Ex 12 Découpe Laser (/15);Ex 13 Pions 3D (/15);Ex 14 Vidéo (/20);Ex 15 Playtest (/15);Ex 16 Soutenance & Leçon (/15);SOUS-TOTAL PROJET JEU (/130);TOTAL GÉNÉRAL (/200);NOTE FINALE (/20);POURCENTAGE;RÉSULTAT;MENTION;FEEDBACK GÉNÉRAL\n`
+  let csv = `Nom de famille;Prénom;Email institutionnel;Suivi Délais IA;Quiz (/10);Ex 1 DigComp (/10);Ex 2 Info critique (/10);Ex 3 Guide élèves (/10);Ex 4 Escape Game (/10);Ex 5 Canva mot de passe (/10);Ex 6 Hardware PC (/10);SOUS-TOTAL PLATEFORME (/70);Ex 9 Règles & Dossier (/20);Ex 10 Photographie (/15);Ex 11 Supports IA (/15);Ex 12 Découpe Laser (/15);Ex 13 Pions 3D (/15);Ex 14 Vidéo (/20);Ex 15 Playtest (/15);Ex 16 Soutenance & Leçon (/15);SOUS-TOTAL PROJET JEU (/130);TOTAL GÉNÉRAL (/200);NOTE FINALE (/20);POURCENTAGE;RÉSULTAT;MENTION;FEEDBACK GÉNÉRAL\n`
 
   users.value.forEach(u => {
     const ev = userStore.getStudentEvaluation(u.email)
     const items = ev.items || []
+    const late = userStore.getStudentLateStatus(u.email)
+    const lateText = late.isLate ? `🚨 RETARD (${late.lateCount} devoirs : ${late.lateItems.map(i => i.shortTitle).join(', ')})` : '✓ À jour'
 
     const q = items.find(i => i.id === 'quiz')?.teacherScore ?? 0
     const ex1 = items.find(i => i.id === 'exercice-01')?.teacherScore ?? 0
@@ -883,7 +903,7 @@ function exportAllResultsToExcel() {
     const status = ev.isPassing ? 'Admis' : 'Ajourné'
     const cleanFb = (ev.feedback || '').replace(/"/g, '""').replace(/\n/g, ' ')
 
-    csv += `"${u.lastName}";"${u.firstName}";"${u.email}";"${q}";"${ex1}";"${ex2}";"${ex3}";"${ex4}";"${ex5}";"${ex6}";"${p1Total}";"${ex9}";"${ex10}";"${ex11}";"${ex12}";"${ex13}";"${ex14}";"${ex15}";"${ex16}";"${p2Total}";"${ev.totalScore}";"${ev.totalOutOf20}";"${ev.percentage}%";"${status}";"${ev.mention}";"${cleanFb}"\n`
+    csv += `"${u.lastName}";"${u.firstName}";"${u.email}";"${lateText}";"${q}";"${ex1}";"${ex2}";"${ex3}";"${ex4}";"${ex5}";"${ex6}";"${p1Total}";"${ex9}";"${ex10}";"${ex11}";"${ex12}";"${ex13}";"${ex14}";"${ex15}";"${ex16}";"${p2Total}";"${ev.totalScore}";"${ev.totalOutOf20}";"${ev.percentage}%";"${status}";"${ev.mention}";"${cleanFb}"\n`
   })
 
   // Encodage UTF-8 BOM pour ouverture directe parfaite dans Microsoft Excel
@@ -974,6 +994,13 @@ function exportAllResultsToExcel() {
             <div class="kpi-label">Moyenne Quiz ({{ totalQuizzesCount }})</div>
           </div>
         </div>
+        <div class="kpi-card" :class="{ 'kpi-card-alarm': lateStudentsCount > 0 }" :title="lateStudentsCount > 0 ? lateStudentsCount + ' étudiant(s) n\'ont pas rendu leurs devoirs à temps' : 'Aucun retard détecté'">
+          <span class="kpi-icon" :class="{ 'alarm-bell': lateStudentsCount > 0 }">🔔</span>
+          <div>
+            <div class="kpi-value" :class="{ 'text-danger': lateStudentsCount > 0 }">{{ lateStudentsCount }}</div>
+            <div class="kpi-label">Retard(s) détecté(s) IA</div>
+          </div>
+        </div>
       </div>
 
       <!-- ONGLETS ADMIN -->
@@ -983,12 +1010,14 @@ function exportAllResultsToExcel() {
           @click="adminTab = 'students'"
         >
           👥 Gestion de la Classe ({{ users.length }})
+          <span v-if="lateStudentsCount > 0" class="tab-late-badge" title="Retards détectés par l'IA">🔔 {{ lateStudentsCount }}</span>
         </button>
         <button 
           :class="['admin-tab-btn eval-tab-highlight', { active: adminTab === 'evaluation' }]"
           @click="adminTab = 'evaluation'"
         >
           🏆 Notes & Évaluation (/ 200 pts)
+          <span v-if="lateStudentsCount > 0" class="tab-late-badge" title="Retards détectés par l'IA">🔔</span>
         </button>
         <button 
           :class="['admin-tab-btn', { active: adminTab === 'quizzes' }]"
@@ -1028,6 +1057,13 @@ function exportAllResultsToExcel() {
                 @click="studentStatusFilter = 'active'"
               >
                 Actifs ({{ activeStudentsCount }})
+              </button>
+              <button 
+                :class="['pill-btn alert-pill', { active: studentStatusFilter === 'late' }]"
+                @click="studentStatusFilter = 'late'"
+                :title="lateStudentsCount + ' étudiant(s) avec des documents en retard'"
+              >
+                🔔 En retard ({{ lateStudentsCount }})
               </button>
               <button 
                 :class="['pill-btn', { active: studentStatusFilter === 'all' }]"
@@ -1134,9 +1170,17 @@ function exportAllResultsToExcel() {
                   Aucun étudiant ne correspond aux critères de recherche ou de filtre.
                 </td>
               </tr>
-              <tr v-for="u in displayedUsers" :key="u.id" :class="{ 'row-archived': u.status === 'archived' }">
+              <tr v-for="u in displayedUsers" :key="u.id" :class="{ 'row-archived': u.status === 'archived', 'row-late-alert': getStudentLateInfo(u.email).isLate }">
                 <td>
-                  <strong>{{ u.lastName }}</strong> {{ u.firstName }}
+                  <div class="student-name-container">
+                    <span v-if="getStudentLateInfo(u.email).isLate" class="alarm-bell" :title="getStudentLateInfo(u.email).tooltip">🔔</span>
+                    <span :class="['student-name-text', { 'is-late': getStudentLateInfo(u.email).isLate }]" :title="getStudentLateInfo(u.email).tooltip">
+                      <strong>{{ u.lastName }}</strong> {{ u.firstName }}
+                    </span>
+                    <span v-if="getStudentLateInfo(u.email).isLate" class="late-badge-pill" :title="getStudentLateInfo(u.email).tooltip">
+                      🚨 {{ getStudentLateInfo(u.email).lateCount }} retard{{ getStudentLateInfo(u.email).lateCount > 1 ? 's' : '' }}
+                    </span>
+                  </div>
                 </td>
                 <td>
                   <span :class="['status-badge', u.status === 'archived' ? 'archived' : 'active']">
@@ -1261,6 +1305,13 @@ function exportAllResultsToExcel() {
               <div class="ekpi-label">Note la plus basse</div>
             </div>
           </div>
+          <div class="eval-kpi-card highlight-alarm" :class="{ 'has-alerts': classStats.lateStudentsCount > 0 }">
+            <span class="ekpi-icon" :class="{ 'alarm-bell': classStats.lateStudentsCount > 0 }">🔔</span>
+            <div>
+              <div class="ekpi-val"><strong :class="{ 'text-danger': classStats.lateStudentsCount > 0 }">{{ classStats.lateStudentsCount }}</strong> en retard</div>
+              <div class="ekpi-label">Échéance(s) dépassée(s) (détecté par IA)</div>
+            </div>
+          </div>
         </div>
 
         <!-- FICHE D'ÉVALUATION DÉTAILLÉE PAR ÉTUDIANT -->
@@ -1269,8 +1320,8 @@ function exportAllResultsToExcel() {
             <div class="gec-selector-group">
               <label>👤 Sélectionner l'étudiant à évaluer :</label>
               <select v-model="selectedGridStudentEmail" @change="onSelectGridStudent" class="student-eval-select">
-                <option v-for="u in users.filter(x => x.status !== 'archived')" :key="u.email" :value="u.email">
-                  {{ u.lastName }} {{ u.firstName }} ({{ u.email }}) — Note actuelle : {{ getStudentEvalData(u.email).totalOutOf20 }}/20
+                <option v-for="u in users.filter(x => x.status !== 'archived')" :key="u.email" :value="u.email" :class="{ 'opt-late': getStudentLateInfo(u.email).isLate }">
+                  {{ getStudentLateInfo(u.email).isLate ? '🔔 [RETARD] ' : '' }}{{ u.lastName }} {{ u.firstName }} ({{ u.email }}) — {{ getStudentLateInfo(u.email).isLate ? '⚠️ EN RETARD (' + getStudentLateInfo(u.email).lateCount + ' doc) • ' : '' }}Note : {{ getStudentEvalData(u.email).totalOutOf20 }}/20
                 </option>
               </select>
             </div>
@@ -1281,6 +1332,24 @@ function exportAllResultsToExcel() {
               <button @click="saveActiveStudentGrid" class="btn-save-grid-main" type="button">
                 💾 Enregistrer la grille
               </button>
+            </div>
+          </div>
+
+          <!-- SIGNAL ALARME IA SI DOCUMENTS EN RETARD -->
+          <div v-if="activeStudentLateInfo.isLate" class="alarm-student-banner">
+            <div class="asb-icon-wrap">
+              <span class="alarm-bell-large">🔔</span>
+            </div>
+            <div class="asb-content">
+              <div class="asb-title">🚨 ALARME RETARD DÉTECTÉE PAR L'IA : Documents non remis en temps et en heure</div>
+              <div class="asb-desc">
+                L'IA a analysé les échéances du cours et détecté que cet étudiant a <strong>{{ activeStudentLateInfo.lateCount }} document(s) ou épreuve(s) non rendu(s) à temps</strong> :
+              </div>
+              <div class="asb-badges-list">
+                <span v-for="it in activeStudentLateInfo.lateItems" :key="it.id" class="asb-item-badge">
+                  ⚠️ <strong>{{ it.shortTitle }}</strong> (Échéance dépassée : {{ it.deadlineLabel }})
+                </span>
+              </div>
             </div>
           </div>
 
@@ -1308,20 +1377,23 @@ function exportAllResultsToExcel() {
                   </td>
                 </tr>
 
-                <tr v-for="item in activeGridItems.filter(i => i.part === 1)" :key="item.id" class="grid-item-row">
+                <tr v-for="item in activeGridItems.filter(i => i.part === 1)" :key="item.id" :class="['grid-item-row', { 'row-overdue': item.isOverdue }]">
                   <td>
                     <div class="item-title-group">
-                      <span class="item-status-icon">{{ item.completed ? '✅' : '⏳' }}</span>
+                      <span class="item-status-icon">{{ item.completed ? '✅' : (item.isOverdue ? '🔔' : '⏳') }}</span>
                       <div>
-                        <strong>{{ item.title }}</strong>
+                        <strong :class="{ 'is-late': item.isOverdue }">{{ item.title }}</strong>
                         <div v-if="item.file" class="item-file-link">
                           📎 Document : <code>{{ item.file.formattedFileName }}</code>
                         </div>
-                        <div v-else-if="item.id === 'quiz'" class="item-file-link quiz-sub">
-                          💡 Évaluation automatique via les quiz du cours
+                        <div v-else-if="item.id === 'quiz'" class="item-file-link quiz-sub" :class="{ overdue: item.isOverdue }">
+                          {{ item.isOverdue ? '🚨 ALARME : Quiz non passé (Échéance dépassée le ' + item.deadlineLabel + ')' : '💡 Évaluation automatique via les quiz du cours' }}
+                        </div>
+                        <div v-else-if="item.isOverdue" class="item-file-link overdue">
+                          🚨 ALARME RETARD : Document non déposé (Échéance dépassée le {{ item.deadlineLabel }})
                         </div>
                         <div v-else class="item-file-link missing">
-                          ⚠️ En attente de dépôt étudiant
+                          ⚠️ En attente de dépôt étudiant (Échéance : {{ item.deadlineLabel || 'Non définie' }})
                         </div>
                       </div>
                     </div>
@@ -1343,7 +1415,7 @@ function exportAllResultsToExcel() {
                       </button>
                     </div>
                     <div v-else class="ai-none-cell">
-                      <span class="ai-pending-text">⏳ En attente</span>
+                      <span class="ai-pending-text">{{ item.isOverdue ? '⚠️ Non rendu' : '⏳ En attente' }}</span>
                     </div>
                   </td>
                   <!-- COLONNE COTE ENSEIGNANT (ÉDITABLE) -->
@@ -1389,17 +1461,20 @@ function exportAllResultsToExcel() {
                   </td>
                 </tr>
 
-                <tr v-for="item in activeGridItems.filter(i => i.part === 2)" :key="item.id" class="grid-item-row">
+                <tr v-for="item in activeGridItems.filter(i => i.part === 2)" :key="item.id" :class="['grid-item-row', { 'row-overdue': item.isOverdue }]">
                   <td>
                     <div class="item-title-group">
-                      <span class="item-status-icon">{{ item.completed ? '✅' : '⏳' }}</span>
+                      <span class="item-status-icon">{{ item.completed ? '✅' : (item.isOverdue ? '🔔' : '⏳') }}</span>
                       <div>
-                        <strong>{{ item.title }}</strong>
+                        <strong :class="{ 'is-late': item.isOverdue }">{{ item.title }}</strong>
                         <div v-if="item.file" class="item-file-link">
                           📎 Document : <code>{{ item.file.formattedFileName }}</code>
                         </div>
+                        <div v-else-if="item.isOverdue" class="item-file-link overdue">
+                          🚨 ALARME RETARD : Document non déposé (Échéance dépassée le {{ item.deadlineLabel }})
+                        </div>
                         <div v-else class="item-file-link missing">
-                          ⚠️ En attente de dépôt du livrable
+                          ⚠️ En attente de dépôt du livrable (Échéance : {{ item.deadlineLabel || 'Non définie' }})
                         </div>
                       </div>
                     </div>
@@ -1525,9 +1600,17 @@ function exportAllResultsToExcel() {
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="u in users.filter(u => u.status !== 'archived')" :key="u.id">
+                <tr v-for="u in users.filter(u => u.status !== 'archived')" :key="u.id" :class="{ 'row-late-alert': getStudentLateInfo(u.email).isLate }">
                   <td>
-                    <strong>{{ u.lastName }}</strong> {{ u.firstName }}
+                    <div class="student-name-container">
+                      <span v-if="getStudentLateInfo(u.email).isLate" class="alarm-bell" :title="getStudentLateInfo(u.email).tooltip">🔔</span>
+                      <span :class="['student-name-text', { 'is-late': getStudentLateInfo(u.email).isLate }]" :title="getStudentLateInfo(u.email).tooltip">
+                        <strong>{{ u.lastName }}</strong> {{ u.firstName }}
+                      </span>
+                      <span v-if="getStudentLateInfo(u.email).isLate" class="late-badge-pill" :title="getStudentLateInfo(u.email).tooltip">
+                        🚨 {{ getStudentLateInfo(u.email).lateCount }} retard{{ getStudentLateInfo(u.email).lateCount > 1 ? 's' : '' }}
+                      </span>
+                    </div>
                     <div class="student-sub-mail">{{ u.email }}</div>
                   </td>
                   <td style="text-align: center;">{{ getStudentEvalData(u.email).pillar1.quizPoints }}</td>
@@ -1899,7 +1982,7 @@ function exportAllResultsToExcel() {
             <select v-model="selectedStudentFilter">
               <option value="all">Tous les étudiants</option>
               <option v-for="u in users" :key="u.id" :value="u.email">
-                {{ u.lastName }} {{ u.firstName }} ({{ u.email }})
+                {{ getStudentLateInfo(u.email).isLate ? '🔔 [RETARD] ' : '' }}{{ u.lastName }} {{ u.firstName }} ({{ u.email }})
               </option>
             </select>
           </div>
@@ -1912,9 +1995,13 @@ function exportAllResultsToExcel() {
         <div v-else class="submissions-cards">
           <div v-for="sub in filteredSubmissions" :key="sub.id" class="sub-card">
             <div class="sub-header">
-              <div>
-                <span class="student-author">{{ sub.userName }}</span>
+              <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <span v-if="getStudentLateInfo(sub.userEmail).isLate" class="alarm-bell" :title="getStudentLateInfo(sub.userEmail).tooltip">🔔</span>
+                <span :class="['student-author', { 'is-late': getStudentLateInfo(sub.userEmail).isLate }]">{{ sub.userName }}</span>
                 <span class="student-mail">({{ sub.userEmail }})</span>
+                <span v-if="getStudentLateInfo(sub.userEmail).isLate" class="late-badge-pill" :title="getStudentLateInfo(sub.userEmail).tooltip">
+                  🚨 {{ getStudentLateInfo(sub.userEmail).lateCount }} retard{{ getStudentLateInfo(sub.userEmail).lateCount > 1 ? 's' : '' }}
+                </span>
               </div>
               <span class="sub-date">{{ sub.submittedAt }}</span>
             </div>
@@ -2049,7 +2136,7 @@ function exportAllResultsToExcel() {
             <select v-model="fileStudentFilter">
               <option value="all">Tous les étudiants</option>
               <option v-for="u in users" :key="u.id" :value="u.email">
-                {{ u.lastName }} {{ u.firstName }} ({{ u.email }})
+                {{ getStudentLateInfo(u.email).isLate ? '🔔 [RETARD] ' : '' }}{{ u.lastName }} {{ u.firstName }} ({{ u.email }})
               </option>
             </select>
           </div>
@@ -2085,14 +2172,18 @@ function exportAllResultsToExcel() {
                 </td>
               </tr>
               <template v-for="f in filteredFiles" :key="f.id">
-                <tr class="file-eval-row">
+                <tr :class="['file-eval-row', { 'row-late-alert': getStudentLateInfo(f.userEmail).isLate }]">
                   <!-- 1. ÉTUDIANT -->
                   <td>
                     <div class="student-profile-cell">
+                      <span v-if="getStudentLateInfo(f.userEmail).isLate" class="alarm-bell" :title="getStudentLateInfo(f.userEmail).tooltip">🔔</span>
                       <span class="student-avatar-round">{{ f.userName ? f.userName.charAt(0) : '?' }}</span>
                       <div>
-                        <strong>{{ f.userName }}</strong>
+                        <strong :class="{ 'is-late': getStudentLateInfo(f.userEmail).isLate }">{{ f.userName }}</strong>
                         <div class="email-subtext">{{ f.userEmail }}</div>
+                        <span v-if="getStudentLateInfo(f.userEmail).isLate" class="late-badge-pill" :title="getStudentLateInfo(f.userEmail).tooltip">
+                          🚨 {{ getStudentLateInfo(f.userEmail).lateCount }} retard{{ getStudentLateInfo(f.userEmail).lateCount > 1 ? 's' : '' }}
+                        </span>
                       </div>
                     </div>
                   </td>
@@ -4140,9 +4231,6 @@ function exportAllResultsToExcel() {
   color: #0369a1;
 }
 
-</style>
-
-
 /* STYLES DE L'ÉVALUATION ADMIN (200 PTS) */
 .admin-tab-btn.eval-tab-highlight {
   border-bottom-color: #ea580c;
@@ -5272,3 +5360,172 @@ function exportAllResultsToExcel() {
   line-height: 1.6;
   color: var(--vp-c-text-1);
 }
+
+/* ============================================================ */
+/* STYLES DU SIGNAL ALARME IA RETARD (CLOCHE ROUGE & NOM ROUGE) */
+/* ============================================================ */
+
+@keyframes bellRing {
+  0%, 100% { transform: rotate(0deg); }
+  10%, 30% { transform: rotate(-14deg); }
+  20%, 40% { transform: rotate(14deg); }
+  50% { transform: rotate(0deg); }
+}
+
+.alarm-bell {
+  display: inline-block;
+  font-size: 1.05rem;
+  animation: bellRing 2.2s infinite ease-in-out;
+  transform-origin: top center;
+  filter: drop-shadow(0 0 4px rgba(239, 68, 68, 0.5));
+  user-select: none;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.alarm-bell-large {
+  display: inline-block;
+  font-size: 2.2rem;
+  animation: bellRing 1.8s infinite ease-in-out;
+  transform-origin: top center;
+  filter: drop-shadow(0 2px 8px rgba(239, 68, 68, 0.6));
+  user-select: none;
+}
+
+.is-late,
+.is-late strong,
+strong.is-late,
+span.is-late {
+  color: #dc2626 !important;
+  font-weight: 700 !important;
+}
+
+.late-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.2;
+  box-shadow: 0 1px 3px rgba(239, 68, 68, 0.15);
+  white-space: nowrap;
+}
+
+.alarm-student-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  border: 2px solid #ef4444;
+  border-radius: 12px;
+  padding: 1.1rem 1.3rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.15);
+}
+
+.asb-icon-wrap {
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.asb-content {
+  flex: 1;
+}
+
+.asb-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #991b1b;
+  margin-bottom: 0.35rem;
+}
+
+.asb-desc {
+  font-size: 0.88rem;
+  color: #7f1d1d;
+  line-height: 1.5;
+  margin-bottom: 0.6rem;
+}
+
+.asb-badges-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.asb-item-badge {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  color: #b91c1c;
+  border: 1px solid #f87171;
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.row-late-alert {
+  background-color: rgba(254, 242, 242, 0.65) !important;
+}
+
+.row-late-alert:hover {
+  background-color: rgba(254, 226, 226, 0.85) !important;
+}
+
+.grid-item-row.row-overdue {
+  background: rgba(254, 242, 242, 0.45);
+  border-left: 3px solid #ef4444;
+}
+
+.item-file-link.overdue {
+  color: #b91c1c !important;
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.tab-late-badge {
+  display: inline-flex;
+  align-items: center;
+  background: #ef4444;
+  color: white;
+  padding: 1px 6px;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  margin-left: 6px;
+  box-shadow: 0 2px 5px rgba(239, 68, 68, 0.4);
+}
+
+.kpi-card.kpi-card-alarm {
+  border-color: rgba(239, 68, 68, 0.4);
+  background: linear-gradient(135deg, rgba(254, 242, 242, 0.8) 0%, rgba(254, 226, 226, 0.3) 100%);
+}
+
+.kpi-card.kpi-card-alarm.active-alert {
+  border-color: #ef4444;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.2);
+}
+
+.kpi-card.kpi-card-alarm .kpi-val {
+  color: #dc2626;
+}
+
+.student-name-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.opt-late {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+</style>
+

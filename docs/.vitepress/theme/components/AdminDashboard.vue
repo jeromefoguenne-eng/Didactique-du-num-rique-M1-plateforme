@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
-import { userStore } from '../stores/userStore'
+import { userStore, OFFICIAL_EVALUATION_ITEMS, formatDeadlineDisplay, getAlarmLevelInfo } from '../stores/userStore'
 
 const enteredPin = ref('')
 const isAuthenticated = ref(false)
@@ -9,7 +9,7 @@ const loginErrorMessage = ref('')
 let lockoutTimer = null
 let inactivityTimer = null
 const INACTIVITY_LIMIT_MS = 30 * 60 * 1000 // Verrouillage auto après 30 min
-const adminTab = ref('students') // 'students' | 'evaluation' | 'quizzes' | 'submissions' | 'files' | 'export'
+const adminTab = ref('students') // 'students' | 'deadlines' | 'evaluation' | 'quizzes' | 'submissions' | 'files' | 'export'
 
 // Gestion de la notation sur 200 points
 const selectedStudentEval = ref(null)
@@ -224,6 +224,116 @@ const activeStudentLateInfo = computed(() => {
   return userStore.getStudentLateStatus(selectedGridStudentEmail.value)
 })
 
+// ==========================================
+// GESTION DU CALENDRIER D'ÉCHÉANCES ADMIN
+// ==========================================
+const deadlinesForm = ref({})
+const deadlineFeedback = ref({})
+const saveAllDeadlinesStatus = ref('')
+
+function initDeadlinesForm() {
+  const form = {}
+  for (const item of OFFICIAL_EVALUATION_ITEMS) {
+    const eff = userStore.getExerciseDeadline(item.id)
+    if (eff.isDefined && eff.deadline) {
+      const parts = eff.deadline.replace(' ', 'T')
+      form[item.id] = parts.length >= 16 ? parts.substring(0, 16) : parts
+    } else {
+      form[item.id] = ''
+    }
+  }
+  deadlinesForm.value = form
+}
+
+function saveSingleDeadline(itemId) {
+  const val = deadlinesForm.value[itemId] || ''
+  userStore.setExerciseDeadline(itemId, val)
+  deadlineFeedback.value[itemId] = '✅ Enregistré !'
+  setTimeout(() => {
+    delete deadlineFeedback.value[itemId]
+  }, 3000)
+}
+
+function setRelativeDeadline(itemId, daysToAdd) {
+  const d = new Date()
+  d.setDate(d.getDate() + daysToAdd)
+  const yyyy = d.getFullYear()
+  const mm = String(d.getMonth() + 1).padStart(2, '0')
+  const dd = String(d.getDate()).padStart(2, '0')
+  deadlinesForm.value[itemId] = `${yyyy}-${mm}-${dd}T23:59`
+  saveSingleDeadline(itemId)
+}
+
+function clearDeadline(itemId) {
+  deadlinesForm.value[itemId] = ''
+  userStore.setExerciseDeadline(itemId, '')
+  deadlineFeedback.value[itemId] = '⚪ Échéance retirée'
+  setTimeout(() => {
+    delete deadlineFeedback.value[itemId]
+  }, 3000)
+}
+
+function saveAllDeadlines() {
+  const res = userStore.setAllExerciseDeadlines(deadlinesForm.value)
+  saveAllDeadlinesStatus.value = `✅ Les ${res.count} échéances ont été enregistrées et appliquées en temps réel à toute la plateforme !`
+  setTimeout(() => {
+    saveAllDeadlinesStatus.value = ''
+  }, 4500)
+}
+
+function handleResetDeadlines() {
+  if (confirm('Voulez-vous vraiment réinitialiser toutes les échéances aux dates de départ du calendrier officiel ?')) {
+    userStore.resetDeadlinesToDefault()
+    initDeadlinesForm()
+    saveAllDeadlinesStatus.value = '🔄 Toutes les échéances ont été réinitialisées aux dates initiales.'
+    setTimeout(() => {
+      saveAllDeadlinesStatus.value = ''
+    }, 4000)
+  }
+}
+
+function getItemLateBreakdown(itemId) {
+  const active = users.value.filter(u => u.status !== 'archived')
+  const eff = userStore.getExerciseDeadline(itemId)
+  if (!eff.isDefined || !eff.deadline) {
+    return { total: active.length, submitted: 0, overdue: 0, orange: 0, bordeaux: 0, red: 0, recent: 0, isPast: false, daysDiff: 0 }
+  }
+  const deadlineDate = new Date(eff.deadline.replace(' ', 'T'))
+  const now = new Date()
+  const isPast = now > deadlineDate
+  const daysDiff = Math.floor(Math.abs(now.getTime() - deadlineDate.getTime()) / (1000 * 60 * 60 * 24))
+  let submitted = 0
+  let overdue = 0
+  let orange = 0
+  let bordeaux = 0
+  let red = 0
+  let recent = 0
+
+  for (const u of active) {
+    let isDone = false
+    if (itemId === 'quiz') {
+      isDone = userStore.quizAttempts.some(q => q.userEmail.toLowerCase() === u.email.toLowerCase())
+    } else {
+      const hasFile = userStore.submittedFiles.some(f => f.userEmail.toLowerCase() === u.email.toLowerCase() && f.exerciseId === itemId)
+      const hasSub = userStore.submissions.some(s => s.userEmail.toLowerCase() === u.email.toLowerCase() && s.exerciseId === itemId && s.answer.trim().length > 10)
+      isDone = hasFile || hasSub
+    }
+    if (isDone) {
+      submitted++
+    } else if (isPast) {
+      overdue++
+      const diffMs = now.getTime() - deadlineDate.getTime()
+      const days = Math.max(1, Math.floor(diffMs / (1000 * 60 * 60 * 24)))
+      if (days >= 30) red++
+      else if (days >= 14) bordeaux++
+      else if (days >= 7) orange++
+      else recent++
+    }
+  }
+
+  return { total: active.length, submitted, overdue, orange, bordeaux, red, recent, isPast, daysDiff }
+}
+
 const displayedUsers = computed(() => {
   return users.value.filter(u => {
     if (studentStatusFilter.value === 'active' && u.status === 'archived') return false
@@ -231,6 +341,15 @@ const displayedUsers = computed(() => {
     if (studentStatusFilter.value === 'late') {
       const lateStatus = userStore.getStudentLateStatus(u.email)
       if (!lateStatus.isLate || u.status === 'archived') return false
+    } else if (studentStatusFilter.value === 'late-orange') {
+      const lateStatus = userStore.getStudentLateStatus(u.email)
+      if (!lateStatus.isLate || lateStatus.highestAlarmLevel !== 'orange' || u.status === 'archived') return false
+    } else if (studentStatusFilter.value === 'late-bordeaux') {
+      const lateStatus = userStore.getStudentLateStatus(u.email)
+      if (!lateStatus.isLate || lateStatus.highestAlarmLevel !== 'bordeaux' || u.status === 'archived') return false
+    } else if (studentStatusFilter.value === 'late-red') {
+      const lateStatus = userStore.getStudentLateStatus(u.email)
+      if (!lateStatus.isLate || lateStatus.highestAlarmLevel !== 'red' || u.status === 'archived') return false
     }
 
     if (studentSearchQuery.value.trim()) {
@@ -507,9 +626,16 @@ function lockSession() {
 
 onMounted(() => {
   updateLockoutState()
+  initDeadlinesForm()
   if (typeof window !== 'undefined') {
     const events = ['mousemove', 'keydown', 'scroll', 'touchstart']
     events.forEach(e => window.addEventListener(e, resetInactivityTimer, { passive: true }))
+  }
+})
+
+watch(adminTab, (newTab) => {
+  if (newTab === 'deadlines') {
+    initDeadlinesForm()
   }
 })
 
@@ -1010,14 +1136,23 @@ function exportAllResultsToExcel() {
           @click="adminTab = 'students'"
         >
           👥 Gestion de la Classe ({{ users.length }})
-          <span v-if="lateStudentsCount > 0" class="tab-late-badge" title="Retards détectés par l'IA">🔔 {{ lateStudentsCount }}</span>
+          <span v-if="lateStudentsCount > 0" class="tab-late-badge" :style="{ background: classLateStats.redStudentsCount > 0 ? '#dc2626' : (classLateStats.bordeauxStudentsCount > 0 ? '#881337' : '#ea580c') }" title="Retards détectés par l'IA">🔔 {{ lateStudentsCount }}</span>
+        </button>
+        <button 
+          :class="['admin-tab-btn deadlines-tab-highlight', { active: adminTab === 'deadlines' }]"
+          @click="adminTab = 'deadlines'"
+        >
+          📅 Échéances & Calendrier (15)
+          <span v-if="lateStudentsCount > 0" class="tab-late-badge" :style="{ background: classLateStats.redStudentsCount > 0 ? '#dc2626' : (classLateStats.bordeauxStudentsCount > 0 ? '#881337' : '#ea580c') }" title="Alarmes actives">
+            🔔 {{ lateStudentsCount }}
+          </span>
         </button>
         <button 
           :class="['admin-tab-btn eval-tab-highlight', { active: adminTab === 'evaluation' }]"
           @click="adminTab = 'evaluation'"
         >
           🏆 Notes & Évaluation (/ 200 pts)
-          <span v-if="lateStudentsCount > 0" class="tab-late-badge" title="Retards détectés par l'IA">🔔</span>
+          <span v-if="lateStudentsCount > 0" class="tab-late-badge" :style="{ background: classLateStats.redStudentsCount > 0 ? '#dc2626' : (classLateStats.bordeauxStudentsCount > 0 ? '#881337' : '#ea580c') }" title="Retards détectés par l'IA">🔔</span>
         </button>
         <button 
           :class="['admin-tab-btn', { active: adminTab === 'quizzes' }]"
@@ -1063,7 +1198,31 @@ function exportAllResultsToExcel() {
                 @click="studentStatusFilter = 'late'"
                 :title="lateStudentsCount + ' étudiant(s) avec des documents en retard'"
               >
-                🔔 En retard ({{ lateStudentsCount }})
+                🔔 Tous Retards ({{ lateStudentsCount }})
+              </button>
+              <button 
+                v-if="classLateStats.orangeStudentsCount > 0"
+                :class="['pill-btn alert-pill-orange', { active: studentStatusFilter === 'late-orange' }]"
+                @click="studentStatusFilter = 'late-orange'"
+                title="Plus d'une semaine de retard"
+              >
+                🟠 > 1 sem ({{ classLateStats.orangeStudentsCount }})
+              </button>
+              <button 
+                v-if="classLateStats.bordeauxStudentsCount > 0"
+                :class="['pill-btn alert-pill-bordeaux', { active: studentStatusFilter === 'late-bordeaux' }]"
+                @click="studentStatusFilter = 'late-bordeaux'"
+                title="Plus de deux semaines de retard"
+              >
+                🍷 > 2 sem ({{ classLateStats.bordeauxStudentsCount }})
+              </button>
+              <button 
+                v-if="classLateStats.redStudentsCount > 0"
+                :class="['pill-btn alert-pill-red', { active: studentStatusFilter === 'late-red' }]"
+                @click="studentStatusFilter = 'late-red'"
+                title="Plus d'un mois de retard"
+              >
+                🔴 > 1 mois ({{ classLateStats.redStudentsCount }})
               </button>
               <button 
                 :class="['pill-btn', { active: studentStatusFilter === 'all' }]"
@@ -1173,12 +1332,30 @@ function exportAllResultsToExcel() {
               <tr v-for="u in displayedUsers" :key="u.id" :class="{ 'row-archived': u.status === 'archived', 'row-late-alert': getStudentLateInfo(u.email).isLate }">
                 <td>
                   <div class="student-name-container">
-                    <span v-if="getStudentLateInfo(u.email).isLate" class="alarm-bell" :title="getStudentLateInfo(u.email).tooltip">🔔</span>
-                    <span :class="['student-name-text', { 'is-late': getStudentLateInfo(u.email).isLate }]" :title="getStudentLateInfo(u.email).tooltip">
+                    <span 
+                      v-if="getStudentLateInfo(u.email).isLate" 
+                      class="alarm-bell" 
+                      :style="{ color: getStudentLateInfo(u.email).highestAlarmColor }" 
+                      :title="getStudentLateInfo(u.email).tooltip"
+                    >🔔</span>
+                    <span 
+                      :class="['student-name-text', { 'is-late': getStudentLateInfo(u.email).isLate }]" 
+                      :style="{ color: getStudentLateInfo(u.email).isLate ? getStudentLateInfo(u.email).highestAlarmColor + ' !important' : '' }" 
+                      :title="getStudentLateInfo(u.email).tooltip"
+                    >
                       <strong>{{ u.lastName }}</strong> {{ u.firstName }}
                     </span>
-                    <span v-if="getStudentLateInfo(u.email).isLate" class="late-badge-pill" :title="getStudentLateInfo(u.email).tooltip">
-                      🚨 {{ getStudentLateInfo(u.email).lateCount }} retard{{ getStudentLateInfo(u.email).lateCount > 1 ? 's' : '' }}
+                    <span 
+                      v-if="getStudentLateInfo(u.email).isLate" 
+                      class="late-badge-pill" 
+                      :style="{ 
+                        background: getStudentLateInfo(u.email).highestAlarmBgColor, 
+                        color: getStudentLateInfo(u.email).highestAlarmColor, 
+                        borderColor: getStudentLateInfo(u.email).highestAlarmBorderColor 
+                      }" 
+                      :title="getStudentLateInfo(u.email).tooltip"
+                    >
+                      {{ getStudentLateInfo(u.email).highestAlarmIcon }} {{ getStudentLateInfo(u.email).highestAlarmLabel }}
                     </span>
                   </div>
                 </td>
@@ -1260,9 +1437,315 @@ function exportAllResultsToExcel() {
         </div>
       </div>
 
+      <!-- VUE ÉCHÉANCES & CALENDRIER DU COURS -->
+      <div v-if="adminTab === 'deadlines'" class="tab-panel">
+        <!-- BARRE D'OUTILS PRINCIPALE DES ÉCHÉANCES -->
+        <div class="deadlines-admin-toolbar">
+          <div class="dat-left">
+            <div class="dat-title-row">
+              <span class="dat-icon">📅</span>
+              <div>
+                <h3>Calendrier des Échéances & Délais de Remise des Devoirs</h3>
+                <p class="deadlines-toolbar-sub">
+                  Fixez et ajustez les dates de remise au fur et à mesure du cours. Dès qu'une date est enregistrée, les étudiants la voient sur leur espace. L'IA surveille les remises et déclenche les alarmes graduées (🟠 Orange > 1 sem, 🍷 Bordeaux > 2 sem, 🔴 Rouge > 1 mois).
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="dat-right-actions">
+            <button @click="saveAllDeadlines" class="btn-save-all-deadlines" title="Enregistrer toutes les dates de remise saisies">
+              💾 Enregistrer toutes les échéances
+            </button>
+            <button @click="handleResetDeadlines" class="btn-reset-deadlines-subtle" title="Rétablir les dates d'origine du cours">
+              🔄 Réinitialiser par défaut
+            </button>
+          </div>
+        </div>
 
-      <!-- VUE : RÉSULTATS DES QUIZ & ÉVALUATIONS DIAGNOSTIQUES -->
-            <!-- VUE ÉVALUATION ET NOTES (SUR 200 POINTS) -->
+        <!-- BANDEAU DE CONFIRMATION GLOBALE -->
+        <div v-if="saveAllDeadlinesStatus" class="save-all-deadlines-banner">
+          {{ saveAllDeadlinesStatus }}
+        </div>
+
+        <!-- KPI STRIP DES ÉCHÉANCES & ALARMES -->
+        <div class="deadlines-kpi-grid">
+          <div class="dkpi-card">
+            <span class="dkpi-icon">📋</span>
+            <div>
+              <div class="dkpi-val">15</div>
+              <div class="dkpi-lbl">Travaux au programme (200 pts)</div>
+            </div>
+          </div>
+          <div class="dkpi-card green">
+            <span class="dkpi-icon">🟢</span>
+            <div>
+              <div class="dkpi-val">{{ Object.values(deadlinesForm).filter(d => !!d).length }} / 15</div>
+              <div class="dkpi-lbl">Échéances actives fixées</div>
+            </div>
+          </div>
+          <div class="dkpi-card orange" :class="{ active: classLateStats.orangeStudentsCount > 0 }">
+            <span class="dkpi-icon">🟠</span>
+            <div>
+              <div class="dkpi-val">{{ classLateStats.orangeStudentsCount }}</div>
+              <div class="dkpi-lbl">Alarme Orange (> 1 sem)</div>
+            </div>
+          </div>
+          <div class="dkpi-card bordeaux" :class="{ active: classLateStats.bordeauxStudentsCount > 0 }">
+            <span class="dkpi-icon">🍷</span>
+            <div>
+              <div class="dkpi-val">{{ classLateStats.bordeauxStudentsCount }}</div>
+              <div class="dkpi-lbl">Alarme Bordeaux (> 2 sem)</div>
+            </div>
+          </div>
+          <div class="dkpi-card red" :class="{ active: classLateStats.redStudentsCount > 0 }">
+            <span class="dkpi-icon">🔴</span>
+            <div>
+              <div class="dkpi-val">{{ classLateStats.redStudentsCount }}</div>
+              <div class="dkpi-lbl">Alarme Rouge (> 1 mois)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GUIDE D'ALARMES VISUEL -->
+        <div class="deadlines-alarm-legend">
+          <span class="dal-title">⚡ Échelle d'Alarme IA des Retards :</span>
+          <span class="dal-pill ok">✅ Dans les délais</span>
+          <span class="dal-pill recent">⏳ Retard récent (&lt; 7 j)</span>
+          <span class="dal-pill orange">🟠 Alarme Orange (&ge; 7 j / 1 sem)</span>
+          <span class="dal-pill bordeaux">🍷 Alarme Bordeaux (&ge; 14 j / 2 sem)</span>
+          <span class="dal-pill red">🔴 Alarme Rouge Critique (&ge; 30 j / 1 mois)</span>
+        </div>
+
+        <!-- TABLEAU DES ÉCHÉANCES DU COURS -->
+        <div class="table-responsive deadlines-table-wrap">
+          <table class="data-table deadlines-table">
+            <thead>
+              <tr>
+                <th style="width: 28%;">Épreuve / Devoir</th>
+                <th style="width: 25%;">Date & Heure Limite (Admin)</th>
+                <th style="width: 15%;">État du Délai</th>
+                <th style="width: 14%;">Dépôts Classe</th>
+                <th style="width: 18%; text-align: right;">Raccourcis & Sauvegarde</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- PARTIE 1 : TRAVAUX PLATEFORME -->
+              <tr class="section-divider-row">
+                <td colspan="5">
+                  <div class="sec-div-content">
+                    <strong>Partie 1 : Travaux Réalisés sur la Plateforme (70 Points)</strong>
+                    <span class="sec-div-badge">7 Épreuves continues</span>
+                  </div>
+                </td>
+              </tr>
+
+              <tr v-for="item in OFFICIAL_EVALUATION_ITEMS.filter(i => i.part === 1)" :key="item.id" class="deadline-row">
+                <td>
+                  <div class="item-title-group">
+                    <span class="item-type-icon">{{ item.id === 'quiz' ? '🎓' : '📝' }}</span>
+                    <div>
+                      <strong>{{ item.title }}</strong>
+                      <div class="item-sub-meta">
+                        <span class="badge-pts">{{ item.maxPoints }} pts</span>
+                        <span>•</span>
+                        <code>{{ item.shortTitle }}</code>
+                        <span v-if="userStore.getExerciseDeadline(item.id).isCustom" class="custom-badge" title="Cette date a été modifiée par l'enseignant">
+                          ✏️ Modifiée
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+
+                <td>
+                  <div class="deadline-input-group">
+                    <input 
+                      type="datetime-local" 
+                      v-model="deadlinesForm[item.id]" 
+                      class="input-datetime" 
+                      @change="saveSingleDeadline(item.id)"
+                    />
+                    <div class="deadline-current-label">
+                      📅 Actuel : <strong>{{ userStore.getExerciseDeadline(item.id).deadlineLabel }}</strong>
+                    </div>
+                  </div>
+                </td>
+
+                <td>
+                  <div class="deadline-state-cell">
+                    <span v-if="!deadlinesForm[item.id]" class="dstate-pill empty">
+                      ⚪ Non fixée
+                    </span>
+                    <span v-else-if="!getItemLateBreakdown(item.id).isPast" class="dstate-pill upcoming">
+                      🟢 À venir (dans {{ getItemLateBreakdown(item.id).daysDiff }} j)
+                    </span>
+                    <span v-else class="dstate-pill overdue">
+                      ⏳ Échue (il y a {{ getItemLateBreakdown(item.id).daysDiff }} j)
+                    </span>
+                  </div>
+                </td>
+
+                <td>
+                  <div class="class-submissions-cell">
+                    <div class="cs-ratio">
+                      <strong>{{ getItemLateBreakdown(item.id).submitted }}</strong> / {{ getItemLateBreakdown(item.id).total }} déposés
+                    </div>
+                    <div class="cs-alarms-strip" v-if="getItemLateBreakdown(item.id).overdue > 0">
+                      <span v-if="getItemLateBreakdown(item.id).orange > 0" class="mini-alarm-badge orange" title="Plus d'1 semaine de retard">
+                        🟠 {{ getItemLateBreakdown(item.id).orange }}
+                      </span>
+                      <span v-if="getItemLateBreakdown(item.id).bordeaux > 0" class="mini-alarm-badge bordeaux" title="Plus de 2 semaines de retard">
+                        🍷 {{ getItemLateBreakdown(item.id).bordeaux }}
+                      </span>
+                      <span v-if="getItemLateBreakdown(item.id).red > 0" class="mini-alarm-badge red" title="Plus d'un mois de retard">
+                        🔴 {{ getItemLateBreakdown(item.id).red }}
+                      </span>
+                      <span v-if="getItemLateBreakdown(item.id).recent > 0" class="mini-alarm-badge recent" title="Moins d'une semaine de retard">
+                        ⏳ {{ getItemLateBreakdown(item.id).recent }}
+                      </span>
+                    </div>
+                    <div v-else class="cs-clean">
+                      <span class="text-success-mini">✓ Tous à jour</span>
+                    </div>
+                  </div>
+                </td>
+
+                <td>
+                  <div class="deadline-row-actions">
+                    <div class="btn-shortcuts-group">
+                      <button @click="setRelativeDeadline(item.id, 7)" class="btn-sc" title="Fixer l'échéance à +7 jours">
+                        +1 sem
+                      </button>
+                      <button @click="setRelativeDeadline(item.id, 14)" class="btn-sc" title="Fixer l'échéance à +14 jours">
+                        +2 sem
+                      </button>
+                      <button @click="clearDeadline(item.id)" class="btn-sc clear" title="Supprimer la date de remise">
+                        Effacer
+                      </button>
+                    </div>
+                    <div class="save-indicator-col">
+                      <button @click="saveSingleDeadline(item.id)" class="btn-save-single-dl">
+                        💾 Sauver
+                      </button>
+                      <span v-if="deadlineFeedback[item.id]" class="df-msg">
+                        {{ deadlineFeedback[item.id] }}
+                      </span>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- PARTIE 2 : PROJET JEU DE SOCIÉTÉ -->
+              <tr class="section-divider-row">
+                <td colspan="5">
+                  <div class="sec-div-content">
+                    <strong>Partie 2 : Projet Jeu de Société Didactique & Restitution (130 Points)</strong>
+                    <span class="sec-div-badge">8 Épreuves et livrables</span>
+                  </div>
+                </td>
+              </tr>
+
+              <tr v-for="item in OFFICIAL_EVALUATION_ITEMS.filter(i => i.part === 2)" :key="item.id" class="deadline-row">
+                <td>
+                  <div class="item-title-group">
+                    <span class="item-type-icon">🎲</span>
+                    <div>
+                      <strong>{{ item.title }}</strong>
+                      <div class="item-sub-meta">
+                        <span class="badge-pts">{{ item.maxPoints }} pts</span>
+                        <span>•</span>
+                        <code>{{ item.shortTitle }}</code>
+                        <span v-if="userStore.getExerciseDeadline(item.id).isCustom" class="custom-badge" title="Cette date a été modifiée par l'enseignant">
+                          ✏️ Modifiée
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+
+                <td>
+                  <div class="deadline-input-group">
+                    <input 
+                      type="datetime-local" 
+                      v-model="deadlinesForm[item.id]" 
+                      class="input-datetime" 
+                      @change="saveSingleDeadline(item.id)"
+                    />
+                    <div class="deadline-current-label">
+                      📅 Actuel : <strong>{{ userStore.getExerciseDeadline(item.id).deadlineLabel }}</strong>
+                    </div>
+                  </div>
+                </td>
+
+                <td>
+                  <div class="deadline-state-cell">
+                    <span v-if="!deadlinesForm[item.id]" class="dstate-pill empty">
+                      ⚪ Non fixée
+                    </span>
+                    <span v-else-if="!getItemLateBreakdown(item.id).isPast" class="dstate-pill upcoming">
+                      🟢 À venir (dans {{ getItemLateBreakdown(item.id).daysDiff }} j)
+                    </span>
+                    <span v-else class="dstate-pill overdue">
+                      ⏳ Échue (il y a {{ getItemLateBreakdown(item.id).daysDiff }} j)
+                    </span>
+                  </div>
+                </td>
+
+                <td>
+                  <div class="class-submissions-cell">
+                    <div class="cs-ratio">
+                      <strong>{{ getItemLateBreakdown(item.id).submitted }}</strong> / {{ getItemLateBreakdown(item.id).total }} déposés
+                    </div>
+                    <div class="cs-alarms-strip" v-if="getItemLateBreakdown(item.id).overdue > 0">
+                      <span v-if="getItemLateBreakdown(item.id).orange > 0" class="mini-alarm-badge orange" title="Plus d'1 semaine de retard">
+                        🟠 {{ getItemLateBreakdown(item.id).orange }}
+                      </span>
+                      <span v-if="getItemLateBreakdown(item.id).bordeaux > 0" class="mini-alarm-badge bordeaux" title="Plus de 2 semaines de retard">
+                        🍷 {{ getItemLateBreakdown(item.id).bordeaux }}
+                      </span>
+                      <span v-if="getItemLateBreakdown(item.id).red > 0" class="mini-alarm-badge red" title="Plus d'un mois de retard">
+                        🔴 {{ getItemLateBreakdown(item.id).red }}
+                      </span>
+                      <span v-if="getItemLateBreakdown(item.id).recent > 0" class="mini-alarm-badge recent" title="Moins d'une semaine de retard">
+                        ⏳ {{ getItemLateBreakdown(item.id).recent }}
+                      </span>
+                    </div>
+                    <div v-else class="cs-clean">
+                      <span class="text-success-mini">✓ Tous à jour</span>
+                    </div>
+                  </div>
+                </td>
+
+                <td>
+                  <div class="deadline-row-actions">
+                    <div class="btn-shortcuts-group">
+                      <button @click="setRelativeDeadline(item.id, 7)" class="btn-sc" title="Fixer l'échéance à +7 jours">
+                        +1 sem
+                      </button>
+                      <button @click="setRelativeDeadline(item.id, 14)" class="btn-sc" title="Fixer l'échéance à +14 jours">
+                        +2 sem
+                      </button>
+                      <button @click="clearDeadline(item.id)" class="btn-sc clear" title="Supprimer la date de remise">
+                        Effacer
+                      </button>
+                    </div>
+                    <div class="save-indicator-col">
+                      <button @click="saveSingleDeadline(item.id)" class="btn-save-single-dl">
+                        💾 Sauver
+                      </button>
+                      <span v-if="deadlineFeedback[item.id]" class="df-msg">
+                        {{ deadlineFeedback[item.id] }}
+                      </span>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- VUE ÉVALUATION ET NOTES (SUR 200 POINTS) -->
       <div v-if="adminTab === 'evaluation'" class="tab-panel">
         <!-- BARRE D'OUTILS PRINCIPALE & EXPORT EXCEL -->
         <div class="eval-admin-toolbar">
@@ -1336,18 +1819,36 @@ function exportAllResultsToExcel() {
           </div>
 
           <!-- SIGNAL ALARME IA SI DOCUMENTS EN RETARD -->
-          <div v-if="activeStudentLateInfo.isLate" class="alarm-student-banner">
+          <div 
+            v-if="activeStudentLateInfo.isLate" 
+            class="alarm-student-banner"
+            :style="{ 
+              background: activeStudentLateInfo.highestAlarmBgColor, 
+              borderColor: activeStudentLateInfo.highestAlarmColor 
+            }"
+          >
             <div class="asb-icon-wrap">
-              <span class="alarm-bell-large">🔔</span>
+              <span class="alarm-bell-large" :style="{ color: activeStudentLateInfo.highestAlarmColor }">🔔</span>
             </div>
             <div class="asb-content">
-              <div class="asb-title">🚨 ALARME RETARD DÉTECTÉE PAR L'IA : Documents non remis en temps et en heure</div>
-              <div class="asb-desc">
-                L'IA a analysé les échéances du cours et détecté que cet étudiant a <strong>{{ activeStudentLateInfo.lateCount }} document(s) ou épreuve(s) non rendu(s) à temps</strong> :
+              <div class="asb-title" :style="{ color: activeStudentLateInfo.highestAlarmColor }">
+                {{ activeStudentLateInfo.highestAlarmIcon }} {{ activeStudentLateInfo.highestAlarmLabel.toUpperCase() }} : Documents non remis en temps et en heure
+              </div>
+              <div class="asb-desc" :style="{ color: activeStudentLateInfo.highestAlarmColor }">
+                L'IA a analysé les échéances du cours et détecté que cet étudiant a <strong>{{ activeStudentLateInfo.lateCount }} document(s) ou épreuve(s) non rendu(s) à temps</strong> (retard maximal constaté : <strong>{{ activeStudentLateInfo.daysOverdueMax }} jours</strong>) :
               </div>
               <div class="asb-badges-list">
-                <span v-for="it in activeStudentLateInfo.lateItems" :key="it.id" class="asb-item-badge">
-                  ⚠️ <strong>{{ it.shortTitle }}</strong> (Échéance dépassée : {{ it.deadlineLabel }})
+                <span 
+                  v-for="it in activeStudentLateInfo.lateItems" 
+                  :key="it.id" 
+                  class="asb-item-badge"
+                  :style="{ 
+                    background: it.alarmBgColor, 
+                    color: it.alarmColor, 
+                    borderColor: it.alarmBorderColor 
+                  }"
+                >
+                  {{ it.alarmIcon }} <strong>{{ it.shortTitle }}</strong> — {{ it.alarmLabel }} (Échéance : {{ it.deadlineLabel }} • Retard : {{ it.daysOverdue }} j)
                 </span>
               </div>
             </div>
@@ -1603,12 +2104,30 @@ function exportAllResultsToExcel() {
                 <tr v-for="u in users.filter(u => u.status !== 'archived')" :key="u.id" :class="{ 'row-late-alert': getStudentLateInfo(u.email).isLate }">
                   <td>
                     <div class="student-name-container">
-                      <span v-if="getStudentLateInfo(u.email).isLate" class="alarm-bell" :title="getStudentLateInfo(u.email).tooltip">🔔</span>
-                      <span :class="['student-name-text', { 'is-late': getStudentLateInfo(u.email).isLate }]" :title="getStudentLateInfo(u.email).tooltip">
+                      <span 
+                        v-if="getStudentLateInfo(u.email).isLate" 
+                        class="alarm-bell" 
+                        :style="{ color: getStudentLateInfo(u.email).highestAlarmColor }" 
+                        :title="getStudentLateInfo(u.email).tooltip"
+                      >🔔</span>
+                      <span 
+                        :class="['student-name-text', { 'is-late': getStudentLateInfo(u.email).isLate }]" 
+                        :style="{ color: getStudentLateInfo(u.email).isLate ? getStudentLateInfo(u.email).highestAlarmColor + ' !important' : '' }" 
+                        :title="getStudentLateInfo(u.email).tooltip"
+                      >
                         <strong>{{ u.lastName }}</strong> {{ u.firstName }}
                       </span>
-                      <span v-if="getStudentLateInfo(u.email).isLate" class="late-badge-pill" :title="getStudentLateInfo(u.email).tooltip">
-                        🚨 {{ getStudentLateInfo(u.email).lateCount }} retard{{ getStudentLateInfo(u.email).lateCount > 1 ? 's' : '' }}
+                      <span 
+                        v-if="getStudentLateInfo(u.email).isLate" 
+                        class="late-badge-pill" 
+                        :style="{ 
+                          background: getStudentLateInfo(u.email).highestAlarmBgColor, 
+                          color: getStudentLateInfo(u.email).highestAlarmColor, 
+                          borderColor: getStudentLateInfo(u.email).highestAlarmBorderColor 
+                        }" 
+                        :title="getStudentLateInfo(u.email).tooltip"
+                      >
+                        {{ getStudentLateInfo(u.email).highestAlarmIcon }} {{ getStudentLateInfo(u.email).highestAlarmLabel }}
                       </span>
                     </div>
                     <div class="student-sub-mail">{{ u.email }}</div>
@@ -5527,5 +6046,382 @@ span.is-late {
   font-weight: 700;
 }
 
+/* FILTRES ALARME STATUTS */
+.pill-btn.alert-pill-orange {
+  border-color: #fdba74;
+  background: #fff7ed;
+  color: #c2410c;
+  font-weight: 700;
+}
+.pill-btn.alert-pill-orange.active {
+  background: #ea580c;
+  color: white;
+}
+
+.pill-btn.alert-pill-bordeaux {
+  border-color: #fecdd3;
+  background: #fff1f2;
+  color: #881337;
+  font-weight: 700;
+}
+.pill-btn.alert-pill-bordeaux.active {
+  background: #881337;
+  color: white;
+}
+
+.pill-btn.alert-pill-red {
+  border-color: #fca5a5;
+  background: #fef2f2;
+  color: #dc2626;
+  font-weight: 700;
+}
+.pill-btn.alert-pill-red.active {
+  background: #dc2626;
+  color: white;
+}
+
+/* COULEURS DE CLOCHES D'ALARME */
+.alarm-bell.alarm-orange {
+  color: #ea580c !important;
+  filter: drop-shadow(0 0 4px rgba(234, 88, 12, 0.6));
+}
+.alarm-bell.alarm-bordeaux {
+  color: #881337 !important;
+  filter: drop-shadow(0 0 4px rgba(136, 19, 55, 0.7));
+}
+.alarm-bell.alarm-red {
+  color: #dc2626 !important;
+  filter: drop-shadow(0 0 5px rgba(220, 38, 38, 0.8));
+}
+
+/* ============================================================ */
+/* STYLES DE L'ONGLET CALENDRIER DES ÉCHÉANCES                  */
+/* ============================================================ */
+
+.admin-tab-btn.deadlines-tab-highlight {
+  border-bottom-color: #0284c7;
+  color: #0284c7;
+  font-weight: 700;
+}
+.admin-tab-btn.deadlines-tab-highlight.active {
+  background: rgba(2, 132, 199, 0.08);
+}
+
+.deadlines-admin-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  background: var(--vp-c-bg-soft);
+  padding: 1.2rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--vp-c-divider);
+}
+
+.dat-title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.dat-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.dat-title-row h3 {
+  margin: 0 0 0.35rem 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.deadlines-toolbar-sub {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.5;
+  max-width: 750px;
+}
+
+.dat-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.btn-save-all-deadlines {
+  background: #0284c7;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(2, 132, 199, 0.25);
+  transition: all 0.2s ease;
+}
+.btn-save-all-deadlines:hover {
+  background: #0369a1;
+  transform: translateY(-1px);
+}
+
+.btn-reset-deadlines-subtle {
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-2);
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-reset-deadlines-subtle:hover {
+  background: var(--vp-c-bg-mute);
+  color: var(--vp-c-text-1);
+}
+
+.save-all-deadlines-banner {
+  background: #ecfdf5;
+  border: 2px solid #10b981;
+  color: #065f46;
+  font-weight: 700;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.15);
+}
+
+.deadlines-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.dkpi-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 1rem;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+}
+.dkpi-icon { font-size: 1.8rem; }
+.dkpi-val { font-size: 1.4rem; font-weight: 800; color: var(--vp-c-text-1); line-height: 1; }
+.dkpi-lbl { font-size: 0.78rem; color: var(--vp-c-text-2); margin-top: 4px; }
+
+.dkpi-card.green .dkpi-val { color: #059669; }
+.dkpi-card.orange.active {
+  background: #fff7ed;
+  border-color: #fdba74;
+}
+.dkpi-card.orange.active .dkpi-val { color: #ea580c; }
+
+.dkpi-card.bordeaux.active {
+  background: #fff1f2;
+  border-color: #fecdd3;
+}
+.dkpi-card.bordeaux.active .dkpi-val { color: #881337; }
+
+.dkpi-card.red.active {
+  background: #fef2f2;
+  border-color: #fca5a5;
+}
+.dkpi-card.red.active .dkpi-val { color: #dc2626; }
+
+.deadlines-alarm-legend {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  background: var(--vp-c-bg-alt);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-divider);
+  margin-bottom: 1.5rem;
+  font-size: 0.8rem;
+}
+.dal-title { font-weight: 800; color: var(--vp-c-text-1); }
+.dal-pill {
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+.dal-pill.ok { background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; }
+.dal-pill.recent { background: #fefce8; color: #854d0e; border: 1px solid #fef08a; }
+.dal-pill.orange { background: #fff7ed; color: #c2410c; border: 1px solid #fdba74; }
+.dal-pill.bordeaux { background: #fff1f2; color: #881337; border: 1px solid #fecdd3; }
+.dal-pill.red { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+
+/* TABLEAU DES ÉCHÉANCES */
+.deadlines-table-wrap {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.deadlines-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.deadlines-table td {
+  vertical-align: middle;
+  padding: 12px 14px;
+}
+
+.section-divider-row td {
+  background: var(--vp-c-bg-mute);
+  padding: 10px 14px;
+}
+
+.sec-div-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sec-div-badge {
+  font-size: 0.75rem;
+  color: var(--vp-c-text-2);
+  background: var(--vp-c-bg);
+  padding: 2px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--vp-c-divider);
+}
+
+.custom-badge {
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.7rem;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.deadline-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.input-datetime {
+  padding: 6px 10px;
+  border: 1.5px solid var(--vp-c-divider);
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-family: inherit;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  box-sizing: border-box;
+}
+.input-datetime:focus {
+  border-color: #0284c7;
+  outline: none;
+}
+
+.deadline-current-label {
+  font-size: 0.78rem;
+  color: var(--vp-c-text-2);
+}
+
+.deadline-state-cell {
+  display: flex;
+  align-items: center;
+}
+
+.dstate-pill {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.dstate-pill.empty { background: var(--vp-c-bg-mute); color: var(--vp-c-text-3); }
+.dstate-pill.upcoming { background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; }
+.dstate-pill.overdue { background: #fef2f2; color: #dc2626; border: 1px solid #fca5a5; }
+
+.class-submissions-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.cs-ratio { font-size: 0.84rem; color: var(--vp-c-text-1); }
+
+.cs-alarms-strip {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.mini-alarm-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+.mini-alarm-badge.orange { background: #fff7ed; color: #ea580c; border: 1px solid #fdba74; }
+.mini-alarm-badge.bordeaux { background: #fff1f2; color: #881337; border: 1px solid #fecdd3; }
+.mini-alarm-badge.red { background: #fef2f2; color: #dc2626; border: 1px solid #fca5a5; }
+.mini-alarm-badge.recent { background: #fefce8; color: #ca8a04; border: 1px solid #fef08a; }
+
+.text-success-mini { font-size: 0.75rem; color: #059669; font-weight: 600; }
+
+.deadline-row-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.btn-shortcuts-group {
+  display: flex;
+  gap: 4px;
+}
+
+.btn-sc {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-2);
+  padding: 3px 7px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-sc:hover { background: var(--vp-c-bg-mute); color: var(--vp-c-text-1); }
+.btn-sc.clear { color: #dc2626; }
+
+.save-indicator-col {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-save-single-dl {
+  background: #0284c7;
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn-save-single-dl:hover { background: #0369a1; }
+
+.df-msg {
+  font-size: 0.74rem;
+  color: #059669;
+  font-weight: 700;
+}
+
 </style>
+
 

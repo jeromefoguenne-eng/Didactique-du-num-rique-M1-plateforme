@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-import { userStore } from '../stores/userStore'
+import { userStore, formatDeadlineDisplay, getAlarmLevelInfo } from '../stores/userStore'
 
 const props = defineProps({
   exerciseId: {
@@ -37,6 +37,35 @@ const attachedFile = computed(() => {
 // Commentaire & note de l'enseignant
 const teacherFeedback = computed(() => {
   return userStore.getExerciseFeedback(props.exerciseId)
+})
+
+// Échéance et alerte de retard graduée (Orange > 1 sem, Bordeaux > 2 sem, Rouge > 1 mois)
+const deadlineInfo = computed(() => {
+  const d = userStore.getExerciseDeadline(props.exerciseId)
+  if (!d || !d.deadline) return null
+  return {
+    deadline: d.deadline,
+    display: formatDeadlineDisplay(d.deadline),
+    label: d.label || ''
+  }
+})
+
+const lateAlert = computed(() => {
+  if (attachedFile.value) return null
+  const d = userStore.getExerciseDeadline(props.exerciseId)
+  if (!d || !d.deadline) return null
+
+  const due = new Date(d.deadline).getTime()
+  const now = Date.now()
+  if (now <= due) return null
+
+  const daysLate = Math.floor((now - due) / (1000 * 60 * 60 * 24))
+  const alarmInfo = getAlarmLevelInfo(daysLate)
+  return {
+    daysLate,
+    alarmInfo,
+    deadlineFormatted: formatDeadlineDisplay(d.deadline)
+  }
 })
 
 // Aperçu du nom de fichier normalisé
@@ -141,6 +170,35 @@ function formatSize(bytes) {
     <div class="box-header">
       <span class="box-badge">Zone de Travail Étudiant</span>
       <h4>Rédiger ou déposer votre travail pour cet atelier</h4>
+    </div>
+
+    <!-- BANDEAU ÉCHÉANCE & STATUT -->
+    <div v-if="deadlineInfo" class="box-deadline-strip" :class="{ 'is-overdue': !!lateAlert }">
+      <div class="bds-left">
+        <span class="bds-icon">📅</span>
+        <span class="bds-label">Date limite de remise :</span>
+        <strong class="bds-date">{{ deadlineInfo.display }}</strong>
+      </div>
+      <div class="bds-right">
+        <span v-if="attachedFile" class="bds-badge-ok">✓ Document remis</span>
+        <span v-else-if="lateAlert" class="bds-badge-late" :style="{ backgroundColor: lateAlert.alarmInfo.color }">
+          {{ lateAlert.alarmInfo.icon }} {{ lateAlert.alarmInfo.label }} (+{{ lateAlert.daysLate }}j)
+        </span>
+        <span v-else class="bds-badge-pending">⏳ À rendre</span>
+      </div>
+    </div>
+
+    <!-- ALERTE RETARD EXPLICITE SI RETARD DÉTECTÉ -->
+    <div v-if="lateAlert" class="box-late-callout" :style="{ backgroundColor: lateAlert.alarmInfo.bgColor, borderColor: lateAlert.alarmInfo.borderColor, color: lateAlert.alarmInfo.color }">
+      <span class="blc-icon">{{ lateAlert.alarmInfo.icon }}</span>
+      <div class="blc-content">
+        <div class="blc-title">
+          <strong>Alerte de retard — {{ lateAlert.alarmInfo.label }}</strong>
+        </div>
+        <div class="blc-desc">
+          Ce travail devait être remis pour le <strong>{{ lateAlert.deadlineFormatted }}</strong>. Vous avez actuellement <strong>{{ lateAlert.daysLate }} jour(s) de retard</strong>. Veuillez déposer votre document dès que possible.
+        </div>
+      </div>
     </div>
 
     <!-- IDENTIFICATION RAPIDE SI NON CONNECTÉ -->
@@ -866,5 +924,112 @@ function formatSize(bytes) {
 
 .aifb-link-rules:hover {
   text-decoration: underline;
+}
+
+/* BANDEAU ÉCHÉANCE & ALERTE RETARD */
+.box-deadline-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.65rem 0.95rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.85rem;
+}
+
+.box-deadline-strip.is-overdue {
+  border-color: #fdba74;
+  background: #fffbf7;
+}
+
+.bds-left {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #334155;
+}
+
+.bds-calendar-icon {
+  font-size: 1rem;
+}
+
+.bds-label {
+  color: #64748b;
+}
+
+.bds-date {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.bds-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bds-badge-ok {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.bds-badge-pending {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.bds-badge-late {
+  color: #ffffff;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.box-late-callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid;
+  border-left-width: 4px;
+  margin-bottom: 1rem;
+  font-size: 0.86rem;
+}
+
+.blc-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.blc-content {
+  flex: 1;
+}
+
+.blc-title {
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.blc-desc {
+  font-size: 0.82rem;
+  line-height: 1.4;
+  opacity: 0.95;
 }
 </style>

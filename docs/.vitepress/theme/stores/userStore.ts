@@ -129,17 +129,18 @@ const STORAGE_KEY_WEBHOOK = 'hech_didac_drive_webhook'
 const STORAGE_KEY_QUIZZES = 'hech_didac_quiz_attempts'
 const STORAGE_KEY_EVALUATIONS = 'hech_didac_evaluations_200'
 const STORAGE_KEY_EXERCISE_FEEDBACKS = 'hech_didac_exercise_feedbacks'
+const STORAGE_KEY_DEADLINES = 'hech_didac_deadlines'
 
 export interface EvaluationRecord {
   userEmail: string
-  gamePedagogyScore?: number // max 20 (prépa et intégration pédagogique)
-  gameBoardLaserScore?: number // max 15 (plateau découpe laser)
-  gamePawns3dScore?: number // max 15 (pions impression 3D)
-  gameAiCardsScore?: number // max 15 (cartes de jeu IA)
-  gameVideoScore?: number // max 20 (présentation vidéo du jeu)
-  gamePhotosScore?: number // max 15 (intégration des photos)
-  gameProjectScore: number // max 100
-  oralDefenseScore: number // max 30 (soutenance orale)
+  gamePedagogyScore?: number
+  gameBoardLaserScore?: number
+  gamePawns3dScore?: number
+  gameAiCardsScore?: number
+  gameVideoScore?: number
+  gamePhotosScore?: number
+  gameProjectScore: number
+  oralDefenseScore: number
   gameEx09RulesScore?: number
   gameEx10PhotosScore?: number
   gameEx11AiCardsScore?: number
@@ -159,22 +160,120 @@ export interface EvaluationItemDefinition {
   partLabel: string
   maxPoints: number
   docLink?: string
-  deadline?: string // format 'YYYY-MM-DD HH:mm'
+  deadline?: string
   deadlineLabel?: string
+}
+
+export type AlarmLevel = 'none' | 'recent' | 'orange' | 'bordeaux' | 'red'
+
+export interface OverdueItemDetail {
+  id: string
+  title: string
+  shortTitle: string
+  deadline: string
+  deadlineLabel: string
+  daysOverdue: number
+  alarmLevel: AlarmLevel
+  alarmColor: string
+  alarmBgColor: string
+  alarmBorderColor: string
+  alarmLabel: string
+  alarmIcon: string
 }
 
 export interface StudentLateStatus {
   isLate: boolean
   lateCount: number
-  lateItems: {
-    id: string
-    title: string
-    shortTitle: string
-    deadline: string
-    deadlineLabel: string
-  }[]
+  highestAlarmLevel: AlarmLevel
+  highestAlarmColor: string
+  highestAlarmBgColor: string
+  highestAlarmBorderColor: string
+  highestAlarmLabel: string
+  highestAlarmIcon: string
+  daysOverdueMax: number
+  lateItems: OverdueItemDetail[]
   tooltip: string
   message: string
+}
+
+export function formatDeadlineDisplay(dtStr: string): string {
+  if (!dtStr) return 'Non fixée'
+  try {
+    const d = new Date(dtStr.replace(' ', 'T'))
+    if (isNaN(d.getTime())) return dtStr
+    const day = String(d.getDate()).padStart(2, '0')
+    const month = String(d.getMonth() + 1).padStart(2, '0')
+    const year = d.getFullYear()
+    const hours = String(d.getHours()).padStart(2, '0')
+    const minutes = String(d.getMinutes()).padStart(2, '0')
+    return `${day}/${month}/${year} à ${hours}h${minutes}`
+  } catch {
+    return dtStr
+  }
+}
+
+export function getAlarmLevelInfo(daysOverdue: number): {
+  level: AlarmLevel
+  color: string
+  bgColor: string
+  borderColor: string
+  label: string
+  icon: string
+  badgeText: string
+} {
+  if (daysOverdue < 0) {
+    return {
+      level: 'none',
+      color: '#10b981',
+      bgColor: '#ecfdf5',
+      borderColor: '#a7f3d0',
+      label: 'Dans les délais',
+      icon: '✅',
+      badgeText: 'Dans les temps'
+    }
+  }
+  if (daysOverdue < 7) {
+    return {
+      level: 'recent',
+      color: '#eab308',
+      bgColor: '#fefce8',
+      borderColor: '#fef08a',
+      label: 'Retard récent (< 1 semaine)',
+      icon: '⏳',
+      badgeText: `Retard (${daysOverdue} j)`
+    }
+  }
+  if (daysOverdue < 14) {
+    return {
+      level: 'orange',
+      color: '#ea580c', // Orange vif
+      bgColor: '#fff7ed',
+      borderColor: '#fdba74',
+      label: 'Alarme Orange (> 1 semaine de retard)',
+      icon: '🟠',
+      badgeText: `🟠 Alarme Orange (+${Math.floor(daysOverdue / 7)} sem, ${daysOverdue} j)`
+    }
+  }
+  if (daysOverdue < 30) {
+    return {
+      level: 'bordeaux',
+      color: '#881337', // Bordeaux profond
+      bgColor: '#fff1f2',
+      borderColor: '#fecdd3',
+      label: 'Alarme Bordeaux (> 2 semaines de retard)',
+      icon: '🍷',
+      badgeText: `🍷 Alarme Bordeaux (+${Math.floor(daysOverdue / 7)} sem, ${daysOverdue} j)`
+    }
+  }
+  return {
+    level: 'red',
+    color: '#dc2626', // Rouge écarlate
+    bgColor: '#fef2f2',
+    borderColor: '#fca5a5',
+    label: 'Alarme Rouge Critique (> 1 mois de retard)',
+    icon: '🔴',
+    badgeText: `🔴 Alarme Rouge (> 1 mois, ${daysOverdue} j)`
+  }
 }
 
 export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
@@ -1305,7 +1404,8 @@ const state = reactive({
   driveWebhook: getStorage<string>(STORAGE_KEY_WEBHOOK, ''),
   adminPinHash: initAdminPinHash(),
   quizAttempts: getStorage<QuizAttempt[]>(STORAGE_KEY_QUIZZES, DEFAULT_QUIZZES),
-  evaluations: getStorage<Record<string, EvaluationRecord>>(STORAGE_KEY_EVALUATIONS, DEFAULT_EVALUATIONS)
+  evaluations: getStorage<Record<string, EvaluationRecord>>(STORAGE_KEY_EVALUATIONS, DEFAULT_EVALUATIONS),
+  deadlines: getStorage<Record<string, { deadline: string, deadlineLabel?: string }>>(STORAGE_KEY_DEADLINES, {})
 })
 
 export const userStore = {
@@ -1332,6 +1432,78 @@ export const userStore = {
   },
   get quizAttempts() {
     return state.quizAttempts
+  },
+  get deadlines() {
+    return state.deadlines
+  },
+
+  // Récupérer l'échéance effective d'un exercice (modulée par l'admin ou par défaut)
+  getExerciseDeadline(exerciseId: string): { deadline: string, deadlineLabel: string, isDefined: boolean, isCustom: boolean } {
+    const custom = state.deadlines[exerciseId]
+    if (custom && custom.deadline) {
+      return {
+        deadline: custom.deadline,
+        deadlineLabel: custom.deadlineLabel || formatDeadlineDisplay(custom.deadline),
+        isDefined: true,
+        isCustom: true
+      }
+    }
+    const def = OFFICIAL_EVALUATION_ITEMS.find(i => i.id === exerciseId)
+    if (def && def.deadline) {
+      return {
+        deadline: def.deadline,
+        deadlineLabel: def.deadlineLabel || formatDeadlineDisplay(def.deadline),
+        isDefined: true,
+        isCustom: false
+      }
+    }
+    return {
+      deadline: '',
+      deadlineLabel: 'Non fixée',
+      isDefined: false,
+      isCustom: false
+    }
+  },
+
+  // Mettre à jour l'échéance d'un exercice individuel
+  setExerciseDeadline(exerciseId: string, deadline: string, deadlineLabel?: string) {
+    if (!deadline || !deadline.trim()) {
+      delete state.deadlines[exerciseId]
+    } else {
+      const cleanDate = deadline.trim()
+      state.deadlines[exerciseId] = {
+        deadline: cleanDate,
+        deadlineLabel: deadlineLabel || formatDeadlineDisplay(cleanDate)
+      }
+    }
+    setStorage(STORAGE_KEY_DEADLINES, state.deadlines)
+    return { success: true, message: 'Échéance mise à jour avec succès.' }
+  },
+
+  // Mettre à jour toutes les échéances en une seule fois
+  setAllExerciseDeadlines(map: Record<string, string>) {
+    let count = 0
+    for (const [id, dateStr] of Object.entries(map)) {
+      if (dateStr && dateStr.trim()) {
+        const clean = dateStr.trim()
+        state.deadlines[id] = {
+          deadline: clean,
+          deadlineLabel: formatDeadlineDisplay(clean)
+        }
+        count++
+      } else {
+        delete state.deadlines[id]
+      }
+    }
+    setStorage(STORAGE_KEY_DEADLINES, state.deadlines)
+    return { success: true, count }
+  },
+
+  // Rétablir toutes les échéances par défaut
+  resetDeadlinesToDefault() {
+    state.deadlines = {}
+    setStorage(STORAGE_KEY_DEADLINES, {})
+    return { success: true, message: 'Toutes les échéances ont été réinitialisées aux dates d\'origine.' }
   },
 
   register(firstName: string, lastName: string, email: string) {
@@ -2121,6 +2293,12 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
       if (def.id === 'quiz') {
         const fbQuiz = this.getExerciseFeedback('quiz', targetEmail)
         let teacherPts = fbQuiz?.score !== undefined ? fbQuiz.score : quizAiScore
+        const effDeadlineQuiz = this.getExerciseDeadline('quiz')
+        const quizDeadlineDate = effDeadlineQuiz.deadline ? new Date(effDeadlineQuiz.deadline.replace(' ', 'T')) : null
+        const isQuizOverdue = userQuizzes.length === 0 && !!quizDeadlineDate && (new Date() > quizDeadlineDate)
+        const quizDaysOverdue = isQuizOverdue && quizDeadlineDate ? Math.max(1, Math.floor((new Date().getTime() - quizDeadlineDate.getTime()) / (1000 * 60 * 60 * 24))) : 0
+        const quizAlarmInfo = isQuizOverdue ? getAlarmLevelInfo(quizDaysOverdue) : getAlarmLevelInfo(-1)
+
         return {
           id: 'quiz',
           title: def.title,
@@ -2135,9 +2313,16 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
           completed: userQuizzes.length > 0,
           file: null,
           docLink: '',
-          deadline: def.deadline,
-          deadlineLabel: def.deadlineLabel,
-          isOverdue: userQuizzes.length === 0 && !!def.deadline && (new Date() > new Date(def.deadline.replace(' ', 'T')))
+          deadline: effDeadlineQuiz.deadline,
+          deadlineLabel: effDeadlineQuiz.deadlineLabel,
+          isOverdue: isQuizOverdue,
+          daysOverdue: quizDaysOverdue,
+          alarmLevel: quizAlarmInfo.level,
+          alarmColor: quizAlarmInfo.color,
+          alarmBgColor: quizAlarmInfo.bgColor,
+          alarmBorderColor: quizAlarmInfo.borderColor,
+          alarmLabel: quizAlarmInfo.label,
+          alarmIcon: quizAlarmInfo.icon
         }
       }
 
@@ -2145,7 +2330,12 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
       const file = state.submittedFiles.find(f => f.userEmail.toLowerCase() === targetEmail && f.exerciseId === def.id)
       const hasSub = state.submissions.some(s => s.userEmail.toLowerCase() === targetEmail && s.exerciseId === def.id && s.answer.trim().length > 10)
       const isDone = !!file || hasSub
-      const isOverdue = !isDone && !!def.deadline && (new Date() > new Date(def.deadline.replace(' ', 'T')))
+
+      const effDeadline = this.getExerciseDeadline(def.id)
+      const deadlineDate = effDeadline.deadline ? new Date(effDeadline.deadline.replace(' ', 'T')) : null
+      const isOverdue = !isDone && !!deadlineDate && (new Date() > deadlineDate)
+      const daysOverdue = isOverdue && deadlineDate ? Math.max(1, Math.floor((new Date().getTime() - deadlineDate.getTime()) / (1000 * 60 * 60 * 24))) : 0
+      const alarmInfo = isOverdue ? getAlarmLevelInfo(daysOverdue) : getAlarmLevelInfo(-1)
 
       // Calcul de la cote IA suggérée
       let aiScore: number | null = null
@@ -2203,9 +2393,16 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
         completed: isDone,
         file,
         docLink: def.docLink,
-        deadline: def.deadline,
-        deadlineLabel: def.deadlineLabel,
-        isOverdue
+        deadline: effDeadline.deadline,
+        deadlineLabel: effDeadline.deadlineLabel,
+        isOverdue,
+        daysOverdue,
+        alarmLevel: alarmInfo.level,
+        alarmColor: alarmInfo.color,
+        alarmBgColor: alarmInfo.bgColor,
+        alarmBorderColor: alarmInfo.borderColor,
+        alarmLabel: alarmInfo.label,
+        alarmIcon: alarmInfo.icon
       }
     })
 
@@ -2279,22 +2476,20 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
     }
   },
 
-  // Détection par l'IA des retards et documents non rendus en temps et en heure
+  // Détection par l'IA des retards et documents non rendus en temps et en heure (Alarmes Orange, Bordeaux, Rouge)
   getStudentLateStatus(email?: string): StudentLateStatus {
     const targetEmail = (email || state.currentUser?.email || '').trim().toLowerCase()
     const now = new Date()
 
-    const overdueList: {
-      id: string
-      title: string
-      shortTitle: string
-      deadline: string
-      deadlineLabel: string
-    }[] = []
+    const overdueList: OverdueItemDetail[] = []
+    let daysOverdueMax = 0
 
     for (const item of OFFICIAL_EVALUATION_ITEMS) {
-      if (!item.deadline) continue
-      const deadlineDate = new Date(item.deadline.replace(' ', 'T'))
+      const eff = this.getExerciseDeadline(item.id)
+      if (!eff.isDefined || !eff.deadline) continue
+      const deadlineDate = new Date(eff.deadline.replace(' ', 'T'))
+      if (isNaN(deadlineDate.getTime())) continue
+
       if (now > deadlineDate) {
         let isCompleted = false
         if (item.id === 'quiz') {
@@ -2306,12 +2501,25 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
         }
 
         if (!isCompleted) {
+          const diffMs = now.getTime() - deadlineDate.getTime()
+          const daysOverdue = Math.max(1, Math.floor(diffMs / (1000 * 60 * 60 * 24)))
+          if (daysOverdue > daysOverdueMax) {
+            daysOverdueMax = daysOverdue
+          }
+          const alarmInfo = getAlarmLevelInfo(daysOverdue)
           overdueList.push({
             id: item.id,
             title: item.title,
             shortTitle: item.shortTitle,
-            deadline: item.deadline,
-            deadlineLabel: item.deadlineLabel || item.deadline
+            deadline: eff.deadline,
+            deadlineLabel: eff.deadlineLabel,
+            daysOverdue,
+            alarmLevel: alarmInfo.level,
+            alarmColor: alarmInfo.color,
+            alarmBgColor: alarmInfo.bgColor,
+            alarmBorderColor: alarmInfo.borderColor,
+            alarmLabel: alarmInfo.label,
+            alarmIcon: alarmInfo.icon
           })
         }
       }
@@ -2319,35 +2527,65 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
 
     const isLate = overdueList.length > 0
     const lateCount = overdueList.length
-    const titles = overdueList.map(o => o.shortTitle).join(', ')
+
+    // Déterminer le palier d'alarme le plus grave
+    let highestAlarmLevel: AlarmLevel = 'none'
+    if (overdueList.some(o => o.alarmLevel === 'red')) highestAlarmLevel = 'red'
+    else if (overdueList.some(o => o.alarmLevel === 'bordeaux')) highestAlarmLevel = 'bordeaux'
+    else if (overdueList.some(o => o.alarmLevel === 'orange')) highestAlarmLevel = 'orange'
+    else if (overdueList.some(o => o.alarmLevel === 'recent')) highestAlarmLevel = 'recent'
+
+    const highestAlarmInfo = isLate ? getAlarmLevelInfo(daysOverdueMax) : getAlarmLevelInfo(-1)
+    const titles = overdueList.map(o => `${o.shortTitle} (${o.alarmIcon} ${o.daysOverdue} j)`).join(', ')
     const tooltip = isLate 
-      ? `🚨 ALARME IA : ${lateCount} document(s) non remis en temps et en heure (${titles})`
+      ? `🚨 ALARME ${highestAlarmInfo.label.toUpperCase()} : ${lateCount} document(s) non remis (${titles})`
       : 'Tous les travaux attendus à cette date sont remis à temps'
 
     return {
       isLate,
       lateCount,
+      highestAlarmLevel,
+      highestAlarmColor: highestAlarmInfo.color,
+      highestAlarmBgColor: highestAlarmInfo.bgColor,
+      highestAlarmBorderColor: highestAlarmInfo.borderColor,
+      highestAlarmLabel: highestAlarmInfo.label,
+      highestAlarmIcon: highestAlarmInfo.icon,
+      daysOverdueMax,
       lateItems: overdueList,
       tooltip,
-      message: isLate ? `${lateCount} devoir(s) en retard` : 'À jour'
+      message: isLate ? `${lateCount} devoir(s) en retard • ${highestAlarmInfo.label}` : 'À jour'
     }
   },
 
-  // Analyse synthétique de tous les retards de la classe
+  // Analyse synthétique de tous les retards de la classe avec comptage par palier (Orange, Bordeaux, Rouge)
   getAllStudentsLateStats() {
     const active = state.users.filter(u => u.status !== 'archived')
     let lateStudentsCount = 0
+    let orangeStudentsCount = 0
+    let bordeauxStudentsCount = 0
+    let redStudentsCount = 0
+    let recentStudentsCount = 0
     const byEmail: Record<string, StudentLateStatus> = {}
 
     for (const u of active) {
       const status = this.getStudentLateStatus(u.email)
       byEmail[u.email.toLowerCase()] = status
-      if (status.isLate) lateStudentsCount++
+      if (status.isLate) {
+        lateStudentsCount++
+        if (status.highestAlarmLevel === 'red') redStudentsCount++
+        else if (status.highestAlarmLevel === 'bordeaux') bordeauxStudentsCount++
+        else if (status.highestAlarmLevel === 'orange') orangeStudentsCount++
+        else if (status.highestAlarmLevel === 'recent') recentStudentsCount++
+      }
     }
 
     return {
       totalActive: active.length,
       lateStudentsCount,
+      orangeStudentsCount,
+      bordeauxStudentsCount,
+      redStudentsCount,
+      recentStudentsCount,
       onTimeStudentsCount: active.length - lateStudentsCount,
       byEmail
     }

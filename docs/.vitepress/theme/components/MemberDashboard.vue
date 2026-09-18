@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue'
-import { userStore } from '../stores/userStore'
+import { userStore, formatDeadlineDisplay, getAlarmLevelInfo } from '../stores/userStore'
 import { withBase } from 'vitepress'
 
 const firstName = ref('')
@@ -214,6 +214,57 @@ const progressPercent = computed(() => userStore.calculateUserProgressPercent())
 const userFiles = computed(() => userStore.getUserFiles())
 const studentQuizzes = computed(() => userStore.getUserQuizAttempts())
 const myEvaluation = computed(() => userStore.getStudentEvaluation())
+
+// Échéances dynamiques et alertes de retard graduées (Orange > 1 sem, Bordeaux > 2 sem, Rouge > 1 mois)
+function getExerciseDeadlineInfo(exId) {
+  const d = userStore.getExerciseDeadline(exId)
+  if (!d || !d.deadline) return null
+  return {
+    deadline: d.deadline,
+    display: formatDeadlineDisplay(d.deadline),
+    label: d.label || ''
+  }
+}
+
+function getExerciseLateAlert(exId) {
+  if (getFileForExercise(exId)) return null
+  const d = userStore.getExerciseDeadline(exId)
+  if (!d || !d.deadline) return null
+
+  const due = new Date(d.deadline).getTime()
+  const now = Date.now()
+  if (now <= due) return null
+
+  const daysLate = Math.floor((now - due) / (1000 * 60 * 60 * 24))
+  const alarmInfo = getAlarmLevelInfo(daysLate)
+  return {
+    daysLate,
+    alarmInfo,
+    deadlineFormatted: formatDeadlineDisplay(d.deadline)
+  }
+}
+
+const studentAlarmStatus = computed(() => {
+  if (!currentUser.value) return null
+  return userStore.getStudentLateStatus(currentUser.value.email)
+})
+
+const upcomingDeadlinesList = computed(() => {
+  return availableExercises.map(ex => {
+    const isSubmitted = !!getFileForExercise(ex.id)
+    const dInfo = getExerciseDeadlineInfo(ex.id)
+    const alert = getExerciseLateAlert(ex.id)
+    return {
+      id: ex.id,
+      title: ex.title,
+      category: ex.category,
+      points: ex.points,
+      isSubmitted,
+      deadlineInfo: dInfo,
+      alert
+    }
+  }).filter(item => item.deadlineInfo !== null)
+})
 
 // Aperçu en temps réel du nom de fichier généré
 function getExerciseDocUrl(exId) {
@@ -707,6 +758,31 @@ function formatSize(bytes) {
         </div>
       </div>
 
+      <!-- BANDEAU GLOBAL D'ALARME RETARD SI L'ÉTUDIANT A DES DEVOIRS EN RETARD -->
+      <div 
+        v-if="studentAlarmStatus?.isLate && studentAlarmStatus.overdueCount > 0" 
+        class="student-global-alarm"
+        :style="{ 
+          backgroundColor: studentAlarmStatus.highestAlarmBgColor, 
+          borderColor: studentAlarmStatus.highestAlarmBorderColor, 
+          color: studentAlarmStatus.highestAlarmColor 
+        }"
+      >
+        <div class="sga-icon">{{ studentAlarmStatus.highestAlarmIcon }}</div>
+        <div class="sga-content">
+          <div class="sga-title">
+            <strong>Signalement d'alerte : {{ studentAlarmStatus.highestAlarmLabel }}</strong>
+            <span class="sga-count-badge" :style="{ backgroundColor: studentAlarmStatus.highestAlarmColor }">{{ studentAlarmStatus.overdueCount }} devoir(s) en retard</span>
+          </div>
+          <p class="sga-desc">
+            L'échéance fixée par l'enseignant est dépassée pour certains devoirs (retard maximal : <strong>{{ studentAlarmStatus.daysOverdueMax }} jours</strong>). Rendez-vous dans l'onglet <strong>Devoirs & Dépôts</strong> pour régulariser vos remises.
+          </p>
+        </div>
+        <button @click="activeTab = 'exercises'" class="btn-sga-action">
+          Voir mes devoirs en retard →
+        </button>
+      </div>
+
       <!-- ONGLETS DE NAVIGATION -->
       <div class="tab-bar">
         <button 
@@ -834,6 +910,12 @@ function formatSize(bytes) {
                       <span class="ee-name">{{ ex.title }}</span>
                     </div>
                     <div class="ee-right">
+                      <span v-if="ex.isOverdue" class="ee-alarm-pill" :style="{ backgroundColor: ex.alarmColor || '#dc2626' }">
+                        {{ ex.alarmIcon || '🔔' }} {{ ex.alarmLabel }} (+{{ ex.daysOverdue }}j)
+                      </span>
+                      <span v-else-if="ex.effectiveDeadline" class="ee-deadline-pill">
+                        📅 {{ formatDeadlineDisplay(ex.effectiveDeadline) }}
+                      </span>
                       <a 
                         :href="getExerciseDocUrl(ex.id)" 
                         target="_blank" 
@@ -974,6 +1056,55 @@ function formatSize(bytes) {
 
       <!-- VUE 1 : CHECKLIST DES CHAPITRES -->
       <div v-if="activeTab === 'progress'" class="tab-content">
+        <!-- CALENDRIER DES ÉCHÉANCES ET REMISES -->
+        <div v-if="upcomingDeadlinesList.length > 0" class="student-deadlines-panel">
+          <div class="sdp-header">
+            <div class="sdp-title-group">
+              <span class="sdp-icon">📅</span>
+              <div>
+                <h4 class="sdp-title">Calendrier des Échéances & Remises de Devoirs</h4>
+                <p class="sdp-sub">Consultez les dates limites officielles fixées par l'enseignant au fur et à mesure du quadrimestre.</p>
+              </div>
+            </div>
+            <span class="sdp-badge-count">{{ upcomingDeadlinesList.length }} échéance(s)</span>
+          </div>
+
+          <div class="sdp-grid">
+            <div 
+              v-for="item in upcomingDeadlinesList" 
+              :key="item.id" 
+              class="sdp-card"
+              :class="{ 'is-submitted': item.isSubmitted, 'is-late': !!item.alert }"
+              :style="item.alert ? { borderColor: item.alert.alarmInfo.borderColor, backgroundColor: item.alert.alarmInfo.bgColor } : {}"
+            >
+              <div class="sdp-card-top">
+                <span class="sdp-cat">{{ item.category }}</span>
+                <span v-if="item.isSubmitted" class="sdp-pill ok">✅ Rendu</span>
+                <span v-else-if="item.alert" class="sdp-pill late" :style="{ backgroundColor: item.alert.alarmInfo.color }">
+                  {{ item.alert.alarmInfo.icon }} {{ item.alert.alarmInfo.label }} (+{{ item.alert.daysLate }}j)
+                </span>
+                <span v-else class="sdp-pill pending">⏳ À rendre</span>
+              </div>
+              <div class="sdp-ex-title">{{ item.title }}</div>
+              <div class="sdp-date-box">
+                <span class="sdp-date-icon">🕒</span>
+                <span class="sdp-date-val">{{ item.deadlineInfo.display }}</span>
+              </div>
+              <div class="sdp-card-action">
+                <button v-if="!item.isSubmitted" @click="activeTab = 'exercises'" class="btn-sdp-action">
+                  Déposer ce devoir →
+                </button>
+                <span v-else class="sdp-ok-label">✓ Document validé sur votre espace</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modules-checklist-header">
+          <h4>📋 Progression dans les Modules de Cours</h4>
+          <p class="mch-sub">Cochez les chapitres étudiés pour mesurer votre avancement théorique.</p>
+        </div>
+
         <div class="modules-checklist">
           <div 
             v-for="mod in courseModules" 
@@ -1013,17 +1144,42 @@ function formatSize(bytes) {
             <div class="ex-card-header">
               <div class="ex-card-title-block">
                 <h4>{{ ex.title }}</h4>
-                <a :href="ex.docUrl" target="_blank" rel="noopener" class="link-doc-drive-inline">
-                  📥 Télécharger / Consulter le document officiel de consignes (Google Docs) ↗
-                </a>
+                <div class="ex-meta-links-row">
+                  <a :href="ex.docUrl" target="_blank" rel="noopener" class="link-doc-drive-inline">
+                    📥 Consignes officielles (Google Docs) ↗
+                  </a>
+                  <span v-if="getExerciseDeadlineInfo(ex.id)" class="ex-meta-deadline-pill">
+                    📅 Échéance : <strong>{{ getExerciseDeadlineInfo(ex.id).display }}</strong>
+                  </span>
+                </div>
               </div>
               <div class="ex-status-badges">
                 <span v-if="getFileForExercise(ex.id)" class="badge-submitted">
                   ✓ Document déposé
                 </span>
+                <span v-else-if="getExerciseLateAlert(ex.id)" class="badge-alarm-pill" :style="{ backgroundColor: getExerciseLateAlert(ex.id).alarmInfo.color }">
+                  {{ getExerciseLateAlert(ex.id).alarmInfo.icon }} {{ getExerciseLateAlert(ex.id).alarmInfo.label }} (+{{ getExerciseLateAlert(ex.id).daysLate }}j)
+                </span>
                 <span v-else class="badge-pending">
                   ⏳ En attente de document
                 </span>
+              </div>
+            </div>
+
+            <!-- BANNIERE ALARME RETARD SI RETARD DÉTECTÉ -->
+            <div 
+              v-if="getExerciseLateAlert(ex.id)" 
+              class="ex-alarm-banner" 
+              :style="{ 
+                backgroundColor: getExerciseLateAlert(ex.id).alarmInfo.bgColor, 
+                borderColor: getExerciseLateAlert(ex.id).alarmInfo.borderColor, 
+                color: getExerciseLateAlert(ex.id).alarmInfo.color 
+              }"
+            >
+              <span class="eab-icon">{{ getExerciseLateAlert(ex.id).alarmInfo.icon }}</span>
+              <div class="eab-body">
+                <strong>Attention : {{ getExerciseLateAlert(ex.id).alarmInfo.label }}</strong>
+                <p>La date limite fixée par l'enseignant était le <strong>{{ getExerciseLateAlert(ex.id).deadlineFormatted }}</strong>. Vous cumulez actuellement <strong>{{ getExerciseLateAlert(ex.id).daysLate }} jour(s) de retard</strong>. Veuillez déposer votre document ci-dessous sans tarder.</p>
               </div>
             </div>
 
@@ -3011,9 +3167,6 @@ function formatSize(bytes) {
   margin-top: 4px;
 }
 
-</style>
-
-
 /* ========================================================
    STYLES DU BILAN D'ÉVALUATION (SUR 200 POINTS)
    ======================================================== */
@@ -3498,3 +3651,349 @@ function formatSize(bytes) {
 .link-doc-drive-inline:hover {
   text-decoration: underline;
 }
+
+/* BANDEAU GLOBAL D'ALARME RETARD */
+.student-global-alarm {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  border: 1.5px solid;
+  border-left-width: 6px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.sga-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.sga-content {
+  flex: 1;
+}
+
+.sga-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.96rem;
+  margin-bottom: 0.25rem;
+}
+
+.sga-count-badge {
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  letter-spacing: 0.02em;
+}
+
+.sga-desc {
+  font-size: 0.84rem;
+  line-height: 1.45;
+  margin: 0;
+  opacity: 0.95;
+}
+
+.btn-sga-action {
+  background: #0f172a;
+  color: #ffffff;
+  border: none;
+  padding: 0.55rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+
+.btn-sga-action:hover {
+  opacity: 0.85;
+}
+
+/* ÉLÉMENTS ÉCHÉANCES & ALARMES DANS L'ÉVALUATION */
+.ee-alarm-pill {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #ffffff;
+  padding: 2px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.ee-deadline-pill {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #64748b;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* CALENDRIER DES ÉCHÉANCES DANS PROGRESSION */
+.student-deadlines-panel {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.sdp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.sdp-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.sdp-icon {
+  font-size: 1.5rem;
+}
+
+.sdp-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+}
+
+.sdp-sub {
+  margin: 0.15rem 0 0 0;
+  font-size: 0.8rem;
+  color: var(--vp-c-text-2);
+}
+
+.sdp-badge-count {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  background: rgba(2, 132, 199, 0.1);
+  color: #0284c7;
+  border: 1px solid rgba(2, 132, 199, 0.25);
+}
+
+.sdp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.85rem;
+}
+
+.sdp-card {
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.sdp-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.sdp-card.is-late {
+  border-width: 1.5px;
+}
+
+.sdp-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.sdp-cat {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #64748b;
+  letter-spacing: 0.03em;
+}
+
+.sdp-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.sdp-pill.ok {
+  background: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+}
+
+.sdp-pill.late {
+  color: #ffffff;
+}
+
+.sdp-pill.pending {
+  background: #f1f5f9;
+  color: #64748b;
+  border: 1px solid #cbd5e1;
+}
+
+.sdp-ex-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+  line-height: 1.35;
+  margin-bottom: 0.6rem;
+}
+
+.sdp-date-box {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: #475569;
+  background: rgba(148, 163, 184, 0.1);
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+}
+
+.sdp-date-icon {
+  font-size: 0.9rem;
+}
+
+.sdp-date-val {
+  font-weight: 600;
+  color: #0f172a;
+}
+:root.dark .sdp-date-val {
+  color: #f1f5f9;
+}
+
+.sdp-card-action {
+  margin-top: auto;
+}
+
+.btn-sdp-action {
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: #0284c7;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.15s;
+}
+
+.btn-sdp-action:hover {
+  background: #0369a1;
+}
+
+.sdp-ok-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #059669;
+  text-align: center;
+}
+
+.modules-checklist-header {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.modules-checklist-header h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.mch-sub {
+  margin: 0.15rem 0 0 0;
+  font-size: 0.8rem;
+  color: var(--vp-c-text-2);
+}
+
+/* DÉPÔTS D'EXERCICES AVEC ÉCHÉANCES ET ALARMES */
+.ex-meta-links-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.25rem;
+}
+
+.ex-meta-deadline-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.76rem;
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.badge-alarm-pill {
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+}
+
+.ex-alarm-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid;
+  border-left-width: 4px;
+  margin: 0.75rem 0;
+  font-size: 0.85rem;
+}
+
+.eab-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.eab-body {
+  flex: 1;
+}
+
+.eab-body strong {
+  display: block;
+  font-size: 0.86rem;
+  margin-bottom: 0.2rem;
+}
+
+.eab-body p {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  opacity: 0.95;
+}
+</style>

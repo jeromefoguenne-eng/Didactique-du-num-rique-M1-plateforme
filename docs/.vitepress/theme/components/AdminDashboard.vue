@@ -427,8 +427,21 @@ function getItemLateBreakdown(itemId) {
   return { total: active.length, submitted, overdue, orange, bordeaux, red, recent, isPast, daysDiff }
 }
 
+const studentSortKey = ref('name') // 'name' | 'status' | 'email' | 'registeredAt' | 'passwordSet' | 'progress' | 'exercises' | 'grade'
+const studentSortOrder = ref('asc') // 'asc' | 'desc'
+
+function toggleStudentSort(key) {
+  if (studentSortKey.value === key) {
+    studentSortOrder.value = studentSortOrder.value === 'asc' ? 'desc' : 'asc'
+  } else {
+    studentSortKey.value = key
+    // Pour la progression, les devoirs ou les notes, un premier clic en décroissant (les plus avancés d'abord) est plus naturel
+    studentSortOrder.value = (key === 'progress' || key === 'exercises' || key === 'grade') ? 'desc' : 'asc'
+  }
+}
+
 const displayedUsers = computed(() => {
-  return users.value.filter(u => {
+  const filtered = users.value.filter(u => {
     if (!u || !u.email) return false
     if (studentStatusFilter.value === 'active' && u.status === 'archived') return false
     if (studentStatusFilter.value === 'archived' && u.status !== 'archived') return false
@@ -453,6 +466,59 @@ const displayedUsers = computed(() => {
       return fullName.includes(q) || email.includes(q)
     }
     return true
+  })
+
+  const order = studentSortOrder.value === 'asc' ? 1 : -1
+
+  return filtered.slice().sort((a, b) => {
+    switch (studentSortKey.value) {
+      case 'name': {
+        const lastA = (a.lastName || '').trim().toLowerCase()
+        const lastB = (b.lastName || '').trim().toLowerCase()
+        const cmp = lastA.localeCompare(lastB, 'fr')
+        if (cmp !== 0) return cmp * order
+        const firstA = (a.firstName || '').trim().toLowerCase()
+        const firstB = (b.firstName || '').trim().toLowerCase()
+        return firstA.localeCompare(firstB, 'fr') * order
+      }
+      case 'status': {
+        const statusA = a.status === 'archived' ? 'Archivé' : 'Actif'
+        const statusB = b.status === 'archived' ? 'Archivé' : 'Actif'
+        return statusA.localeCompare(statusB, 'fr') * order
+      }
+      case 'email': {
+        const emailA = (a.email || '').trim().toLowerCase()
+        const emailB = (b.email || '').trim().toLowerCase()
+        return emailA.localeCompare(emailB) * order
+      }
+      case 'registeredAt': {
+        const dateA = a.registeredAt || ''
+        const dateB = b.registeredAt || ''
+        return dateA.localeCompare(dateB) * order
+      }
+      case 'passwordSet': {
+        const pwdA = a.passwordSet ? 1 : 0
+        const pwdB = b.passwordSet ? 1 : 0
+        return (pwdA - pwdB) * order
+      }
+      case 'progress': {
+        const progA = userStore.calculateUserProgressPercent(a.email) || 0
+        const progB = userStore.calculateUserProgressPercent(b.email) || 0
+        return (progA - progB) * order
+      }
+      case 'exercises': {
+        const countA = submittedFiles.value.filter(f => (f.userEmail || '').toLowerCase() === (a.email || '').toLowerCase()).length
+        const countB = submittedFiles.value.filter(f => (f.userEmail || '').toLowerCase() === (b.email || '').toLowerCase()).length
+        return (countA - countB) * order
+      }
+      case 'grade': {
+        const evalA = getStudentEvalData(a.email)?.totalScore || 0
+        const evalB = getStudentEvalData(b.email)?.totalScore || 0
+        return (evalA - evalB) * order
+      }
+      default:
+        return 0
+    }
   })
 })
 
@@ -1593,20 +1659,60 @@ function toggleQuizExpand(id) {
           <table class="data-table">
             <thead>
               <tr>
-                <th>Étudiant</th>
-                <th>Statut</th>
-                <th>Adresse Email</th>
-                <th>Inscrit le</th>
-                <th>Sécurité MDP</th>
-                <th>Progression</th>
-                <th>Exercices</th>
-                <th>Note (/ 200 pts)</th>
+                <th class="sortable-th" :class="{ 'is-active-sort': studentSortKey === 'name' }" @click="toggleStudentSort('name')" title="Cliquer pour trier par Nom / Prénom">
+                  <div class="th-content">
+                    <span>Étudiant</span>
+                    <span class="sort-icon">{{ studentSortKey === 'name' ? (studentSortOrder === 'asc' ? '▲' : '▼') : '⇅' }}</span>
+                  </div>
+                </th>
+                <th class="sortable-th" :class="{ 'is-active-sort': studentSortKey === 'status' }" @click="toggleStudentSort('status')" title="Cliquer pour trier par Statut (Actif / Archivé)">
+                  <div class="th-content">
+                    <span>Statut</span>
+                    <span class="sort-icon">{{ studentSortKey === 'status' ? (studentSortOrder === 'asc' ? '▲' : '▼') : '⇅' }}</span>
+                  </div>
+                </th>
+                <th class="sortable-th" :class="{ 'is-active-sort': studentSortKey === 'email' }" @click="toggleStudentSort('email')" title="Cliquer pour trier par Adresse Email">
+                  <div class="th-content">
+                    <span>Adresse Email</span>
+                    <span class="sort-icon">{{ studentSortKey === 'email' ? (studentSortOrder === 'asc' ? '▲' : '▼') : '⇅' }}</span>
+                  </div>
+                </th>
+                <th class="sortable-th" :class="{ 'is-active-sort': studentSortKey === 'registeredAt' }" @click="toggleStudentSort('registeredAt')" title="Cliquer pour trier par Date d'inscription">
+                  <div class="th-content">
+                    <span>Inscrit le</span>
+                    <span class="sort-icon">{{ studentSortKey === 'registeredAt' ? (studentSortOrder === 'asc' ? '▲' : '▼') : '⇅' }}</span>
+                  </div>
+                </th>
+                <th class="sortable-th" :class="{ 'is-active-sort': studentSortKey === 'passwordSet' }" @click="toggleStudentSort('passwordSet')" title="Cliquer pour trier par Statut du mot de passe">
+                  <div class="th-content">
+                    <span>Sécurité MDP</span>
+                    <span class="sort-icon">{{ studentSortKey === 'passwordSet' ? (studentSortOrder === 'asc' ? '▲' : '▼') : '⇅' }}</span>
+                  </div>
+                </th>
+                <th class="sortable-th" :class="{ 'is-active-sort': studentSortKey === 'progress' }" @click="toggleStudentSort('progress')" title="Cliquer pour trier par Progression">
+                  <div class="th-content">
+                    <span>Progression</span>
+                    <span class="sort-icon">{{ studentSortKey === 'progress' ? (studentSortOrder === 'asc' ? '▲' : '▼') : '⇅' }}</span>
+                  </div>
+                </th>
+                <th class="sortable-th" :class="{ 'is-active-sort': studentSortKey === 'exercises' }" @click="toggleStudentSort('exercises')" title="Cliquer pour trier par Nombre de devoirs remis">
+                  <div class="th-content">
+                    <span>Exercices</span>
+                    <span class="sort-icon">{{ studentSortKey === 'exercises' ? (studentSortOrder === 'asc' ? '▲' : '▼') : '⇅' }}</span>
+                  </div>
+                </th>
+                <th class="sortable-th" :class="{ 'is-active-sort': studentSortKey === 'grade' }" @click="toggleStudentSort('grade')" title="Cliquer pour trier par Note sur 200 points">
+                  <div class="th-content">
+                    <span>Note (/ 200 pts)</span>
+                    <span class="sort-icon">{{ studentSortKey === 'grade' ? (studentSortOrder === 'asc' ? '▲' : '▼') : '⇅' }}</span>
+                  </div>
+                </th>
                 <th style="text-align: right;">Actions</th>
               </tr>
             </thead>
             <tbody>
               <tr v-if="displayedUsers.length === 0">
-                <td colspan="7" class="empty-table-msg">
+                <td colspan="9" class="empty-table-msg">
                   Aucun étudiant ne correspond aux critères de recherche ou de filtre.
                 </td>
               </tr>
@@ -4259,6 +4365,46 @@ function toggleQuizExpand(id) {
   background: var(--vp-c-bg-alt);
   font-weight: 700;
   color: var(--vp-c-text-1);
+}
+
+.sortable-th {
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.sortable-th:hover {
+  background-color: var(--vp-c-brand-soft, rgba(59, 130, 246, 0.12));
+  color: var(--vp-c-brand-1, #2563eb);
+}
+
+.sortable-th.is-active-sort {
+  color: var(--vp-c-brand-1, #2563eb);
+  background-color: var(--vp-c-brand-soft, rgba(59, 130, 246, 0.08));
+}
+
+.th-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sort-icon {
+  font-size: 0.78rem;
+  display: inline-block;
+  opacity: 0.35;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.sortable-th:hover .sort-icon {
+  opacity: 0.7;
+}
+
+.sortable-th.is-active-sort .sort-icon {
+  opacity: 1;
+  font-weight: 900;
+  color: var(--vp-c-brand-1, #2563eb);
 }
 
 .row-archived {

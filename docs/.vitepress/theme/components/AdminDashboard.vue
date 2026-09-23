@@ -1671,7 +1671,7 @@ function toggleQuizExpand(id) {
                     <span class="sort-icon">{{ studentSortKey === 'status' ? (studentSortOrder === 'asc' ? '▲' : '▼') : '⇅' }}</span>
                   </div>
                 </th>
-                <th class="sortable-th" :class="{ 'is-active-sort': studentSortKey === 'email' }" @click="toggleStudentSort('email')" title="Cliquer pour trier par Adresse Email">
+                <th class="sortable-th" :class="{ 'is-active-sort': studentSortKey === 'email' }" @click="toggleStudentSort('email')" title="Cliquer pour trier par Adresse Email" style="width: 160px; max-width: 160px;">
                   <div class="th-content">
                     <span>Adresse Email</span>
                     <span class="sort-icon">{{ studentSortKey === 'email' ? (studentSortOrder === 'asc' ? '▲' : '▼') : '⇅' }}</span>
@@ -3653,10 +3653,10 @@ function toggleQuizExpand(id) {
                       <div class="qsb-header">
                         <div class="qsb-score">
                           Note obtenue au quiz : <strong>{{ item.aiScore }} / 20 pts</strong>
-                          <span class="qsb-count">({{ item.quizAttempts.length }} tentative(s) enregistrée(s))</span>
+                          <span class="qsb-count">({{ item.quizAttempts?.length || 0 }} tentative(s) enregistrée(s))</span>
                         </div>
                         <button 
-                          v-if="item.quizAttempts.length > 0" 
+                          v-if="(item.quizAttempts?.length || 0) > 0" 
                           @click="toggleQuizExpand('quiz')" 
                           class="btn-toggle-quiz-details"
                         >
@@ -3665,7 +3665,7 @@ function toggleQuizExpand(id) {
                       </div>
 
                       <!-- DÉTAIL DES QUESTIONS / RÉPONSES DU QUIZ -->
-                      <div v-if="expandedQuizAnswers['quiz'] && item.quizAttempts.length > 0" class="quiz-answers-detail">
+                      <div v-if="expandedQuizAnswers['quiz'] && (item.quizAttempts?.length || 0) > 0" class="quiz-answers-detail">
                         <div v-for="(att, aIdx) in item.quizAttempts" :key="att.id || aIdx" class="quiz-attempt-card">
                           <div class="qac-head">
                             <strong>Tentative du {{ att.submittedAt }}</strong> • Score : {{ att.score }} / {{ att.totalPoints }} ({{ att.percentage }}%)
@@ -4431,8 +4431,12 @@ function toggleQuizExpand(id) {
 
 .email-cell {
   font-family: monospace;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--vp-c-text-2);
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .email-subtext {

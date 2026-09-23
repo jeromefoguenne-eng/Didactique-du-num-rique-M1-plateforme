@@ -1,5 +1,5 @@
 import { reactive, computed, ref } from 'vue'
-import { cloudSync, cloudSyncState } from './cloudSync'
+import { cloudSync, cloudSyncState, DEFAULT_CLOUD_URL } from './cloudSync'
 
 export interface User {
   id: string
@@ -1505,7 +1505,7 @@ const state = reactive({
   submissions: getStorage<Submission[]>(STORAGE_KEY_SUBMISSIONS, DEFAULT_SUBMISSIONS),
   submittedFiles: getStorage<SubmittedFile[]>(STORAGE_KEY_FILES, DEFAULT_FILES),
   exerciseFeedbacks: getStorage<Record<string, ExerciseTeacherFeedback>>(STORAGE_KEY_EXERCISE_FEEDBACKS, DEFAULT_EXERCISE_FEEDBACKS),
-  driveWebhook: getStorage<string>(STORAGE_KEY_WEBHOOK, ''),
+  driveWebhook: getStorage<string>(STORAGE_KEY_WEBHOOK, DEFAULT_CLOUD_URL) || DEFAULT_CLOUD_URL,
   adminPinHash: initAdminPinHash(),
   quizAttempts: getStorage<QuizAttempt[]>(STORAGE_KEY_QUIZZES, DEFAULT_QUIZZES),
   evaluations: getStorage<Record<string, EvaluationRecord>>(STORAGE_KEY_EVALUATIONS, DEFAULT_EVALUATIONS),

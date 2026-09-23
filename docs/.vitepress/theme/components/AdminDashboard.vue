@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import { userStore, OFFICIAL_EVALUATION_ITEMS, formatDeadlineDisplay, getAlarmLevelInfo, parseDeadline } from '../stores/userStore'
+import { DEFAULT_CLOUD_URL } from '../stores/cloudSync'
 
 const enteredPin = ref('')
 const isAuthenticated = ref(false)
@@ -199,7 +200,7 @@ const confirmPasswordInput = ref('')
 const passwordChangeFeedback = ref({ type: '', message: '' })
 
 // Webhook Google Drive & Cloud Sync
-const webhookInput = ref(userStore.cloudUrl || userStore.driveWebhook || '')
+const webhookInput = ref(userStore.cloudUrl || DEFAULT_CLOUD_URL)
 const webhookStatus = ref('')
 const syncFeedback = ref('')
 const isSyncing = ref(false)

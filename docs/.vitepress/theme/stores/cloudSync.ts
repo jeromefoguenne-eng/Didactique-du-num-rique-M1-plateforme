@@ -3,8 +3,8 @@ import { reactive } from 'vue'
 const STORAGE_KEY_CLOUD_URL = 'didactique_m1_cloud_url'
 const STORAGE_KEY_LAST_SYNC = 'didactique_m1_last_sync'
 
-// URL par défaut si pré-configurée, sinon récupérée du stockage local
-const DEFAULT_CLOUD_URL = ''
+// URL officielle de déploiement Google Apps Script (connectée au Google Drive & Sheet de Jérôme)
+export const DEFAULT_CLOUD_URL = 'https://script.google.com/macros/s/AKfycbyXrQliTRTuzUZHcP54tjGb9KMRlznKHODC08561nTw1_5h1wjHYa_GpBc30UfrcUFg9w/exec'
 
 export interface CloudSyncState {
   url: string
@@ -31,15 +31,15 @@ export class CloudSync {
   getUrl(): string {
     if (typeof window !== 'undefined') {
       const stored = localStorage.getItem(STORAGE_KEY_CLOUD_URL)
-      if (stored) return stored.trim()
+      if (stored && stored.trim().length > 15) return stored.trim()
       const webhook = localStorage.getItem('didactique_m1_webhook_url')
-      if (webhook) return webhook.trim()
+      if (webhook && webhook.trim().length > 15) return webhook.trim()
     }
-    return cloudSyncState.url || ''
+    return cloudSyncState.url || DEFAULT_CLOUD_URL
   }
 
   setUrl(newUrl: string) {
-    const clean = (newUrl || '').trim()
+    const clean = (newUrl || '').trim() || DEFAULT_CLOUD_URL
     cloudSyncState.url = clean
     if (typeof window !== 'undefined') {
       localStorage.setItem(STORAGE_KEY_CLOUD_URL, clean)

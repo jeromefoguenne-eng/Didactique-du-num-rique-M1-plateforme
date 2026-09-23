@@ -1,4 +1,6 @@
 import { defineConfig } from 'vitepress'
+import fs from 'node:fs'
+import path from 'node:path'
 
 export default defineConfig({
   title: "Didactique du Numérique",
@@ -9,6 +11,60 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
   ignoreDeadLinks: [/\/documents\//],
+
+  vite: {
+    plugins: [
+      {
+        name: 'google-drive-backup-middleware',
+        configureServer(server) {
+          server.middlewares.use('/api/backup-exercise', async (req, res) => {
+            if (req.method === 'POST') {
+              let body = ''
+              req.on('data', chunk => { body += chunk })
+              req.on('end', () => {
+                try {
+                  const data = JSON.parse(body)
+                  const driveDir = "C:\\Google Drive\\Prépas light\\HECh\\Péda\\Math-Num\\M1\\Didactique et numérique\\Exercices étudiants Plateforme"
+                  if (!fs.existsSync(driveDir)) {
+                    fs.mkdirSync(driveDir, { recursive: true })
+                  }
+                  // Création d'un sous-dossier dédié par nom d'étudiant
+                  const rawStudent = data.studentName || data.userName || 'Etudiants'
+                  const cleanStudentFolder = rawStudent.replace(/[/\\:*?"<>|]/g, '_').trim()
+                  const studentDir = path.join(driveDir, cleanStudentFolder)
+                  if (!fs.existsSync(studentDir)) {
+                    fs.mkdirSync(studentDir, { recursive: true })
+                  }
+
+                  const fileName = data.fileName || `${cleanStudentFolder}_${data.exerciseId || 'Devoir'}.txt`
+                  const targetPath = path.join(studentDir, fileName)
+
+                  if (data.base64Data) {
+                    const cleanBase64 = data.base64Data.includes(',') ? data.base64Data.split(',')[1] : data.base64Data
+                    const buffer = Buffer.from(cleanBase64, 'base64')
+                    fs.writeFileSync(targetPath, buffer)
+                  } else if (data.content) {
+                    fs.writeFileSync(targetPath, data.content, 'utf-8')
+                  }
+
+                  res.statusCode = 200
+                  res.setHeader('Content-Type', 'application/json')
+                  res.end(JSON.stringify({ status: 'success', path: targetPath }))
+                } catch (e: any) {
+                  res.statusCode = 500
+                  res.setHeader('Content-Type', 'application/json')
+                  res.end(JSON.stringify({ status: 'error', message: e.message }))
+                }
+              })
+            } else {
+              res.statusCode = 405
+              res.end()
+            }
+          })
+        }
+      }
+    ]
+  },
 
   head: [
     ['meta', { 'http-equiv': 'X-Content-Type-Options', content: 'nosniff' }],

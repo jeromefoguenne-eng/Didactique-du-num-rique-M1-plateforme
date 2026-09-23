@@ -2047,6 +2047,29 @@ export const userStore = {
     }
 
     setStorage(STORAGE_KEY_SUBMISSIONS, state.submissions)
+
+    // Backup instantané dans le dossier Google Drive local (C:\Google Drive\...)
+    try {
+      const formattedName = formatFileName(
+        state.currentUser.lastName,
+        state.currentUser.firstName,
+        exerciseTitle,
+        'Reponse_Ecrite.txt'
+      )
+      fetch('/api/backup-exercise', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          userName: `${state.currentUser.lastName}_${state.currentUser.firstName}`,
+          userEmail: cleanEmail,
+          exerciseId,
+          exerciseTitle,
+          fileName: formattedName,
+          content: `=================================================================\nÉLÈVE : ${state.currentUser.firstName} ${state.currentUser.lastName} (${cleanEmail})\nEXERCICE : ${exerciseTitle} (${exerciseId})\nDATE : ${now}\n=================================================================\n\nRÉPONSE RÉDIGÉE :\n\n${cleanAnswer}\n`
+        })
+      }).catch(() => {})
+    } catch (e) {}
+
     return { success: true, message: 'Réponse enregistrée avec succès !' }
   },
 
@@ -2167,7 +2190,29 @@ export const userStore = {
       }
     }
 
-    // 3. Envoi automatique vers le serveur compagnon local (si actif sur le PC de l'enseignant)
+    // 3. Sauvegarde instantanée dans le dossier Google Drive local (C:\Google Drive\...)
+    try {
+      fetch('/api/backup-exercise', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          studentName: `${state.currentUser.firstName} ${state.currentUser.lastName}`,
+          userName: `${state.currentUser.lastName}_${state.currentUser.firstName}`,
+          userEmail: state.currentUser.email,
+          exerciseId,
+          exerciseTitle,
+          fileName: formattedName,
+          base64Data: dataUrl
+        })
+      }).then(res => {
+        if (res.ok) {
+          newFile.driveSynced = true
+          setStorage(STORAGE_KEY_FILES, state.submittedFiles)
+        }
+      }).catch(() => {})
+    } catch (e) {}
+
+    // 4. Tentative d'envoi automatique vers le serveur compagnon local (si actif)
     try {
       fetch('http://localhost:3001/api/upload', {
         method: 'POST',

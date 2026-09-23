@@ -1677,7 +1677,7 @@ function toggleQuizExpand(id) {
                     <span class="sort-icon">{{ studentSortKey === 'status' ? (studentSortOrder === 'asc' ? '▲' : '▼') : '⇅' }}</span>
                   </div>
                 </th>
-                <th class="sortable-th" :class="{ 'is-active-sort': studentSortKey === 'email' }" @click="toggleStudentSort('email')" title="Cliquer pour trier par Adresse Email">
+                <th class="sortable-th" :class="{ 'is-active-sort': studentSortKey === 'email' }" @click="toggleStudentSort('email')" title="Cliquer pour trier par Adresse Email" style="width: 160px; max-width: 160px;">
                   <div class="th-content">
                     <span>Adresse Email</span>
                     <span class="sort-icon">{{ studentSortKey === 'email' ? (studentSortOrder === 'asc' ? '▲' : '▼') : '⇅' }}</span>
@@ -4447,6 +4447,10 @@ function toggleQuizExpand(id) {
   min-width: 105px;
   font-size: 0.78rem;
   color: var(--vp-c-text-2);
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .email-truncate {

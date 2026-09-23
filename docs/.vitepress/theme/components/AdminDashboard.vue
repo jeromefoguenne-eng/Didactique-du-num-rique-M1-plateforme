@@ -766,29 +766,18 @@ function checkPin() {
 
   updateLockoutState()
   if (lockoutSeconds.value > 0) {
-    loginErrorMessage.value = `Accès temporairement suspendu (${lockoutSeconds.value}s). Utilisez le mot de passe maître 'hech2026' pour débloquer immédiatement.`
+    loginErrorMessage.value = `Accès temporairement suspendu (${lockoutSeconds.value}s).`
     return
   }
 
   const att = userStore.recordAdminAttempt(false)
   if (!att.allowed) {
     updateLockoutState()
-    loginErrorMessage.value = `🔒 Sécurité : trop d'échecs consécutifs. Utilisez le mot de passe maître 'hech2026' ci-dessous pour débloquer immédiatement.`
+    loginErrorMessage.value = `🔒 Sécurité : trop d'échecs consécutifs. Accès temporairement suspendu.`
   } else {
     const remainingTries = 5 - att.attempts
-    loginErrorMessage.value = `Mot de passe incorrect. (${remainingTries} tentative${remainingTries > 1 ? 's' : ''} restante${remainingTries > 1 ? 's' : ''} avant verrouillage temporaire). Utilisez 'hech2026' pour débloquer.`
+    loginErrorMessage.value = `Mot de passe incorrect. (${remainingTries} tentative${remainingTries > 1 ? 's' : ''} restante${remainingTries > 1 ? 's' : ''} avant verrouillage temporaire).`
   }
-}
-
-function emergencyUnlock() {
-  userStore.clearAdminLockout()
-  lockoutSeconds.value = 0
-  if (lockoutTimer) {
-    clearInterval(lockoutTimer)
-    lockoutTimer = null
-  }
-  enteredPin.value = 'hech2026'
-  checkPin()
 }
 
 // Changement sécurisé du mot de passe admin
@@ -1172,7 +1161,7 @@ function exportAllResultsToExcel() {
         <input 
           v-model="enteredPin" 
           type="password" 
-          placeholder="Mot de passe d'accès enseignant (ou hech2026)" 
+          placeholder="Mot de passe d'accès enseignant" 
           @keyup.enter="checkPin"
         />
         <button @click="checkPin" class="btn-unlock">
@@ -1182,16 +1171,6 @@ function exportAllResultsToExcel() {
 
       <div v-if="loginErrorMessage" :class="['admin-login-msg', lockoutSeconds > 0 ? 'msg-lockout' : 'msg-error']">
         {{ loginErrorMessage }}
-      </div>
-
-      <!-- CARTE DE DÉBLOCAGE D'URGENCE / MOT DE PASSE MAÎTRE -->
-      <div class="emergency-unlock-card">
-        <p class="emergency-text">
-          🔑 <strong>Accès garanti enseignant</strong> : Vous pouvez toujours utiliser le mot de passe maître <code>hech2026</code> pour annuler immédiatement tout verrouillage et accéder à l'administration.
-        </p>
-        <button @click="emergencyUnlock" type="button" class="btn-emergency-unlock">
-          ⚡ Débloquer immédiatement avec le mot de passe maître (hech2026)
-        </button>
       </div>
     </div>
 
@@ -3323,51 +3302,6 @@ function exportAllResultsToExcel() {
 
 .btn-unlock:hover {
   opacity: 0.9;
-}
-
-.emergency-unlock-card {
-  margin-top: 1.8rem;
-  padding: 1.2rem;
-  background: var(--vp-c-bg);
-  border: 1px dashed #3b82f6;
-  border-radius: 12px;
-  text-align: left;
-}
-
-.emergency-text {
-  font-size: 0.85rem !important;
-  color: var(--vp-c-text-1) !important;
-  margin-bottom: 0.8rem !important;
-  line-height: 1.4 !important;
-}
-
-.emergency-text code {
-  background: #dbeafe;
-  color: #1e40af;
-  font-weight: bold;
-  padding: 2px 6px;
-  border-radius: 4px;
-}
-
-.btn-emergency-unlock {
-  width: 100%;
-  background: #2563eb;
-  color: white;
-  border: none;
-  padding: 10px 14px;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 0.88rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  transition: background 0.2s;
-}
-
-.btn-emergency-unlock:hover {
-  background: #1d4ed8;
 }
 
 /* DASHBOARD */

@@ -18,5 +18,15 @@ export default {
     app.component('ExerciseBox', ExerciseBox)
     app.component('QuizBox', QuizBox)
     app.component('CourseEvaluationForm', CourseEvaluationForm)
+
+    // Synchronisation Cloud automatique en arrière-plan dès le chargement de n'importe quelle page
+    if (typeof window !== 'undefined') {
+      import('./stores/userStore').then(({ userStore }) => {
+        try {
+          userStore.syncFromStorage()
+          userStore.syncWithCloud().catch(() => {})
+        } catch (e) {}
+      })
+    }
   }
 }

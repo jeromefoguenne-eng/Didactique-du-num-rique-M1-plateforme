@@ -3233,6 +3233,14 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
     if (!cloudSync.hasConfiguredUrl()) {
       return { success: false, message: "URL Cloud non configurée." }
     }
+    // S'assurer que l'utilisateur connecté sur cet appareil est inclus dans le flux de synchronisation
+    if (state.currentUser && state.currentUser.email && state.currentUser.role === 'student') {
+      const exists = state.users.some(u => u.email.toLowerCase() === state.currentUser!.email.toLowerCase())
+      if (!exists) {
+        state.users.push(state.currentUser)
+        setStorage(STORAGE_KEY_USERS, state.users)
+      }
+    }
     const res = await cloudSync.syncAll(state)
     if (res.success && res.data) {
       this.mergeRemoteData(res.data)

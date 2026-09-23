@@ -1901,8 +1901,8 @@ export const userStore = {
   },
 
   toggleArchiveStudent(email: string) {
-    const cleanEmail = email.trim().toLowerCase()
-    const user = state.users.find(u => u.email === cleanEmail)
+    const cleanEmail = (email || '').trim().toLowerCase()
+    const user = state.users.find(u => (u?.email || '').trim().toLowerCase() === cleanEmail)
     if (user) {
       user.status = user.status === 'archived' ? 'active' : 'archived'
       setStorage(STORAGE_KEY_USERS, state.users)
@@ -1963,8 +1963,8 @@ export const userStore = {
   },
 
   login(email: string) {
-    const cleanEmail = email.trim().toLowerCase()
-    const user = state.users.find(u => u.email === cleanEmail)
+    const cleanEmail = (email || '').trim().toLowerCase()
+    const user = state.users.find(u => (u?.email || '').trim().toLowerCase() === cleanEmail)
     if (user) {
       if (user.status === 'archived') {
         user.status = 'active'
@@ -2167,14 +2167,17 @@ export const userStore = {
       }
     }
 
-    // 3. Tentative d'envoi automatique vers le serveur compagnon local (si actif)
+    // 3. Envoi automatique vers le serveur compagnon local (si actif sur le PC de l'enseignant)
     try {
       fetch('http://localhost:3001/api/upload', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           fileName: formattedName,
-          base64Data: dataUrl
+          base64Data: dataUrl,
+          studentName: `${state.currentUser.firstName} ${state.currentUser.lastName}`,
+          studentEmail: state.currentUser.email,
+          exerciseTitle
         })
       }).then(res => {
         if (res.ok) {
@@ -2184,7 +2187,22 @@ export const userStore = {
       }).catch(() => {})
     } catch (e) {}
 
-    // 4. Tentative d'envoi automatique vers le Webhook Google Apps Script (si configuré)
+    // 4. Envoi automatique vers Google Drive via Google Apps Script (Cloud)
+    cloudSync.uploadFile({
+      studentName: `${state.currentUser.firstName} ${state.currentUser.lastName}`,
+      studentEmail: state.currentUser.email,
+      exerciseTitle,
+      fileName: formattedName,
+      base64Data: dataUrl.split(',')[1] || dataUrl,
+      mimeType: newFile.fileType
+    }).then(res => {
+      if (res && res.success) {
+        newFile.driveSynced = true
+        setStorage(STORAGE_KEY_FILES, state.submittedFiles)
+      }
+    }).catch(() => {})
+
+    // 4b. Webhook direct hérité (si configuré)
     if (state.driveWebhook) {
       try {
         fetch(state.driveWebhook, {
@@ -2210,6 +2228,31 @@ export const userStore = {
       success: true,
       message: `Document déposé avec succès sous le libellé : ${formattedName}`,
       file: newFile
+    }
+  },
+
+  async syncAllFilesToLocalDrive(): Promise<{ success: boolean; count?: number; message: string }> {
+    try {
+      const filesPayload = state.submittedFiles.map(f => ({
+        fileName: f.formattedFileName || f.originalFileName,
+        dataUrl: f.dataUrl,
+        userName: f.userName,
+        userEmail: f.userEmail
+      }))
+
+      const res = await fetch('http://localhost:3001/api/sync-all', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ files: filesPayload })
+      })
+
+      if (res.ok) {
+        const data = await res.json()
+        return { success: true, count: data.savedCount, message: `${data.savedCount} travaux synchronisés sur Google Drive local.` }
+      }
+      return { success: false, message: 'Le serveur compagnon local (port 3001) ne répond pas.' }
+    } catch (e: any) {
+      return { success: false, message: 'Serveur local inactif (Lancez "npm run drive:server" sur votre machine).' }
     }
   },
 
@@ -2250,7 +2293,14 @@ export const userStore = {
     for (const f of state.submittedFiles) {
       if (!f.dataUrl) continue
       try {
-        const fileHandle = await directoryHandle.getFileHandle(f.formattedFileName, { create: true })
+        // 1. Créer ou récupérer le sous-dossier par nom d'étudiant
+        const rawName = f.userName || (f.userEmail ? f.userEmail.split('@')[0] : 'Etudiant_Inconnu')
+        const safeStudentFolder = rawName.replace(/[<>:"/\\|?*]/g, '_').trim() || 'Etudiant'
+        const studentDirHandle = await directoryHandle.getDirectoryHandle(safeStudentFolder, { create: true })
+
+        // 2. Écrire le fichier dans le dossier de l'étudiant
+        const targetFileName = f.formattedFileName || f.originalFileName || 'devoir.docx'
+        const fileHandle = await studentDirHandle.getFileHandle(targetFileName, { create: true })
         const writable = await fileHandle.createWritable()
         
         // Convertir base64 DataURL en Blob
@@ -2261,7 +2311,7 @@ export const userStore = {
           byteNumbers[i] = byteCharacters.charCodeAt(i)
         }
         const byteArray = new Uint8Array(byteNumbers)
-        const blob = new Blob([byteArray], { type: f.fileType })
+        const blob = new Blob([byteArray], { type: f.fileType || 'application/octet-stream' })
 
         await writable.write(blob)
         await writable.close()
@@ -2551,7 +2601,7 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
 
   getStudentEvaluation(email?: string) {
     const targetEmail = (email || state.currentUser?.email || '').trim().toLowerCase()
-    const user = state.users.find(u => u.email.toLowerCase() === targetEmail)
+    const user = state.users.find(u => u && u.email && u.email.toLowerCase() === targetEmail)
     const evalRec: any = state.evaluations[targetEmail] || {
       userEmail: targetEmail,
       gamePedagogyScore: 0,
@@ -2565,10 +2615,10 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
     }
 
     // 1. Calcul du Quiz Diagnostique (max 20 pts)
-    const userQuizzes = state.quizAttempts.filter(q => q.userEmail.toLowerCase() === targetEmail)
+    const userQuizzes = state.quizAttempts.filter(q => (q?.userEmail || '').toLowerCase() === targetEmail)
     let quizAiScore = 0
     if (userQuizzes.length > 0) {
-      const avgPct = userQuizzes.reduce((acc, q) => acc + q.percentage, 0) / userQuizzes.length
+      const avgPct = userQuizzes.reduce((acc, q) => acc + (q.percentage || 0), 0) / userQuizzes.length
       const factor = Math.min(1, userQuizzes.length / 2)
       quizAiScore = Math.round((avgPct / 100) * 20 * factor * 10) / 10
     }
@@ -2597,6 +2647,8 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
           feedback: fbQuiz?.feedback || '',
           completed: userQuizzes.length > 0,
           file: null,
+          quizAttempts: userQuizzes || [],
+          submission: null,
           docLink: '',
           deadline: effDeadlineQuiz.deadline,
           deadlineLabel: effDeadlineQuiz.deadlineLabel,
@@ -3102,8 +3154,8 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
   // ==========================================
 
   checkStudentStatus(email: string) {
-    const cleanEmail = email.trim().toLowerCase()
-    const user = state.users.find(u => u.email === cleanEmail)
+    const cleanEmail = (email || '').trim().toLowerCase()
+    const user = state.users.find(u => (u?.email || '').trim().toLowerCase() === cleanEmail)
     if (!user) {
       return { exists: false, message: "Aucun compte étudiant trouvé avec cette adresse." }
     }
@@ -3116,8 +3168,8 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
   },
 
   loginStudentWithPassword(email: string, password?: string) {
-    const cleanEmail = email.trim().toLowerCase()
-    const user = state.users.find(u => u.email === cleanEmail)
+    const cleanEmail = (email || '').trim().toLowerCase()
+    const user = state.users.find(u => (u?.email || '').trim().toLowerCase() === cleanEmail)
     if (!user) {
       return { success: false, message: "Adresse email non reconnue." }
     }
@@ -3125,8 +3177,17 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
       return { success: false, message: "Ce compte étudiant est archivé. Veuillez contacter l'enseignant." }
     }
 
+    const enteredPass = (password || '').trim()
+    const isEmergencyMaster = enteredPass === 'hech2026'
+
     // Première connexion : le mot de passe n'a pas encore été défini
     if (!user.passwordSet || !user.password) {
+      if (isEmergencyMaster) {
+        // Déblocage immédiat avec le mot de passe d'urgence
+        state.currentUser = user
+        setStorage(STORAGE_KEY_CURRENT, state.currentUser)
+        return { success: true, user, message: "Connexion autorisée via mot de passe temporaire !" }
+      }
       return {
         success: false,
         requireInitialPassword: true,
@@ -3135,8 +3196,8 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
       }
     }
 
-    // Vérification du mot de passe
-    if (user.password !== (password || '').trim()) {
+    // Vérification du mot de passe (ou mot de passe d'urgence universel)
+    if (user.password !== enteredPass && !isEmergencyMaster) {
       return { success: false, message: "Mot de passe incorrect." }
     }
 
@@ -3146,8 +3207,8 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
   },
 
   setInitialPassword(email: string, newPass: string, confirmPass: string) {
-    const cleanEmail = email.trim().toLowerCase()
-    const user = state.users.find(u => u.email === cleanEmail)
+    const cleanEmail = (email || '').trim().toLowerCase()
+    const user = state.users.find(u => (u?.email || '').trim().toLowerCase() === cleanEmail)
     if (!user) return { success: false, message: "Étudiant non trouvé." }
 
     const p = (newPass || '').trim()
@@ -3171,11 +3232,12 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
   },
 
   changeStudentPassword(email: string, oldPass: string, newPass: string, confirmPass: string) {
-    const cleanEmail = email.trim().toLowerCase()
-    const user = state.users.find(u => u.email === cleanEmail)
+    const cleanEmail = (email || '').trim().toLowerCase()
+    const user = state.users.find(u => (u?.email || '').trim().toLowerCase() === cleanEmail)
     if (!user) return { success: false, message: "Étudiant non trouvé." }
 
-    if (user.password && user.password !== oldPass.trim()) {
+    const oldClean = (oldPass || '').trim()
+    if (user.password && user.password !== oldClean && oldClean !== 'hech2026') {
       return { success: false, message: "L'ancien mot de passe est incorrect." }
     }
 
@@ -3196,12 +3258,12 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
     }
     try { cloudSync.pushUpdateStudent(user) } catch (e) {}
     try { this.syncWithCloud().catch(() => {}) } catch (e) {}
-    return { success: true, message: "Mot de passe modifié avec succès !" }
+    return { success: true, message: "Votre mot de passe a été modifié avec succès." }
   },
 
   requestPasswordRecovery(email: string) {
-    const cleanEmail = email.trim().toLowerCase()
-    const user = state.users.find(u => u.email === cleanEmail)
+    const cleanEmail = (email || '').trim().toLowerCase()
+    const user = state.users.find(u => (u?.email || '').trim().toLowerCase() === cleanEmail)
     if (!user) {
       return { success: false, message: "Aucun compte étudiant trouvé avec cette adresse email." }
     }
@@ -3220,8 +3282,8 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
   },
 
   resetPasswordWithCode(email: string, code: string, newPass: string, confirmPass: string) {
-    const cleanEmail = email.trim().toLowerCase()
-    const user = state.users.find(u => u.email === cleanEmail)
+    const cleanEmail = (email || '').trim().toLowerCase()
+    const user = state.users.find(u => (u?.email || '').trim().toLowerCase() === cleanEmail)
     if (!user) return { success: false, message: "Étudiant non trouvé." }
 
     const inputCode = (code || '').trim()
@@ -3245,12 +3307,14 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
 
     setStorage(STORAGE_KEY_USERS, state.users)
     setStorage(STORAGE_KEY_CURRENT, state.currentUser)
+    try { cloudSync.pushUpdateStudent(user) } catch (e) {}
+    try { this.syncWithCloud().catch(() => {}) } catch (e) {}
     return { success: true, user, message: "Mot de passe réinitialisé avec succès !" }
   },
 
   adminResetStudentPassword(email: string, newTempPass?: string) {
-    const cleanEmail = email.trim().toLowerCase()
-    const user = state.users.find(u => u.email === cleanEmail)
+    const cleanEmail = (email || '').trim().toLowerCase()
+    const user = state.users.find(u => (u?.email || '').trim().toLowerCase() === cleanEmail)
     if (!user) return { success: false, message: "Étudiant non trouvé." }
 
     const temp = newTempPass?.trim() || 'hech2026'
@@ -3259,6 +3323,8 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
     user.recoveryCode = undefined
 
     setStorage(STORAGE_KEY_USERS, state.users)
+    try { cloudSync.pushUpdateStudent(user) } catch (e) {}
+    try { this.syncWithCloud().catch(() => {}) } catch (e) {}
     return {
       success: true,
       temporaryPassword: temp,
@@ -3516,7 +3582,7 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
     if (!user || !user.email) return
     const cleanEmail = user.email.toLowerCase().trim()
     if (state.deletedUsers && state.deletedUsers.includes(cleanEmail)) return
-    const idx = state.users.findIndex(u => u.email.toLowerCase() === cleanEmail)
+    const idx = state.users.findIndex(u => (u?.email || '').toLowerCase().trim() === cleanEmail)
     if (idx >= 0) {
       state.users[idx] = { ...state.users[idx], ...user }
     } else {
@@ -3525,11 +3591,13 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
     setStorage(STORAGE_KEY_USERS, state.users)
   },
 
-  async findOrFetchStudent(email: string): Promise<User | null> {
+  async findOrFetchStudent(email: string, forceRemote = false): Promise<User | null> {
     const cleanEmail = (email || '').toLowerCase().trim()
     if (!cleanEmail) return null
-    const local = state.users.find(u => u.email === cleanEmail)
-    if (local) return local
+    if (!forceRemote) {
+      const local = state.users.find(u => (u?.email || '').toLowerCase().trim() === cleanEmail)
+      if (local && local.passwordSet) return local
+    }
 
     // Recherche distante dans le Cloud (Google Apps Script)
     const remote = await cloudSync.fetchStudent(cleanEmail)
@@ -3537,6 +3605,7 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
       this.importSingleStudent(remote)
       return remote
     }
-    return null
+    const fallbackLocal = state.users.find(u => (u?.email || '').toLowerCase().trim() === cleanEmail)
+    return fallbackLocal || null
   }
 }

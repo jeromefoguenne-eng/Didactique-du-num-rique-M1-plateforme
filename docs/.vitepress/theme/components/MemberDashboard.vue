@@ -337,13 +337,18 @@ const previewFormattedName = computed(() => {
 
 function handleRegister() {
   if (!firstName.value || !lastName.value || !email.value) {
-    alert('Veuillez remplir tous les champs.')
+    alert('Veuillez remplir tous les champs obligatoires (Prénom, Nom, Email).')
     return
   }
   const reg = userStore.register(firstName.value, lastName.value, email.value)
-  if (reg.success && registerPassword.value.trim()) {
+  if (!reg.success) {
+    alert(reg.message)
+    return
+  }
+  if (registerPassword.value.trim()) {
     userStore.setInitialPassword(email.value, registerPassword.value, registerPassword.value)
   }
+  alert(`Bienvenue ${firstName.value} ! Votre compte a été créé avec succès. Vous êtes maintenant connecté(e).`)
 }
 
 async function handleLogin() {
@@ -357,9 +362,9 @@ async function handleLogin() {
 
   // Vérifier d'abord le statut du compte localement
   let status = userStore.checkStudentStatus(loginEmail.value)
-  if (!status.exists) {
+  if (!status.exists || !status.passwordSet) {
     authFeedbackMessage.value = 'Recherche en ligne de votre profil (synchronisation multi-appareils)...'
-    const fetched = await userStore.findOrFetchStudent(loginEmail.value)
+    const fetched = await userStore.findOrFetchStudent(loginEmail.value, true)
     if (fetched) {
       status = userStore.checkStudentStatus(loginEmail.value)
     }
@@ -369,7 +374,7 @@ async function handleLogin() {
   authFeedbackMessage.value = ''
 
   if (!status.exists) {
-    alert("Aucun compte étudiant trouvé avec cette adresse email. Vérifiez votre saisie ou inscrivez-vous.")
+    alert("Aucun compte étudiant trouvé avec cette adresse email. Vérifiez votre saisie ou inscrivez-vous sur le formulaire ci-dessous.")
     return
   }
 
@@ -386,7 +391,19 @@ async function handleLogin() {
     return
   }
 
-  const res = userStore.loginStudentWithPassword(loginEmail.value, loginPassword.value)
+  let res = userStore.loginStudentWithPassword(loginEmail.value, loginPassword.value)
+  if (!res.success) {
+    // Si échec local, interroger le Cloud pour s'assurer que le mot de passe n'a pas été changé sur un autre appareil
+    isAuthenticating.value = true
+    authFeedbackMessage.value = 'Vérification distante auprès du serveur...'
+    const refreshed = await userStore.findOrFetchStudent(loginEmail.value, true)
+    isAuthenticating.value = false
+    authFeedbackMessage.value = ''
+    if (refreshed) {
+      res = userStore.loginStudentWithPassword(loginEmail.value, loginPassword.value)
+    }
+  }
+
   if (!res.success) {
     if (res.requireInitialPassword) {
       authPendingUser.value = res.user

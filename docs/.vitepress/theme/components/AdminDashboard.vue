@@ -1059,6 +1059,12 @@ function formatSize(bytes) {
   return (bytes / (1024 * 1024)).toFixed(1) + ' Mo'
 }
 
+function formatRegistrationDate(dateStr) {
+  if (!dateStr) return '—'
+  const parts = String(dateStr).trim().split(' ')
+  return parts[0] || dateStr
+}
+
 // =========================================================
 // GESTION AVANCÉE DE LA GRILLE D'ÉVALUATION (15 COMPOSANTES / 200 PTS)
 // =========================================================
@@ -1752,8 +1758,12 @@ function toggleQuizExpand(id) {
                     {{ u.status === 'archived' ? 'Archivé' : 'Actif' }}
                   </span>
                 </td>
-                <td class="email-cell">{{ u.email }}</td>
-                <td>{{ u.registeredAt }}</td>
+                <td class="email-cell" :title="u.email">
+                  <span class="email-truncate">{{ u.email }}</span>
+                </td>
+                <td class="date-cell" :title="u.registeredAt">
+                  <span class="date-truncate">{{ formatRegistrationDate(u.registeredAt) }}</span>
+                </td>
                 <td>
                   <span v-if="u.passwordSet" class="badge-pwd active" title="Mot de passe personnel actif">
                     ✓ Défini
@@ -3561,20 +3571,20 @@ function toggleQuizExpand(id) {
             </div>
             <div class="dkpi-card">
               <span class="dkpi-label">MENTION ACADÉMIQUE</span>
-              <div :class="['mention-badge-pill', currentDossier.evaluation.isPassing ? 'mention-pass' : 'mention-ajourne']">
-                {{ currentDossier.evaluation.mention }}
+              <div :class="['mention-badge-pill', currentDossier.evaluation?.isPassing ? 'mention-pass' : 'mention-ajourne']">
+                {{ currentDossier.evaluation?.mention || 'En cours' }}
               </div>
             </div>
             <div class="dkpi-card">
               <span class="dkpi-label">TRAVAUX DÉPOSÉS</span>
               <div class="dkpi-stat">
-                <strong>{{ currentDossier.items.filter(i => i.completed).length }}</strong> / {{ currentDossier.items.length }}
+                <strong>{{ (currentDossier.items || []).filter(i => i.completed).length }}</strong> / {{ (currentDossier.items || []).length }}
               </div>
             </div>
             <div class="dkpi-card">
               <span class="dkpi-label">CONFORMITÉ DÉLAIS IA</span>
-              <div :class="['late-pill', currentDossier.evaluation.lateInfo.isLate ? 'pill-alert' : 'pill-ok']">
-                {{ currentDossier.evaluation.lateInfo.isLate ? `🚨 ${currentDossier.evaluation.lateInfo.lateCount} devoir(s) en retard` : '✓ À jour' }}
+              <div :class="['late-pill', currentDossier.evaluation?.lateInfo?.isLate ? 'pill-alert' : 'pill-ok']">
+                {{ currentDossier.evaluation?.lateInfo?.isLate ? `🚨 ${currentDossier.evaluation.lateInfo.lateCount} devoir(s) en retard` : '✓ À jour' }}
               </div>
             </div>
           </div>
@@ -3653,10 +3663,10 @@ function toggleQuizExpand(id) {
                       <div class="qsb-header">
                         <div class="qsb-score">
                           Note obtenue au quiz : <strong>{{ item.aiScore }} / 20 pts</strong>
-                          <span class="qsb-count">({{ item.quizAttempts.length }} tentative(s) enregistrée(s))</span>
+                          <span class="qsb-count">({{ (item.quizAttempts || []).length }} tentative(s) enregistrée(s))</span>
                         </div>
                         <button 
-                          v-if="item.quizAttempts.length > 0" 
+                          v-if="(item.quizAttempts || []).length > 0" 
                           @click="toggleQuizExpand('quiz')" 
                           class="btn-toggle-quiz-details"
                         >
@@ -3665,25 +3675,25 @@ function toggleQuizExpand(id) {
                       </div>
 
                       <!-- DÉTAIL DES QUESTIONS / RÉPONSES DU QUIZ -->
-                      <div v-if="expandedQuizAnswers['quiz'] && item.quizAttempts.length > 0" class="quiz-answers-detail">
-                        <div v-for="(att, aIdx) in item.quizAttempts" :key="att.id || aIdx" class="quiz-attempt-card">
+                      <div v-if="expandedQuizAnswers['quiz'] && (item.quizAttempts || []).length > 0" class="quiz-answers-detail">
+                        <div v-for="(att, aIdx) in (item.quizAttempts || [])" :key="att?.id || aIdx" class="quiz-attempt-card">
                           <div class="qac-head">
-                            <strong>Tentative du {{ att.submittedAt }}</strong> • Score : {{ att.score }} / {{ att.totalPoints }} ({{ att.percentage }}%)
+                            <strong>Tentative du {{ att?.submittedAt || 'En ligne' }}</strong> • Score : {{ att?.score ?? 0 }} / {{ att?.totalPoints ?? 20 }} ({{ att?.percentage ?? 0 }}%)
                           </div>
                           <div class="qac-questions">
-                            <div v-for="(ans, qIdx) in att.answers" :key="ans.questionId || qIdx" class="qac-question-row">
+                            <div v-for="(ans, qIdx) in (att?.answers || [])" :key="ans?.questionId || qIdx" class="qac-question-row">
                               <div class="qq-title">
-                                <span class="qq-num">Q{{ qIdx + 1 }}.</span> {{ ans.questionText }}
+                                <span class="qq-num">Q{{ qIdx + 1 }}.</span> {{ ans?.questionText }}
                               </div>
                               <div class="qq-user-ans">
                                 <strong>Réponse de l'étudiant :</strong> 
-                                <span>{{ ans.userAnswer }}</span>
-                                <span :class="['qq-badge', ans.isCorrect ? 'correct' : 'partial']">
-                                  {{ ans.points }} / {{ ans.maxPoints }} pts
+                                <span>{{ ans?.userAnswer }}</span>
+                                <span :class="['qq-badge', ans?.isCorrect ? 'correct' : 'partial']">
+                                  {{ ans?.points ?? 0 }} / {{ ans?.maxPoints ?? 1 }} pts
                                 </span>
                               </div>
-                              <div v-if="ans.explanation || ans.openFeedback" class="qq-feedback">
-                                💡 <em>{{ ans.explanation || ans.openFeedback }}</em>
+                              <div v-if="ans?.explanation || ans?.openFeedback" class="qq-feedback">
+                                💡 <em>{{ ans?.explanation || ans?.openFeedback }}</em>
                               </div>
                             </div>
                           </div>
@@ -4356,9 +4366,10 @@ function toggleQuizExpand(id) {
 }
 
 .data-table th, .data-table td {
-  padding: 10px 14px;
+  padding: 8px 8px;
   text-align: left;
   border-bottom: 1px solid var(--vp-c-divider);
+  font-size: 0.85rem;
 }
 
 .data-table th {
@@ -4372,6 +4383,7 @@ function toggleQuizExpand(id) {
   user-select: none;
   transition: background-color 0.2s ease, color 0.2s ease;
   white-space: nowrap;
+  padding: 8px 6px;
 }
 
 .sortable-th:hover {
@@ -4387,11 +4399,11 @@ function toggleQuizExpand(id) {
 .th-content {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
 }
 
 .sort-icon {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   display: inline-block;
   opacity: 0.35;
   transition: opacity 0.2s ease, transform 0.2s ease;
@@ -4413,10 +4425,11 @@ function toggleQuizExpand(id) {
 
 .status-badge {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  padding: 2px 7px;
-  border-radius: 6px;
+  padding: 2px 6px;
+  border-radius: 5px;
+  white-space: nowrap;
 }
 
 .status-badge.active {
@@ -4430,28 +4443,48 @@ function toggleQuizExpand(id) {
 }
 
 .email-cell {
-  font-family: monospace;
-  font-size: 0.82rem;
+  max-width: 155px;
+  min-width: 105px;
+  font-size: 0.78rem;
   color: var(--vp-c-text-2);
 }
 
-.email-subtext {
+.email-truncate {
+  display: block;
+  max-width: 155px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.date-cell {
+  white-space: nowrap;
   font-size: 0.78rem;
+  color: var(--vp-c-text-2);
+}
+
+.date-truncate {
+  white-space: nowrap;
+}
+
+.email-subtext {
+  font-size: 0.75rem;
   color: var(--vp-c-text-3);
-  font-family: monospace;
+  font-family: inherit;
 }
 
 .table-progress {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  white-space: nowrap;
 }
 
 .table-progress-bar {
-  width: 70px;
-  height: 8px;
+  width: 45px;
+  height: 6px;
   background: var(--vp-c-divider);
-  border-radius: 6px;
+  border-radius: 4px;
   overflow: hidden;
 }
 
@@ -4462,11 +4495,18 @@ function toggleQuizExpand(id) {
 
 .sub-count-badge {
   font-weight: 700;
-  padding: 2px 8px;
-  border-radius: 6px;
+  padding: 2px 6px;
+  border-radius: 5px;
   background: var(--vp-c-default-soft);
   color: var(--vp-c-text-1);
+  font-size: 0.76rem;
+  white-space: nowrap;
+}
+
+.table-grade-badge {
+  white-space: nowrap;
   font-size: 0.8rem;
+  cursor: pointer;
 }
 
 .empty-table-msg {
@@ -4480,17 +4520,19 @@ function toggleQuizExpand(id) {
 .action-buttons-group {
   display: flex;
   justify-content: flex-end;
-  gap: 6px;
+  gap: 4px;
+  white-space: nowrap;
 }
 
 .btn-row-action {
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 0.78rem;
+  padding: 3px 6px;
+  border-radius: 5px;
+  font-size: 0.72rem;
   font-weight: 600;
   border: 1px solid var(--vp-c-divider);
   background: var(--vp-c-bg);
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .btn-row-action.dl {

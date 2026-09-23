@@ -543,16 +543,22 @@ function saveFileToDrive(data) {
     return { status: "error", message: "base64Data et fileName requis." };
   }
 
-  // 1. Récupération ou création du dossier cible
+  // 1. Récupération ou création du dossier cible principal
   var folders = DriveApp.getFoldersByName(DRIVE_FOLDER_NAME);
   var targetFolder = folders.hasNext() ? folders.next() : DriveApp.createFolder(DRIVE_FOLDER_NAME);
 
-  // 2. Décodage base64 et création du fichier
+  // 1b. Récupération ou création du sous-dossier par nom d'étudiant
+  var studentFolderName = (data.studentName || data.studentEmail || "Etudiant_Inconnu").toString().trim();
+  studentFolderName = studentFolderName.replace(/[\/\\:*?"<>|]/g, '_');
+  var studentFolders = targetFolder.getFoldersByName(studentFolderName);
+  var studentFolder = studentFolders.hasNext() ? studentFolders.next() : targetFolder.createFolder(studentFolderName);
+
+  // 2. Décodage base64 et création du fichier dans le dossier de l'étudiant
   var cleanBase64 = data.base64Data.indexOf(',') > -1 ? data.base64Data.split(',')[1] : data.base64Data;
   var decoded = Utilities.base64Decode(cleanBase64);
   var mime = data.mimeType || 'application/octet-stream';
   var blob = Utilities.newBlob(decoded, mime, data.fileName);
-  var file = targetFolder.createFile(blob);
+  var file = studentFolder.createFile(blob);
 
   // 3. Enregistrement dans l'onglet "Fichiers" du tableur
   var ss = getOrCreateSpreadsheet();

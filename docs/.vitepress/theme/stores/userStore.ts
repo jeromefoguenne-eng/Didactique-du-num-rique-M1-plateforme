@@ -131,6 +131,7 @@ const STORAGE_KEY_QUIZZES = 'hech_didac_quiz_attempts'
 const STORAGE_KEY_EVALUATIONS = 'hech_didac_evaluations_200'
 const STORAGE_KEY_EXERCISE_FEEDBACKS = 'hech_didac_exercise_feedbacks'
 const STORAGE_KEY_DEADLINES = 'hech_didac_deadlines_v2'
+export const STORAGE_KEY_DELETED_USERS = 'hech_didac_deleted_users'
 
 export interface EvaluationRecord {
   userEmail: string
@@ -1555,12 +1556,17 @@ function initInitialDeadlines(): Record<string, { deadline: string, deadlineLabe
   return {}
 }
 
+const initialDeletedUsers = getStorage<string[]>(STORAGE_KEY_DELETED_USERS, []).map(em => String(em).trim().toLowerCase())
+
 const state = reactive({
   currentUser: getStorage<User | null>(STORAGE_KEY_CURRENT, null),
-  users: getStorage<User[]>(STORAGE_KEY_USERS, DEFAULT_USERS).map(u => ({
-    ...u,
-    status: u.status || 'active'
-  })),
+  deletedUsers: initialDeletedUsers,
+  users: getStorage<User[]>(STORAGE_KEY_USERS, DEFAULT_USERS)
+    .filter(u => u && u.email && !initialDeletedUsers.includes(String(u.email).trim().toLowerCase()))
+    .map(u => ({
+      ...u,
+      status: u.status || 'active'
+    })),
   progress: getStorage<Record<string, string[]>>(STORAGE_KEY_PROGRESS, DEFAULT_PROGRESS),
   submissions: getStorage<Submission[]>(STORAGE_KEY_SUBMISSIONS, DEFAULT_SUBMISSIONS).map(s => ({
     ...s,
@@ -1583,6 +1589,11 @@ if (typeof window !== 'undefined') {
         deadlinesTrigger.value++
       } catch (e) {}
     }
+    if (event.key === STORAGE_KEY_DELETED_USERS && event.newValue) {
+      try {
+        state.deletedUsers = JSON.parse(event.newValue)
+      } catch (e) {}
+    }
   })
   window.addEventListener('focus', () => {
     userStore.syncFromStorage()
@@ -1593,8 +1604,11 @@ export const userStore = {
   get currentUser() {
     return state.currentUser
   },
+  get deletedUsers() {
+    return state.deletedUsers
+  },
   get users() {
-    return state.users
+    return state.users.filter(u => u && u.email && !state.deletedUsers.includes(String(u.email).trim().toLowerCase()))
   },
   get submissions() {
     return state.submissions
@@ -1711,10 +1725,15 @@ export const userStore = {
     return { success: true, message: 'Toutes les échéances ont été effacées.' }
   },
 
-  // Recharger les échéances depuis le stockage local (synchronisation à chaud)
+  // Recharger les données depuis le stockage local (synchronisation à chaud)
   syncFromStorage() {
     if (typeof window === 'undefined') return
     try {
+      const rawDel = localStorage.getItem(STORAGE_KEY_DELETED_USERS)
+      if (rawDel) {
+        state.deletedUsers = JSON.parse(rawDel).map((em: string) => String(em).trim().toLowerCase())
+      }
+
       const raw = localStorage.getItem(STORAGE_KEY_DEADLINES)
       if (raw !== null) {
         const parsed = JSON.parse(raw)
@@ -1746,7 +1765,13 @@ export const userStore = {
     if (!cleanEmail) {
       return { success: false, message: 'Adresse email invalide.' }
     }
-    const existing = state.users.find(u => u.email === cleanEmail)
+    // Réhabilitation si l'étudiant était précédemment marqué supprimé
+    if (state.deletedUsers.includes(cleanEmail)) {
+      state.deletedUsers = state.deletedUsers.filter(em => em !== cleanEmail)
+      setStorage(STORAGE_KEY_DELETED_USERS, state.deletedUsers)
+    }
+
+    const existing = state.users.find(u => u && u.email && u.email.toLowerCase() === cleanEmail)
     if (existing) {
       if (existing.status === 'archived') {
         existing.status = 'active'
@@ -1791,7 +1816,13 @@ export const userStore = {
       return { success: false, message: 'Tous les champs sont obligatoires.' }
     }
 
-    const existing = state.users.find(u => u.email === cleanEmail)
+    // Réhabilitation si l'étudiant était précédemment marqué supprimé
+    if (state.deletedUsers.includes(cleanEmail)) {
+      state.deletedUsers = state.deletedUsers.filter(em => em !== cleanEmail)
+      setStorage(STORAGE_KEY_DELETED_USERS, state.deletedUsers)
+    }
+
+    const existing = state.users.find(u => u && u.email && u.email.toLowerCase() === cleanEmail)
     if (existing) {
       existing.firstName = cleanFirst
       existing.lastName = cleanLast
@@ -1824,35 +1855,49 @@ export const userStore = {
 
   deleteStudent(email: string) {
     const cleanEmail = email.trim().toLowerCase()
-    const index = state.users.findIndex(u => u.email.toLowerCase() === cleanEmail)
-    if (index >= 0) {
-      const removedUser = state.users[index]
-      state.users.splice(index, 1)
-      delete state.progress[cleanEmail]
-      if (state.evaluations) {
-        delete state.evaluations[cleanEmail]
-      }
-      state.submissions = state.submissions.filter(s => s.userEmail.toLowerCase() !== cleanEmail)
-      state.submittedFiles = state.submittedFiles.filter(f => f.userEmail.toLowerCase() !== cleanEmail)
-      state.quizAttempts = state.quizAttempts.filter(q => q.userEmail.toLowerCase() !== cleanEmail)
 
-      if (state.currentUser?.email.toLowerCase() === cleanEmail) {
-        state.currentUser = null
-        if (typeof window !== 'undefined') localStorage.removeItem(STORAGE_KEY_CURRENT)
-      }
-
-      setStorage(STORAGE_KEY_USERS, state.users)
-      setStorage(STORAGE_KEY_PROGRESS, state.progress)
-      setStorage(STORAGE_KEY_SUBMISSIONS, state.submissions)
-      setStorage(STORAGE_KEY_FILES, state.submittedFiles)
-      setStorage(STORAGE_KEY_QUIZZES, state.quizAttempts)
-      setStorage(STORAGE_KEY_EVALUATIONS, state.evaluations)
-      return { 
-        success: true, 
-        message: `L'étudiant "${removedUser.firstName} ${removedUser.lastName}" (${cleanEmail}) a été supprimé avec succès.` 
-      }
+    // 1. Inscription immédiate dans le registre d'exclusion absolue (empêche toute réapparition locale ou distante)
+    if (!state.deletedUsers.includes(cleanEmail)) {
+      state.deletedUsers.push(cleanEmail)
+      setStorage(STORAGE_KEY_DELETED_USERS, state.deletedUsers)
     }
-    return { success: false, message: `Aucun étudiant trouvé avec l'email "${cleanEmail}".` }
+
+    const index = state.users.findIndex(u => u && u.email && u.email.toLowerCase() === cleanEmail)
+    let removedUser: User | null = null
+    if (index >= 0) {
+      removedUser = state.users[index]
+      state.users.splice(index, 1)
+    }
+    delete state.progress[cleanEmail]
+    if (state.evaluations) {
+      delete state.evaluations[cleanEmail]
+    }
+    state.submissions = state.submissions.filter(s => (s?.userEmail || '').toLowerCase() !== cleanEmail)
+    state.submittedFiles = state.submittedFiles.filter(f => (f?.userEmail || '').toLowerCase() !== cleanEmail)
+    state.quizAttempts = state.quizAttempts.filter(q => (q?.userEmail || '').toLowerCase() !== cleanEmail)
+
+    if (state.currentUser?.email.toLowerCase() === cleanEmail) {
+      state.currentUser = null
+      if (typeof window !== 'undefined') localStorage.removeItem(STORAGE_KEY_CURRENT)
+    }
+
+    setStorage(STORAGE_KEY_USERS, state.users)
+    setStorage(STORAGE_KEY_PROGRESS, state.progress)
+    setStorage(STORAGE_KEY_SUBMISSIONS, state.submissions)
+    setStorage(STORAGE_KEY_FILES, state.submittedFiles)
+    setStorage(STORAGE_KEY_QUIZZES, state.quizAttempts)
+    setStorage(STORAGE_KEY_EVALUATIONS, state.evaluations)
+
+    // 2. Ordre de suppression au serveur Google Apps Script
+    try {
+      cloudSync.deleteStudent(cleanEmail)
+    } catch (e) {}
+
+    const nameStr = removedUser ? `"${removedUser.firstName} ${removedUser.lastName}" ` : ''
+    return { 
+      success: true, 
+      message: `L'étudiant ${nameStr}(${cleanEmail}) a été définitivement supprimé.` 
+    }
   },
 
   toggleArchiveStudent(email: string) {
@@ -2633,6 +2678,8 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
         aiSummary,
         teacherScore: Math.min(def.maxPoints, Math.max(0, Number(teacherPts || 0))),
         feedback: fb?.feedback || (file?.teacherGrade?.feedback || ''),
+        submission: state.submissions.find(s => (s?.userEmail || '').toLowerCase() === targetEmail && s?.exerciseId === def.id) || null,
+        quizAttempts: def.id === 'quiz' ? userQuizzes : [],
         completed: isDone,
         file,
         docLink: def.docLink,
@@ -2717,6 +2764,29 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
         total: allEvaluationItems.find(i => i.id === 'projet-jeu')?.teacherScore || 0,
         max: 100
       }
+    }
+  },
+
+  /**
+   * Retourne l'ensemble du dossier de l'étudiant : travaux, devoirs rédigés, fichiers Word/PDF, quiz et feedbacks IA
+   * rigoureusement ordonnés selon la pondération officielle du cours.
+   */
+  getStudentFullDossier(email?: string) {
+    const targetEmail = (email || state.currentUser?.email || '').trim().toLowerCase()
+    const user = state.users.find(u => u && u.email && u.email.toLowerCase() === targetEmail)
+    const evaluation = this.getStudentEvaluation(targetEmail)
+    const userFiles = state.submittedFiles.filter(f => (f?.userEmail || '').toLowerCase() === targetEmail)
+    const userSubs = state.submissions.filter(s => (s?.userEmail || '').toLowerCase() === targetEmail)
+    const userQuizzes = state.quizAttempts.filter(q => (q?.userEmail || '').toLowerCase() === targetEmail)
+
+    return {
+      user,
+      email: targetEmail,
+      evaluation,
+      files: userFiles,
+      submissions: userSubs,
+      quizzes: userQuizzes,
+      items: evaluation.items || []
     }
   },
 
@@ -3347,6 +3417,10 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
       data.users.forEach((remoteUser: any) => {
         if (!remoteUser || !remoteUser.email) return
         const cleanRemoteEmail = String(remoteUser.email).trim().toLowerCase()
+        // Protection absolue : si l'étudiant a été supprimé par l'admin, NE JAMAIS le restaurer
+        if (state.deletedUsers && state.deletedUsers.includes(cleanRemoteEmail)) {
+          return
+        }
         const normalizedUser: User = {
           id: remoteUser.id || `user-${Date.now()}`,
           firstName: remoteUser.firstName || '',
@@ -3373,6 +3447,9 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
       data.submissions.forEach((remSub: any) => {
         if (!remSub || !remSub.userEmail || !remSub.exerciseId) return
         const cleanSubEmail = String(remSub.userEmail).trim().toLowerCase()
+        if (state.deletedUsers && state.deletedUsers.includes(cleanSubEmail)) {
+          return
+        }
         const textAnswer = remSub.answer || remSub.content || ''
         const normalizedSub: Submission = {
           id: remSub.id || `sub-${Date.now()}`,
@@ -3425,8 +3502,10 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
     if (data.evaluations && typeof data.evaluations === 'object') {
       Object.keys(data.evaluations).forEach(email => {
         const remEval = data.evaluations[email]
+        const cleanEvalEmail = String(email).trim().toLowerCase()
+        if (state.deletedUsers && state.deletedUsers.includes(cleanEvalEmail)) return
         if (remEval && email) {
-          state.evaluations[String(email).trim().toLowerCase()] = remEval
+          state.evaluations[cleanEvalEmail] = remEval
         }
       })
       setStorage(STORAGE_KEY_EVALUATIONS, state.evaluations)
@@ -3436,6 +3515,7 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
   importSingleStudent(user: User) {
     if (!user || !user.email) return
     const cleanEmail = user.email.toLowerCase().trim()
+    if (state.deletedUsers && state.deletedUsers.includes(cleanEmail)) return
     const idx = state.users.findIndex(u => u.email.toLowerCase() === cleanEmail)
     if (idx >= 0) {
       state.users[idx] = { ...state.users[idx], ...user }

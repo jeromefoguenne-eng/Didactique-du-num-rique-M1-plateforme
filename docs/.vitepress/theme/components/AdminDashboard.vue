@@ -1169,6 +1169,144 @@ function exportAllResultsToExcel() {
   document.body.removeChild(link)
 }
 
+// =========================================================================
+// DOSSIER COMPLET ÉTUDIANT (TRAVAUX, QUIZ, FEEDBACKS IA & VISUALISEUR WORD/PDF)
+// =========================================================================
+const selectedDossierEmail = ref('')
+const activeDocPreview = ref(null) // { fileId, fileName, type: 'pdf'|'docx'|'other', dataUrl, htmlContent, loading, error }
+const dossierFilter = ref('all') // 'all' | 'part1' | 'part2' | 'quiz' | 'submitted_only'
+const expandedTexts = ref({})
+const expandedQuizAnswers = ref({})
+
+const currentDossier = computed(() => {
+  if (!selectedDossierEmail.value) return null
+  return userStore.getStudentFullDossier(selectedDossierEmail.value)
+})
+
+const filteredDossierItems = computed(() => {
+  if (!currentDossier.value || !currentDossier.value.items) return []
+  const all = currentDossier.value.items
+  if (dossierFilter.value === 'part1') return all.filter(i => i.part === 1 && i.id !== 'quiz')
+  if (dossierFilter.value === 'part2') return all.filter(i => i.part === 2)
+  if (dossierFilter.value === 'quiz') return all.filter(i => i.id === 'quiz')
+  if (dossierFilter.value === 'submitted_only') {
+    return all.filter(i => i.completed || i.file || i.submission || (i.quizAttempts && i.quizAttempts.length > 0))
+  }
+  return all
+})
+
+function openStudentDossier(u) {
+  if (!u || !u.email) return
+  selectedDossierEmail.value = u.email
+  activeDocPreview.value = null
+}
+
+function closeStudentDossier() {
+  selectedDossierEmail.value = ''
+  activeDocPreview.value = null
+}
+
+function nextDossierStudent() {
+  const list = users.value
+  if (!list || list.length === 0) return
+  const currentClean = (selectedDossierEmail.value || '').toLowerCase()
+  const idx = list.findIndex(u => u && u.email && u.email.toLowerCase() === currentClean)
+  if (idx >= 0 && idx < list.length - 1) {
+    selectedDossierEmail.value = list[idx + 1].email
+  } else {
+    selectedDossierEmail.value = list[0].email
+  }
+  activeDocPreview.value = null
+}
+
+function prevDossierStudent() {
+  const list = users.value
+  if (!list || list.length === 0) return
+  const currentClean = (selectedDossierEmail.value || '').toLowerCase()
+  const idx = list.findIndex(u => u && u.email && u.email.toLowerCase() === currentClean)
+  if (idx > 0) {
+    selectedDossierEmail.value = list[idx - 1].email
+  } else {
+    selectedDossierEmail.value = list[list.length - 1].email
+  }
+  activeDocPreview.value = null
+}
+
+async function toggleDocumentPreview(file) {
+  if (!file) return
+  if (activeDocPreview.value && activeDocPreview.value.fileId === file.id) {
+    activeDocPreview.value = null
+    return
+  }
+
+  const fileName = file.formattedFileName || file.originalFileName || 'document'
+  const ext = fileName.split('.').pop().toLowerCase()
+  const isPdf = ext === 'pdf' || (file.fileType && file.fileType.includes('pdf'))
+  const isDocx = ext === 'docx' || ext === 'doc' || (file.fileType && file.fileType.includes('word'))
+
+  activeDocPreview.value = {
+    fileId: file.id,
+    fileName,
+    type: isPdf ? 'pdf' : (isDocx ? 'docx' : 'other'),
+    dataUrl: file.dataUrl || '',
+    htmlContent: '',
+    loading: isDocx,
+    error: ''
+  }
+
+  if (isDocx && file.dataUrl) {
+    try {
+      const base64Data = file.dataUrl.includes(',') ? file.dataUrl.split(',')[1] : file.dataUrl
+      const binaryStr = atob(base64Data)
+      const len = binaryStr.length
+      const bytes = new Uint8Array(len)
+      for (let i = 0; i < len; i++) {
+        bytes[i] = binaryStr.charCodeAt(i)
+      }
+      const mammothModule = await import('mammoth/mammoth.browser.js')
+      const mammoth = mammothModule.default || mammothModule
+      const res = await mammoth.convertToHtml({ arrayBuffer: bytes.buffer })
+      activeDocPreview.value.htmlContent = res.value || '<p><em>Document Word sans contenu textuel identifiable.</em></p>'
+      activeDocPreview.value.loading = false
+    } catch (e) {
+      console.warn('Erreur conversion Word:', e)
+      activeDocPreview.value.error = "Impossible de convertir ce document Word en aperçu web. Veuillez le télécharger pour le lire dans Microsoft Word."
+      activeDocPreview.value.loading = false
+    }
+  }
+}
+
+function adoptAiFeedbackInDossier(item) {
+  if (item.aiScore !== null && item.aiScore !== undefined) {
+    item.teacherScore = item.aiScore
+  }
+  if (item.file?.aiCorrection?.summary) {
+    item.feedback = item.file.aiCorrection.summary
+  } else if (item.aiSummary) {
+    item.feedback = item.aiSummary
+  }
+}
+
+function saveDossierItemGrade(item) {
+  if (!selectedDossierEmail.value || !item) return
+  userStore.saveExerciseFeedback(
+    selectedDossierEmail.value,
+    item.id,
+    item.feedback,
+    Number(item.teacherScore || 0),
+    item.title
+  )
+  saveGridStatus.value = `✓ Note et commentaire enregistrés pour ${item.shortTitle || item.title} (${item.teacherScore}/${item.maxPoints} pts)`
+  setTimeout(() => { saveGridStatus.value = '' }, 3500)
+}
+
+function toggleTextExpand(id) {
+  expandedTexts.value[id] = !expandedTexts.value[id]
+}
+
+function toggleQuizExpand(id) {
+  expandedQuizAnswers.value[id] = !expandedQuizAnswers.value[id]
+}
 </script>
 
 <template>
@@ -1483,8 +1621,9 @@ function exportAllResultsToExcel() {
                     >🔔</span>
                     <span 
                       :class="['student-name-text', { 'is-late': getStudentLateInfo(u.email).isLate }]" 
-                      :style="{ color: getStudentLateInfo(u.email).isLate ? getStudentLateInfo(u.email).highestAlarmColor + ' !important' : '' }" 
-                      :title="getStudentLateInfo(u.email).tooltip"
+                      :style="{ color: getStudentLateInfo(u.email).isLate ? getStudentLateInfo(u.email).highestAlarmColor + ' !important' : '', cursor: 'pointer' }" 
+                      :title="'Cliquer pour ouvrir le dossier complet des travaux • ' + getStudentLateInfo(u.email).tooltip"
+                      @click="openStudentDossier(u)"
                     >
                       <strong>{{ u.lastName }}</strong> {{ u.firstName }}
                     </span>
@@ -1541,6 +1680,13 @@ function exportAllResultsToExcel() {
                 </td>
                 <td style="text-align: right;">
                   <div class="action-buttons-group">
+                    <button 
+                      @click="openStudentDossier(u)" 
+                      class="btn-row-action dossier-btn" 
+                      title="Consulter le dossier complet des travaux, quiz, documents Word/PDF et feedbacks IA"
+                    >
+                      📁 Dossier & Travaux
+                    </button>
                     <button 
                       @click="handleAdminResetStudentPassword(u.email)" 
                       class="btn-row-action reset-pwd" 
@@ -2325,9 +2471,14 @@ function exportAllResultsToExcel() {
                     </span>
                   </td>
                   <td style="text-align: right;">
-                    <button @click="loadStudentForGrid(u.email)" class="btn-row-action edit-grade" title="Ouvrir la grille détaillée">
-                      ✏️ Évaluer
-                    </button>
+                    <div style="display: inline-flex; gap: 0.35rem; justify-content: flex-end;">
+                      <button @click="openStudentDossier(u)" class="btn-row-action dossier-btn" title="Consulter l'ensemble des travaux, quiz et feedbacks IA de cet étudiant">
+                        📁 Dossier
+                      </button>
+                      <button @click="loadStudentForGrid(u.email)" class="btn-row-action edit-grade" title="Ouvrir la grille détaillée">
+                        ✏️ Évaluer
+                      </button>
+                    </div>
                   </td>
                 </tr>
               </tbody>
@@ -3245,6 +3396,428 @@ function exportAllResultsToExcel() {
           <button @click="exportCSV" class="btn-export-csv">
             Télécharger le relevé complet (.CSV / Excel)
           </button>
+        </div>
+      </div>
+
+      <!-- ================================================================= -->
+      <!-- MODAL DOSSIER COMPLET ÉTUDIANT (TRAVAUX, QUIZ, VISUALISEUR WORD/PDF) -->
+      <!-- ================================================================= -->
+      <div v-if="currentDossier" class="modal-overlay dossier-modal-overlay" @click.self="closeStudentDossier">
+        <div class="modal-card dossier-modal-card">
+          <!-- EN-TÊTE DU DOSSIER -->
+          <div class="dossier-modal-header">
+            <div class="dmh-left">
+              <div class="dmh-title-row">
+                <span class="dmh-icon">📁</span>
+                <div>
+                  <h3 class="dmh-title">
+                    Dossier de Travaux & Évaluations : 
+                    <span class="dmh-student-name">
+                      {{ currentDossier.user ? `${currentDossier.user.firstName} ${currentDossier.user.lastName}` : currentDossier.email }}
+                    </span>
+                  </h3>
+                  <div class="dmh-meta">
+                    <span class="dmh-meta-item">✉️ {{ currentDossier.email }}</span>
+                    <span class="dmh-meta-item">📅 Inscription : {{ currentDossier.user?.registeredAt || 'En ligne' }}</span>
+                    <span class="dmh-meta-item">📈 Progression : <strong>{{ userStore.calculateUserProgressPercent(currentDossier.email) }}%</strong></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- NAVIGATION RAPIDE ENTRE ÉTUDIANTS -->
+            <div class="dmh-right">
+              <div class="student-nav-group">
+                <button @click="prevDossierStudent" class="btn-student-nav" title="Étudiant précédent">
+                  ◀ Précédent
+                </button>
+                <select v-model="selectedDossierEmail" class="student-select-dropdown" @change="activeDocPreview = null">
+                  <option v-for="u in users" :key="u.email" :value="u.email">
+                    {{ u.lastName }} {{ u.firstName }} ({{ u.email }})
+                  </option>
+                </select>
+                <button @click="nextDossierStudent" class="btn-student-nav" title="Étudiant suivant">
+                  Suivant ▶
+                </button>
+              </div>
+              <button class="btn-close-dossier" @click="closeStudentDossier" title="Fermer le dossier">✕</button>
+            </div>
+          </div>
+
+          <!-- BANDEAU KPI RÉSULTATS DU DOSSIER -->
+          <div class="dossier-kpi-bar">
+            <div class="dkpi-card score-main">
+              <span class="dkpi-label">NOTE TOTALE OFFICIELLE</span>
+              <div class="dkpi-num">
+                {{ currentDossier.evaluation.totalOutOf20 }} <span class="denom">/ 20</span>
+                <small>({{ currentDossier.evaluation.totalScore }} / 200 pts)</small>
+              </div>
+            </div>
+            <div class="dkpi-card">
+              <span class="dkpi-label">MENTION ACADÉMIQUE</span>
+              <div :class="['mention-badge-pill', currentDossier.evaluation.isPassing ? 'mention-pass' : 'mention-ajourne']">
+                {{ currentDossier.evaluation.mention }}
+              </div>
+            </div>
+            <div class="dkpi-card">
+              <span class="dkpi-label">TRAVAUX DÉPOSÉS</span>
+              <div class="dkpi-stat">
+                <strong>{{ currentDossier.items.filter(i => i.completed).length }}</strong> / {{ currentDossier.items.length }}
+              </div>
+            </div>
+            <div class="dkpi-card">
+              <span class="dkpi-label">CONFORMITÉ DÉLAIS IA</span>
+              <div :class="['late-pill', currentDossier.evaluation.lateInfo.isLate ? 'pill-alert' : 'pill-ok']">
+                {{ currentDossier.evaluation.lateInfo.isLate ? `🚨 ${currentDossier.evaluation.lateInfo.lateCount} devoir(s) en retard` : '✓ À jour' }}
+              </div>
+            </div>
+          </div>
+
+          <!-- BARRE D'ONGLETS / FILTRES DU DOSSIER -->
+          <div class="dossier-filter-tabs">
+            <button 
+              :class="['dtab-btn', dossierFilter === 'all' ? 'active' : '']" 
+              @click="dossierFilter = 'all'"
+            >
+              📋 Tous les éléments (17)
+            </button>
+            <button 
+              :class="['dtab-btn', dossierFilter === 'quiz' ? 'active' : '']" 
+              @click="dossierFilter = 'quiz'"
+            >
+              🧠 Quiz Diagnostique (20 pts)
+            </button>
+            <button 
+              :class="['dtab-btn', dossierFilter === 'part1' ? 'active' : '']" 
+              @click="dossierFilter = 'part1'"
+            >
+              💻 Partie 1 : Exercices 1 à 8 (80 pts)
+            </button>
+            <button 
+              :class="['dtab-btn', dossierFilter === 'part2' ? 'active' : '']" 
+              @click="dossierFilter = 'part2'"
+            >
+              🎲 Partie 2 : Projet Jeu (100 pts)
+            </button>
+            <button 
+              :class="['dtab-btn', dossierFilter === 'submitted_only' ? 'active' : '']" 
+              @click="dossierFilter = 'submitted_only'"
+            >
+              📥 Travaux déposés uniquement ({{ currentDossier.items.filter(i => i.completed).length }})
+            </button>
+          </div>
+
+          <!-- CORPS DÉFILANT DU DOSSIER -->
+          <div class="dossier-modal-body">
+            <div class="dossier-items-list">
+              <div 
+                v-for="item in filteredDossierItems" 
+                :key="item.id" 
+                :class="['dossier-item-card', item.completed ? 'item-done' : 'item-pending']"
+              >
+                <!-- EN-TÊTE DE L'ITEM (TITRE, PONDÉRATION, DÉLAI) -->
+                <div class="dic-header">
+                  <div class="dic-header-left">
+                    <span :class="['dic-part-badge', item.part === 1 ? 'badge-p1' : 'badge-p2']">
+                      Partie {{ item.part }}
+                    </span>
+                    <h4 class="dic-title">{{ item.title }}</h4>
+                  </div>
+                  <div class="dic-header-right">
+                    <span v-if="item.maxPoints > 0" class="dic-weight-pill">
+                      Pondération : <strong>{{ item.maxPoints }} pts</strong>
+                    </span>
+                    <span v-else class="dic-weight-pill step">
+                      Étape de suivi
+                    </span>
+                    <span :class="['dic-status-tag', item.completed ? 'tag-done' : 'tag-pending']">
+                      {{ item.completed ? '✓ Déposé' : '⏳ En attente' }}
+                    </span>
+                    <span v-if="item.deadline" class="dic-deadline-tag" :title="item.deadlineLabel">
+                      📅 {{ item.deadlineLabel }}
+                    </span>
+                  </div>
+                </div>
+
+                <!-- CONTENU DE L'ITEM -->
+                <div class="dic-body">
+                  <!-- CAS 1 : QUIZ DIAGNOSTIQUE -->
+                  <div v-if="item.id === 'quiz'" class="dic-quiz-section">
+                    <div class="quiz-summary-box">
+                      <div class="qsb-header">
+                        <div class="qsb-score">
+                          Note obtenue au quiz : <strong>{{ item.aiScore }} / 20 pts</strong>
+                          <span class="qsb-count">({{ item.quizAttempts.length }} tentative(s) enregistrée(s))</span>
+                        </div>
+                        <button 
+                          v-if="item.quizAttempts.length > 0" 
+                          @click="toggleQuizExpand('quiz')" 
+                          class="btn-toggle-quiz-details"
+                        >
+                          {{ expandedQuizAnswers['quiz'] ? '▲ Masquer le détail des réponses' : '▼ Voir les réponses de l\'étudiant aux questions' }}
+                        </button>
+                      </div>
+
+                      <!-- DÉTAIL DES QUESTIONS / RÉPONSES DU QUIZ -->
+                      <div v-if="expandedQuizAnswers['quiz'] && item.quizAttempts.length > 0" class="quiz-answers-detail">
+                        <div v-for="(att, aIdx) in item.quizAttempts" :key="att.id || aIdx" class="quiz-attempt-card">
+                          <div class="qac-head">
+                            <strong>Tentative du {{ att.submittedAt }}</strong> • Score : {{ att.score }} / {{ att.totalPoints }} ({{ att.percentage }}%)
+                          </div>
+                          <div class="qac-questions">
+                            <div v-for="(ans, qIdx) in att.answers" :key="ans.questionId || qIdx" class="qac-question-row">
+                              <div class="qq-title">
+                                <span class="qq-num">Q{{ qIdx + 1 }}.</span> {{ ans.questionText }}
+                              </div>
+                              <div class="qq-user-ans">
+                                <strong>Réponse de l'étudiant :</strong> 
+                                <span>{{ ans.userAnswer }}</span>
+                                <span :class="['qq-badge', ans.isCorrect ? 'correct' : 'partial']">
+                                  {{ ans.points }} / {{ ans.maxPoints }} pts
+                                </span>
+                              </div>
+                              <div v-if="ans.explanation || ans.openFeedback" class="qq-feedback">
+                                💡 <em>{{ ans.explanation || ans.openFeedback }}</em>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- CAS 2 : EXERCICES 1 À 16 & PROJET JEU -->
+                  <div v-else class="dic-work-section">
+                    <!-- 1. TRAVAIL DÉPOSÉ (TEXTE OU FICHIER) -->
+                    <div class="dic-student-work-box">
+                      <div class="dsw-title-bar">
+                        <span class="dsw-title">📝 Travail remis par l'étudiant :</span>
+                        <span v-if="item.file" class="dsw-date">Déposé le {{ item.file.submittedAt }}</span>
+                      </div>
+
+                      <!-- A. TEXTE RÉDIGÉ EN LIGNE (SI EXISTANT) -->
+                      <div v-if="item.submission && (item.submission.answer || item.submission.content)" class="dsw-text-block">
+                        <div class="dsw-text-header">
+                          <span class="dsw-text-badge">💬 Réponse rédigée en ligne</span>
+                          <button @click="toggleTextExpand(item.id)" class="btn-text-expand">
+                            {{ expandedTexts[item.id] ? 'Réduire ▲' : 'Agrandir ▼' }}
+                          </button>
+                        </div>
+                        <div :class="['dsw-text-content', expandedTexts[item.id] ? 'expanded' : 'collapsed']">
+                          {{ item.submission.answer || item.submission.content }}
+                        </div>
+                      </div>
+
+                      <!-- B. FICHIER JOINT WORD OU PDF (SI EXISTANT) -->
+                      <div v-if="item.file" class="dsw-file-block">
+                        <div class="dfb-file-card">
+                          <div class="dfb-left">
+                            <span class="dfb-icon">
+                              {{ (item.file.fileType && item.file.fileType.includes('pdf')) || (item.file.formattedFileName || '').endsWith('.pdf') ? '📄' : '📝' }}
+                            </span>
+                            <div class="dfb-info">
+                              <span class="dfb-name">{{ item.file.formattedFileName || item.file.originalFileName }}</span>
+                              <span class="dfb-size">{{ formatSize(item.file.fileSize) }} • {{ item.file.submittedAt }}</span>
+                            </div>
+                          </div>
+                          <div class="dfb-actions">
+                            <button 
+                              @click="toggleDocumentPreview(item.file)" 
+                              :class="['btn-preview-doc', activeDocPreview?.fileId === item.file.id ? 'active' : '']"
+                              title="Afficher le document directement dans la page pour lecture"
+                            >
+                              {{ activeDocPreview?.fileId === item.file.id ? '✕ Fermer la lecture' : '📖 Lire le document (Word / PDF)' }}
+                            </button>
+                            <button 
+                              @click="downloadFile(item.file)" 
+                              class="btn-download-doc" 
+                              title="Télécharger le fichier original"
+                            >
+                              📥 Télécharger
+                            </button>
+                          </div>
+                        </div>
+
+                        <!-- VISUALISEUR INTÉGRÉ WORD / PDF (LECTURE CONFORTABLE DIRECTE) -->
+                        <div v-if="activeDocPreview?.fileId === item.file.id" class="inline-doc-viewer-container">
+                          <div class="idv-header">
+                            <span class="idv-title">
+                              Lecteur Intégré : <strong>{{ activeDocPreview.fileName }}</strong>
+                              <span class="idv-tag">{{ activeDocPreview.type.toUpperCase() }}</span>
+                            </span>
+                            <button class="idv-close" @click="activeDocPreview = null" title="Fermer l'aperçu">✕</button>
+                          </div>
+
+                          <!-- Chargement Word Mammoth -->
+                          <div v-if="activeDocPreview.loading" class="idv-loading">
+                            <span class="idv-spinner">⏳</span> Mise en page du document Word en cours...
+                          </div>
+
+                          <!-- Message d'erreur -->
+                          <div v-else-if="activeDocPreview.error" class="idv-error">
+                            ⚠️ {{ activeDocPreview.error }}
+                            <div style="margin-top: 0.5rem;">
+                              <button @click="downloadFile(item.file)" class="btn-download-doc">
+                                📥 Télécharger le fichier
+                              </button>
+                            </div>
+                          </div>
+
+                          <!-- Aperçu PDF natif via iframe -->
+                          <div v-else-if="activeDocPreview.type === 'pdf'" class="idv-pdf-box">
+                            <iframe 
+                              :src="activeDocPreview.dataUrl" 
+                              class="dossier-pdf-frame" 
+                              title="Lecteur PDF intégré"
+                            ></iframe>
+                          </div>
+
+                          <!-- Aperçu Word converti en HTML via Mammoth -->
+                          <div v-else-if="activeDocPreview.type === 'docx'" class="idv-docx-box">
+                            <div class="docx-paper-sheet" v-html="activeDocPreview.htmlContent"></div>
+                          </div>
+
+                          <!-- Autre type de fichier -->
+                          <div v-else class="idv-fallback">
+                            Ce format ne peut être affiché directement. Veuillez le télécharger pour le consulter sur votre machine.
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- C. AUCUN TRAVAIL DÉPOSÉ -->
+                      <div v-if="!item.file && (!item.submission || (!item.submission.answer && !item.submission.content))" class="dsw-empty">
+                        <span>ℹ️ Aucun document déposé ni texte rédigé pour le moment.</span>
+                      </div>
+                    </div>
+
+                    <!-- 2. FEEDBACK INSCRIT PAR L'IA -->
+                    <div class="dic-ai-feedback-box">
+                      <div class="dafb-header">
+                        <div class="dafb-left">
+                          <span class="dafb-icon">🤖</span>
+                          <span class="dafb-title">Feedback IA Inscrit</span>
+                          <span class="dafb-model">
+                            {{ item.file?.aiCorrection?.modelUsed || 'Assistant Pédagogique FMTTN' }}
+                          </span>
+                        </div>
+                        <div class="dafb-score-tag">
+                          Note suggérée : <strong>{{ item.file?.aiCorrection?.suggestedScore ?? item.aiScore ?? 8.5 }} / 10 pts</strong>
+                        </div>
+                      </div>
+
+                      <!-- Synthèse IA -->
+                      <div class="dafb-summary">
+                        <strong>Synthèse générale :</strong>
+                        <p>« {{ item.file?.aiCorrection?.summary || item.aiSummary || 'Travail conforme aux exigences didactiques du cours.' }} »</p>
+                      </div>
+
+                      <!-- Points forts et pistes d'amélioration -->
+                      <div v-if="item.file?.aiCorrection" class="dafb-points-grid">
+                        <div v-if="item.file.aiCorrection.strengths?.length" class="dafb-col strengths">
+                          <h6>✅ Points forts identifiés :</h6>
+                          <ul>
+                            <li v-for="(str, sIdx) in item.file.aiCorrection.strengths" :key="'str-' + sIdx">
+                              {{ str }}
+                            </li>
+                          </ul>
+                        </div>
+                        <div v-if="item.file.aiCorrection.improvements?.length" class="dafb-col improvements">
+                          <h6>💡 Axes de progression :</h6>
+                          <ul>
+                            <li v-for="(imp, iIdx) in item.file.aiCorrection.improvements" :key="'imp-' + iIdx">
+                              {{ imp }}
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <!-- Grille critériée détaillée de l'IA (si disponible) -->
+                      <details v-if="item.file?.aiCorrection?.criteriaTable?.length" class="dafb-criteria-details">
+                        <summary>📊 Voir la grille critériée détaillée de l'IA ({{ item.file.aiCorrection.criteriaTable.length }} critères)</summary>
+                        <table class="dafb-criteria-table">
+                          <thead>
+                            <tr>
+                              <th>Critère didactique</th>
+                              <th style="width: 90px; text-align: center;">Note</th>
+                              <th>Justification IA</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr v-for="c in item.file.aiCorrection.criteriaTable" :key="c.name">
+                              <td><strong>{{ c.name }}</strong></td>
+                              <td style="text-align: center;">
+                                <span class="crit-score">{{ c.score }}</span> / {{ c.maxScore }}
+                              </td>
+                              <td class="crit-justif">{{ c.justification }}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </details>
+                    </div>
+
+                    <!-- 3. ZONE DE NOTATION ET FEEDBACK ENSEIGNANT (ÉDITION DIRECTE) -->
+                    <div class="dic-teacher-grade-box">
+                      <div class="dtgb-header">
+                        <span class="dtgb-title">👨‍🏫 Évaluation Enseignant pour cette activité :</span>
+                        <button 
+                          @click="adoptAiFeedbackInDossier(item)" 
+                          class="btn-adopt-ai"
+                          title="Reprendre directement la note et le feedback de l'IA dans votre évaluation"
+                        >
+                          ⚡ Reprendre la suggestion de l'IA
+                        </button>
+                      </div>
+
+                      <div class="dtgb-input-row">
+                        <div class="dtgb-score-input-group">
+                          <label>Note officielle attribuée :</label>
+                          <div class="score-input-wrap">
+                            <input 
+                              v-model.number="item.teacherScore" 
+                              type="number" 
+                              min="0" 
+                              :max="item.maxPoints || 10" 
+                              step="0.5" 
+                              class="dossier-score-input"
+                            />
+                            <span class="score-denom">/ {{ item.maxPoints || 10 }} pts</span>
+                          </div>
+                        </div>
+
+                        <div class="dtgb-comment-input-group">
+                          <label>Votre commentaire formatif pour l'étudiant (visible dans son espace) :</label>
+                          <textarea 
+                            v-model="item.feedback" 
+                            rows="2" 
+                            class="dossier-feedback-textarea" 
+                            placeholder="Rédigez votre retour personnalisé ou ajustez la proposition de l'IA..."
+                          ></textarea>
+                        </div>
+
+                        <div class="dtgb-save-btn-group">
+                          <button @click="saveDossierItemGrade(item)" class="btn-save-dossier-item" title="Enregistrer cette note et ce feedback">
+                            💾 Enregistrer
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PIED DE MODAL DU DOSSIER -->
+          <div class="dossier-modal-footer">
+            <div class="dmf-left">
+              <span v-if="saveGridStatus" class="save-status-toast">{{ saveGridStatus }}</span>
+            </div>
+            <div class="dmf-right">
+              <button @click="closeStudentDossier" class="btn-close-dossier-footer">
+                Fermer le dossier
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -6710,6 +7283,938 @@ span.is-late {
   font-size: 0.74rem;
   color: #059669;
   font-weight: 700;
+}
+
+/* =========================================================================
+   STYLES DU DOSSIER COMPLET ÉTUDIANT & VISUALISEUR WORD / PDF
+   ========================================================================= */
+
+.btn-row-action.dossier-btn {
+  background: #f0fdf4 !important;
+  color: #166534 !important;
+  border: 1px solid #bbf7d0 !important;
+  font-weight: 700;
+}
+.btn-row-action.dossier-btn:hover {
+  background: #dcfce7 !important;
+  color: #14532d !important;
+  border-color: #86efac !important;
+}
+
+.student-name-text:hover strong {
+  text-decoration: underline;
+  color: #2563eb;
+}
+
+.dossier-modal-overlay {
+  z-index: 2000;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(4px);
+  padding: 1.5rem;
+}
+
+.dossier-modal-card {
+  width: 95vw;
+  max-width: 1250px;
+  height: 92vh;
+  max-height: 94vh;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  border: 1px solid #cbd5e1;
+}
+
+.dossier-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  gap: 1rem;
+}
+
+.dmh-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.dmh-icon {
+  font-size: 2rem;
+}
+
+.dmh-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.dmh-student-name {
+  color: #2563eb;
+}
+
+.dmh-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 0.2rem;
+}
+
+.dmh-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.student-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.btn-student-nav {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.btn-student-nav:hover {
+  background: #f8fafc;
+  color: #0f172a;
+  border-color: #94a3b8;
+}
+
+.student-select-dropdown {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0f172a;
+  outline: none;
+  max-width: 280px;
+}
+
+.btn-close-dossier {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #64748b;
+  font-size: 1.1rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  transition: all 0.15s ease;
+}
+.btn-close-dossier:hover {
+  background: #fee2e2;
+  color: #dc2626;
+  border-color: #fca5a5;
+}
+
+/* BANDEAU KPI */
+.dossier-kpi-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.8rem;
+  padding: 0.8rem 1.5rem;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.dkpi-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.6rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.dkpi-card.score-main {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.dkpi-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #64748b;
+  letter-spacing: 0.04em;
+}
+
+.dkpi-num {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #166534;
+}
+.dkpi-num .denom {
+  font-size: 0.95rem;
+  color: #64748b;
+}
+.dkpi-num small {
+  font-size: 0.78rem;
+  color: #64748b;
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+.mention-badge-pill {
+  display: inline-block;
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 3px 8px;
+  border-radius: 6px;
+  width: fit-content;
+  margin-top: 3px;
+}
+.mention-pass { background: #dcfce7; color: #15803d; }
+.mention-ajourne { background: #fee2e2; color: #b91c1c; }
+
+.dkpi-stat {
+  font-size: 1.15rem;
+  color: #334155;
+  font-weight: 600;
+}
+
+.late-pill {
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  width: fit-content;
+  margin-top: 3px;
+}
+.pill-ok { background: #ecfdf5; color: #047857; }
+.pill-alert { background: #fef2f2; color: #dc2626; border: 1px solid #fca5a5; }
+
+/* FILTRES DU DOSSIER */
+.dossier-filter-tabs {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.6rem 1.5rem;
+  background: #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
+  overflow-x: auto;
+}
+
+.dtab-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: #475569;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+.dtab-btn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+.dtab-btn.active {
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+}
+
+/* CORPS DU DOSSIER */
+.dossier-modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+  background: #f8fafc;
+}
+
+.dossier-item-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+.dossier-item-card.item-done {
+  border-left: 5px solid #10b981;
+}
+.dossier-item-card.item-pending {
+  border-left: 5px solid #cbd5e1;
+}
+
+.dic-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.2rem;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.dic-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.dic-part-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+.badge-p1 { background: #dbeafe; color: #1e40af; }
+.badge-p2 { background: #fef3c7; color: #92400e; }
+
+.dic-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.dic-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.dic-weight-pill {
+  font-size: 0.78rem;
+  background: #e2e8f0;
+  color: #334155;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+.dic-weight-pill.step {
+  background: #f1f5f9;
+  color: #64748b;
+  font-style: italic;
+}
+
+.dic-status-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+.tag-done { background: #dcfce7; color: #166534; }
+.tag-pending { background: #fef3c7; color: #92400e; }
+
+.dic-deadline-tag {
+  font-size: 0.75rem;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 2px 8px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.dic-body {
+  padding: 1.2rem;
+}
+
+/* SECTION TRAVAIL ÉTUDIANT */
+.dic-student-work-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.dsw-title-bar {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 0.6rem;
+}
+
+.dsw-text-block {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.dsw-text-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.dsw-text-badge {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #0369a1;
+  background: #e0f2fe;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.btn-text-expand {
+  background: transparent;
+  border: none;
+  color: #2563eb;
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.dsw-text-content {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #1e293b;
+  white-space: pre-wrap;
+  font-family: inherit;
+}
+.dsw-text-content.collapsed {
+  max-height: 100px;
+  overflow: hidden;
+  mask-image: linear-gradient(180deg, #000 60%, transparent);
+}
+
+.dfb-file-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #bfdbfe;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.dfb-left {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.dfb-icon {
+  font-size: 1.8rem;
+}
+
+.dfb-name {
+  display: block;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #1e3a8a;
+  word-break: break-all;
+}
+
+.dfb-size {
+  display: block;
+  font-size: 0.76rem;
+  color: #64748b;
+}
+
+.dfb-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-preview-doc {
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.btn-preview-doc:hover {
+  background: #1d4ed8;
+}
+.btn-preview-doc.active {
+  background: #dc2626;
+}
+
+.btn-download-doc {
+  background: #ffffff;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-download-doc:hover {
+  background: #f1f5f9;
+}
+
+/* VISUALISEUR INTÉGRÉ WORD / PDF */
+.inline-doc-viewer-container {
+  margin-top: 0.8rem;
+  background: #ffffff;
+  border: 2px solid #3b82f6;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.idv-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  background: #1e3a8a;
+  color: #ffffff;
+  font-size: 0.88rem;
+}
+
+.idv-tag {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  margin-left: 6px;
+}
+
+.idv-close {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.idv-loading {
+  padding: 3rem 2rem;
+  text-align: center;
+  font-weight: 700;
+  color: #1e3a8a;
+  font-size: 1rem;
+}
+
+.idv-error {
+  padding: 1.5rem;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 0.9rem;
+}
+
+.dossier-pdf-frame {
+  width: 100%;
+  height: 650px;
+  border: none;
+  display: block;
+}
+
+.docx-paper-sheet {
+  background: #ffffff;
+  padding: 2.5rem 3.5rem;
+  max-height: 650px;
+  overflow-y: auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.7;
+  color: #1e293b;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.03);
+}
+.docx-paper-sheet h1, .docx-paper-sheet h2, .docx-paper-sheet h3 {
+  color: #0f172a;
+  margin-top: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+.docx-paper-sheet p {
+  margin-bottom: 0.8rem;
+}
+.docx-paper-sheet table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+.docx-paper-sheet th, .docx-paper-sheet td {
+  border: 1px solid #cbd5e1;
+  padding: 6px 10px;
+}
+
+.dsw-empty {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-style: italic;
+  padding: 0.4rem 0;
+}
+
+/* SECTION FEEDBACK IA */
+.dic-ai-feedback-box {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-left: 4px solid #6366f1;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.dafb-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.dafb-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dafb-title {
+  font-weight: 800;
+  font-size: 0.92rem;
+  color: #312e81;
+}
+
+.dafb-model {
+  font-size: 0.72rem;
+  background: #e0e7ff;
+  color: #4338ca;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.dafb-score-tag {
+  font-size: 0.85rem;
+  color: #312e81;
+}
+.dafb-score-tag strong {
+  font-size: 1rem;
+  color: #4338ca;
+}
+
+.dafb-summary {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #1e293b;
+  background: #ffffff;
+  padding: 0.7rem 0.9rem;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 0.8rem;
+}
+
+.dafb-points-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.dafb-col {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid #e2e8f0;
+}
+.dafb-col h6 {
+  margin: 0 0 0.4rem 0;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+.dafb-col.strengths h6 { color: #166534; }
+.dafb-col.improvements h6 { color: #9a3412; }
+.dafb-col ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #334155;
+}
+
+.dafb-criteria-details summary {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #4338ca;
+  cursor: pointer;
+  padding: 0.3rem 0;
+}
+
+.dafb-criteria-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  margin-top: 0.5rem;
+  background: #ffffff;
+}
+.dafb-criteria-table th, .dafb-criteria-table td {
+  border: 1px solid #e2e8f0;
+  padding: 6px 10px;
+  text-align: left;
+}
+.dafb-criteria-table th {
+  background: #f1f5f9;
+  font-weight: 700;
+}
+
+/* SECTION NOTATION ENSEIGNANT */
+.dic-teacher-grade-box {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.dtgb-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.dtgb-title {
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: #14532d;
+}
+
+.btn-adopt-ai {
+  background: #ffffff;
+  border: 1px solid #86efac;
+  color: #15803d;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.btn-adopt-ai:hover {
+  background: #dcfce7;
+}
+
+.dtgb-input-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.dtgb-score-input-group label, .dtgb-comment-input-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #166534;
+  margin-bottom: 0.3rem;
+}
+
+.score-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dossier-score-input {
+  width: 90px;
+  padding: 6px 10px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  border: 2px solid #86efac;
+  border-radius: 6px;
+  text-align: center;
+  outline: none;
+  background: #ffffff;
+}
+.dossier-score-input:focus {
+  border-color: #16a34a;
+}
+
+.score-denom {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #166534;
+}
+
+.dossier-feedback-textarea {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  border: 1px solid #86efac;
+  border-radius: 6px;
+  outline: none;
+  font-family: inherit;
+  background: #ffffff;
+  resize: vertical;
+}
+.dossier-feedback-textarea:focus {
+  border-color: #16a34a;
+}
+
+.dtgb-save-btn-group {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-save-dossier-item {
+  background: #16a34a;
+  color: #ffffff;
+  border: none;
+  padding: 7px 16px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.btn-save-dossier-item:hover {
+  background: #15803d;
+}
+
+/* FOOTER DOSSIER */
+.dossier-modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.5rem;
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+}
+
+.save-status-toast {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #15803d;
+}
+
+.btn-close-dossier-footer {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn-close-dossier-footer:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+/* QUIZ DETAIL */
+.quiz-summary-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1rem;
+}
+.qsb-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.qsb-score {
+  font-size: 1rem;
+  color: #1e293b;
+}
+.qsb-count {
+  font-size: 0.82rem;
+  color: #64748b;
+  margin-left: 6px;
+}
+.btn-toggle-quiz-details {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #2563eb;
+  cursor: pointer;
+}
+.quiz-answers-detail {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.quiz-attempt-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.8rem;
+}
+.qac-head {
+  font-size: 0.85rem;
+  color: #334155;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.6rem;
+}
+.qac-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.qac-question-row {
+  font-size: 0.82rem;
+  padding: 0.4rem;
+  background: #f8fafc;
+  border-radius: 6px;
+}
+.qq-title {
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.2rem;
+}
+.qq-user-ans {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #334155;
+}
+.qq-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+.qq-badge.correct { background: #dcfce7; color: #166534; }
+.qq-badge.partial { background: #fef3c7; color: #92400e; }
+.qq-feedback {
+  font-size: 0.76rem;
+  color: #64748b;
+  margin-top: 0.2rem;
 }
 
 </style>

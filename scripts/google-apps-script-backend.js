@@ -89,6 +89,13 @@ function doPost(e) {
       return createJsonResponse({ status: "success", user: updatedUser });
     }
 
+    // 4b. Suppression définitive d'un étudiant
+    if (action === 'deleteStudent') {
+      var delEmail = (body.email || '').trim().toLowerCase();
+      var delSuccess = deleteStudentFromSheet(delEmail);
+      return createJsonResponse({ status: "success", success: delSuccess, message: "Étudiant supprimé." });
+    }
+
     // 5. Sauvegarde d'un devoir / texte d'exercice
     if (action === 'saveSubmission') {
       saveSubmissionToSheet(body.submission);
@@ -265,6 +272,23 @@ function saveOrUpdateStudent(user) {
   }
 
   return user;
+}
+
+function deleteStudentFromSheet(email) {
+  if (!email) return false;
+  var cleanEmail = email.trim().toLowerCase();
+  var ss = getOrCreateSpreadsheet();
+  var sheet = ss.getSheetByName("Etudiants");
+  if (!sheet || sheet.getLastRow() <= 1) return false;
+
+  var data = sheet.getDataRange().getValues();
+  for (var i = 1; i < data.length; i++) {
+    if (data[i][0] && data[i][0].toString().trim().toLowerCase() === cleanEmail) {
+      sheet.deleteRow(i + 1);
+      return true;
+    }
+  }
+  return false;
 }
 
 // =========================================================================

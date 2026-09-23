@@ -1068,8 +1068,15 @@ function formatSize(bytes) {
 
 function formatRegistrationDate(dateStr) {
   if (!dateStr) return '—'
-  const parts = String(dateStr).trim().split(' ')
-  return parts[0] || dateStr
+  const clean = String(dateStr).trim()
+  const datePart = clean.split(' ')[0] || clean
+  if (datePart.includes('-')) {
+    const p = datePart.split('-')
+    if (p.length === 3) {
+      return `${p[2]}/${p[1]}/${p[0].slice(2)}`
+    }
+  }
+  return datePart
 }
 
 // =========================================================
@@ -1684,27 +1691,27 @@ function toggleQuizExpand(id) {
                     <span class="sort-icon">{{ studentSortKey === 'status' ? (studentSortOrder === 'asc' ? '▲' : '▼') : '⇅' }}</span>
                   </div>
                 </th>
-                <th class="sortable-th" :class="{ 'is-active-sort': studentSortKey === 'email' }" @click="toggleStudentSort('email')" title="Cliquer pour trier par Adresse Email" style="width: 160px; max-width: 160px;">
+                <th class="sortable-th th-email" :class="{ 'is-active-sort': studentSortKey === 'email' }" @click="toggleStudentSort('email')" title="Cliquer pour trier par Email" style="width: 85px; max-width: 95px;">
                   <div class="th-content">
-                    <span>Adresse Email</span>
+                    <span>Email</span>
                     <span class="sort-icon">{{ studentSortKey === 'email' ? (studentSortOrder === 'asc' ? '▲' : '▼') : '⇅' }}</span>
                   </div>
                 </th>
                 <th class="sortable-th" :class="{ 'is-active-sort': studentSortKey === 'registeredAt' }" @click="toggleStudentSort('registeredAt')" title="Cliquer pour trier par Date d'inscription">
                   <div class="th-content">
-                    <span>Inscrit le</span>
+                    <span>Inscrit</span>
                     <span class="sort-icon">{{ studentSortKey === 'registeredAt' ? (studentSortOrder === 'asc' ? '▲' : '▼') : '⇅' }}</span>
                   </div>
                 </th>
                 <th class="sortable-th" :class="{ 'is-active-sort': studentSortKey === 'passwordSet' }" @click="toggleStudentSort('passwordSet')" title="Cliquer pour trier par Statut du mot de passe">
                   <div class="th-content">
-                    <span>Sécurité MDP</span>
+                    <span>MDP</span>
                     <span class="sort-icon">{{ studentSortKey === 'passwordSet' ? (studentSortOrder === 'asc' ? '▲' : '▼') : '⇅' }}</span>
                   </div>
                 </th>
                 <th class="sortable-th" :class="{ 'is-active-sort': studentSortKey === 'progress' }" @click="toggleStudentSort('progress')" title="Cliquer pour trier par Progression">
                   <div class="th-content">
-                    <span>Progression</span>
+                    <span>Progr.</span>
                     <span class="sort-icon">{{ studentSortKey === 'progress' ? (studentSortOrder === 'asc' ? '▲' : '▼') : '⇅' }}</span>
                   </div>
                 </th>
@@ -1716,7 +1723,7 @@ function toggleQuizExpand(id) {
                 </th>
                 <th class="sortable-th" :class="{ 'is-active-sort': studentSortKey === 'grade' }" @click="toggleStudentSort('grade')" title="Cliquer pour trier par Note sur 200 points">
                   <div class="th-content">
-                    <span>Note (/ 200 pts)</span>
+                    <span>Note / 200</span>
                     <span class="sort-icon">{{ studentSortKey === 'grade' ? (studentSortOrder === 'asc' ? '▲' : '▼') : '⇅' }}</span>
                   </div>
                 </th>
@@ -1808,7 +1815,7 @@ function toggleQuizExpand(id) {
                       class="btn-row-action dossier-btn" 
                       title="Consulter le dossier complet des travaux, quiz, documents Word/PDF et feedbacks IA"
                     >
-                      📁 Dossier & Travaux
+                      📁 Dossier
                     </button>
                     <button 
                       @click="handleAdminResetStudentPassword(u.email)" 
@@ -1823,7 +1830,7 @@ function toggleQuizExpand(id) {
                       class="btn-row-action archive" 
                       title="Archiver cet étudiant"
                     >
-                      📦 Archiver
+                      📦
                     </button>
                     <button 
                       v-else 
@@ -1831,7 +1838,7 @@ function toggleQuizExpand(id) {
                       class="btn-row-action restore" 
                       title="Restaurer cet étudiant"
                     >
-                      🔄 Restaurer
+                      🔄
                     </button>
 
                     <button 
@@ -1839,7 +1846,7 @@ function toggleQuizExpand(id) {
                       class="btn-row-action delete" 
                       title="Supprimer définitivement cet étudiant"
                     >
-                      🗑️ Supprimer
+                      🗑️
                     </button>
                   </div>
                 </td>
@@ -4377,10 +4384,10 @@ function toggleQuizExpand(id) {
 }
 
 .data-table th, .data-table td {
-  padding: 8px 8px;
+  padding: 6px 6px;
   text-align: left;
   border-bottom: 1px solid var(--vp-c-divider);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
 }
 
 .data-table th {
@@ -4394,7 +4401,12 @@ function toggleQuizExpand(id) {
   user-select: none;
   transition: background-color 0.2s ease, color 0.2s ease;
   white-space: nowrap;
-  padding: 8px 6px;
+  padding: 6px 5px;
+}
+
+.th-email {
+  width: 90px;
+  max-width: 95px;
 }
 
 .sortable-th:hover {
@@ -4410,11 +4422,11 @@ function toggleQuizExpand(id) {
 .th-content {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
 }
 
 .sort-icon {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   display: inline-block;
   opacity: 0.35;
   transition: opacity 0.2s ease, transform 0.2s ease;
@@ -4436,9 +4448,9 @@ function toggleQuizExpand(id) {
 
 .status-badge {
   display: inline-block;
-  font-size: 0.72rem;
+  font-size: 0.70rem;
   font-weight: 700;
-  padding: 2px 6px;
+  padding: 2px 5px;
   border-radius: 5px;
   white-space: nowrap;
 }
@@ -4454,11 +4466,11 @@ function toggleQuizExpand(id) {
 }
 
 .email-cell {
-  max-width: 155px;
-  min-width: 105px;
-  font-size: 0.78rem;
+  width: 90px;
+  max-width: 95px;
+  min-width: 65px;
+  font-size: 0.75rem;
   color: var(--vp-c-text-2);
-  max-width: 160px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -4466,7 +4478,7 @@ function toggleQuizExpand(id) {
 
 .email-truncate {
   display: block;
-  max-width: 155px;
+  max-width: 90px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -4474,7 +4486,7 @@ function toggleQuizExpand(id) {
 
 .date-cell {
   white-space: nowrap;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   color: var(--vp-c-text-2);
 }
 
@@ -4491,12 +4503,12 @@ function toggleQuizExpand(id) {
 .table-progress {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   white-space: nowrap;
 }
 
 .table-progress-bar {
-  width: 45px;
+  width: 36px;
   height: 6px;
   background: var(--vp-c-divider);
   border-radius: 4px;
@@ -4510,17 +4522,17 @@ function toggleQuizExpand(id) {
 
 .sub-count-badge {
   font-weight: 700;
-  padding: 2px 6px;
+  padding: 2px 5px;
   border-radius: 5px;
   background: var(--vp-c-default-soft);
   color: var(--vp-c-text-1);
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   white-space: nowrap;
 }
 
 .table-grade-badge {
   white-space: nowrap;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   cursor: pointer;
 }
 
@@ -4535,14 +4547,14 @@ function toggleQuizExpand(id) {
 .action-buttons-group {
   display: flex;
   justify-content: flex-end;
-  gap: 4px;
+  gap: 3px;
   white-space: nowrap;
 }
 
 .btn-row-action {
-  padding: 3px 6px;
-  border-radius: 5px;
-  font-size: 0.72rem;
+  padding: 3px 5px;
+  border-radius: 4px;
+  font-size: 0.70rem;
   font-weight: 600;
   border: 1px solid var(--vp-c-divider);
   background: var(--vp-c-bg);

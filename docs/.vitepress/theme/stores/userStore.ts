@@ -236,10 +236,10 @@ export function parseDeadline(dtStr: string | undefined | null): Date | null {
   return isNaN(fallback.getTime()) ? null : fallback
 }
 
-export function formatDeadlineDisplay(dtStr: string): string {
-  if (!dtStr || !dtStr.trim()) return 'Non fixée'
+export function formatDeadlineDisplay(dtStr: any): string {
+  if (!dtStr || typeof dtStr !== 'string' || !dtStr.trim()) return 'Non fixée'
   const d = parseDeadline(dtStr)
-  if (!d) return dtStr
+  if (!d) return String(dtStr)
   const day = String(d.getDate()).padStart(2, '0')
   const month = String(d.getMonth() + 1).padStart(2, '0')
   const year = d.getFullYear()
@@ -1535,7 +1535,20 @@ function initInitialDeadlines(): Record<string, { deadline: string, deadlineLabe
     if (raw !== null) {
       const parsed = JSON.parse(raw)
       if (parsed && typeof parsed === 'object') {
-        return parsed
+        const clean: Record<string, { deadline: string, deadlineLabel?: string }> = {}
+        Object.keys(parsed).forEach(k => {
+          const item = parsed[k]
+          if (item) {
+            const rawD = item.deadline || item.dueDate || ''
+            const cleanD = typeof rawD === 'string' ? rawD.trim() : (rawD ? String(rawD).trim() : '')
+            const rawL = item.deadlineLabel || item.label || ''
+            clean[k] = {
+              deadline: cleanD,
+              deadlineLabel: typeof rawL === 'string' && rawL.trim() ? rawL.trim() : (cleanD ? formatDeadlineDisplay(cleanD) : 'Non fixée')
+            }
+          }
+        })
+        return clean
       }
     }
   } catch (e) {}
@@ -1549,7 +1562,10 @@ const state = reactive({
     status: u.status || 'active'
   })),
   progress: getStorage<Record<string, string[]>>(STORAGE_KEY_PROGRESS, DEFAULT_PROGRESS),
-  submissions: getStorage<Submission[]>(STORAGE_KEY_SUBMISSIONS, DEFAULT_SUBMISSIONS),
+  submissions: getStorage<Submission[]>(STORAGE_KEY_SUBMISSIONS, DEFAULT_SUBMISSIONS).map(s => ({
+    ...s,
+    answer: s?.answer || (s as any)?.content || ''
+  })),
   submittedFiles: getStorage<SubmittedFile[]>(STORAGE_KEY_FILES, DEFAULT_FILES),
   exerciseFeedbacks: getStorage<Record<string, ExerciseTeacherFeedback>>(STORAGE_KEY_EXERCISE_FEEDBACKS, DEFAULT_EXERCISE_FEEDBACKS),
   driveWebhook: getStorage<string>(STORAGE_KEY_WEBHOOK, DEFAULT_CLOUD_URL) || DEFAULT_CLOUD_URL,
@@ -1615,11 +1631,15 @@ export const userStore = {
         ? 'exercice-video'
         : exerciseId
 
-    const custom = state.deadlines[key]
-    if (custom && custom.deadline && custom.deadline.trim() !== '') {
+    const custom = state.deadlines?.[key]
+    const customDeadline = custom?.deadline || (custom as any)?.dueDate || ''
+    const cleanDeadline = typeof customDeadline === 'string' ? customDeadline.trim() : (customDeadline ? String(customDeadline).trim() : '')
+    if (cleanDeadline !== '') {
+      const rawLabel = custom?.deadlineLabel || (custom as any)?.label || ''
+      const cleanLabel = typeof rawLabel === 'string' && rawLabel.trim() ? rawLabel.trim() : formatDeadlineDisplay(cleanDeadline)
       return {
-        deadline: custom.deadline,
-        deadlineLabel: custom.deadlineLabel || formatDeadlineDisplay(custom.deadline),
+        deadline: cleanDeadline,
+        deadlineLabel: cleanLabel,
         isDefined: true,
         isCustom: true
       }
@@ -1699,7 +1719,20 @@ export const userStore = {
       if (raw !== null) {
         const parsed = JSON.parse(raw)
         if (parsed && typeof parsed === 'object') {
-          state.deadlines = parsed
+          const clean: Record<string, { deadline: string, deadlineLabel?: string }> = {}
+          Object.keys(parsed).forEach(k => {
+            const item = parsed[k]
+            if (item) {
+              const rawD = item.deadline || item.dueDate || ''
+              const cleanD = typeof rawD === 'string' ? rawD.trim() : (rawD ? String(rawD).trim() : '')
+              const rawL = item.deadlineLabel || item.label || ''
+              clean[k] = {
+                deadline: cleanD,
+                deadlineLabel: typeof rawL === 'string' && rawL.trim() ? rawL.trim() : (cleanD ? formatDeadlineDisplay(cleanD) : 'Non fixée')
+              }
+            }
+          })
+          state.deadlines = clean
           deadlinesTrigger.value++
         }
       }
@@ -2534,8 +2567,8 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
       }
 
       // Exercices 1 à 8, projet-jeu et étapes 9 à 16
-      const file = state.submittedFiles.find(f => f.userEmail.toLowerCase() === targetEmail && f.exerciseId === def.id)
-      const hasSub = state.submissions.some(s => s.userEmail.toLowerCase() === targetEmail && s.exerciseId === def.id && s.answer.trim().length > 10)
+      const file = state.submittedFiles.find(f => (f?.userEmail || '').toLowerCase() === targetEmail && f?.exerciseId === def.id)
+      const hasSub = state.submissions.some(s => (s?.userEmail || '').toLowerCase() === targetEmail && s?.exerciseId === def.id && (s?.answer || (s as any)?.content || '').trim().length > 10)
       const isDone = !!file || hasSub
 
       const effDeadline = this.getExerciseDeadline(def.id)
@@ -2704,10 +2737,10 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
       if (now > deadlineDate) {
         let isCompleted = false
         if (item.id === 'quiz') {
-          isCompleted = state.quizAttempts.some(q => q.userEmail.toLowerCase() === targetEmail)
+          isCompleted = state.quizAttempts.some(q => (q?.userEmail || '').toLowerCase() === targetEmail)
         } else {
-          const hasFile = state.submittedFiles.some(f => f.userEmail.toLowerCase() === targetEmail && f.exerciseId === item.id)
-          const hasSub = state.submissions.some(s => s.userEmail.toLowerCase() === targetEmail && s.exerciseId === item.id && s.answer.trim().length > 10)
+          const hasFile = state.submittedFiles.some(f => (f?.userEmail || '').toLowerCase() === targetEmail && f?.exerciseId === item.id)
+          const hasSub = state.submissions.some(s => (s?.userEmail || '').toLowerCase() === targetEmail && s?.exerciseId === item.id && (s?.answer || (s as any)?.content || '').trim().length > 10)
           isCompleted = hasFile || hasSub
         }
 
@@ -3311,50 +3344,80 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
 
     // 1. Fusion des étudiants
     if (Array.isArray(data.users)) {
-      data.users.forEach((remoteUser: User) => {
+      data.users.forEach((remoteUser: any) => {
         if (!remoteUser || !remoteUser.email) return
-        const idx = state.users.findIndex(u => u.email.toLowerCase() === remoteUser.email.toLowerCase())
+        const cleanRemoteEmail = String(remoteUser.email).trim().toLowerCase()
+        const normalizedUser: User = {
+          id: remoteUser.id || `user-${Date.now()}`,
+          firstName: remoteUser.firstName || '',
+          lastName: remoteUser.lastName || '',
+          email: cleanRemoteEmail,
+          role: remoteUser.role || 'student',
+          registeredAt: remoteUser.registeredAt || new Date().toISOString().replace('T', ' ').substring(0, 16),
+          status: remoteUser.status || 'active',
+          password: remoteUser.password || '',
+          passwordSet: remoteUser.passwordSet === true || remoteUser.passwordSet === 'true'
+        }
+        const idx = state.users.findIndex(u => u && u.email && String(u.email).trim().toLowerCase() === cleanRemoteEmail)
         if (idx >= 0) {
-          if (remoteUser.passwordSet && !state.users[idx].passwordSet) {
-            state.users[idx] = { ...state.users[idx], ...remoteUser }
-          }
+          state.users[idx] = { ...state.users[idx], ...normalizedUser }
         } else {
-          state.users.push(remoteUser)
+          state.users.push(normalizedUser)
         }
       })
       setStorage(STORAGE_KEY_USERS, state.users)
     }
 
-    // 2. Fusion des devoirs
+    // 2. Fusion des devoirs (supporte answer et content avec valeur par défaut vide)
     if (Array.isArray(data.submissions)) {
-      data.submissions.forEach((remSub: Submission) => {
+      data.submissions.forEach((remSub: any) => {
         if (!remSub || !remSub.userEmail || !remSub.exerciseId) return
+        const cleanSubEmail = String(remSub.userEmail).trim().toLowerCase()
+        const textAnswer = remSub.answer || remSub.content || ''
+        const normalizedSub: Submission = {
+          id: remSub.id || `sub-${Date.now()}`,
+          userId: remSub.userId || '',
+          userName: remSub.userName || '',
+          userEmail: cleanSubEmail,
+          exerciseId: remSub.exerciseId,
+          exerciseTitle: remSub.exerciseTitle || '',
+          answer: textAnswer,
+          submittedAt: remSub.submittedAt || new Date().toISOString()
+        }
         const idx = state.submissions.findIndex(
-          s => s.userEmail.toLowerCase() === remSub.userEmail.toLowerCase() && s.exerciseId === remSub.exerciseId
+          s => s && s.userEmail && String(s.userEmail).trim().toLowerCase() === cleanSubEmail && s.exerciseId === remSub.exerciseId
         )
         if (idx >= 0) {
-          if (new Date(remSub.submittedAt).getTime() > new Date(state.submissions[idx].submittedAt).getTime()) {
-            state.submissions[idx] = remSub
+          if (new Date(normalizedSub.submittedAt).getTime() > new Date(state.submissions[idx].submittedAt).getTime()) {
+            state.submissions[idx] = normalizedSub
           }
         } else {
-          state.submissions.push(remSub)
+          state.submissions.push(normalizedSub)
         }
       })
       setStorage(STORAGE_KEY_SUBMISSIONS, state.submissions)
     }
 
-    // 3. Fusion des échéances
+    // 3. Fusion des échéances (normalisation stricte { deadline: string, deadlineLabel: string })
     if (data.deadlines && typeof data.deadlines === 'object') {
       let changed = false
       Object.keys(data.deadlines).forEach(exId => {
         const remD = data.deadlines[exId]
         if (remD) {
-          state.deadlines[exId] = remD
+          const rawDate = remD.deadline || remD.dueDate || ''
+          const cleanDate = typeof rawDate === 'string' ? rawDate.trim() : (rawDate ? String(rawDate).trim() : '')
+          const rawLabel = remD.deadlineLabel || remD.label || ''
+          const cleanLabel = typeof rawLabel === 'string' && rawLabel.trim() ? rawLabel.trim() : (cleanDate ? formatDeadlineDisplay(cleanDate) : 'Non fixée')
+          state.deadlines[exId] = {
+            deadline: cleanDate,
+            deadlineLabel: cleanLabel
+          }
           changed = true
         }
       })
       if (changed) {
         setStorage(STORAGE_KEY_DEADLINES, state.deadlines)
+        deadlinesTrigger.value++
       }
     }
 
@@ -3362,8 +3425,8 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
     if (data.evaluations && typeof data.evaluations === 'object') {
       Object.keys(data.evaluations).forEach(email => {
         const remEval = data.evaluations[email]
-        if (remEval) {
-          state.evaluations[email.toLowerCase()] = remEval
+        if (remEval && email) {
+          state.evaluations[String(email).trim().toLowerCase()] = remEval
         }
       })
       setStorage(STORAGE_KEY_EVALUATIONS, state.evaluations)

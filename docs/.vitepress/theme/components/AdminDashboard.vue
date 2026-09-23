@@ -401,12 +401,14 @@ function getItemLateBreakdown(itemId) {
   let recent = 0
 
   for (const u of active) {
+    if (!u || !u.email) continue
+    const targetEmail = String(u.email).trim().toLowerCase()
     let isDone = false
     if (itemId === 'quiz') {
-      isDone = userStore.quizAttempts.some(q => q.userEmail.toLowerCase() === u.email.toLowerCase())
+      isDone = userStore.quizAttempts.some(q => (q?.userEmail || '').toLowerCase() === targetEmail)
     } else {
-      const hasFile = userStore.submittedFiles.some(f => f.userEmail.toLowerCase() === u.email.toLowerCase() && f.exerciseId === itemId)
-      const hasSub = userStore.submissions.some(s => s.userEmail.toLowerCase() === u.email.toLowerCase() && s.exerciseId === itemId && s.answer.trim().length > 10)
+      const hasFile = userStore.submittedFiles.some(f => (f?.userEmail || '').toLowerCase() === targetEmail && f?.exerciseId === itemId)
+      const hasSub = userStore.submissions.some(s => (s?.userEmail || '').toLowerCase() === targetEmail && s?.exerciseId === itemId && (s?.answer || s?.content || '').trim().length > 10)
       isDone = hasFile || hasSub
     }
     if (isDone) {
@@ -427,6 +429,7 @@ function getItemLateBreakdown(itemId) {
 
 const displayedUsers = computed(() => {
   return users.value.filter(u => {
+    if (!u || !u.email) return false
     if (studentStatusFilter.value === 'active' && u.status === 'archived') return false
     if (studentStatusFilter.value === 'archived' && u.status !== 'archived') return false
     if (studentStatusFilter.value === 'late') {
@@ -445,8 +448,8 @@ const displayedUsers = computed(() => {
 
     if (studentSearchQuery.value.trim()) {
       const q = studentSearchQuery.value.toLowerCase().trim()
-      const fullName = `${u.firstName} ${u.lastName}`.toLowerCase()
-      const email = u.email.toLowerCase()
+      const fullName = `${u.firstName || ''} ${u.lastName || ''}`.toLowerCase()
+      const email = String(u.email).toLowerCase()
       return fullName.includes(q) || email.includes(q)
     }
     return true
@@ -968,8 +971,9 @@ function exportCSV() {
       csv += `"${u.lastName}";"${u.firstName}";"${u.email}";"${statusLabel}";"${u.registeredAt}";"${prog}%";"Aucun";"Aucune réponse";""\n`
     } else {
       userSubs.forEach(s => {
-        const cleanAnswer = s.answer.replace(/"/g, '""').replace(/\n/g, ' ')
-        csv += `"${u.lastName}";"${u.firstName}";"${u.email}";"${statusLabel}";"${u.registeredAt}";"${prog}%";"${s.exerciseTitle}";"${cleanAnswer}";"${s.submittedAt}"\n`
+        const rawAns = s.answer || s.content || ''
+        const cleanAnswer = String(rawAns).replace(/"/g, '""').replace(/\n/g, ' ')
+        csv += `"${u.lastName}";"${u.firstName}";"${u.email}";"${statusLabel}";"${u.registeredAt}";"${prog}%";"${s.exerciseTitle || ''}";"${cleanAnswer}";"${s.submittedAt || ''}"\n`
       })
     }
   })
@@ -1111,8 +1115,8 @@ function saveActiveStudentGrid() {
     activeGridGeneralFeedback.value
   )
 
-  const studentName = users.value.find(u => u.email.toLowerCase() === selectedGridStudentEmail.value.toLowerCase())
-  const nameLabel = studentName ? `${studentName.firstName} ${studentName.lastName}` : selectedGridStudentEmail.value
+  const studentName = users.value.find(u => u && u.email && u.email.toLowerCase() === (selectedGridStudentEmail.value || '').toLowerCase())
+  const nameLabel = studentName ? `${studentName.firstName || ''} ${studentName.lastName || ''}`.trim() : (selectedGridStudentEmail.value || '')
   saveGridStatus.value = `✓ Notes & grille enregistrées avec succès pour ${nameLabel} (${currentGridTotalOutOf20.value}/20) !`
   setTimeout(() => { saveGridStatus.value = '' }, 4000)
 }
@@ -1121,8 +1125,9 @@ function exportAllResultsToExcel() {
   let csv = `Nom de famille;Prénom;Email institutionnel;Suivi Délais IA;Quiz (/20);Ex 1 DigComp (/10);Ex 2 Info critique (/10);Ex 3 Guide élèves (/10);Ex 4 Escape Game (/10);Ex 5 Canva mot de passe (/10);Ex 6 Démarche itérative (/10);Ex 7 Hardware PC (/10);Ex 8 Grilles critériées (/10);SOUS-TOTAL PLATEFORME (/100);PROJET JEU NOTE GLOBALE (/100);Étape 1 Règles;Étape 2 Photos;Étape 3 Cartes IA;Étape 4 Plateau Laser;Étape 5 Pions 3D;Étape 6 Vidéo;Étape 7 Playtest;Étape 8 Présentation & Leçon;SOUS-TOTAL PROJET JEU (/100);TOTAL GÉNÉRAL (/200);NOTE FINALE (/20);POURCENTAGE;RÉSULTAT;MENTION;FEEDBACK GÉNÉRAL\n`
 
   users.value.forEach(u => {
+    if (!u || !u.email) return
     const ev = userStore.getStudentEvaluation(u.email)
-    const items = ev.items || []
+    const items = ev?.items || []
     const late = userStore.getStudentLateStatus(u.email)
     const lateText = late.isLate ? `🚨 RETARD (${late.lateCount} devoirs : ${late.lateItems.map(i => i.shortTitle).join(', ')})` : '✓ À jour'
 

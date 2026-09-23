@@ -9,6 +9,7 @@ const lockoutSeconds = ref(0)
 const loginErrorMessage = ref('')
 let lockoutTimer = null
 let inactivityTimer = null
+let liveSyncInterval = null
 const INACTIVITY_LIMIT_MS = 30 * 60 * 1000 // Verrouillage auto après 30 min
 const adminTab = ref('students') // 'students' | 'deadlines' | 'evaluation' | 'quizzes' | 'submissions' | 'files' | 'export'
 
@@ -729,9 +730,25 @@ watch(adminTab, (newTab) => {
   }
 })
 
+watch(isAuthenticated, (val) => {
+  if (val) {
+    if (!liveSyncInterval) {
+      liveSyncInterval = setInterval(() => {
+        userStore.syncWithCloud().catch(() => {})
+      }, 30000)
+    }
+  } else {
+    if (liveSyncInterval) {
+      clearInterval(liveSyncInterval)
+      liveSyncInterval = null
+    }
+  }
+})
+
 onUnmounted(() => {
   if (lockoutTimer) clearInterval(lockoutTimer)
   if (inactivityTimer) clearTimeout(inactivityTimer)
+  if (liveSyncInterval) clearInterval(liveSyncInterval)
   if (typeof window !== 'undefined') {
     const events = ['mousemove', 'keydown', 'scroll', 'touchstart']
     events.forEach(e => window.removeEventListener(e, resetInactivityTimer))

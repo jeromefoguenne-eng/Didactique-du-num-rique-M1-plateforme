@@ -1693,6 +1693,7 @@ export const userStore = {
     setStorage(STORAGE_KEY_PROGRESS, state.progress)
 
     try { cloudSync.pushStudent(newUser) } catch (e) {}
+    try { this.syncWithCloud().catch(() => {}) } catch (e) {}
 
     return { success: true, user: newUser }
   },
@@ -3009,6 +3010,8 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
 
     setStorage(STORAGE_KEY_USERS, state.users)
     setStorage(STORAGE_KEY_CURRENT, state.currentUser)
+    try { cloudSync.pushUpdateStudent(user) } catch (e) {}
+    try { this.syncWithCloud().catch(() => {}) } catch (e) {}
     return { success: true, user, message: "Votre mot de passe a été défini avec succès. Bienvenue !" }
   },
 
@@ -3036,6 +3039,8 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
       state.currentUser = user
       setStorage(STORAGE_KEY_CURRENT, state.currentUser)
     }
+    try { cloudSync.pushUpdateStudent(user) } catch (e) {}
+    try { this.syncWithCloud().catch(() => {}) } catch (e) {}
     return { success: true, message: "Mot de passe modifié avec succès !" }
   },
 

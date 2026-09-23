@@ -141,6 +141,42 @@ const server = http.createServer((req, res) => {
     return
   }
 
+  // Sauvegarde et chargement direct des échéances
+  if (req.method === 'POST' && req.url === '/api/deadlines') {
+    let body = ''
+    req.on('data', chunk => { body += chunk.toString() })
+    req.on('end', () => {
+      try {
+        const payload = JSON.parse(body)
+        const deadlines = payload.deadlines || {}
+        const filePath = path.join(TARGET_DIR, 'deadlines.json')
+        fs.writeFileSync(filePath, JSON.stringify(deadlines, null, 2), 'utf-8')
+        res.writeHead(200, { 'Content-Type': 'application/json' })
+        res.end(JSON.stringify({ success: true, message: 'Échéances enregistrées sur Google Drive.' }))
+      } catch (err) {
+        res.writeHead(500, { 'Content-Type': 'application/json' })
+        res.end(JSON.stringify({ error: err.message }))
+      }
+    })
+    return
+  }
+
+  if (req.method === 'GET' && req.url === '/api/deadlines') {
+    try {
+      const filePath = path.join(TARGET_DIR, 'deadlines.json')
+      let deadlines = {}
+      if (fs.existsSync(filePath)) {
+        deadlines = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
+      }
+      res.writeHead(200, { 'Content-Type': 'application/json' })
+      res.end(JSON.stringify({ success: true, deadlines }))
+    } catch (err) {
+      res.writeHead(200, { 'Content-Type': 'application/json' })
+      res.end(JSON.stringify({ success: true, deadlines: {} }))
+    }
+    return
+  }
+
   res.writeHead(404, { 'Content-Type': 'application/json' })
   res.end(JSON.stringify({ error: 'Route non trouvée' }))
 })

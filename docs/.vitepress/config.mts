@@ -61,6 +61,69 @@ export default defineConfig({
               res.end()
             }
           })
+
+          // Endpoint pour sauvegarder et charger les échéances directement sur le Google Drive et en local
+          server.middlewares.use('/api/backup-deadlines', async (req, res) => {
+            const driveDir = "C:\\Google Drive\\Prépas light\\HECh\\Péda\\Math-Num\\M1\\Didactique et numérique\\Exercices étudiants Plateforme"
+            const localDataDir = path.join(process.cwd(), 'docs', '.vitepress', 'data')
+            const driveDeadlinesFile = path.join(driveDir, 'deadlines.json')
+            const localDeadlinesFile = path.join(localDataDir, 'deadlines.json')
+
+            if (req.method === 'POST') {
+              let body = ''
+              req.on('data', chunk => { body += chunk })
+              req.on('end', () => {
+                try {
+                  const data = JSON.parse(body)
+                  const deadlinesData = data.deadlines || {}
+                  const jsonStr = JSON.stringify(deadlinesData, null, 2)
+
+                  // 1. Sauvegarde dans le Google Drive local
+                  try {
+                    if (!fs.existsSync(driveDir)) {
+                      fs.mkdirSync(driveDir, { recursive: true })
+                    }
+                    fs.writeFileSync(driveDeadlinesFile, jsonStr, 'utf-8')
+                  } catch (errDrive) {}
+
+                  // 2. Sauvegarde de secours dans le projet local
+                  try {
+                    if (!fs.existsSync(localDataDir)) {
+                      fs.mkdirSync(localDataDir, { recursive: true })
+                    }
+                    fs.writeFileSync(localDeadlinesFile, jsonStr, 'utf-8')
+                  } catch (errLocal) {}
+
+                  res.statusCode = 200
+                  res.setHeader('Content-Type', 'application/json')
+                  res.end(JSON.stringify({ status: 'success', count: Object.keys(deadlinesData).length }))
+                } catch (e: any) {
+                  res.statusCode = 500
+                  res.setHeader('Content-Type', 'application/json')
+                  res.end(JSON.stringify({ status: 'error', message: e.message }))
+                }
+              })
+            } else if (req.method === 'GET') {
+              try {
+                let deadlines = {}
+                if (fs.existsSync(driveDeadlinesFile)) {
+                  deadlines = JSON.parse(fs.readFileSync(driveDeadlinesFile, 'utf-8'))
+                } else if (fs.existsSync(localDeadlinesFile)) {
+                  deadlines = JSON.parse(fs.readFileSync(localDeadlinesFile, 'utf-8'))
+                }
+                res.statusCode = 200
+                res.setHeader('Content-Type', 'application/json')
+                res.end(JSON.stringify({ status: 'success', deadlines }))
+              } catch (e: any) {
+                res.statusCode = 200
+                res.setHeader('Content-Type', 'application/json')
+                res.end(JSON.stringify({ status: 'success', deadlines: {} }))
+              }
+            } else {
+              res.statusCode = 405
+              res.end()
+            }
+          })
         }
       }
     ]

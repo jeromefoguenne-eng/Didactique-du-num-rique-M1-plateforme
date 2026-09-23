@@ -354,13 +354,17 @@ function saveDeadlinesToSheet(deadlines) {
 
   Object.keys(deadlines).forEach(function(exId) {
     var d = deadlines[exId];
-    sheet.appendRow([
-      exId,
-      d.dueDate || '',
-      d.hardDueDate || '',
-      d.isBlocking === true,
-      d.label || ''
-    ]);
+    if (d) {
+      var dueDate = d.deadline || d.dueDate || '';
+      var label = d.deadlineLabel || d.label || '';
+      sheet.appendRow([
+        exId,
+        dueDate,
+        d.hardDueDate || '',
+        d.isBlocking === true,
+        label
+      ]);
+    }
   });
 }
 
@@ -457,10 +461,12 @@ function getFullDataFromSheet() {
     var dataD = sheetD.getDataRange().getValues();
     for (var k = 1; k < dataD.length; k++) {
       var d = dataD[k];
-      if (d[0]) {
+      if (d[0] && d[1]) {
         deadlines[d[0]] = {
           exerciseId: d[0],
-          dueDate: d[1] || null,
+          deadline: d[1] || '',
+          dueDate: d[1] || '',
+          deadlineLabel: d[4] || '',
           hardDueDate: d[2] || null,
           isBlocking: d[3] === true || d[3] === "true",
           label: d[4] || ''
@@ -525,10 +531,16 @@ function mergeAndSyncAll(incomingState) {
     }
   });
 
-  // Échéances : si présentes dans incomingState, les sauvegarder
+  // Échéances : si présentes dans incomingState avec au moins une date, les sauvegarder
   if (incomingState.deadlines && Object.keys(incomingState.deadlines).length > 0) {
-    saveDeadlinesToSheet(incomingState.deadlines);
-    remote.deadlines = incomingState.deadlines;
+    var hasValidDeadline = Object.keys(incomingState.deadlines).some(function(k) {
+      var item = incomingState.deadlines[k];
+      return item && (item.deadline || item.dueDate);
+    });
+    if (hasValidDeadline) {
+      saveDeadlinesToSheet(incomingState.deadlines);
+      remote.deadlines = incomingState.deadlines;
+    }
   }
 
   return getFullDataFromSheet();

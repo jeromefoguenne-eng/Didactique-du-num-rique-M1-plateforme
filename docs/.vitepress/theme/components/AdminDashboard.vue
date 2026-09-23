@@ -799,8 +799,15 @@ watch(adminTab, (newTab) => {
   }
 })
 
+watch(() => userStore.deadlinesRevision, () => {
+  if (adminTab.value === 'deadlines') {
+    initDeadlinesForm()
+  }
+})
+
 watch(isAuthenticated, (val) => {
   if (val) {
+    initDeadlinesForm()
     if (!liveSyncInterval) {
       liveSyncInterval = setInterval(() => {
         userStore.syncWithCloud().catch(() => {})
@@ -1970,6 +1977,7 @@ function toggleQuizExpand(id) {
                         v-model="deadlineDates[item.id]" 
                         class="input-date-clean" 
                         @change="handleDateOrTimeChange(item.id)"
+                        @input="handleDateOrTimeChange(item.id)"
                         title="Date limite"
                       />
                       <input 
@@ -1977,6 +1985,7 @@ function toggleQuizExpand(id) {
                         v-model="deadlineTimes[item.id]" 
                         class="input-time-clean" 
                         @change="handleDateOrTimeChange(item.id)"
+                        @input="handleDateOrTimeChange(item.id)"
                         title="Heure limite (par défaut 23:59)"
                       />
                     </div>
@@ -2086,6 +2095,7 @@ function toggleQuizExpand(id) {
                         v-model="deadlineDates[item.id]" 
                         class="input-date-clean" 
                         @change="handleDateOrTimeChange(item.id)"
+                        @input="handleDateOrTimeChange(item.id)"
                         title="Date limite"
                       />
                       <input 
@@ -2093,6 +2103,7 @@ function toggleQuizExpand(id) {
                         v-model="deadlineTimes[item.id]" 
                         class="input-time-clean" 
                         @change="handleDateOrTimeChange(item.id)"
+                        @input="handleDateOrTimeChange(item.id)"
                         title="Heure limite (par défaut 23:59)"
                       />
                     </div>

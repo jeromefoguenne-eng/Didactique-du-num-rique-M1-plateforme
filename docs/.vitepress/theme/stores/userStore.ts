@@ -1691,6 +1691,30 @@ export const userStore = {
     state.deadlines = newDeadlines
     setStorage(STORAGE_KEY_DEADLINES, state.deadlines)
     deadlinesTrigger.value++
+
+    // 1. Sauvegarde automatique sur le Google Drive local via Vite middleware
+    try {
+      fetch('/api/backup-deadlines', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ deadlines: state.deadlines })
+      }).catch(() => {})
+    } catch (e) {}
+
+    // 2. Sauvegarde sur le serveur compagnon Drive (port 3001)
+    try {
+      fetch('http://localhost:3001/api/deadlines', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ deadlines: state.deadlines })
+      }).catch(() => {})
+    } catch (e) {}
+
+    // 3. Sauvegarde immédiate dans Google Apps Script Cloud
+    try {
+      cloudSync.pushDeadlines(state.deadlines).catch(() => {})
+    } catch (e) {}
+
     return { success: true, message: !deadline || !deadline.trim() ? 'Échéance retirée avec succès.' : 'Échéance enregistrée avec succès.' }
   },
 
@@ -1714,6 +1738,30 @@ export const userStore = {
     state.deadlines = newDeadlines
     setStorage(STORAGE_KEY_DEADLINES, state.deadlines)
     deadlinesTrigger.value++
+
+    // 1. Sauvegarde automatique sur le Google Drive local via Vite middleware
+    try {
+      fetch('/api/backup-deadlines', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ deadlines: state.deadlines })
+      }).catch(() => {})
+    } catch (e) {}
+
+    // 2. Sauvegarde sur le serveur compagnon Drive (port 3001)
+    try {
+      fetch('http://localhost:3001/api/deadlines', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ deadlines: state.deadlines })
+      }).catch(() => {})
+    } catch (e) {}
+
+    // 3. Sauvegarde immédiate dans Google Apps Script Cloud
+    try {
+      cloudSync.pushDeadlines(state.deadlines).catch(() => {})
+    } catch (e) {}
+
     return { success: true, count }
   },
 
@@ -1722,6 +1770,27 @@ export const userStore = {
     state.deadlines = {}
     setStorage(STORAGE_KEY_DEADLINES, {})
     deadlinesTrigger.value++
+
+    try {
+      fetch('/api/backup-deadlines', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ deadlines: {} })
+      }).catch(() => {})
+    } catch (e) {}
+
+    try {
+      fetch('http://localhost:3001/api/deadlines', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ deadlines: {} })
+      }).catch(() => {})
+    } catch (e) {}
+
+    try {
+      cloudSync.pushDeadlines({}).catch(() => {})
+    } catch (e) {}
+
     return { success: true, message: 'Toutes les échéances ont été effacées.' }
   },
 
@@ -1755,6 +1824,27 @@ export const userStore = {
           deadlinesTrigger.value++
         }
       }
+
+      // Recharger également depuis le backend Google Drive local si disponible
+      fetch('/api/backup-deadlines')
+        .then(r => r.json())
+        .then(res => {
+          if (res && res.deadlines && typeof res.deadlines === 'object') {
+            let changed = false
+            Object.keys(res.deadlines).forEach(k => {
+              const item = res.deadlines[k]
+              if (item && item.deadline && !state.deadlines[k]?.deadline) {
+                state.deadlines[k] = item
+                changed = true
+              }
+            })
+            if (changed) {
+              setStorage(STORAGE_KEY_DEADLINES, state.deadlines)
+              deadlinesTrigger.value++
+            }
+          }
+        })
+        .catch(() => {})
     } catch (e) {}
   },
 
@@ -3594,8 +3684,12 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
         if (remD) {
           const rawDate = remD.deadline || remD.dueDate || ''
           const cleanDate = typeof rawDate === 'string' ? rawDate.trim() : (rawDate ? String(rawDate).trim() : '')
+          // PROTECTION CRUCIALE : Ne JAMAIS écraser une échéance locale existante avec une valeur vide reçue du cloud !
+          if (!cleanDate) {
+            return
+          }
           const rawLabel = remD.deadlineLabel || remD.label || ''
-          const cleanLabel = typeof rawLabel === 'string' && rawLabel.trim() ? rawLabel.trim() : (cleanDate ? formatDeadlineDisplay(cleanDate) : 'Non fixée')
+          const cleanLabel = typeof rawLabel === 'string' && rawLabel.trim() ? rawLabel.trim() : formatDeadlineDisplay(cleanDate)
           state.deadlines[exId] = {
             deadline: cleanDate,
             deadlineLabel: cleanLabel

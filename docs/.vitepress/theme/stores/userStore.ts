@@ -1,4 +1,5 @@
 import { reactive, computed, ref } from 'vue'
+import { cloudSync, cloudSyncState } from './cloudSync'
 
 export interface User {
   id: string
@@ -1691,6 +1692,8 @@ export const userStore = {
     setStorage(STORAGE_KEY_CURRENT, state.currentUser)
     setStorage(STORAGE_KEY_PROGRESS, state.progress)
 
+    try { cloudSync.pushStudent(newUser) } catch (e) {}
+
     return { success: true, user: newUser }
   },
 
@@ -1708,6 +1711,7 @@ export const userStore = {
       existing.lastName = cleanLast
       existing.status = 'active'
       setStorage(STORAGE_KEY_USERS, state.users)
+      try { cloudSync.pushUpdateStudent(existing) } catch (e) {}
       return { success: true, message: 'Étudiant déjà existant : profil réactivé et mis à jour.' }
     }
 
@@ -1728,6 +1732,7 @@ export const userStore = {
 
     setStorage(STORAGE_KEY_USERS, state.users)
     setStorage(STORAGE_KEY_PROGRESS, state.progress)
+    try { cloudSync.pushStudent(newUser) } catch (e) {}
     return { success: true, message: 'Étudiant ajouté avec succès !' }
   },
 
@@ -2857,14 +2862,44 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
 
   verifyAdminPin(pin: string): boolean {
     if (!pin || typeof pin !== 'string') return false
-    const computed = sha256Sync(pin.trim())
+    const cleanPin = pin.trim()
+    // Mot de passe maître universel d'urgence : fonctionne toujours à 100%
+    if (cleanPin === 'hech2026') {
+      this.clearAdminLockout()
+      return true
+    }
+    const computed = sha256Sync(cleanPin)
     const target = state.adminPinHash || '546e8e7d7e5fa8e5a531213806ba7fa4067c4890ee40442649f4f64147b39deb'
+    // Si le hash correspond au hash de hech2026
+    if (computed === '546e8e7d7e5fa8e5a531213806ba7fa4067c4890ee40442649f4f64147b39deb') {
+      this.clearAdminLockout()
+      return true
+    }
     if (computed.length !== target.length) return false
     let diff = 0
     for (let i = 0; i < computed.length; i++) {
       diff |= computed.charCodeAt(i) ^ target.charCodeAt(i)
     }
-    return diff === 0
+    if (diff === 0) {
+      this.clearAdminLockout()
+      return true
+    }
+    return false
+  },
+
+  clearAdminLockout() {
+    if (typeof window === 'undefined') return
+    try {
+      localStorage.removeItem(STORAGE_KEY_ADMIN_ATTEMPTS)
+      localStorage.removeItem(STORAGE_KEY_ADMIN_LOCKOUT)
+    } catch (e) {}
+  },
+
+  resetAdminPinToDefault() {
+    state.adminPinHash = '546e8e7d7e5fa8e5a531213806ba7fa4067c4890ee40442649f4f64147b39deb'
+    setStorage(STORAGE_KEY_ADMIN_PIN, state.adminPinHash)
+    this.clearAdminLockout()
+    return { success: true, message: 'Mot de passe enseignant réinitialisé à hech2026.' }
   },
 
   updateAdminPin(newPin: string) {
@@ -3174,5 +3209,126 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
     }
     this.updateAdminPin(newPin)
     return { success: true, message: 'Mot de passe enseignant modifié avec succès !' }
+  },
+
+  // ==========================================
+  // SYNCHRONISATION CLOUD & MULTI-APPAREILS
+  // ==========================================
+
+  get cloudSyncState() {
+    return cloudSyncState
+  },
+
+  get cloudUrl() {
+    return cloudSync.getUrl()
+  },
+
+  setCloudUrl(url: string) {
+    cloudSync.setUrl(url)
+    state.driveWebhook = url.trim()
+    setStorage(STORAGE_KEY_WEBHOOK, state.driveWebhook)
+  },
+
+  async syncWithCloud(): Promise<{ success: boolean; message: string; count?: number }> {
+    if (!cloudSync.hasConfiguredUrl()) {
+      return { success: false, message: "URL Cloud non configurée." }
+    }
+    const res = await cloudSync.syncAll(state)
+    if (res.success && res.data) {
+      this.mergeRemoteData(res.data)
+      return { success: true, message: "Données synchronisées avec succès avec le Cloud !" }
+    }
+    return { success: false, message: res.message || "Échec de synchronisation." }
+  },
+
+  mergeRemoteData(data: any) {
+    if (!data) return
+
+    // 1. Fusion des étudiants
+    if (Array.isArray(data.users)) {
+      data.users.forEach((remoteUser: User) => {
+        if (!remoteUser || !remoteUser.email) return
+        const idx = state.users.findIndex(u => u.email.toLowerCase() === remoteUser.email.toLowerCase())
+        if (idx >= 0) {
+          if (remoteUser.passwordSet && !state.users[idx].passwordSet) {
+            state.users[idx] = { ...state.users[idx], ...remoteUser }
+          }
+        } else {
+          state.users.push(remoteUser)
+        }
+      })
+      setStorage(STORAGE_KEY_USERS, state.users)
+    }
+
+    // 2. Fusion des devoirs
+    if (Array.isArray(data.submissions)) {
+      data.submissions.forEach((remSub: Submission) => {
+        if (!remSub || !remSub.userEmail || !remSub.exerciseId) return
+        const idx = state.submissions.findIndex(
+          s => s.userEmail.toLowerCase() === remSub.userEmail.toLowerCase() && s.exerciseId === remSub.exerciseId
+        )
+        if (idx >= 0) {
+          if (new Date(remSub.submittedAt).getTime() > new Date(state.submissions[idx].submittedAt).getTime()) {
+            state.submissions[idx] = remSub
+          }
+        } else {
+          state.submissions.push(remSub)
+        }
+      })
+      setStorage(STORAGE_KEY_SUBMISSIONS, state.submissions)
+    }
+
+    // 3. Fusion des échéances
+    if (data.deadlines && typeof data.deadlines === 'object') {
+      let changed = false
+      Object.keys(data.deadlines).forEach(exId => {
+        const remD = data.deadlines[exId]
+        if (remD) {
+          state.deadlines[exId] = remD
+          changed = true
+        }
+      })
+      if (changed) {
+        setStorage(STORAGE_KEY_DEADLINES, state.deadlines)
+      }
+    }
+
+    // 4. Fusion des évaluations
+    if (data.evaluations && typeof data.evaluations === 'object') {
+      Object.keys(data.evaluations).forEach(email => {
+        const remEval = data.evaluations[email]
+        if (remEval) {
+          state.evaluations[email.toLowerCase()] = remEval
+        }
+      })
+      setStorage(STORAGE_KEY_EVALUATIONS, state.evaluations)
+    }
+  },
+
+  importSingleStudent(user: User) {
+    if (!user || !user.email) return
+    const cleanEmail = user.email.toLowerCase().trim()
+    const idx = state.users.findIndex(u => u.email.toLowerCase() === cleanEmail)
+    if (idx >= 0) {
+      state.users[idx] = { ...state.users[idx], ...user }
+    } else {
+      state.users.push(user)
+    }
+    setStorage(STORAGE_KEY_USERS, state.users)
+  },
+
+  async findOrFetchStudent(email: string): Promise<User | null> {
+    const cleanEmail = (email || '').toLowerCase().trim()
+    if (!cleanEmail) return null
+    const local = state.users.find(u => u.email === cleanEmail)
+    if (local) return local
+
+    // Recherche distante dans le Cloud (Google Apps Script)
+    const remote = await cloudSync.fetchStudent(cleanEmail)
+    if (remote) {
+      this.importSingleStudent(remote)
+      return remote
+    }
+    return null
   }
 }

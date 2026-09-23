@@ -5,6 +5,7 @@ import { withBase } from 'vitepress'
 
 onMounted(() => {
   userStore.syncFromStorage()
+  userStore.syncWithCloud().catch(() => {})
 })
 
 const firstName = ref('')
@@ -14,6 +15,8 @@ const registerPassword = ref('')
 const loginEmail = ref('')
 const loginPassword = ref('')
 const activeTab = ref('progress') // 'progress' | 'exercises' | 'files' | 'quizzes'
+const isAuthenticating = ref(false)
+const authFeedbackMessage = ref('')
 
 // Gestion de l'authentification et mots de passe
 const authViewMode = ref('login') // 'login' | 'first-login' | 'forgot-password' | 'reset-code'
@@ -339,14 +342,28 @@ function handleRegister() {
   }
 }
 
-function handleLogin() {
+async function handleLogin() {
   if (!loginEmail.value) {
     alert('Veuillez entrer votre adresse email.')
     return
   }
 
-  // Vérifier d'abord le statut du compte
-  const status = userStore.checkStudentStatus(loginEmail.value)
+  isAuthenticating.value = true
+  authFeedbackMessage.value = 'Vérification du compte...'
+
+  // Vérifier d'abord le statut du compte localement
+  let status = userStore.checkStudentStatus(loginEmail.value)
+  if (!status.exists) {
+    authFeedbackMessage.value = 'Recherche en ligne de votre profil (synchronisation multi-appareils)...'
+    const fetched = await userStore.findOrFetchStudent(loginEmail.value)
+    if (fetched) {
+      status = userStore.checkStudentStatus(loginEmail.value)
+    }
+  }
+
+  isAuthenticating.value = false
+  authFeedbackMessage.value = ''
+
   if (!status.exists) {
     alert("Aucun compte étudiant trouvé avec cette adresse email. Vérifiez votre saisie ou inscrivez-vous.")
     return
@@ -373,6 +390,9 @@ function handleLogin() {
     } else {
       alert(res.message)
     }
+  } else {
+    // Rapatrier ses devoirs et travaux en tâche de fond sur ce nouvel appareil
+    userStore.syncWithCloud().catch(() => {})
   }
 }
 
@@ -618,8 +638,11 @@ function formatSize(bytes) {
             </div>
             <input v-model="loginPassword" type="password" placeholder="Votre mot de passe personnel" @keyup.enter="handleLogin" />
           </div>
-          <button @click="handleLogin" class="btn-secondary">
-            Accéder à mon espace →
+          <div v-if="authFeedbackMessage" class="auth-sync-status">
+            🔄 {{ authFeedbackMessage }}
+          </div>
+          <button @click="handleLogin" class="btn-secondary" :disabled="isAuthenticating">
+            {{ isAuthenticating ? 'Vérification en cours...' : 'Accéder à mon espace →' }}
           </button>
 
           <div class="demo-hints">
@@ -2685,6 +2708,18 @@ function formatSize(bytes) {
 
 .link-forgot-pass:hover {
   color: #4338ca;
+}
+
+.auth-sync-status {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1d4ed8;
+  font-size: 0.84rem;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+  animation: pulse 1.5s infinite;
 }
 
 .demo-hints {

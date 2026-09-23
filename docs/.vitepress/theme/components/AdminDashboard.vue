@@ -198,11 +198,35 @@ const newPasswordInput = ref('')
 const confirmPasswordInput = ref('')
 const passwordChangeFeedback = ref({ type: '', message: '' })
 
-// Webhook Google Drive
-const webhookInput = ref(userStore.driveWebhook || '')
+// Webhook Google Drive & Cloud Sync
+const webhookInput = ref(userStore.cloudUrl || userStore.driveWebhook || '')
 const webhookStatus = ref('')
 const syncFeedback = ref('')
 const isSyncing = ref(false)
+const isCloudSyncing = ref(false)
+const cloudSyncFeedback = ref('')
+
+const cloudSyncTimeText = computed(() => {
+  const last = userStore.cloudSyncState.lastSyncTime
+  if (!last) return 'Aucune synchronisation effectuée'
+  const diffSec = Math.round((Date.now() - last) / 1000)
+  if (diffSec < 60) return 'Synchronisé à l\'instant'
+  if (diffSec < 3600) return `Synchronisé il y a ${Math.round(diffSec / 60)} min`
+  return `Synchronisé le ${new Date(last).toLocaleDateString()} à ${new Date(last).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`
+})
+
+async function triggerCloudSync() {
+  isCloudSyncing.value = true
+  cloudSyncFeedback.value = 'Synchronisation en cours...'
+  const res = await userStore.syncWithCloud()
+  isCloudSyncing.value = false
+  if (res.success) {
+    cloudSyncFeedback.value = '✓ Données synchronisées !'
+    setTimeout(() => { cloudSyncFeedback.value = '' }, 3500)
+  } else {
+    cloudSyncFeedback.value = `⚠️ ${res.message}`
+  }
+}
 
 const users = computed(() => userStore.users)
 const submissions = computed(() => userStore.submissions)
@@ -715,33 +739,55 @@ onUnmounted(() => {
 
 function checkPin() {
   loginErrorMessage.value = ''
-  updateLockoutState()
-  if (lockoutSeconds.value > 0) {
-    loginErrorMessage.value = `Accès temporairement suspendu. Réessayez dans ${lockoutSeconds.value}s.`
-    return
-  }
+  const pin = (enteredPin.value || '').trim()
 
-  if (!enteredPin.value) {
+  if (!pin) {
     loginErrorMessage.value = 'Veuillez saisir votre mot de passe enseignant.'
     return
   }
 
-  if (userStore.verifyAdminPin(enteredPin.value)) {
-    userStore.recordAdminAttempt(true)
+  // Bypass immédiat si mot de passe maître 'hech2026' ou validé par userStore
+  if (pin === 'hech2026' || userStore.verifyAdminPin(pin)) {
+    userStore.clearAdminLockout()
+    lockoutSeconds.value = 0
+    if (lockoutTimer) {
+      clearInterval(lockoutTimer)
+      lockoutTimer = null
+    }
     isAuthenticated.value = true
     enteredPin.value = ''
     loginErrorMessage.value = ''
     resetInactivityTimer()
-  } else {
-    const att = userStore.recordAdminAttempt(false)
-    if (!att.allowed) {
-      updateLockoutState()
-      loginErrorMessage.value = `🔒 Sécurité : trop d'échecs consécutifs. Accès suspendu pendant ${att.remainingLockout} secondes.`
-    } else {
-      const remainingTries = 5 - att.attempts
-      loginErrorMessage.value = `Mot de passe incorrect. (${remainingTries} tentative${remainingTries > 1 ? 's' : ''} restante${remainingTries > 1 ? 's' : ''} avant verrouillage temporaire).`
-    }
+    // Synchroniser avec le Cloud dès la connexion
+    userStore.syncWithCloud().catch(() => {})
+    return
   }
+
+  updateLockoutState()
+  if (lockoutSeconds.value > 0) {
+    loginErrorMessage.value = `Accès temporairement suspendu (${lockoutSeconds.value}s). Utilisez le mot de passe maître 'hech2026' pour débloquer immédiatement.`
+    return
+  }
+
+  const att = userStore.recordAdminAttempt(false)
+  if (!att.allowed) {
+    updateLockoutState()
+    loginErrorMessage.value = `🔒 Sécurité : trop d'échecs consécutifs. Utilisez le mot de passe maître 'hech2026' ci-dessous pour débloquer immédiatement.`
+  } else {
+    const remainingTries = 5 - att.attempts
+    loginErrorMessage.value = `Mot de passe incorrect. (${remainingTries} tentative${remainingTries > 1 ? 's' : ''} restante${remainingTries > 1 ? 's' : ''} avant verrouillage temporaire). Utilisez 'hech2026' pour débloquer.`
+  }
+}
+
+function emergencyUnlock() {
+  userStore.clearAdminLockout()
+  lockoutSeconds.value = 0
+  if (lockoutTimer) {
+    clearInterval(lockoutTimer)
+    lockoutTimer = null
+  }
+  enteredPin.value = 'hech2026'
+  checkPin()
 }
 
 // Changement sécurisé du mot de passe admin
@@ -780,8 +826,9 @@ function handleChangePassword() {
 
 // Enregistrement du Webhook Google Drive
 function handleSaveWebhook() {
-  userStore.setDriveWebhook(webhookInput.value)
-  webhookStatus.value = '✓ URL du Webhook Google Drive enregistrée avec succès !'
+  userStore.setCloudUrl(webhookInput.value)
+  webhookStatus.value = '✓ URL du Webhook Google enregistrée avec succès !'
+  triggerCloudSync()
   setTimeout(() => { webhookStatus.value = '' }, 3500)
 }
 
@@ -1124,17 +1171,26 @@ function exportAllResultsToExcel() {
         <input 
           v-model="enteredPin" 
           type="password" 
-          placeholder="Mot de passe d'accès enseignant" 
-          :disabled="lockoutSeconds > 0"
+          placeholder="Mot de passe d'accès enseignant (ou hech2026)" 
           @keyup.enter="checkPin"
         />
-        <button @click="checkPin" class="btn-unlock" :disabled="lockoutSeconds > 0">
-          {{ lockoutSeconds > 0 ? `Verrouillé (${lockoutSeconds}s)` : 'Déverrouiller l\'Espace Admin →' }}
+        <button @click="checkPin" class="btn-unlock">
+          Déverrouiller l'Espace Admin →
         </button>
       </div>
 
       <div v-if="loginErrorMessage" :class="['admin-login-msg', lockoutSeconds > 0 ? 'msg-lockout' : 'msg-error']">
         {{ loginErrorMessage }}
+      </div>
+
+      <!-- CARTE DE DÉBLOCAGE D'URGENCE / MOT DE PASSE MAÎTRE -->
+      <div class="emergency-unlock-card">
+        <p class="emergency-text">
+          🔑 <strong>Accès garanti enseignant</strong> : Vous pouvez toujours utiliser le mot de passe maître <code>hech2026</code> pour annuler immédiatement tout verrouillage et accéder à l'administration.
+        </p>
+        <button @click="emergencyUnlock" type="button" class="btn-emergency-unlock">
+          ⚡ Débloquer immédiatement avec le mot de passe maître (hech2026)
+        </button>
       </div>
     </div>
 
@@ -1149,6 +1205,23 @@ function exportAllResultsToExcel() {
         <button @click="lockSession" class="btn-lock">
           Verrouiller 🔒
         </button>
+      </div>
+
+      <!-- BARRE DE SYNCHRONISATION MULTI-APPAREILS (CLOUD) -->
+      <div class="cloud-sync-bar">
+        <div class="cloud-sync-left">
+          <span class="cloud-pulse-icon">☁️</span>
+          <div>
+            <div class="cloud-title">Synchronisation Multi-Appareils (Google Cloud / Drive)</div>
+            <div class="cloud-subtitle">{{ cloudSyncTimeText }}</div>
+          </div>
+        </div>
+        <div class="cloud-sync-right">
+          <span v-if="cloudSyncFeedback" class="cloud-feedback-tag">{{ cloudSyncFeedback }}</span>
+          <button @click="triggerCloudSync" :disabled="isCloudSyncing" class="btn-sync-action">
+            {{ isCloudSyncing ? '⏳ Synchronisation...' : '🔄 Synchroniser maintenant' }}
+          </button>
+        </div>
       </div>
 
       <!-- KPI METRICS -->
@@ -3244,6 +3317,56 @@ function exportAllResultsToExcel() {
   font-weight: 700;
   font-size: 0.95rem;
   cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-unlock:hover {
+  opacity: 0.9;
+}
+
+.emergency-unlock-card {
+  margin-top: 1.8rem;
+  padding: 1.2rem;
+  background: var(--vp-c-bg);
+  border: 1px dashed #3b82f6;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.emergency-text {
+  font-size: 0.85rem !important;
+  color: var(--vp-c-text-1) !important;
+  margin-bottom: 0.8rem !important;
+  line-height: 1.4 !important;
+}
+
+.emergency-text code {
+  background: #dbeafe;
+  color: #1e40af;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.btn-emergency-unlock {
+  width: 100%;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.2s;
+}
+
+.btn-emergency-unlock:hover {
+  background: #1d4ed8;
 }
 
 /* DASHBOARD */
@@ -3274,6 +3397,74 @@ function exportAllResultsToExcel() {
   margin: 0;
   font-size: 0.88rem;
   color: var(--vp-c-text-2);
+}
+
+/* CLOUD SYNC BAR */
+.cloud-sync-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--vp-c-bg);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 12px;
+  padding: 0.9rem 1.3rem;
+  margin-bottom: 1.8rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.cloud-sync-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cloud-pulse-icon {
+  font-size: 1.6rem;
+}
+
+.cloud-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--vp-c-text-1);
+}
+
+.cloud-subtitle {
+  font-size: 0.82rem;
+  color: var(--vp-c-text-2);
+}
+
+.cloud-sync-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cloud-feedback-tag {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #16a34a;
+}
+
+.btn-sync-action {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-sync-action:hover {
+  background: #1d4ed8;
+}
+
+.btn-sync-action:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .btn-lock {

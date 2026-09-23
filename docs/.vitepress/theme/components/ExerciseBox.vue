@@ -28,6 +28,11 @@ const isUploadingFile = ref(false)
 
 const currentUser = computed(() => userStore.currentUser)
 
+// Liens de téléchargement officiels (Word, PDF, Drive, Google Docs)
+const downloadLinks = computed(() => {
+  return userStore.getExerciseDocLinks(props.exerciseId)
+})
+
 // Fichier déjà déposé pour cet exercice
 const attachedFile = computed(() => {
   const files = userStore.getUserFiles()
@@ -181,6 +186,57 @@ function formatSize(bytes) {
     <div class="box-header">
       <span class="box-badge">Zone de Travail Étudiant</span>
       <h4>Rédiger ou déposer votre travail pour cet atelier</h4>
+    </div>
+
+    <!-- BANDEAU TÉLÉCHARGEMENT DIRECT DU MODÈLE ET DES CONSIGNES -->
+    <div v-if="downloadLinks" class="box-download-zone">
+      <div class="bdz-header">
+        <span class="bdz-icon">📥</span>
+        <div class="bdz-info">
+          <strong class="bdz-title">Document de travail & consignes officielles à télécharger :</strong>
+          <span class="bdz-hint">Téléchargez le modèle pour rédiger vos réponses sur votre appareil ou créez une copie sur votre Drive :</span>
+        </div>
+      </div>
+      <div class="bdz-buttons">
+        <a 
+          :href="downloadLinks.docxLocalUrl || downloadLinks.docxGoogleUrl" 
+          download 
+          class="btn-dl btn-dl-docx" 
+          title="Télécharger le document Microsoft Word sur votre ordinateur/smartphone"
+        >
+          <span class="btn-dl-ico">💾</span>
+          <span>Télécharger <strong>Word (.docx)</strong></span>
+        </a>
+        <a 
+          :href="downloadLinks.pdfGoogleUrl" 
+          download 
+          class="btn-dl btn-dl-pdf" 
+          title="Télécharger le document au format PDF"
+        >
+          <span class="btn-dl-ico">📄</span>
+          <span>Télécharger <strong>PDF (.pdf)</strong></span>
+        </a>
+        <a 
+          :href="downloadLinks.driveCopyUrl" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="btn-dl btn-dl-copy" 
+          title="Dupliquer et éditer directement dans votre compte Google Drive"
+        >
+          <span class="btn-dl-ico">📋</span>
+          <span>Créer une copie <strong>Drive</strong></span>
+        </a>
+        <a 
+          :href="downloadLinks.viewUrl" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="btn-dl btn-dl-view" 
+          title="Consulter le document officiel sur Google Docs"
+        >
+          <span class="btn-dl-ico">👁️</span>
+          <span>Ouvrir Google Docs ↗</span>
+        </a>
+      </div>
     </div>
 
     <!-- BANDEAU ÉCHÉANCE & STATUT TOUJOURS VISIBLE -->
@@ -1043,5 +1099,106 @@ function formatSize(bytes) {
   font-size: 0.82rem;
   line-height: 1.4;
   opacity: 0.95;
+}
+
+/* BANDEAU TÉLÉCHARGEMENT DIRECT */
+.box-download-zone {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border: 1px solid #bae6fd;
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1.1rem;
+}
+
+.bdz-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin-bottom: 0.75rem;
+}
+
+.bdz-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.bdz-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bdz-title {
+  color: #0369a1;
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.bdz-hint {
+  color: #0c4a6e;
+  font-size: 0.82rem;
+  opacity: 0.9;
+}
+
+.bdz-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.btn-dl {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 13px;
+  border-radius: 7px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: all 0.18s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-dl:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-dl-docx {
+  background: #2563eb;
+  color: #ffffff !important;
+  border: 1px solid #1d4ed8;
+}
+.btn-dl-docx:hover {
+  background: #1d4ed8;
+}
+
+.btn-dl-pdf {
+  background: #dc2626;
+  color: #ffffff !important;
+  border: 1px solid #b91c1c;
+}
+.btn-dl-pdf:hover {
+  background: #b91c1c;
+}
+
+.btn-dl-copy {
+  background: #059669;
+  color: #ffffff !important;
+  border: 1px solid #047857;
+}
+.btn-dl-copy:hover {
+  background: #047857;
+}
+
+.btn-dl-view {
+  background: #ffffff;
+  color: #334155 !important;
+  border: 1px solid #cbd5e1;
+}
+.btn-dl-view:hover {
+  background: #f8fafc;
+  color: #0f172a !important;
+  border-color: #94a3b8;
 }
 </style>

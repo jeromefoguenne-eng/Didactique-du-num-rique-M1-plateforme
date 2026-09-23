@@ -8,6 +8,7 @@ export default defineConfig({
   lang: "fr-FR",
   cleanUrls: true,
   lastUpdated: true,
+  ignoreDeadLinks: [/\/documents\//],
 
   head: [
     ['meta', { 'http-equiv': 'X-Content-Type-Options', content: 'nosniff' }],

@@ -487,6 +487,53 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
   }
 ]
 
+export interface ExerciseDocDownload {
+  exerciseId: string
+  title: string
+  docId: string
+  docxLocalUrl: string
+  docxGoogleUrl: string
+  pdfGoogleUrl: string
+  driveCopyUrl: string
+  viewUrl: string
+}
+
+export const EXERCISE_DOCS_DATA: Record<string, { docId: string; fileBase: string; title: string }> = {
+  'exercice-01': { docId: '1b1QhnOoDNyCSdAIEAZx_xq96hQxZsUJH', fileBase: 'Exercice-01.docx', title: 'Atelier 1 : Diagnostic de compétences numériques' },
+  'exercice-02': { docId: '1o9vsf5fptzG1EH56oycz7SkD_UwmUKXm', fileBase: 'Exercice-02.docx', title: 'Atelier 2 : Évaluation critique d\'une information' },
+  'exercice-03': { docId: '12XENuZM1WVyeCnRfu62Oh1_tG8Gkc1Z1', fileBase: 'Exercice-03.docx', title: 'Atelier 3 : Conception d\'un guide numérique élèves' },
+  'exercice-04': { docId: '1kUSfjlioxrG-i-ZrVbzQOpxH072f_2db', fileBase: 'Exercice-04.docx', title: 'Atelier 4 : Escape Game FMTTN (Cyber-Enquête)' },
+  'exercice-05': { docId: '1GuqhxxFNJllg4vR_wLeD5A4CtYNyJ4mj', fileBase: 'Exercice-05.docx', title: 'Atelier 5 : Défi 20 min Canva (Affiche mot de passe)' },
+  'exercice-06': { docId: '1mfCTqwo-2l9k_wdLzIu3qRWOJuBxrqJv', fileBase: 'Exercice-06.docx', title: 'Atelier 6 : Démarche itérative (Concevoir & tester un mini-jeu)' },
+  'exercice-07': { docId: '1Vjy9xrqLG-xuktmMmmOQ6Kh8I-hXiIzV', fileBase: 'Exercice-07.docx', title: 'Atelier 7 : Défi Hardware & Peer Learning (Démonter un PC)' },
+  'exercice-08': { docId: '1MV1xWWb5ZtcuRhFn_JIVG6UHeFle6IUI', fileBase: 'Exercice-08.docx', title: 'Atelier 8 : Grilles d\'évaluation critériées' },
+  'exercice-09': { docId: '1af3aH5FiR31N4FB99VrFq6628kiFFbly', fileBase: 'Exercice-09.docx', title: 'Étape 1 (Ex 9) : Règles du jeu & dossier pédagogique' },
+  'exercice-10': { docId: '1kSoMRpjySi0DvjA0S1W4b8BoaDQrXNZh', fileBase: 'Exercice-10.docx', title: 'Étape 2 (Ex 10) : Photographier le numérique' },
+  'exercice-11': { docId: '1CzyMJRbjyvYVh7XP83Lx4tjxnq23oHXX', fileBase: 'Exercice-11.docx', title: 'Étape 3 (Ex 11) : Supports de jeu & cartes IA' },
+  'exercice-12': { docId: '1Ov_huVW9al2DKuoBmW89QO3ZqE5E-nzU', fileBase: 'Exercice-12-Decoupe-Laser.docx', title: 'Étape 4 (Ex 12) : Plateau de jeu découpeuse laser' },
+  'exercice-13': { docId: '1H_88UJvPPezdUXw1Vt8_U9wtsaFouepU', fileBase: 'Exercice-13-Impression-3D.docx', title: 'Étape 5 (Ex 13) : Pions de jeu impression 3D' },
+  'exercice-14': { docId: '1JO_9ayYt3IqZfStfUPkzT3GDOF65VBxQ', fileBase: 'Exercice-14.docx', title: 'Étape 6 (Ex 14) : Présentation vidéo du jeu' },
+  'exercice-15': { docId: '1uIheBr_KU2Dh2TjYkegz7lHixsUNxs4t', fileBase: 'Exercice-15.docx', title: 'Étape 7 (Ex 15) : Playtest & Grille d\'évaluation' },
+  'exercice-16': { docId: '1Tm15GqKSwutH1MDbaGYJaWByliC17iRT', fileBase: 'Exercice-16.docx', title: 'Étape 8 (Ex 16) : Présentation finale et leçon FMTTN' },
+  'syllabus': { docId: '1PPtRyTN24HPU6ANKzkntr8e2sF0Dl2bm', fileBase: '', title: 'Syllabus Officiel du cours' }
+}
+
+export function getExerciseDownloadLinks(exerciseId: string): ExerciseDocDownload | null {
+  const item = EXERCISE_DOCS_DATA[exerciseId]
+  if (!item) return null
+  const base = '/Didactique-du-num-rique-M1-plateforme/'
+  return {
+    exerciseId,
+    title: item.title,
+    docId: item.docId,
+    docxLocalUrl: item.fileBase ? `${base}documents/${item.fileBase}` : `https://docs.google.com/document/d/${item.docId}/export?format=docx`,
+    docxGoogleUrl: `https://docs.google.com/document/d/${item.docId}/export?format=docx`,
+    pdfGoogleUrl: `https://docs.google.com/document/d/${item.docId}/export?format=pdf`,
+    driveCopyUrl: `https://docs.google.com/document/d/${item.docId}/copy`,
+    viewUrl: `https://docs.google.com/document/d/${item.docId}/preview`
+  }
+}
+
 // ==========================================
 // OUTILS DE SÉCURITÉ & HACHAGE (ZÉRO LATENCE)
 // ==========================================
@@ -1583,6 +1630,11 @@ export const userStore = {
       isDefined: false,
       isCustom: false
     }
+  },
+
+  // Récupérer les liens de téléchargement Word, PDF et Google Drive d'un exercice
+  getExerciseDocLinks(exerciseId: string) {
+    return getExerciseDownloadLinks(exerciseId)
   },
 
   // Mettre à jour l'échéance d'un exercice individuel (ou la retirer si vide)

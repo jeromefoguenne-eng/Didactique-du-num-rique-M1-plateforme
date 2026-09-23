@@ -58,6 +58,10 @@ function getTeacherFeedbackForExercise(exId) {
   return userStore.getExerciseFeedback(exId)
 }
 
+function getDocLinks(exId) {
+  return userStore.getExerciseDocLinks(exId)
+}
+
 function onExerciseFileChange(event, exId) {
   if (!exerciseUploadFeedbacks.value) exerciseUploadFeedbacks.value = {}
   exerciseUploadFeedbacks.value[exId] = { type: '', message: '' }
@@ -1207,7 +1211,43 @@ function formatSize(bytes) {
             <div class="ex-card-header">
               <div class="ex-card-title-block">
                 <h4>{{ ex.title }}</h4>
-                <div class="ex-meta-links-row">
+                <div class="ex-meta-links-row" v-if="getDocLinks(ex.id)">
+                  <a 
+                    :href="getDocLinks(ex.id).docxLocalUrl || getDocLinks(ex.id).docxGoogleUrl" 
+                    download 
+                    class="btn-pill-dl btn-pill-docx" 
+                    title="Télécharger le modèle de travail Word (.docx)"
+                  >
+                    <span>💾 Word (.docx)</span>
+                  </a>
+                  <a 
+                    :href="getDocLinks(ex.id).pdfGoogleUrl" 
+                    download 
+                    class="btn-pill-dl btn-pill-pdf" 
+                    title="Télécharger au format PDF"
+                  >
+                    <span>📄 PDF</span>
+                  </a>
+                  <a 
+                    :href="getDocLinks(ex.id).driveCopyUrl" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="btn-pill-dl btn-pill-copy" 
+                    title="Créer une copie dans Google Drive"
+                  >
+                    <span>📋 Copie Drive</span>
+                  </a>
+                  <a 
+                    :href="getDocLinks(ex.id).viewUrl" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="btn-pill-dl btn-pill-view" 
+                    title="Consulter sur Google Docs"
+                  >
+                    <span>👁️ Docs ↗</span>
+                  </a>
+                </div>
+                <div class="ex-meta-links-row" v-else>
                   <a :href="ex.docUrl" target="_blank" rel="noopener" class="link-doc-drive-inline">
                     📥 Consignes officielles (Google Docs) ↗
                   </a>
@@ -2024,6 +2064,75 @@ function formatSize(bytes) {
 
 .link-doc-drive-inline:hover {
   text-decoration: underline;
+}
+
+.ex-meta-links-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+}
+
+.btn-pill-dl {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+  text-decoration: none !important;
+  transition: all 0.15s ease;
+  line-height: 1.2;
+}
+
+.btn-pill-dl:hover {
+  transform: translateY(-1px);
+}
+
+.btn-pill-docx {
+  background: #eff6ff;
+  color: #1d4ed8 !important;
+  border: 1px solid #bfdbfe;
+}
+.btn-pill-docx:hover {
+  background: #dbeafe;
+  color: #1e40af !important;
+  border-color: #93c5fd;
+}
+
+.btn-pill-pdf {
+  background: #fef2f2;
+  color: #b91c1c !important;
+  border: 1px solid #fecaca;
+}
+.btn-pill-pdf:hover {
+  background: #fee2e2;
+  color: #991b1b !important;
+  border-color: #fca5a5;
+}
+
+.btn-pill-copy {
+  background: #ecfdf5;
+  color: #047857 !important;
+  border: 1px solid #a7f3d0;
+}
+.btn-pill-copy:hover {
+  background: #d1fae5;
+  color: #065f46 !important;
+  border-color: #6ee7b7;
+}
+
+.btn-pill-view {
+  background: #f8fafc;
+  color: #475569 !important;
+  border: 1px solid #e2e8f0;
+}
+.btn-pill-view:hover {
+  background: #f1f5f9;
+  color: #1e293b !important;
+  border-color: #cbd5e1;
 }
 
 .ex-status-badges {

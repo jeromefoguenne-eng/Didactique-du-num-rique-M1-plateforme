@@ -18,15 +18,39 @@ Atelier de démontage, d'identification des composants physiques d'une unité ce
   <p>
     Le sujet intégral et la grille d'analyse de cet exercice sont mis à disposition sur le Google Docs officiel du cours en <strong>mode lecture seule</strong> :
   </p>
-  <div style="margin: 1.2rem 0;">
+    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 1.2rem 0;">
+    <a 
+      href="/documents/Exercice-07.docx" 
+      download 
+      class="btn-primary"
+      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: white !important; background: #2563eb; border-color: #1d4ed8; padding: 8px 16px; border-radius: 8px; font-weight: 600;"
+    >
+      <span>💾 Télécharger Word (.docx)</span>
+    </a>
+    <a 
+      href="https://docs.google.com/document/d/1Vjy9xrqLG-xuktmMmmOQ6Kh8I-hXiIzV/export?format=pdf" 
+      download 
+      class="btn-primary"
+      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: white !important; background: #dc2626; border-color: #b91c1c; padding: 8px 16px; border-radius: 8px; font-weight: 600;"
+    >
+      <span>📄 Télécharger PDF</span>
+    </a>
+    <a 
+      href="https://docs.google.com/document/d/1Vjy9xrqLG-xuktmMmmOQ6Kh8I-hXiIzV/copy" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="btn-primary"
+      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: white !important; background: #059669; border-color: #047857; padding: 8px 16px; border-radius: 8px; font-weight: 600;"
+    >
+      <span>📋 Créer une copie Drive</span>
+    </a>
     <a 
       href="https://docs.google.com/document/d/1Vjy9xrqLG-xuktmMmmOQ6Kh8I-hXiIzV/preview" 
       target="_blank" 
       rel="noopener noreferrer"
-      class="btn-primary"
-      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: white !important;"
+      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: var(--vp-c-text-1) !important; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider); padding: 8px 16px; border-radius: 8px; font-weight: 600;"
     >
-      <span>📄 Ouvrir le document officiel sur Google Docs →</span>
+      <span>👁️ Ouvrir Docs ↗</span>
     </a>
   </div>
   <div style="font-size: 0.88rem; color: var(--vp-c-text-2); line-height: 1.5; background: var(--vp-c-bg-soft); padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid var(--vp-c-divider);">

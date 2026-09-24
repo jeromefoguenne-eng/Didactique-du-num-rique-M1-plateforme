@@ -208,22 +208,24 @@ export function parseDeadline(dtStr: string | undefined | null): Date | null {
   if (!dtStr || typeof dtStr !== 'string' || !dtStr.trim()) return null
   const clean = dtStr.trim()
 
-  // 1. Format européen / belge : JJ/MM/AAAA ou JJ/MM/AAAA HH:mm ou JJ/MM/AAAA à HH:mm ou JJ-MM-AAAA
-  const frMatch = clean.match(/^(\d{1,2})[\/\-\.](\d{1,2})[\/\-\.](\d{4})(?:(?:\s+|[T\s]+à\s+)(\d{1,2})(?::(\d{1,2}))?)?/)
+  // 1. Format européen / belge : JJ/MM/AAAA ou JJ/MM/AA ou JJ-MM-AAAA
+  const frMatch = clean.match(/^(\d{1,2})[\/\-\.](\d{1,2})[\/\-\.](\d{2,4})(?:(?:\s+|[T\s]+à\s+)(\d{1,2})(?::(\d{1,2}))?)?/)
   if (frMatch) {
     const day = parseInt(frMatch[1], 10)
     const month = parseInt(frMatch[2], 10) - 1 // Mois 0-indexé
-    const year = parseInt(frMatch[3], 10)
+    let year = parseInt(frMatch[3], 10)
+    if (year < 100) year += 2000
     const hours = frMatch[4] ? parseInt(frMatch[4], 10) : 23
     const minutes = frMatch[5] ? parseInt(frMatch[5], 10) : 59
     const d = new Date(year, month, day, hours, minutes, 0)
     if (!isNaN(d.getTime())) return d
   }
 
-  // 2. Format standard ISO : YYYY-MM-DD ou YYYY-MM-DDTHH:mm ou YYYY-MM-DD HH:mm
-  const isoMatch = clean.match(/^(\d{4})[\/\-](\d{1,2})[\/\-](\d{1,2})(?:[T\s]+(\d{1,2})(?::(\d{1,2}))?)?/)
+  // 2. Format standard ISO : YYYY-MM-DD ou YY-MM-DD ou YYYY-MM-DDTHH:mm
+  const isoMatch = clean.match(/^(\d{2,4})[\/\-](\d{1,2})[\/\-](\d{1,2})(?:[T\s]+(\d{1,2})(?::(\d{1,2}))?)?/)
   if (isoMatch) {
-    const year = parseInt(isoMatch[1], 10)
+    let year = parseInt(isoMatch[1], 10)
+    if (year < 100) year += 2000
     const month = parseInt(isoMatch[2], 10) - 1
     const day = parseInt(isoMatch[3], 10)
     const hours = isoMatch[4] ? parseInt(isoMatch[4], 10) : 23

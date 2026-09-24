@@ -294,14 +294,34 @@ function initDeadlinesForm() {
 
 function handleDateOrTimeChange(itemId) {
   const date = deadlineDates.value[itemId]
-  // Ne JAMAIS effacer automatiquement pendant la saisie !
-  if (date && date.trim()) {
-    const time = (deadlineTimes.value[itemId] && deadlineTimes.value[itemId].trim()) || '23:59'
-    deadlineTimes.value[itemId] = time
-    const fullIso = `${date.trim()}T${time}`
-    deadlinesForm.value = { ...deadlinesForm.value, [itemId]: fullIso }
+  // Si le champ a été complètement vidé par l'enseignant, on retire l'échéance
+  if (!date || !date.trim()) {
     saveSingleDeadline(itemId)
+    return
   }
+
+  const cleanDate = date.trim()
+  // Validation robuste de l'année (ex: 2026) : ne pas enregistrer une année incomplète
+  const parts = cleanDate.split('-')
+  if (parts.length === 3) {
+    let year = parseInt(parts[0], 10)
+    // Si l'année a été saisie en 2 chiffres (ex: 26 ou 0026), l'ajuster en 2026
+    if (year < 100) {
+      year += 2000
+      parts[0] = String(year)
+      deadlineDates.value[itemId] = parts.join('-')
+    }
+    // Si l'année est hors plage raisonnable, attendre que la saisie soit complète
+    if (year < 2024 || year > 2040) {
+      return
+    }
+  }
+
+  const time = (deadlineTimes.value[itemId] && deadlineTimes.value[itemId].trim()) || '23:59'
+  deadlineTimes.value[itemId] = time
+  const fullIso = `${deadlineDates.value[itemId]}T${time}`
+  deadlinesForm.value = { ...deadlinesForm.value, [itemId]: fullIso }
+  saveSingleDeadline(itemId)
 }
 
 function saveSingleDeadline(itemId) {
@@ -798,11 +818,6 @@ watch(adminTab, (newTab) => {
   }
 })
 
-watch(() => userStore.deadlinesRevision, () => {
-  if (adminTab.value === 'deadlines') {
-    initDeadlinesForm()
-  }
-})
 
 watch(isAuthenticated, (val) => {
   if (val) {
@@ -1982,8 +1997,9 @@ function toggleQuizExpand(id) {
                         type="date" 
                         v-model="deadlineDates[item.id]" 
                         class="input-date-clean" 
+                        min="2025-01-01"
+                        max="2035-12-31"
                         @change="handleDateOrTimeChange(item.id)"
-                        @input="handleDateOrTimeChange(item.id)"
                         title="Date limite"
                       />
                       <input 
@@ -1991,7 +2007,6 @@ function toggleQuizExpand(id) {
                         v-model="deadlineTimes[item.id]" 
                         class="input-time-clean" 
                         @change="handleDateOrTimeChange(item.id)"
-                        @input="handleDateOrTimeChange(item.id)"
                         title="Heure limite (par défaut 23:59)"
                       />
                     </div>
@@ -2100,8 +2115,9 @@ function toggleQuizExpand(id) {
                         type="date" 
                         v-model="deadlineDates[item.id]" 
                         class="input-date-clean" 
+                        min="2025-01-01"
+                        max="2035-12-31"
                         @change="handleDateOrTimeChange(item.id)"
-                        @input="handleDateOrTimeChange(item.id)"
                         title="Date limite"
                       />
                       <input 
@@ -2109,7 +2125,6 @@ function toggleQuizExpand(id) {
                         v-model="deadlineTimes[item.id]" 
                         class="input-time-clean" 
                         @change="handleDateOrTimeChange(item.id)"
-                        @input="handleDateOrTimeChange(item.id)"
                         title="Heure limite (par défaut 23:59)"
                       />
                     </div>

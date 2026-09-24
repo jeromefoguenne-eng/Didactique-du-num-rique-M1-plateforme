@@ -1527,6 +1527,29 @@ function setStorage<T>(key: string, val: T): boolean {
   }
 }
 
+export function isLocalEnvironment(): boolean {
+  if (typeof window === 'undefined') return false
+  const host = window.location.hostname
+  return host === 'localhost' || host === '127.0.0.1' || host === '0.0.0.0' || host.startsWith('192.168.') || host.startsWith('10.')
+}
+
+function areDeadlinesEqual(
+  a: Record<string, { deadline: string; deadlineLabel?: string }> | undefined,
+  b: Record<string, { deadline: string; deadlineLabel?: string }> | undefined
+): boolean {
+  if (!a && !b) return true
+  if (!a || !b) return false
+  const keysA = Object.keys(a)
+  const keysB = Object.keys(b)
+  if (keysA.length !== keysB.length) return false
+  for (const k of keysA) {
+    if (!b[k]) return false
+    if ((a[k]?.deadline || '') !== (b[k]?.deadline || '')) return false
+    if ((a[k]?.deadlineLabel || '') !== (b[k]?.deadlineLabel || '')) return false
+  }
+  return true
+}
+
 const deadlinesTrigger = ref(0)
 
 function initInitialDeadlines(): Record<string, { deadline: string, deadlineLabel?: string }> {
@@ -1692,25 +1715,26 @@ export const userStore = {
     setStorage(STORAGE_KEY_DEADLINES, state.deadlines)
     deadlinesTrigger.value++
 
-    // 1. Sauvegarde automatique sur le Google Drive local via Vite middleware
-    try {
-      fetch('/api/backup-deadlines', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ deadlines: state.deadlines })
-      }).catch(() => {})
-    } catch (e) {}
+    // 1. Sauvegarde automatique sur le Google Drive local via Vite middleware (local uniquement)
+    if (isLocalEnvironment()) {
+      try {
+        fetch('/api/backup-deadlines', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ deadlines: state.deadlines })
+        }).catch(() => {})
+      } catch (e) {}
 
-    // 2. Sauvegarde sur le serveur compagnon Drive (port 3001)
-    try {
-      fetch('http://localhost:3001/api/deadlines', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ deadlines: state.deadlines })
-      }).catch(() => {})
-    } catch (e) {}
+      try {
+        fetch('http://localhost:3001/api/deadlines', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ deadlines: state.deadlines })
+        }).catch(() => {})
+      } catch (e) {}
+    }
 
-    // 3. Sauvegarde immédiate dans Google Apps Script Cloud
+    // 2. Sauvegarde immédiate dans Google Apps Script Cloud
     try {
       cloudSync.pushDeadlines(state.deadlines).catch(() => {})
     } catch (e) {}
@@ -1739,25 +1763,26 @@ export const userStore = {
     setStorage(STORAGE_KEY_DEADLINES, state.deadlines)
     deadlinesTrigger.value++
 
-    // 1. Sauvegarde automatique sur le Google Drive local via Vite middleware
-    try {
-      fetch('/api/backup-deadlines', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ deadlines: state.deadlines })
-      }).catch(() => {})
-    } catch (e) {}
+    // 1. Sauvegarde automatique sur le Google Drive local via Vite middleware (local uniquement)
+    if (isLocalEnvironment()) {
+      try {
+        fetch('/api/backup-deadlines', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ deadlines: state.deadlines })
+        }).catch(() => {})
+      } catch (e) {}
 
-    // 2. Sauvegarde sur le serveur compagnon Drive (port 3001)
-    try {
-      fetch('http://localhost:3001/api/deadlines', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ deadlines: state.deadlines })
-      }).catch(() => {})
-    } catch (e) {}
+      try {
+        fetch('http://localhost:3001/api/deadlines', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ deadlines: state.deadlines })
+        }).catch(() => {})
+      } catch (e) {}
+    }
 
-    // 3. Sauvegarde immédiate dans Google Apps Script Cloud
+    // 2. Sauvegarde immédiate dans Google Apps Script Cloud
     try {
       cloudSync.pushDeadlines(state.deadlines).catch(() => {})
     } catch (e) {}
@@ -1771,21 +1796,23 @@ export const userStore = {
     setStorage(STORAGE_KEY_DEADLINES, {})
     deadlinesTrigger.value++
 
-    try {
-      fetch('/api/backup-deadlines', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ deadlines: {} })
-      }).catch(() => {})
-    } catch (e) {}
+    if (isLocalEnvironment()) {
+      try {
+        fetch('/api/backup-deadlines', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ deadlines: {} })
+        }).catch(() => {})
+      } catch (e) {}
 
-    try {
-      fetch('http://localhost:3001/api/deadlines', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ deadlines: {} })
-      }).catch(() => {})
-    } catch (e) {}
+      try {
+        fetch('http://localhost:3001/api/deadlines', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ deadlines: {} })
+        }).catch(() => {})
+      } catch (e) {}
+    }
 
     try {
       cloudSync.pushDeadlines({}).catch(() => {})
@@ -1820,31 +1847,35 @@ export const userStore = {
               }
             }
           })
-          state.deadlines = clean
-          deadlinesTrigger.value++
+          if (!areDeadlinesEqual(state.deadlines, clean)) {
+            state.deadlines = clean
+            deadlinesTrigger.value++
+          }
         }
       }
 
-      // Recharger également depuis le backend Google Drive local si disponible
-      fetch('/api/backup-deadlines')
-        .then(r => r.json())
-        .then(res => {
-          if (res && res.deadlines && typeof res.deadlines === 'object') {
-            let changed = false
-            Object.keys(res.deadlines).forEach(k => {
-              const item = res.deadlines[k]
-              if (item && item.deadline && !state.deadlines[k]?.deadline) {
-                state.deadlines[k] = item
-                changed = true
+      // Recharger également depuis le backend Google Drive local UNIQUEMENT en développement local
+      if (isLocalEnvironment()) {
+        fetch('/api/backup-deadlines')
+          .then(r => r.json())
+          .then(res => {
+            if (res && res.deadlines && typeof res.deadlines === 'object') {
+              let changed = false
+              Object.keys(res.deadlines).forEach(k => {
+                const item = res.deadlines[k]
+                if (item && item.deadline && !state.deadlines[k]?.deadline) {
+                  state.deadlines[k] = item
+                  changed = true
+                }
+              })
+              if (changed) {
+                setStorage(STORAGE_KEY_DEADLINES, state.deadlines)
+                deadlinesTrigger.value++
               }
-            })
-            if (changed) {
-              setStorage(STORAGE_KEY_DEADLINES, state.deadlines)
-              deadlinesTrigger.value++
             }
-          }
-        })
-        .catch(() => {})
+          })
+          .catch(() => {})
+      }
     } catch (e) {}
   },
 
@@ -2138,27 +2169,29 @@ export const userStore = {
 
     setStorage(STORAGE_KEY_SUBMISSIONS, state.submissions)
 
-    // Backup instantané dans le dossier Google Drive local (C:\Google Drive\...)
-    try {
-      const formattedName = formatFileName(
-        state.currentUser.lastName,
-        state.currentUser.firstName,
-        exerciseTitle,
-        'Reponse_Ecrite.txt'
-      )
-      fetch('/api/backup-exercise', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          userName: `${state.currentUser.lastName}_${state.currentUser.firstName}`,
-          userEmail: cleanEmail,
-          exerciseId,
+    // Backup instantané dans le dossier Google Drive local (C:\Google Drive\...) - local uniquement
+    if (isLocalEnvironment()) {
+      try {
+        const formattedName = formatFileName(
+          state.currentUser.lastName,
+          state.currentUser.firstName,
           exerciseTitle,
-          fileName: formattedName,
-          content: `=================================================================\nÉLÈVE : ${state.currentUser.firstName} ${state.currentUser.lastName} (${cleanEmail})\nEXERCICE : ${exerciseTitle} (${exerciseId})\nDATE : ${now}\n=================================================================\n\nRÉPONSE RÉDIGÉE :\n\n${cleanAnswer}\n`
-        })
-      }).catch(() => {})
-    } catch (e) {}
+          'Reponse_Ecrite.txt'
+        )
+        fetch('/api/backup-exercise', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            userName: `${state.currentUser.lastName}_${state.currentUser.firstName}`,
+            userEmail: cleanEmail,
+            exerciseId,
+            exerciseTitle,
+            fileName: formattedName,
+            content: `=================================================================\nÉLÈVE : ${state.currentUser.firstName} ${state.currentUser.lastName} (${cleanEmail})\nEXERCICE : ${exerciseTitle} (${exerciseId})\nDATE : ${now}\n=================================================================\n\nRÉPONSE RÉDIGÉE :\n\n${cleanAnswer}\n`
+          })
+        }).catch(() => {})
+      } catch (e) {}
+    }
 
     return { success: true, message: 'Réponse enregistrée avec succès !' }
   },
@@ -2280,47 +2313,49 @@ export const userStore = {
       }
     }
 
-    // 3. Sauvegarde instantanée dans le dossier Google Drive local (C:\Google Drive\...)
-    try {
-      fetch('/api/backup-exercise', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          studentName: `${state.currentUser.firstName} ${state.currentUser.lastName}`,
-          userName: `${state.currentUser.lastName}_${state.currentUser.firstName}`,
-          userEmail: state.currentUser.email,
-          exerciseId,
-          exerciseTitle,
-          fileName: formattedName,
-          base64Data: dataUrl
-        })
-      }).then(res => {
-        if (res.ok) {
-          newFile.driveSynced = true
-          setStorage(STORAGE_KEY_FILES, state.submittedFiles)
-        }
-      }).catch(() => {})
-    } catch (e) {}
+    // 3. Sauvegarde instantanée dans le dossier Google Drive local (C:\Google Drive\...) - local uniquement
+    if (isLocalEnvironment()) {
+      try {
+        fetch('/api/backup-exercise', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            studentName: `${state.currentUser.firstName} ${state.currentUser.lastName}`,
+            userName: `${state.currentUser.lastName}_${state.currentUser.firstName}`,
+            userEmail: state.currentUser.email,
+            exerciseId,
+            exerciseTitle,
+            fileName: formattedName,
+            base64Data: dataUrl
+          })
+        }).then(res => {
+          if (res.ok) {
+            newFile.driveSynced = true
+            setStorage(STORAGE_KEY_FILES, state.submittedFiles)
+          }
+        }).catch(() => {})
+      } catch (e) {}
 
-    // 4. Tentative d'envoi automatique vers le serveur compagnon local (si actif)
-    try {
-      fetch('http://localhost:3001/api/upload', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          fileName: formattedName,
-          base64Data: dataUrl,
-          studentName: `${state.currentUser.firstName} ${state.currentUser.lastName}`,
-          studentEmail: state.currentUser.email,
-          exerciseTitle
-        })
-      }).then(res => {
-        if (res.ok) {
-          newFile.driveSynced = true
-          setStorage(STORAGE_KEY_FILES, state.submittedFiles)
-        }
-      }).catch(() => {})
-    } catch (e) {}
+      // 4. Tentative d'envoi automatique vers le serveur compagnon local (si actif)
+      try {
+        fetch('http://localhost:3001/api/upload', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            fileName: formattedName,
+            base64Data: dataUrl,
+            studentName: `${state.currentUser.firstName} ${state.currentUser.lastName}`,
+            studentEmail: state.currentUser.email,
+            exerciseTitle
+          })
+        }).then(res => {
+          if (res.ok) {
+            newFile.driveSynced = true
+            setStorage(STORAGE_KEY_FILES, state.submittedFiles)
+          }
+        }).catch(() => {})
+      } catch (e) {}
+    }
 
     // 4. Envoi automatique vers Google Drive via Google Apps Script (Cloud)
     cloudSync.uploadFile({
@@ -3690,11 +3725,14 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
           }
           const rawLabel = remD.deadlineLabel || remD.label || ''
           const cleanLabel = typeof rawLabel === 'string' && rawLabel.trim() ? rawLabel.trim() : formatDeadlineDisplay(cleanDate)
-          state.deadlines[exId] = {
-            deadline: cleanDate,
-            deadlineLabel: cleanLabel
+          const current = state.deadlines[exId]
+          if (!current || current.deadline !== cleanDate || current.deadlineLabel !== cleanLabel) {
+            state.deadlines[exId] = {
+              deadline: cleanDate,
+              deadlineLabel: cleanLabel
+            }
+            changed = true
           }
-          changed = true
         }
       })
       if (changed) {

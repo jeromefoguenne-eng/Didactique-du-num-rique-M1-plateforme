@@ -260,7 +260,6 @@ const deadlineFeedback = ref({})
 const saveAllDeadlinesStatus = ref('')
 
 function initDeadlinesForm() {
-  userStore.syncFromStorage()
   const form = {}
   const dates = {}
   const times = {}

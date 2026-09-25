@@ -2,6 +2,7 @@
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import { userStore, OFFICIAL_EVALUATION_ITEMS, formatDeadlineDisplay, getAlarmLevelInfo, parseDeadline } from '../stores/userStore'
 import { DEFAULT_CLOUD_URL } from '../stores/cloudSync'
+import { withBase } from 'vitepress'
 
 const enteredPin = ref('')
 const showAdminPin = ref(false)
@@ -800,6 +801,9 @@ function resetInactivityTimer() {
   inactivityTimer = setTimeout(() => {
     if (isAuthenticated.value) {
       isAuthenticated.value = false
+  if (typeof window !== 'undefined') {
+    sessionStorage.removeItem('didactique_admin_auth')
+  }
       alert('🔒 Sécurité : Session enseignant verrouillée automatiquement après 30 minutes d\'inactivité.')
     }
   }, INACTIVITY_LIMIT_MS)
@@ -876,6 +880,9 @@ function checkPin() {
       lockoutTimer = null
     }
     isAuthenticated.value = true
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('didactique_admin_auth', 'true')
+    }
     enteredPin.value = ''
     loginErrorMessage.value = ''
     resetInactivityTimer()
@@ -1335,6 +1342,14 @@ const filteredDossierItems = computed(() => {
   }
   return all
 })
+
+function openDossierInNewPage(email) {
+  if (typeof window !== 'undefined') {
+    sessionStorage.setItem('didactique_admin_auth', 'true')
+    const targetUrl = withBase(`/admin-dossier?student=${encodeURIComponent(email || '')}`)
+    window.open(targetUrl, '_blank')
+  }
+}
 
 function openStudentDossier(u) {
   if (!u || !u.email) return
@@ -3706,7 +3721,15 @@ function toggleQuizExpand(id) {
                   Suivant ▶
                 </button>
               </div>
-              <button class="btn-close-dossier" @click="closeStudentDossier" title="Fermer le dossier (Échap)">
+              <button 
+                  type="button"
+                  class="btn-open-newpage" 
+                  @click="openDossierInNewPage(selectedDossierEmail)" 
+                  title="Ouvrir ce dossier complet dans un nouvel onglet pleine page"
+                >
+                  ↗️ Pleine page
+                </button>
+                <button class="btn-close-dossier" @click="closeStudentDossier" title="Fermer le dossier (Échap)">
                 <span class="close-icon">✕</span>
                 <span>Fermer</span>
               </button>
@@ -7835,6 +7858,37 @@ span.is-late {
   color: #0f172a;
   outline: none;
   max-width: 280px;
+}
+
+.newpage-btn {
+  background: #f0fdf4 !important;
+  color: #15803d !important;
+  border-color: #bbf7d0 !important;
+}
+.newpage-btn:hover {
+  background: #dcfce7 !important;
+  border-color: #86efac !important;
+}
+
+.btn-open-newpage {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1d4ed8;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-open-newpage:hover {
+  background: #dbeafe;
+  border-color: #93c5fd;
+  color: #1e40af;
 }
 
 .btn-close-dossier {

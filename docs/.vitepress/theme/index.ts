@@ -6,6 +6,7 @@ import AdminDashboard from './components/AdminDashboard.vue'
 import ExerciseBox from './components/ExerciseBox.vue'
 import QuizBox from './components/QuizBox.vue'
 import CourseEvaluationForm from './components/CourseEvaluationForm.vue'
+import StudentDossierView from './components/StudentDossierView.vue'
 import './custom.css'
 
 export default {
@@ -15,6 +16,7 @@ export default {
     app.component('SubCategoryTiles', SubCategoryTiles)
     app.component('MemberDashboard', MemberDashboard)
     app.component('AdminDashboard', AdminDashboard)
+    app.component('StudentDossierView', StudentDossierView)
     app.component('ExerciseBox', ExerciseBox)
     app.component('QuizBox', QuizBox)
     app.component('CourseEvaluationForm', CourseEvaluationForm)

@@ -490,7 +490,10 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
   }
 ]
 
+export const GOOGLE_DRIVE_EXERCISES_FOLDER_URL = 'https://drive.google.com/drive/folders/1fRbYhPZKrhIB6uzQJonDgNdrqUdiuLOt?usp=sharing'
+
 export interface ExerciseDocDownload {
+  folderDriveUrl?: string;
   exerciseId: string
   title: string
   docId: string
@@ -533,7 +536,8 @@ export function getExerciseDownloadLinks(exerciseId: string): ExerciseDocDownloa
     docxGoogleUrl: `https://docs.google.com/document/d/${item.docId}/export?format=docx`,
     pdfGoogleUrl: `https://docs.google.com/document/d/${item.docId}/export?format=pdf`,
     driveCopyUrl: `https://docs.google.com/document/d/${item.docId}/copy`,
-    viewUrl: `https://docs.google.com/document/d/${item.docId}/preview`
+    viewUrl: `https://docs.google.com/document/d/${item.docId}/preview`,
+    folderDriveUrl: GOOGLE_DRIVE_EXERCISES_FOLDER_URL
   }
 }
 

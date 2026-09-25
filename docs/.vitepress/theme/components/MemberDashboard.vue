@@ -62,6 +62,17 @@ function getDocLinks(exId) {
   return userStore.getExerciseDocLinks(exId)
 }
 
+const isAnalyzingStudentFile = ref({})
+
+async function runStudentAiAnalysis(fileId) {
+  isAnalyzingStudentFile.value[fileId] = true
+  try {
+    await userStore.analyzeFileWithAi(fileId)
+  } finally {
+    isAnalyzingStudentFile.value[fileId] = false
+  }
+}
+
 function onExerciseFileChange(event, exId) {
   if (!exerciseUploadFeedbacks.value) exerciseUploadFeedbacks.value = {}
   exerciseUploadFeedbacks.value[exId] = { type: '', message: '' }
@@ -2146,6 +2157,49 @@ function formatSize(bytes) {
   color: #475569 !important;
   border: 1px solid #e2e8f0;
 }
+.btn-pill-folder {
+  background: #fefce8;
+  color: #854d0e !important;
+  border: 1px solid #fef08a;
+}
+.btn-pill-folder:hover {
+  background: #fef9c3;
+  color: #713f12 !important;
+  border-color: #fde047;
+}
+
+.ai-score-block {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.btn-reanalyze-student {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: white;
+  color: #4338ca;
+  border: 1px solid #c7d2fe;
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-reanalyze-student:hover:not(:disabled) {
+  background: #e0e7ff;
+  border-color: #818cf8;
+}
+
+.btn-reanalyze-student:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .btn-pill-view:hover {
   background: #f1f5f9;
   color: #1e293b !important;

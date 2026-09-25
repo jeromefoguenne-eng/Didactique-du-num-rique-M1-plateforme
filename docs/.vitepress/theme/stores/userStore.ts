@@ -3242,27 +3242,30 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
 
   verifyAdminPin(pin: string): boolean {
     if (!pin || typeof pin !== 'string') return false
-    const cleanPin = pin.trim()
-    // Mot de passe maître universel d'urgence : fonctionne toujours à 100%
-    if (cleanPin === 'hech2026') {
+    const cleanPin = pin.trim().replace(/\s+/g, '')
+    // Mot de passe maître universel d'urgence : fonctionne toujours à 100% (insensible à la casse, tolérant aux espaces)
+    if (cleanPin.toLowerCase() === 'hech2026') {
       this.clearAdminLockout()
       return true
     }
     const computed = sha256Sync(cleanPin)
-    const target = state.adminPinHash || '546e8e7d7e5fa8e5a531213806ba7fa4067c4890ee40442649f4f64147b39deb'
+    const computedLower = sha256Sync(cleanPin.toLowerCase())
+    const defaultHash = '546e8e7d7e5fa8e5a531213806ba7fa4067c4890ee40442649f4f64147b39deb' // sha256('hech2026')
+    const target = state.adminPinHash || defaultHash
     // Si le hash correspond au hash de hech2026
-    if (computed === '546e8e7d7e5fa8e5a531213806ba7fa4067c4890ee40442649f4f64147b39deb') {
+    if (computed === defaultHash || computedLower === defaultHash) {
       this.clearAdminLockout()
       return true
     }
-    if (computed.length !== target.length) return false
-    let diff = 0
-    for (let i = 0; i < computed.length; i++) {
-      diff |= computed.charCodeAt(i) ^ target.charCodeAt(i)
-    }
-    if (diff === 0) {
-      this.clearAdminLockout()
-      return true
+    if (computed.length === target.length) {
+      let diff = 0
+      for (let i = 0; i < computed.length; i++) {
+        diff |= computed.charCodeAt(i) ^ target.charCodeAt(i)
+      }
+      if (diff === 0) {
+        this.clearAdminLockout()
+        return true
+      }
     }
     return false
   },
@@ -3350,7 +3353,7 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
     }
 
     const enteredPass = (password || '').trim()
-    const isEmergencyMaster = enteredPass === 'hech2026'
+    const isEmergencyMaster = enteredPass.toLowerCase().replace(/\s+/g, '') === 'hech2026'
 
     // Première connexion : le mot de passe n'a pas encore été défini
     if (!user.passwordSet || !user.password) {
@@ -3369,7 +3372,8 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
     }
 
     // Vérification du mot de passe (ou mot de passe d'urgence universel)
-    if (user.password !== enteredPass && !isEmergencyMaster) {
+    const userPass = (user.password || '').trim()
+    if (userPass !== enteredPass && !isEmergencyMaster) {
       return { success: false, message: "Mot de passe incorrect." }
     }
 
@@ -3409,7 +3413,8 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
     if (!user) return { success: false, message: "Étudiant non trouvé." }
 
     const oldClean = (oldPass || '').trim()
-    if (user.password && user.password !== oldClean && oldClean !== 'hech2026') {
+    const isMaster = oldClean.toLowerCase().replace(/\s+/g, '') === 'hech2026'
+    if (user.password && user.password !== oldClean && !isMaster) {
       return { success: false, message: "L'ancien mot de passe est incorrect." }
     }
 
@@ -3659,6 +3664,9 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
         if (state.deletedUsers && state.deletedUsers.includes(cleanRemoteEmail)) {
           return
         }
+        const remotePass = (remoteUser.password && typeof remoteUser.password === 'string') ? remoteUser.password.trim() : ''
+        const remotePassSet = remoteUser.passwordSet === true || remoteUser.passwordSet === 'true' || !!remotePass
+
         const normalizedUser: User = {
           id: remoteUser.id || `user-${Date.now()}`,
           firstName: remoteUser.firstName || '',
@@ -3667,16 +3675,46 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
           role: remoteUser.role || 'student',
           registeredAt: remoteUser.registeredAt || new Date().toISOString().replace('T', ' ').substring(0, 16),
           status: remoteUser.status || 'active',
-          password: remoteUser.password || '',
-          passwordSet: remoteUser.passwordSet === true || remoteUser.passwordSet === 'true'
+          password: remotePass,
+          passwordSet: remotePassSet
         }
         const idx = state.users.findIndex(u => u && u.email && String(u.email).trim().toLowerCase() === cleanRemoteEmail)
         if (idx >= 0) {
-          state.users[idx] = { ...state.users[idx], ...normalizedUser }
+          const existing = state.users[idx]
+          // PROTECTION CRUCIALE : Ne JAMAIS écraser un mot de passe local valide par une valeur vide reçue du cloud !
+          const finalPassword = remotePass || existing.password || ''
+          const finalPasswordSet = (existing.passwordSet === true) || remotePassSet || !!finalPassword
+          state.users[idx] = {
+            ...existing,
+            ...normalizedUser,
+            password: finalPassword,
+            passwordSet: finalPasswordSet
+          }
         } else {
           state.users.push(normalizedUser)
         }
       })
+
+      // Déduplication finale de state.users par email en conservant l'entrée la plus complète
+      const uniqueUsersMap = new Map<string, User>()
+      state.users.forEach(u => {
+        if (!u || !u.email) return
+        const key = u.email.trim().toLowerCase()
+        const prev = uniqueUsersMap.get(key)
+        if (!prev) {
+          uniqueUsersMap.set(key, u)
+        } else {
+          const pass = (u.password && u.password.trim()) || prev.password || ''
+          const passSet = (prev.passwordSet === true) || (u.passwordSet === true) || !!pass
+          uniqueUsersMap.set(key, {
+            ...prev,
+            ...u,
+            password: pass,
+            passwordSet: passSet
+          })
+        }
+      })
+      state.users = Array.from(uniqueUsersMap.values())
       setStorage(STORAGE_KEY_USERS, state.users)
     }
 
@@ -3762,10 +3800,15 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
     const cleanEmail = user.email.toLowerCase().trim()
     if (state.deletedUsers && state.deletedUsers.includes(cleanEmail)) return
     const idx = state.users.findIndex(u => (u?.email || '').toLowerCase().trim() === cleanEmail)
+    const newPass = (user.password && typeof user.password === 'string') ? user.password.trim() : ''
+    const newPassSet = user.passwordSet === true || !!newPass
     if (idx >= 0) {
-      state.users[idx] = { ...state.users[idx], ...user }
+      const existing = state.users[idx]
+      const finalPassword = newPass || existing.password || ''
+      const finalPasswordSet = (existing.passwordSet === true) || newPassSet || !!finalPassword
+      state.users[idx] = { ...existing, ...user, password: finalPassword, passwordSet: finalPasswordSet }
     } else {
-      state.users.push(user)
+      state.users.push({ ...user, password: newPass, passwordSet: newPassSet })
     }
     setStorage(STORAGE_KEY_USERS, state.users)
   },

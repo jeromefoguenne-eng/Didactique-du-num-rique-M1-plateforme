@@ -247,22 +247,52 @@ function saveOrUpdateStudent(user) {
   var data = sheet.getDataRange().getValues();
 
   var foundRow = -1;
+  var existingPassword = '';
+  var existingPasswordSet = false;
+  var duplicateRows = [];
+
   for (var i = 1; i < data.length; i++) {
     if (data[i][0] && data[i][0].toString().trim().toLowerCase() === cleanEmail) {
-      foundRow = i + 1;
-      break;
+      if (foundRow === -1) {
+        foundRow = i + 1;
+        existingPassword = (data[i][3] || '').toString().trim();
+        existingPasswordSet = data[i][4] === true || data[i][4] === "true" || !!existingPassword;
+      } else {
+        // Collecte des doublons éventuels
+        if (!existingPassword && data[i][3]) {
+          existingPassword = (data[i][3] || '').toString().trim();
+          existingPasswordSet = true;
+        }
+        duplicateRows.push(i + 1);
+      }
     }
   }
 
+  var incomingPass = (user.password || '').toString().trim();
+  var finalPassword = incomingPass || existingPassword || '';
+  var finalPasswordSet = user.passwordSet === true || (finalPassword !== '' && existingPasswordSet) || (finalPassword !== '' && incomingPass !== '');
+
+  var finalUser = {
+    id: user.id || ('user-' + new Date().getTime()),
+    email: cleanEmail,
+    firstName: user.firstName || '',
+    lastName: user.lastName || '',
+    password: finalPassword,
+    passwordSet: finalPasswordSet,
+    registeredAt: user.registeredAt || new Date().toISOString(),
+    status: user.status || 'active',
+    role: user.role || 'student'
+  };
+
   var rowValues = [
     cleanEmail,
-    user.firstName || '',
-    user.lastName || '',
-    user.password || '',
-    user.passwordSet === true,
-    user.registeredAt || new Date().toISOString(),
-    user.status || 'active',
-    JSON.stringify(user)
+    finalUser.firstName,
+    finalUser.lastName,
+    finalPassword,
+    finalPasswordSet,
+    finalUser.registeredAt,
+    finalUser.status,
+    JSON.stringify(finalUser)
   ];
 
   if (foundRow > 0) {
@@ -271,7 +301,14 @@ function saveOrUpdateStudent(user) {
     sheet.appendRow(rowValues);
   }
 
-  return user;
+  // Nettoyage des lignes en double de bas en haut
+  for (var d = duplicateRows.length - 1; d >= 0; d--) {
+    try {
+      sheet.deleteRow(duplicateRows[d]);
+    } catch (e) {}
+  }
+
+  return finalUser;
 }
 
 function deleteStudentFromSheet(email) {
@@ -409,18 +446,20 @@ function saveEvaluationToSheet(email, ev) {
 function getFullDataFromSheet() {
   var ss = getOrCreateSpreadsheet();
 
-  // 1. Étudiants
+  // 1. Étudiants (Dédupliqués et protégés contre la perte de mot de passe)
   var users = [];
+  var usersMap = {};
   var sheetUsers = ss.getSheetByName("Etudiants");
   if (sheetUsers && sheetUsers.getLastRow() > 1) {
     var dataU = sheetUsers.getDataRange().getValues();
     for (var i = 1; i < dataU.length; i++) {
       var r = dataU[i];
+      var uObj = null;
       if (r[7]) {
-        try { users.push(JSON.parse(r[7])); continue; } catch (e) {}
+        try { uObj = JSON.parse(r[7]); } catch (e) {}
       }
-      if (r[0]) {
-        users.push({
+      if (!uObj && r[0]) {
+        uObj = {
           email: r[0],
           firstName: r[1],
           lastName: r[2],
@@ -428,8 +467,34 @@ function getFullDataFromSheet() {
           passwordSet: r[4] === true || r[4] === "true",
           registeredAt: r[5],
           status: r[6] || 'active'
-        });
+        };
       }
+      if (uObj && uObj.email) {
+        var key = uObj.email.toString().trim().toLowerCase();
+        var incomingPass = (uObj.password && uObj.password.toString().trim()) || (r[3] ? r[3].toString().trim() : '');
+        var incomingPSet = uObj.passwordSet === true || uObj.passwordSet === "true" || r[4] === true || r[4] === "true" || !!incomingPass;
+        if (!usersMap[key]) {
+          usersMap[key] = Object.assign({}, uObj, {
+            email: key,
+            password: incomingPass,
+            passwordSet: incomingPSet
+          });
+        } else {
+          // Fusionner intelligemment sans écraser le mot de passe existant
+          var curPass = usersMap[key].password || '';
+          var curPSet = usersMap[key].passwordSet === true;
+          var finalPass = incomingPass || curPass;
+          var finalPSet = incomingPSet || curPSet || !!finalPass;
+          usersMap[key] = Object.assign({}, usersMap[key], uObj, {
+            email: key,
+            password: finalPass,
+            passwordSet: finalPSet
+          });
+        }
+      }
+    }
+    for (var k in usersMap) {
+      users.push(usersMap[k]);
     }
   }
 
@@ -507,14 +572,19 @@ function mergeAndSyncAll(incomingState) {
   (incomingState.users || []).forEach(function(u) {
     if (u.email) {
       var em = u.email.toLowerCase();
+      var incomingPass = (u.password || '').toString().trim();
       if (!mergedUsersMap[em]) {
         mergedUsersMap[em] = u;
         saveOrUpdateStudent(u);
       } else {
-        // Mettre à jour si mot de passe configuré localement
-        if (u.passwordSet && !mergedUsersMap[em].passwordSet) {
-          mergedUsersMap[em] = u;
-          saveOrUpdateStudent(u);
+        // Mettre à jour si mot de passe configuré localement et absent du serveur
+        var remotePass = (mergedUsersMap[em].password || '').toString().trim();
+        if ((u.passwordSet || incomingPass) && (!mergedUsersMap[em].passwordSet || !remotePass)) {
+          mergedUsersMap[em] = Object.assign({}, mergedUsersMap[em], u, {
+            password: incomingPass || remotePass,
+            passwordSet: true
+          });
+          saveOrUpdateStudent(mergedUsersMap[em]);
         }
       }
     }

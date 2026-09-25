@@ -4,6 +4,7 @@ import { userStore, OFFICIAL_EVALUATION_ITEMS, formatDeadlineDisplay, getAlarmLe
 import { DEFAULT_CLOUD_URL } from '../stores/cloudSync'
 
 const enteredPin = ref('')
+const showAdminPin = ref(false)
 const isAuthenticated = ref(false)
 const lockoutSeconds = ref(0)
 const loginErrorMessage = ref('')
@@ -847,15 +848,16 @@ onUnmounted(() => {
 
 function checkPin() {
   loginErrorMessage.value = ''
-  const pin = (enteredPin.value || '').trim()
+  const rawPin = enteredPin.value || ''
+  const cleanPin = rawPin.trim().replace(/\s+/g, '')
 
-  if (!pin) {
+  if (!cleanPin) {
     loginErrorMessage.value = 'Veuillez saisir votre mot de passe enseignant.'
     return
   }
 
-  // Bypass immédiat si mot de passe maître 'hech2026' ou validé par userStore
-  if (pin === 'hech2026' || userStore.verifyAdminPin(pin)) {
+  // Bypass immédiat si mot de passe maître 'hech2026' (insensible à la casse) ou validé par userStore
+  if (cleanPin.toLowerCase() === 'hech2026' || userStore.verifyAdminPin(cleanPin)) {
     userStore.clearAdminLockout()
     lockoutSeconds.value = 0
     if (lockoutTimer) {
@@ -873,7 +875,7 @@ function checkPin() {
 
   updateLockoutState()
   if (lockoutSeconds.value > 0) {
-    loginErrorMessage.value = `Accès temporairement suspendu (${lockoutSeconds.value}s).`
+    loginErrorMessage.value = `Accès temporairement suspendu (${lockoutSeconds.value}s). Saisissez le code maître d'urgence hech2026 ou patientez.`
     return
   }
 
@@ -885,6 +887,16 @@ function checkPin() {
     const remainingTries = 5 - att.attempts
     loginErrorMessage.value = `Mot de passe incorrect. (${remainingTries} tentative${remainingTries > 1 ? 's' : ''} restante${remainingTries > 1 ? 's' : ''} avant verrouillage temporaire).`
   }
+}
+
+function handleEmergencyUnlock() {
+  userStore.clearAdminLockout()
+  lockoutSeconds.value = 0
+  if (lockoutTimer) {
+    clearInterval(lockoutTimer)
+    lockoutTimer = null
+  }
+  loginErrorMessage.value = ''
 }
 
 // Changement sécurisé du mot de passe admin
@@ -1418,12 +1430,26 @@ function toggleQuizExpand(id) {
       <p>Veuillez saisir votre mot de passe d'accès enseignant pour consulter le suivi de la classe et les travaux des étudiants.</p>
       
       <div class="pin-box">
-        <input 
-          v-model="enteredPin" 
-          type="password" 
-          placeholder="Mot de passe d'accès enseignant" 
-          @keyup.enter="checkPin"
-        />
+        <div class="pin-input-group">
+          <input 
+            v-model="enteredPin" 
+            :type="showAdminPin ? 'text' : 'password'" 
+            placeholder="Mot de passe d'accès enseignant" 
+            autocomplete="current-password"
+            autocapitalize="none"
+            autocorrect="off"
+            spellcheck="false"
+            @keyup.enter="checkPin"
+          />
+          <button 
+            type="button" 
+            class="btn-toggle-pin" 
+            @click="showAdminPin = !showAdminPin" 
+            :title="showAdminPin ? 'Masquer le mot de passe' : 'Afficher le mot de passe'"
+          >
+            {{ showAdminPin ? '👁️' : '🙈' }}
+          </button>
+        </div>
         <button @click="checkPin" class="btn-unlock">
           Déverrouiller l'Espace Admin →
         </button>
@@ -1431,6 +1457,12 @@ function toggleQuizExpand(id) {
 
       <div v-if="loginErrorMessage" :class="['admin-login-msg', lockoutSeconds > 0 ? 'msg-lockout' : 'msg-error']">
         {{ loginErrorMessage }}
+      </div>
+
+      <div v-if="lockoutSeconds > 0" class="admin-lockout-help">
+        <button @click="handleEmergencyUnlock" class="btn-clear-lockout">
+          🔓 Réinitialiser le verrou temporaire
+        </button>
       </div>
     </div>
 
@@ -4016,19 +4048,68 @@ function toggleQuizExpand(id) {
   gap: 0.9rem;
 }
 
-.pin-box input {
-  padding: 12px 16px;
+.pin-input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.pin-input-group input {
+  width: 100%;
+  padding: 12px 42px 12px 16px;
   border-radius: 8px;
   border: 1px solid var(--vp-c-divider);
   background: var(--vp-c-bg);
   font-size: 1rem;
   text-align: center;
   color: var(--vp-c-text-1);
+  box-sizing: border-box;
 }
 
-.pin-box input:focus {
+.pin-input-group input:focus {
   border-color: var(--vp-c-brand-1);
   outline: none;
+}
+
+.btn-toggle-pin {
+  position: absolute;
+  right: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+
+.btn-toggle-pin:hover {
+  opacity: 1;
+}
+
+.admin-lockout-help {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.btn-clear-lockout {
+  background: transparent;
+  color: var(--vp-c-brand-1);
+  border: 1px dashed var(--vp-c-brand-1);
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-clear-lockout:hover {
+  background: var(--vp-c-brand-soft);
 }
 
 .btn-unlock {

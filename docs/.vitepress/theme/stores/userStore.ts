@@ -2798,11 +2798,13 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
     // 2. Construction dynamique des 17 composantes de l'évaluation
     const allEvaluationItems = OFFICIAL_EVALUATION_ITEMS.map(def => {
       if (def.id === 'quiz') {
+        const isQuizDone = userQuizzes.length > 0
+        const finalQuizAiScore = isQuizDone ? quizAiScore : 0
         const fbQuiz = this.getExerciseFeedback('quiz', targetEmail)
-        let teacherPts = fbQuiz?.score !== undefined ? fbQuiz.score : quizAiScore
+        let teacherPts = fbQuiz?.score !== undefined ? fbQuiz.score : finalQuizAiScore
         const effDeadlineQuiz = this.getExerciseDeadline('quiz')
         const quizDeadlineDate = parseDeadline(effDeadlineQuiz.deadline)
-        const isQuizOverdue = userQuizzes.length === 0 && !!quizDeadlineDate && (new Date() > quizDeadlineDate)
+        const isQuizOverdue = !isQuizDone && !!quizDeadlineDate && (new Date() > quizDeadlineDate)
         const quizDaysOverdue = isQuizOverdue && quizDeadlineDate ? Math.max(1, Math.floor((new Date().getTime() - quizDeadlineDate.getTime()) / (1000 * 60 * 60 * 24))) : 0
         const quizAlarmInfo = isQuizOverdue ? getAlarmLevelInfo(quizDaysOverdue) : getAlarmLevelInfo(-1)
 
@@ -2813,11 +2815,11 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
           part: def.part,
           partLabel: def.partLabel,
           maxPoints: def.maxPoints,
-          aiScore: quizAiScore,
-          aiSummary: `${userQuizzes.length} quiz passé(s) • Moyenne: ${quizAiScore}/20`,
+          aiScore: finalQuizAiScore,
+          aiSummary: isQuizDone ? `${userQuizzes.length} quiz passé(s) • Moyenne: ${quizAiScore}/20` : 'Aucun quiz diagnostique passé (0 pt)',
           teacherScore: Math.min(def.maxPoints, Math.max(0, Number(teacherPts || 0))),
-          feedback: fbQuiz?.feedback || '',
-          completed: userQuizzes.length > 0,
+          feedback: fbQuiz?.feedback || (!isQuizDone ? 'Quiz non passé (0 pt)' : ''),
+          completed: isQuizDone,
           file: null,
           quizAttempts: userQuizzes || [],
           submission: null,
@@ -2846,15 +2848,18 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
       const daysOverdue = isOverdue && deadlineDate ? Math.max(1, Math.floor((new Date().getTime() - deadlineDate.getTime()) / (1000 * 60 * 60 * 24))) : 0
       const alarmInfo = isOverdue ? getAlarmLevelInfo(daysOverdue) : getAlarmLevelInfo(-1)
 
-      // Calcul de la cote IA suggérée
-      let aiScore: number | null = null
+      // Calcul de la cote IA suggérée : Quand un exercice n'est pas rendu, la note IA est automatiquement de zéro (0 pt)
+      let aiScore: number = 0
       let aiSummary = ''
-      if (file?.aiCorrection?.suggestedScore !== undefined) {
+      if (!isDone) {
+        aiScore = 0
+        aiSummary = 'Exercice non rendu (0 pt)'
+      } else if (file?.aiCorrection?.suggestedScore !== undefined) {
         const rawScore = Number(file.aiCorrection.suggestedScore) || 8.5
         // Mise à l'échelle sur le barème max de l'élément (ex: 100 pts, 10 pts ou 0 pt)
         aiScore = def.maxPoints > 0 ? Math.round(((rawScore / 10) * def.maxPoints) * 10) / 10 : 0
         aiSummary = file.aiCorrection.summary || 'Devoir analysé par l\'IA'
-      } else if (isDone && def.maxPoints > 0) {
+      } else if (def.maxPoints > 0) {
         // Devoir remis sans rapport IA spécifique : note formative par défaut à 85% du max
         aiScore = Math.round((def.maxPoints * 0.85) * 10) / 10
         aiSummary = 'Travail déposé en attente de validation'
@@ -2865,7 +2870,10 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
       let teacherPts: number | undefined = fb?.score
 
       if (teacherPts === undefined || teacherPts === null) {
-        if (def.id === 'projet-jeu') {
+        if (!isDone) {
+          // EXERCICE NON RENDU : Note automatiquement de 0
+          teacherPts = 0
+        } else if (def.id === 'projet-jeu') {
           teacherPts = evalRec.gameProjectScore !== undefined ? evalRec.gameProjectScore : 0
         } else if (file?.teacherGrade?.score !== undefined) {
           teacherPts = file.teacherGrade.score
@@ -2886,7 +2894,7 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
         } else if (def.id === 'exercice-16' && (evalRec.gameEx16PresentationScore !== undefined || evalRec.oralDefenseScore !== undefined)) {
           teacherPts = evalRec.gameEx16PresentationScore ?? Math.min(15, evalRec.oralDefenseScore)
         } else {
-          teacherPts = aiScore !== null ? aiScore : (isDone ? def.maxPoints : 0)
+          teacherPts = aiScore
         }
       }
 

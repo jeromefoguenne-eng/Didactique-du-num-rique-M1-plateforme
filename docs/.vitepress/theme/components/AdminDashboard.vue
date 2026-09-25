@@ -56,18 +56,21 @@ function openEditEvalModal(u) {
   evalFormExercises.value = (ev.pillar1.exerciseDetails || []).map(ex => {
     const existingFb = userStore.getExerciseFeedback(ex.id, u.email)
     const ai = ex.file?.aiCorrection
+    const isCompleted = !!ex.completed
+    const aiScoreVal = isCompleted ? (ai?.suggestedScore ?? null) : 0
+    const aiSummaryVal = isCompleted ? (ai?.summary ?? '') : 'Exercice non rendu (0 pt)'
     return {
       id: ex.id,
       title: ex.title,
-      completed: ex.completed,
+      completed: isCompleted,
       file: ex.file,
-      aiScore: ai?.suggestedScore ?? null,
+      aiScore: aiScoreVal,
       aiMaxScore: ai?.maxScore ?? 10,
-      aiSummary: ai?.summary ?? '',
+      aiSummary: aiSummaryVal,
       aiModel: ai?.modelUsed ?? '',
-      aiStatus: ai?.status ?? 'pending',
-      score: existingFb?.score ?? (ex.teacherGrade?.score ?? (ai?.suggestedScore ?? (ex.completed ? 10 : 0))),
-      feedback: existingFb?.feedback ?? (ex.teacherGrade?.feedback ?? '')
+      aiStatus: isCompleted ? (ai?.status ?? 'pending') : 'evaluated',
+      score: existingFb?.score ?? (ex.teacherGrade?.score ?? (isCompleted ? (ai?.suggestedScore ?? 10) : 0)),
+      feedback: existingFb?.feedback ?? (ex.teacherGrade?.feedback ?? (isCompleted ? '' : 'Exercice non rendu (0 pt)'))
     }
   })
 
@@ -77,9 +80,12 @@ function openEditEvalModal(u) {
 function adoptAiScoreInModal(ex) {
   if (ex.aiScore !== null && ex.aiScore !== undefined) {
     ex.score = ex.aiScore
-    if (!ex.feedback || !ex.feedback.trim()) {
-      ex.feedback = ex.aiSummary
+    if (!ex.feedback || !ex.feedback.trim() || !ex.completed) {
+      ex.feedback = ex.completed ? ex.aiSummary : 'Exercice non rendu (0 pt)'
     }
+  } else if (!ex.completed) {
+    ex.score = 0
+    ex.feedback = 'Exercice non rendu (0 pt)'
   }
 }
 
@@ -1141,24 +1147,29 @@ function loadStudentForGrid(email) {
   if (!email) return
   selectedGridStudentEmail.value = email
   const ev = userStore.getStudentEvaluation(email)
-  activeGridItems.value = (ev.items || []).map(item => ({
-    id: item.id,
-    title: item.title,
-    shortTitle: item.shortTitle,
-    part: item.part,
-    partLabel: item.partLabel,
-    maxPoints: item.maxPoints,
-    aiScore: item.aiScore,
-    aiSummary: item.aiSummary || '',
-    teacherScore: item.teacherScore !== undefined ? item.teacherScore : (item.aiScore ?? 0),
-    feedback: item.feedback || '',
-    completed: item.completed,
-    file: item.file,
-    docLink: item.docLink,
-    deadline: item.deadline,
-    deadlineLabel: item.deadlineLabel,
-    isOverdue: item.isOverdue
-  }))
+  activeGridItems.value = (ev.items || []).map(item => {
+    const isCompleted = !!item.completed
+    const computedAiScore = isCompleted ? item.aiScore : 0
+    const computedAiSummary = isCompleted ? (item.aiSummary || '') : 'Exercice non rendu (0 pt)'
+    return {
+      id: item.id,
+      title: item.title,
+      shortTitle: item.shortTitle,
+      part: item.part,
+      partLabel: item.partLabel,
+      maxPoints: item.maxPoints,
+      aiScore: computedAiScore,
+      aiSummary: computedAiSummary,
+      teacherScore: item.teacherScore !== undefined ? item.teacherScore : (isCompleted ? (item.aiScore ?? 0) : 0),
+      feedback: item.feedback || (isCompleted ? '' : 'Exercice non rendu (0 pt)'),
+      completed: isCompleted,
+      file: item.file,
+      docLink: item.docLink,
+      deadline: item.deadline,
+      deadlineLabel: item.deadlineLabel,
+      isOverdue: item.isOverdue
+    }
+  })
   activeGridGeneralFeedback.value = ev.feedback || ''
   saveGridStatus.value = ''
 }
@@ -1168,6 +1179,13 @@ function onSelectGridStudent() {
 }
 
 function adoptAiScoreForItem(item) {
+  if (!item.completed) {
+    item.teacherScore = 0
+    if (!item.feedback || !item.feedback.trim()) {
+      item.feedback = 'Exercice non rendu (0 pt)'
+    }
+    return
+  }
   if (item.aiScore !== null && item.aiScore !== undefined) {
     item.teacherScore = item.aiScore
     if (!item.feedback && item.aiSummary) {
@@ -1179,7 +1197,13 @@ function adoptAiScoreForItem(item) {
 function adoptAllAiScoresForActiveStudent() {
   let count = 0
   activeGridItems.value.forEach(item => {
-    if (item.aiScore !== null && item.aiScore !== undefined) {
+    if (!item.completed) {
+      item.teacherScore = 0
+      if (!item.feedback || !item.feedback.trim()) {
+        item.feedback = 'Exercice non rendu (0 pt)'
+      }
+      count++
+    } else if (item.aiScore !== null && item.aiScore !== undefined) {
       item.teacherScore = item.aiScore
       if (!item.feedback && item.aiSummary) {
         item.feedback = item.aiSummary
@@ -1406,6 +1430,11 @@ async function toggleDocumentPreview(file) {
 }
 
 function adoptAiFeedbackInDossier(item) {
+  if (!item.completed) {
+    item.teacherScore = 0
+    item.feedback = 'Exercice non rendu (0 pt)'
+    return
+  }
   if (item.aiScore !== null && item.aiScore !== undefined) {
     item.teacherScore = item.aiScore
   }
@@ -2410,7 +2439,21 @@ function toggleQuizExpand(id) {
                   </td>
                   <!-- COLONNE COTE IA -->
                   <td style="text-align: center;">
-                    <div v-if="item.aiScore !== null && item.aiScore !== undefined" class="ai-score-cell-wrap">
+                    <div v-if="!item.completed" class="ai-score-cell-wrap">
+                      <span class="ai-pill zero-pill" style="background:#fee2e2;color:#991b1b;border-color:#fecaca;" title="Exercice non rendu : note automatique de 0">
+                        <strong>0</strong> / {{ item.maxPoints }}
+                      </span>
+                      <button 
+                        @click="adoptAiScoreForItem(item)" 
+                        type="button" 
+                        class="btn-adopt-mini"
+                        title="Appliquer la note 0 pt pour non-rendu"
+                        style="background: #fee2e2; color: #991b1b; border-color: #fca5a5;"
+                      >
+                        ⚡ Reprendre (0)
+                      </button>
+                    </div>
+                    <div v-else-if="item.aiScore !== null && item.aiScore !== undefined" class="ai-score-cell-wrap">
                       <span class="ai-pill"><strong>{{ item.aiScore }}</strong> / {{ item.maxPoints }}</span>
                       <button 
                         @click="adoptAiScoreForItem(item)" 
@@ -2497,6 +2540,20 @@ function toggleQuizExpand(id) {
                   <td style="text-align: center;">
                     <div v-if="item.maxPoints === 0" class="ai-none-cell">
                       <span class="ai-pending-text">{{ item.completed ? '✅ Déposé' : '⏳ En attente' }}</span>
+                    </div>
+                    <div v-else-if="!item.completed" class="ai-score-cell-wrap">
+                      <span class="ai-pill zero-pill" style="background:#fee2e2;color:#991b1b;border-color:#fecaca;" title="Étape non réalisée : note automatique de 0">
+                        <strong>0</strong> / {{ item.maxPoints }}
+                      </span>
+                      <button 
+                        @click="adoptAiScoreForItem(item)" 
+                        type="button" 
+                        class="btn-adopt-mini"
+                        title="Appliquer la note 0 pt pour non-rendu"
+                        style="background: #fee2e2; color: #991b1b; border-color: #fca5a5;"
+                      >
+                        ⚡ Reprendre (0)
+                      </button>
                     </div>
                     <div v-else-if="item.aiScore !== null && item.aiScore !== undefined" class="ai-score-cell-wrap">
                       <span class="ai-pill"><strong>{{ item.aiScore }}</strong> / {{ item.maxPoints }}</span>
@@ -2734,7 +2791,19 @@ function toggleQuizExpand(id) {
                       <!-- COLONNE 2 : POINTS REMIS PAR L'IA -->
                       <div class="mea-col-ai">
                         <span class="mea-col-header-label">🤖 Points remis par l'IA :</span>
-                        <div v-if="ex.aiScore !== null && ex.aiScore !== undefined" class="mea-ai-score-box">
+                        <div v-if="!ex.completed" class="mea-ai-score-box">
+                          <span class="mea-ai-score-val" style="color: #dc2626;"><strong>0</strong> / {{ ex.aiMaxScore }} pts</span>
+                          <button 
+                            type="button"
+                            @click="adoptAiScoreInModal(ex)" 
+                            class="btn-adopt-ai-modal" 
+                            title="Appliquer la note 0 pt pour travail non rendu"
+                            style="background: #fee2e2; color: #991b1b; border-color: #fca5a5;"
+                          >
+                            ⚡ Reprendre (0)
+                          </button>
+                        </div>
+                        <div v-else-if="ex.aiScore !== null && ex.aiScore !== undefined" class="mea-ai-score-box">
                           <span class="mea-ai-score-val"><strong>{{ ex.aiScore }}</strong> / {{ ex.aiMaxScore }} pts</span>
                           <button 
                             type="button"
@@ -3746,7 +3815,7 @@ function toggleQuizExpand(id) {
                     <div class="quiz-summary-box">
                       <div class="qsb-header">
                         <div class="qsb-score">
-                          Note obtenue au quiz : <strong>{{ item.aiScore }} / 20 pts</strong>
+                          Note obtenue au quiz : <strong>{{ item.aiScore ?? 0 }} / 20 pts</strong>
                           <span class="qsb-count">({{ (item.quizAttempts || []).length }} tentative(s) enregistrée(s))</span>
                         </div>
                         <button 
@@ -3901,14 +3970,14 @@ function toggleQuizExpand(id) {
                           </span>
                         </div>
                         <div class="dafb-score-tag">
-                          Note suggérée : <strong>{{ item.file?.aiCorrection?.suggestedScore ?? item.aiScore ?? 8.5 }} / 10 pts</strong>
+                          Note suggérée : <strong :style="!item.completed ? 'color: #dc2626;' : ''">{{ item.completed ? (item.file?.aiCorrection?.suggestedScore ?? item.aiScore ?? 0) : 0 }} / 10 pts</strong>
                         </div>
                       </div>
 
                       <!-- Synthèse IA -->
                       <div class="dafb-summary">
                         <strong>Synthèse générale :</strong>
-                        <p>« {{ item.file?.aiCorrection?.summary || item.aiSummary || 'Travail conforme aux exigences didactiques du cours.' }} »</p>
+                        <p>« {{ item.completed ? (item.file?.aiCorrection?.summary || item.aiSummary || 'Travail conforme aux exigences didactiques du cours.') : 'Exercice non rendu : note attribuée de 0/10 par l\'évaluation automatique.' }} »</p>
                       </div>
 
                       <!-- Points forts et pistes d'amélioration -->

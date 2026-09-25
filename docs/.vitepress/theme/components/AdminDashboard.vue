@@ -707,10 +707,10 @@ async function runAiAnalysis(fileId) {
   }
 }
 
-async function runBatchAiAnalysis() {
+async function runBatchAiAnalysis(force = true) {
   isBatchAnalyzing.value = true
   try {
-    const res = await userStore.batchAnalyzeAllFilesWithAi()
+    const res = await userStore.batchAnalyzeAllFilesWithAi(force)
     alert(`Correction IA terminée : ${res.analyzed} document(s) analysé(s) par l'IA sur ${res.total} au total.`)
   } finally {
     isBatchAnalyzing.value = false
@@ -3969,8 +3969,21 @@ function toggleQuizExpand(id) {
                             {{ item.file?.aiCorrection?.modelUsed || 'Assistant Pédagogique FMTTN' }}
                           </span>
                         </div>
-                        <div class="dafb-score-tag">
-                          Note suggérée : <strong :style="!item.completed ? 'color: #dc2626;' : ''">{{ item.completed ? (item.file?.aiCorrection?.suggestedScore ?? item.aiScore ?? 0) : 0 }} / 10 pts</strong>
+                        <div class="dafb-right-actions">
+                          <div class="dafb-score-tag">
+                            Note suggérée : <strong :style="!item.completed ? 'color: #dc2626;' : ''">{{ item.completed ? (item.file?.aiCorrection?.suggestedScore ?? item.aiScore ?? 0) : 0 }} / 10 pts</strong>
+                          </div>
+                          <button
+                            v-if="item.file"
+                            type="button"
+                            class="btn-reanalyze-dossier"
+                            :disabled="isAnalyzingFile[item.file.id]"
+                            @click="runAiAnalysis(item.file.id)"
+                            title="Relancer l'évaluation IA détaillée pour ce document"
+                          >
+                            <span v-if="isAnalyzingFile[item.file.id]">⏳ Analyse...</span>
+                            <span v-else>🔄 Réévaluer avec l'IA</span>
+                          </button>
                         </div>
                       </div>
 
@@ -8344,6 +8357,37 @@ span.is-late {
 .dafb-score-tag strong {
   font-size: 1rem;
   color: #4338ca;
+}
+
+.dafb-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn-reanalyze-dossier {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #ffffff;
+  border: 1px solid #c7d2fe;
+  color: #4338ca;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-reanalyze-dossier:hover:not(:disabled) {
+  background: #e0e7ff;
+  border-color: #818cf8;
+}
+
+.btn-reanalyze-dossier:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .dafb-summary {

@@ -969,431 +969,609 @@ const DEFAULT_FILES: SubmittedFile[] = [
   }
 ]
 
-// Moteur expert d'évaluation pédagogique de repli local (Niveau 1 / Didactique HECh)
-function generateDidacticAiCorrection(file: SubmittedFile, textContent: string = ''): AiCorrection {
-  const exId = file.exerciseId || ''
-  
-  let suggestedScore = 8.5
-  let concordance = 2.6
-  let didacticQuality = 2.6
-  let criticalAnalysis = 2.0
-  let formAndStructure = 1.3
-  let summary = "Travail rigoureux et bien ancré dans les attendus didactiques de l'activité."
-  let strengths: string[] = []
-  let improvements: string[] = []
-  let nextSteps = "Poursuivre la formalisation des choix didactiques en explicitant les liens avec les compétences du tronc commun."
-  let detailedFeedback = ""
-  let criteriaTable: AiCriterion[] = []
+// =========================================================================
+// MOTEUR EXPERT DE CORRECTION DIDACTIQUE & ANALYSE SÉMANTIQUE DE DOCUMENTS
+// Conforme au cadre institutionnel de correction (docs/guide/criteres-correction-ia.md)
+// =========================================================================
 
-  if (exId === 'exercice-01') {
-    suggestedScore = 9.0
-    concordance = 2.8
-    didacticQuality = 2.7
-    criticalAnalysis = 2.2
-    formAndStructure = 1.3
-    summary = "Excellente appropriation du cadre DigComp 2.2 et distinction nette entre habileté opératoire et compétence critique située."
-    strengths = [
-      "Distinction opératoire claire entre l'habileté technique et la compétence réflexive située.",
-      "Pertinence des indicateurs d'observation pour diagnostiquer les besoins des élèves du secondaire.",
-      "Prise en compte rigoureuse de la dimension éthique et légale (licences Creative Commons)."
+export interface ExerciseDidacticProfile {
+  id: string
+  title: string
+  shortTitle: string
+  requiredKeywords: string[]
+  domainKeywords: string[]
+  expectedSummary: string
+  questionsCles: string[]
+}
+
+export const EXERCISE_DIDACTIC_PROFILES: Record<string, ExerciseDidacticProfile> = {
+  'exercice-01': {
+    id: 'exercice-01',
+    title: 'Atelier 1 : Diagnostic de compétences (DigComp 2.2)',
+    shortTitle: 'Atelier 1 (DigComp)',
+    requiredKeywords: ['digcomp', 'competence', 'habilete', 'operatoire', 'profil'],
+    domainKeywords: [
+      'digcomp', 'competence', 'habilete', 'operatoire', 'situee', 'profil', 'domaine',
+      'information', 'communication', 'creation', 'securite', 'resolution', 'problemes',
+      'recherche', 'esprit critique', 'ethique', 'licence', 'creative commons', 'droits',
+      'auteur', 'eleve', 'diagnostic', 'lea', 'maxime', 'sarah', 'lucas', 'pedagogique',
+      'differenciation', 'remediation', 'technologique', 'reflexivite', 'autonomie'
+    ],
+    expectedSummary: "Analyse réflexive de profils d'élèves selon les 5 domaines du cadre DigComp 2.2 (distinction habileté opératoire vs compétence située).",
+    questionsCles: [
+      "Distinction entre simple habileté opératoire et compétence réflexive située",
+      "Analyse des profils d'élèves (Léa, Maxime, Sarah, Lucas)",
+      "Identification des besoins de différenciation et de remédiation"
     ]
-    improvements = [
-      "Préciser les modalités de remédiation immédiate en classe pour les apprenants en grande fragilité numérique."
+  },
+  'exercice-02': {
+    id: 'exercice-02',
+    title: "Atelier 2 : Évaluation critique d'une information",
+    shortTitle: 'Atelier 2 (Esprit Critique)',
+    requiredKeywords: ['information', 'sommeil', 'telephone', 'source', 'verification'],
+    domainKeywords: [
+      'information', 'infox', 'fake news', 'source', 'primaire', 'secondaire', 'verification',
+      'sommeil', 'telephone', 'smartphone', 'etude', 'scientifique', 'fact checking',
+      'recherche inversee', 'titre', 'dramatisation', 'esprit critique', 'biais', 'medias',
+      'recoupement', 'fiabilite', 'validation', 'methode', 'eleves', 'secondaire', 'rumeur',
+      'algorithme', 'attention', 'sensationnalisme', 'csem'
+    ],
+    expectedSummary: "Démarche d'investigation critique sur l'affirmation scientifique (sommeil et smartphone), croisement de sources primaires et protocole didactique.",
+    questionsCles: [
+      "Méthode de vérification de l'affirmation sur les 2h de sommeil perdues",
+      "Croisement des sources primaires et déconstruction du titre sensationnaliste",
+      "Transposition didactique pour des élèves de 12-14 ans"
     ]
-    nextSteps = "Structurer une fiche-guide de remédiation rapide (3 étapes clés) à destination des élèves décrocheurs."
-    detailedFeedback = "L'analyse produite pour ce diagnostic DigComp témoigne d'un haut niveau d'expertise didactique. Vous montrez clairement que savoir manipuler un outil ne signifie pas être compétent sur le plan informationnel. Les propositions d'activités permettent d'outiller l'élève sans le démotiver."
-    criteriaTable = [
-      { name: "Exactitude & maîtrise des concepts DigComp 2.2 (Critère A)", score: 4.8, maxScore: 5, justification: "Définition rigoureuse de la compétence située et des 5 domaines DigComp." },
-      { name: "Compréhension & Pertinence didactique (Critères B & F)", score: 4.6, maxScore: 5, justification: "Excellente analyse des besoins d'apprentissage réels des élèves." },
-      { name: "Application, transfert & Analyse (Critères C & D)", score: 4.4, maxScore: 5, justification: "Diagnostic pertinent des profils d'élèves et argumentation solide." },
-      { name: "Réflexivité & Communication (Critères E & H)", score: 4.2, maxScore: 5, justification: "Bonne prise de recul sur la posture enseignante et présentation soignée." }
+  },
+  'exercice-03': {
+    id: 'exercice-03',
+    title: "Atelier 3 : Conception d'un guide numérique élèves",
+    shortTitle: 'Atelier 3 (Guide Élèves)',
+    requiredKeywords: ['guide', 'eleve', 'numerique', 'organisation', 'outil'],
+    domainKeywords: [
+      'guide', 'eleves', 'outils', 'numerique', 'organisation', 'collaboration', 'connexion',
+      'mot de passe', 'sauvegarde', 'dossier', 'cloud', 'drive', 'teams', 'environnement',
+      'charte', 'regles', '1er degre', 'secondaire', 'autonomie', 'plateforme', 'classement',
+      'fichiers', 'arborescence', 'dys', 'accessibilite', 'procedure'
+    ],
+    expectedSummary: "Guide d'accueil et d'autonomie numérique pour les nouveaux élèves du 1er degré (outils scolaires, classement, hygiène numérique).",
+    questionsCles: [
+      "Identification des difficultés organisationnelles des nouveaux élèves",
+      "Conseils méthodologiques pas-à-pas (connexion, sauvegarde, classement)",
+      "Ergonomie visuelle et accessibilité pour le public cible"
     ]
-  } else if (exId === 'exercice-02') {
-    suggestedScore = 8.5
-    concordance = 2.5
-    didacticQuality = 2.6
-    criticalAnalysis = 2.2
-    formAndStructure = 1.2
-    summary = "Démarche d'investigation critique rigoureuse pour déconstruire l'infox et les pièges sensationnalistes."
-    strengths = [
-      "Recours méthodique au croisement des sources primaires et à la vérification d'images inversées.",
-      "Excellente déconstruction des procédés de dramatisation (titres putaclics, graphiques tronqués).",
-      "Transposition didactique adaptée à des élèves de 12-14 ans."
+  },
+  'exercice-04': {
+    id: 'exercice-04',
+    title: 'Atelier 4 : Escape Game FMTTN (Cyber-Enquête)',
+    shortTitle: 'Atelier 4 (Escape Game)',
+    requiredKeywords: ['escape game', 'fmttn', 'enigme', 'cyber', 'jeu'],
+    domainKeywords: [
+      'escape game', 'fmttn', 'enigme', 'cyber', 'code', 'enjeu', 'numerique', 'ludopedagogie',
+      'jeu', 'mission', 'apprentissage', 'validation', 'indices', 'collaboration', 'temps',
+      'scenario', 'debriefing', 'hygiene', 'securite', 'cooperation', 'enquete'
+    ],
+    expectedSummary: "Résolution de la cyber-enquête en ligne et analyse didactique du dispositif d'escape game pour enseigner le FMTTN.",
+    questionsCles: [
+      "Résolution complète du jeu en ligne et validation des énigmes",
+      "Analyse des apprentissages FMTTN mobilisés au cours du jeu",
+      "Post-traitement et phase d'institutionnalisation en classe"
     ]
-    improvements = [
-      "Expliciter davantage le rôle des algorithmes de recommandation et de l'économie de l'attention."
+  },
+  'exercice-05': {
+    id: 'exercice-05',
+    title: 'Atelier 5 : Défi 20 min Canva (Affiche mot de passe)',
+    shortTitle: 'Atelier 5 (Canva Sécurité)',
+    requiredKeywords: ['mot de passe', 'canva', 'securite', 'affiche'],
+    domainKeywords: [
+      'mot de passe', 'affiche', 'canva', 'securite', 'robuste', 'caracteres', 'longueur',
+      'majuscule', 'minuscule', 'chiffre', 'symbole', 'special', '30 mots', 'visuel',
+      'icones', '30 secondes', 'ergonomie', 'comprehension', 'eleve', 'gestionnaire', 'mfa',
+      'authentification', 'anssi', 'regles', 'defi express'
+    ],
+    expectedSummary: "Affiche visuelle Canva percutante vulgarisant les règles d'un mot de passe robuste (max 30 mots, max 3 visuels).",
+    questionsCles: [
+      "Respect strict des contraintes formelles (max 30 mots, max 3 visuels)",
+      "Clarté des règles de cybersécurité pour des élèves",
+      "Efficacité visuelle et lisibilité immédiate"
     ]
-    nextSteps = "Intégrer une courte séquence sur les biais de confirmation et le fonctionnement des bulles de filtres."
-    detailedFeedback = "Très bon travail d'Éducation aux Médias. Vous dépassez la simple chasse au faux pour faire comprendre aux élèves pourquoi et comment une fausse nouvelle se propage. Le protocole proposé est directement transposable en classe."
-    criteriaTable = [
-      { name: "Exactitude & maîtrise de l'esprit critique info (Critère A)", score: 4.5, maxScore: 5, justification: "Identification précise des failles factuelles et des biais de mise en scène." },
-      { name: "Pertinence didactique & transposition élèves (Critères B & F)", score: 4.3, maxScore: 5, justification: "Protocole de fact-checking accessible et formateur pour le secondaire." },
-      { name: "Analyse critique & croisement des sources (Critères C & D)", score: 4.4, maxScore: 5, justification: "Recherche inversée d'images et remontée aux sources primaires concluantes." },
-      { name: "Réflexivité & Clarté argumentative (Critères E & H)", score: 3.8, maxScore: 5, justification: "Argumentation claire, penser à approfondir la dimension systémique des réseaux sociaux." }
+  },
+  'exercice-06': {
+    id: 'exercice-06',
+    title: 'Atelier 6 : Démarche itérative (Concevoir & tester un mini-jeu)',
+    shortTitle: 'Atelier 6 (Itération & Jeu)',
+    requiredKeywords: ['mini-jeu', 'dechet', 'tri', 'genially', 'iteration'],
+    domainKeywords: [
+      'mini-jeu', 'dechets', 'tri', 'genially', 'iterative', 'iteration', 'test', 'playtest',
+      'feedback', 'retours', 'amelioration', '10 12 ans', 'regles', 'poubelle', 'recyclage',
+      'erreur', 'joueur', 'observation', 'pedagogique', 'cycle de conception', 'prototype'
+    ],
+    expectedSummary: "Conception d'un mini-jeu sur le tri des déchets sous Genially, protocole de test par les pairs et boucle d'amélioration itérative.",
+    questionsCles: [
+      "Conception du mini-jeu Genially pour des élèves de 10-12 ans",
+      "Recueil objectif des retours de testeurs pairs",
+      "Ajustements didactiques concrets apportés en version 2"
     ]
-  } else if (exId === 'exercice-03') {
-    suggestedScore = 9.5
-    concordance = 2.9
-    didacticQuality = 2.9
-    criticalAnalysis = 2.3
-    formAndStructure = 1.4
-    summary = "Guide d'accompagnement numérique complet, visuellement ergonomique et adapté aux élèves du 1er degré."
-    strengths = [
-      "Ergonomie visuelle et clarté des consignes remarquables pour le public cible.",
-      "Rappels méthodologiques sur la sauvegarde responsable et la protection des données personnelles.",
-      "Intégration d'exemples pas-à-pas et d'une FAQ préventive très utile."
+  },
+  'exercice-07': {
+    id: 'exercice-07',
+    title: 'Atelier 7 : Défi Hardware & Peer Learning (Démonter un PC)',
+    shortTitle: 'Atelier 7 (Hardware PC)',
+    requiredKeywords: ['hardware', 'ordinateur', 'carte mere', 'processeur', 'composant'],
+    domainKeywords: [
+      'hardware', 'ordinateur', 'pc', 'carte mere', 'processeur', 'cpu', 'ram', 'memoire',
+      'disque dur', 'ssd', 'alimentation', 'cable', 'ventirad', 'demontage', 'remontage',
+      'peer learning', 'panne', 'composants', 'boitier', 'connectique', 'statique', 'securite',
+      'diagnostic', 'architecture'
+    ],
+    expectedSummary: "Démontage et remontage collaboratif d'un PC, identification des composants internes et compréhension de l'architecture matérielle.",
+    questionsCles: [
+      "Identification rigoureuse des composants (CPU, RAM, carte mère, stockage, alimentation)",
+      "Application des règles de sécurité électrique et électrostatique",
+      "Dynamique d'apprentissage entre pairs et démythification de la machine"
     ]
-    improvements = [
-      "Penser à insérer une version allégée ou audio pour les élèves présentant des troubles spécifiques (DYS)."
+  },
+  'exercice-08': {
+    id: 'exercice-08',
+    title: "Atelier 8 : Construire des grilles d'évaluation critériées",
+    shortTitle: 'Atelier 8 (Grilles Critériées)',
+    requiredKeywords: ['grille', 'evaluation', 'critere', 'indicateur', 'maitrise'],
+    domainKeywords: [
+      'grille', 'evaluation', 'criteriee', 'critere', 'indicateur', 'observable', 'maitrise',
+      'niveau', 'bareme', 'didactique', 'formative', 'sommative', 'rubrique', 'ponderation',
+      'transparence', 'performance', 'competence', 'degres', 'taxonomie'
+    ],
+    expectedSummary: "Élaboration d'une grille critériée rigoureuse avec critères, indicateurs observables et niveaux de maîtrise pour un apprentissage numérique.",
+    questionsCles: [
+      "Définition de critères didactiques indépendants et sans ambiguïté",
+      "Construction d'indicateurs observables et mesurables par niveau",
+      "Pondération équilibrée et cohérence avec les compétences visées"
     ]
-    nextSteps = "Proposer une version synthétique sous forme de mémo marque-page ou de sticker pour carnet de bord."
-    detailedFeedback = "Production exemplaire ! La mise en page et le ton adopté sont parfaitement calibrés pour des élèves du premier degré. L'accent mis sur l'autonomie et les bonnes pratiques numériques répond fidèlement aux attendus du référentiel."
-    criteriaTable = [
-      { name: "Conformité au référentiel FMTTN (Critère A)", score: 4.8, maxScore: 5, justification: "Respect intégral des attendus du champ 1 et 2 du tronc commun." },
-      { name: "Qualité de l'ingénierie didactique (Critères B & F)", score: 4.8, maxScore: 5, justification: "Séquençage progressif, consignes explicites et sans ambiguïté." },
-      { name: "Faisabilité en classe & Transfert (Critères C & D)", score: 4.7, maxScore: 5, justification: "Outil immédiatement diffusable et opérationnel en classe." },
-      { name: "Ergonomie, accessibilité & Design (Critères E & H)", score: 4.7, maxScore: 5, justification: "Mise en page exemplaire, aérée et attrayante." }
+  },
+  'exercice-09': {
+    id: 'exercice-09',
+    title: 'Étape 1 (Ex 9) : Règles du jeu & dossier pédagogique (FMTTN / CSEM)',
+    shortTitle: 'Étape 1 (Règles)',
+    requiredKeywords: ['jeu', 'regle', 'societe', 'mecanique', 'pedagogique'],
+    domainKeywords: [
+      'jeu', 'regles', 'societe', 'mecanique', 'pedagogique', 'fmttn', 'csem', 'education aux medias',
+      'tour de jeu', 'victoire', 'plateau', 'cartes', 'joueurs', 'duree', 'materiel', 'concept',
+      'objectifs', 'didactique', 'immersion'
+    ],
+    expectedSummary: "Livret de règles du jeu de société éducatif et dossier pédagogique reliant la mécanique de jeu aux compétences FMTTN / CSEM.",
+    questionsCles: [
+      "Clarté des règles et équilibre de la mécanique de jeu",
+      "Ancrage authentique dans les compétences d'éducation aux médias ou FMTTN",
+      "Faisabilité d'une partie dans le cadre d'une séquence scolaire"
     ]
-  } else if (exId === 'exercice-04') {
-    suggestedScore = 8.5
-    concordance = 2.6
-    didacticQuality = 2.5
-    criticalAnalysis = 2.1
-    formAndStructure = 1.3
-    summary = "Scénario ludique et immersif articulant habilement énigmes logiques et compétences du tronc commun FMTTN."
-    strengths = [
-      "Conception narrative captivante favorisant la collaboration et l'émulation collective.",
-      "Mobilisation authentique des 4 champs FMTTN dans la résolution des énigmes.",
-      "Grille d'observation pour l'enseignant bien pensée."
+  },
+  'exercice-10': {
+    id: 'exercice-10',
+    title: 'Étape 2 (Ex 10) : Photographier le numérique',
+    shortTitle: 'Étape 2 (Photographie)',
+    requiredKeywords: ['photo', 'cadrage', 'composition', 'technique', 'numerique'],
+    domainKeywords: [
+      'photo', 'photographie', 'surcadrage', 'regle des tiers', 'plongee', 'contre plongee',
+      'profondeur de champ', 'lumiere', 'composition', 'message', 'smartphone', 'visuel',
+      'image', 'symbolique', 'angle', 'focus', 'diagonale', 'materiel'
+    ],
+    expectedSummary: "Série de 6 photographies originales illustrant la place du numérique en mobilisant les techniques de composition du cours.",
+    questionsCles: [
+      "Maîtrise des 6 techniques de cadrage (surcadrage, tiers, plongée/contre-plongée...)",
+      "Pertinence du message transmis sur les technologies numériques",
+      "Qualité esthétique et justification des choix de prise de vue"
     ]
-    improvements = [
-      "Veiller à calibrer le temps de chaque énigme pour éviter les temps morts ou la surcharge cognitive."
+  },
+  'exercice-11': {
+    id: 'exercice-11',
+    title: 'Étape 3 (Ex 11) : Créer les supports de votre jeu avec l\'IA',
+    shortTitle: 'Étape 3 (Supports IA)',
+    requiredKeywords: ['ia', 'support', 'carte', 'prompt', 'jeu'],
+    domainKeywords: [
+      'ia', 'intelligence artificielle', 'carte', 'visuel', 'prompt', 'midjourney', 'chatgpt',
+      'canva', 'generation', 'critique', 'hallucination', 'verification', 'jeu', 'design',
+      'illustration', 'retouche', 'coherence visuelle', 'plateau'
+    ],
+    expectedSummary: "Création des visuels et cartes du jeu de société par IA générative, documentation des prompts et recul critique.",
+    questionsCles: [
+      "Cohérence graphique globale des éléments générés par IA",
+      "Précision des prompts et méthode de retouche / sélection",
+      "Regard critique sur les erreurs ou biais de l'IA"
     ]
-    nextSteps = "Intégrer des indices progressifs à débloquer en cas de blocage d'une équipe pour préserver le rythme."
-    detailedFeedback = "Une cyber-enquête stimulante qui met en valeur les pédagogies actives. Le lien entre le jeu et l'institutionnalisation des notions informatiques est bien assuré."
-    criteriaTable = [
-      { name: "Maîtrise des concepts de cybersécurité (Critère A)", score: 4.4, maxScore: 5, justification: "Énigmes fondées sur des règles d'hygiène numérique authentiques." },
-      { name: "Scénarisation ludopédagogique (Critères B & F)", score: 4.5, maxScore: 5, justification: "Intrigue engageante et équilibre entre défi et faisabilité." },
-      { name: "Résolution de problèmes & Pensée computationnelle (Critères C & D)", score: 4.2, maxScore: 5, justification: "Bonne progression des indices et mobilisation de la déduction logique." },
-      { name: "Communication & Matériel pédagogique (Critères E & H)", score: 3.9, maxScore: 5, justification: "Documents de jeu immersifs, peaufiner les fiches de débriefing." }
+  },
+  'exercice-12': {
+    id: 'exercice-12',
+    title: 'Étape 4 (Ex 12) : Découpeuse laser (Plateau & boîte)',
+    shortTitle: 'Étape 4 (Découpe Laser)',
+    requiredKeywords: ['laser', 'decoupe', 'plateau', 'bois', 'vecteur'],
+    domainKeywords: [
+      'laser', 'decoupe', 'gravure', 'plateau', 'bois', 'plexiglas', 'vectoriel', 'svg', 'dxf',
+      'epaisseur', 'fablab', 'machine', 'boite', 'pions', 'prototypage', 'encoches', 'assemblage'
+    ],
+    expectedSummary: "Fichiers vectoriels de découpe/gravure laser pour le plateau et la boîte de rangement du jeu, prototypage au fablab.",
+    questionsCles: [
+      "Conception vectorielle conforme aux contraintes d'usinage (couleurs découpe/gravure)",
+      "Robustesse de l'assemblage et précision des dimensions",
+      "Intégration fonctionnelle avec les autres éléments de jeu"
     ]
-  } else if (exId === 'exercice-05') {
-    suggestedScore = 8.0
-    concordance = 2.4
-    didacticQuality = 2.5
-    criticalAnalysis = 1.9
-    formAndStructure = 1.2
-    summary = "Affiche synthétique et percutante vulgarisant les règles d'un mot de passe robuste."
-    strengths = [
-      "Hiérarchie visuelle efficace et slogan mémorisable pour des adolescents.",
-      "Règles d'hygiène numérique claires (longueur, caractères spéciaux, double facteur)."
+  },
+  'exercice-13': {
+    id: 'exercice-13',
+    title: 'Étape 5 (Ex 13) : Impression 3D (Pions & accessoires)',
+    shortTitle: 'Étape 5 (Impression 3D)',
+    requiredKeywords: ['impression 3d', '3d', 'pion', 'filament', 'modele'],
+    domainKeywords: [
+      'impression 3d', 'pion', 'figurine', 'stl', 'trancheur', 'slicer', 'filament', 'pla',
+      'extrudeur', 'couche', 'infill', 'support', 'tinkercad', 'fusion', 'prototypage',
+      'fablab', 'buse', 'temperature'
+    ],
+    expectedSummary: "Modélisation 3D et impression des pions et accessoires du jeu, paramétrage du slicer et validation mécanique.",
+    questionsCles: [
+      "Modélisation géométrique 3D originale et adaptée à l'impression FDM",
+      "Choix des paramètres d'impression (supports, remplissage, orientation)",
+      "Stabilité et ergonomie de manipulation des pièces imprimées"
     ]
-    improvements = [
-      "Sensibiliser également à l'usage des gestionnaires de mots de passe (Keepass/Bitwarden) plutôt que la simple mémorisation."
+  },
+  'exercice-14': {
+    id: 'exercice-14',
+    title: 'Atelier 7 (Ex 14) : Capsule vidéo didactique',
+    shortTitle: 'Atelier 7 (Capsule Vidéo)',
+    requiredKeywords: ['video', 'capsule', 'montage', 'jeu', 'presentation'],
+    domainKeywords: [
+      'video', 'capsule', 'montage', 'son', 'micro', 'storyboard', 'plan', 'sequence',
+      'titrage', 'rythme', 'voix', 'explication', 'pitch', 'presentation', 'jeu',
+      'pedagogique', 'dynamique', 'eclairage', 'duree'
+    ],
+    expectedSummary: "Capsule vidéo scénarisée (2-3 min) valorisant le jeu de société didactique, ses règles et son intérêt pédagogique.",
+    questionsCles: [
+      "Dynamisme de la mise en scène et clarté des explications orales",
+      "Qualité technique du son, du cadrage et du montage",
+      "Valorisation des objectifs didactiques du jeu"
     ]
-    nextSteps = "Ajouter un QR code renvoyant vers un testeur de robustesse de mot de passe en ligne (ex: CNIL)."
-    detailedFeedback = "L'affiche Canva atteint son objectif de communication pédagogique rapide. Le message est clair, direct et évite le jargon technique superflu."
-    criteriaTable = [
-      { name: "Exactitude des règles de sécurité (Critère A)", score: 4.2, maxScore: 5, justification: "Règles actuelles de robustesse conformes aux recommandations ANSSI." },
-      { name: "Efficacité communicationnelle (Critères B & F)", score: 4.3, maxScore: 5, justification: "Accroche visuelle forte et lisibilité à distance." },
-      { name: "Pertinence du format Défi Express (Critères C & D)", score: 4.0, maxScore: 5, justification: "Objectif atteint dans la contrainte temporelle des 20 minutes." },
-      { name: "Qualité graphique & Réflexivité (Critères E & H)", score: 3.5, maxScore: 5, justification: "Bonne maîtrise de Canva, enrichir la justification didactique des choix de couleurs." }
+  },
+  'exercice-video': {
+    id: 'exercice-video',
+    title: 'Atelier 7 (Ex 14) : Capsule vidéo didactique',
+    shortTitle: 'Atelier 7 (Capsule Vidéo)',
+    requiredKeywords: ['video', 'capsule', 'montage', 'jeu', 'presentation'],
+    domainKeywords: [
+      'video', 'capsule', 'montage', 'son', 'micro', 'storyboard', 'plan', 'sequence',
+      'titrage', 'rythme', 'voix', 'explication', 'pitch', 'presentation', 'jeu',
+      'pedagogique', 'dynamique', 'eclairage', 'duree'
+    ],
+    expectedSummary: "Capsule vidéo scénarisée (2-3 min) valorisant le jeu de société didactique, ses règles et son intérêt pédagogique.",
+    questionsCles: [
+      "Dynamisme de la mise en scène et clarté des explications orales",
+      "Qualité technique du son, du cadrage et du montage",
+      "Valorisation des objectifs didactiques du jeu"
     ]
-  } else if (exId === 'exercice-06') {
-    suggestedScore = 8.5
-    concordance = 2.6
-    didacticQuality = 2.6
-    criticalAnalysis = 2.1
-    formAndStructure = 1.2
-    summary = "Démarche itérative rigoureuse, recueil d'erreurs constructif et ajustement de mini-jeu numérique (Playtest)."
-    strengths = [
-      "Protocole de playtest bien documenté avec recueil direct des feedbacks des pairs.",
-      "Identification lucide des points de blocage et mise en place d'une boucle d'amélioration itérative.",
-      "Valorisation didactique de l'erreur comme tremplin d'apprentissage."
+  },
+  'exercice-15': {
+    id: 'exercice-15',
+    title: 'Étape 7 (Ex 15) : Faire tester et améliorer (Playtest)',
+    shortTitle: 'Étape 7 (Playtest)',
+    requiredKeywords: ['playtest', 'test', 'joueur', 'questionnaire', 'retour'],
+    domainKeywords: [
+      'playtest', 'test', 'pairs', 'joueurs', 'questionnaire', 'donnees', 'retours',
+      'difficultes', 'bugs', 'equilibre', 'duree', 'comprehension', 'ajustements',
+      'analyse', 'amelioration', 'statistiques', 'regulations'
+    ],
+    expectedSummary: "Organisation de sessions de test en situation réelle, questionnaire d'observation des pairs et analyse des retours pour équilibrer le jeu.",
+    questionsCles: [
+      "Protocole de passation et recueil objectif des données de test",
+      "Identification lucide des faiblesses d'ergonomie ou d'équilibre",
+      "Modifications concrètes décidées suite aux retours de jeu"
     ]
-    improvements = [
-      "Préciser les métriques quantitatives (temps moyen par défi, taux de réussite au premier essai)."
+  },
+  'exercice-16': {
+    id: 'exercice-16',
+    title: 'Étape 8 (Ex 16) : Présentation finale et leçon FMTTN',
+    shortTitle: 'Étape 8 (Soutenance)',
+    requiredKeywords: ['presentation', 'oral', 'lecon', 'fmttn', 'classe'],
+    domainKeywords: [
+      'presentation', 'soutenance', 'oral', 'diaporama', 'pitch', 'lecon', 'fmttn',
+      'pedagogie', 'classe', 'deroulement', 'evaluation', 'questions', 'reponses',
+      'posture', 'collectif', 'materiel', 'preparation'
+    ],
+    expectedSummary: "Support de présentation orale pour la soutenance finale du projet et scénarisation d'une leçon FMTTN articulée au jeu.",
+    questionsCles: [
+      "Structure de la présentation (problématique, jeu, leçon FMTTN associée)",
+      "Cohérence didactique de l'intégration en classe du secondaire",
+      "Qualité des supports visuels d'accompagnement de la soutenance"
     ]
-    nextSteps = "Formaliser un tableau comparatif 'Version initiale vs Version améliorée' des interactions de jeu."
-    detailedFeedback = "Une excellente appropriation de la démarche itérative. Votre démarche de conception-test-rectification démontre une posture réflexive authentique propice aux apprentissages numériques."
-    criteriaTable = [
-      { name: "Scénarisation ludique & ergonomie (Critère A)", score: 4.4, maxScore: 5, justification: "Interface intuitive et consignes de jeu claires." },
-      { name: "Protocole de test & observation des pairs (Critères B & F)", score: 4.5, maxScore: 5, justification: "Recueil objectif des réactions et comportements des testeurs." },
-      { name: "Intégration du statut de l'erreur (Critères C & D)", score: 4.2, maxScore: 5, justification: "L'erreur est exploitée pour réguler les défis sans pénalisation punitive." },
-      { name: "Réflexivité & Itération didactique (Critères E & H)", score: 4.0, maxScore: 5, justification: "Modifications pertinentes apportées suite aux retours d'expérience." }
-    ]
-  } else if (exId === 'exercice-07') {
-    suggestedScore = 9.0
-    concordance = 2.7
-    didacticQuality = 2.7
-    criticalAnalysis = 2.2
-    formAndStructure = 1.4
-    summary = "Défi Hardware et Peer Learning remarquable : démythification concrète des composants PC et dynamique collaborative."
-    strengths = [
-      "Protocole de manipulation rigoureux assurant la sécurité électrique et matérielle.",
-      "Excellentes analogies pour expliquer le rôle de la RAM, du CPU et de la carte mère.",
-      "Fiche bilan élève synthétique et visuelle favorisant l'apprentissage entre pairs."
-    ]
-    improvements = [
-      "Prévoir une activité alternative sur simulateur virtuel pour les élèves en retrait ou absents."
-    ]
-    nextSteps = "Créer un schéma fonctionnel fléché résumant le cycle Traitement-Mémoire-Stockage pour la classe."
-    detailedFeedback = "Ce défi hardware permet aux élèves de dépasser l'aspect magique de la machine pour en comprendre le fonctionnement concret. L'approche tactile et l'apprentissage par les pairs sont remarquablement articulés."
-    criteriaTable = [
-      { name: "Exactitude de l'architecture matérielle (Critère A)", score: 4.7, maxScore: 5, justification: "Identification sans erreur des composants internes et de leurs bus de liaison." },
-      { name: "Dispositif d'apprentissage expérientiel & Peer Learning (Critères B & F)", score: 4.6, maxScore: 5, justification: "Manipulation active par les pairs valorisant le tâtonnement expérimental." },
-      { name: "Sécurité & Procédure technique (Critères C & D)", score: 4.4, maxScore: 5, justification: "Consignes de décharge électrostatique et de manipulation claires." },
-      { name: "Documentation & Réflexivité (Critères E & H)", score: 4.3, maxScore: 5, justification: "Fiche d'identification des composants claire et bien légendée." }
-    ]
-  } else if (exId === 'exercice-08') {
-    suggestedScore = 8.5
-    concordance = 2.6
-    didacticQuality = 2.6
-    criticalAnalysis = 2.1
-    formAndStructure = 1.2
-    summary = "Grille d'évaluation critériée robuste, indicateurs observables précis et respect de la triple concordance didactique."
-    strengths = [
-      "Indicateurs d'observation comportementaux dénués d'ambiguïté subjective.",
-      "Échelons de maîtrise progressifs facilitant l'auto-évaluation et la régulation par l'élève.",
-      "Alignement rigoureux avec les visées du référentiel FMTTN."
-    ]
-    improvements = [
-      "Veiller à équilibrer le barème entre critères de processus et critères de produit fini."
-    ]
-    nextSteps = "Rédiger une fiche d'accompagnement de la grille explicitant comment l'élève peut s'auto-évaluer."
-    detailedFeedback = "Très bon travail d'ingénierie d'évaluation. Votre grille critériée fournit un cadre transparent et formatif qui guide l'apprenant vers la réussite."
-    criteriaTable = [
-      { name: "Rigueur des critères & observables (Critère A)", score: 4.5, maxScore: 5, justification: "Critères univoques et observables sans ambiguïté interprétative." },
-      { name: "Gradation des niveaux de maîtrise (Critères B & F)", score: 4.4, maxScore: 5, justification: "Paliers de progression cohérents et encourageants pour l'élève." },
-      { name: "Triple concordance pédagogique (Critères C & D)", score: 4.3, maxScore: 5, justification: "Parfaite adéquation entre objectifs, activités et modalités d'évaluation." },
-      { name: "Ergonomie & Clarté communicative (Critères E & H)", score: 4.0, maxScore: 5, justification: "Tableau lisible, directement utilisable en situation d'évaluation." }
-    ]
-  } else if (exId === 'exercice-09') {
-    suggestedScore = 9.0
-    concordance = 2.8
-    didacticQuality = 2.7
-    criticalAnalysis = 2.2
-    formAndStructure = 1.3
-    summary = "Règles du jeu limpides, boucle de gameplay bien rythmée et alignement didactique solide avec le référentiel FMTTN."
-    strengths = [
-      "Boucle de jeu équilibrée alternant réflexion, défi et interaction ludique.",
-      "Explication pas-à-pas des phases de jeu avec exemples de tours illustrés.",
-      "Objectif didactique d'éducation aux médias parfaitement intégré à la mécanique de victoire."
-    ]
-    improvements = [
-      "Anticiper les cas de blocage ou d'égalité entre joueurs dans un encadré 'Cas particuliers'."
-    ]
-    nextSteps = "Réaliser un aide-mémoire compact (carte de référence rapide) résumant le tour de jeu en 3 pictogrammes."
-    detailedFeedback = "Un livret de règles remarquable. Les élèves comprendront le fonctionnement en moins de 3 minutes grâce à la clarté de vos formulations et au découpage méthodique des phases."
-    criteriaTable = [
-      { name: "Clarté & rigueur des règles (Critères A & H)", score: 4.7, maxScore: 5, justification: "Vocabulaire précis, aucune ambiguïté sur les conditions de victoire." },
-      { name: "Alignement didactique FMTTN / Médias (Critères B & F)", score: 4.6, maxScore: 5, justification: "Le jeu fait apprendre par l'action et non par simple récitation passive." },
-      { name: "Ergonomie ludique & Boucle de jeu (Critères C & D)", score: 4.4, maxScore: 5, justification: "Durée de partie réaliste et engagement cognitif continu des joueurs." },
-      { name: "Réflexivité & Anticipation des écueils (Critère E)", score: 4.3, maxScore: 5, justification: "Bonne prise en compte de la diversité des joueurs et des dynamiques de groupe." }
-    ]
-  } else if (exId === 'exercice-10') {
-    suggestedScore = 8.5
-    concordance = 2.6
-    didacticQuality = 2.6
-    criticalAnalysis = 2.1
-    formAndStructure = 1.2
-    summary = "Série photographique originale et maîtrisée mettant en valeur les techniques de composition visuelle."
-    strengths = [
-      "Exploitation intelligente des contrastes d'échelles, du cadre dans le cadre et des reflets.",
-      "Mise en scène soignée du matériel physique du jeu (pions, plateau, cartes).",
-      "Justification sémiologique convaincante pour chaque cliché retenu."
-    ]
-    improvements = [
-      "Veiller à la gestion de la lumière directe pour éviter les reflets parasites sur les surfaces brillantes."
-    ]
-    nextSteps = "Expérimenter la profondeur de champ réduite (effet bokeh) pour isoler les détails des pions."
-    detailedFeedback = "Très belle appropriation des principes photographiques vus au cours. Vos images racontent une histoire et confèrent immédiatement une dimension professionnelle à votre prototype de jeu."
-    criteriaTable = [
-      { name: "Maîtrise technique photographique (Critère A)", score: 4.4, maxScore: 5, justification: "Exposition équilibrée, netteté sur les points clés et cadrages soignés." },
-      { name: "Mobilisation des règles de composition (Critères B & G)", score: 4.5, maxScore: 5, justification: "Application démontrée de la règle des tiers, des lignes directrices et du surcadrage." },
-      { name: "Sens critique & Sémiologie de l'image (Critères C & D)", score: 4.1, maxScore: 5, justification: "Analyse réflexive de l'impact émotionnel et narratif des clichés." },
-      { name: "Communication & Intégration graphique (Critères E & H)", score: 4.0, maxScore: 5, justification: "Planches de présentation harmonieuses prêtes pour l'édition du jeu." }
-    ]
-  } else if (exId === 'exercice-11') {
-    suggestedScore = 9.0
-    concordance = 2.7
-    didacticQuality = 2.8
-    criticalAnalysis = 2.3
-    formAndStructure = 1.2
-    summary = "Création multimodale de cartes de jeu combinant prompts d'IA générative et harmonisation graphique Canva."
-    strengths = [
-      "Cohérence visuelle remarquable entre les différentes familles de cartes grâce à un style d'avatar unifié.",
-      "Méthode de génération par étapes (saucissonnage de prompts) rigoureusement appliquée.",
-      "Formulation stimulante des questions et défis pédagogiques."
-    ]
-    improvements = [
-      "Vérifier le contraste typographique entre les textes et les fonds texturés pour une lisibilité parfaite."
-    ]
-    nextSteps = "Intégrer des pictogrammes de difficulté (1 à 3 étoiles) pour adapter la complexité aux élèves."
-    detailedFeedback = "Excellente démonstration de l'IA comme copilote de création : vous avez su garder la maîtrise didactique des contenus tout en exploitant la puissance générative pour les illustrations."
-    criteriaTable = [
-      { name: "Maîtrise du prompting & posture critique IA (Critère 7 / A)", score: 4.7, maxScore: 5, justification: "Vérification systématique des hallucinations et raffinement itératif des prompts." },
-      { name: "Pertinence didactique des défis de cartes (Critères B & F)", score: 4.6, maxScore: 5, justification: "Contenus alignés sur les compétences numériques et l'éducation aux médias." },
-      { name: "Cohérence graphique & Identité visuelle (Critères C & G)", score: 4.4, maxScore: 5, justification: "Gabarit Canva harmonieux et charte graphique respectée sur l'ensemble du paquet." },
-      { name: "Réflexivité sur l'usage de l'IA (Critères E & H)", score: 4.3, maxScore: 5, justification: "Analyse honnête et lucide des atouts et limites des générateurs visuels." }
-    ]
-  } else if (exId === 'exercice-12') {
-    suggestedScore = 8.5
-    concordance = 2.6
-    didacticQuality = 2.5
-    criticalAnalysis = 2.1
-    formAndStructure = 1.3
-    summary = "Plateau de jeu vectorisé avec précision, gravure laser propre et ergonomie spatiale bien pensée."
-    strengths = [
-      "Fichier vectoriel (.svg) structuré avec distinction nette des calques de découpe (rouge) et de gravure (noir).",
-      "Disposition intuitive des cases et des zones de pioche favorisant la fluidité de jeu.",
-      "Finition matérielle soignée au FabLab (bois poncé, contrastes de brûlure bien réglés)."
-    ]
-    improvements = [
-      "Prévoir des repères d'emboîtement si le plateau doit être pliable pour entrer dans une boîte compacte."
-    ]
-    nextSteps = "Ajouter des logements gravés légèrement en creux pour stabiliser les cartes et les pions."
-    detailedFeedback = "Un travail de prototypage FabLab très professionnel. Votre plateau est à la fois robuste, fonctionnel et esthétiquement valorisant pour les élèves."
-    criteriaTable = [
-      { name: "Maîtrise de la CAO vectorielle (Critère A)", score: 4.4, maxScore: 5, justification: "Tracés vectoriels fermés, épaisseurs de traits conformes aux exigences machine." },
-      { name: "Ergonomie spatiale & Ludopédagogie (Critères B & F)", score: 4.3, maxScore: 5, justification: "Cheminement de jeu clair et dimensions adaptées à une table de classe." },
-      { name: "Fabrication numérique FabLab (Critères C & G)", score: 4.3, maxScore: 5, justification: "Paramètres de vitesse et puissance laser parfaitement calibrés." },
-      { name: "Réflexivité sur le prototypage matériel (Critères E & H)", score: 4.0, maxScore: 5, justification: "Bonne documentation des itérations et ajustements d'échelle." }
-    ]
-  } else if (exId === 'exercice-13') {
-    suggestedScore = 8.5
-    concordance = 2.6
-    didacticQuality = 2.5
-    criticalAnalysis = 2.1
-    formAndStructure = 1.3
-    summary = "Modélisation 3D originale de pions distinctifs et impression additive sans défaut d'adhérence."
-    strengths = [
-      "Formes volumétriques stables avec base élargie évitant les renversements pendant la partie.",
-      "Symbolique évidente reliant la forme de chaque pion au rôle joué dans l'éducation aux médias.",
-      "Génération soignée du G-code dans le trancheur (remplissage et supports optimisés)."
-    ]
-    improvements = [
-      "Penser à différencier les pions par des couleurs de filament distinctes pour faciliter l'identification."
-    ]
-    nextSteps = "Ajouter un léger chanfrein sur la base pour faciliter le décollement du plateau d'impression."
-    detailedFeedback = "Bravo pour cette modélisation 3D. Les pions ont une excellente prise en main et témoignent d'une bonne compréhension des contraintes de l'impression 3D FDM."
-    criteriaTable = [
-      { name: "Maîtrise de la modélisation 3D (Critère A)", score: 4.3, maxScore: 5, justification: "Solides étanches (manifold), géométries adaptées à l'impression additive." },
-      { name: "Symbolique didactique des pions (Critères B & F)", score: 4.4, maxScore: 5, justification: "Personnification pertinente des concepts abordés par le jeu." },
-      { name: "Finition & Résolution d'impression (Critères C & G)", score: 4.2, maxScore: 5, justification: "Hauteur de couche appropriée, absence de warping ou de fils résiduels." },
-      { name: "Réflexivité sur l'objet physique (Critères E & H)", score: 4.1, maxScore: 5, justification: "Analyse critique du ratio temps d'impression / robustesse mécanique." }
-    ]
-  } else if (exId === 'exercice-14' || exId === 'exercice-video') {
-    suggestedScore = 9.0
-    concordance = 2.7
-    didacticQuality = 2.8
-    criticalAnalysis = 2.2
-    formAndStructure = 1.3
-    summary = "Capsule vidéo dynamique, pitch didactique percutant et démonstration vivante des mécaniques de jeu."
-    strengths = [
-      "Élocution fluide, montage rythmé et excellente alternance entre plans larges et plans rapprochés.",
-      "Explication limpide des règles et de l'alignement avec les compétences du référentiel FMTTN.",
-      "Qualité audio irréprochable grâce à une voix-off posée en post-synchronisation."
-    ]
-    improvements = [
-      "Intégrer des sous-titres incrustés pour l'accessibilité universelle aux élèves malentendants."
-    ]
-    nextSteps = "Ajouter un court carton final récapitulant les informations pratiques (âge, durée, matériel)."
-    detailedFeedback = "La vidéo donne immédiatement envie de tester le jeu. Vous avez su respecter la grammaire cinématographique (règles des 180° et des 30°) tout en conservant une tonalité pédagogique enthousiaste."
-    criteriaTable = [
-      { name: "Grammaire audiovisuelle & Tournage (Critère A)", score: 4.6, maxScore: 5, justification: "Respect des valeurs de plan, des angles et continuité visuelle sans faux raccords." },
-      { name: "Efficacité didactique de la démonstration (Critères B & F)", score: 4.7, maxScore: 5, justification: "Les règles et enjeux d'apprentissage sont compris en moins de 2 minutes." },
-      { name: "Montage & Bande sonore (Critères C & G)", score: 4.4, maxScore: 5, justification: "Rythme soutenu, mixage équilibré entre voix-off et musique de fond." },
-      { name: "Posture réflexive & Dynamisme (Critères E & H)", score: 4.3, maxScore: 5, justification: "Présentation engageante et valorisante pour le travail de l'équipe." }
-    ]
-  } else if (exId === 'exercice-15') {
-    suggestedScore = 8.5
-    concordance = 2.6
-    didacticQuality = 2.6
-    criticalAnalysis = 2.2
-    formAndStructure = 1.1
-    summary = "Playtest méthodique mené auprès de pairs avec recueil objectif de données et ajustements concrets."
-    strengths = [
-      "Grille d'observation critériée bien construite (compréhension des règles, temps de jeu, plaisir ludique).",
-      "Identification lucide des points de blocage initiaux et mise en place de solutions correctives.",
-      "Démarche itérative authentique illustrant le statut positif de l'erreur dans la conception."
-    ]
-    improvements = [
-      "Quantifier plus précisément le temps moyen passé par tour de joueur pour affiner le tempo."
-    ]
-    nextSteps = "Formaliser un carnet d'itération 'Avant / Après' pour illustrer l'évolution du prototype lors de la soutenance."
-    detailedFeedback = "C'est l'essence même du game design pédagogique ! Vous avez su écouter les critiques des testeurs avec bienveillance et objectivité pour rendre votre jeu infiniment plus fluide."
-    criteriaTable = [
-      { name: "Méthodologie du playtest (Critère A)", score: 4.3, maxScore: 5, justification: "Protocole de test rigoureux avec observateur neutre et grille d'évaluation." },
-      { name: "Analyse des retours joueurs (Critères B & D)", score: 4.4, maxScore: 5, justification: "Dépouillement objectif des incompréhensions sans justification défensive." },
-      { name: "Ajustements & Améliorations itératives (Critères C & F)", score: 4.4, maxScore: 5, justification: "Modifications pertinentes des règles et des cartes pour équilibrer la partie." },
-      { name: "Réflexivité didactique approfondie (Critère E)", score: 4.4, maxScore: 5, justification: "Haute maturité réflexive sur les écarts entre intention et réception." }
-    ]
-  } else if (exId === 'exercice-16') {
-    suggestedScore = 9.0
-    concordance = 2.8
-    didacticQuality = 2.8
-    criticalAnalysis = 2.2
-    formAndStructure = 1.2
-    summary = "Défense didactique captivante et fiche de préparation de leçon FMTTN rigoureusement articulée."
-    strengths = [
-      "Présentation orale dynamique et interactive faisant participer activement la classe.",
-      "Fiche de préparation conforme aux standards HECh (triple concordance, Bloom, timing minuté).",
-      "Justification convaincante de la place du jeu dans la séquence d'apprentissage globale."
-    ]
-    improvements = [
-      "Expliciter davantage les critères d'évaluation sommative que vous utiliseriez avec vos futurs élèves."
-    ]
-    nextSteps = "Prévoir une variante d'évaluation formative sous forme de ticket de sortie (exit ticket) pour la leçon."
-    detailedFeedback = "Une prestation finale de très haute volée. Vous démontrez une réelle posture d'ingénieur pédagogique capable de concevoir, fabriquer, animer et défendre un dispositif d'apprentissage innovant."
-    criteriaTable = [
-      { name: "Maîtrise didactique & Fiche de leçon FMTTN (Critères A & F)", score: 4.7, maxScore: 5, justification: "Triple concordance irréprochable et intégration harmonieuse du jeu dans la leçon." },
-      { name: "Dynamisme de l'animation orale (Critères B & H)", score: 4.6, maxScore: 5, justification: "Prise de parole partagée, élocution vivante et mise en situation immersive." },
-      { name: "Rigueur des réponses aux questions (Critères C & D)", score: 4.4, maxScore: 5, justification: "Argumentation solide face aux interrogations conceptuelles de l'auditoire." },
-      { name: "Réflexivité & Posture professionnelle d'enseignant (Critère E)", score: 4.3, maxScore: 5, justification: "Prise de recul sur la trajectoire d'apprentissage et projection réaliste en classe." }
-    ]
-  } else {
-    suggestedScore = 8.5
-    concordance = 2.5
-    didacticQuality = 2.5
-    criticalAnalysis = 2.0
-    formAndStructure = 1.5
-    summary = "Travail sérieux respectant les consignes et critères didactiques de l'activité."
-    strengths = [
-      "Bonne mobilisation des concepts clés du cours de Didactique du numérique.",
-      "Document bien structuré et transmis dans les formats attendus."
-    ]
-    improvements = [
-      "Approfondir la justification didactique des arbitrages opérés."
-    ]
-    nextSteps = "Faire le lien explicite avec les référentiels officiels de la FWB."
-    detailedFeedback = "Le devoir remis atteste d'un investissement appréciable et d'une démarche d'apprentissage constructive."
-    criteriaTable = [
-      { name: "Exactitude des connaissances (Critère A)", score: 4.2, maxScore: 5, justification: "Maîtrise satisfaisante des notions du cours." },
-      { name: "Pertinence pédagogique (Critères B & F)", score: 4.2, maxScore: 5, justification: "Cohérence avec les besoins des apprenants." },
-      { name: "Analyse & Argumentation (Critères C & D)", score: 4.1, maxScore: 5, justification: "Développement logique et justifié." },
-      { name: "Réflexivité & Forme (Critères E & H)", score: 4.0, maxScore: 5, justification: "Expression soignée et démarche réflexive engagée." }
+  },
+  'projet-jeu': {
+    id: 'projet-jeu',
+    title: 'Projet Jeu de Société Didactique (Dossier complet)',
+    shortTitle: 'Projet Jeu (Note 100 pts)',
+    requiredKeywords: ['jeu', 'projet', 'dossier', 'pedagogique', 'regles'],
+    domainKeywords: [
+      'jeu', 'projet', 'dossier', 'pedagogique', 'regles', 'mecanique', 'csem', 'fmttn',
+      'supports', 'cartes', 'plateau', 'video', 'playtest', 'fabrication', 'competences',
+      'cycle', 'didactique', 'evaluation'
+    ],
+    expectedSummary: "Dossier didactique complet intégrant règles, matériel, fiche pédagogique FMTTN, capsule vidéo et bilan de playtest.",
+    questionsCles: [
+      "Intégration harmonieuse de l'ensemble des composantes du projet",
+      "Excellence de la transposition didactique et pertinence pour le public scolaire",
+      "Rigueur de la conception matérielle et du dossier d'accompagnement"
     ]
   }
+}
+
+export function normalizeTextForAi(str: string): string {
+  return (str || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+export function evaluateDocumentRelevance(text: string, exerciseId: string): {
+  isOffTopic: boolean
+  isTooShort: boolean
+  concordanceScore: number
+  totalWords: number
+  matchedRequired: number
+  matchedDomain: number
+  profile: ExerciseDidacticProfile
+  reason: string
+} {
+  const profile = EXERCISE_DIDACTIC_PROFILES[exerciseId] || {
+    id: exerciseId,
+    title: `Atelier (${exerciseId})`,
+    shortTitle: exerciseId,
+    requiredKeywords: ['didactique', 'numerique', 'eleve', 'apprentissage'],
+    domainKeywords: ['didactique', 'numerique', 'eleve', 'pedagogique', 'apprentissage', 'classe', 'competence', 'activite'],
+    expectedSummary: "Production pédagogique en didactique du numérique.",
+    questionsCles: ["Respect des attendus didactiques de l'atelier"]
+  }
+
+  const norm = normalizeTextForAi(text)
+  const words = norm.split(' ').filter(w => w.length > 2)
+  const totalWords = words.length
+
+  if (totalWords < 20) {
+    return {
+      isOffTopic: true,
+      isTooShort: true,
+      concordanceScore: 0,
+      totalWords,
+      matchedRequired: 0,
+      matchedDomain: 0,
+      profile,
+      reason: `Document presque vide ou dépourvu de texte intelligible (${totalWords} mots trouvés, minimum 50 attendus).`
+    }
+  }
+
+  let matchedRequired = 0
+  for (const kw of profile.requiredKeywords) {
+    if (norm.includes(normalizeTextForAi(kw))) matchedRequired++
+  }
+
+  let matchedDomain = 0
+  for (const kw of profile.domainKeywords) {
+    if (norm.includes(normalizeTextForAi(kw))) matchedDomain++
+  }
+
+  const reqRatio = matchedRequired / Math.max(1, profile.requiredKeywords.length)
+  const domRatio = matchedDomain / Math.max(1, profile.domainKeywords.length)
+  const concordanceScore = Math.round((reqRatio * 0.65 + domRatio * 0.35) * 100)
+
+  // Détection stricte du hors-sujet
+  const isOffTopic = concordanceScore < 15 || (matchedRequired === 0 && matchedDomain <= 1)
+  const isTooShort = totalWords < 50
+
+  return {
+    isOffTopic,
+    isTooShort,
+    concordanceScore,
+    totalWords,
+    matchedRequired,
+    matchedDomain,
+    profile,
+    reason: isOffTopic 
+      ? `Le document ne traite pas du sujet demandé (${matchedRequired}/${profile.requiredKeywords.length} concepts requis détectés).`
+      : "Sujet conforme."
+  }
+}
+
+export async function extractTextFromSubmittedFile(file: SubmittedFile, userSubmission?: any): Promise<string> {
+  let extracted = ''
+
+  // 1. Récupération des notes textuelles rédigées en ligne
+  if (userSubmission?.answer && typeof userSubmission.answer === 'string') {
+    extracted += userSubmission.answer.trim() + '\n'
+  }
+  if ((userSubmission as any)?.content && typeof (userSubmission as any).content === 'string') {
+    extracted += (userSubmission as any).content.trim() + '\n'
+  }
+
+  // 2. Extraction du fichier déposé via son dataUrl
+  if (file.dataUrl && typeof file.dataUrl === 'string') {
+    const isDocx = (file.fileType || '').includes('word') || 
+                   (file.originalFileName || '').toLowerCase().endsWith('.docx') || 
+                   file.dataUrl.includes('officedocument.wordprocessingml')
+
+    if (isDocx) {
+      try {
+        const base64Data = file.dataUrl.includes(',') ? file.dataUrl.split(',')[1] : file.dataUrl
+        const binaryStr = typeof atob !== 'undefined' ? atob(base64Data) : Buffer.from(base64Data, 'base64').toString('binary')
+        const bytes = new Uint8Array(binaryStr.length)
+        for (let i = 0; i < binaryStr.length; i++) {
+          bytes[i] = binaryStr.charCodeAt(i)
+        }
+
+        let mammoth: any = null
+        if (typeof window !== 'undefined') {
+          const mammothModule = await import('mammoth/mammoth.browser.js')
+          mammoth = mammothModule.default || mammothModule
+        } else {
+          mammoth = await import('mammoth')
+        }
+
+        if (mammoth?.extractRawText) {
+          const res = await mammoth.extractRawText({ arrayBuffer: bytes.buffer })
+          if (res?.value) {
+            extracted += '\n' + res.value
+          }
+        }
+      } catch (err) {
+        console.warn('[AI Evaluation] Erreur extraction Word docx:', err)
+      }
+    } else {
+      try {
+        const base64Data = file.dataUrl.includes(',') ? file.dataUrl.split(',')[1] : file.dataUrl
+        const binaryStr = typeof atob !== 'undefined' ? atob(base64Data) : Buffer.from(base64Data, 'base64').toString('binary')
+
+        if ((file.fileType || '').includes('pdf') || (file.originalFileName || '').toLowerCase().endsWith('.pdf')) {
+          // Extraction des chaînes textuelles exploitables d'un PDF
+          const words = binaryStr.match(/[A-Za-zÀ-ÿ0-9\-\']{3,}/g) || []
+          const pdfNoise = new Set(['obj', 'endobj', 'stream', 'endstream', 'xref', 'trailer', 'startxref', 'flatedecode', 'font', 'type', 'subtype', 'catalog', 'pages', 'parent', 'kids', 'count', 'mediabox', 'contents', 'resources'])
+          const cleanWords = words.filter(w => !pdfNoise.has(w.toLowerCase()))
+          if (cleanWords.length > 10) {
+            extracted += '\n' + cleanWords.join(' ')
+          }
+        } else {
+          // Fichiers texte brut, markdown, html, json, csv
+          const bytes = new Uint8Array(binaryStr.length)
+          for (let i = 0; i < binaryStr.length; i++) bytes[i] = binaryStr.charCodeAt(i)
+          if (typeof TextDecoder !== 'undefined') {
+            const decoder = new TextDecoder('utf-8', { fatal: false })
+            extracted += '\n' + decoder.decode(bytes)
+          }
+        }
+      } catch (err) {
+        console.warn('[AI Evaluation] Erreur décodage texte:', err)
+      }
+    }
+  }
+
+  return extracted.trim()
+}
+
+// Moteur expert d'évaluation pédagogique de repli local (Niveau 1 / Didactique HECh)
+function generateDidacticAiCorrection(file: SubmittedFile, textContent: string = '', preRelevance?: any): AiCorrection {
+  const rel = preRelevance || evaluateDocumentRelevance(textContent, file.exerciseId)
+  const p = rel.profile
+
+  // CAS 1 : HORS-SUJET STRICT OU DOCUMENT SANS RAPPORT (sanction immédiate < 1.5/10)
+  if (rel.isOffTopic) {
+    return {
+      status: 'analyzed',
+      suggestedScore: 0.5,
+      maxScore: 10,
+      rubricScores: {
+        concordance: 0.0,
+        didacticQuality: 0.0,
+        criticalAnalysis: 0.0,
+        formAndStructure: 0.5
+      },
+      summary: `⚠️ Travail non conforme (Hors-sujet) : Le document remis ne correspond absolument pas aux consignes de "${p.title}". Aucun des concepts didactiques attendus n'a été détecté.`,
+      strengths: [
+        "Le document a été téléversé avec succès, mais son contenu ne correspond pas aux attendus de l'atelier."
+      ],
+      improvements: [
+        `Prendre impérativement connaissance du document officiel de cadrage sur la plateforme.`,
+        `Traiter les consignes requises pour cet atelier : ${p.expectedSummary}`,
+        `Déposer un nouveau document conforme pour obtenir une évaluation didactique valide.`
+      ],
+      nextSteps: `Consulter la fiche descriptive de l'atelier dans le menu latéral et télécharger le modèle officiel Google Docs / Word.`,
+      detailedFeedback: `Le document déposé ("${file.originalFileName}") ne traite pas du tout des apprentissages attendus pour l'atelier "${p.title}". Conformément aux critères institutionnels de correction (docs/guide/criteres-correction-ia.md), un travail hors-sujet ne peut faire l'objet d'une validation des compétences didactiques. Veuillez retravailler cette activité en vous conformant aux consignes officielles.`,
+      criteriaTable: [
+        { name: "Concordance aux consignes & Pertinence du sujet (Critère A)", score: 0.0, maxScore: 2.5, justification: "Hors-sujet : le document déposé ne répond pas aux consignes officielles de cet atelier." },
+        { name: "Exactitude conceptuelle & Maîtrise didactique (Critère B)", score: 0.0, maxScore: 2.5, justification: "Aucun concept didactique ou notion du cours n'est mobilisé." },
+        { name: "Analyse critique & Transfert pédagogique (Critères C & D)", score: 0.0, maxScore: 2.5, justification: "Aucune analyse didactique ni démarche réflexive liée au public scolaire." },
+        { name: "Qualité de la communication & Réflexivité (Critères E & H)", score: 0.5, maxScore: 2.5, justification: "Mise en page générale lisible mais vide de contenu en lien avec la didactique." }
+      ],
+      correctedAt: new Date().toISOString().replace('T', ' ').substring(0, 16),
+      modelUsed: 'Évaluateur Didactique FMTTN (Anti-Hors-Sujet)'
+    }
+  }
+
+  // CAS 2 : TROP COURT OU TRÈS INCOMPLET (moins de 50 mots ou concordance faible < 35%)
+  if (rel.isTooShort || rel.concordanceScore < 35) {
+    return {
+      status: 'analyzed',
+      suggestedScore: 3.5,
+      maxScore: 10,
+      rubricScores: {
+        concordance: 1.0,
+        didacticQuality: 1.0,
+        criticalAnalysis: 0.8,
+        formAndStructure: 0.7
+      },
+      summary: `⚠️ Travail incomplet ou superficiel : Seule une partie restreinte des attendus est abordée (${rel.matchedRequired}/${p.requiredKeywords.length} concepts clés identifiés).`,
+      strengths: [
+        `Amorce d'identification du thème de l'atelier.`
+      ],
+      improvements: [
+        `Développer plus amplement l'argumentation : le texte actuel est trop sommaire (${rel.totalWords} mots exploitables).`,
+        `Mobiliser de manière explicite les notions clés : ${p.requiredKeywords.join(', ')}.`
+      ],
+      nextSteps: `Compléter le travail en approfondissant les réponses aux questions clés de l'atelier.`,
+      detailedFeedback: `Le travail remis aborde le sujet mais reste superficiel et fragmentaire. Pour satisfaire aux exigences didactiques de Master 1, il est nécessaire d'étoffer votre analyse et d'illustrer vos propos avec des situations d'apprentissage concrètes.`,
+      criteriaTable: [
+        { name: "Concordance aux consignes & Pertinence du sujet (Critère A)", score: 1.0, maxScore: 2.5, justification: "Sujet abordé mais plusieurs questions obligatoires ne sont pas traitées." },
+        { name: "Exactitude conceptuelle & Maîtrise didactique (Critère B)", score: 1.0, maxScore: 2.5, justification: "Quelques termes présents sans réelle appropriation conceptuelle." },
+        { name: "Analyse critique & Transfert pédagogique (Critères C & D)", score: 0.8, maxScore: 2.5, justification: "Argumentation trop courte pour évaluer la capacité de transfert." },
+        { name: "Qualité de la communication & Réflexivité (Critères E & H)", score: 0.7, maxScore: 2.5, justification: "Rédaction trop brève ou présentation télégraphique." }
+      ],
+      correctedAt: new Date().toISOString().replace('T', ' ').substring(0, 16),
+      modelUsed: 'Évaluateur Didactique FMTTN'
+    }
+  }
+
+  // CAS 3 : TRAVAIL CONFORME, MOYEN À EXCELLENT
+  const isExcellent = rel.concordanceScore >= 70 && rel.totalWords >= 150
+  const isGood = rel.concordanceScore >= 50
+  const finalScore = isExcellent 
+    ? Math.min(9.5, Math.max(8.0, Math.round((8.0 + (rel.totalWords > 250 ? 1.0 : 0.5)) * 2) / 2))
+    : (isGood ? 6.5 : 5.0)
+
+  const c1 = Math.round((finalScore * 0.28) * 10) / 10
+  const c2 = Math.round((finalScore * 0.28) * 10) / 10
+  const c3 = Math.round((finalScore * 0.24) * 10) / 10
+  const c4 = Math.round((finalScore * 0.20) * 10) / 10
 
   return {
     status: 'analyzed',
-    suggestedScore,
+    suggestedScore: finalScore,
     maxScore: 10,
     rubricScores: {
-      concordance,
-      didacticQuality,
-      criticalAnalysis,
-      formAndStructure
+      concordance: c1,
+      didacticQuality: c2,
+      criticalAnalysis: c3,
+      formAndStructure: c4
     },
-    criteriaTable,
-    summary,
-    strengths,
-    improvements,
-    nextSteps,
-    detailedFeedback,
+    summary: isExcellent
+      ? `Travail complet et rigoureux : excellente appropriation des attendus didactiques de "${p.title}" (${rel.matchedRequired}/${p.requiredKeywords.length} concepts clés maîtrisés).`
+      : `Travail satisfaisant : les notions de base de "${p.title}" sont identifiées et traitées de manière constructive.`,
+    strengths: [
+      `Bonne intégration des notions clés : ${p.requiredKeywords.slice(0, 3).join(', ')}.`,
+      `Prise en compte pertinente des enjeux pour les élèves du secondaire.`,
+      `Structure de document soignée et argumentation lisible.`
+    ],
+    improvements: isExcellent ? [
+      `Poursuivre la formalisation en explicitant davantage les modalités d'évaluation formative continue en classe.`
+    ] : [
+      `Préciser les liens avec les compétences du tronc commun FMTTN.`,
+      `Approfondir la justification didactique des choix méthodologiques retenus.`
+    ],
+    nextSteps: `Poursuivre sur cette lancée pour les ateliers suivants du quadrimestre.`,
+    detailedFeedback: isExcellent
+      ? `L'analyse produite pour cet atelier témoigne d'un réel recul critique et d'une posture professionnelle rigoureuse. Vous mobilisez avec justesse les concepts du cours et vos propositions sont directement transposables en situation de classe.`
+      : `Le travail déposé répond aux consignes et démontre une démarche d'apprentissage constructive. Veillez à approfondir encore vos justifications didactiques et vos propositions d'activités pour les élèves.`,
+    criteriaTable: [
+      { name: "Concordance aux consignes & Pertinence du sujet (Critère A)", score: c1, maxScore: 2.5, justification: isExcellent ? "Traitement exhaustif et pertinent des questions de l'atelier." : "Les consignes principales sont respectées." },
+      { name: "Exactitude conceptuelle & Maîtrise didactique (Critère B)", score: c2, maxScore: 2.5, justification: isExcellent ? "Maîtrise rigoureuse des concepts du référentiel sans contresens." : "Concepts du cours mobilisés de manière adéquate." },
+      { name: "Analyse critique & Transfert pédagogique (Critères C & D)", score: c3, maxScore: 2.5, justification: isExcellent ? "Argumentation étayée et propositions pédagogiques concrètes." : "Bonne amorce d'analyse didactique." },
+      { name: "Qualité de la communication & Réflexivité (Critères E & H)", score: c4, maxScore: 2.5, justification: isExcellent ? "Expression soignée, vocabulaire précis et recul réflexif affirmé." : "Document clair et bien ordonné." }
+    ],
     correctedAt: new Date().toISOString().replace('T', ' ').substring(0, 16),
-    modelUsed: 'Assistant IA Pédagogique FMTTN (Prompt Expert)'
+    modelUsed: 'Évaluateur Didactique FMTTN (Prompt Expert)'
   }
 }
 
@@ -2512,46 +2690,70 @@ export const userStore = {
     const file = state.submittedFiles.find(f => f.id === fileId)
     if (!file) return { success: false, message: "Document non trouvé." }
 
-    // Récupérer une éventuelle réponse rédigée en ligne
+    // 1. Récupération des notes et extraction complète du document déposé
     const userSubmission = state.submissions.find(
       s => s.userEmail.toLowerCase() === file.userEmail.toLowerCase() && s.exerciseId === file.exerciseId
     )
-    const textContent = userSubmission?.answer || ''
+    const textContent = await extractTextFromSubmittedFile(file, userSubmission)
+
+    // 2. Évaluation préalable de la concordance thématique et pertinence didactique
+    const relevance = evaluateDocumentRelevance(textContent, file.exerciseId)
 
     let aiResult: AiCorrection | null = null
 
-    // Tentative Local First : Ollama local (localhost:11434)
+    // 3. Appel Local First à Ollama (Qwen Coder 2.5 7B) si disponible
     try {
-      const prompt = `Tu es un formateur expert en didactique de l'informatique et des compétences numériques à la Haute École Charlemagne (HECh).
-Évalue le document de devoir remis par l'étudiant ${file.userName} (${file.userEmail}) pour l'activité suivante :
-Titre de l'exercice : "${file.exerciseTitle}" (Identifiant: ${file.exerciseId})
-Nom du fichier : "${file.originalFileName}"
-Notes textuelles associées de l'étudiant : "${textContent}".
+      const p = relevance.profile
+      const prompt = `Tu es un évaluateur pédagogique expert en didactique, en numérique éducatif et en FMTTN à la Haute École Charlemagne (HECh).
+Tu corriges les devoirs des étudiants de manière rigoureuse, objective et transparente conformément à la grille institutionnelle officielle (docs/guide/criteres-correction-ia.md).
 
-Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, avec la structure exacte suivante :
+EXIGENCES CAPITALES DE SÉVÉRITÉ & VÉRIFICATION DU SUJET :
+1. Ne récompense JAMAIS une réponse simplement parce qu’elle est longue, bien rédigée ou polie si elle ne répond pas aux objectifs de l'exercice.
+2. Si le document remis est HORS-SUJET (ne traite pas du sujet demandé, s'il s'agit d'un autre thème ou d'un devoir d'une autre matière), tu DOIS IMPÉRATIVEMENT attribuer une note entre 0 et 1.5 sur 10 (ex: 0.5/10 ou 1/10) et indiquer clairement "HORS-SUJET" dans la synthèse.
+3. Chaque point accordé doit être justifiable par rapport aux concepts effectivement présents et démontrés.
+
+CONSIGNES DE L'ACTIVITÉ :
+Titre de l'atelier : "${file.exerciseTitle}" (Identifiant: ${file.exerciseId})
+Objectif officiel : ${p.expectedSummary}
+Concepts et mots-clés didactiques attendus : ${p.requiredKeywords.join(', ')}
+
+DOCUMENT DÉPOSÉ PAR L'ÉTUDIANT (${file.userName}) :
+Nom du fichier : "${file.originalFileName}"
+Extrait textuel du contenu déposé :
+"""
+${textContent.substring(0, 3500) || "[Aucun contenu textuel extractible du fichier]"}
+"""
+
+Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues avec la structure exacte suivante :
 {
   "suggestedScore": 8.5,
   "maxScore": 10,
   "rubricScores": {
-    "concordance": 2.6,
-    "didacticQuality": 2.6,
-    "criticalAnalysis": 2.0,
-    "formAndStructure": 1.3
+    "concordance": 2.2,
+    "didacticQuality": 2.2,
+    "criticalAnalysis": 2.1,
+    "formAndStructure": 2.0
   },
-  "summary": "Synthèse globale en une phrase claire",
+  "summary": "Synthèse globale en 1 ou 2 phrases claires",
   "strengths": ["Point fort didactique 1", "Point fort 2"],
-  "improvements": ["Point à améliorer 1"],
-  "detailedFeedback": "Commentaire formatif détaillé constructif (style sandwich didactique)"
+  "improvements": ["Point à améliorer prioritaire 1", "Point 2"],
+  "detailedFeedback": "Commentaire formatif détaillé et constructif",
+  "criteriaTable": [
+    { "name": "Concordance aux consignes & Pertinence du sujet (Critère A)", "score": 2.2, "maxScore": 2.5, "justification": "Justification précise" },
+    { "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)", "score": 2.2, "maxScore": 2.5, "justification": "Justification précise" },
+    { "name": "Analyse critique & Transfert pédagogique (Critères C & D)", "score": 2.1, "maxScore": 2.5, "justification": "Justification précise" },
+    { "name": "Qualité de la communication & Réflexivité (Critères E & H)", "score": 2.0, "maxScore": 2.5, "justification": "Justification précise" }
+  ]
 }`
 
       const controller = new AbortController()
-      const timeoutId = setTimeout(() => controller.abort(), 2000)
+      const timeoutId = setTimeout(() => controller.abort(), 45000)
 
       const response = await fetch('http://localhost:11434/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          model: 'qwen2.5-coder',
+          model: 'qwen2.5-coder:7b',
           prompt,
           stream: false,
           format: 'json'
@@ -2563,31 +2765,50 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
       if (response.ok) {
         const data = await response.json()
         const parsed = JSON.parse(data.response)
+        
+        let finalScore = Math.max(0, Math.min(10, Number(parsed.suggestedScore) || 0))
+        // Barrière de sécurité anti-hallucination : Si le document est détecté hors-sujet par analyse lexicale, interdire toute note > 1.5
+        if (relevance.isOffTopic && finalScore > 1.5) {
+          finalScore = 0.5
+        }
+
         aiResult = {
           status: 'analyzed',
-          suggestedScore: Math.max(0, Math.min(10, Number(parsed.suggestedScore) || 8.5)),
+          suggestedScore: finalScore,
           maxScore: 10,
-          rubricScores: parsed.rubricScores || { concordance: 2.6, didacticQuality: 2.6, criticalAnalysis: 2.0, formAndStructure: 1.3 },
-          summary: parsed.summary || "Devoir didactique analysé avec succès.",
-          strengths: Array.isArray(parsed.strengths) ? parsed.strengths : ["Bonne intégration des concepts"],
-          improvements: Array.isArray(parsed.improvements) ? parsed.improvements : ["Préciser la différenciation"],
-          detailedFeedback: parsed.detailedFeedback || "Le document atteste d'une bonne appropriation des attendus du cours.",
+          rubricScores: parsed.rubricScores || {
+            concordance: Math.round((finalScore * 0.28) * 10) / 10,
+            didacticQuality: Math.round((finalScore * 0.28) * 10) / 10,
+            criticalAnalysis: Math.round((finalScore * 0.24) * 10) / 10,
+            formAndStructure: Math.round((finalScore * 0.20) * 10) / 10
+          },
+          summary: parsed.summary || "Devoir analysé selon la grille didactique.",
+          strengths: Array.isArray(parsed.strengths) && parsed.strengths.length ? parsed.strengths : ["Structure générale lisible"],
+          improvements: Array.isArray(parsed.improvements) && parsed.improvements.length ? parsed.improvements : ["Approfondir les justifications didactiques"],
+          detailedFeedback: parsed.detailedFeedback || "Le document a été évalué conformément aux critères institutionnels du cours.",
+          criteriaTable: Array.isArray(parsed.criteriaTable) && parsed.criteriaTable.length ? parsed.criteriaTable : [
+            { name: "Concordance aux consignes & Pertinence du sujet (Critère A)", score: Math.round((finalScore * 0.28) * 10) / 10, maxScore: 2.5, justification: "Respect du cadre de l'activité." },
+            { name: "Exactitude conceptuelle & Maîtrise didactique (Critère B)", score: Math.round((finalScore * 0.28) * 10) / 10, maxScore: 2.5, justification: "Mobilisation des notions du syllabus." },
+            { name: "Analyse critique & Transfert pédagogique (Critères C & D)", score: Math.round((finalScore * 0.24) * 10) / 10, maxScore: 2.5, justification: "Qualité de l'argumentation." },
+            { name: "Qualité de la communication & Réflexivité (Critères E & H)", score: Math.round((finalScore * 0.20) * 10) / 10, maxScore: 2.5, justification: "Structure et clarté formelle." }
+          ],
           correctedAt: new Date().toISOString().replace('T', ' ').substring(0, 16),
           modelUsed: 'Qwen Coder 2.5 (Local Ollama)'
         }
       }
     } catch (err) {
-      // Ollama local hors ligne ou indisponible : repli transparent vers le moteur didactique calibré
+      // Ollama indisponible ou délai dépassé : passage au moteur didactique calibré
     }
 
+    // 4. Repli si Ollama non joignable : Moteur Didactique Calibré (avec détection stricte du hors-sujet)
     if (!aiResult) {
-      aiResult = generateDidacticAiCorrection(file, textContent)
+      aiResult = generateDidacticAiCorrection(file, textContent, relevance)
     }
 
     file.aiCorrection = aiResult
 
-    // Si l'enseignant n'avait pas encore noté, initialiser le champ avec la note suggérée
-    if (!file.teacherGrade) {
+    // Initialisation ou synchronisation de la note enseignant si non fixée
+    if (!file.teacherGrade || file.teacherGrade.status === 'pending') {
       file.teacherGrade = {
         score: aiResult.suggestedScore,
         maxScore: 10,
@@ -2601,7 +2822,7 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
     return { 
       success: true, 
       file, 
-      message: `Document analysé avec succès par l'IA : note suggérée ${aiResult.suggestedScore}/10` 
+      message: `Document analysé avec succès : note suggérée ${aiResult.suggestedScore}/10` 
     }
   },
 
@@ -2747,10 +2968,10 @@ Réponds UNIQUEMENT par un objet JSON valide sans balises markdown superflues, a
     return result
   },
 
-  async batchAnalyzeAllFilesWithAi(): Promise<{ total: number; analyzed: number }> {
+  async batchAnalyzeAllFilesWithAi(forceReanalyze: boolean = true): Promise<{ total: number; analyzed: number }> {
     let count = 0
     for (const f of state.submittedFiles) {
-      if (!f.aiCorrection || f.aiCorrection.status !== 'analyzed') {
+      if (forceReanalyze || !f.aiCorrection || f.aiCorrection.status !== 'analyzed') {
         await this.analyzeFileWithAi(f.id)
         count++
       }

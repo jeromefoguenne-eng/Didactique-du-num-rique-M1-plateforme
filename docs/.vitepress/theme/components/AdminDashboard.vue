@@ -810,6 +810,7 @@ onMounted(() => {
   if (typeof window !== 'undefined') {
     const events = ['mousemove', 'keydown', 'scroll', 'touchstart']
     events.forEach(e => window.addEventListener(e, resetInactivityTimer, { passive: true }))
+    window.addEventListener('keydown', handleDossierKeyDown)
   }
 })
 
@@ -843,6 +844,10 @@ onUnmounted(() => {
   if (typeof window !== 'undefined') {
     const events = ['mousemove', 'keydown', 'scroll', 'touchstart']
     events.forEach(e => window.removeEventListener(e, resetInactivityTimer))
+    window.removeEventListener('keydown', handleDossierKeyDown)
+    if (typeof document !== 'undefined') {
+      document.body.style.overflow = ''
+    }
   }
 })
 
@@ -1311,11 +1316,23 @@ function openStudentDossier(u) {
   if (!u || !u.email) return
   selectedDossierEmail.value = u.email
   activeDocPreview.value = null
+  if (typeof document !== 'undefined') {
+    document.body.style.overflow = 'hidden'
+  }
 }
 
 function closeStudentDossier() {
   selectedDossierEmail.value = ''
   activeDocPreview.value = null
+  if (typeof document !== 'undefined') {
+    document.body.style.overflow = ''
+  }
+}
+
+function handleDossierKeyDown(e) {
+  if (e.key === 'Escape' && selectedDossierEmail.value) {
+    closeStudentDossier()
+  }
 }
 
 function nextDossierStudent() {
@@ -3620,7 +3637,10 @@ function toggleQuizExpand(id) {
                   Suivant ▶
                 </button>
               </div>
-              <button class="btn-close-dossier" @click="closeStudentDossier" title="Fermer le dossier">✕</button>
+              <button class="btn-close-dossier" @click="closeStudentDossier" title="Fermer le dossier (Échap)">
+                <span class="close-icon">✕</span>
+                <span>Fermer</span>
+              </button>
             </div>
           </div>
 
@@ -7617,34 +7637,47 @@ span.is-late {
 }
 
 .dossier-modal-overlay {
-  z-index: 2000;
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(4px);
-  padding: 1.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  overflow: hidden;
 }
 
 .dossier-modal-card {
-  width: 95vw;
-  max-width: 1250px;
-  height: 92vh;
-  max-height: 94vh;
+  width: 100vw;
+  max-width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
   background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  border-radius: 0;
+  box-shadow: none;
   overflow: hidden;
-  border: 1px solid #cbd5e1;
+  border: none;
 }
 
 .dossier-modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem;
+  padding: 0.85rem 2rem;
   background: #ffffff;
   border-bottom: 1px solid #e2e8f0;
-  gap: 1rem;
+  gap: 1.5rem;
+  flex-shrink: 0;
 }
 
 .dmh-title-row {
@@ -7723,24 +7756,27 @@ span.is-late {
 }
 
 .btn-close-dossier {
-  background: #f1f5f9;
-  border: 1px solid #cbd5e1;
-  color: #64748b;
-  font-size: 1.1rem;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  color: #dc2626;
+  font-size: 0.88rem;
+  padding: 6px 14px;
+  border-radius: 8px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 6px;
   font-weight: 700;
   transition: all 0.15s ease;
 }
+.btn-close-dossier .close-icon {
+  font-size: 1rem;
+  font-weight: 900;
+}
 .btn-close-dossier:hover {
-  background: #fee2e2;
-  color: #dc2626;
-  border-color: #fca5a5;
+  background: #dc2626;
+  color: #ffffff;
+  border-color: #b91c1c;
 }
 
 /* BANDEAU KPI */
@@ -7748,9 +7784,10 @@ span.is-late {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 0.8rem;
-  padding: 0.8rem 1.5rem;
+  padding: 0.8rem 2rem;
   background: #f8fafc;
   border-bottom: 1px solid #e2e8f0;
+  flex-shrink: 0;
 }
 
 .dkpi-card {
@@ -7824,10 +7861,11 @@ span.is-late {
 .dossier-filter-tabs {
   display: flex;
   gap: 0.5rem;
-  padding: 0.6rem 1.5rem;
+  padding: 0.65rem 2rem;
   background: #f1f5f9;
   border-bottom: 1px solid #e2e8f0;
   overflow-x: auto;
+  flex-shrink: 0;
 }
 
 .dtab-btn {
@@ -7856,8 +7894,14 @@ span.is-late {
 .dossier-modal-body {
   flex: 1;
   overflow-y: auto;
-  padding: 1.5rem;
+  padding: 1.5rem 2rem;
   background: #f8fafc;
+}
+
+.dossier-items-list {
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .dossier-item-card {
@@ -8144,7 +8188,8 @@ span.is-late {
 
 .dossier-pdf-frame {
   width: 100%;
-  height: 650px;
+  height: 75vh;
+  min-height: 600px;
   border: none;
   display: block;
 }
@@ -8152,7 +8197,8 @@ span.is-late {
 .docx-paper-sheet {
   background: #ffffff;
   padding: 2.5rem 3.5rem;
-  max-height: 650px;
+  max-height: 75vh;
+  min-height: 500px;
   overflow-y: auto;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   line-height: 1.7;
@@ -8413,9 +8459,10 @@ span.is-late {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 1.5rem;
+  padding: 0.8rem 2rem;
   background: #ffffff;
   border-top: 1px solid #e2e8f0;
+  flex-shrink: 0;
 }
 
 .save-status-toast {

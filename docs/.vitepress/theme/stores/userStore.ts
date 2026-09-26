@@ -1320,6 +1320,9 @@ export function evaluateDocumentRelevance(text: string, exerciseId: string): {
   totalWords: number
   matchedRequired: number
   matchedDomain: number
+  foundRequired: string[]
+  missingRequired: string[]
+  foundDomain: string[]
   profile: ExerciseDidacticProfile
   reason: string
 } {
@@ -1337,6 +1340,28 @@ export function evaluateDocumentRelevance(text: string, exerciseId: string): {
   const words = norm.split(' ').filter(w => w.length > 2)
   const totalWords = words.length
 
+  const foundRequired: string[] = []
+  const missingRequired: string[] = []
+  for (const kw of profile.requiredKeywords) {
+    if (norm.includes(normalizeTextForAi(kw))) {
+      foundRequired.push(kw)
+    } else {
+      missingRequired.push(kw)
+    }
+  }
+
+  const foundDomain: string[] = []
+  for (const kw of profile.domainKeywords) {
+    if (norm.includes(normalizeTextForAi(kw))) {
+      foundDomain.push(kw)
+    }
+  }
+
+  const reqRatio = foundRequired.length / Math.max(1, profile.requiredKeywords.length)
+  const domRatio = foundDomain.length / Math.max(1, Math.min(10, profile.domainKeywords.length))
+  const concordanceScore = Math.round((reqRatio * 0.60 + Math.min(1, domRatio) * 0.40) * 100)
+
+  // Document quasi vide ou inexploitable
   if (totalWords < 20) {
     return {
       isOffTopic: true,
@@ -1345,39 +1370,31 @@ export function evaluateDocumentRelevance(text: string, exerciseId: string): {
       totalWords,
       matchedRequired: 0,
       matchedDomain: 0,
+      foundRequired: [],
+      missingRequired: profile.requiredKeywords,
+      foundDomain: [],
       profile,
       reason: `Document presque vide ou dépourvu de texte intelligible (${totalWords} mots trouvés, minimum 50 attendus).`
     }
   }
 
-  let matchedRequired = 0
-  for (const kw of profile.requiredKeywords) {
-    if (norm.includes(normalizeTextForAi(kw))) matchedRequired++
-  }
-
-  let matchedDomain = 0
-  for (const kw of profile.domainKeywords) {
-    if (norm.includes(normalizeTextForAi(kw))) matchedDomain++
-  }
-
-  const reqRatio = matchedRequired / Math.max(1, profile.requiredKeywords.length)
-  const domRatio = matchedDomain / Math.max(1, profile.domainKeywords.length)
-  const concordanceScore = Math.round((reqRatio * 0.65 + domRatio * 0.35) * 100)
-
-  // Détection stricte du hors-sujet
-  const isOffTopic = concordanceScore < 15 || (matchedRequired === 0 && matchedDomain <= 1)
-  const isTooShort = totalWords < 50
+  // Détection du hors-sujet strict : concordance < 12 ou zéro concept requis ET max 1 terme du domaine
+  const isOffTopic = concordanceScore < 12 || (foundRequired.length === 0 && foundDomain.length <= 1)
+  const isTooShort = totalWords < 60
 
   return {
     isOffTopic,
     isTooShort,
     concordanceScore,
     totalWords,
-    matchedRequired,
-    matchedDomain,
+    matchedRequired: foundRequired.length,
+    matchedDomain: foundDomain.length,
+    foundRequired,
+    missingRequired,
+    foundDomain,
     profile,
     reason: isOffTopic 
-      ? `Le document ne traite pas du sujet demandé (${matchedRequired}/${profile.requiredKeywords.length} concepts requis détectés).`
+      ? `Le document ne traite pas du sujet demandé (${foundRequired.length}/${profile.requiredKeywords.length} concepts requis détectés).`
       : "Sujet conforme."
   }
 }
@@ -1460,122 +1477,209 @@ export async function extractTextFromSubmittedFile(file: SubmittedFile, userSubm
 function generateDidacticAiCorrection(file: SubmittedFile, textContent: string = '', preRelevance?: any): AiCorrection {
   const rel = preRelevance || evaluateDocumentRelevance(textContent, file.exerciseId)
   const p = rel.profile
+  const foundReq = rel.foundRequired || []
+  const missingReq = rel.missingRequired || []
+  const foundDom = rel.foundDomain || []
+  const wordsCount = rel.totalWords || 0
 
-  // CAS 1 : HORS-SUJET STRICT OU DOCUMENT SANS RAPPORT (sanction immédiate < 1.5/10)
+  // CAS 1 : HORS-SUJET STRICT (< 20 mots ou zéro concept requis & concordance < 12)
   if (rel.isOffTopic) {
+    const offScore = wordsCount < 10 ? 0.0 : (wordsCount < 30 ? 0.5 : 1.0)
     return {
       status: 'analyzed',
-      suggestedScore: 0.5,
+      suggestedScore: offScore,
       maxScore: 10,
       rubricScores: {
         concordance: 0.0,
         didacticQuality: 0.0,
         criticalAnalysis: 0.0,
-        formAndStructure: 0.5
+        formAndStructure: offScore
       },
-      summary: `⚠️ Travail non conforme (Hors-sujet) : Le document remis ne correspond absolument pas aux consignes de "${p.title}". Aucun des concepts didactiques attendus n'a été détecté.`,
+      summary: `⚠️ Travail non conforme (Hors-sujet) : Le document remis ne traite pas de "${p.title}". Aucun des concepts fondamentaux attendus (${p.requiredKeywords.join(', ')}) n'est présent.`,
       strengths: [
-        "Le document a été téléversé avec succès, mais son contenu ne correspond pas aux attendus de l'atelier."
+        wordsCount > 30 
+          ? `Le document comporte ${wordsCount} mots et une mise en page structurée, mais il ne porte pas sur le sujet didactique demandé.` 
+          : "Le fichier a été correctement téléversé sur la plateforme."
       ],
       improvements: [
-        `Prendre impérativement connaissance du document officiel de cadrage sur la plateforme.`,
-        `Traiter les consignes requises pour cet atelier : ${p.expectedSummary}`,
-        `Déposer un nouveau document conforme pour obtenir une évaluation didactique valide.`
+        `Prendre impérativement connaissance des attendus officiels de l'atelier : ${p.expectedSummary}`,
+        `Intégrer les concepts et questionnements obligatoires : ${p.requiredKeywords.join(', ')}.`,
+        `Remplacer ce fichier par un travail conforme pour faire l'objet d'une cotation valide.`
       ],
-      nextSteps: `Consulter la fiche descriptive de l'atelier dans le menu latéral et télécharger le modèle officiel Google Docs / Word.`,
-      detailedFeedback: `Le document déposé ("${file.originalFileName}") ne traite pas du tout des apprentissages attendus pour l'atelier "${p.title}". Conformément aux critères institutionnels de correction (docs/guide/criteres-correction-ia.md), un travail hors-sujet ne peut faire l'objet d'une validation des compétences didactiques. Veuillez retravailler cette activité en vous conformant aux consignes officielles.`,
+      nextSteps: `Télécharger le document modèle dans la rubrique correspondante du menu latéral et le compléter avec votre analyse.`,
+      detailedFeedback: `Le document déposé ("${file.originalFileName}") est hors-sujet par rapport aux objectifs de l'atelier "${p.title}". L'évaluation didactique requiert l'analyse concrète des situations d'apprentissage visées. Les notions clés (${p.requiredKeywords.join(', ')}) sont totalement absentes. Veillez à vous référer à la fiche d'atelier pour déposer un document approprié.`,
       criteriaTable: [
-        { name: "Concordance aux consignes & Pertinence du sujet (Critère A)", score: 0.0, maxScore: 2.5, justification: "Hors-sujet : le document déposé ne répond pas aux consignes officielles de cet atelier." },
-        { name: "Exactitude conceptuelle & Maîtrise didactique (Critère B)", score: 0.0, maxScore: 2.5, justification: "Aucun concept didactique ou notion du cours n'est mobilisé." },
-        { name: "Analyse critique & Transfert pédagogique (Critères C & D)", score: 0.0, maxScore: 2.5, justification: "Aucune analyse didactique ni démarche réflexive liée au public scolaire." },
-        { name: "Qualité de la communication & Réflexivité (Critères E & H)", score: 0.5, maxScore: 2.5, justification: "Mise en page générale lisible mais vide de contenu en lien avec la didactique." }
+        { name: "Concordance aux consignes & Pertinence du sujet (Critère A)", score: 0.0, maxScore: 2.5, justification: "Hors-sujet : 0/" + p.requiredKeywords.length + " concepts clés de l'atelier détectés." },
+        { name: "Exactitude conceptuelle & Maîtrise didactique (Critère B)", score: 0.0, maxScore: 2.5, justification: "Absence totale de vocabulaire ou de raisonnement didactique lié à l'activité." },
+        { name: "Analyse critique & Transfert pédagogique (Critères C & D)", score: 0.0, maxScore: 2.5, justification: "Aucune transposition vers la classe ou les élèves du secondaire." },
+        { name: "Qualité de la communication & Réflexivité (Critères E & H)", score: offScore, maxScore: 2.5, justification: wordsCount > 30 ? "Forme générale lisible mais contenu inadéquat." : "Texte trop restreint pour être évalué." }
       ],
       correctedAt: new Date().toISOString().replace('T', ' ').substring(0, 16),
-      modelUsed: 'Évaluateur Didactique FMTTN (Anti-Hors-Sujet)'
+      modelUsed: 'Évaluateur Didactique FMTTN (Analyse lexicale & critériée)'
     }
   }
 
-  // CAS 2 : TROP COURT OU TRÈS INCOMPLET (moins de 50 mots ou concordance faible < 35%)
-  if (rel.isTooShort || rel.concordanceScore < 35) {
+  // CAS 2 : ÉBAUCHE OU TRAVAIL TRÈS INCOMPLET (mots < 60 ou concordance faible 12-32%)
+  // Cotes calibrées : 2.5 à 4.5 / 10
+  if (rel.isTooShort || rel.concordanceScore < 32) {
+    const c1 = Math.round((Math.max(0.4, (foundReq.length / Math.max(1, p.requiredKeywords.length)) * 1.5)) * 10) / 10
+    const c2 = Math.round((Math.min(1.2, (foundDom.length / 5) * 1.2)) * 10) / 10
+    const c3 = wordsCount < 40 ? 0.4 : 0.8
+    const c4 = wordsCount < 40 ? 0.5 : 0.9
+    const rawSum = c1 + c2 + c3 + c4
+    const suggestedScore = Math.max(2.0, Math.min(4.5, Math.round(rawSum * 2) / 2))
+
     return {
       status: 'analyzed',
-      suggestedScore: 3.5,
+      suggestedScore,
       maxScore: 10,
-      rubricScores: {
-        concordance: 1.0,
-        didacticQuality: 1.0,
-        criticalAnalysis: 0.8,
-        formAndStructure: 0.7
-      },
-      summary: `⚠️ Travail incomplet ou superficiel : Seule une partie restreinte des attendus est abordée (${rel.matchedRequired}/${p.requiredKeywords.length} concepts clés identifiés).`,
+      rubricScores: { concordance: c1, didacticQuality: c2, criticalAnalysis: c3, formAndStructure: c4 },
+      summary: `⚠️ Travail incomplet ou insuffisant (${suggestedScore}/10) : Le document amorce le thème mais reste très superficiel (${wordsCount} mots). Seuls ${foundReq.length}/${p.requiredKeywords.length} concepts requis sont abordés.`,
       strengths: [
-        `Amorce d'identification du thème de l'atelier.`
+        foundReq.length > 0 ? `Notions identifiées : ${foundReq.join(', ')}.` : "Tentative d'accroche avec le thème de l'atelier.",
+        "Dépôt effectif dans les délais."
       ],
       improvements: [
-        `Développer plus amplement l'argumentation : le texte actuel est trop sommaire (${rel.totalWords} mots exploitables).`,
-        `Mobiliser de manière explicite les notions clés : ${p.requiredKeywords.join(', ')}.`
+        missingReq.length > 0 ? `Traiter impérativement les notions manquantes : ${missingReq.join(', ')}.` : `Développer davantage les réponses aux questions de cadrage.`,
+        `Étoffer l'argumentation : le volume actuel (${wordsCount} mots) est trop succinct pour un travail de Master 1.`,
+        `Formuler des propositions pédagogiques concrètes orientées vers les élèves.`
       ],
-      nextSteps: `Compléter le travail en approfondissant les réponses aux questions clés de l'atelier.`,
-      detailedFeedback: `Le travail remis aborde le sujet mais reste superficiel et fragmentaire. Pour satisfaire aux exigences didactiques de Master 1, il est nécessaire d'étoffer votre analyse et d'illustrer vos propos avec des situations d'apprentissage concrètes.`,
+      nextSteps: `Reprendre le document, développer chaque point en profondeur et déposer une version enrichie.`,
+      detailedFeedback: `Votre devoir démontre un début de réflexion sur "${p.title}", mais le développement demeure trop fragmentaire. Pour atteindre le seuil de réussite (5/10), un travail doit obligatoirement expliciter les choix didactiques et contextualiser les apprentissages pour des élèves du secondaire.`,
       criteriaTable: [
-        { name: "Concordance aux consignes & Pertinence du sujet (Critère A)", score: 1.0, maxScore: 2.5, justification: "Sujet abordé mais plusieurs questions obligatoires ne sont pas traitées." },
-        { name: "Exactitude conceptuelle & Maîtrise didactique (Critère B)", score: 1.0, maxScore: 2.5, justification: "Quelques termes présents sans réelle appropriation conceptuelle." },
-        { name: "Analyse critique & Transfert pédagogique (Critères C & D)", score: 0.8, maxScore: 2.5, justification: "Argumentation trop courte pour évaluer la capacité de transfert." },
-        { name: "Qualité de la communication & Réflexivité (Critères E & H)", score: 0.7, maxScore: 2.5, justification: "Rédaction trop brève ou présentation télégraphique." }
+        { name: "Concordance aux consignes & Pertinence du sujet (Critère A)", score: c1, maxScore: 2.5, justification: `${foundReq.length}/${p.requiredKeywords.length} attendus traités. Manque : ${missingReq.slice(0, 3).join(', ')}.` },
+        { name: "Exactitude conceptuelle & Maîtrise didactique (Critère B)", score: c2, maxScore: 2.5, justification: `Vocabulaire didactique encore limité (${foundDom.length} termes repérés).` },
+        { name: "Analyse critique & Transfert pédagogique (Critères C & D)", score: c3, maxScore: 2.5, justification: `Argumentation trop courte (${wordsCount} mots) pour démontrer une capacité de transfert.` },
+        { name: "Qualité de la communication & Réflexivité (Critères E & H)", score: c4, maxScore: 2.5, justification: "Rédaction télégraphique méritant une structuration plus aboutie." }
       ],
       correctedAt: new Date().toISOString().replace('T', ' ').substring(0, 16),
-      modelUsed: 'Évaluateur Didactique FMTTN'
+      modelUsed: 'Évaluateur Didactique FMTTN (Analyse lexicale & critériée)'
     }
   }
 
-  // CAS 3 : TRAVAIL CONFORME, MOYEN À EXCELLENT
-  const isExcellent = rel.concordanceScore >= 70 && rel.totalWords >= 150
-  const isGood = rel.concordanceScore >= 50
-  const finalScore = isExcellent 
-    ? Math.min(9.5, Math.max(8.0, Math.round((8.0 + (rel.totalWords > 250 ? 1.0 : 0.5)) * 2) / 2))
-    : (isGood ? 6.5 : 5.0)
+  // CAS 3 : TRAVAIL CONFORME — ÉVALUATION CRITÉRIÉE NUANCÉE ET CONTINUE
+  // Permet d'obtenir toute la plage de notes réelles : 5.0, 5.5, 6.0, 6.5, 7.0, 7.5, 8.0, 8.5, 9.0, 9.5
+  
+  // Critère A (Concordance aux consignes, 0-2.5) : basé sur le ratio des concepts requis abordés
+  const reqFraction = foundReq.length / Math.max(1, p.requiredKeywords.length)
+  let c1 = 1.0 + (reqFraction * 1.3)
+  if (missingReq.length === 0) c1 += 0.2
+  c1 = Math.min(2.5, Math.max(1.0, Math.round(c1 * 10) / 10))
 
-  const c1 = Math.round((finalScore * 0.28) * 10) / 10
-  const c2 = Math.round((finalScore * 0.28) * 10) / 10
-  const c3 = Math.round((finalScore * 0.24) * 10) / 10
-  const c4 = Math.round((finalScore * 0.20) * 10) / 10
+  // Critère B (Exactitude conceptuelle, 0-2.5) : basé sur la richesse du lexique didactique
+  const domCount = foundDom.length
+  let c2 = 1.0
+  if (domCount >= 8) c2 = 2.4
+  else if (domCount >= 6) c2 = 2.1
+  else if (domCount >= 4) c2 = 1.8
+  else if (domCount >= 2) c2 = 1.5
+  else c2 = 1.2
+  c2 = Math.min(2.5, Math.max(1.0, Math.round(c2 * 10) / 10))
+
+  // Critère C & D (Analyse critique et transfert, 0-2.5) : basé sur la consistance et l'argumentation
+  let c3 = 1.2
+  if (wordsCount >= 400) c3 = 2.4
+  else if (wordsCount >= 280) c3 = 2.1
+  else if (wordsCount >= 180) c3 = 1.8
+  else if (wordsCount >= 110) c3 = 1.5
+  else c3 = 1.2
+  c3 = Math.min(2.5, Math.max(1.0, Math.round(c3 * 10) / 10))
+
+  // Critère E & H (Communication et réflexivité, 0-2.5) : clarté et articulation
+  let c4 = 1.3
+  if (wordsCount >= 250 && domCount >= 5) c4 = 2.2
+  else if (wordsCount >= 150) c4 = 1.8
+  else c4 = 1.4
+  c4 = Math.min(2.5, Math.max(1.0, Math.round(c4 * 10) / 10))
+
+  // Total arrondi au demi-point le plus proche (ex: 5.5, 6.0, 6.5, 7.0, 7.5, 8.0, 8.5, 9.0)
+  const sumRaw = c1 + c2 + c3 + c4
+  let finalScore = Math.round(sumRaw * 2) / 2
+  finalScore = Math.max(4.5, Math.min(9.5, finalScore))
+
+  // Qualification pédagogique
+  let appreciation = ""
+  if (finalScore >= 8.5) appreciation = "Très bon à excellent travail"
+  else if (finalScore >= 7.0) appreciation = "Bon travail, rigoureux et pertinent"
+  else if (finalScore >= 6.0) appreciation = "Travail satisfaisant, bases didactiques acquises"
+  else appreciation = "Travail passable, des approfondissements sont nécessaires"
+
+  // Construction des points forts réels
+  const strengths: string[] = []
+  if (foundReq.length > 0) {
+    strengths.push(`Mobilisation effective des concepts clés du sujet : ${foundReq.slice(0, 4).join(', ')}.`)
+  }
+  if (foundDom.length >= 4) {
+    strengths.push(`Vocabulaire didactique et professionnel approprié (${foundDom.slice(0, 4).join(', ')}).`)
+  }
+  if (wordsCount >= 200) {
+    strengths.push(`Développement textuel consistant (${wordsCount} mots) permettant de suivre le raisonnement.`)
+  } else {
+    strengths.push(`Rédaction synthétique et soignée.`)
+  }
+
+  // Construction des points à améliorer ciblés et argumentés
+  const improvements: string[] = []
+  if (missingReq.length > 0) {
+    improvements.push(`Approfondir les concepts du référentiel non explicités : ${missingReq.join(', ')}.`)
+  }
+  if (wordsCount < 250) {
+    improvements.push(`Développer davantage l'analyse réflexive (actuellement ${wordsCount} mots) en illustrant par des exemples de classe concrets.`)
+  }
+  if (finalScore < 8.0) {
+    improvements.push(`Expliciter davantage les modalités de différenciation et d'évaluation formative adaptées aux élèves.`)
+  } else {
+    improvements.push(`Consolider les prolongements interdisciplinaires avec les autres dimensions du tronc commun FMTTN.`)
+  }
+
+  // Commentaire détaillé personnalisé
+  const detailedFeedback = `Ce travail sur "${p.title}" obtient la note de ${finalScore}/10 (${appreciation}).
+L'analyse conceptuelle montre que vous avez su intégrer des notions centrales telles que ${foundReq.slice(0, 3).join(', ') || 'les consignes principales'}. ${
+  missingReq.length > 0 ? `Pour progresser vers l'excellence, il conviendra d'intégrer plus directement les dimensions suivantes : ${missingReq.join(', ')}.` : 'L\'ensemble des attendus majeurs est couvert de manière équilibrée.'
+} Votre démarche témoigne d'une compréhension en cours de consolidation, directement mobilisable dans vos futures séquences d'enseignement.`
 
   return {
     status: 'analyzed',
     suggestedScore: finalScore,
     maxScore: 10,
-    rubricScores: {
-      concordance: c1,
-      didacticQuality: c2,
-      criticalAnalysis: c3,
-      formAndStructure: c4
-    },
-    summary: isExcellent
-      ? `Travail complet et rigoureux : excellente appropriation des attendus didactiques de "${p.title}" (${rel.matchedRequired}/${p.requiredKeywords.length} concepts clés maîtrisés).`
-      : `Travail satisfaisant : les notions de base de "${p.title}" sont identifiées et traitées de manière constructive.`,
-    strengths: [
-      `Bonne intégration des notions clés : ${p.requiredKeywords.slice(0, 3).join(', ')}.`,
-      `Prise en compte pertinente des enjeux pour les élèves du secondaire.`,
-      `Structure de document soignée et argumentation lisible.`
-    ],
-    improvements: isExcellent ? [
-      `Poursuivre la formalisation en explicitant davantage les modalités d'évaluation formative continue en classe.`
-    ] : [
-      `Préciser les liens avec les compétences du tronc commun FMTTN.`,
-      `Approfondir la justification didactique des choix méthodologiques retenus.`
-    ],
-    nextSteps: `Poursuivre sur cette lancée pour les ateliers suivants du quadrimestre.`,
-    detailedFeedback: isExcellent
-      ? `L'analyse produite pour cet atelier témoigne d'un réel recul critique et d'une posture professionnelle rigoureuse. Vous mobilisez avec justesse les concepts du cours et vos propositions sont directement transposables en situation de classe.`
-      : `Le travail déposé répond aux consignes et démontre une démarche d'apprentissage constructive. Veillez à approfondir encore vos justifications didactiques et vos propositions d'activités pour les élèves.`,
+    rubricScores: { concordance: c1, didacticQuality: c2, criticalAnalysis: c3, formAndStructure: c4 },
+    summary: `${appreciation} (${finalScore}/10) : ${foundReq.length}/${p.requiredKeywords.length} concepts clés maîtrisés, ${wordsCount} mots argumentés.`,
+    strengths,
+    improvements,
+    nextSteps: finalScore >= 8.0
+      ? `Maintenir ce haut niveau d'exigence méthodologique et de réflexivité pour les prochains ateliers.`
+      : `Prendre en compte les pistes d'amélioration pour consolider la posture didactique lors des prochains ateliers.`,
+    detailedFeedback,
     criteriaTable: [
-      { name: "Concordance aux consignes & Pertinence du sujet (Critère A)", score: c1, maxScore: 2.5, justification: isExcellent ? "Traitement exhaustif et pertinent des questions de l'atelier." : "Les consignes principales sont respectées." },
-      { name: "Exactitude conceptuelle & Maîtrise didactique (Critère B)", score: c2, maxScore: 2.5, justification: isExcellent ? "Maîtrise rigoureuse des concepts du référentiel sans contresens." : "Concepts du cours mobilisés de manière adéquate." },
-      { name: "Analyse critique & Transfert pédagogique (Critères C & D)", score: c3, maxScore: 2.5, justification: isExcellent ? "Argumentation étayée et propositions pédagogiques concrètes." : "Bonne amorce d'analyse didactique." },
-      { name: "Qualité de la communication & Réflexivité (Critères E & H)", score: c4, maxScore: 2.5, justification: isExcellent ? "Expression soignée, vocabulaire précis et recul réflexif affirmé." : "Document clair et bien ordonné." }
+      {
+        name: "Concordance aux consignes & Pertinence du sujet (Critère A)",
+        score: c1,
+        maxScore: 2.5,
+        justification: missingReq.length === 0 
+          ? `Traitement exhaustif des consignes (${foundReq.length}/${p.requiredKeywords.length} concepts clés présents).` 
+          : `Consignes globalement respectées (${foundReq.length}/${p.requiredKeywords.length} concepts). Manque : ${missingReq.join(', ')}.`
+      },
+      {
+        name: "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+        score: c2,
+        maxScore: 2.5,
+        justification: `Maîtrise du champ didactique : ${foundDom.length} termes professionnels mobilisés avec pertinence.`
+      },
+      {
+        name: "Analyse critique & Transfert pédagogique (Critères C & D)",
+        score: c3,
+        maxScore: 2.5,
+        justification: `Qualité de l'argumentation (${wordsCount} mots). Capacité de transposition aux élèves du secondaire.`
+      },
+      {
+        name: "Qualité de la communication & Réflexivité (Critères E & H)",
+        score: c4,
+        maxScore: 2.5,
+        justification: `Structure du document, clarté de la formulation et recul critique de futur enseignant.`
+      }
     ],
     correctedAt: new Date().toISOString().replace('T', ' ').substring(0, 16),
-    modelUsed: 'Évaluateur Didactique FMTTN (Prompt Expert)'
+    modelUsed: 'Évaluateur Didactique FMTTN (Analyse critériée & lexicale)'
   }
 }
 
@@ -2710,18 +2814,29 @@ export const userStore = {
     // 3. Appel Local First à Ollama (Qwen Coder 2.5 7B) si disponible
     try {
       const p = relevance.profile
-      const prompt = `Tu es un évaluateur pédagogique expert en didactique, en numérique éducatif et en FMTTN à la Haute École Charlemagne (HECh).
-Tu corriges les devoirs des étudiants de manière rigoureuse, objective et transparente conformément à la grille institutionnelle officielle (docs/guide/criteres-correction-ia.md).
+      const prompt = `Tu es un évaluateur pédagogique expert en didactique du numérique et en FMTTN à la Haute École Charlemagne (HECh).
+Tu corriges les devoirs des étudiants de Master 1 avec une objectivité rigoureuse, mesurée et nuancée conformément à la grille institutionnelle officielle (docs/guide/criteres-correction-ia.md).
 
-EXIGENCES CAPITALES DE SÉVÉRITÉ & VÉRIFICATION DU SUJET :
-1. Ne récompense JAMAIS une réponse simplement parce qu’elle est longue, bien rédigée ou polie si elle ne répond pas aux objectifs de l'exercice.
-2. Si le document remis est HORS-SUJET (ne traite pas du sujet demandé, s'il s'agit d'un autre thème ou d'un devoir d'une autre matière), tu DOIS IMPÉRATIVEMENT attribuer une note entre 0 et 1.5 sur 10 (ex: 0.5/10 ou 1/10) et indiquer clairement "HORS-SUJET" dans la synthèse.
-3. Chaque point accordé doit être justifiable par rapport aux concepts effectivement présents et démontrés.
+CALIBRATION OBJECTIVE DE LA NOTE SUR 10 (ÉVITER LE PIÈGE DU 1/10 OU 9/10 SYSTÉMATIQUE) :
+Évalue le travail avec une réelle échelle continue en fonction des 4 critères ci-dessous :
+- 0 à 1.5/10 : Hors-sujet avéré, document vide ou sans aucun rapport avec les attendus.
+- 2.0 à 4.5/10 : Travail très incomplet, superficiel ou ébauche (plusieurs consignes ou concepts majeurs omis).
+- 5.0 à 6.5/10 : Travail moyen à satisfaisant (consignes de base respectées, mais analyse manquant de profondeur ou d'ancrage didactique).
+- 7.0 à 8.0/10 : Bon travail, rigoureux, notions bien mobilisées, propositions pertinentes pour des élèves du secondaire.
+- 8.5 à 9.5/10 : Très bon à excellent travail, analyse didactique fouillée, recul réflexif affirmé.
+- 10/10 : Travail d'une perfection académique rare.
+
+GRILLE DE NOTATION INSTITUTIONNELLE (4 critères × 2.5 points = 10 points) :
+- Critère A : Concordance aux consignes & Pertinence du sujet (sur 2.5 pts). Vérifie la réponse aux questions clés de l'atelier.
+- Critère B : Exactitude conceptuelle & Maîtrise didactique (sur 2.5 pts). Vérifie la justesse et la richesse du vocabulaire didactique/FMTTN.
+- Critère C & D : Analyse critique & Transfert pédagogique (sur 2.5 pts). Évalue la profondeur de l'argumentation et les propositions pour les élèves.
+- Critère E & H : Qualité de la communication & Réflexivité (sur 2.5 pts). Évalue la structure, la clarté et la posture réflexive d'enseignant.
 
 CONSIGNES DE L'ACTIVITÉ :
 Titre de l'atelier : "${file.exerciseTitle}" (Identifiant: ${file.exerciseId})
 Objectif officiel : ${p.expectedSummary}
-Concepts et mots-clés didactiques attendus : ${p.requiredKeywords.join(', ')}
+Concepts et mots-clés attendus : ${p.requiredKeywords.join(', ')}
+Questions de cadrage : ${p.questionsCles ? p.questionsCles.join(' | ') : ''}
 
 DOCUMENT DÉPOSÉ PAR L'ÉTUDIANT (${file.userName}) :
 Nom du fichier : "${file.originalFileName}"
@@ -2732,23 +2847,23 @@ ${textContent.substring(0, 3500) || "[Aucun contenu textuel extractible du fichi
 
 Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues avec la structure exacte suivante :
 {
-  "suggestedScore": 8.5,
+  "suggestedScore": 6.5,
   "maxScore": 10,
   "rubricScores": {
-    "concordance": 2.2,
-    "didacticQuality": 2.2,
-    "criticalAnalysis": 2.1,
-    "formAndStructure": 2.0
+    "concordance": 1.8,
+    "didacticQuality": 1.6,
+    "criticalAnalysis": 1.6,
+    "formAndStructure": 1.5
   },
   "summary": "Synthèse globale en 1 ou 2 phrases claires",
   "strengths": ["Point fort didactique 1", "Point fort 2"],
   "improvements": ["Point à améliorer prioritaire 1", "Point 2"],
   "detailedFeedback": "Commentaire formatif détaillé et constructif",
   "criteriaTable": [
-    { "name": "Concordance aux consignes & Pertinence du sujet (Critère A)", "score": 2.2, "maxScore": 2.5, "justification": "Justification précise" },
-    { "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)", "score": 2.2, "maxScore": 2.5, "justification": "Justification précise" },
-    { "name": "Analyse critique & Transfert pédagogique (Critères C & D)", "score": 2.1, "maxScore": 2.5, "justification": "Justification précise" },
-    { "name": "Qualité de la communication & Réflexivité (Critères E & H)", "score": 2.0, "maxScore": 2.5, "justification": "Justification précise" }
+    { "name": "Concordance aux consignes & Pertinence du sujet (Critère A)", "score": 1.8, "maxScore": 2.5, "justification": "Argumentation sur les consignes et concepts traités vs manquants" },
+    { "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)", "score": 1.6, "maxScore": 2.5, "justification": "Argumentation sur la justesse des termes didactiques employés" },
+    { "name": "Analyse critique & Transfert pédagogique (Critères C & D)", "score": 1.6, "maxScore": 2.5, "justification": "Argumentation sur le transfert concret vers les élèves du secondaire" },
+    { "name": "Qualité de la communication & Réflexivité (Critères E & H)", "score": 1.5, "maxScore": 2.5, "justification": "Argumentation sur la forme, la clarté et le recul professionnel" }
   ]
 }`
 

@@ -2464,9 +2464,11 @@ export const userStore = {
       driveSynced: false
     }
 
-    // Déclenchement automatique et immédiat de la correction IA dès le dépôt
+    // Déclenchement automatique et immédiat de la correction IA dès le dépôt (avec extraction réelle du texte et détection hors-sujet)
     try {
-      newFile.aiCorrection = generateDidacticAiCorrection(newFile)
+      const textContent = await extractTextFromSubmittedFile(newFile)
+      const relevance = evaluateDocumentRelevance(textContent, exerciseId)
+      newFile.aiCorrection = generateDidacticAiCorrection(newFile, textContent, relevance)
     } catch (e) {
       console.warn("Erreur analyse IA immédiate:", e)
     }

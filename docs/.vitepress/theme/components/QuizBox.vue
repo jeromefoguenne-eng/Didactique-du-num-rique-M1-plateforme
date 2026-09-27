@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
 import { userStore } from '../stores/userStore'
 
 const props = defineProps({
@@ -26,12 +26,12 @@ const MODULE_QUESTIONS = {
       title: "1. Triptyque de la compétence (DigComp 2.2)",
       text: "Selon le cadre européen DigComp 2.2, qu'est-ce qui distingue une véritable compétence numérique d'une simple habileté technique ?",
       options: [
-        "La maîtrise rapide de tous les raccourcis clavier d'un traitement de texte.",
         "La capacité à mobiliser de façon critique, réfléchie et responsable ses habiletés et connaissances pour répondre à une situation complexe.",
         "La possession d'un équipement matériel haut de gamme (tablette, ordinateur portable).",
-        "La capacité à installer des logiciels sans l'aide d'un administrateur réseau."
+        "La capacité à installer des logiciels sans l'aide d'un administrateur réseau.",
+        "La maîtrise rapide de tous les raccourcis clavier d'un traitement de texte."
       ],
-      correctIndex: 1,
+      correctIndex: 0,
       points: 3,
       explanation: "DigComp dépasse la simple habileté opératoire en exigeant le jugement critique, l'adaptation et la responsabilité éthique face aux technologies."
     },
@@ -42,11 +42,11 @@ const MODULE_QUESTIONS = {
       text: "Pourquoi affirme-t-on en didactique que la compétence numérique est « située » ?",
       options: [
         "Parce qu'elle dépend obligatoirement de la localisation GPS de la salle de classe.",
+        "Parce qu'elle se mesure uniquement au nombre de clics nécessaires pour exécuter une tâche.",
         "Parce qu'elle n'existe pas dans le vide : son efficacité s'évalue toujours en fonction d'un contexte, d'un public et d'une intention précise.",
-        "Parce qu'elle est réservée aux établissements scolaires connectés à la fibre optique.",
-        "Parce qu'elle se mesure uniquement au nombre de clics nécessaires pour exécuter une tâche."
+        "Parce qu'elle est réservée aux établissements scolaires connectés à la fibre optique."
       ],
-      correctIndex: 1,
+      correctIndex: 2,
       points: 3,
       explanation: "Une personne n'est pas compétente dans l'absolu : savoir créer un diaporama n'a de valeur didactique que si les contenus et choix visuels répondent aux besoins du public cible."
     },
@@ -71,12 +71,12 @@ const MODULE_QUESTIONS = {
       title: "1. Post-vérité et communication politique (Cas des investitures 2009 vs 2017)",
       text: "Dans le concept de « post-vérité » illustré par la comparaison photographique des foules entre Obama (2009) et Trump (2017), quelle est la caractéristique centrale du discours médiatique ?",
       options: [
-        "L'utilisation exclusive de caméras à très haute résolution pour compter les personnes.",
-        "Le fait que les faits objectifs et vérifiables ont moins d'influence que les récits faisant appel à l'émotion et aux croyances personnelles (« faits alternatifs »).",
         "L'interdiction légale de diffuser des photographies aériennes lors des cérémonies d'État.",
-        "L'absence totale de journalistes sur place le jour de l'investiture."
+        "L'utilisation exclusive de caméras à très haute résolution pour compter les personnes.",
+        "L'absence totale de journalistes sur place le jour de l'investiture.",
+        "Le fait que les faits objectifs et vérifiables ont moins d'influence que les récits faisant appel à l'émotion et aux croyances personnelles (« faits alternatifs »)."
       ],
-      correctIndex: 1,
+      correctIndex: 3,
       points: 2,
       explanation: "La post-vérité se caractérise par la primauté accordée à l'émotion et à l'affirmation identitaire sur l'évidence factuelle et matérielle (création délibérée de vérités alternatives)."
     },
@@ -86,10 +86,10 @@ const MODULE_QUESTIONS = {
       title: "2. Théorie du complot et montage vidéo (Cas de l'extrait « Secret Dieu »)",
       text: "Dans les vidéos conspirationnistes comme celle illustrée par « Secret Dieu », quel procédé technique de réalisation est systématiquement mobilisé pour convaincre le spectateur d'un complot ?",
       options: [
-        "La présentation exhaustive et neutre de toutes les sources scientifiques contradictoires.",
+        "L'absence totale de musique ou d'effets sonores afin de laisser le spectateur juger en silence.",
         "L'association arbitraire d'images disparates liée par une voix mystérieuse, une musique anxiogène et l'illusion d'une causalité cachée.",
         "Le refus délibéré d'utiliser des images d'archives ou des ralentis.",
-        "L'absence totale de musique ou d'effets sonores afin de laisser le spectateur juger en silence."
+        "La présentation exhaustive et neutre de toutes les sources scientifiques contradictoires."
       ],
       correctIndex: 1,
       points: 2,
@@ -101,12 +101,12 @@ const MODULE_QUESTIONS = {
       title: "3. Fact-checking et manipulation visuelle (Cas France 24 « Info ou Intox » : Zelensky)",
       text: "Dans la chronique « Info ou Intox » de France 24 analysant la prétendue publicité anti-Zelensky à New York, quelle a été la démarche journalistique décisive pour prouver l'intox ?",
       options: [
+        "Attendre un communiqué officiel de l'ONU avant de regarder la vidéo.",
         "Se fier aux commentaires anonymes sous la vidéo virale sur Twitter/X.",
         "Interroger la régie publicitaire locale, analyser la météo, la circulation réelle et les caméras fixes en direct de Times Square.",
-        "Interdire aux citoyens américains de filmer les panneaux d'affichage urbains.",
-        "Attendre un communiqué officiel de l'ONU avant de regarder la vidéo."
+        "Interdire aux citoyens américains de filmer les panneaux d'affichage urbains."
       ],
-      correctIndex: 1,
+      correctIndex: 2,
       points: 2,
       explanation: "Le fact-checking rigoureux croise les indices matériels (météo, webcam de circulation en direct) et contacte les gestionnaires officiels de l'espace publicitaire pour authentifier la réalité de la diffusion."
     },
@@ -116,12 +116,12 @@ const MODULE_QUESTIONS = {
       title: "4. Mécanisme de la rumeur et viralité numérique",
       text: "Dans le reportage « Post-vérité et théorie du complot : la vérité en danger sur Internet », pourquoi une fausse information circule-t-elle généralement plus vite qu'un démenti ?",
       options: [
-        "Parce que les câbles de télécommunication sous-marins privilégient les faux fichiers.",
         "Parce qu'elle suscite des émotions vives (indignation, surprise, peur) qui stimulent le partage instantané, alors que la vérification demande du temps et de l'effort cognitif.",
+        "Parce que les câbles de télécommunication sous-marins privilégient les faux fichiers.",
         "Parce que les journalistes professionnels sont absents d'Internet.",
         "Parce que les démentis sont écrits uniquement en latin."
       ],
-      correctIndex: 1,
+      correctIndex: 0,
       points: 2,
       explanation: "La viralité repose sur la charge émotionnelle : l'indignation et la stupéfaction court-circuitent la réflexion critique et favorisent la transmission immédiate."
     },
@@ -131,10 +131,10 @@ const MODULE_QUESTIONS = {
       title: "5. Mise en scène de la réalité (Cas de « Cauchemar en cuisine »)",
       text: "Dans l'extrait de « Cauchemar en cuisine », comment la réalisation fabrique-t-elle une atmosphère d'urgence et de catastrophe permanente ?",
       options: [
-        "En filmant en plan-séquence continu sans coupure pendant 45 minutes.",
-        "Par un montage ultra-rapide, des zooms brutaux, des effets de cordes grinçantes et des bruitages de lames ou d'impacts métalliques.",
         "En diffusant uniquement des voix douces et apaisantes pour rassurer les restaurateurs.",
-        "En demandant aux clients de lire des poèmes à voix haute."
+        "Par un montage ultra-rapide, des zooms brutaux, des effets de cordes grinçantes et des bruitages de lames ou d'impacts métalliques.",
+        "En demandant aux clients de lire des poèmes à voix haute.",
+        "En filmant en plan-séquence continu sans coupure pendant 45 minutes."
       ],
       correctIndex: 1,
       points: 2,
@@ -147,11 +147,11 @@ const MODULE_QUESTIONS = {
       text: "Quelle est la particularité fondamentale du dispositif documentaire de l'émission culte belge « Strip-Tease » dans l'épisode Scarface ?",
       options: [
         "Une voix-off omniprésente qui dicte en permanence au spectateur ce qu'il doit penser.",
-        "L'absence totale de commentaire, d'interview dirigée et de musique d'illustration, laissant émerger le réel sans filtre prescriptif.",
+        "Le floutage intégral de tous les protagonistes.",
         "L'utilisation de comédiens professionnels payés par la RTBF.",
-        "Le floutage intégral de tous les protagonistes."
+        "L'absence totale de commentaire, d'interview dirigée et de musique d'illustration, laissant émerger le réel sans filtre prescriptif."
       ],
-      correctIndex: 1,
+      correctIndex: 3,
       points: 2,
       explanation: "Strip-Tease applique le principe du cinéma direct : pas de voix-off moralisatrice, pas d'habillage musical imposé ; c'est au spectateur de construire son analyse critique du comportement des personnes filmées."
     },
@@ -161,12 +161,12 @@ const MODULE_QUESTIONS = {
       title: "7. Éthique et stéréotypes télévisuels (Cas de « Arrête de te prendre pour Johnny »)",
       text: "Dans l'extrait de télé-réalité « Arrête de te prendre pour Johnny », quel enjeu critique majeur d'éducation aux médias est soulevé concernant le traitement des participants ?",
       options: [
-        "Le volume sonore des amplificateurs de guitare électrique.",
-        "L'enfermement du sujet dans une caricature ridicule au détriment de sa dignité, transformant sa passion en objet de moquerie pour l'audimat.",
         "La météo pluvieuse le jour du tournage en région liégeoise.",
-        "L'absence de licence officielle de la maison de disque de Johnny Hallyday."
+        "Le volume sonore des amplificateurs de guitare électrique.",
+        "L'absence de licence officielle de la maison de disque de Johnny Hallyday.",
+        "L'enfermement du sujet dans une caricature ridicule au détriment de sa dignité, transformant sa passion en objet de moquerie pour l'audimat."
       ],
-      correctIndex: 1,
+      correctIndex: 3,
       points: 2,
       explanation: "L'EAM interroge l'éthique de la captation : la télé-réalité exploite souvent la naïveté ou la vulnérabilité de personnes réelles pour produire un spectacle condescendant à forte audience."
     },
@@ -176,10 +176,10 @@ const MODULE_QUESTIONS = {
       title: "8. Mécanique du clash et débat d'opinion (Cas Cyril Hanouna / TPMP)",
       text: "Dans les émissions de plateau comme celles présentées par Cyril Hanouna, quel est l'objectif poursuivi par la sur-polarisation et l'orchestration du « clash » en direct ?",
       options: [
-        "Permettre une synthèse scientifique consensuelle et apaisée entre experts reconnus.",
+        "Présenter des rapports statistiques vérifiés par l'institut national de la statistique.",
         "Maximiser l'attention et l'engagement émotionnel du public par le spectacle de l'affrontement, quitte à dégrader la qualité du débat démocratique.",
         "Enseigner la grammaire française avancée aux téléspectateurs.",
-        "Présenter des rapports statistiques vérifiés par l'institut national de la statistique."
+        "Permettre une synthèse scientifique consensuelle et apaisée entre experts reconnus."
       ],
       correctIndex: 1,
       points: 2,
@@ -191,12 +191,12 @@ const MODULE_QUESTIONS = {
       title: "9. Sensationnalisme de proximité (Cas « Images à l'appui : Fifi »)",
       text: "Dans l'émission « Images à l'appui » (reportage Fifi), comment la forme journalistique traite-t-elle les conflits locaux ou de voisinage ?",
       options: [
-        "Sous l'angle d'une sociologie rigoureuse sans jamais nommer les protagonistes.",
         "En dramatisant les faits par une narration mélodramatique, une posture de justicier et une division manichéenne (la victime innocente contre les coupables).",
-        "En faisant appel à un tribunal arbitral officiel de droit civil.",
-        "En refusant de diffuser la moindre image de conflit."
+        "En refusant de diffuser la moindre image de conflit.",
+        "Sous l'angle d'une sociologie rigoureuse sans jamais nommer les protagonistes.",
+        "En faisant appel à un tribunal arbitral officiel de droit civil."
       ],
-      correctIndex: 1,
+      correctIndex: 0,
       points: 2,
       explanation: "L'émission adopte les codes du mélodrame de proximité : musique d'émotion, empathie surjouée, posture d'avocat des humbles pour capter l'attachement affectif du téléspectateur."
     },
@@ -207,11 +207,11 @@ const MODULE_QUESTIONS = {
       text: "Dans le grand reportage sur l'industrialisation et la concentration des groupes de médias privés, quel risque démocratique majeur est identifié pour l'information citoyenne ?",
       options: [
         "Le manque d'écrans de télévision dans les foyers modestes.",
-        "La soumission de la ligne éditoriale aux intérêts économiques ou idéologiques du propriétaire du groupe, limitant le pluralisme et l'indépendance des rédactions.",
         "L'obligation de ne diffuser que des documentaires animaliers en noir et blanc.",
+        "La soumission de la ligne éditoriale aux intérêts économiques ou idéologiques du propriétaire du groupe, limitant le pluralisme et l'indépendance des rédactions.",
         "Le remplacement des journalistes par des présentateurs météo sous-payés."
       ],
-      correctIndex: 1,
+      correctIndex: 2,
       points: 2,
       explanation: "La concentration médiatique met en péril l'indépendance journalistique : lorsque quelques conglomérats détiennent chaînes, journaux et maisons d'édition, l'information risque de devenir un instrument d'influence privée."
     },
@@ -221,12 +221,12 @@ const MODULE_QUESTIONS = {
       title: "11. Vérification des vidéos et intelligence artificielle générative",
       text: "Face à la prolifération de vidéos générées ou modifiées par IA (deepfakes), quel réflexe didactique de base devez-vous transmettre en priorité aux élèves ?",
       options: [
-        "Considérer que tout document vidéo est automatiquement un faux et ne plus jamais regarder les informations.",
         "Appliquer le triptyque de vérification : rechercher la source première, inverser la recherche d'images et repérer les incohérences physiques (regards, mains, reflets, décalages audio).",
         "Croire uniquement les vidéos qui dépassent un million de partages sur TikTok.",
-        "Demander à l'auteur de la vidéo par message privé s'il a menti."
+        "Demander à l'auteur de la vidéo par message privé s'il a menti.",
+        "Considérer que tout document vidéo est automatiquement un faux et ne plus jamais regarder les informations."
       ],
-      correctIndex: 1,
+      correctIndex: 0,
       points: 2,
       explanation: "L'EAM ne doit pas conduire au complotisme ou au relativisme absolu, mais à une méthodologie critique outillée (recherche inversée, corroboration de sources fiables, examen des artefacts visuels)."
     },
@@ -304,11 +304,11 @@ const MODULE_QUESTIONS = {
       text: "Quel champ du référentiel FMTTN prend spécifiquement en charge la décomposition de problèmes et la pensée algorithmique ?",
       options: [
         "Champ 1 : Usages et outils numériques de base",
+        "Champ 4 : Citoyenneté numérique et sécurité",
         "Champ 2 : Médias et communication numérique",
-        "Champ 3 : Programmation et pensée algorithmique",
-        "Champ 4 : Citoyenneté numérique et sécurité"
+        "Champ 3 : Programmation et pensée algorithmique"
       ],
-      correctIndex: 2,
+      correctIndex: 3,
       points: 3,
       explanation: "Le champ 3 vise l'initiation aux concepts informatiques fondamentaux : séquences, boucles, conditions et raisonnement logique."
     },
@@ -318,9 +318,9 @@ const MODULE_QUESTIONS = {
       title: "2. Articulation interdisciplinaire",
       text: "Pourquoi le tronc commun insiste-t-il sur l'intégration du numérique dans l'ensemble des disciplines ?",
       options: [
-        "Pour éliminer complètement les cours d'informatique spécialisés.",
-        "Parce que le numérique est à la fois un objet d'apprentissage propre et un levier transversal pour travailler les mathématiques, les sciences et les langues.",
         "Uniquement pour respecter les directives budgétaires du matériel.",
+        "Parce que le numérique est à la fois un objet d'apprentissage propre et un levier transversal pour travailler les mathématiques, les sciences et les langues.",
+        "Pour éliminer complètement les cours d'informatique spécialisés.",
         "Pour remplacer les enseignants par des plateformes d'apprentissage adaptatif."
       ],
       correctIndex: 1,
@@ -348,12 +348,12 @@ const MODULE_QUESTIONS = {
       title: "1. Logique curriculaire de progression",
       text: "Selon le référentiel FMTTN, comment les compétences numériques sont-elles construites tout au long du tronc commun (P1 à S3) ?",
       options: [
-        "Elles sont acquises définitivement après une séance d'initiation technique en début d'année.",
-        "Elles sont travaillées de manière continue et progressive sur plusieurs années, en augmentant la complexité des situations et l'autonomie de l'élève.",
+        "Elles doivent être enseignées sous la forme d'une liste fixe de logiciels à valider un par un.",
         "Elles dépendent exclusivement du nombre d'heures passées devant un écran d'ordinateur.",
-        "Elles doivent être enseignées sous la forme d'une liste fixe de logiciels à valider un par un."
+        "Elles sont travaillées de manière continue et progressive sur plusieurs années, en augmentant la complexité des situations et l'autonomie de l'élève.",
+        "Elles sont acquises définitivement après une séance d'initiation technique en début d'année."
       ],
-      correctIndex: 1,
+      correctIndex: 2,
       points: 3,
       explanation: "Une compétence numérique ne se valide pas en une seule fois : elle s'approfondit par étapes successives (guidage initial, transfert, autonomie croissante dans des situations complexes)."
     },
@@ -363,12 +363,12 @@ const MODULE_QUESTIONS = {
       title: "2. Évolution de la compétence vs accumulation d'outils",
       text: "Pourquoi un élève de 6e primaire n'est-il pas considéré comme compétent uniquement parce qu'il connaîtrait plus de logiciels qu'un élève de 3e primaire ?",
       options: [
+        "Parce que seuls les élèves du secondaire peuvent être déclarés compétents numériquement.",
         "Parce que les élèves de primaire ne devraient utiliser qu'un seul traitement de texte agréé.",
         "Parce que la compétence réside dans la capacité à résoudre des problèmes complexes et à décider de manière autonome, et non dans le nombre d'outils mémorisés.",
-        "Parce que les logiciels changent tous les ans et doivent être réappris de zéro.",
-        "Parce que seuls les élèves du secondaire peuvent être déclarés compétents numériquement."
+        "Parce que les logiciels changent tous les ans et doivent être réappris de zéro."
       ],
-      correctIndex: 1,
+      correctIndex: 2,
       points: 3,
       explanation: "Ce qui évolue entre les cycles n'est pas une simple addition de logiciels, mais la complexité des contextes de mobilisation et le niveau de prise de décision confié à l'apprenant."
     },
@@ -408,12 +408,12 @@ const MODULE_QUESTIONS = {
       title: "1. Alignement constructif",
       text: "Selon le principe d'alignement constructif de Biggs appliqué à une leçon intégrant le numérique, que doit-on concevoir en premier ?",
       options: [
-        "L'application logicielle la plus innovante du moment.",
-        "Les objectifs d'apprentissage visés et les critères d'évaluation de la maîtrise des élèves.",
         "Le planning de réservation du chariot de tablettes de l'école.",
-        "La présentation visuelle PowerPoint de l'enseignant."
+        "La présentation visuelle PowerPoint de l'enseignant.",
+        "L'application logicielle la plus innovante du moment.",
+        "Les objectifs d'apprentissage visés et les critères d'évaluation de la maîtrise des élèves."
       ],
-      correctIndex: 1,
+      correctIndex: 3,
       points: 3,
       explanation: "La technologie doit toujours découler de l'objectif pédagogique, jamais l'inverse. Choisir l'outil avant l'objectif est un écueil didactique fréquent."
     },
@@ -423,12 +423,12 @@ const MODULE_QUESTIONS = {
       title: "2. Statut de l'obstacle dans la tâche",
       text: "Lors d'une évaluation sommative d'histoire ou de mathématiques, que risque-t-il d'arriver si l'outil numérique utilisé est totalement nouveau pour les élèves ?",
       options: [
-        "Les élèves seront plus motivés et auront de meilleures notes.",
         "On génère une surcharge cognitive et on risque d'évaluer la compétence technique sur l'outil plutôt que la compétence disciplinaire ciblée.",
-        "L'évaluation devient automatiquement conforme aux standards européens.",
-        "Aucun impact, car les jeunes sont des « digital natives » infaillibles."
+        "Les élèves seront plus motivés et auront de meilleures notes.",
+        "Aucun impact, car les jeunes sont des « digital natives » infaillibles.",
+        "L'évaluation devient automatiquement conforme aux standards européens."
       ],
-      correctIndex: 1,
+      correctIndex: 0,
       points: 3,
       explanation: "L'outil numérique ne doit pas constituer un obstacle instrumental parasite lors de l'évaluation d'un savoir disciplinaire."
     },
@@ -453,12 +453,12 @@ const MODULE_QUESTIONS = {
       title: "1. Le principe de l'inversion didactique",
       text: "En quoi la situation-problème constitue-t-elle une « inversion » par rapport à une démarche transmissive classique dans l'enseignement du numérique ?",
       options: [
-        "Elle impose à l'élève d'apprendre par cœur le manuel d'utilisation avant d'allumer l'ordinateur.",
         "Elle part d'un problème ou d'un besoin concret à résoudre pour donner du sens à l'apprentissage, au lieu de commencer par présenter un outil ou une suite de fonctionnalités logicielles.",
         "Elle oblige l'enseignant à laisser les élèves résoudre les bugs sans aucune intervention.",
+        "Elle impose à l'élève d'apprendre par cœur le manuel d'utilisation avant d'allumer l'ordinateur.",
         "Elle supprime toute évaluation pour privilégier le travail en autonomie totale."
       ],
-      correctIndex: 1,
+      correctIndex: 0,
       points: 3,
       explanation: "Dans la situation-problème, le besoin et l'obstacle créent la nécessité d'apprendre : l'outil numérique n'est plus une fin en soi mais une réponse instrumentée à un problème réel."
     },
@@ -468,12 +468,12 @@ const MODULE_QUESTIONS = {
       title: "2. Le statut de l'outil numérique dans la démarche",
       text: "Dans une situation-problème mobilisant le numérique, comment l'outil technique doit-il être considéré par les élèves ?",
       options: [
-        "Comme un objet d'évaluation sommative dont il faut mémoriser chaque menu.",
-        "Comme une ressource d'investigation ou un levier de résolution sélectionné pour surmonter un obstacle précis.",
+        "Comme un substitut complet au raisonnement intellectuel de l'apprenant.",
         "Comme un divertissement destiné à récompenser les élèves les plus rapides.",
-        "Comme un substitut complet au raisonnement intellectuel de l'apprenant."
+        "Comme une ressource d'investigation ou un levier de résolution sélectionné pour surmonter un obstacle précis.",
+        "Comme un objet d'évaluation sommative dont il faut mémoriser chaque menu."
       ],
-      correctIndex: 1,
+      correctIndex: 2,
       points: 3,
       explanation: "L'apprentissage ne réside pas dans la récitation des fonctions de l'outil, mais dans la capacité à choisir et exploiter la solution numérique la plus adaptée à la situation."
     },
@@ -483,12 +483,12 @@ const MODULE_QUESTIONS = {
       title: "3. La posture de l'enseignant pendant la recherche",
       text: "Pendant que les élèves recherchent activement une solution à la situation-problème, quelle doit être la posture privilégiée de l'enseignant ?",
       options: [
+        "Corriger directement les manipulations sur le clavier des élèves.",
         "Donner immédiatement la procédure pas-à-pas pour éviter que les élèves ne fassent des erreurs.",
-        "Observer les stratégies, étayer par des relances sans donner la réponse, et encourager la formulation d'hypothèses.",
         "Quitter la classe pour laisser une liberté absolue aux groupes de travail.",
-        "Corriger directement les manipulations sur le clavier des élèves."
+        "Observer les stratégies, étayer par des relances sans donner la réponse, et encourager la formulation d'hypothèses."
       ],
-      correctIndex: 1,
+      correctIndex: 3,
       points: 3,
       explanation: "L'enseignant régule la tâche sans court-circuiter l'activité cognitive de l'élève : il questionne, guide le regard critique et soutient la persévérance."
     },
@@ -513,12 +513,12 @@ const MODULE_QUESTIONS = {
       title: "5. La phase d'institutionnalisation",
       text: "Pourquoi la phase finale d'institutionnalisation (formalisation) est-elle indispensable après la résolution du problème ?",
       options: [
-        "Pour sanctionner par une note chiffrée les groupes qui n'ont pas terminé dans les temps.",
-        "Pour décontextualiser les découvertes empiriques, formaliser les concepts et démarches transférables et donner aux savoirs un statut de connaissance partagée.",
         "Pour réécrire le cours magistral initial que les élèves n'ont pas écouté.",
-        "Uniquement pour remplir les documents administratifs de l'établissement."
+        "Uniquement pour remplir les documents administratifs de l'établissement.",
+        "Pour décontextualiser les découvertes empiriques, formaliser les concepts et démarches transférables et donner aux savoirs un statut de connaissance partagée.",
+        "Pour sanctionner par une note chiffrée les groupes qui n'ont pas terminé dans les temps."
       ],
-      correctIndex: 1,
+      correctIndex: 2,
       points: 3,
       explanation: "Sans institutionnalisation, l'expérience vécue reste une anecdote : la formalisation transforme la trouvaille empirique en savoir réutilisable dans d'autres contextes."
     },
@@ -545,8 +545,8 @@ const MODULE_QUESTIONS = {
       options: [
         "La réalisation d'une production concrète sur une temporalité longue, mobilisant des compétences transversales et destinée à un public ou usage authentique.",
         "L'obligation de travailler exclusivement en silence et de façon individuelle.",
-        "L'utilisation obligatoire d'au moins six logiciels payants différents.",
-        "L'absence d'objectifs pédagogiques définis à l'avance."
+        "L'absence d'objectifs pédagogiques définis à l'avance.",
+        "L'utilisation obligatoire d'au moins six logiciels payants différents."
       ],
       correctIndex: 0,
       points: 3,
@@ -558,9 +558,9 @@ const MODULE_QUESTIONS = {
       title: "2. Mobilisation des savoirs au fil du projet",
       text: "Comment les connaissances et compétences techniques doivent-elles être introduites dans un projet numérique ?",
       options: [
-        "Par un cours théorique magistral de 10 heures avant de commencer le projet.",
-        "Au fur et à mesure qu'elles s'avèrent nécessaires pour concevoir ou faire avancer la production collective.",
         "Uniquement après la fin du projet, lors de la correction finale.",
+        "Au fur et à mesure qu'elles s'avèrent nécessaires pour concevoir ou faire avancer la production collective.",
+        "Par un cours théorique magistral de 10 heures avant de commencer le projet.",
         "En demandant aux élèves d'acheter des formations en ligne le soir chez eux."
       ],
       correctIndex: 1,
@@ -573,12 +573,12 @@ const MODULE_QUESTIONS = {
       title: "3. La régulation du travail d'équipe",
       text: "Pour éviter l'écueil classique où un seul élève technophile réalise tout le travail pendant que les autres restent passifs, que doit organiser l'enseignant ?",
       options: [
-        "Supprimer les ordinateurs et revenir au travail sur cahier.",
-        "Définir des rôles complémentaires identifiés, des jalons d'étapes intermédiaires avec livrables individuels et collectifs, et des temps réguliers de régulation.",
+        "Interdire aux élèves de se parler pendant les séances de projet.",
         "Attribuer la même note globale à tout le monde sans distinction d'implication.",
-        "Interdire aux élèves de se parler pendant les séances de projet."
+        "Supprimer les ordinateurs et revenir au travail sur cahier.",
+        "Définir des rôles complémentaires identifiés, des jalons d'étapes intermédiaires avec livrables individuels et collectifs, et des temps réguliers de régulation."
       ],
-      correctIndex: 1,
+      correctIndex: 3,
       points: 3,
       explanation: "La coopération ne s'improvise pas : l'enseignant structure la division du travail, la responsabilité mutuelle et la traçabilité des contributions de chacun."
     },
@@ -588,9 +588,9 @@ const MODULE_QUESTIONS = {
       title: "4. Le piège de la dérive productiviste",
       text: "Qu'appelle-t-on la « dérive productiviste » en pédagogie de projet appliquée au numérique ?",
       options: [
+        "Le refus de respecter les horaires de cours de l'établissement.",
         "Le fait de fabriquer trop d'objets ou de pages web au FabLab de l'école.",
         "Le fait de se focaliser exclusivement sur l'esthétique et la réussite du produit fini, au détriment des apprentissages réels et du recul réflexif des élèves.",
-        "Le refus de respecter les horaires de cours de l'établissement.",
         "Le recours abusif à l'impression papier en couleur."
       ],
       correctIndex: 3,
@@ -633,12 +633,12 @@ const MODULE_QUESTIONS = {
       title: "1. La démarche d'investigation en éducation au numérique",
       text: "Quelle posture l'apprentissage par investigation vise-t-il à développer en priorité chez les élèves ?",
       options: [
-        "Une posture d'exécutant docile qui reproduit scrupuleusement les clics d'un tutoriel vidéo.",
         "Une posture de chercheur/enquêteur qui questionne le fonctionnement des technologies, émet des hypothèses, expérimente et argumente ses conclusions.",
         "Une posture d'utilisateur passif qui consomme les contenus recommandés par les algorithmes.",
-        "Une posture de hacker cherchant à contourner les filtres de sécurité de l'établissement scolaire."
+        "Une posture de hacker cherchant à contourner les filtres de sécurité de l'établissement scolaire.",
+        "Une posture d'exécutant docile qui reproduit scrupuleusement les clics d'un tutoriel vidéo."
       ],
-      correctIndex: 1,
+      correctIndex: 0,
       points: 3,
       explanation: "L'investigation place l'apprenant au cœur de la démarche scientifique appliquée au numérique : questionner, chercher des indices, tester et valider par la preuve."
     },
@@ -649,11 +649,11 @@ const MODULE_QUESTIONS = {
       text: "Dans un Escape Game pédagogique tel que la cyber-enquête FMTTN, quel est le véritable rôle de la scénarisation ludique ?",
       options: [
         "Faire passer le temps sans que les élèves n'aient à réfléchir à des notions scolaires.",
+        "Créer une compétition individuelle impitoyable où seul le plus rapide obtient des points.",
         "Servir de moteur narratif et motivationnel stimulant pour placer l'élève en situation de résoudre des problèmes et mobiliser des compétences numériques authentiques.",
-        "Remplacer entièrement les programmes et référentiels officiels de la Fédération Wallonie-Bruxelles.",
-        "Créer une compétition individuelle impitoyable où seul le plus rapide obtient des points."
+        "Remplacer entièrement les programmes et référentiels officiels de la Fédération Wallonie-Bruxelles."
       ],
-      correctIndex: 1,
+      correctIndex: 2,
       points: 3,
       explanation: "La mécanique ludique crée un contexte immersif engageant qui dédramatise la difficulté et incite à la collaboration et au raisonnement rigoureux."
     },
@@ -663,12 +663,12 @@ const MODULE_QUESTIONS = {
       title: "3. Le traitement de la fausse piste",
       text: "Dans une démarche d'enquête numérique, comment l'exploration d'une fausse piste ou d'une erreur d'hypothèse doit-elle être traitée didactiquement ?",
       options: [
-        "Comme un échec définitif justifiant le retrait de points immédiat.",
         "Comme une donnée informative précieuse qui permet de réfuter une hypothèse, d'analyser les causes de l'erreur et de réorienter la recherche.",
         "En cachant l'erreur pour ne pas perturber les autres élèves.",
+        "Comme un échec définitif justifiant le retrait de points immédiat.",
         "En punissant le groupe responsable pour manque d'attention."
       ],
-      correctIndex: 1,
+      correctIndex: 0,
       points: 3,
       explanation: "L'erreur fait partie intégrante de l'enquête : comprendre pourquoi une piste est infructueuse constitue un acte cognitif aussi formateur que trouver la bonne solution."
     },
@@ -678,12 +678,12 @@ const MODULE_QUESTIONS = {
       title: "4. Le risque du divertissement sans apprentissage",
       text: "Quel est le risque didactique majeur d'une activité d'enquête ludifiée si l'enseignant omet d'organiser un temps de synthèse ?",
       options: [
-        "Les élèves risquent de s'ennuyer en classe.",
-        "Les élèves retiennent l'amusement et la mécanique du jeu sans conscientiser ni formaliser les savoirs et compétences numériques sous-jacents.",
+        "Les parents d'élèves vont automatiquement refuser l'évaluation.",
         "Le réseau Internet de l'école risque de saturer.",
-        "Les parents d'élèves vont automatiquement refuser l'évaluation."
+        "Les élèves risquent de s'ennuyer en classe.",
+        "Les élèves retiennent l'amusement et la mécanique du jeu sans conscientiser ni formaliser les savoirs et compétences numériques sous-jacents."
       ],
-      correctIndex: 1,
+      correctIndex: 3,
       points: 3,
       explanation: "Le jeu n'est qu'un vecteur : sans débriefing, l'apprentissage reste invisible et l'élève ne transfère pas les notions travaillées vers d'autres contextes."
     },
@@ -693,10 +693,10 @@ const MODULE_QUESTIONS = {
       title: "5. Le débriefing pédagogique post-enquête",
       text: "Quel est l'objectif premier de la phase de débriefing après un Escape Game ou une investigation numérique ?",
       options: [
-        "Proclamer les vainqueurs et distribuer des friandises.",
+        "Vérifier que les ordinateurs ne sont pas tombés en panne.",
         "Expliciter les démarches de pensée, analyser les stratégies de résolution d'énigmes et relier chaque défi aux attendus curriculaires du référentiel FMTTN.",
-        "Ranger la salle informatique le plus vite possible.",
-        "Vérifier que les ordinateurs ne sont pas tombés en panne."
+        "Proclamer les vainqueurs et distribuer des friandises.",
+        "Ranger la salle informatique le plus vite possible."
       ],
       correctIndex: 1,
       points: 3,
@@ -724,11 +724,11 @@ const MODULE_QUESTIONS = {
       text: "Quel est l'effet didactique premier de l'introduction d'une contrainte temporelle forte (ex : 20 minutes chrono) dans un défi d'apprentissage ?",
       options: [
         "Créer un stress éliminatoire pour trier les meilleurs élèves de la classe.",
-        "Pousser l'élève à dépasser le perfectionnisme inhibiteur, à hiérarchiser immédiatement l'essentiel et à s'engager activement dans l'expérimentation sans procrastiner.",
         "Permettre à l'enseignant de corriger ses copies pendant que les élèves travaillent vite.",
+        "Pousser l'élève à dépasser le perfectionnisme inhibiteur, à hiérarchiser immédiatement l'essentiel et à s'engager activement dans l'expérimentation sans procrastiner.",
         "Réduire la facture d'électricité de l'école en allumant moins longtemps les écrans."
       ],
-      correctIndex: 1,
+      correctIndex: 2,
       points: 3,
       explanation: "La brièveté du temps imparti focalise l'attention sur l'objectif central : l'élève teste, fait des compromis rapides et entre d'emblée dans la démarche de production."
     },
@@ -738,12 +738,12 @@ const MODULE_QUESTIONS = {
       title: "2. La contrainte comme levier de créativité",
       text: "Pourquoi imposer des limites strictes (ex : maximum 30 mots, 3 éléments visuels sur Canva) améliore-t-il la qualité didactique d'une production ?",
       options: [
-        "Parce que cela évite que les élèves écrivent trop de bêtises sur leur feuille.",
-        "Parce que la contrainte oblige à faire des choix éditoriaux rigoureux, à éliminer le superflu et à concentrer la puissance communicative sur le message essentiel.",
         "Parce que les serveurs de Canva plantent si l'on dépasse 30 mots.",
-        "Uniquement pour faciliter la relecture par l'enseignant."
+        "Uniquement pour faciliter la relecture par l'enseignant.",
+        "Parce que la contrainte oblige à faire des choix éditoriaux rigoureux, à éliminer le superflu et à concentrer la puissance communicative sur le message essentiel.",
+        "Parce que cela évite que les élèves écrivent trop de bêtises sur leur feuille."
       ],
-      correctIndex: 1,
+      correctIndex: 2,
       points: 3,
       explanation: "L'abondance de choix paralyse souvent l'élève : restreindre drastiquement les ressources oblige à concevoir une rhétorique visuelle et textuelle percutante."
     },
@@ -755,8 +755,8 @@ const MODULE_QUESTIONS = {
       options: [
         "Prendre en faute les élèves timides.",
         "Développer la capacité à expliciter, assumer et justifier oralement ses choix graphiques et didactiques devant ses pairs en un temps limité.",
-        "Remplacer l'évaluation écrite par une note d'éloquence générale.",
-        "Donner le temps aux autres groupes de ranger leur matériel."
+        "Donner le temps aux autres groupes de ranger leur matériel.",
+        "Remplacer l'évaluation écrite par une note d'éloquence générale."
       ],
       correctIndex: 1,
       points: 3,
@@ -768,12 +768,12 @@ const MODULE_QUESTIONS = {
       title: "4. Le climat sécurisant et le droit à l'imperfection",
       text: "Quelle condition pédagogique est impérative pour que la contrainte temporelle d'un défi reste stimulante et non anxiogène ?",
       options: [
-        "Menacer d'un zéro pointé tout groupe n'ayant pas bouclé son affiche.",
-        "Instaurer un climat bienveillant où l'inachevé et l'erreur sont pleinement acceptés, la valeur résidant dans la réflexion engagée et les choix testés.",
         "Faire le travail à la place des élèves qui prennent du retard.",
-        "Organiser un vote pour éliminer la pire création de la classe."
+        "Menacer d'un zéro pointé tout groupe n'ayant pas bouclé son affiche.",
+        "Organiser un vote pour éliminer la pire création de la classe.",
+        "Instaurer un climat bienveillant où l'inachevé et l'erreur sont pleinement acceptés, la valeur résidant dans la réflexion engagée et les choix testés."
       ],
-      correctIndex: 1,
+      correctIndex: 3,
       points: 3,
       explanation: "Le défi est un laboratoire d'audace : si la note sanctionne l'inabouti, l'élève se réfugie dans la prudence banale et perd tout élan créatif."
     },
@@ -783,12 +783,12 @@ const MODULE_QUESTIONS = {
       title: "5. Domaines d'application dans le FMTTN",
       text: "Dans quel type d'activités du référentiel FMTTN le défi express est-il particulièrement indiqué ?",
       options: [
-        "Uniquement lors de la signature du règlement d'ordre intérieur de l'école.",
         "Pour des activités de communication visuelle, de prototypage rapide d'affiches, de détection d'erreurs de code (débogage flash) ou de synthèse d'idées.",
+        "Uniquement pour les examens certificatifs de fin de secondaire.",
         "Pour l'apprentissage de la dactylographie en aveugle sur machine à écrire.",
-        "Uniquement pour les examens certificatifs de fin de secondaire."
+        "Uniquement lors de la signature du règlement d'ordre intérieur de l'école."
       ],
-      correctIndex: 1,
+      correctIndex: 0,
       points: 3,
       explanation: "Le défi express est idéal pour dynamiser des séances, réactiver des notions ou éprouver la clarté d'un message communicatif sous contrainte."
     },
@@ -813,12 +813,12 @@ const MODULE_QUESTIONS = {
       title: "1. Le postulat fondamental de la conception itérative",
       text: "Quel principe essentiel caractérise la démarche de conception itérative dans le domaine des technologies numériques ?",
       options: [
-        "Une production numérique doit être livrée parfaite et définitive dès son premier jet.",
         "Une première production n'est jamais définitive : elle constitue un prototype destiné à être testé auprès de véritables utilisateurs, analysé et progressivement amélioré.",
-        "Le concepteur sait toujours exactement ce que veulent les utilisateurs sans avoir besoin de les consulter.",
-        "L'enseignant ne doit accepter aucune modification sur un devoir déjà remis."
+        "L'enseignant ne doit accepter aucune modification sur un devoir déjà remis.",
+        "Une production numérique doit être livrée parfaite et définitive dès son premier jet.",
+        "Le concepteur sait toujours exactement ce que veulent les utilisateurs sans avoir besoin de les consulter."
       ],
-      correctIndex: 1,
+      correctIndex: 0,
       points: 3,
       explanation: "L'itération repose sur l'humilité du concepteur : c'est la confrontation au réel et l'observation des usages qui révèlent les forces et les faiblesses d'un produit."
     },
@@ -829,11 +829,11 @@ const MODULE_QUESTIONS = {
       text: "Pourquoi les créateurs d'un jeu ou d'un site sont-ils généralement de mauvais évaluateurs de leur propre production ?",
       options: [
         "Parce qu'ils ne possèdent pas de diplôme en informatique.",
-        "Parce qu'ils connaissent déjà la logique de leur création et ne perçoivent plus les incohérences, manques d'ergonomie ou consignes implicites qui bloquent un utilisateur candide.",
         "Parce qu'ils ont passé trop de temps devant l'ordinateur.",
+        "Parce qu'ils connaissent déjà la logique de leur création et ne perçoivent plus les incohérences, manques d'ergonomie ou consignes implicites qui bloquent un utilisateur candide.",
         "Parce que les concepteurs refusent systématiquement de relire leur travail."
       ],
-      correctIndex: 1,
+      correctIndex: 2,
       points: 3,
       explanation: "L'œil du créateur compense inconsciemment les défauts : seul un utilisateur découvrant l'interface pour la première fois permet d'identifier les vrais obstacles."
     },
@@ -843,12 +843,12 @@ const MODULE_QUESTIONS = {
       title: "3. L'instrumentation du test par formulaire (Google Forms)",
       text: "Pourquoi est-il crucial d'outiller le recueil de données par un questionnaire structuré (ex : Google Forms) plutôt que de demander un simple « Qu'en pensez-vous ? » ?",
       options: [
-        "Pour collecter les adresses email personnelles des testeurs.",
-        "Pour transformer des avis vagues ou de la politesse en données objectives critériées (compréhension, fluidité, pertinence) permettant d'arbitrer rationnellement les correctifs.",
         "Pour automatiser la notation sans avoir à lire les réponses.",
-        "Uniquement pour respecter le volet tableur du programme scolaire."
+        "Uniquement pour respecter le volet tableur du programme scolaire.",
+        "Pour collecter les adresses email personnelles des testeurs.",
+        "Pour transformer des avis vagues ou de la politesse en données objectives critériées (compréhension, fluidité, pertinence) permettant d'arbitrer rationnellement les correctifs."
       ],
-      correctIndex: 1,
+      correctIndex: 3,
       points: 3,
       explanation: "Un questionnaire structuré permet de poser des questions fermées (échelles d'utilisabilité) et ouvertes précises pour hiérarchiser les priorités d'amélioration de la V2."
     },
@@ -860,8 +860,8 @@ const MODULE_QUESTIONS = {
       options: [
         "Uniquement les niveaux Mémoriser et Réciter.",
         "Les niveaux Analyser (décomposer les retours et déceler les causes), Évaluer (juger l'efficacité des solutions) et Créer (concevoir une version optimisée).",
-        "Aucun niveau de Bloom, car l'ergonomie ne relève pas de la pédagogie.",
-        "Uniquement le niveau Appliquer une consigne sans réfléchir."
+        "Uniquement le niveau Appliquer une consigne sans réfléchir.",
+        "Aucun niveau de Bloom, car l'ergonomie ne relève pas de la pédagogie."
       ],
       correctIndex: 1,
       points: 3,
@@ -873,12 +873,12 @@ const MODULE_QUESTIONS = {
       title: "5. Le statut constructif de l'erreur",
       text: "Dans la boucle itérative « Concevoir ➔ Tester ➔ Analyser ➔ Améliorer », quel est le statut accordé à l'erreur ou au bug ?",
       options: [
+        "Un motif de suspension immédiate de l'accès aux ordinateurs.",
         "Une honte pédagogique devant être dissimulée aux autres groupes.",
         "Un signal précieux et constructif qui fournit la matière première indispensable au perfectionnement de la production.",
-        "Un motif de suspension immédiate de l'accès aux ordinateurs.",
         "Une fatalité incontournable qu'il ne sert à rien de corriger."
       ],
-      correctIndex: 1,
+      correctIndex: 2,
       points: 3,
       explanation: "L'erreur devient un levier d'apprentissage : chaque difficulté rencontrée par le joueur renseigne sur ce qui doit être clarifié dans les règles ou l'interface."
     },
@@ -903,12 +903,12 @@ const MODULE_QUESTIONS = {
       title: "1. Le cycle expérientiel de David Kolb",
       text: "Selon le cycle d'apprentissage expérientiel de David Kolb, quelle étape doit impérativement succéder à l'expérience concrète pour qu'il y ait véritable apprentissage ?",
       options: [
-        "L'oubli immédiat de l'activité pour passer à un autre cours.",
         "L'observation réflexive suivie de la conceptualisation abstraite, permettant de donner du sens à ce qui a été vécu et de formuler des règles générales.",
+        "La copie intégrale d'un résumé théorique dicté au tableau.",
         "L'attribution mécanique d'une note chiffrée par l'enseignant.",
-        "La copie intégrale d'un résumé théorique dicté au tableau."
+        "L'oubli immédiat de l'activité pour passer à un autre cours."
       ],
-      correctIndex: 1,
+      correctIndex: 0,
       points: 3,
       explanation: "L'action seule ne suffit pas : c'est le temps de recul réflexif ('Qu'avons-nous fait ? Pourquoi ?') qui transforme une manipulation en connaissance transférable."
     },
@@ -918,10 +918,10 @@ const MODULE_QUESTIONS = {
       title: "2. La règle d'or du Peer Learning (Apprentissage entre pairs)",
       text: "Dans une classe fonctionnant en apprentissage entre pairs, quelle attitude doit adopter un étudiant lorsqu'un camarade sollicite son aide ?",
       options: [
-        "Prendre la souris et le clavier des mains de son pair pour exécuter la tâche à sa place le plus vite possible.",
+        "Renvoyer immédiatement son camarade vers l'enseignant sans chercher à comprendre son blocage.",
         "Expliquer son raisonnement, guider le questionnement et amener son pair à trouver lui-même la solution.",
-        "Refuser de répondre pour conserver un avantage compétitif lors de l'évaluation.",
-        "Renvoyer immédiatement son camarade vers l'enseignant sans chercher à comprendre son blocage."
+        "Prendre la souris et le clavier des mains de son pair pour exécuter la tâche à sa place le plus vite possible.",
+        "Refuser de répondre pour conserver un avantage compétitif lors de l'évaluation."
       ],
       correctIndex: 1,
       points: 3,
@@ -934,11 +934,11 @@ const MODULE_QUESTIONS = {
       text: "Quel changement fondamental de posture le modèle de l'École 42 illustre-t-il pour l'enseignement du numérique ?",
       options: [
         "L'obligation d'acheter des ordinateurs très coûteux pour chaque élève.",
-        "Le déplacement de la question 'Que dois-je mémoriser ?' vers 'Quel problème dois-je résoudre et comment mobiliser les ressources collectives pour y parvenir ?'.",
         "L'interdiction d'utiliser Internet pendant les heures d'apprentissage.",
-        "La suppression complète de toute interaction humaine au profit de robots."
+        "La suppression complète de toute interaction humaine au profit de robots.",
+        "Le déplacement de la question 'Que dois-je mémoriser ?' vers 'Quel problème dois-je résoudre et comment mobiliser les ressources collectives pour y parvenir ?'."
       ],
-      correctIndex: 1,
+      correctIndex: 3,
       points: 3,
       explanation: "Le modèle 42 valorise l'autonomie, l'enquête collective, le droit à l'erreur et l'entraide mutuelle sans cours magistraux magistro-centrés."
     },
@@ -948,12 +948,12 @@ const MODULE_QUESTIONS = {
       title: "4. Le rôle de l'enseignant-facilitateur",
       text: "Lorsque les élèves travaillent en résolution de problème coopérative (ex : défi hardware), quel est le rôle prioritaire de l'enseignant ?",
       options: [
-        "Rester silencieux à son bureau et corriger les examens d'une autre classe.",
-        "Agir comme facilitateur et observateur bienveillant, veillant à la sécurité, régulant les dynamiques de groupe et n'intervenant en étayage que si les ressources des pairs sont épuisées.",
         "Faire une démonstration magistrale au tableau toutes les 5 minutes.",
-        "Imposer une démarche unique et interdire tout tâtonnement."
+        "Imposer une démarche unique et interdire tout tâtonnement.",
+        "Rester silencieux à son bureau et corriger les examens d'une autre classe.",
+        "Agir comme facilitateur et observateur bienveillant, veillant à la sécurité, régulant les dynamiques de groupe et n'intervenant en étayage que si les ressources des pairs sont épuisées."
       ],
-      correctIndex: 1,
+      correctIndex: 3,
       points: 3,
       explanation: "L'enseignant n'est plus le détenteur monopolistique des réponses : il crée le cadre, encourage l'exploration et aide à formaliser le bilan final."
     },
@@ -965,8 +965,8 @@ const MODULE_QUESTIONS = {
       options: [
         "Parce qu'elle provoque des disputes qui distraient la classe.",
         "Parce que devoir argumenter et défendre ses hypothèses oblige chaque élève à restructurer ses connaissances, à prendre conscience de ses erreurs et à construire une solution plus robuste.",
-        "Parce qu'elle permet d'élire un chef de groupe qui décide de tout.",
-        "Uniquement pour faire du bruit dans la salle d'informatique."
+        "Uniquement pour faire du bruit dans la salle d'informatique.",
+        "Parce qu'elle permet d'élire un chef de groupe qui décide de tout."
       ],
       correctIndex: 1,
       points: 3,
@@ -993,12 +993,12 @@ const MODULE_QUESTIONS = {
       title: "1. La spécificité de la scénarisation à distance",
       text: "Pourquoi concevoir un enseignement à distance ne peut-il pas se limiter à enregistrer son cours en amphi ou à déposer des documents PDF en ligne ?",
       options: [
-        "Parce que les élèves n'ont pas d'imprimante à domicile.",
         "Parce que l'absence de coprésence physique exige une scénarisation rigoureuse alternant ressources, activités guidées, temps d'interactions et rétroactions explicites.",
         "Parce que le décret de la FWB interdit le format PDF pour les étudiants.",
+        "Parce que les élèves n'ont pas d'imprimante à domicile.",
         "Uniquement pour des questions de droits d'auteur sur les vidéos."
       ],
-      correctIndex: 1,
+      correctIndex: 0,
       points: 3,
       explanation: "À distance, la simple mise à disposition de documents génère passivité et isolement : la scénarisation organise le rythme d'apprentissage et maintient l'engagement de l'étudiant."
     },
@@ -1008,12 +1008,12 @@ const MODULE_QUESTIONS = {
       title: "2. L'usage didactique du temps synchrone",
       text: "Dans un dispositif de formation hybride ou à distance, quelle est la plus-value essentielle des séances synchrones (visioconférences en direct) ?",
       options: [
-        "Faire un monologue magistral ininterrompu de deux heures.",
-        "Privilégier les interactions dynamiques : répondre aux questions, débattre, résoudre des études de cas collaboratives et offrir des rétroactions formatives collectives.",
+        "Faire recopier aux étudiants des textes dictés par l'enseignant.",
         "Vérifier la présence des étudiants à la minute près par appel nominal.",
-        "Faire recopier aux étudiants des textes dictés par l'enseignant."
+        "Privilégier les interactions dynamiques : répondre aux questions, débattre, résoudre des études de cas collaboratives et offrir des rétroactions formatives collectives.",
+        "Faire un monologue magistral ininterrompu de deux heures."
       ],
-      correctIndex: 1,
+      correctIndex: 2,
       points: 3,
       explanation: "Le temps synchrone est précieux : il doit être réservé aux échanges humains, à l'élucidation des incompréhensions et à la co-construction, les exposés pouvant être consultés en asynchrone."
     },
@@ -1023,12 +1023,12 @@ const MODULE_QUESTIONS = {
       title: "3. Les trois dimensions d'interactions (Modèle de Moore)",
       text: "Quelles sont les trois formes d'interactions indispensables à orchestrer pour rompre le sentiment d'isolement à distance ?",
       options: [
-        "Interactions entre l'ordinateur, l'imprimante et le routeur Wi-Fi.",
         "Interactions Étudiant ↔ Enseignant (étayage/feedback), Étudiant ↔ Étudiant (collaboration/pairs) et Étudiant ↔ Contenu (interactivité/tâches concrètes).",
-        "Interactions entre l'école, le ministère et les fournisseurs d'accès Internet.",
-        "Interactions entre les réseaux sociaux, les jeux vidéo et la messagerie instantanée."
+        "Interactions entre les réseaux sociaux, les jeux vidéo et la messagerie instantanée.",
+        "Interactions entre l'ordinateur, l'imprimante et le routeur Wi-Fi.",
+        "Interactions entre l'école, le ministère et les fournisseurs d'accès Internet."
       ],
-      correctIndex: 1,
+      correctIndex: 0,
       points: 3,
       explanation: "L'isolement ne provient pas de la distance géographique mais de la distance transactionnelle : nourrir ces 3 types d'interactions garantit la présence pédagogique."
     },
@@ -1039,11 +1039,11 @@ const MODULE_QUESTIONS = {
       text: "Quelle est la cause majeure de décrochage d'un apprenant lors d'un travail autonome à distance ?",
       options: [
         "Le manque de jeux vidéo disponibles en ligne.",
-        "L'ambiguïté des consignes, l'absence de jalons temporels explicites et l'incertitude sur ce qui est attendu pour réussir la tâche.",
         "L'utilisation d'ordinateurs portables de marque différente.",
-        "La météo pluvieuse qui perturbe la connexion."
+        "La météo pluvieuse qui perturbe la connexion.",
+        "L'ambiguïté des consignes, l'absence de jalons temporels explicites et l'incertitude sur ce qui est attendu pour réussir la tâche."
       ],
-      correctIndex: 1,
+      correctIndex: 3,
       points: 3,
       explanation: "Sans enseignant à proximité pour reformuler oralement, une consigne floue génère anxiété et sentiment d'impuissance : les attentes doivent être chirurgicales et exemplifiées."
     },
@@ -1053,10 +1053,10 @@ const MODULE_QUESTIONS = {
       title: "5. L'importance du feedback continu",
       text: "Pourquoi les rétroactions (feedbacks) régulières sont-elles encore plus cruciales à distance qu'en présentiel ?",
       options: [
-        "Pour justifier le temps de travail hebdomadaire de l'enseignant.",
-        "Pour rassurer l'étudiant sur sa progression, corriger rapidement les représentations erronées et maintenir la motivation intrinsèque dans la durée.",
         "Pour empêcher les étudiants d'utiliser d'autres sites web.",
-        "Uniquement pour préparer les réclamations d'examens."
+        "Pour rassurer l'étudiant sur sa progression, corriger rapidement les représentations erronées et maintenir la motivation intrinsèque dans la durée.",
+        "Uniquement pour préparer les réclamations d'examens.",
+        "Pour justifier le temps de travail hebdomadaire de l'enseignant."
       ],
       correctIndex: 1,
       points: 3,
@@ -1084,11 +1084,11 @@ const MODULE_QUESTIONS = {
       text: "Dans le cadre du référentiel FMTTN, à partir de quoi l'évaluation didactique doit-elle être prioritairement pensée ?",
       options: [
         "À partir du logiciel ou du matériel informatique mis à disposition dans la salle de classe.",
+        "À partir de la seule note attribuée lors d'un examen théorique de fin d'année.",
         "À partir de la vérification de l'atteinte des attendus (ce que l'élève doit apprendre, démontrer et mobiliser).",
-        "À partir de la vitesse de frappe au clavier et de la beauté visuelle des productions.",
-        "À partir de la seule note attribuée lors d'un examen théorique de fin d'année."
+        "À partir de la vitesse de frappe au clavier et de la beauté visuelle des productions."
       ],
-      correctIndex: 1,
+      correctIndex: 2,
       points: 2,
       explanation: "L'évaluation se fonde sur les résultats d'apprentissage (attendus du référentiel) et non sur les outils techniques mobilisés ou une simple conformité cosmétique."
     },
@@ -1098,12 +1098,12 @@ const MODULE_QUESTIONS = {
       title: "2. Évaluation des savoir-faire et des compétences",
       text: "Pourquoi les savoir-faire et les compétences numériques doivent-ils être prioritairement évalués en situation complexe (projets, défis, manipulations) plutôt que par un quiz théorique isolé ?",
       options: [
+        "Uniquement pour éviter d'imprimer des feuilles de papier en classe.",
         "Parce que les quiz écrits sont interdits par le décret Paysage.",
         "Parce qu'une compétence implique la mobilisation et la combinaison en contexte de plusieurs ressources (cognitives, techniques, critiques), ce qu'un QCM théorique ne peut mesurer.",
-        "Uniquement pour éviter d'imprimer des feuilles de papier en classe.",
         "Parce que les élèves savent toujours utiliser un logiciel sans qu'on ait besoin de vérifier leur démarche."
       ],
-      correctIndex: 1,
+      correctIndex: 2,
       points: 2,
       explanation: "Connaître une règle (savoir) ne garantit pas la capacité à la mobiliser dans l'action : l'évaluation en situation permet d'observer la démarche authentique et l'adaptation de l'élève face à un problème concret."
     },
@@ -1113,12 +1113,12 @@ const MODULE_QUESTIONS = {
       title: "3. Spécificité de l'évaluation en éducation aux médias",
       text: "Pourquoi est-il insuffisant de demander à un élève de définir ce qu'est une « fake news » ou la « désinformation » pour évaluer ses compétences en éducation aux médias ?",
       options: [
+        "Parce que seuls les journalistes professionnels peuvent repérer des fausses informations.",
         "Parce que l'éducation aux médias relève du développement d'une posture (réflexivité, esprit critique, discernement) qui se manifeste dans la justification de choix réels et non dans la récitation d'une définition.",
-        "Parce que les définitions changent selon les pays et ne sont pas universelles.",
         "Parce que les fake news n'existent plus sur les moteurs de recherche modernes.",
-        "Parce que seuls les journalistes professionnels peuvent repérer des fausses informations."
+        "Parce que les définitions changent selon les pays et ne sont pas universelles."
       ],
-      correctIndex: 0,
+      correctIndex: 1,
       points: 2,
       explanation: "L'esprit critique est une posture : l'élève doit démontrer sa démarche de doute méthodique, de recoupement de sources et d'argumentation face à un contenu réel (analyses de cas, débats, portfolios)."
     },
@@ -1128,12 +1128,12 @@ const MODULE_QUESTIONS = {
       title: "4. Les objectifs de l'évaluation par les pairs",
       text: "Selon le syllabus, quel est l'un des bénéfices majeurs de l'évaluation par les pairs pour l'élève évaluateur ?",
       options: [
+        "L'évaluation par les pairs sert uniquement à classer les élèves du meilleur au moins bon.",
         "L'élève évaluateur remplace définitivement l'enseignant et gagne du temps de correction.",
-        "En analysant le travail d'un camarade à l'aide de critères explicites, l'élève développe sa réflexivité et porte un regard plus critique sur sa propre production.",
         "L'élève apprend à sanctionner sévèrement ses camarades avec des notes pénalisantes.",
-        "L'évaluation par les pairs sert uniquement à classer les élèves du meilleur au moins bon."
+        "En analysant le travail d'un camarade à l'aide de critères explicites, l'élève développe sa réflexivité et porte un regard plus critique sur sa propre production."
       ],
-      correctIndex: 1,
+      correctIndex: 3,
       points: 2,
       explanation: "Évaluer autrui avec une grille critériée oblige l'apprenant à s'approprier les critères de réussite, ce qui stimule directement sa propre métacognition et son autorégulation."
     },
@@ -1143,12 +1143,12 @@ const MODULE_QUESTIONS = {
       title: "5. Structuration d'un feedback formatif exploitable",
       text: "Pour qu'un retour d'évaluation par les pairs soit véritablement formateur et actionnable avant la remise finale, quelle formulation doit-on privilégier ?",
       options: [
+        "Fournir un retour qualitatif structuré : identifier au moins une réussite, un point précis d'amélioration et une proposition concrète de modification.",
         "Attribuer une note globale sur 20 sans commentaire écrit.",
         "Écrire des remarques générales comme « Très bien » ou « Pas terrible ».",
-        "Fournir un retour qualitatif structuré : identifier au moins une réussite, un point précis d'amélioration et une proposition concrète de modification.",
         "Corriger directement le document à la place de son camarade sans lui expliquer ses erreurs."
       ],
-      correctIndex: 2,
+      correctIndex: 0,
       points: 2,
       explanation: "Le triptyque formatif (une réussite, un axe de progression, une recommandation concrète) permet à l'élève récepteur de comprendre exactement comment réviser son prototype."
     },
@@ -1158,12 +1158,12 @@ const MODULE_QUESTIONS = {
       title: "6. Distinction entre critère et indicateur (Jonsson & Svingby, Brookhart & Chen)",
       text: "Dans une grille critériée, quelle est la distinction fondamentale entre un « critère » et un « indicateur » ?",
       options: [
-        "Le critère est le barème chiffré en points, tandis que l'indicateur est la moyenne générale.",
         "Le critère désigne la dimension générale de l'apprentissage évaluée (ex. esprit critique), tandis que les indicateurs précisent les comportements et éléments concrets directement observables (ex. vérifie les sources, compare les dates, repère les biais).",
         "Les critères s'adressent à l'enseignant, alors que les indicateurs s'adressent aux parents d'élèves.",
-        "Critère et indicateur sont deux termes parfaitement synonymes et interchangeables."
+        "Critère et indicateur sont deux termes parfaitement synonymes et interchangeables.",
+        "Le critère est le barème chiffré en points, tandis que l'indicateur est la moyenne générale."
       ],
-      correctIndex: 1,
+      correctIndex: 0,
       points: 2,
       explanation: "Le critère pose la dimension évaluée (ex. autonomie, esprit critique) ; les indicateurs fournissent les preuves observables qui attestent de sa maîtrise concrète."
     },
@@ -1174,11 +1174,11 @@ const MODULE_QUESTIONS = {
       text: "Quel principe garantit la cohérence didactique d'un dispositif d'évaluation dans une leçon FMTTN ?",
       options: [
         "Changer de critères d'évaluation sans prévenir les élèves le jour de l'épreuve.",
+        "Régler la note finale au hasard pour obtenir une courbe de Gauss parfaite.",
         "La chaîne de concordance : Attendu du référentiel ➔ Activité d'apprentissage ➔ Situation d'évaluation ➔ Critère ➔ Indicateur ➔ Niveau de maîtrise.",
-        "Évaluer uniquement les compétences acquises en dehors de l'école par les élèves.",
-        "Régler la note finale au hasard pour obtenir une courbe de Gauss parfaite."
+        "Évaluer uniquement les compétences acquises en dehors de l'école par les élèves."
       ],
-      correctIndex: 1,
+      correctIndex: 2,
       points: 2,
       explanation: "Une évaluation valide aligne étroitement l'attendu institutionnel, la tâche vécue en classe, le critère d'observation et les descripteurs qualitatifs de progression."
     },
@@ -1203,12 +1203,12 @@ const MODULE_QUESTIONS = {
       title: "1. Finalité de l'évaluation dans le référentiel FMTTN",
       text: "Dans le cadre du référentiel FMTTN, à partir de quoi l'évaluation didactique doit-elle être prioritairement pensée ?",
       options: [
-        "À partir du logiciel ou du matériel informatique mis à disposition dans la salle de classe.",
-        "À partir de la vérification de l'atteinte des attendus (ce que l'élève doit apprendre, démontrer et mobiliser).",
         "À partir de la vitesse de frappe au clavier et de la beauté visuelle des productions.",
-        "À partir de la seule note attribuée lors d'un examen théorique de fin d'année."
+        "À partir du logiciel ou du matériel informatique mis à disposition dans la salle de classe.",
+        "À partir de la seule note attribuée lors d'un examen théorique de fin d'année.",
+        "À partir de la vérification de l'atteinte des attendus (ce que l'élève doit apprendre, démontrer et mobiliser)."
       ],
-      correctIndex: 1,
+      correctIndex: 3,
       points: 2,
       explanation: "L'évaluation se fonde sur les résultats d'apprentissage (attendus du référentiel) et non sur les outils techniques mobilisés ou une simple conformité cosmétique."
     },
@@ -1218,10 +1218,10 @@ const MODULE_QUESTIONS = {
       title: "2. Évaluation des savoir-faire et des compétences",
       text: "Pourquoi les savoir-faire et les compétences numériques doivent-ils être prioritairement évalués en situation complexe (projets, défis, manipulations) plutôt que par un quiz théorique isolé ?",
       options: [
-        "Parce que les quiz écrits sont interdits par le décret Paysage.",
+        "Parce que les élèves savent toujours utiliser un logiciel sans qu'on ait besoin de vérifier leur démarche.",
         "Parce qu'une compétence implique la mobilisation et la combinaison en contexte de plusieurs ressources (cognitives, techniques, critiques), ce qu'un QCM théorique ne peut mesurer.",
         "Uniquement pour éviter d'imprimer des feuilles de papier en classe.",
-        "Parce que les élèves savent toujours utiliser un logiciel sans qu'on ait besoin de vérifier leur démarche."
+        "Parce que les quiz écrits sont interdits par le décret Paysage."
       ],
       correctIndex: 1,
       points: 2,
@@ -1233,12 +1233,12 @@ const MODULE_QUESTIONS = {
       title: "3. Spécificité de l'évaluation en éducation aux médias",
       text: "Pourquoi est-il insuffisant de demander à un élève de définir ce qu'est une « fake news » ou la « désinformation » pour évaluer ses compétences en éducation aux médias ?",
       options: [
-        "Parce que l'éducation aux médias relève du développement d'une posture (réflexivité, esprit critique, discernement) qui se manifeste dans la justification de choix réels et non dans la récitation d'une définition.",
+        "Parce que seuls les journalistes professionnels peuvent repérer des fausses informations.",
         "Parce que les définitions changent selon les pays et ne sont pas universelles.",
-        "Parce que les fake news n'existent plus sur les moteurs de recherche modernes.",
-        "Parce que seuls les journalistes professionnels peuvent repérer des fausses informations."
+        "Parce que l'éducation aux médias relève du développement d'une posture (réflexivité, esprit critique, discernement) qui se manifeste dans la justification de choix réels et non dans la récitation d'une définition.",
+        "Parce que les fake news n'existent plus sur les moteurs de recherche modernes."
       ],
-      correctIndex: 0,
+      correctIndex: 2,
       points: 2,
       explanation: "L'esprit critique est une posture : l'élève doit démontrer sa démarche de doute méthodique, de recoupement de sources et d'argumentation face à un contenu réel (analyses de cas, débats, portfolios)."
     },
@@ -1248,12 +1248,12 @@ const MODULE_QUESTIONS = {
       title: "4. Les objectifs de l'évaluation par les pairs",
       text: "Selon le syllabus, quel est l'un des bénéfices majeurs de l'évaluation par les pairs pour l'élève évaluateur ?",
       options: [
-        "L'élève évaluateur remplace définitivement l'enseignant et gagne du temps de correction.",
         "En analysant le travail d'un camarade à l'aide de critères explicites, l'élève développe sa réflexivité et porte un regard plus critique sur sa propre production.",
+        "L'élève évaluateur remplace définitivement l'enseignant et gagne du temps de correction.",
         "L'élève apprend à sanctionner sévèrement ses camarades avec des notes pénalisantes.",
         "L'évaluation par les pairs sert uniquement à classer les élèves du meilleur au moins bon."
       ],
-      correctIndex: 1,
+      correctIndex: 0,
       points: 2,
       explanation: "Évaluer autrui avec une grille critériée oblige l'apprenant à s'approprier les critères de réussite, ce qui stimule directement sa propre métacognition et son autorégulation."
     },
@@ -1263,12 +1263,12 @@ const MODULE_QUESTIONS = {
       title: "5. Structuration d'un feedback formatif exploitable",
       text: "Pour qu'un retour d'évaluation par les pairs soit véritablement formateur et actionnable avant la remise finale, quelle formulation doit-on privilégier ?",
       options: [
-        "Attribuer une note globale sur 20 sans commentaire écrit.",
         "Écrire des remarques générales comme « Très bien » ou « Pas terrible ».",
         "Fournir un retour qualitatif structuré : identifier au moins une réussite, un point précis d'amélioration et une proposition concrète de modification.",
-        "Corriger directement le document à la place de son camarade sans lui expliquer ses erreurs."
+        "Corriger directement le document à la place de son camarade sans lui expliquer ses erreurs.",
+        "Attribuer une note globale sur 20 sans commentaire écrit."
       ],
-      correctIndex: 2,
+      correctIndex: 1,
       points: 2,
       explanation: "Le triptyque formatif (une réussite, un axe de progression, une recommandation concrète) permet à l'élève récepteur de comprendre exactement comment réviser son prototype."
     },
@@ -1279,11 +1279,11 @@ const MODULE_QUESTIONS = {
       text: "Dans une grille critériée, quelle est la distinction fondamentale entre un « critère » et un « indicateur » ?",
       options: [
         "Le critère est le barème chiffré en points, tandis que l'indicateur est la moyenne générale.",
-        "Le critère désigne la dimension générale de l'apprentissage évaluée (ex. esprit critique), tandis que les indicateurs précisent les comportements et éléments concrets directement observables (ex. vérifie les sources, compare les dates, repère les biais).",
+        "Critère et indicateur sont deux termes parfaitement synonymes et interchangeables.",
         "Les critères s'adressent à l'enseignant, alors que les indicateurs s'adressent aux parents d'élèves.",
-        "Critère et indicateur sont deux termes parfaitement synonymes et interchangeables."
+        "Le critère désigne la dimension générale de l'apprentissage évaluée (ex. esprit critique), tandis que les indicateurs précisent les comportements et éléments concrets directement observables (ex. vérifie les sources, compare les dates, repère les biais)."
       ],
-      correctIndex: 1,
+      correctIndex: 3,
       points: 2,
       explanation: "Le critère pose la dimension évaluée (ex. autonomie, esprit critique) ; les indicateurs fournissent les preuves observables qui attestent de sa maîtrise concrète."
     },
@@ -1293,12 +1293,12 @@ const MODULE_QUESTIONS = {
       title: "7. La concordance pédagogique d'une grille",
       text: "Quel principe garantit la cohérence didactique d'un dispositif d'évaluation dans une leçon FMTTN ?",
       options: [
-        "Changer de critères d'évaluation sans prévenir les élèves le jour de l'épreuve.",
-        "La chaîne de concordance : Attendu du référentiel ➔ Activité d'apprentissage ➔ Situation d'évaluation ➔ Critère ➔ Indicateur ➔ Niveau de maîtrise.",
         "Évaluer uniquement les compétences acquises en dehors de l'école par les élèves.",
-        "Régler la note finale au hasard pour obtenir une courbe de Gauss parfaite."
+        "Changer de critères d'évaluation sans prévenir les élèves le jour de l'épreuve.",
+        "Régler la note finale au hasard pour obtenir une courbe de Gauss parfaite.",
+        "La chaîne de concordance : Attendu du référentiel ➔ Activité d'apprentissage ➔ Situation d'évaluation ➔ Critère ➔ Indicateur ➔ Niveau de maîtrise."
       ],
-      correctIndex: 1,
+      correctIndex: 3,
       points: 2,
       explanation: "Une évaluation valide aligne étroitement l'attendu institutionnel, la tâche vécue en classe, le critère d'observation et les descripteurs qualitatifs de progression."
     },
@@ -1323,10 +1323,10 @@ const MODULE_QUESTIONS = {
       title: "1. La ludopédagogie selon les sciences de l'éducation",
       text: "Selon le syllabus (notamment les travaux de l'Université de Bordeaux), qu'est-ce qui distingue une véritable démarche de ludopédagogie d'un simple habillage ludique ?",
       options: [
-        "Le fait de donner des récompenses en bonbons ou des points bonus aux élèves gagnants.",
+        "L'absence totale d'intervention ou de consignes de la part de l'enseignant.",
         "Les apprentissages doivent être construits à travers l'expérience de jeu elle-même, et non par un vernis superficiel plaqué sur un cours magistral.",
         "L'obligation d'utiliser des consoles de jeux vidéo plutôt que des jeux de plateau.",
-        "L'absence totale d'intervention ou de consignes de la part de l'enseignant."
+        "Le fait de donner des récompenses en bonbons ou des points bonus aux élèves gagnants."
       ],
       correctIndex: 1,
       points: 3,
@@ -1338,12 +1338,12 @@ const MODULE_QUESTIONS = {
       title: "2. Johan Huizinga et le « cercle magique » (Homo ludens)",
       text: "Dans Homo ludens (1938), quel principe fondamental Johan Huizinga met-il en évidence à propos de l'espace de jeu ?",
       options: [
-        "Le jeu est une activité mercantile réservée au spectacle télévisé.",
         "Le jeu crée un espace-temps séparé de la vie ordinaire (« cercle magique »), régi par ses propres règles, où l'erreur est dédramatisée et permet d'expérimenter sans danger.",
-        "Le jeu est exclusivement destiné aux jeunes enfants et disparaît à l'âge adulte.",
-        "Le jeu doit impérativement interdire toute règle écrite pour préserver l'improvisation totale."
+        "Le jeu doit impérativement interdire toute règle écrite pour préserver l'improvisation totale.",
+        "Le jeu est une activité mercantile réservée au spectacle télévisé.",
+        "Le jeu est exclusivement destiné aux jeunes enfants et disparaît à l'âge adulte."
       ],
-      correctIndex: 1,
+      correctIndex: 0,
       points: 3,
       explanation: "Le cercle magique suspend temporairement les conséquences du réel, autorisant l'essai, le tâtonnement et la liberté d'action."
     },
@@ -1354,11 +1354,11 @@ const MODULE_QUESTIONS = {
       text: "Quelles sont les 4 grandes catégories d'attitudes ludiques définies par Roger Caillois ?",
       options: [
         "Cartes, dés, pions et plateaux de bois.",
-        "Agôn (compétition), Alea (hasard), Mimicry (simulation/rôle) et Ilinx (vertige/rupture de perception).",
         "Jeux d'intérieur, jeux de cour, jeux vidéo et jeux de cartes.",
+        "Agôn (compétition), Alea (hasard), Mimicry (simulation/rôle) et Ilinx (vertige/rupture de perception).",
         "Jeux solitaires, jeux de duel, jeux coopératifs et jeux en ligne."
       ],
-      correctIndex: 1,
+      correctIndex: 2,
       points: 3,
       explanation: "Caillois distingue ces 4 attitudes et les articule entre Paidia (spontanéité libre) et Ludus (règles et discipline construite)."
     },
@@ -1368,12 +1368,12 @@ const MODULE_QUESTIONS = {
       title: "4. La boucle expérientielle et le droit à l'erreur",
       text: "Comment la situation de jeu favorise-t-elle le traitement positif de l'erreur dans l'apprentissage ?",
       options: [
-        "En pénalisant immédiatement l'erreur par une baisse de la note scolaire.",
         "En intégrant l'erreur comme une information utile au sein d'une boucle authentique : décision → conséquence immédiate → analyse → régulation.",
         "En empêchant matériellement les élèves de faire le moindre mauvais choix.",
-        "En éliminant définitivement le joueur dès la première erreur sans lui permettre de rejouer."
+        "En éliminant définitivement le joueur dès la première erreur sans lui permettre de rejouer.",
+        "En pénalisant immédiatement l'erreur par une baisse de la note scolaire."
       ],
-      correctIndex: 1,
+      correctIndex: 0,
       points: 3,
       explanation: "Dans un jeu, perdre une manche n'est pas un stigmate d'incompétence : c'est un feedback immédiat qui pousse à comprendre le système."
     },
@@ -1383,12 +1383,12 @@ const MODULE_QUESTIONS = {
       title: "5. L'ingénierie ludopédagogique contre le mythe de la motivation spontanée",
       text: "Pourquoi le syllabus précise-t-il qu'il faut rejeter l'équation simpliste « jeu = motivation = meilleur apprentissage » ?",
       options: [
-        "Parce que le jeu ne produit aucun effet d'apprentissage sans un alignement didactique rigoureux entre mécanismes, objectifs, consignes et phase de débriefing.",
         "Parce que les élèves détestent jouer en classe et préfèrent toujours les cours magistraux.",
+        "Uniquement pour des motifs légaux liés aux droits d'auteur des éditeurs de jeux.",
         "Parce que les jeux de société sont trop chers pour les budgets des écoles.",
-        "Uniquement pour des motifs légaux liés aux droits d'auteur des éditeurs de jeux."
+        "Parce que le jeu ne produit aucun effet d'apprentissage sans un alignement didactique rigoureux entre mécanismes, objectifs, consignes et phase de débriefing."
       ],
-      correctIndex: 0,
+      correctIndex: 3,
       points: 3,
       explanation: "Le jeu n'est pas magique en soi : sans ingénierie pédagogique pensée et sans débriefing réflexif formalisé, il reste une récréation vide de sens didactique."
     },
@@ -1413,9 +1413,9 @@ const MODULE_QUESTIONS = {
       title: "1. Le droit à l'image dans l'espace public",
       text: "En droit belge et européen (RGPD), dans quelle condition peut-on photographier et diffuser l'image d'une personne sans son autorisation écrite préalable ?",
       options: [
-        "Dès que la personne est dans la rue, aucune autorisation n'est jamais requise.",
-        "Lorsque la personne se trouve fortuitement dans une vue d'ensemble d'un lieu public lors d'un événement d'actualité ou d'une manifestation publique, sans être isolée ni visée au premier plan de façon préjudiciable.",
         "Uniquement si la personne a plus de 65 ans.",
+        "Lorsque la personne se trouve fortuitement dans une vue d'ensemble d'un lieu public lors d'un événement d'actualité ou d'une manifestation publique, sans être isolée ni visée au premier plan de façon préjudiciable.",
+        "Dès que la personne est dans la rue, aucune autorisation n'est jamais requise.",
         "Il est strictement interdit de prendre la moindre photo dans un lieu public sans faire signer un formulaire à chaque passant."
       ],
       correctIndex: 1,
@@ -1428,12 +1428,12 @@ const MODULE_QUESTIONS = {
       title: "2. La règle des tiers en composition photographique",
       text: "Quel est le rôle technique et visuel de la règle des tiers dans la composition d'une image ?",
       options: [
-        "Obliger à placer le sujet exactement au centre géométrique du cliché.",
-        "Découper le cadre par deux lignes horizontales et deux lignes verticales pour positionner les points d'intérêt sur les lignes de force et dynamiser la lecture visuelle.",
+        "Diviser le temps d'exposition par trois pour éviter le flou de bougé.",
         "Prendre trois photos successives pour choisir la plus nette.",
-        "Diviser le temps d'exposition par trois pour éviter le flou de bougé."
+        "Découper le cadre par deux lignes horizontales et deux lignes verticales pour positionner les points d'intérêt sur les lignes de force et dynamiser la lecture visuelle.",
+        "Obliger à placer le sujet exactement au centre géométrique du cliché."
       ],
-      correctIndex: 1,
+      correctIndex: 2,
       points: 3,
       explanation: "La règle des tiers rompt avec la symétrie statique du centrage pour créer un parcours visuel dynamique guidant l'œil vers les points d'accroche."
     },
@@ -1443,12 +1443,12 @@ const MODULE_QUESTIONS = {
       title: "3. La technique du surcadrage",
       text: "En quoi consiste le surcadrage et quel effet esthétique et sémiotique permet-il de produire ?",
       options: [
+        "Ajouter une bordure blanche épaisse autour de l'image imprimée.",
         "Utiliser un cadre physique en plastique autour de l'écran du smartphone.",
         "Utiliser un élément de l'environnement (embrasure de porte, arche, feuillage, fenêtre) pour encadrer le sujet à l'intérieur de l'image, créant de la profondeur et focalisant le regard.",
-        "Rogner la photo pour ne garder que le visage en gros plan.",
-        "Ajouter une bordure blanche épaisse autour de l'image imprimée."
+        "Rogner la photo pour ne garder que le visage en gros plan."
       ],
-      correctIndex: 1,
+      correctIndex: 2,
       points: 3,
       explanation: "Le surcadrage structure la composition en isolant le sujet et en créant une impression de tableau dans le tableau qui théâtralise la scène."
     },
@@ -1473,12 +1473,12 @@ const MODULE_QUESTIONS = {
       title: "5. La Gestalt-théorie appliquée à la lecture d'image",
       text: "Selon la Gestalt-théorie présentée dans le syllabus, comment notre cerveau appréhende-t-il une image complexe ?",
       options: [
-        "Le cerveau analyse chaque pixel séparément sans chercher de lien global.",
-        "Le tout est perçu comme différent de la simple somme des parties : le cerveau comble les manques et reconstruit une structure globale dotée de sens.",
         "Le cerveau rejette toute image qui n'est pas parfaitement symétrique.",
-        "Seules les couleurs primaires sont perçues par le système cognitif humain."
+        "Seules les couleurs primaires sont perçues par le système cognitif humain.",
+        "Le cerveau analyse chaque pixel séparément sans chercher de lien global.",
+        "Le tout est perçu comme différent de la simple somme des parties : le cerveau comble les manques et reconstruit une structure globale dotée de sens."
       ],
-      correctIndex: 1,
+      correctIndex: 3,
       points: 3,
       explanation: "La théorie de la forme (Gestalt) démontre que notre perception organise spontanément les stimuli visuels en touts cohérents (comme le fusil reconstitué avec des ossements)."
     },
@@ -1503,12 +1503,12 @@ const MODULE_QUESTIONS = {
       title: "1. Le statut didactique de l'IA dans la conception de supports",
       text: "Selon le syllabus, comment l'intelligence artificielle générative doit-elle être considérée lors de la création de supports pédagogiques et de jeux ?",
       options: [
-        "Comme un substitut autonome remplaçant le travail de réflexion de l'enseignant.",
         "Comme un outil d'assistance à la conception, l'enseignant devant conserver la maîtrise des objectifs, des contenus, de la progression et des choix didactiques.",
-        "Comme un simple gadget récréatif sans aucune plus-value de production.",
-        "Comme un moteur de recherche encyclopédique infaillible ne commettant aucune erreur."
+        "Comme un substitut autonome remplaçant le travail de réflexion de l'enseignant.",
+        "Comme un moteur de recherche encyclopédique infaillible ne commettant aucune erreur.",
+        "Comme un simple gadget récréatif sans aucune plus-value de production."
       ],
-      correctIndex: 1,
+      correctIndex: 0,
       points: 3,
       explanation: "L'IA fournit une matière première brute ; l'enjeu didactique réside dans la maîtrise humaine des intentions pédagogiques et des arbitrages de contenu."
     },
@@ -1518,12 +1518,12 @@ const MODULE_QUESTIONS = {
       title: "2. La méthode du « saucissonner la matière » avec ChatGPT",
       text: "Pourquoi est-il fortement recommandé de « saucissonner la matière » plutôt que de demander à ChatGPT de générer l'ensemble des règles ou des cartes en un seul prompt ?",
       options: [
-        "Pour contourner la limite de caractères de l'imprimante de l'école.",
         "Pour conserver le contrôle cognitif sur le contenu, vérifier chaque unité séparément et éviter qu'une production massive ne devienne confuse ou sujette aux hallucinations.",
         "Parce que ChatGPT refuse catégoriquement les prompts contenant plus de deux paragraphes.",
+        "Pour contourner la limite de caractères de l'imprimante de l'école.",
         "Uniquement pour faire durer le projet sur plusieurs semaines de cours."
       ],
-      correctIndex: 1,
+      correctIndex: 0,
       points: 3,
       explanation: "Le découpage en unités identifiées permet d'ajuster précisément chaque bloc (objectifs, mécaniques, rédaction) avant d'harmoniser l'ensemble."
     },
@@ -1533,12 +1533,12 @@ const MODULE_QUESTIONS = {
       title: "3. La démarche multimodale avec Google Gemini",
       text: "Dans le cadre de la création visuelle des cartes de jeu, que permet spécifiquement l'approche multimodale avec Google Gemini ?",
       options: [
-        "Traduire des fichiers sonores directement en code binaire.",
-        "Partir d'une image existante (croquis, photo, gabarit), en analyser les caractéristiques visuelles et demander des transformations, des variations stylistiques ou de nouvelles propositions ciblées.",
+        "Créer des plateaux de jeu physiques sans passer par le FabLab.",
         "Copier automatiquement des images protégées par le droit d'auteur sans aucune modification.",
-        "Créer des plateaux de jeu physiques sans passer par le FabLab."
+        "Partir d'une image existante (croquis, photo, gabarit), en analyser les caractéristiques visuelles et demander des transformations, des variations stylistiques ou de nouvelles propositions ciblées.",
+        "Traduire des fichiers sonores directement en code binaire."
       ],
-      correctIndex: 1,
+      correctIndex: 2,
       points: 3,
       explanation: "Le multimodal permet d'alimenter l'IA avec ses propres références visuelles pour orienter précisément le rendu graphique souhaité."
     },
@@ -1548,12 +1548,12 @@ const MODULE_QUESTIONS = {
       title: "4. La fonction indispensable de Canva dans la chaîne de production",
       text: "Pourquoi une image brute générée par IA ne constitue-t-elle que rarement un produit final directement exploitable pour un jeu de cartes ?",
       options: [
+        "Parce que les cartes de jeu ne doivent comporter aucun texte écrit.",
         "Parce que les images d'IA s'effacent automatiquement au bout de 24 heures.",
-        "Parce que l'IA produit une matière première visuelle brute qui nécessite recadrage, détourage, hiérarchie typographique, harmonisation de la charte et gabarit d'impression.",
         "Parce que le logiciel Canva interdit l'importation de visuels créés par des algorithmes génératifs.",
-        "Parce que les cartes de jeu ne doivent comporter aucun texte écrit."
+        "Parce que l'IA produit une matière première visuelle brute qui nécessite recadrage, détourage, hiérarchie typographique, harmonisation de la charte et gabarit d'impression."
       ],
-      correctIndex: 1,
+      correctIndex: 3,
       points: 3,
       explanation: "Canva assure la finalisation ergonomique et éditoriale : calibrage aux formats réels de cartes, contrastes, ajout de pictogrammes et lisibilité des textes."
     },
@@ -1593,12 +1593,12 @@ const MODULE_QUESTIONS = {
       title: "1. Le dispositif cinématographique et la transparence (Jean-Louis Baudry)",
       text: "Selon les analyses de Jean-Louis Baudry reprises dans le cours, quel effet produit un niveau élevé de réalisme et d'immersion audiovisuelle ou interactive sur le spectateur ?",
       options: [
-        "Il stimule immédiatement une analyse critique rigoureuse des choix de cadrage et de lumière.",
-        "Il tend à masquer le dispositif technique de diffusion : le spectateur, absorbé par l'histoire, oublie qu'il regarde une construction orientée et risque d'être plus facilement manipulé.",
         "Il oblige le spectateur à quitter la salle de projection en raison d'une surcharge sensorielle.",
-        "Il garantit l'objectivité absolue de l'information transmise sans aucune possibilité de trucage."
+        "Il garantit l'objectivité absolue de l'information transmise sans aucune possibilité de trucage.",
+        "Il tend à masquer le dispositif technique de diffusion : le spectateur, absorbé par l'histoire, oublie qu'il regarde une construction orientée et risque d'être plus facilement manipulé.",
+        "Il stimule immédiatement une analyse critique rigoureuse des choix de cadrage et de lumière."
       ],
-      correctIndex: 1,
+      correctIndex: 2,
       points: 3,
       explanation: "Plus le dispositif technique s'efface au profit d'un sentiment immersif de réel, moins le spectateur prend de recul critique sur la mise en scène et l'intention idéologique sous-jacente."
     },
@@ -1608,12 +1608,12 @@ const MODULE_QUESTIONS = {
       title: "2. L'échelle des plans et leurs fonctions narratives",
       text: "Dans la grammaire audiovisuelle, quelle est la spécificité du « plan américain » par rapport au « plan moyen » ou au « gros plan » ?",
       options: [
-        "Il cadre le personnage à partir du front jusqu'au nez pour accentuer le regard.",
         "Il cadre le personnage de la tête jusqu'à mi-cuisse, historiquement créé dans le western pour laisser visibles les holsters et revolvers des comédiens.",
-        "Il montre le personnage miniature au milieu d'un vaste paysage pour souligner sa solitude.",
-        "Il cadre uniquement les pieds d'un acteur en mouvement lors d'une poursuite."
+        "Il cadre le personnage à partir du front jusqu'au nez pour accentuer le regard.",
+        "Il cadre uniquement les pieds d'un acteur en mouvement lors d'une poursuite.",
+        "Il montre le personnage miniature au milieu d'un vaste paysage pour souligner sa solitude."
       ],
-      correctIndex: 1,
+      correctIndex: 0,
       points: 3,
       explanation: "Le plan américain coupe le personnage à mi-cuisse (au-dessus du genou), équilibrant l'expression corporelle et la visibilité des accessoires d'action (comme les armes dans les westerns)."
     },
@@ -1623,9 +1623,9 @@ const MODULE_QUESTIONS = {
       title: "3. Les angles de prise de vue et leurs effets psychologiques",
       text: "Associez correctement l'angle de prise de vue à son effet psychologique ou esthétique sur le sujet filmé :",
       options: [
-        "La contre-plongée produit un effet d'écrasement et de vulnérabilité, tandis que la plongée confère grandeur et autorité.",
-        "La plongée (haut vers le bas) produit un effet d'écrasement ou de faiblesse, la contre-plongée (bas vers le haut) confère puissance et domination, et le plan Berkeley (vue zénithale à 90°) génère une mise à plat géométrique désindividualisante.",
         "Le plan Berkeley accélère le rythme cardiaque des acteurs en raison de l'absence de gravité.",
+        "La plongée (haut vers le bas) produit un effet d'écrasement ou de faiblesse, la contre-plongée (bas vers le haut) confère puissance et domination, et le plan Berkeley (vue zénithale à 90°) génère une mise à plat géométrique désindividualisante.",
+        "La contre-plongée produit un effet d'écrasement et de vulnérabilité, tandis que la plongée confère grandeur et autorité.",
         "Tous les angles de caméra produisent strictement le même impact visuel sur le spectateur dès lors que l'image est nette."
       ],
       correctIndex: 1,
@@ -1638,12 +1638,12 @@ const MODULE_QUESTIONS = {
       title: "4. Les règles de tournage et de continuité : règle des 180° et règle des 30°",
       text: "Lors du tournage d'une interaction ou d'une explication de jeu, comment applique-t-on la règle des 180° et la règle des 30° pour garantir la continuité visuelle ?",
       options: [
-        "On doit changer de caméra toutes les 180 secondes et pivoter de 30° par heure de tournage.",
-        "La règle des 180° interdit à la caméra de franchir l'axe imaginaire reliant les protagonistes sous peine d'inverser leurs regards (faux raccord) ; la règle des 30° impose un décalage angulaire minimal de 30° entre deux plans de même échelle pour éviter le jump cut.",
+        "La règle des 30° est une consigne de température de couleur pour équilibrer la balance des blancs des projecteurs.",
         "La règle des 180° impose de filmer exclusivement en demi-cercle autour du plateau de jeu sans jamais s'arrêter.",
-        "La règle des 30° est une consigne de température de couleur pour équilibrer la balance des blancs des projecteurs."
+        "On doit changer de caméra toutes les 180 secondes et pivoter de 30° par heure de tournage.",
+        "La règle des 180° interdit à la caméra de franchir l'axe imaginaire reliant les protagonistes sous peine d'inverser leurs regards (faux raccord) ; la règle des 30° impose un décalage angulaire minimal de 30° entre deux plans de même échelle pour éviter le jump cut."
       ],
-      correctIndex: 1,
+      correctIndex: 3,
       points: 3,
       explanation: "Le respect de l'axe des 180° maintient la cohérence directionnelle (les regards se croisent au champ-contre-champ) ; l'écart d'au moins 30° entre deux plans successifs de même sujet évite l'impression de saut ou de saccade (jump cut)."
     },
@@ -1653,12 +1653,12 @@ const MODULE_QUESTIONS = {
       title: "5. Traitement sonore : renforcement, contrepoint et voix-off",
       text: "Dans une vidéo de présentation, quelle est la fonction du « contrepoint sonore » (comme dans Lord of War) et quel avantage pratique offre l'enregistrement d'une « voix-off » ?",
       options: [
+        "La voix-off est uniquement autorisée si elle est enregistrée en direct pendant la prise de vue avec un mégaphone.",
         "Le contrepoint sonore consiste à couper le son toutes les 5 secondes ; la voix-off est réservée aux films muets.",
-        "Le contrepoint sonore crée un décalage émotionnel en opposant une ambiance musicale joyeuse/légère à une image dramatique ; la voix-off en post-production évite les aléas de prise de son directe et permet d'apporter un commentaire réflexif clair et maîtrisé.",
         "Le contrepoint sonore oblige le monteur à utiliser uniquement des morceaux de musique classique libres de droits.",
-        "La voix-off est uniquement autorisée si elle est enregistrée en direct pendant la prise de vue avec un mégaphone."
+        "Le contrepoint sonore crée un décalage émotionnel en opposant une ambiance musicale joyeuse/légère à une image dramatique ; la voix-off en post-production évite les aléas de prise de son directe et permet d'apporter un commentaire réflexif clair et maîtrisé."
       ],
-      correctIndex: 1,
+      correctIndex: 3,
       points: 3,
       explanation: "Le contrepoint suscite la dissonance cognitive et la réflexion critique chez le spectateur ; la voix-off enregistrée en studio/post-prod assure une clarté sonore optimale et un recul didactique sur les images du jeu."
     },
@@ -1687,12 +1687,12 @@ const FALLBACK_QUESTIONS = [
     title: "1. Compréhension du concept clé",
     text: "Quelle est l'idée centrale développée dans ce chapitre de didactique du numérique ?",
     options: [
-      "Le numérique se suffit à lui-même et remplace la posture pédagogique de l'enseignant.",
-      "La technologie doit être subordonnée à une intention pédagogique claire et susciter une posture réflexive chez l'apprenant.",
-      "L'important est d'utiliser le plus grand nombre d'outils numériques différents dans une leçon.",
-      "Les manuels scolaires traditionnels doivent être systématiquement abandonnés."
-    ],
-    correctIndex: 1,
+        "Le numérique se suffit à lui-même et remplace la posture pédagogique de l'enseignant.",
+        "La technologie doit être subordonnée à une intention pédagogique claire et susciter une posture réflexive chez l'apprenant.",
+        "L'important est d'utiliser le plus grand nombre d'outils numériques différents dans une leçon.",
+        "Les manuels scolaires traditionnels doivent être systématiquement abandonnés."
+      ],
+      correctIndex: 1,
     points: 3,
     explanation: "La plus-value du numérique dépend de l'ingénierie pédagogique déployée et de l'activité cognitive réelle de l'élève."
   },
@@ -1702,12 +1702,12 @@ const FALLBACK_QUESTIONS = [
     title: "2. Évaluation des apprentissages",
     text: "Dans une perspective d'évaluation diagnostique ou formative, comment doit-on traiter l'erreur d'un élève face à un outil numérique ?",
     options: [
-      "Comme une faute éliminatoire sanctionnée par une note négative.",
-      "Comme un indice précieux sur ses représentations mentales et une opportunité de remédiation didactique.",
-      "Comme la preuve qu'il ne faut plus lui confier d'appareil numérique.",
-      "En ignorant l'erreur pour ne pas décourager l'élève."
-    ],
-    correctIndex: 1,
+        "Comme un indice précieux sur ses représentations mentales et une opportunité de remédiation didactique.",
+        "Comme la preuve qu'il ne faut plus lui confier d'appareil numérique.",
+        "En ignorant l'erreur pour ne pas décourager l'élève.",
+        "Comme une faute éliminatoire sanctionnée par une note négative."
+      ],
+      correctIndex: 0,
     points: 3,
     explanation: "L'erreur fait partie intégrante du processus d'apprentissage et permet d'ajuster l'étayage pédagogique."
   },
@@ -1726,13 +1726,43 @@ const FALLBACK_QUESTIONS = [
   }
 ]
 
-// Données réactives du Quiz
-const questions = computed(() => {
-  if (props.customQuestions && props.customQuestions.length > 0) {
-    return props.customQuestions
-  }
-  return MODULE_QUESTIONS[props.moduleId] || FALLBACK_QUESTIONS
-})
+// Fonction de mélange aléatoire des propositions (Fisher-Yates)
+function shuffleQuestionOptions(questionList) {
+  if (!Array.isArray(questionList)) return []
+  return questionList.map(q => {
+    if (q.type !== 'qcm' || !Array.isArray(q.options) || q.options.length <= 1) {
+      return { ...q }
+    }
+    const correctText = q.options[q.correctIndex]
+    const shuffled = [...q.options]
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    const newCorrectIndex = shuffled.indexOf(correctText)
+    return {
+      ...q,
+      options: shuffled,
+      correctIndex: newCorrectIndex
+    }
+  })
+}
+
+// Données réactives du Quiz avec mélange dynamique des options
+const activeQuestions = ref([])
+
+function initQuestions() {
+  const base = (props.customQuestions && props.customQuestions.length > 0)
+    ? props.customQuestions
+    : (MODULE_QUESTIONS[props.moduleId] || FALLBACK_QUESTIONS)
+  activeQuestions.value = shuffleQuestionOptions(base)
+}
+
+watch(() => props.moduleId, () => {
+  initQuestions()
+}, { immediate: true })
+
+const questions = computed(() => activeQuestions.value)
 
 const userAnswers = ref({})
 const openSelfScores = ref({})
@@ -1898,6 +1928,7 @@ function retakeQuiz() {
   isSubmitted.value = false
   showCorrection.value = false
   saveSuccess.value = false
+  initQuestions()
 }
 </script>
 

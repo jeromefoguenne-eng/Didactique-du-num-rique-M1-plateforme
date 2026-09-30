@@ -155,12 +155,53 @@ function createJsonResponse(data) {
 // =========================================================================
 
 function getOrCreateSpreadsheet() {
+  // 1. Si le script est lié directement à un classeur
+  try {
+    var active = SpreadsheetApp.getActiveSpreadsheet();
+    if (active && active.getSheetByName("Etudiants")) return active;
+  } catch (e) {}
+
+  // 2. Recherche parmi tous les classeurs portant le nom officiel (sélection du plus complet)
   var files = DriveApp.getFilesByName(SPREADSHEET_NAME);
-  if (files.hasNext()) {
-    return SpreadsheetApp.open(files.next());
+  var bestSs = null;
+  var maxRows = -1;
+
+  while (files.hasNext()) {
+    var f = files.next();
+    try {
+      var candidate = SpreadsheetApp.open(f);
+      var uSheet = candidate.getSheetByName("Etudiants");
+      var rows = uSheet ? uSheet.getLastRow() : 0;
+      if (rows > maxRows) {
+        maxRows = rows;
+        bestSs = candidate;
+      }
+    } catch (e) {}
   }
 
-  // Création d'un nouveau tableur
+  if (bestSs && maxRows > 1) {
+    return bestSs;
+  }
+
+  // 3. Recherche élargie par mot-clé si aucun classeur n'avait de données
+  try {
+    var searchFiles = DriveApp.searchFiles('title contains "Didactique" and mimeType = "application/vnd.google-apps.spreadsheet"');
+    while (searchFiles.hasNext()) {
+      var sf = searchFiles.next();
+      var candidate2 = SpreadsheetApp.open(sf);
+      var uSheet2 = candidate2.getSheetByName("Etudiants");
+      var rows2 = uSheet2 ? uSheet2.getLastRow() : 0;
+      if (rows2 > maxRows) {
+        maxRows = rows2;
+        bestSs = candidate2;
+      }
+    }
+    if (bestSs && maxRows > 1) return bestSs;
+  } catch (e) {}
+
+  if (bestSs) return bestSs;
+
+  // 4. Création d'un nouveau tableur uniquement si aucun fichier n'existe
   var ss = SpreadsheetApp.create(SPREADSHEET_NAME);
   initSheetTabs(ss);
   return ss;

@@ -1,5 +1,6 @@
 import { reactive, computed, ref } from 'vue'
 import { cloudSync, cloudSyncState, DEFAULT_CLOUD_URL } from './cloudSync'
+import { INITIAL_REAL_USERS, INITIAL_REAL_FILES, INITIAL_REAL_SUBMISSIONS } from './studentSubmissionsData'
 
 export interface User {
   id: string
@@ -698,42 +699,8 @@ export function formatFileName(
   return `${nom}_${prenom}_${exClean}_${today}.${ext}`
 }
 
-// Données par défaut pour démonstration immédiate
-const DEFAULT_USERS: User[] = [
-  {
-    id: 'user-1',
-    firstName: 'Sarah',
-    lastName: 'Dubois',
-    email: 'sarah.dubois@student.hech.be',
-    role: 'student',
-    registeredAt: '2026-09-15 14:30',
-    status: 'active',
-    password: '',
-    passwordSet: false
-  },
-  {
-    id: 'user-2',
-    firstName: 'Maxime',
-    lastName: 'Lambert',
-    email: 'maxime.lambert@student.hech.be',
-    role: 'student',
-    registeredAt: '2026-09-15 16:15',
-    status: 'active',
-    password: 'etudiant2026',
-    passwordSet: true
-  },
-  {
-    id: 'user-3',
-    firstName: 'Thomas',
-    lastName: 'Bastien',
-    email: 'thomas.bastien@student.hech.be',
-    role: 'student',
-    registeredAt: '2026-09-16 08:45',
-    status: 'active',
-    password: 'etudiant2026',
-    passwordSet: true
-  }
-]
+// Données réelles des étudiants inscrits (synchronisées avec Google Sheet)
+const DEFAULT_USERS: User[] = INITIAL_REAL_USERS
 
 const DEFAULT_QUIZZES: QuizAttempt[] = [
   {
@@ -837,6 +804,7 @@ const DEFAULT_PROGRESS: Record<string, string[]> = {
 }
 
 const DEFAULT_SUBMISSIONS: Submission[] = [
+  ...INITIAL_REAL_SUBMISSIONS,
   {
     id: 'sub-1',
     userId: 'user-1',
@@ -880,6 +848,7 @@ const DEFAULT_SUBMISSIONS: Submission[] = [
 ]
 
 const DEFAULT_FILES: SubmittedFile[] = [
+  ...INITIAL_REAL_FILES,
   {
     id: 'file-demo-1',
     userId: 'user-1',
@@ -1892,6 +1861,40 @@ const state = reactive({
   deadlines: initInitialDeadlines()
 })
 
+// Auto-fusion immédiate des données réelles (étudiants, devoirs, fichiers déposés)
+// Garantit que tout navigateur (même avec cache localStorage ancien) affiche immédiatement tous les travaux
+if (typeof window !== 'undefined') {
+  INITIAL_REAL_USERS.forEach(ru => {
+    if (!ru || !ru.email) return
+    const em = ru.email.trim().toLowerCase()
+    if (initialDeletedUsers.includes(em)) return
+    const existing = state.users.find(u => u && u.email && u.email.trim().toLowerCase() === em)
+    if (!existing) {
+      state.users.push(ru)
+    }
+  })
+
+  INITIAL_REAL_FILES.forEach(rf => {
+    if (!rf || !rf.userEmail || !rf.exerciseId) return
+    const em = rf.userEmail.trim().toLowerCase()
+    if (initialDeletedUsers.includes(em)) return
+    const existing = state.submittedFiles.find(f => f && (f.id === rf.id || (f.userEmail && f.userEmail.trim().toLowerCase() === em && f.formattedFileName === rf.formattedFileName)))
+    if (!existing) {
+      state.submittedFiles.push(rf)
+    }
+  })
+
+  INITIAL_REAL_SUBMISSIONS.forEach(rs => {
+    if (!rs || !rs.userEmail || !rs.exerciseId) return
+    const em = rs.userEmail.trim().toLowerCase()
+    if (initialDeletedUsers.includes(em)) return
+    const existing = state.submissions.find(s => s && s.userEmail && s.userEmail.trim().toLowerCase() === em && s.exerciseId === rs.exerciseId)
+    if (!existing) {
+      state.submissions.push(rs)
+    }
+  })
+}
+
 if (typeof window !== 'undefined') {
   window.addEventListener('storage', (event) => {
     if (event.key === STORAGE_KEY_DEADLINES && event.newValue) {
@@ -1909,6 +1912,65 @@ if (typeof window !== 'undefined') {
   window.addEventListener('focus', () => {
     userStore.syncFromStorage()
   })
+}
+
+export function normalizeQuizModuleId(raw: any): { id: string; title: string } {
+  if (!raw) return { id: '01-1', title: "1.1 Qu'est-ce qu'une compétence numérique ?" }
+  const str = String(raw).trim()
+
+  // Google Sheet auto-date formatting recovery
+  if (str.includes('Feb') || str.includes('Fév')) {
+    return { id: '01-2', title: "1.2 L'éducation aux médias dans les compétences numériques" }
+  }
+  if (str.includes('Jan')) {
+    return { id: '01-1', title: "1.1 Qu'est-ce qu'une compétence numérique ?" }
+  }
+  if (str.includes('Mar')) {
+    return { id: '03-1', title: "3.1 La situation-problème et l'apprentissage par problème" }
+  }
+
+  // Exact mappings
+  const map: Record<string, string> = {
+    '01-1': "1.1 Qu'est-ce qu'une compétence numérique ?",
+    '1.1': "1.1 Qu'est-ce qu'une compétence numérique ?",
+    '01-2': "1.2 L'éducation aux médias dans les compétences numériques",
+    '1.2': "1.2 L'éducation aux médias dans les compétences numériques",
+    '02-1': "2.1 Les quatre champs d'apprentissage du numérique",
+    '2.1': "2.1 Les quatre champs d'apprentissage du numérique",
+    '02-2': "2.2 La progression des apprentissages numériques",
+    '2.2': "2.2 La progression des apprentissages numériques",
+    '02-3': "2.3 Progression spiralaire",
+    '2.3': "2.3 Progression spiralaire",
+    '03-1': "3.1 La situation-problème et l'apprentissage par problème",
+    '3.1': "3.1 La situation-problème et l'apprentissage par problème",
+    '03-2': "3.2 L'apprentissage par projet",
+    '3.2': "3.2 L'apprentissage par projet",
+    '03-3': "3.3 L'apprentissage par investigation & enquête",
+    '3.3': "3.3 L'apprentissage par investigation & enquête",
+    '03-4': "3.4 Le défi pédagogique",
+    '3.4': "3.4 Le défi pédagogique",
+    '03-5': "3.5 La démarche de conception itérative",
+    '3.5': "3.5 La démarche de conception itérative",
+    '03-6': "3.6 Apprentissage expérientiel et peer learning",
+    '3.6': "3.6 Apprentissage expérientiel et peer learning",
+    '03-7': "3.7 L'enseignement à distance",
+    '3.7': "3.7 L'enseignement à distance",
+    '04-1': "4.1 Les éléments indispensables d'une préparation FMTTN",
+    '4.1': "4.1 Les éléments indispensables d'une préparation FMTTN",
+    '04-2': "4.2 Taxonomie de Bloom",
+    '04-4': "4.4 Assistant IA HECh",
+    '05': "5. Évaluer un cours de numérique",
+    '05-1': "6.1 Ludopédagogie & Édumédias",
+    '07': "6.3 La photographie & composition visuelle",
+    '08': "6.4 Créer des cartes et supports de jeu avec l'IA",
+    '10': "6.7 Concevoir une capsule vidéo"
+  }
+
+  if (map[str]) {
+    return { id: str, title: map[str] }
+  }
+
+  return { id: str, title: `Module ${str}` }
 }
 
 export const userStore = {
@@ -3908,13 +3970,17 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
     const name = attempt.userName || (state.currentUser ? `${state.currentUser.firstName} ${state.currentUser.lastName}` : 'Étudiant Démo')
     const userId = state.currentUser?.id || `user-${Date.now()}`
 
+    const norm = normalizeQuizModuleId(attempt.moduleId)
+    const cleanModuleId = norm.id
+    const cleanModuleTitle = attempt.moduleTitle && !attempt.moduleTitle.includes('GMT') ? attempt.moduleTitle : norm.title
+
     const newAttempt: QuizAttempt = {
       id: `quiz-att-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
       userId,
       userName: name,
       userEmail: email,
-      moduleId: attempt.moduleId,
-      moduleTitle: attempt.moduleTitle,
+      moduleId: cleanModuleId,
+      moduleTitle: cleanModuleTitle,
       score: attempt.score,
       totalPoints: attempt.totalPoints,
       percentage: attempt.percentage,
@@ -4197,7 +4263,9 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
         const cleanQuizEmail = String(remQuiz.userEmail).trim().toLowerCase()
         if (state.deletedUsers && state.deletedUsers.includes(cleanQuizEmail)) return
 
-        const modId = String(remQuiz.moduleId || remQuiz.quizId || '01').trim()
+        const normMod = normalizeQuizModuleId(remQuiz.moduleId || remQuiz.quizId)
+        const modId = normMod.id
+        const modTitle = remQuiz.moduleTitle && !remQuiz.moduleTitle.includes('GMT') ? remQuiz.moduleTitle : normMod.title
         const remScore = Number(remQuiz.score) || 0
         const remTotal = Number(remQuiz.totalPoints || remQuiz.totalQuestions) || 10
         const remPct = Number(remQuiz.percentage) || (remTotal > 0 ? Math.round((remScore / remTotal) * 100) : 0)
@@ -4216,7 +4284,7 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
           userName: remQuiz.userName || 'Étudiant',
           userEmail: cleanQuizEmail,
           moduleId: modId,
-          moduleTitle: remQuiz.moduleTitle || `Module ${modId}`,
+          moduleTitle: modTitle,
           score: remScore,
           totalPoints: remTotal,
           percentage: remPct,

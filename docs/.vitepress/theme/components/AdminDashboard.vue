@@ -164,18 +164,34 @@ const availableQuizModules = [
   { id: '01-1', title: '1.1 Définition & DigComp' },
   { id: '01-2', title: '1.2 Éducation aux médias' },
   { id: '02-1', title: '2.1 Quatre champs FMTTN' },
+  { id: '02-2', title: '2.2 Progression des apprentissages' },
   { id: '02-3', title: '2.3 Progression spiralaire' },
   { id: '03-1', title: '3.1 Situation-problème' },
+  { id: '03-2', title: '3.2 Apprentissage par projet' },
+  { id: '03-3', title: '3.3 Investigation & enquête' },
+  { id: '03-4', title: '3.4 Le défi pédagogique' },
+  { id: '03-5', title: '3.5 Conception itérative' },
+  { id: '03-6', title: '3.6 Peer learning' },
+  { id: '03-7', title: '3.7 Enseignement à distance' },
   { id: '04-1', title: '4.1 Fiche de préparation' },
   { id: '04-2', title: '4.2 Taxonomie de Bloom' },
   { id: '04-4', title: '4.4 Assistant IA HECh' },
-  { id: '05', title: '5.0 Projet jeu de société' }
+  { id: '05', title: '5.0 Évaluer un cours numérique' },
+  { id: '05-1', title: '6.1 Ludopédagogie & Édumédias' },
+  { id: '07', title: '6.3 Photographie numérique' },
+  { id: '08', title: '6.4 Créer des cartes IA' },
+  { id: '10', title: '6.7 Concevoir une capsule vidéo' }
 ]
 
 const filteredQuizAttempts = computed(() => {
   return quizAttempts.value.filter(q => {
-    const matchMod = quizModuleFilter.value === 'all' || q.moduleId === quizModuleFilter.value
-    const matchStd = quizStudentFilter.value === 'all' || q.userEmail === quizStudentFilter.value
+    const rawMod = q.moduleId || ''
+    const matchMod = quizModuleFilter.value === 'all' ||
+      rawMod === quizModuleFilter.value ||
+      (quizModuleFilter.value === '01-2' && (rawMod.includes('Feb') || rawMod.includes('Fév') || rawMod === '1.2')) ||
+      (quizModuleFilter.value === '01-1' && (rawMod.includes('Jan') || rawMod === '1.1')) ||
+      (quizModuleFilter.value === '03-1' && (rawMod.includes('Mar') || rawMod === '3.1'))
+    const matchStd = quizStudentFilter.value === 'all' || (q.userEmail || '').toLowerCase() === quizStudentFilter.value.toLowerCase()
     return matchMod && matchStd
   })
 })

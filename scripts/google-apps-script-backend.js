@@ -444,7 +444,7 @@ function saveQuizToSheet(q) {
   sheet.appendRow([
     cleanEmail,
     q.userName || '',
-    qId,
+    "'" + qId,
     scr,
     tot,
     pct,
@@ -639,14 +639,35 @@ function getFullDataFromSheet() {
         if (qr[7]) {
           try { ans = JSON.parse(qr[7]); } catch (e) {}
         }
-        var mId = (qr[2] || '01').toString();
+        var rawM = (qr[2] || '01').toString().trim();
+        var mId = rawM;
+        var mTitle = 'Module ' + rawM;
+        if (rawM.indexOf('Feb') !== -1 || rawM.indexOf('Fév') !== -1) {
+          mId = '01-2';
+          mTitle = "1.2 Éducation aux médias";
+        } else if (rawM.indexOf('Jan') !== -1) {
+          mId = '01-1';
+          mTitle = "1.1 Définition & DigComp";
+        } else if (rawM.indexOf('Mar') !== -1) {
+          mId = '03-1';
+          mTitle = "3.1 Situation-problème";
+        } else if (rawM === '01-1' || rawM === '1.1') {
+          mTitle = "1.1 Définition & DigComp";
+        } else if (rawM === '01-2' || rawM === '1.2') {
+          mTitle = "1.2 Éducation aux médias";
+        } else if (rawM === '02-1' || rawM === '2.1') {
+          mTitle = "2.1 Quatre champs FMTTN";
+        } else if (rawM === '02-2' || rawM === '2.2') {
+          mTitle = "2.2 Progression apprentissages";
+        }
+
         quizAttempts.push({
           id: 'quiz-cloud-' + qIdx + '-' + (qr[0] || '').toString().replace(/[^a-zA-Z0-9]/g, ''),
           userEmail: (qr[0] || '').toString().trim().toLowerCase(),
           userName: qr[1] || '',
           moduleId: mId,
           quizId: mId,
-          moduleTitle: 'Module ' + mId,
+          moduleTitle: mTitle,
           score: Number(qr[3]) || 0,
           totalPoints: Number(qr[4]) || 0,
           totalQuestions: Number(qr[4]) || 0,

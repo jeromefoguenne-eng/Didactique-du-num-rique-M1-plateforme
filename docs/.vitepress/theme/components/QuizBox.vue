@@ -585,17 +585,17 @@ const MODULE_QUESTIONS = {
     {
       id: 'q4',
       type: 'qcm',
-      title: "4. Le piège de la dérive productiviste",
-      text: "Qu'appelle-t-on la « dérive productiviste » en pédagogie de projet appliquée au numérique ?",
+      title: "4. Rôle de l'enseignant : éviter l'activité occupationnelle",
+      text: "Dans une démarche de projet numérique, à quelle condition essentielle la réalisation d'une production concrète évite-t-elle de devenir une simple « activité occupationnelle » ?",
       options: [
-        "Le refus de respecter les horaires de cours de l'établissement.",
-        "Le fait de fabriquer trop d'objets ou de pages web au FabLab de l'école.",
-        "Le fait de se focaliser exclusivement sur l'esthétique et la réussite du produit fini, au détriment des apprentissages réels et du recul réflexif des élèves.",
-        "Le recours abusif à l'impression papier en couleur."
+        "À condition que l'enseignant impose un silence complet pendant les séances de travail en groupe.",
+        "À condition que la production réalisée soit explicitement au service d'objectifs d'apprentissage identifiés et conscientisés par les élèves.",
+        "À condition que les élèves utilisent exclusivement des logiciels professionnels payants.",
+        "À condition que la production finale soit obligatoirement vendue ou exposée publiquement aux parents."
       ],
-      correctIndex: 3,
+      correctIndex: 1,
       points: 3,
-      explanation: "Dans un projet, le produit n'est que le prétexte : l'objectif premier demeure l'ensemble des apprentissages, compétences et prises de décision développés au fil du parcours."
+      explanation: "Le syllabus précise que l'enseignant veille à ce que le projet ne devienne pas une simple activité occupationnelle : la production concrète (guide, vidéo, jeu, site...) n'est qu'un levier et doit impérativement être au service d'apprentissages disciplinaires et méthodologiques explicitement identifiés."
     },
     {
       id: 'q5',

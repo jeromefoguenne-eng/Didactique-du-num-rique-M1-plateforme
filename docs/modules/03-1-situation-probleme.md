@@ -37,16 +37,20 @@ Dans ce contexte, enseigner le volet numérique du FMTTN ne peut donc pas se lim
 Les six méthodologies présentées dans ce chapitre — la situation-problème, la pédagogie par projet, l’apprentissage par investigation, le défi et la démarche de conception itérative — constituent autant de pistes permettant de faire évoluer la posture de l’enseignant et de placer davantage l’apprenant en situation d’action et de réflexion.
 
 
-3.1. La situation-problème et l’apprentissage par problème
+## 3.1. La situation-problème et l’apprentissage par problème
 
 
 La situation-problème constitue une démarche particulièrement intéressante pour l’enseignement du numérique, car elle place l’apprenant face à une situation qui ne peut pas être résolue par la simple reproduction d’une procédure déjà connue. L’objectif n’est donc pas de commencer par présenter un outil ou une série de fonctionnalités, mais de partir d’un problème à résoudre qui va donner du sens aux apprentissages.
+
+Une bonne situation-problème est une situation d’apprentissage dans laquelle l’étudiant est confronté à un problème qu’il ne peut pas résoudre immédiatement avec une procédure déjà connue, mais pour lequel il dispose de ressources lui permettant de chercher, expérimenter, raisonner et construire une solution.
+
+Une bonne situation-problème repose sur un **obstacle cognitif** qui empêche l’apprenant d’appliquer simplement une procédure connue. Cette difficulté doit toutefois rester accessible : c’est le principe de la **contrainte féconde** développé par Philippe Meirieu. La contrainte ne vise pas à compliquer artificiellement la tâche, mais à créer les conditions qui obligent l’apprenant à **chercher, faire des choix, formuler des hypothèses et mobiliser de nouvelles ressources**. Elle devient ainsi un moteur d’apprentissage. Une situation-problème efficace équilibre donc **défi et accessibilité** : elle déstabilise suffisamment les connaissances existantes pour susciter une recherche, tout en fournissant les ressources nécessaires pour construire progressivement une solution.
 
 
 Dans cette approche, l'enseignant construit une situation suffisamment complexe pour susciter une recherche, une réflexion ou une prise de décision. L’élève doit mobiliser ses connaissances antérieures, rechercher des informations, expérimenter différentes solutions, sélectionner les outils appropriés et éventuellement confronter ses choix à ceux des autres. L’apprentissage se construit ainsi à travers l’activité de résolution du problème.
 
 
-Une inversion de la logique traditionnelle
+### Une inversion de la logique traditionnelle
 
 Dans une approche transmissive, la séquence pourrait suivre le schéma :
 
@@ -61,6 +65,19 @@ Dans une approche transmissive, la séquence pourrait suivre le schéma :
 </div>
 
 Cette distinction est particulièrement importante dans le volet numérique du FMTTN. Il ne s'agit pas seulement de savoir utiliser un logiciel ou une application, mais de savoir identifier un besoin, choisir une solution numérique pertinente et l'utiliser de manière réfléchie.
+
+
+### Les 7 caractéristiques essentielles
+
+| Critère | Une bonne situation-problème… |
+| :--- | :--- |
+| **1. Problème réel ou signifiant** | répond à une situation qui a du sens pour l’apprenant et dont l’enjeu est compréhensible. |
+| **2. Obstacle cognitif** | comporte une difficulté qui empêche l’application mécanique d'une procédure connue. |
+| **3. Défi accessible** | est suffisamment complexe pour nécessiter une recherche, mais reste réalisable avec les ressources disponibles. |
+| **4. Mobilisation de connaissances** | oblige à mobiliser plusieurs connaissances, compétences ou ressources plutôt qu'une seule. |
+| **5. Recherche de solutions** | permet plusieurs stratégies, hypothèses ou démarches possibles. |
+| **6. Production identifiable** | aboutit à une production, une décision, une explication, un prototype, une solution, etc. permettant de constater les apprentissages. |
+| **7. Retour réflexif** | permet de revenir sur la démarche : Pourquoi cette solution ? Qu'est-ce qui a fonctionné ? Qu'est-ce qui doit être amélioré ? |
 
 ---
 

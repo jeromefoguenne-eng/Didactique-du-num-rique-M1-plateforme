@@ -24,8 +24,48 @@ Cette approche s’inscrit notamment dans la perspective de l’apprentissage ex
 
 Elle peut être rapprochée de la pédagogie mise en œuvre par 42, l’école informatique créée à Paris en 2013. 42 constitue un exemple particulièrement intéressant pour penser autrement l’enseignement du numérique : l’apprentissage y repose largement sur des projets, l'autonomie, la résolution de problèmes et l’apprentissage entre pairs, plutôt que sur des cours magistraux traditionnels.
 
+<div class="callout-concept" style="margin: 1.8rem 0 2.2rem 0;">
+  <div class="callout-title">
+    📺 Vidéo de Référence : Xavier Niel présente l'École 42 & le Peer Learning
+  </div>
+  <p>
+    Découvrez l'intervention de <strong>Xavier Niel</strong> présentant le modèle pédagogique disruptif de l'<strong>École 42</strong> devant les acteurs du Plan Marshall 4.0 en Wallonie : absence de cours magistraux, résolution de problèmes en autonomie, apprentissage collaboratif entre pairs (<em>peer-to-peer learning</em>) et travail par projets.
+  </p>
 
-La méthodologie de 42
+  <div style="text-align: center; margin: 1.2rem 0;">
+    <a 
+      href="https://www.youtube.com/watch?v=ZimPRG7-V6U" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display: inline-block; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 18px rgba(0,0,0,0.18); border: 2px solid var(--vp-c-divider); max-width: 640px; width: 100%; text-decoration: none;"
+      title="Cliquer pour regarder la vidéo sur YouTube"
+    >
+      <img 
+        src="/images/vignette-ecole-42-xavier-niel.jpg" 
+        alt="Xavier Niel présente son école 42 aux acteurs du Plan Marshall 4.0" 
+        style="width: 100%; height: auto; display: block; object-fit: cover;" 
+      />
+      <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.92)); color: white; padding: 14px 16px; font-size: 0.95rem; font-weight: 700; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <span>▶️ Cliquer pour visionner la vidéo sur YouTube : Xavier Niel présente l'École 42 (WallonieBE) ↗</span>
+      </div>
+    </a>
+  </div>
+
+  <div style="display: flex; justify-content: center; margin-top: 0.8rem;">
+    <a 
+      href="https://www.youtube.com/watch?v=ZimPRG7-V6U" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="btn-primary"
+      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: white !important; font-size: 0.9rem; padding: 8px 16px; border-radius: 8px; font-weight: 600; background: var(--vp-c-brand-1);"
+    >
+      <span>Ouvrir la vidéo sur YouTube (09:47) ↗</span>
+    </a>
+  </div>
+</div>
+
+
+### La méthodologie de 42
 
 
 Le modèle pédagogique de 42 repose notamment sur plusieurs principes :

@@ -710,144 +710,9 @@ const DEFAULT_PROGRESS: Record<string, string[]> = {
   'thomas.bastien@student.hech.be': ['mod-1', 'mod-2', 'mod-3', 'mod-4', 'mod-5', 'ex-1', 'ex-2', 'ex-3']
 }
 
-const DEFAULT_SUBMISSIONS: Submission[] = [
-  ...INITIAL_REAL_SUBMISSIONS,
-  {
-    id: 'sub-1',
-    userId: 'user-1',
-    userName: 'Sarah Dubois',
-    userEmail: 'sarah.dubois@student.hech.be',
-    exerciseId: 'exercice-01',
-    exerciseTitle: 'Atelier 1 : Diagnostic de compétences numériques',
-    answer: "Dans la situation 1, l'élève sait utiliser Canva mais ne vérifie pas la provenance des images libres de droit. Elle est donc techniquement compétente mais partiellement compétente sur le plan éthique et légal. Dans la situation 2, l'élève comprend le fonctionnement de l'algorithme mais n'arrive pas à configurer son mot de passe.",
-    submittedAt: '2026-09-15 17:20'
-  },
-  {
-    id: 'sub-2',
-    userId: 'user-1',
-    userName: 'Sarah Dubois',
-    userEmail: 'sarah.dubois@student.hech.be',
-    exerciseId: 'exercice-02',
-    exerciseTitle: 'Atelier 2 : Peut-on faire confiance à cette information ?',
-    answer: "L'affirmation selon laquelle regarder son téléphone fait perdre exactement 2 heures de sommeil est trompeuse. La source originale parle d'un décalage de la mélatonine de 30 à 60 minutes selon la luminosité. L'article viral utilise un titre putaclic et un graphique tronqué pour dramatiser l'impact.",
-    submittedAt: '2026-09-15 18:05'
-  },
-  {
-    id: 'sub-3',
-    userId: 'user-2',
-    userName: 'Maxime Lambert',
-    userEmail: 'maxime.lambert@student.hech.be',
-    exerciseId: 'exercice-01',
-    exerciseTitle: 'Atelier 1 : Diagnostic de compétences numériques',
-    answer: "Pour moi, la compétence numérique doit impérativement intégrer la dimension réflexive. Savoir faire un copier-coller dans ChatGPT ne rend pas compétent si l'élève est incapable de déceler les erreurs de calcul ou les biais culturels.",
-    submittedAt: '2026-09-15 16:40'
-  },
-  {
-    id: 'sub-4',
-    userId: 'user-3',
-    userName: 'Thomas Bastien',
-    userEmail: 'thomas.bastien@student.hech.be',
-    exerciseId: 'exercice-02',
-    exerciseTitle: 'Atelier 2 : Peut-on faire confiance à cette information ?',
-    answer: "J'ai vérifié sur Google Scholar : l'étude citée portait sur un échantillon très restreint de 15 personnes en laboratoire. Généraliser cela à l'ensemble des adolescents est une surinterprétation médiatique flagrante. En classe, je demanderais aux élèves de retrouver l'échantillon d'origine.",
-    submittedAt: '2026-09-16 09:30'
-  }
-]
+const DEFAULT_SUBMISSIONS: Submission[] = INITIAL_REAL_SUBMISSIONS
 
-const DEFAULT_FILES: SubmittedFile[] = [
-  ...INITIAL_REAL_FILES,
-  {
-    id: 'file-demo-1',
-    userId: 'user-1',
-    userName: 'Sarah Dubois',
-    userEmail: 'sarah.dubois@student.hech.be',
-    exerciseId: 'exercice-03',
-    exerciseTitle: 'Atelier 3 : Concevoir un guide numérique élèves',
-    originalFileName: 'mon_guide_eleves_v1.pdf',
-    formattedFileName: 'DUBOIS_Sarah_Atelier-3_Guide-Numerique_2026-09-16.pdf',
-    fileType: 'application/pdf',
-    fileSize: 142800,
-    submittedAt: '2026-09-16 10:15',
-    driveSynced: true,
-    aiCorrection: {
-      status: 'analyzed',
-      suggestedScore: 9.5,
-      maxScore: 10,
-      rubricScores: { concordance: 2.9, didacticQuality: 2.9, criticalAnalysis: 2.3, formAndStructure: 1.4 },
-      summary: "Guide d'accompagnement numérique complet, visuellement ergonomique et parfaitement adapté aux élèves du 1er degré.",
-      strengths: [
-        "Ergonomie visuelle et clarté des consignes remarquables pour le public cible.",
-        "Rappels méthodologiques sur la sauvegarde responsable et la protection des données.",
-        "Intégration d'exemples pas-à-pas et d'une FAQ préventive très utile."
-      ],
-      improvements: [
-        "Penser à insérer une version allégée ou audio pour les élèves à besoins spécifiques (DYS)."
-      ],
-      detailedFeedback: "Production exemplaire ! La mise en page et le ton adopté sont parfaitement calibrés pour des élèves du premier degré. L'accent mis sur l'autonomie et les bonnes pratiques numériques répond fidèlement aux attendus du référentiel.",
-      correctedAt: '2026-09-16 10:20',
-      modelUsed: 'Qwen Coder (Local First / Assistant IA Didactique)'
-    },
-    teacherGrade: {
-      score: 9.5,
-      maxScore: 10,
-      feedback: "Exemple parfait de guide pour les élèves. Bravo pour le soin apporté à la typographie et à la clarté des consignes !",
-      gradedAt: '2026-09-16 14:00',
-      status: 'graded'
-    }
-  },
-  {
-    id: 'file-demo-2',
-    userId: 'user-2',
-    userName: 'Maxime Lambert',
-    userEmail: 'maxime.lambert@student.hech.be',
-    exerciseId: 'exercice-05',
-    exerciseTitle: 'Atelier 5 : Défi Canva mot de passe',
-    originalFileName: 'affiche_canva_lambert.docx',
-    formattedFileName: 'LAMBERT_Maxime_Atelier-5_Canva-MDP_2026-09-16.docx',
-    fileType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-    fileSize: 85200,
-    submittedAt: '2026-09-16 11:30',
-    driveSynced: false,
-    aiCorrection: {
-      status: 'analyzed',
-      suggestedScore: 8.0,
-      maxScore: 10,
-      rubricScores: { concordance: 2.4, didacticQuality: 2.5, criticalAnalysis: 1.9, formAndStructure: 1.2 },
-      summary: "Affiche synthétique et percutante vulgarisant les règles d'un mot de passe robuste.",
-      strengths: [
-        "Hiérarchie visuelle efficace et slogan mémorisable pour des adolescents.",
-        "Règles d'hygiène numérique claires (longueur, caractères spéciaux, double facteur)."
-      ],
-      improvements: [
-        "Sensibiliser également à l'usage des gestionnaires de mots de passe (Keepass/Bitwarden)."
-      ],
-      detailedFeedback: "L'affiche Canva atteint son objectif de communication pédagogique rapide. Le message est clair, direct et évite le jargon technique superflu.",
-      correctedAt: '2026-09-16 11:35',
-      modelUsed: 'Qwen Coder (Local First / Assistant IA Didactique)'
-    },
-    teacherGrade: {
-      score: 8.0,
-      maxScore: 10,
-      feedback: "",
-      gradedAt: '',
-      status: 'pending'
-    }
-  },
-  {
-    id: 'file-demo-3',
-    userId: 'user-3',
-    userName: 'Thomas Bastien',
-    userEmail: 'thomas.bastien@student.hech.be',
-    exerciseId: 'exercice-01',
-    exerciseTitle: 'Atelier 1 : Diagnostic de compétences (DigComp 2.2)',
-    originalFileName: 'diagnostic_digcomp_bastien.pdf',
-    formattedFileName: 'BASTIEN_Thomas_Atelier-1_Diagnostic-DigComp_2026-09-16.pdf',
-    fileType: 'application/pdf',
-    fileSize: 118400,
-    submittedAt: '2026-09-16 14:10',
-    driveSynced: false
-  }
-]
+const DEFAULT_FILES: SubmittedFile[] = INITIAL_REAL_FILES
 
 // =========================================================================
 // MOTEUR EXPERT DE CORRECTION DIDACTIQUE & ANALYSE SÉMANTIQUE DE DOCUMENTS
@@ -1958,6 +1823,7 @@ const state = reactive({
 // Auto-fusion immédiate des données réelles (étudiants, devoirs, fichiers déposés, quiz)
 // Garantit que tout navigateur (même avec cache localStorage ancien) affiche immédiatement tous les travaux et quiz
 if (typeof window !== 'undefined') {
+  // 1. Fusion des étudiants
   INITIAL_REAL_USERS.forEach(ru => {
     if (!ru || !ru.email) return
     const em = ru.email.trim().toLowerCase()
@@ -1968,13 +1834,13 @@ if (typeof window !== 'undefined') {
     }
   })
 
+  // 2. Fusion des fichiers et DÉDUPLICATION STRICTE : Un seul fichier par (userEmail, exerciseId), le plus récent
   INITIAL_REAL_FILES.forEach(rf => {
     if (!rf || !rf.userEmail || !rf.exerciseId) return
     const em = rf.userEmail.trim().toLowerCase()
     if (initialDeletedUsers.includes(em)) return
     const existing = state.submittedFiles.find(f => f && (f.id === rf.id || (f.userEmail && f.userEmail.trim().toLowerCase() === em && (f.formattedFileName === rf.formattedFileName || f.exerciseId === rf.exerciseId))))
     if (existing) {
-      // FORCER LA MISE À JOUR DU DATAURL ET DE LA TAILLE RÉELLE (Résout la liseuse blanche)
       if (!existing.dataUrl || existing.dataUrl.length < 100) {
         existing.dataUrl = rf.dataUrl
       }
@@ -1988,12 +1854,39 @@ if (typeof window !== 'undefined') {
         existing.aiCorrection = rf.aiCorrection
       }
       if (rf.formattedFileName) existing.formattedFileName = rf.formattedFileName
+      if (rf.driveUrl && !existing.driveUrl) existing.driveUrl = rf.driveUrl
     } else {
       state.submittedFiles.push(rf)
     }
   })
+
+  // Strict deduplication des fichiers : garder uniquement le plus récent par étudiant et par atelier
+  const dedupFilesMap = new Map<string, SubmittedFile>()
+  const sortedFiles = [...state.submittedFiles].sort((a, b) => {
+    const ta = new Date(a.submittedAt || 0).getTime()
+    const tb = new Date(b.submittedAt || 0).getTime()
+    return ta - tb
+  })
+  for (const f of sortedFiles) {
+    if (!f || !f.userEmail || !f.exerciseId) continue
+    const em = f.userEmail.trim().toLowerCase()
+    if (initialDeletedUsers.includes(em)) continue
+    const key = `${em}::${f.exerciseId}`
+    const prev = dedupFilesMap.get(key)
+    if (!prev) {
+      dedupFilesMap.set(key, f)
+    } else {
+      const newest = f
+      if (!newest.dataUrl && prev.dataUrl) newest.dataUrl = prev.dataUrl
+      if (!newest.extractedText && prev.extractedText) newest.extractedText = prev.extractedText
+      if (!newest.driveUrl && prev.driveUrl) newest.driveUrl = prev.driveUrl
+      dedupFilesMap.set(key, newest)
+    }
+  }
+  state.submittedFiles = Array.from(dedupFilesMap.values())
   setStorage(STORAGE_KEY_FILES, state.submittedFiles)
 
+  // 3. Fusion des devoirs textuels et DÉDUPLICATION STRICTE
   INITIAL_REAL_SUBMISSIONS.forEach(rs => {
     if (!rs || !rs.userEmail || !rs.exerciseId) return
     const em = rs.userEmail.trim().toLowerCase()
@@ -2005,8 +1898,30 @@ if (typeof window !== 'undefined') {
       existing.answer = rs.answer
     }
   })
+  const dedupSubsMap = new Map<string, Submission>()
+  const sortedSubs = [...state.submissions].sort((a, b) => {
+    const ta = new Date(a.submittedAt || 0).getTime()
+    const tb = new Date(b.submittedAt || 0).getTime()
+    return ta - tb
+  })
+  for (const s of sortedSubs) {
+    if (!s || !s.userEmail || !s.exerciseId) continue
+    const em = s.userEmail.trim().toLowerCase()
+    if (initialDeletedUsers.includes(em)) continue
+    const key = `${em}::${s.exerciseId}`
+    const prev = dedupSubsMap.get(key)
+    if (!prev) {
+      dedupSubsMap.set(key, s)
+    } else {
+      const newest = s
+      if (!newest.answer && prev.answer) newest.answer = prev.answer
+      dedupSubsMap.set(key, newest)
+    }
+  }
+  state.submissions = Array.from(dedupSubsMap.values())
   setStorage(STORAGE_KEY_SUBMISSIONS, state.submissions)
 
+  // 4. Fusion des quiz et DÉDUPLICATION STRICTE : Un seul questionnaire par (userEmail, moduleId), le plus récent
   INITIAL_REAL_QUIZZES.forEach(rq => {
     if (!rq || !rq.userEmail) return
     const em = rq.userEmail.trim().toLowerCase()
@@ -2025,6 +1940,32 @@ if (typeof window !== 'undefined') {
       existing.moduleTitle = rq.moduleTitle
     }
   })
+  const dedupQuizzesMap = new Map<string, QuizAttempt>()
+  const sortedQuizzes = [...state.quizAttempts].sort((a, b) => {
+    const ta = new Date(a.submittedAt || 0).getTime()
+    const tb = new Date(b.submittedAt || 0).getTime()
+    return ta - tb
+  })
+  for (const q of sortedQuizzes) {
+    if (!q || !q.userEmail) continue
+    const em = q.userEmail.trim().toLowerCase()
+    if (initialDeletedUsers.includes(em)) continue
+    const norm = normalizeQuizModuleId(q.moduleId || (q as any).quizId)
+    q.moduleId = norm.id
+    q.moduleTitle = norm.title
+    const key = `${em}::${norm.id}`
+    const prev = dedupQuizzesMap.get(key)
+    if (!prev) {
+      dedupQuizzesMap.set(key, q)
+    } else {
+      const newest = q
+      if ((!newest.answers || newest.answers.length === 0) && prev.answers && prev.answers.length > 0) {
+        newest.answers = prev.answers
+      }
+      dedupQuizzesMap.set(key, newest)
+    }
+  }
+  state.quizAttempts = Array.from(dedupQuizzesMap.values())
   setStorage(STORAGE_KEY_QUIZZES, state.quizAttempts)
 }
 
@@ -4442,9 +4383,8 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
       setStorage(STORAGE_KEY_EVALUATIONS, state.evaluations)
     }
 
-    // 5. Fusion des résultats de Quiz passés par les étudiants
+    // 5. Fusion des résultats de Quiz passés par les étudiants (Strictement un seul par module par étudiant, le plus récent)
     if (Array.isArray(data.quizAttempts)) {
-      let quizzesChanged = false
       data.quizAttempts.forEach((remQuiz: any) => {
         if (!remQuiz || !remQuiz.userEmail) return
         const cleanQuizEmail = String(remQuiz.userEmail).trim().toLowerCase()
@@ -4458,17 +4398,6 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
         const remPct = Number(remQuiz.percentage) || (remTotal > 0 ? Math.round((remScore / remTotal) * 100) : 0)
         const remDate = remQuiz.submittedAt || remQuiz.completedAt || new Date().toISOString().replace('T', ' ').substring(0, 16)
         const remAnswers = Array.isArray(remQuiz.answers) ? remQuiz.answers : []
-
-        // Déduplication robuste : même ID, ou même étudiant + même module + même horodatage exact + même score
-        const existingIdx = state.quizAttempts.findIndex(
-          q => q && (
-            (remQuiz.id && q.id === remQuiz.id) ||
-            (q.userEmail && String(q.userEmail).trim().toLowerCase() === cleanQuizEmail &&
-             (q.moduleId === modId || (q as any).quizId === modId) &&
-             String(q.submittedAt || '').trim() === String(remDate || '').trim() &&
-             q.score === remScore)
-          )
-        )
 
         const normalizedAttempt: QuizAttempt = {
           id: remQuiz.id || `quiz-cloud-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
@@ -4485,32 +4414,82 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
           evaluationType: remQuiz.evaluationType || 'diagnostic'
         }
 
+        const existingIdx = state.quizAttempts.findIndex(
+          q => q && q.userEmail && String(q.userEmail).trim().toLowerCase() === cleanQuizEmail &&
+               (q.moduleId === modId || (q as any).quizId === modId)
+        )
+
         if (existingIdx >= 0) {
-          // Conserver la tentative ayant des réponses détaillées si l'existante n'en a pas
-          if (normalizedAttempt.answers.length > 0 && (!state.quizAttempts[existingIdx].answers || state.quizAttempts[existingIdx].answers.length === 0)) {
+          const existing = state.quizAttempts[existingIdx]
+          const existingTime = new Date(existing.submittedAt || 0).getTime()
+          const remTime = new Date(remDate || 0).getTime()
+          if (remTime > existingTime) {
+            if ((!normalizedAttempt.answers || normalizedAttempt.answers.length === 0) && existing.answers && existing.answers.length > 0) {
+              normalizedAttempt.answers = existing.answers
+            }
             state.quizAttempts[existingIdx] = normalizedAttempt
-            quizzesChanged = true
+          } else if ((!existing.answers || existing.answers.length === 0) && normalizedAttempt.answers && normalizedAttempt.answers.length > 0) {
+            existing.answers = normalizedAttempt.answers
           }
         } else {
           state.quizAttempts.push(normalizedAttempt)
-          quizzesChanged = true
         }
       })
-      if (quizzesChanged) {
-        setStorage(STORAGE_KEY_QUIZZES, state.quizAttempts)
+
+      // Déduplication finale par (email, moduleId)
+      const dedupQuizzesMap = new Map<string, QuizAttempt>()
+      const sortedQuizzes = [...state.quizAttempts].sort((a, b) => new Date(a.submittedAt || 0).getTime() - new Date(b.submittedAt || 0).getTime())
+      for (const q of sortedQuizzes) {
+        if (!q || !q.userEmail) continue
+        const norm = normalizeQuizModuleId(q.moduleId || (q as any).quizId)
+        q.moduleId = norm.id
+        q.moduleTitle = norm.title
+        const key = `${String(q.userEmail).trim().toLowerCase()}::${norm.id}`
+        const prev = dedupQuizzesMap.get(key)
+        if (!prev) {
+          dedupQuizzesMap.set(key, q)
+        } else {
+          const newest = q
+          if ((!newest.answers || newest.answers.length === 0) && prev.answers && prev.answers.length > 0) {
+            newest.answers = prev.answers
+          }
+          dedupQuizzesMap.set(key, newest)
+        }
       }
+      state.quizAttempts = Array.from(dedupQuizzesMap.values())
+      setStorage(STORAGE_KEY_QUIZZES, state.quizAttempts)
     }
 
     // 6. Fusion des fichiers et devoirs déposés par les étudiants (Google Drive / Cloud)
     const remoteFiles = Array.isArray(data.submittedFiles) ? data.submittedFiles : (Array.isArray(data.files) ? data.files : [])
     if (remoteFiles.length > 0) {
-      let filesChanged = false
       remoteFiles.forEach((remFile: any) => {
         if (!remFile || !remFile.userEmail || !remFile.exerciseId) return
         const cleanFileEmail = String(remFile.userEmail).trim().toLowerCase()
         if (state.deletedUsers && state.deletedUsers.includes(cleanFileEmail)) return
 
         const exId = String(remFile.exerciseId).trim()
+        const fileName = remFile.formattedFileName || remFile.originalFileName || remFile.fileName || 'Devoir.docx'
+        const isPdf = fileName.toLowerCase().endsWith('.pdf')
+        const remDate = remFile.submittedAt || new Date().toISOString().replace('T', ' ').substring(0, 16)
+
+        const newSubmitted: SubmittedFile = {
+          id: remFile.id || `file-cloud-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
+          userId: remFile.userId || '',
+          userName: remFile.userName || 'Étudiant',
+          userEmail: cleanFileEmail,
+          exerciseId: exId,
+          exerciseTitle: remFile.exerciseTitle || exId,
+          originalFileName: remFile.originalFileName || fileName,
+          formattedFileName: fileName,
+          fileType: remFile.fileType || (isPdf ? 'application/pdf' : 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'),
+          fileSize: remFile.fileSize || 0,
+          dataUrl: remFile.dataUrl || '',
+          driveUrl: remFile.driveUrl || '',
+          submittedAt: remDate,
+          driveSynced: true
+        }
+
         const existingIdx = state.submittedFiles.findIndex(
           f => f && f.userEmail && String(f.userEmail).trim().toLowerCase() === cleanFileEmail &&
                f.exerciseId === exId
@@ -4518,37 +4497,44 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
 
         if (existingIdx >= 0) {
           const local = state.submittedFiles[existingIdx]
-          if (remFile.driveUrl && !local.driveUrl) {
-            local.driveUrl = remFile.driveUrl
-            local.driveSynced = true
-            filesChanged = true
+          const localTime = new Date(local.submittedAt || 0).getTime()
+          const remTime = new Date(remDate || 0).getTime()
+          if (remTime > localTime) {
+            if (!newSubmitted.dataUrl && local.dataUrl) newSubmitted.dataUrl = local.dataUrl
+            if (!(newSubmitted as any).extractedText && (local as any).extractedText) {
+              (newSubmitted as any).extractedText = (local as any).extractedText
+            }
+            state.submittedFiles[existingIdx] = newSubmitted
+          } else {
+            if (remFile.driveUrl && !local.driveUrl) {
+              local.driveUrl = remFile.driveUrl
+              local.driveSynced = true
+            }
           }
         } else {
-          const fileName = remFile.formattedFileName || remFile.originalFileName || remFile.fileName || 'Devoir.docx'
-          const isPdf = fileName.toLowerCase().endsWith('.pdf')
-          const newSubmitted: SubmittedFile = {
-            id: remFile.id || `file-cloud-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
-            userId: remFile.userId || '',
-            userName: remFile.userName || 'Étudiant',
-            userEmail: cleanFileEmail,
-            exerciseId: exId,
-            exerciseTitle: remFile.exerciseTitle || exId,
-            originalFileName: remFile.originalFileName || fileName,
-            formattedFileName: fileName,
-            fileType: remFile.fileType || (isPdf ? 'application/pdf' : 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'),
-            fileSize: remFile.fileSize || 0,
-            dataUrl: remFile.dataUrl || '',
-            driveUrl: remFile.driveUrl || '',
-            submittedAt: remFile.submittedAt || new Date().toISOString().replace('T', ' ').substring(0, 16),
-            driveSynced: true
-          }
           state.submittedFiles.push(newSubmitted)
-          filesChanged = true
         }
       })
-      if (filesChanged) {
-        setStorage(STORAGE_KEY_FILES, state.submittedFiles)
+
+      // Déduplication finale par (email, exerciseId)
+      const dedupFilesMap = new Map<string, SubmittedFile>()
+      const sortedFiles = [...state.submittedFiles].sort((a, b) => new Date(a.submittedAt || 0).getTime() - new Date(b.submittedAt || 0).getTime())
+      for (const f of sortedFiles) {
+        if (!f || !f.userEmail || !f.exerciseId) continue
+        const key = `${String(f.userEmail).trim().toLowerCase()}::${f.exerciseId}`
+        const prev = dedupFilesMap.get(key)
+        if (!prev) {
+          dedupFilesMap.set(key, f)
+        } else {
+          const newest = f
+          if (!newest.dataUrl && prev.dataUrl) newest.dataUrl = prev.dataUrl
+          if (!newest.extractedText && prev.extractedText) newest.extractedText = prev.extractedText
+          if (!newest.driveUrl && prev.driveUrl) newest.driveUrl = prev.driveUrl
+          dedupFilesMap.set(key, newest)
+        }
       }
+      state.submittedFiles = Array.from(dedupFilesMap.values())
+      setStorage(STORAGE_KEY_FILES, state.submittedFiles)
     }
   },
 

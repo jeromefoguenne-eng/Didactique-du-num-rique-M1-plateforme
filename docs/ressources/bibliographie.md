@@ -70,5 +70,5 @@ Piaget, J. (1945). La formation du symbole chez l'enfant : Imitation, jeu et rê
 ---
 
 ## Navigation
-- ⬅️ **[8.2 Documents & Référentiels PDF](/ressources/documents)**
-- ➡️ **[8.4 Présentations PowerPoint](/ressources/powerpoints)**
+- ⬅️ **[7.2 Documents & Référentiels PDF](/ressources/documents)**
+- ➡️ **[7.4 Présentations PowerPoint](/ressources/powerpoints)**

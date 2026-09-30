@@ -1,20 +1,21 @@
 ---
-title: "8.4 Présentations PowerPoint du Cours"
+title: "7.4 Présentations PowerPoint du Cours"
 description: "Diaporamas et supports de cours officiels présentés lors des séances en présentiel et à distance"
 ---
 
-# 8.4. Présentations PowerPoint du Cours
+# 7.4. Présentations PowerPoint du Cours
 
 <div class="callout-exercise" style="margin: 2rem 0;">
   <div class="callout-title" style="font-size: 1.25rem;">
-    📊 Diaporamas Officiels du Cours (Téléchargement Google Drive)
+    📊 Diaporamas Officiels du Cours (Téléchargement Google Drive & Google Slides)
   </div>
 
   <p>
-    Afin de préserver la fluidité de la plateforme et de <strong>stocker le moins de mémoire possible sur le site web</strong>, l'ensemble des diaporamas du cours est hébergé sur le Google Drive officiel et proposé au <strong>téléchargement direct</strong>. Vous pouvez récupérer les fichiers <code>.pptx</code> originaux sur votre ordinateur pour les consulter, les étudier et les annoter hors-ligne dans PowerPoint.
+    Afin de préserver la fluidité de la plateforme et de <strong>stocker le moins de mémoire possible sur le site web</strong>, l'ensemble des diaporamas du cours est hébergé sur le Google Drive officiel et proposé au <strong>téléchargement direct</strong> ou à la consultation en ligne. Vous pouvez récupérer les fichiers <code>.pptx</code> originaux sur votre ordinateur pour les consulter, les étudier et les annoter hors-ligne dans PowerPoint ou les ouvrir directement dans Google Slides.
   </p>
 
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+    <!-- SUPPORT 1 -->
     <div style="background: var(--vp-c-bg); border: 1px solid var(--vp-c-divider); border-radius: 10px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
       <div>
         <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 0.4rem;">
@@ -34,6 +35,8 @@ description: "Diaporamas et supports de cours officiels présentés lors des sé
         </a>
       </div>
     </div>
+
+    <!-- SUPPORT 2 -->
     <div style="background: var(--vp-c-bg); border: 1px solid var(--vp-c-divider); border-radius: 10px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
       <div>
         <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 0.4rem;">
@@ -53,11 +56,32 @@ description: "Diaporamas et supports de cours officiels présentés lors des sé
         </a>
       </div>
     </div>
+
+    <!-- SUPPORT 3 -->
+    <div style="background: var(--vp-c-bg); border: 1px solid var(--vp-c-divider); border-radius: 10px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
+      <div>
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 0.4rem;">
+          <span style="font-size: 1.4rem;">📽️</span>
+          <h3 style="margin: 0; font-size: 1.05rem; color: #059669;">Support 3 : Évaluer un cours de numérique</h3>
+        </div>
+        <p style="font-size: 0.88rem; color: var(--vp-c-text-2); line-height: 1.5; margin-bottom: 1.2rem;">
+          Fonctions de l'évaluation (diagnostique, formative, sommative), diversité des attendus, grilles d'évaluation critériées et posture réflexive.
+        </p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <a href="https://docs.google.com/presentation/d/1iSOL2mJmDqLP3AWGxs7qHQg8r-yZGr7i/export/pptx" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none !important; color: white !important; padding: 9px 16px; border-radius: 6px; font-weight: 600; font-size: 0.9rem; background: #059669;">
+          <span>📥 Télécharger (.pptx) ↗</span>
+        </a>
+        <a href="https://docs.google.com/presentation/d/1iSOL2mJmDqLP3AWGxs7qHQg8r-yZGr7i/edit?usp=sharing&ouid=112995252347605114249&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none !important; color: var(--vp-c-text-1) !important; padding: 8px 16px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);">
+          <span>📂 Ouvrir dans Google Slides / Drive ↗</span>
+        </a>
+      </div>
+    </div>
   </div>
 </div>
 
 ---
 
 ## Navigation
-- ⬅️ **[8.3 Bibliographie sélective APA](/ressources/bibliographie)**
-- 🏠 **[8. Hub Ressources & Outils](/ressources/)**
+- ⬅️ **[7.3 Bibliographie sélective APA](/ressources/bibliographie)**
+- 🏠 **[7. Hub Ressources & Outils](/ressources/)**

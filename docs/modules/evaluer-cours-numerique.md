@@ -9,6 +9,21 @@ description: "Texte officiel du syllabus : Fonctions de l'évaluation, diversit�
 Ce chapitre reproduit fidèlement et dans son intégralité le texte du syllabus officiel du cours de Didactique du numérique (Master 1 - HECh).
 :::
 
+<div class="callout-interactive" style="margin: 1.5rem 0;">
+  <div class="callout-title">📽️ Diaporama Officiel du Chapitre</div>
+  <p style="margin: 0.5rem 0; font-size: 0.95rem; color: var(--vp-c-text-1);">
+    Retrouvez la présentation officielle projetée en séance magistrale : <strong>Support 3 : Évaluer un cours de numérique</strong>.
+  </p>
+  <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 0.75rem;">
+    <a href="https://docs.google.com/presentation/d/1iSOL2mJmDqLP3AWGxs7qHQg8r-yZGr7i/edit?usp=sharing&ouid=112995252347605114249&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display: inline-flex; align-items: center; gap: 6px; text-decoration: none !important; color: white !important; padding: 7px 14px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; background: #059669;">
+      <span>📂 Ouvrir le Diaporama (Google Slides) ↗</span>
+    </a>
+    <a href="/ressources/powerpoints" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 6px; text-decoration: none !important; color: var(--vp-c-text-1) !important; padding: 7px 14px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);">
+      <span>📥 Télécharger / Voir toutes les présentations (Point 7.4)</span>
+    </a>
+  </div>
+</div>
+
 Dans le cadre du référentiel FMTTN, l’évaluation doit avant tout permettre de vérifier l’atteinte des attendus. Ceux-ci constituent les résultats d’apprentissage que l’élève doit progressivement être capable de maîtriser et de mobiliser. L’évaluation ne devrait donc pas être pensée uniquement à partir des activités ou des outils utilisés en classe, mais à partir de ce que l’élève doit effectivement apprendre et être capable de réaliser.
 
 L’évaluation peut remplir différentes fonctions selon le moment où elle intervient et l’objectif poursuivi :

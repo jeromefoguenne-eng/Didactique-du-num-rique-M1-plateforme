@@ -266,13 +266,13 @@ export default defineConfig({
           ]
         },
         {
-          text: "8. Ressources & Boîte à Outils",
+          text: "7. Ressources & Boîte à Outils",
           items: [
             { text: "📌 Vue d'ensemble (Hub)", link: "/ressources/" },
-            { text: "8.1 Syllabus officiel du cours", link: "/ressources/syllabus" },
-            { text: "8.2 Documents & Référentiels PDF", link: "/ressources/documents" },
-            { text: "8.3 Bibliographie sélective (APA)", link: "/ressources/bibliographie" },
-            { text: "8.4 Présentations PowerPoint", link: "/ressources/powerpoints" }
+            { text: "7.1 Syllabus officiel du cours", link: "/ressources/syllabus" },
+            { text: "7.2 Documents & Référentiels PDF", link: "/ressources/documents" },
+            { text: "7.3 Bibliographie sélective (APA)", link: "/ressources/bibliographie" },
+            { text: "7.4 Présentations PowerPoint", link: "/ressources/powerpoints" }
           ]
         }
       ]

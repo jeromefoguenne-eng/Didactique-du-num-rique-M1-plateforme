@@ -42,6 +42,16 @@ function doGet(e) {
       return createJsonResponse({ status: "success", user: student });
     }
 
+    if (action === 'getQuizAttempts') {
+      var fullData = getFullDataFromSheet();
+      return createJsonResponse({ status: "success", quizAttempts: fullData.quizAttempts || [] });
+    }
+
+    if (action === 'getFiles') {
+      var fullData = getFullDataFromSheet();
+      return createJsonResponse({ status: "success", submittedFiles: fullData.submittedFiles || [] });
+    }
+
     if (action === 'syncAll') {
       var fullData = getFullDataFromSheet();
       return createJsonResponse({ status: "success", data: fullData });
@@ -370,14 +380,35 @@ function saveQuizToSheet(q) {
   if (!q || !q.userEmail) return;
   var ss = getOrCreateSpreadsheet();
   var sheet = ss.getSheetByName("Quiz") || ss.insertSheet("Quiz");
+  var cleanEmail = q.userEmail.trim().toLowerCase();
+  var qId = (q.quizId || q.moduleId || '').toString();
+  var scr = Number(q.score) || 0;
+  var tot = Number(q.totalQuestions || q.totalPoints) || 0;
+  var pct = Number(q.percentage) || 0;
+  var dt = q.completedAt || q.submittedAt || new Date().toISOString();
+  var ansJson = q.answersJson || (q.answers ? JSON.stringify(q.answers) : '');
+
+  // Déduplication : si même étudiant, même quizId et même score enregistré le même jour, ne pas dupliquer
+  var data = sheet.getDataRange().getValues();
+  for (var i = 1; i < data.length; i++) {
+    var r = data[i];
+    if (r[0] && r[0].toString().trim().toLowerCase() === cleanEmail &&
+        r[2] && r[2].toString().trim() === qId &&
+        Number(r[3]) === scr &&
+        (r[6] || '').toString().substring(0, 10) === dt.toString().substring(0, 10)) {
+      return;
+    }
+  }
+
   sheet.appendRow([
-    q.userEmail.trim().toLowerCase(),
+    cleanEmail,
     q.userName || '',
-    q.quizId || '',
-    q.score || 0,
-    q.totalQuestions || 0,
-    q.percentage || 0,
-    q.completedAt || new Date().toISOString()
+    qId,
+    scr,
+    tot,
+    pct,
+    dt,
+    ansJson
   ]);
 }
 
@@ -555,11 +586,88 @@ function getFullDataFromSheet() {
     }
   }
 
+  // 5. Quiz passés par les étudiants
+  var quizAttempts = [];
+  var sheetQuiz = ss.getSheetByName("Quiz");
+  if (sheetQuiz && sheetQuiz.getLastRow() > 1) {
+    var dataQ = sheetQuiz.getDataRange().getValues();
+    for (var qIdx = 1; qIdx < dataQ.length; qIdx++) {
+      var qr = dataQ[qIdx];
+      if (qr[0]) {
+        var ans = [];
+        if (qr[7]) {
+          try { ans = JSON.parse(qr[7]); } catch (e) {}
+        }
+        var mId = (qr[2] || '01').toString();
+        quizAttempts.push({
+          id: 'quiz-cloud-' + qIdx + '-' + (qr[0] || '').toString().replace(/[^a-zA-Z0-9]/g, ''),
+          userEmail: (qr[0] || '').toString().trim().toLowerCase(),
+          userName: qr[1] || '',
+          moduleId: mId,
+          quizId: mId,
+          moduleTitle: 'Module ' + mId,
+          score: Number(qr[3]) || 0,
+          totalPoints: Number(qr[4]) || 0,
+          totalQuestions: Number(qr[4]) || 0,
+          percentage: Number(qr[5]) || 0,
+          submittedAt: qr[6] ? new Date(qr[6]).toISOString().replace('T', ' ').substring(0, 16) : new Date().toISOString().replace('T', ' ').substring(0, 16),
+          answers: ans,
+          evaluationType: 'diagnostic'
+        });
+      }
+    }
+  }
+
+  // 6. Fichiers déposés par les étudiants (Google Drive)
+  var submittedFiles = [];
+  var sheetF = ss.getSheetByName("Fichiers");
+  if (sheetF && sheetF.getLastRow() > 1) {
+    var dataF = sheetF.getDataRange().getValues();
+    for (var fIdx = 1; fIdx < dataF.length; fIdx++) {
+      var fr = dataF[fIdx];
+      if (fr[1]) {
+        var rawEx = (fr[3] || '').toString().trim();
+        var exId = rawEx;
+        if (rawEx.indexOf('Atelier 1') !== -1 || rawEx.indexOf('exercice-01') !== -1) exId = 'exercice-01';
+        else if (rawEx.indexOf('Atelier 2') !== -1 || rawEx.indexOf('exercice-02') !== -1) exId = 'exercice-02';
+        else if (rawEx.indexOf('Atelier 3') !== -1 || rawEx.indexOf('exercice-03') !== -1) exId = 'exercice-03';
+        else if (rawEx.indexOf('Atelier 4') !== -1 || rawEx.indexOf('exercice-04') !== -1) exId = 'exercice-04';
+        else if (rawEx.indexOf('Atelier 5') !== -1 || rawEx.indexOf('exercice-05') !== -1) exId = 'exercice-05';
+        else if (rawEx.indexOf('Atelier 6') !== -1 || rawEx.indexOf('exercice-06') !== -1) exId = 'exercice-06';
+        else if (rawEx.indexOf('Atelier 7') !== -1 || rawEx.indexOf('exercice-07') !== -1) exId = 'exercice-07';
+        else if (rawEx.indexOf('Atelier 8') !== -1 || rawEx.indexOf('exercice-08') !== -1) exId = 'exercice-08';
+        else if (rawEx.indexOf('exercice-09') !== -1) exId = 'exercice-09';
+        else if (rawEx.indexOf('exercice-10') !== -1) exId = 'exercice-10';
+        else if (rawEx.indexOf('exercice-11') !== -1) exId = 'exercice-11';
+        else if (rawEx.indexOf('exercice-12') !== -1) exId = 'exercice-12';
+        else if (rawEx.indexOf('exercice-13') !== -1) exId = 'exercice-13';
+        else if (rawEx.indexOf('exercice-14') !== -1) exId = 'exercice-14';
+        else if (rawEx.indexOf('exercice-15') !== -1) exId = 'exercice-15';
+        else if (rawEx.indexOf('exercice-16') !== -1) exId = 'exercice-16';
+
+        submittedFiles.push({
+          id: (fr[0] || ('file-' + fIdx)).toString(),
+          userEmail: (fr[1] || '').toString().trim().toLowerCase(),
+          userName: fr[2] || '',
+          exerciseId: exId,
+          exerciseTitle: fr[3] || exId,
+          originalFileName: fr[4] || 'Document.pdf',
+          formattedFileName: fr[4] || 'Document.pdf',
+          driveUrl: fr[5] || '',
+          submittedAt: fr[6] ? new Date(fr[6]).toISOString().replace('T', ' ').substring(0, 16) : new Date().toISOString().replace('T', ' ').substring(0, 16),
+          driveSynced: true
+        });
+      }
+    }
+  }
+
   return {
     users: users,
     submissions: submissions,
     deadlines: deadlines,
-    evaluations: evaluations
+    evaluations: evaluations,
+    quizAttempts: quizAttempts,
+    submittedFiles: submittedFiles
   };
 }
 
@@ -600,6 +708,43 @@ function mergeAndSyncAll(incomingState) {
       saveSubmissionToSheet(s);
     }
   });
+
+  // Fusion des quiz
+  if (incomingState.quizAttempts && incomingState.quizAttempts.length > 0) {
+    incomingState.quizAttempts.forEach(function(q) {
+      saveQuizToSheet(q);
+    });
+  }
+
+  // Fusion des métadonnées de fichiers
+  if (incomingState.submittedFiles && incomingState.submittedFiles.length > 0) {
+    var ss = getOrCreateSpreadsheet();
+    var sheetF = ss.getSheetByName("Fichiers") || ss.insertSheet("Fichiers");
+    var existingFData = sheetF.getDataRange().getValues();
+    var existingFMap = {};
+    for (var f = 1; f < existingFData.length; f++) {
+      if (existingFData[f][1] && existingFData[f][3]) {
+        existingFMap[existingFData[f][1].toString().trim().toLowerCase() + '::' + existingFData[f][3]] = true;
+      }
+    }
+    incomingState.submittedFiles.forEach(function(file) {
+      if (file && file.userEmail && file.exerciseId) {
+        var key = file.userEmail.trim().toLowerCase() + '::' + file.exerciseId;
+        if (!existingFMap[key]) {
+          sheetF.appendRow([
+            file.id || Utilities.getUuid(),
+            file.userEmail.trim().toLowerCase(),
+            file.userName || '',
+            file.exerciseId,
+            file.formattedFileName || file.originalFileName || 'Document',
+            file.driveUrl || '',
+            file.submittedAt || new Date().toISOString()
+          ]);
+          existingFMap[key] = true;
+        }
+      }
+    });
+  }
 
   // Échéances : si présentes dans incomingState avec au moins une date, les sauvegarder
   if (incomingState.deadlines && Object.keys(incomingState.deadlines).length > 0) {
@@ -645,11 +790,12 @@ function saveFileToDrive(data) {
   // 3. Enregistrement dans l'onglet "Fichiers" du tableur
   var ss = getOrCreateSpreadsheet();
   var sheetFiles = ss.getSheetByName("Fichiers") || ss.insertSheet("Fichiers");
+  var exId = data.exerciseId || data.exerciseTitle || '';
   sheetFiles.appendRow([
     file.getId(),
     data.studentEmail || '',
     data.studentName || '',
-    data.exerciseTitle || '',
+    exId,
     data.fileName,
     file.getUrl(),
     new Date().toISOString()

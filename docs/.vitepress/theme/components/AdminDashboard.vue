@@ -818,6 +818,10 @@ onMounted(() => {
   updateLockoutState()
   initDeadlinesForm()
   if (typeof window !== 'undefined') {
+    if (sessionStorage.getItem('didactique_admin_auth') === 'true') {
+      isAuthenticated.value = true
+    }
+    userStore.syncWithCloud().catch(() => {})
     const events = ['mousemove', 'keydown', 'scroll', 'touchstart']
     events.forEach(e => window.addEventListener(e, resetInactivityTimer, { passive: true }))
     window.addEventListener('keydown', handleDossierKeyDown)
@@ -1404,6 +1408,14 @@ async function toggleDocumentPreview(file) {
   if (!file) return
   if (activeDocPreview.value && activeDocPreview.value.fileId === file.id) {
     activeDocPreview.value = null
+    return
+  }
+
+  // Si le document est stocké dans Google Drive et non présent en mémoire locale
+  if (!file.dataUrl && file.driveUrl) {
+    if (typeof window !== 'undefined') {
+      window.open(file.driveUrl, '_blank')
+    }
     return
   }
 
@@ -3422,6 +3434,9 @@ function toggleQuizExpand(id) {
                   <!-- 5. ACTIONS -->
                   <td style="text-align: right;">
                     <div class="action-buttons-group vertical">
+                      <a v-if="f.driveUrl" :href="f.driveUrl" target="_blank" rel="noopener noreferrer" class="btn-row-action dl" style="text-decoration: none;" title="Ouvrir dans Google Drive">
+                        ☁️
+                      </a>
                       <button @click="downloadFile(f)" class="btn-row-action dl" title="Télécharger le fichier original">
                         📥
                       </button>
@@ -3927,6 +3942,17 @@ function toggleQuizExpand(id) {
                             >
                               📥 Télécharger
                             </button>
+                            <a 
+                              v-if="item.file.driveUrl" 
+                              :href="item.file.driveUrl" 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              class="btn-download-doc" 
+                              style="background: #0284c7; color: white; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;" 
+                              title="Ouvrir directement dans Google Drive"
+                            >
+                              ☁️ Drive
+                            </a>
                           </div>
                         </div>
 

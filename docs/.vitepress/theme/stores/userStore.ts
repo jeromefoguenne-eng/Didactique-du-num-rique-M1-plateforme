@@ -2457,6 +2457,25 @@ export const userStore = {
 
     setStorage(STORAGE_KEY_SUBMISSIONS, state.submissions)
 
+    // Push immédiat vers le Cloud en arrière-plan
+    try {
+      cloudSync.pushSubmission({
+        id: `sub-${cleanEmail}-${exerciseId}`,
+        userId: state.currentUser.id,
+        userName: `${state.currentUser.firstName} ${state.currentUser.lastName}`,
+        userEmail: cleanEmail,
+        exerciseId,
+        exerciseTitle,
+        content: cleanAnswer,
+        answer: cleanAnswer,
+        submittedAt: now
+      }).catch(e => console.warn('[CloudSync] pushSubmission error:', e))
+    } catch (e) {}
+
+    try {
+      this.syncWithCloud().catch(() => {})
+    } catch (e) {}
+
     // Backup instantané dans le dossier Google Drive local (C:\Google Drive\...) - local uniquement
     if (isLocalEnvironment()) {
       try {
@@ -2651,6 +2670,7 @@ export const userStore = {
     cloudSync.uploadFile({
       studentName: `${state.currentUser.firstName} ${state.currentUser.lastName}`,
       studentEmail: state.currentUser.email,
+      exerciseId,
       exerciseTitle,
       fileName: formattedName,
       base64Data: dataUrl.split(',')[1] || dataUrl,
@@ -2658,7 +2678,11 @@ export const userStore = {
     }).then(res => {
       if (res && res.success) {
         newFile.driveSynced = true
+        if (res.fileUrl) {
+          newFile.driveUrl = res.fileUrl
+        }
         setStorage(STORAGE_KEY_FILES, state.submittedFiles)
+        this.syncWithCloud().catch(() => {})
       }
     }).catch(() => {})
 
@@ -2734,6 +2758,12 @@ export const userStore = {
 
   downloadSubmittedFile(file: SubmittedFile) {
     if (!file.dataUrl) {
+      if (file.driveUrl) {
+        if (typeof window !== 'undefined') {
+          window.open(file.driveUrl, '_blank')
+        }
+        return
+      }
       alert("Le contenu du fichier n'est pas disponible pour le téléchargement direct.")
       return
     }
@@ -3896,6 +3926,21 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
     state.quizAttempts.unshift(newAttempt)
     setStorage(STORAGE_KEY_QUIZZES, state.quizAttempts)
 
+    // Push immédiat vers le Cloud en arrière-plan
+    try {
+      cloudSync.pushQuizAttempt({
+        ...newAttempt,
+        quizId: newAttempt.moduleId,
+        totalQuestions: newAttempt.totalPoints,
+        completedAt: newAttempt.submittedAt,
+        answersJson: JSON.stringify(newAttempt.answers || [])
+      }).catch(e => console.warn('[CloudSync] saveQuizAttempt push error:', e))
+    } catch (e) {}
+
+    try {
+      this.syncWithCloud().catch(() => {})
+    } catch (e) {}
+
     // Marquer aussi dans la progression si seuil réussi >= 50%
     if (attempt.percentage >= 50 && state.currentUser) {
       this.toggleProgress(`quiz-${attempt.moduleId}`)
@@ -4142,6 +4187,108 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
         }
       })
       setStorage(STORAGE_KEY_EVALUATIONS, state.evaluations)
+    }
+
+    // 5. Fusion des résultats de Quiz passés par les étudiants
+    if (Array.isArray(data.quizAttempts)) {
+      let quizzesChanged = false
+      data.quizAttempts.forEach((remQuiz: any) => {
+        if (!remQuiz || !remQuiz.userEmail) return
+        const cleanQuizEmail = String(remQuiz.userEmail).trim().toLowerCase()
+        if (state.deletedUsers && state.deletedUsers.includes(cleanQuizEmail)) return
+
+        const modId = String(remQuiz.moduleId || remQuiz.quizId || '01').trim()
+        const remScore = Number(remQuiz.score) || 0
+        const remTotal = Number(remQuiz.totalPoints || remQuiz.totalQuestions) || 10
+        const remPct = Number(remQuiz.percentage) || (remTotal > 0 ? Math.round((remScore / remTotal) * 100) : 0)
+        const remDate = remQuiz.submittedAt || remQuiz.completedAt || new Date().toISOString().replace('T', ' ').substring(0, 16)
+        const remAnswers = Array.isArray(remQuiz.answers) ? remQuiz.answers : []
+
+        const existingIdx = state.quizAttempts.findIndex(
+          q => q && q.userEmail && String(q.userEmail).trim().toLowerCase() === cleanQuizEmail &&
+               (q.moduleId === modId || (q as any).quizId === modId) &&
+               String(q.submittedAt || '').substring(0, 10) === String(remDate).substring(0, 10)
+        )
+
+        const normalizedAttempt: QuizAttempt = {
+          id: remQuiz.id || `quiz-cloud-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
+          userId: remQuiz.userId || '',
+          userName: remQuiz.userName || 'Étudiant',
+          userEmail: cleanQuizEmail,
+          moduleId: modId,
+          moduleTitle: remQuiz.moduleTitle || `Module ${modId}`,
+          score: remScore,
+          totalPoints: remTotal,
+          percentage: remPct,
+          answers: remAnswers,
+          submittedAt: remDate,
+          evaluationType: remQuiz.evaluationType || 'diagnostic'
+        }
+
+        if (existingIdx >= 0) {
+          // Conserver la tentative ayant le meilleur score ou des réponses complètes
+          if (normalizedAttempt.score >= state.quizAttempts[existingIdx].score) {
+            state.quizAttempts[existingIdx] = normalizedAttempt
+            quizzesChanged = true
+          }
+        } else {
+          state.quizAttempts.push(normalizedAttempt)
+          quizzesChanged = true
+        }
+      })
+      if (quizzesChanged) {
+        setStorage(STORAGE_KEY_QUIZZES, state.quizAttempts)
+      }
+    }
+
+    // 6. Fusion des fichiers et devoirs déposés par les étudiants (Google Drive / Cloud)
+    const remoteFiles = Array.isArray(data.submittedFiles) ? data.submittedFiles : (Array.isArray(data.files) ? data.files : [])
+    if (remoteFiles.length > 0) {
+      let filesChanged = false
+      remoteFiles.forEach((remFile: any) => {
+        if (!remFile || !remFile.userEmail || !remFile.exerciseId) return
+        const cleanFileEmail = String(remFile.userEmail).trim().toLowerCase()
+        if (state.deletedUsers && state.deletedUsers.includes(cleanFileEmail)) return
+
+        const exId = String(remFile.exerciseId).trim()
+        const existingIdx = state.submittedFiles.findIndex(
+          f => f && f.userEmail && String(f.userEmail).trim().toLowerCase() === cleanFileEmail &&
+               f.exerciseId === exId
+        )
+
+        if (existingIdx >= 0) {
+          const local = state.submittedFiles[existingIdx]
+          if (remFile.driveUrl && !local.driveUrl) {
+            local.driveUrl = remFile.driveUrl
+            local.driveSynced = true
+            filesChanged = true
+          }
+        } else {
+          const fileName = remFile.formattedFileName || remFile.originalFileName || remFile.fileName || 'Devoir.docx'
+          const isPdf = fileName.toLowerCase().endsWith('.pdf')
+          const newSubmitted: SubmittedFile = {
+            id: remFile.id || `file-cloud-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
+            userId: remFile.userId || '',
+            userName: remFile.userName || 'Étudiant',
+            userEmail: cleanFileEmail,
+            exerciseId: exId,
+            exerciseTitle: remFile.exerciseTitle || exId,
+            originalFileName: remFile.originalFileName || fileName,
+            formattedFileName: fileName,
+            fileType: remFile.fileType || (isPdf ? 'application/pdf' : 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'),
+            fileSize: remFile.fileSize || 0,
+            dataUrl: remFile.dataUrl || '',
+            driveUrl: remFile.driveUrl || '',
+            submittedAt: remFile.submittedAt || new Date().toISOString().replace('T', ' ').substring(0, 16),
+            driveSynced: true
+          }
+          state.submittedFiles.push(newSubmitted)
+          filesChanged = true
+        }
+      })
+      if (filesChanged) {
+        setStorage(STORAGE_KEY_FILES, state.submittedFiles)
+      }
     }
   },
 

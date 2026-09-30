@@ -119,6 +119,20 @@ export class CloudSync {
     cloudSyncState.syncError = null
 
     try {
+      // Préparation de la liste allégée des fichiers locaux (sans le lourd base64)
+      const lightweightFiles = (localState.submittedFiles || []).map((f: any) => ({
+        id: f.id,
+        userEmail: f.userEmail,
+        userName: f.userName,
+        exerciseId: f.exerciseId,
+        exerciseTitle: f.exerciseTitle,
+        originalFileName: f.originalFileName,
+        formattedFileName: f.formattedFileName,
+        driveUrl: f.driveUrl || '',
+        submittedAt: f.submittedAt,
+        driveSynced: f.driveSynced === true
+      }))
+
       // On tente d'abord un POST avec l'état local pour effectuer un merge bidirectionnel sur le serveur
       const response = await this.postJson({
         action: 'syncAll',
@@ -127,7 +141,8 @@ export class CloudSync {
           submissions: localState.submissions || [],
           deadlines: localState.deadlines || {},
           quizAttempts: localState.quizAttempts || [],
-          evaluations: localState.evaluations || {}
+          evaluations: localState.evaluations || {},
+          submittedFiles: lightweightFiles
         }
       })
 
@@ -242,7 +257,14 @@ export class CloudSync {
   async pushQuizAttempt(quizAttempt: any): Promise<boolean> {
     if (!this.hasConfiguredUrl()) return false
     try {
-      await this.postJson({ action: 'saveQuizAttempt', quizAttempt })
+      const payload = {
+        ...quizAttempt,
+        quizId: quizAttempt.quizId || quizAttempt.moduleId || '',
+        totalQuestions: quizAttempt.totalQuestions || quizAttempt.totalPoints || 0,
+        completedAt: quizAttempt.completedAt || quizAttempt.submittedAt || new Date().toISOString(),
+        answersJson: quizAttempt.answersJson || (quizAttempt.answers ? JSON.stringify(quizAttempt.answers) : '')
+      }
+      await this.postJson({ action: 'saveQuizAttempt', quizAttempt: payload })
       return true
     } catch (e) {
       return false
@@ -281,6 +303,7 @@ export class CloudSync {
   async uploadFile(filePayload: {
     studentName: string
     studentEmail: string
+    exerciseId?: string
     exerciseTitle: string
     fileName: string
     base64Data: string

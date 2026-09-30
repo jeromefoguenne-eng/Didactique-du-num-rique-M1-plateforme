@@ -2327,5 +2327,485 @@ export const INITIAL_REAL_QUIZZES: QuizAttempt[] = [
         "openFeedback": "Analyse remarquable des dimensions cognitives et de la posture critique attendue au niveau M1."
       }
     ]
+  },
+  {
+    "id": "quiz-cloud-3-maximelambertstudenthechbe",
+    "userId": "",
+    "userEmail": "maxime.lambert@student.hech.be",
+    "userName": "Maxime Lambert",
+    "moduleId": "01-1",
+    "quizId": "01-1",
+    "moduleTitle": "1.1 Qu'est-ce qu'une compétence numérique ?",
+    "score": 8,
+    "totalPoints": 10,
+    "totalQuestions": 10,
+    "percentage": 80,
+    "submittedAt": "2026-09-16 12:10",
+    "evaluationType": "diagnostic",
+    "answers": [
+      {
+        "questionId": "q1",
+        "questionText": "Selon le cadre DigComp 2.2, qu'est-ce qui distingue une compétence numérique d'une simple habileté technique ?",
+        "type": "qcm",
+        "userAnswer": 2,
+        "correctAnswer": 2,
+        "isCorrect": true,
+        "points": 3,
+        "maxPoints": 3,
+        "explanation": "La compétence intègre la mobilisation critique, le jugement et l'action responsable en situation complexe."
+      },
+      {
+        "questionId": "q2",
+        "questionText": "Pourquoi dit-on que la compétence numérique est « située » ?",
+        "type": "qcm",
+        "userAnswer": 1,
+        "correctAnswer": 1,
+        "isCorrect": true,
+        "points": 3,
+        "maxPoints": 3,
+        "explanation": "On ne peut évaluer la compétence hors contexte réel : elle dépend des objectifs et contraintes de la tâche."
+      },
+      {
+        "questionId": "q3",
+        "questionText": "En tant que futur enseignant, comment diagnostiquez-vous un élève qui copie-colle un texte d'une IA sans vérification ?",
+        "type": "open",
+        "userAnswer": "Cet élève possède une habileté technique instrumentale (prompter et copier) mais manque de la dimension critique et de responsabilité du modèle DigComp.",
+        "points": 2,
+        "maxPoints": 4,
+        "openFeedback": "Très bon repérage du triptyque outil/habileté/compétence. N'oubliez pas de proposer un dispositif de remédiation didactique."
+      }
+    ]
+  },
+  {
+    "id": "quiz-cloud-272-nbatsstudenthechbe",
+    "userId": "",
+    "userEmail": "nbats@student.hech.be",
+    "userName": "Nathalie Bats",
+    "moduleId": "01-1",
+    "quizId": "01-1",
+    "moduleTitle": "1.1 Qu'est-ce qu'une compétence numérique ?",
+    "score": 10,
+    "totalPoints": 10,
+    "totalQuestions": 10,
+    "percentage": 100,
+    "submittedAt": "2026-09-28 12:00",
+    "evaluationType": "diagnostic",
+    "answers": [
+      {
+        "questionId": "q1",
+        "questionText": "Selon le cadre DigComp 2.2, qu'est-ce qui distingue une compétence numérique d'une simple habileté technique ?",
+        "type": "qcm",
+        "userAnswer": 2,
+        "correctAnswer": 2,
+        "isCorrect": true,
+        "points": 3,
+        "maxPoints": 3,
+        "explanation": "La compétence intègre la mobilisation critique, le jugement et l'action responsable en situation complexe."
+      },
+      {
+        "questionId": "q2",
+        "questionText": "Pourquoi dit-on que la compétence numérique est « située » ?",
+        "type": "qcm",
+        "userAnswer": 1,
+        "correctAnswer": 1,
+        "isCorrect": true,
+        "points": 3,
+        "maxPoints": 3,
+        "explanation": "On ne peut évaluer la compétence hors contexte réel : elle dépend des objectifs et contraintes de la tâche."
+      },
+      {
+        "questionId": "q3",
+        "questionText": "En tant que futur enseignant, comment diagnostiquez-vous un élève qui copie-colle un texte d'une IA sans vérification ?",
+        "type": "open",
+        "userAnswer": "L'élève démontre une habileté instrumentale mais manque de sens critique et de discernement éthique. Il prend la réponse générée pour une vérité absolue sans vérifier les sources.",
+        "points": 4,
+        "maxPoints": 4,
+        "openFeedback": "Très bonne analyse des dimensions cognitives et de la posture critique."
+      }
+    ]
+  },
+  {
+    "id": "quiz-cloud-334-nbatsstudenthechbe",
+    "userId": "",
+    "userEmail": "nbats@student.hech.be",
+    "userName": "Nathalie Bats",
+    "moduleId": "01-1",
+    "quizId": "01-1",
+    "moduleTitle": "1.1 Qu'est-ce qu'une compétence numérique ?",
+    "score": 10,
+    "totalPoints": 10,
+    "totalQuestions": 10,
+    "percentage": 100,
+    "submittedAt": "2026-09-28 10:00",
+    "evaluationType": "diagnostic",
+    "answers": [
+      {
+        "questionId": "q1",
+        "questionText": "Selon le cadre DigComp 2.2, qu'est-ce qui distingue une compétence numérique d'une simple habileté technique ?",
+        "type": "qcm",
+        "userAnswer": 2,
+        "correctAnswer": 2,
+        "isCorrect": true,
+        "points": 3,
+        "maxPoints": 3,
+        "explanation": "La compétence intègre la mobilisation critique, le jugement et l'action responsable en situation complexe."
+      },
+      {
+        "questionId": "q2",
+        "questionText": "Pourquoi dit-on que la compétence numérique est « située » ?",
+        "type": "qcm",
+        "userAnswer": 1,
+        "correctAnswer": 1,
+        "isCorrect": true,
+        "points": 3,
+        "maxPoints": 3,
+        "explanation": "On ne peut évaluer la compétence hors contexte réel : elle dépend des objectifs et contraintes de la tâche."
+      },
+      {
+        "questionId": "q3",
+        "questionText": "En tant que futur enseignant, comment diagnostiquez-vous un élève qui copie-colle un texte d'une IA sans vérification ?",
+        "type": "open",
+        "userAnswer": "L'élève démontre une habileté instrumentale mais manque de sens critique et de discernement éthique. Il prend la réponse générée pour une vérité absolue sans vérifier les sources.",
+        "points": 4,
+        "maxPoints": 4,
+        "openFeedback": "Très bonne analyse des dimensions cognitives et de la posture critique."
+      }
+    ]
+  },
+  {
+    "id": "quiz-cloud-360-nbatsstudenthechbe",
+    "userId": "",
+    "userEmail": "nbats@student.hech.be",
+    "userName": "Nathalie Bats",
+    "moduleId": "01-1",
+    "quizId": "01-1",
+    "moduleTitle": "1.1 Qu'est-ce qu'une compétence numérique ?",
+    "score": 10,
+    "totalPoints": 10,
+    "totalQuestions": 10,
+    "percentage": 100,
+    "submittedAt": "2026-09-28 08:00",
+    "evaluationType": "diagnostic",
+    "answers": [
+      {
+        "questionId": "q1",
+        "questionText": "Selon le cadre DigComp 2.2, qu'est-ce qui distingue une compétence numérique d'une simple habileté technique ?",
+        "type": "qcm",
+        "userAnswer": 2,
+        "correctAnswer": 2,
+        "isCorrect": true,
+        "points": 3,
+        "maxPoints": 3,
+        "explanation": "La compétence intègre la mobilisation critique, le jugement et l'action responsable en situation complexe."
+      },
+      {
+        "questionId": "q2",
+        "questionText": "Pourquoi dit-on que la compétence numérique est « située » ?",
+        "type": "qcm",
+        "userAnswer": 1,
+        "correctAnswer": 1,
+        "isCorrect": true,
+        "points": 3,
+        "maxPoints": 3,
+        "explanation": "On ne peut évaluer la compétence hors contexte réel : elle dépend des objectifs et contraintes de la tâche."
+      },
+      {
+        "questionId": "q3",
+        "questionText": "En tant que futur enseignant, comment diagnostiquez-vous un élève qui copie-colle un texte d'une IA sans vérification ?",
+        "type": "open",
+        "userAnswer": "L'élève démontre une habileté instrumentale mais manque de sens critique et de discernement éthique. Il prend la réponse générée pour une vérité absolue sans vérifier les sources.",
+        "points": 4,
+        "maxPoints": 4,
+        "openFeedback": "Très bonne analyse des dimensions cognitives et de la posture critique."
+      }
+    ]
+  },
+  {
+    "id": "quiz-cloud-373-nbatsstudenthechbe",
+    "userId": "",
+    "userEmail": "nbats@student.hech.be",
+    "userName": "Nathalie Bats",
+    "moduleId": "01-1",
+    "quizId": "01-1",
+    "moduleTitle": "1.1 Qu'est-ce qu'une compétence numérique ?",
+    "score": 10,
+    "totalPoints": 10,
+    "totalQuestions": 10,
+    "percentage": 100,
+    "submittedAt": "2026-09-28 06:00",
+    "evaluationType": "diagnostic",
+    "answers": [
+      {
+        "questionId": "q1",
+        "questionText": "Selon le cadre DigComp 2.2, qu'est-ce qui distingue une compétence numérique d'une simple habileté technique ?",
+        "type": "qcm",
+        "userAnswer": 2,
+        "correctAnswer": 2,
+        "isCorrect": true,
+        "points": 3,
+        "maxPoints": 3,
+        "explanation": "La compétence intègre la mobilisation critique, le jugement et l'action responsable en situation complexe."
+      },
+      {
+        "questionId": "q2",
+        "questionText": "Pourquoi dit-on que la compétence numérique est « située » ?",
+        "type": "qcm",
+        "userAnswer": 1,
+        "correctAnswer": 1,
+        "isCorrect": true,
+        "points": 3,
+        "maxPoints": 3,
+        "explanation": "On ne peut évaluer la compétence hors contexte réel : elle dépend des objectifs et contraintes de la tâche."
+      },
+      {
+        "questionId": "q3",
+        "questionText": "En tant que futur enseignant, comment diagnostiquez-vous un élève qui copie-colle un texte d'une IA sans vérification ?",
+        "type": "open",
+        "userAnswer": "L'élève démontre une habileté instrumentale mais manque de sens critique et de discernement éthique. Il prend la réponse générée pour une vérité absolue sans vérifier les sources.",
+        "points": 4,
+        "maxPoints": 4,
+        "openFeedback": "Très bonne analyse des dimensions cognitives et de la posture critique."
+      }
+    ]
+  },
+  {
+    "id": "quiz-cloud-412-nbatsstudenthechbe",
+    "userId": "",
+    "userEmail": "nbats@student.hech.be",
+    "userName": "Nathalie Bats",
+    "moduleId": "01-1",
+    "quizId": "01-1",
+    "moduleTitle": "1.1 Qu'est-ce qu'une compétence numérique ?",
+    "score": 10,
+    "totalPoints": 10,
+    "totalQuestions": 10,
+    "percentage": 100,
+    "submittedAt": "2026-09-28 04:00",
+    "evaluationType": "diagnostic",
+    "answers": [
+      {
+        "questionId": "q1",
+        "questionText": "Selon le cadre DigComp 2.2, qu'est-ce qui distingue une compétence numérique d'une simple habileté technique ?",
+        "type": "qcm",
+        "userAnswer": 2,
+        "correctAnswer": 2,
+        "isCorrect": true,
+        "points": 3,
+        "maxPoints": 3,
+        "explanation": "La compétence intègre la mobilisation critique, le jugement et l'action responsable en situation complexe."
+      },
+      {
+        "questionId": "q2",
+        "questionText": "Pourquoi dit-on que la compétence numérique est « située » ?",
+        "type": "qcm",
+        "userAnswer": 1,
+        "correctAnswer": 1,
+        "isCorrect": true,
+        "points": 3,
+        "maxPoints": 3,
+        "explanation": "On ne peut évaluer la compétence hors contexte réel : elle dépend des objectifs et contraintes de la tâche."
+      },
+      {
+        "questionId": "q3",
+        "questionText": "En tant que futur enseignant, comment diagnostiquez-vous un élève qui copie-colle un texte d'une IA sans vérification ?",
+        "type": "open",
+        "userAnswer": "L'élève démontre une habileté instrumentale mais manque de sens critique et de discernement éthique. Il prend la réponse générée pour une vérité absolue sans vérifier les sources.",
+        "points": 4,
+        "maxPoints": 4,
+        "openFeedback": "Très bonne analyse des dimensions cognitives et de la posture critique."
+      }
+    ]
+  },
+  {
+    "id": "quiz-cloud-425-nbatsstudenthechbe",
+    "userId": "",
+    "userEmail": "nbats@student.hech.be",
+    "userName": "Nathalie Bats",
+    "moduleId": "01-1",
+    "quizId": "01-1",
+    "moduleTitle": "1.1 Qu'est-ce qu'une compétence numérique ?",
+    "score": 10,
+    "totalPoints": 10,
+    "totalQuestions": 10,
+    "percentage": 100,
+    "submittedAt": "2026-09-28 02:00",
+    "evaluationType": "diagnostic",
+    "answers": [
+      {
+        "questionId": "q1",
+        "questionText": "Selon le cadre DigComp 2.2, qu'est-ce qui distingue une compétence numérique d'une simple habileté technique ?",
+        "type": "qcm",
+        "userAnswer": 2,
+        "correctAnswer": 2,
+        "isCorrect": true,
+        "points": 3,
+        "maxPoints": 3,
+        "explanation": "La compétence intègre la mobilisation critique, le jugement et l'action responsable en situation complexe."
+      },
+      {
+        "questionId": "q2",
+        "questionText": "Pourquoi dit-on que la compétence numérique est « située » ?",
+        "type": "qcm",
+        "userAnswer": 1,
+        "correctAnswer": 1,
+        "isCorrect": true,
+        "points": 3,
+        "maxPoints": 3,
+        "explanation": "On ne peut évaluer la compétence hors contexte réel : elle dépend des objectifs et contraintes de la tâche."
+      },
+      {
+        "questionId": "q3",
+        "questionText": "En tant que futur enseignant, comment diagnostiquez-vous un élève qui copie-colle un texte d'une IA sans vérification ?",
+        "type": "open",
+        "userAnswer": "L'élève démontre une habileté instrumentale mais manque de sens critique et de discernement éthique. Il prend la réponse générée pour une vérité absolue sans vérifier les sources.",
+        "points": 4,
+        "maxPoints": 4,
+        "openFeedback": "Très bonne analyse des dimensions cognitives et de la posture critique."
+      }
+    ]
+  },
+  {
+    "id": "quiz-cloud-438-nbatsstudenthechbe",
+    "userId": "",
+    "userEmail": "nbats@student.hech.be",
+    "userName": "Nathalie Bats",
+    "moduleId": "01-1",
+    "quizId": "01-1",
+    "moduleTitle": "1.1 Qu'est-ce qu'une compétence numérique ?",
+    "score": 10,
+    "totalPoints": 10,
+    "totalQuestions": 10,
+    "percentage": 100,
+    "submittedAt": "2026-09-28 00:00",
+    "evaluationType": "diagnostic",
+    "answers": [
+      {
+        "questionId": "q1",
+        "questionText": "Selon le cadre DigComp 2.2, qu'est-ce qui distingue une compétence numérique d'une simple habileté technique ?",
+        "type": "qcm",
+        "userAnswer": 2,
+        "correctAnswer": 2,
+        "isCorrect": true,
+        "points": 3,
+        "maxPoints": 3,
+        "explanation": "La compétence intègre la mobilisation critique, le jugement et l'action responsable en situation complexe."
+      },
+      {
+        "questionId": "q2",
+        "questionText": "Pourquoi dit-on que la compétence numérique est « située » ?",
+        "type": "qcm",
+        "userAnswer": 1,
+        "correctAnswer": 1,
+        "isCorrect": true,
+        "points": 3,
+        "maxPoints": 3,
+        "explanation": "On ne peut évaluer la compétence hors contexte réel : elle dépend des objectifs et contraintes de la tâche."
+      },
+      {
+        "questionId": "q3",
+        "questionText": "En tant que futur enseignant, comment diagnostiquez-vous un élève qui copie-colle un texte d'une IA sans vérification ?",
+        "type": "open",
+        "userAnswer": "L'élève démontre une habileté instrumentale mais manque de sens critique et de discernement éthique. Il prend la réponse générée pour une vérité absolue sans vérifier les sources.",
+        "points": 4,
+        "maxPoints": 4,
+        "openFeedback": "Très bonne analyse des dimensions cognitives et de la posture critique."
+      }
+    ]
+  },
+  {
+    "id": "quiz-cloud-451-nbatsstudenthechbe",
+    "userId": "",
+    "userEmail": "nbats@student.hech.be",
+    "userName": "Nathalie Bats",
+    "moduleId": "01-1",
+    "quizId": "01-1",
+    "moduleTitle": "1.1 Qu'est-ce qu'une compétence numérique ?",
+    "score": 10,
+    "totalPoints": 10,
+    "totalQuestions": 10,
+    "percentage": 100,
+    "submittedAt": "2026-09-27 22:00",
+    "evaluationType": "diagnostic",
+    "answers": [
+      {
+        "questionId": "q1",
+        "questionText": "Selon le cadre DigComp 2.2, qu'est-ce qui distingue une compétence numérique d'une simple habileté technique ?",
+        "type": "qcm",
+        "userAnswer": 2,
+        "correctAnswer": 2,
+        "isCorrect": true,
+        "points": 3,
+        "maxPoints": 3,
+        "explanation": "La compétence intègre la mobilisation critique, le jugement et l'action responsable en situation complexe."
+      },
+      {
+        "questionId": "q2",
+        "questionText": "Pourquoi dit-on que la compétence numérique est « située » ?",
+        "type": "qcm",
+        "userAnswer": 1,
+        "correctAnswer": 1,
+        "isCorrect": true,
+        "points": 3,
+        "maxPoints": 3,
+        "explanation": "On ne peut évaluer la compétence hors contexte réel : elle dépend des objectifs et contraintes de la tâche."
+      },
+      {
+        "questionId": "q3",
+        "questionText": "En tant que futur enseignant, comment diagnostiquez-vous un élève qui copie-colle un texte d'une IA sans vérification ?",
+        "type": "open",
+        "userAnswer": "L'élève démontre une habileté instrumentale mais manque de sens critique et de discernement éthique. Il prend la réponse générée pour une vérité absolue sans vérifier les sources.",
+        "points": 4,
+        "maxPoints": 4,
+        "openFeedback": "Très bonne analyse des dimensions cognitives et de la posture critique."
+      }
+    ]
+  },
+  {
+    "id": "quiz-cloud-468-nbatsstudenthechbe",
+    "userId": "",
+    "userEmail": "nbats@student.hech.be",
+    "userName": "Nathalie Bats",
+    "moduleId": "01-1",
+    "quizId": "01-1",
+    "moduleTitle": "1.1 Qu'est-ce qu'une compétence numérique ?",
+    "score": 10,
+    "totalPoints": 10,
+    "totalQuestions": 10,
+    "percentage": 100,
+    "submittedAt": "2026-09-27 20:00",
+    "evaluationType": "diagnostic",
+    "answers": [
+      {
+        "questionId": "q1",
+        "questionText": "Selon le cadre DigComp 2.2, qu'est-ce qui distingue une compétence numérique d'une simple habileté technique ?",
+        "type": "qcm",
+        "userAnswer": 2,
+        "correctAnswer": 2,
+        "isCorrect": true,
+        "points": 3,
+        "maxPoints": 3,
+        "explanation": "La compétence intègre la mobilisation critique, le jugement et l'action responsable en situation complexe."
+      },
+      {
+        "questionId": "q2",
+        "questionText": "Pourquoi dit-on que la compétence numérique est « située » ?",
+        "type": "qcm",
+        "userAnswer": 1,
+        "correctAnswer": 1,
+        "isCorrect": true,
+        "points": 3,
+        "maxPoints": 3,
+        "explanation": "On ne peut évaluer la compétence hors contexte réel : elle dépend des objectifs et contraintes de la tâche."
+      },
+      {
+        "questionId": "q3",
+        "questionText": "En tant que futur enseignant, comment diagnostiquez-vous un élève qui copie-colle un texte d'une IA sans vérification ?",
+        "type": "open",
+        "userAnswer": "L'élève démontre une habileté instrumentale mais manque de sens critique et de discernement éthique. Il prend la réponse générée pour une vérité absolue sans vérifier les sources.",
+        "points": 4,
+        "maxPoints": 4,
+        "openFeedback": "Très bonne analyse des dimensions cognitives et de la posture critique."
+      }
+    ]
   }
 ]

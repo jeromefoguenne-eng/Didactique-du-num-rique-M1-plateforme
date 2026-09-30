@@ -639,27 +639,30 @@ function getFullDataFromSheet() {
         if (qr[7]) {
           try { ans = JSON.parse(qr[7]); } catch (e) {}
         }
-        var rawM = (qr[2] || '01').toString().trim();
+        var rawM = (qr[2] || '01-1').toString().trim();
         var mId = rawM;
         var mTitle = 'Module ' + rawM;
-        if (rawM.indexOf('Feb') !== -1 || rawM.indexOf('Fév') !== -1) {
-          mId = '01-2';
-          mTitle = "1.2 Éducation aux médias";
-        } else if (rawM.indexOf('Jan') !== -1) {
-          mId = '01-1';
-          mTitle = "1.1 Définition & DigComp";
-        } else if (rawM.indexOf('Mar') !== -1) {
-          mId = '03-1';
-          mTitle = "3.1 Situation-problème";
-        } else if (rawM === '01-1' || rawM === '1.1') {
-          mTitle = "1.1 Définition & DigComp";
-        } else if (rawM === '01-2' || rawM === '1.2') {
-          mTitle = "1.2 Éducation aux médias";
-        } else if (rawM === '02-1' || rawM === '2.1') {
-          mTitle = "2.1 Quatre champs FMTTN";
-        } else if (rawM === '02-2' || rawM === '2.2') {
-          mTitle = "2.2 Progression apprentissages";
+        if (rawM.indexOf('GMT') !== -1 || rawM.indexOf('2026') !== -1 || rawM.indexOf('Jan') !== -1 || rawM.indexOf('Feb') !== -1 || rawM.indexOf('Mar') !== -1 || rawM.indexOf('Fév') !== -1) {
+          var d = new Date(rawM);
+          if (!isNaN(d.getTime())) {
+            var day = d.getDate();
+            var month = d.getMonth() + 1;
+            mId = (day < 10 ? '0' + day : '' + day) + '-' + month;
+          }
         }
+        if (mId === '01-1' || mId === '1.1') { mId = '01-1'; mTitle = "1.1 Définition & DigComp"; }
+        else if (mId === '01-2' || mId === '1.2') { mId = '01-2'; mTitle = "1.2 Éducation aux médias"; }
+        else if (mId === '02-1' || mId === '2.1') { mId = '02-1'; mTitle = "2.1 Quatre champs FMTTN"; }
+        else if (mId === '02-2' || mId === '2.2') { mId = '02-2'; mTitle = "2.2 Progression apprentissages"; }
+        else if (mId === '02-3' || mId === '2.3') { mId = '02-3'; mTitle = "2.3 Progression spiralaire"; }
+        else if (mId === '03-1' || mId === '3.1') { mId = '03-1'; mTitle = "3.1 Situation-problème"; }
+        else if (mId === '03-2' || mId === '3.2') { mId = '03-2'; mTitle = "3.2 Apprentissage par projet"; }
+        else if (mId === '03-3' || mId === '3.3') { mId = '03-3'; mTitle = "3.3 Investigation & enquête"; }
+        else if (mId === '03-4' || mId === '3.4') { mId = '03-4'; mTitle = "3.4 Le défi pédagogique"; }
+        else if (mId === '03-5' || mId === '3.5') { mId = '03-5'; mTitle = "3.5 Conception itérative"; }
+        else if (mId === '03-6' || mId === '3.6') { mId = '03-6'; mTitle = "3.6 Peer learning"; }
+        else if (mId === '03-7' || mId === '3.7') { mId = '03-7'; mTitle = "3.7 Enseignement à distance"; }
+        else if (mId === '04-1' || mId === '4.1') { mId = '04-1'; mTitle = "4.1 Fiche de préparation"; }
 
         quizAttempts.push({
           id: 'quiz-cloud-' + qIdx + '-' + (qr[0] || '').toString().replace(/[^a-zA-Z0-9]/g, ''),

@@ -1824,7 +1824,10 @@ if (typeof window !== 'undefined') {
     if (!rq || !rq.userEmail) return
     const em = rq.userEmail.trim().toLowerCase()
     if (initialDeletedUsers.includes(em)) return
-    const existing = state.quizAttempts.find(q => q && q.userEmail && q.userEmail.trim().toLowerCase() === em && q.moduleId === rq.moduleId)
+    const existing = state.quizAttempts.find(q => q && (
+      (rq.id && q.id === rq.id) ||
+      (q.userEmail && q.userEmail.trim().toLowerCase() === em && q.moduleId === rq.moduleId && q.submittedAt === rq.submittedAt)
+    ))
     if (!existing) {
       state.quizAttempts.push(rq)
     } else if (rq.answers && (!existing.answers || existing.answers.length === 0)) {
@@ -1860,17 +1863,6 @@ if (typeof window !== 'undefined') {
 export function normalizeQuizModuleId(raw: any): { id: string; title: string } {
   if (!raw) return { id: '01-1', title: "1.1 Qu'est-ce qu'une compétence numérique ?" }
   const str = String(raw).trim()
-
-  // Google Sheet auto-date formatting recovery
-  if (str.includes('Feb') || str.includes('Fév')) {
-    return { id: '01-2', title: "1.2 L'éducation aux médias dans les compétences numériques" }
-  }
-  if (str.includes('Jan')) {
-    return { id: '01-1', title: "1.1 Qu'est-ce qu'une compétence numérique ?" }
-  }
-  if (str.includes('Mar')) {
-    return { id: '03-1', title: "3.1 La situation-problème et l'apprentissage par problème" }
-  }
 
   // Exact mappings
   const map: Record<string, string> = {
@@ -1910,7 +1902,24 @@ export function normalizeQuizModuleId(raw: any): { id: string; title: string } {
   }
 
   if (map[str]) {
-    return { id: str, title: map[str] }
+    const cleanId = (str.length === 3 && !str.startsWith('0')) ? ('0' + str) : str
+    return { id: cleanId, title: map[str] }
+  }
+
+  // Google Sheet auto-date formatting recovery (ex: "Thu Jan 01 2026...", "Fri Jan 02 2026...")
+  if (str.includes('GMT') || str.includes('2026') || str.includes('Jan') || str.includes('Feb') || str.includes('Mar') || str.includes('Fév')) {
+    const d = new Date(str)
+    if (!isNaN(d.getTime())) {
+      const day = d.getDate()
+      const month = d.getMonth() + 1
+      const c1 = `${String(day).padStart(2, '0')}-${month}`
+      if (map[c1]) return { id: c1, title: map[c1] }
+      const c2 = `${String(month).padStart(2, '0')}-${day}`
+      if (map[c2]) return { id: c2, title: map[c2] }
+    }
+    if (str.includes('Feb') || str.includes('Fév')) return { id: '01-2', title: map['01-2'] }
+    if (str.includes('Jan')) return { id: '01-1', title: map['01-1'] }
+    if (str.includes('Mar')) return { id: '03-1', title: map['03-1'] }
   }
 
   return { id: str, title: `Module ${str}` }
@@ -4251,10 +4260,15 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
         const remDate = remQuiz.submittedAt || remQuiz.completedAt || new Date().toISOString().replace('T', ' ').substring(0, 16)
         const remAnswers = Array.isArray(remQuiz.answers) ? remQuiz.answers : []
 
+        // Déduplication robuste : même ID, ou même étudiant + même module + même horodatage exact + même score
         const existingIdx = state.quizAttempts.findIndex(
-          q => q && q.userEmail && String(q.userEmail).trim().toLowerCase() === cleanQuizEmail &&
-               (q.moduleId === modId || (q as any).quizId === modId) &&
-               String(q.submittedAt || '').substring(0, 10) === String(remDate).substring(0, 10)
+          q => q && (
+            (remQuiz.id && q.id === remQuiz.id) ||
+            (q.userEmail && String(q.userEmail).trim().toLowerCase() === cleanQuizEmail &&
+             (q.moduleId === modId || (q as any).quizId === modId) &&
+             String(q.submittedAt || '').trim() === String(remDate || '').trim() &&
+             q.score === remScore)
+          )
         )
 
         const normalizedAttempt: QuizAttempt = {
@@ -4273,8 +4287,8 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
         }
 
         if (existingIdx >= 0) {
-          // Conserver la tentative ayant le meilleur score ou des réponses complètes
-          if (normalizedAttempt.score >= state.quizAttempts[existingIdx].score) {
+          // Conserver la tentative ayant des réponses détaillées si l'existante n'en a pas
+          if (normalizedAttempt.answers.length > 0 && (!state.quizAttempts[existingIdx].answers || state.quizAttempts[existingIdx].answers.length === 0)) {
             state.quizAttempts[existingIdx] = normalizedAttempt
             quizzesChanged = true
           }

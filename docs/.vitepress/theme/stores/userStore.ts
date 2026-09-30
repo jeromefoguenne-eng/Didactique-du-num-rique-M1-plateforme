@@ -1,6 +1,6 @@
 import { reactive, computed, ref } from 'vue'
 import { cloudSync, cloudSyncState, DEFAULT_CLOUD_URL } from './cloudSync'
-import { INITIAL_REAL_USERS, INITIAL_REAL_FILES, INITIAL_REAL_SUBMISSIONS } from './studentSubmissionsData'
+import { INITIAL_REAL_USERS, INITIAL_REAL_FILES, INITIAL_REAL_SUBMISSIONS, INITIAL_REAL_QUIZZES } from './studentSubmissionsData'
 
 export interface User {
   id: string
@@ -702,100 +702,7 @@ export function formatFileName(
 // Données réelles des étudiants inscrits (synchronisées avec Google Sheet)
 const DEFAULT_USERS: User[] = INITIAL_REAL_USERS
 
-const DEFAULT_QUIZZES: QuizAttempt[] = [
-  {
-    id: 'quiz-att-1',
-    userId: 'user-2',
-    userName: 'Maxime Lambert',
-    userEmail: 'maxime.lambert@student.hech.be',
-    moduleId: '01-1',
-    moduleTitle: "1.1 Qu'est-ce qu'une compétence numérique ?",
-    score: 8,
-    totalPoints: 10,
-    percentage: 80,
-    evaluationType: 'diagnostic',
-    submittedAt: '2026-09-16 14:10',
-    answers: [
-      {
-        questionId: 'q1',
-        questionText: "Selon le cadre DigComp 2.2, qu'est-ce qui distingue une compétence numérique d'une simple habileté technique ?",
-        type: 'qcm',
-        userAnswer: 2,
-        correctAnswer: 2,
-        isCorrect: true,
-        points: 3,
-        maxPoints: 3,
-        explanation: "La compétence intègre la mobilisation critique, le jugement et l'action responsable en situation complexe."
-      },
-      {
-        questionId: 'q2',
-        questionText: "Pourquoi dit-on que la compétence numérique est « située » ?",
-        type: 'qcm',
-        userAnswer: 1,
-        correctAnswer: 1,
-        isCorrect: true,
-        points: 3,
-        maxPoints: 3,
-        explanation: "On ne peut évaluer la compétence hors contexte réel : elle dépend des objectifs et contraintes de la tâche."
-      },
-      {
-        questionId: 'q3',
-        questionText: "En tant que futur enseignant, comment diagnostiquez-vous un élève qui copie-colle un texte d'une IA sans vérification ?",
-        type: 'open',
-        userAnswer: "Cet élève possède une habileté technique instrumentale (prompter et copier) mais manque de la dimension critique et de responsabilité du modèle DigComp.",
-        points: 2,
-        maxPoints: 4,
-        openFeedback: "Très bon repérage du triptyque outil/habileté/compétence. N'oubliez pas de proposer un dispositif de remédiation didactique."
-      }
-    ]
-  },
-  {
-    id: 'quiz-att-2',
-    userId: 'user-3',
-    userName: 'Thomas Bastien',
-    userEmail: 'thomas.bastien@student.hech.be',
-    moduleId: '01-1',
-    moduleTitle: "1.1 Qu'est-ce qu'une compétence numérique ?",
-    score: 10,
-    totalPoints: 10,
-    percentage: 100,
-    evaluationType: 'diagnostic',
-    submittedAt: '2026-09-16 15:45',
-    answers: [
-      {
-        questionId: 'q1',
-        questionText: "Selon le cadre DigComp 2.2, qu'est-ce qui distingue une compétence numérique d'une simple habileté technique ?",
-        type: 'qcm',
-        userAnswer: 2,
-        correctAnswer: 2,
-        isCorrect: true,
-        points: 3,
-        maxPoints: 3,
-        explanation: "La compétence intègre la mobilisation critique, le jugement et l'action responsable en situation complexe."
-      },
-      {
-        questionId: 'q2',
-        questionText: "Pourquoi dit-on que la compétence numérique est « située » ?",
-        type: 'qcm',
-        userAnswer: 1,
-        correctAnswer: 1,
-        isCorrect: true,
-        points: 3,
-        maxPoints: 3,
-        explanation: "On ne peut évaluer la compétence hors contexte réel : elle dépend des objectifs et contraintes de la tâche."
-      },
-      {
-        questionId: 'q3',
-        questionText: "En tant que futur enseignant, comment diagnostiquez-vous un élève qui copie-colle un texte d'une IA sans vérification ?",
-        type: 'open',
-        userAnswer: "L'élève montre une bonne aisance opératoire mais une carence sur la dimension épistémique et éthique. Il prend l'outil pour une vérité absolue.",
-        points: 4,
-        maxPoints: 4,
-        openFeedback: "Analyse remarquable des dimensions cognitives et de la posture critique attendue au niveau M1."
-      }
-    ]
-  }
-]
+const DEFAULT_QUIZZES: QuizAttempt[] = INITIAL_REAL_QUIZZES
 
 const DEFAULT_PROGRESS: Record<string, string[]> = {
   'sarah.dubois@student.hech.be': ['mod-1', 'mod-2', 'mod-3', 'ex-1', 'ex-2'],
@@ -1861,8 +1768,8 @@ const state = reactive({
   deadlines: initInitialDeadlines()
 })
 
-// Auto-fusion immédiate des données réelles (étudiants, devoirs, fichiers déposés)
-// Garantit que tout navigateur (même avec cache localStorage ancien) affiche immédiatement tous les travaux
+// Auto-fusion immédiate des données réelles (étudiants, devoirs, fichiers déposés, quiz)
+// Garantit que tout navigateur (même avec cache localStorage ancien) affiche immédiatement tous les travaux et quiz
 if (typeof window !== 'undefined') {
   INITIAL_REAL_USERS.forEach(ru => {
     if (!ru || !ru.email) return
@@ -1878,11 +1785,27 @@ if (typeof window !== 'undefined') {
     if (!rf || !rf.userEmail || !rf.exerciseId) return
     const em = rf.userEmail.trim().toLowerCase()
     if (initialDeletedUsers.includes(em)) return
-    const existing = state.submittedFiles.find(f => f && (f.id === rf.id || (f.userEmail && f.userEmail.trim().toLowerCase() === em && f.formattedFileName === rf.formattedFileName)))
-    if (!existing) {
+    const existing = state.submittedFiles.find(f => f && (f.id === rf.id || (f.userEmail && f.userEmail.trim().toLowerCase() === em && (f.formattedFileName === rf.formattedFileName || f.exerciseId === rf.exerciseId))))
+    if (existing) {
+      // FORCER LA MISE À JOUR DU DATAURL ET DE LA TAILLE RÉELLE (Résout la liseuse blanche)
+      if (!existing.dataUrl || existing.dataUrl.length < 100) {
+        existing.dataUrl = rf.dataUrl
+      }
+      if (!existing.fileSize || existing.fileSize === 0) {
+        existing.fileSize = rf.fileSize
+      }
+      if ((rf as any).extractedText) {
+        (existing as any).extractedText = (rf as any).extractedText
+      }
+      if (rf.aiCorrection && (!existing.aiCorrection || existing.aiCorrection.suggestedScore === 0)) {
+        existing.aiCorrection = rf.aiCorrection
+      }
+      if (rf.formattedFileName) existing.formattedFileName = rf.formattedFileName
+    } else {
       state.submittedFiles.push(rf)
     }
   })
+  setStorage(STORAGE_KEY_FILES, state.submittedFiles)
 
   INITIAL_REAL_SUBMISSIONS.forEach(rs => {
     if (!rs || !rs.userEmail || !rs.exerciseId) return
@@ -1891,8 +1814,28 @@ if (typeof window !== 'undefined') {
     const existing = state.submissions.find(s => s && s.userEmail && s.userEmail.trim().toLowerCase() === em && s.exerciseId === rs.exerciseId)
     if (!existing) {
       state.submissions.push(rs)
+    } else if (!existing.answer && rs.answer) {
+      existing.answer = rs.answer
     }
   })
+  setStorage(STORAGE_KEY_SUBMISSIONS, state.submissions)
+
+  INITIAL_REAL_QUIZZES.forEach(rq => {
+    if (!rq || !rq.userEmail) return
+    const em = rq.userEmail.trim().toLowerCase()
+    if (initialDeletedUsers.includes(em)) return
+    const existing = state.quizAttempts.find(q => q && q.userEmail && q.userEmail.trim().toLowerCase() === em && q.moduleId === rq.moduleId)
+    if (!existing) {
+      state.quizAttempts.push(rq)
+    } else if (rq.answers && (!existing.answers || existing.answers.length === 0)) {
+      existing.answers = rq.answers
+      existing.score = rq.score
+      existing.totalPoints = rq.totalPoints
+      existing.percentage = rq.percentage
+      existing.moduleTitle = rq.moduleTitle
+    }
+  })
+  setStorage(STORAGE_KEY_QUIZZES, state.quizAttempts)
 }
 
 if (typeof window !== 'undefined') {
@@ -2819,7 +2762,20 @@ export const userStore = {
   },
 
   downloadSubmittedFile(file: SubmittedFile) {
-    if (!file.dataUrl) {
+    let dataUrl = file.dataUrl || ''
+    if (!dataUrl) {
+      const realMatch = INITIAL_REAL_FILES.find((rf: any) =>
+        rf.id === file.id ||
+        ((rf.userEmail || '').toLowerCase() === (file.userEmail || '').toLowerCase() && rf.exerciseId === file.exerciseId)
+      )
+      if (realMatch && realMatch.dataUrl) {
+        dataUrl = realMatch.dataUrl
+        file.dataUrl = dataUrl
+        if (!file.fileSize && realMatch.fileSize) file.fileSize = realMatch.fileSize
+      }
+    }
+
+    if (!dataUrl) {
       if (file.driveUrl) {
         if (typeof window !== 'undefined') {
           window.open(file.driveUrl, '_blank')
@@ -2829,12 +2785,33 @@ export const userStore = {
       alert("Le contenu du fichier n'est pas disponible pour le téléchargement direct.")
       return
     }
-    const link = document.createElement('a')
-    link.href = file.dataUrl
-    link.setAttribute('download', file.formattedFileName)
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+
+    try {
+      const base64Data = dataUrl.includes(',') ? dataUrl.split(',')[1] : dataUrl
+      const binaryStr = atob(base64Data)
+      const len = binaryStr.length
+      const bytes = new Uint8Array(len)
+      for (let i = 0; i < len; i++) {
+        bytes[i] = binaryStr.charCodeAt(i)
+      }
+      const mime = file.fileType || (file.formattedFileName.endsWith('.pdf') ? 'application/pdf' : 'application/octet-stream')
+      const blob = new Blob([bytes], { type: mime })
+      const blobUrl = URL.createObjectURL(blob)
+      const link = document.createElement('a')
+      link.href = blobUrl
+      link.setAttribute('download', file.formattedFileName || file.originalFileName || 'document')
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      setTimeout(() => URL.revokeObjectURL(blobUrl), 10000)
+    } catch (e) {
+      const link = document.createElement('a')
+      link.href = dataUrl
+      link.setAttribute('download', file.formattedFileName || file.originalFileName || 'document')
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+    }
   },
 
   // Synchronisation directe vers le dossier Google Drive via l'API File System Access
@@ -3244,6 +3221,7 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
 
         return {
           id: 'quiz',
+          category: 'quiz',
           title: def.title,
           shortTitle: def.shortTitle,
           part: def.part,
@@ -3334,6 +3312,7 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
 
       return {
         id: def.id,
+        category: def.id === 'quiz' ? 'quiz' : (def.part === 2 ? 'part2' : 'exercise'),
         title: def.title,
         shortTitle: def.shortTitle,
         part: def.part,

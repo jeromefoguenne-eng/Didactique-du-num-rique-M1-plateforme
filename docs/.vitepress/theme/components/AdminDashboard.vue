@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
-import { userStore, OFFICIAL_EVALUATION_ITEMS, formatDeadlineDisplay, getAlarmLevelInfo, parseDeadline } from '../stores/userStore'
+import { userStore, OFFICIAL_EVALUATION_ITEMS, formatDeadlineDisplay, getAlarmLevelInfo, parseDeadline, normalizeQuizModuleId } from '../stores/userStore'
+import { INITIAL_REAL_FILES } from '../stores/studentSubmissionsData'
 import { DEFAULT_CLOUD_URL } from '../stores/cloudSync'
 import { withBase } from 'vitepress'
 
@@ -186,8 +187,10 @@ const availableQuizModules = [
 const filteredQuizAttempts = computed(() => {
   return quizAttempts.value.filter(q => {
     const rawMod = q.moduleId || ''
+    const norm = normalizeQuizModuleId(rawMod)
     const matchMod = quizModuleFilter.value === 'all' ||
       rawMod === quizModuleFilter.value ||
+      norm.id === quizModuleFilter.value ||
       (quizModuleFilter.value === '01-2' && (rawMod.includes('Feb') || rawMod.includes('Fév') || rawMod === '1.2')) ||
       (quizModuleFilter.value === '01-1' && (rawMod.includes('Jan') || rawMod === '1.1')) ||
       (quizModuleFilter.value === '03-1' && (rawMod.includes('Mar') || rawMod === '3.1'))
@@ -1420,15 +1423,39 @@ function prevDossierStudent() {
   activeDocPreview.value = null
 }
 
+function closeDocPreview() {
+  if (activeDocPreview.value?.blobUrl && activeDocPreview.value.blobUrl.startsWith('blob:')) {
+    try { URL.revokeObjectURL(activeDocPreview.value.blobUrl) } catch (e) {}
+  }
+  activeDocPreview.value = null
+}
+
 async function toggleDocumentPreview(file) {
   if (!file) return
   if (activeDocPreview.value && activeDocPreview.value.fileId === file.id) {
-    activeDocPreview.value = null
+    closeDocPreview()
     return
   }
+  closeDocPreview()
 
-  // Si le document est stocké dans Google Drive et non présent en mémoire locale
-  if (!file.dataUrl && file.driveUrl) {
+  // 1. Chercher les données complètes si non présentes dans le cache local
+  let fileDataUrl = file.dataUrl || ''
+  let fileExtractedText = file.extractedText || ''
+  if (!fileDataUrl || fileDataUrl.length < 50) {
+    const realMatch = INITIAL_REAL_FILES.find((rf) => 
+      rf.id === file.id || 
+      ((rf.userEmail || '').toLowerCase() === (file.userEmail || '').toLowerCase() && rf.exerciseId === file.exerciseId)
+    )
+    if (realMatch) {
+      if (realMatch.dataUrl) fileDataUrl = realMatch.dataUrl
+      if (realMatch.extractedText) fileExtractedText = realMatch.extractedText
+      file.dataUrl = fileDataUrl
+      if (!file.fileSize && realMatch.fileSize) file.fileSize = realMatch.fileSize
+    }
+  }
+
+  // Si aucun contenu local mais stocké dans Google Drive
+  if (!fileDataUrl && !fileExtractedText && file.driveUrl) {
     if (typeof window !== 'undefined') {
       window.open(file.driveUrl, '_blank')
     }
@@ -1440,19 +1467,39 @@ async function toggleDocumentPreview(file) {
   const isPdf = ext === 'pdf' || (file.fileType && file.fileType.includes('pdf'))
   const isDocx = ext === 'docx' || ext === 'doc' || (file.fileType && file.fileType.includes('word'))
 
+  let blobUrl = ''
+  if (isPdf && fileDataUrl) {
+    try {
+      const base64Data = fileDataUrl.includes(',') ? fileDataUrl.split(',')[1] : fileDataUrl
+      const binaryStr = atob(base64Data)
+      const len = binaryStr.length
+      const bytes = new Uint8Array(len)
+      for (let i = 0; i < len; i++) {
+        bytes[i] = binaryStr.charCodeAt(i)
+      }
+      const blob = new Blob([bytes], { type: 'application/pdf' })
+      blobUrl = URL.createObjectURL(blob)
+    } catch (e) {
+      console.warn('Erreur Blob PDF:', e)
+    }
+  }
+
   activeDocPreview.value = {
     fileId: file.id,
     fileName,
     type: isPdf ? 'pdf' : (isDocx ? 'docx' : 'other'),
-    dataUrl: file.dataUrl || '',
+    dataUrl: fileDataUrl,
+    blobUrl,
+    extractedText: fileExtractedText,
+    viewMode: isPdf ? 'pdf' : (isDocx ? 'docx' : 'text'),
     htmlContent: '',
     loading: isDocx,
     error: ''
   }
 
-  if (isDocx && file.dataUrl) {
+  if (isDocx && fileDataUrl) {
     try {
-      const base64Data = file.dataUrl.includes(',') ? file.dataUrl.split(',')[1] : file.dataUrl
+      const base64Data = fileDataUrl.includes(',') ? fileDataUrl.split(',')[1] : fileDataUrl
       const binaryStr = atob(base64Data)
       const len = binaryStr.length
       const bytes = new Uint8Array(len)
@@ -1462,12 +1509,20 @@ async function toggleDocumentPreview(file) {
       const mammothModule = await import('mammoth/mammoth.browser.js')
       const mammoth = mammothModule.default || mammothModule
       const res = await mammoth.convertToHtml({ arrayBuffer: bytes.buffer })
-      activeDocPreview.value.htmlContent = res.value || '<p><em>Document Word sans contenu textuel identifiable.</em></p>'
+      activeDocPreview.value.htmlContent = res.value || ''
       activeDocPreview.value.loading = false
+      if (!activeDocPreview.value.htmlContent && fileExtractedText) {
+        activeDocPreview.value.viewMode = 'text'
+      }
     } catch (e) {
       console.warn('Erreur conversion Word:', e)
-      activeDocPreview.value.error = "Impossible de convertir ce document Word en aperçu web. Veuillez le télécharger pour le lire dans Microsoft Word."
-      activeDocPreview.value.loading = false
+      if (fileExtractedText) {
+        activeDocPreview.value.viewMode = 'text'
+        activeDocPreview.value.loading = false
+      } else {
+        activeDocPreview.value.error = "Impossible de convertir ce document Word en aperçu web. Veuillez le télécharger pour le lire dans Microsoft Word."
+        activeDocPreview.value.loading = false
+      }
     }
   }
 }
@@ -3865,15 +3920,15 @@ function toggleQuizExpand(id) {
                 <!-- CONTENU DE L'ITEM -->
                 <div class="dic-body">
                   <!-- CAS 1 : QUIZ DIAGNOSTIQUE -->
-                  <div v-if="item.id === 'quiz'" class="dic-quiz-section">
+                  <div v-if="item.id === 'quiz' || item.category === 'quiz'" class="dic-quiz-section">
                     <div class="quiz-summary-box">
                       <div class="qsb-header">
                         <div class="qsb-score">
                           Note obtenue au quiz : <strong>{{ item.aiScore ?? 0 }} / 20 pts</strong>
-                          <span class="qsb-count">({{ (item.quizAttempts || []).length }} tentative(s) enregistrée(s))</span>
+                          <span class="qsb-count">({{ ((item.quizAttempts && item.quizAttempts.length > 0) ? item.quizAttempts : (currentDossier?.quizzes || [])).length }} tentative(s) enregistrée(s))</span>
                         </div>
                         <button 
-                          v-if="(item.quizAttempts || []).length > 0" 
+                          v-if="((item.quizAttempts && item.quizAttempts.length > 0) ? item.quizAttempts : (currentDossier?.quizzes || [])).length > 0" 
                           @click="toggleQuizExpand('quiz')" 
                           class="btn-toggle-quiz-details"
                         >
@@ -3882,13 +3937,15 @@ function toggleQuizExpand(id) {
                       </div>
 
                       <!-- DÉTAIL DES QUESTIONS / RÉPONSES DU QUIZ -->
-                      <div v-if="expandedQuizAnswers['quiz'] && (item.quizAttempts || []).length > 0" class="quiz-answers-detail">
-                        <div v-for="(att, aIdx) in (item.quizAttempts || [])" :key="att?.id || aIdx" class="quiz-attempt-card">
+                      <div v-if="expandedQuizAnswers['quiz'] && ((item.quizAttempts && item.quizAttempts.length > 0) ? item.quizAttempts : (currentDossier?.quizzes || [])).length > 0" class="quiz-answers-detail">
+                        <div v-for="(att, aIdx) in ((item.quizAttempts && item.quizAttempts.length > 0) ? item.quizAttempts : (currentDossier?.quizzes || []))" :key="att?.id || aIdx" class="quiz-attempt-card">
                           <div class="qac-head">
-                            <strong>Tentative du {{ att?.submittedAt || 'En ligne' }}</strong> • Score : {{ att?.score ?? 0 }} / {{ att?.totalPoints ?? 20 }} ({{ att?.percentage ?? 0 }}%)
+                            <span class="quiz-mod-tag" style="margin-right: 0.5rem; background: #3b82f6; color: white; padding: 2px 7px; border-radius: 4px; font-size: 0.75rem;">{{ att?.moduleId }}</span>
+                            <strong>{{ att?.moduleTitle || ('Module ' + att?.moduleId) }}</strong> • Score : {{ att?.score ?? 0 }} / {{ att?.totalPoints ?? 20 }} ({{ att?.percentage ?? 0 }}%)
+                            <span style="font-size: 0.8rem; color: #64748b; margin-left: 0.5rem;">Passé le {{ att?.submittedAt || 'En ligne' }}</span>
                           </div>
-                          <div class="qac-questions">
-                            <div v-for="(ans, qIdx) in (att?.answers || [])" :key="ans?.questionId || qIdx" class="qac-question-row">
+                          <div class="qac-questions" v-if="att?.answers && att?.answers.length > 0">
+                            <div v-for="(ans, qIdx) in att.answers" :key="ans?.questionId || qIdx" class="qac-question-row">
                               <div class="qq-title">
                                 <span class="qq-num">Q{{ qIdx + 1 }}.</span> {{ ans?.questionText }}
                               </div>
@@ -3896,7 +3953,7 @@ function toggleQuizExpand(id) {
                                 <strong>Réponse de l'étudiant :</strong> 
                                 <span>{{ ans?.userAnswer }}</span>
                                 <span :class="['qq-badge', ans?.isCorrect ? 'correct' : 'partial']">
-                                  {{ ans?.points ?? 0 }} / {{ ans?.maxPoints ?? 1 }} pts
+                                  {{ ans?.points ?? 0 }} / {{ ans?.maxPoints ?? 1 }} pt(s)
                                 </span>
                               </div>
                               <div v-if="ans?.explanation || ans?.openFeedback" class="qq-feedback">
@@ -3979,16 +4036,32 @@ function toggleQuizExpand(id) {
                               Lecteur Intégré : <strong>{{ activeDocPreview.fileName }}</strong>
                               <span class="idv-tag">{{ activeDocPreview.type.toUpperCase() }}</span>
                             </span>
-                            <button class="idv-close" @click="activeDocPreview = null" title="Fermer l'aperçu">✕</button>
+
+                            <!-- Switcher vue originale vs texte brut extrait -->
+                            <div class="idv-header-actions" style="display: flex; align-items: center; gap: 8px;">
+                              <button 
+                                v-if="activeDocPreview.extractedText" 
+                                class="idv-mode-btn"
+                                :class="{ active: activeDocPreview.viewMode === 'text' }"
+                                @click="activeDocPreview.viewMode = activeDocPreview.viewMode === 'text' ? (activeDocPreview.type === 'pdf' ? 'pdf' : 'docx') : 'text'"
+                                :title="activeDocPreview.viewMode === 'text' ? 'Afficher la mise en page originale' : 'Afficher le texte brut intégral'"
+                              >
+                                {{ activeDocPreview.viewMode === 'text' ? '📄 Page Originale' : '📝 Texte Intégral' }}
+                              </button>
+                              <button @click="downloadFile(item.file)" class="idv-btn-dl" title="Télécharger le fichier original">
+                                📥 Télécharger
+                              </button>
+                              <button class="idv-close" @click="closeDocPreview()" title="Fermer l'aperçu">✕</button>
+                            </div>
                           </div>
 
                           <!-- Chargement Word Mammoth -->
                           <div v-if="activeDocPreview.loading" class="idv-loading">
-                            <span class="idv-spinner">⏳</span> Mise en page du document Word en cours...
+                            <span class="idv-spinner">⏳</span> Traitement du document en cours...
                           </div>
 
                           <!-- Message d'erreur -->
-                          <div v-else-if="activeDocPreview.error" class="idv-error">
+                          <div v-else-if="activeDocPreview.error && !activeDocPreview.extractedText" class="idv-error">
                             ⚠️ {{ activeDocPreview.error }}
                             <div style="margin-top: 0.5rem;">
                               <button @click="downloadFile(item.file)" class="btn-download-doc">
@@ -3997,10 +4070,21 @@ function toggleQuizExpand(id) {
                             </div>
                           </div>
 
-                          <!-- Aperçu PDF natif via iframe -->
+                          <!-- Mode Texte Brut Intégral (100% lisibilité immédiate) -->
+                          <div v-else-if="activeDocPreview.viewMode === 'text' && activeDocPreview.extractedText" class="idv-docx-box">
+                            <div class="docx-paper-sheet extracted-text-view">
+                              <div class="extracted-text-header">
+                                <h4 style="margin: 0; color: #1e293b;">📄 Transcription intégrale du document déposé</h4>
+                                <span class="extracted-hint">Texte complet extrait du fichier remis par l'étudiant.</span>
+                              </div>
+                              <pre class="extracted-raw-text">{{ activeDocPreview.extractedText }}</pre>
+                            </div>
+                          </div>
+
+                          <!-- Aperçu PDF natif via iframe avec Blob URL -->
                           <div v-else-if="activeDocPreview.type === 'pdf'" class="idv-pdf-box">
                             <iframe 
-                              :src="activeDocPreview.dataUrl" 
+                              :src="activeDocPreview.blobUrl || activeDocPreview.dataUrl" 
                               class="dossier-pdf-frame" 
                               title="Lecteur PDF intégré"
                             ></iframe>
@@ -4008,12 +4092,20 @@ function toggleQuizExpand(id) {
 
                           <!-- Aperçu Word converti en HTML via Mammoth -->
                           <div v-else-if="activeDocPreview.type === 'docx'" class="idv-docx-box">
-                            <div class="docx-paper-sheet" v-html="activeDocPreview.htmlContent"></div>
+                            <div v-if="activeDocPreview.htmlContent" class="docx-paper-sheet" v-html="activeDocPreview.htmlContent"></div>
+                            <div v-else-if="activeDocPreview.extractedText" class="docx-paper-sheet extracted-text-view">
+                              <pre class="extracted-raw-text">{{ activeDocPreview.extractedText }}</pre>
+                            </div>
                           </div>
 
                           <!-- Autre type de fichier -->
                           <div v-else class="idv-fallback">
-                            Ce format ne peut être affiché directement. Veuillez le télécharger pour le consulter sur votre machine.
+                            <div v-if="activeDocPreview.extractedText" class="docx-paper-sheet extracted-text-view">
+                              <pre class="extracted-raw-text">{{ activeDocPreview.extractedText }}</pre>
+                            </div>
+                            <div v-else>
+                              Ce format ne peut être affiché directement. Veuillez le télécharger pour le consulter sur votre machine.
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -8399,6 +8491,54 @@ span.is-late {
 .docx-paper-sheet th, .docx-paper-sheet td {
   border: 1px solid #cbd5e1;
   padding: 6px 10px;
+}
+
+.idv-mode-btn {
+  background: #2563eb;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.idv-mode-btn.active {
+  background: #ffffff;
+  color: #1e3a8a;
+}
+
+.idv-btn-dl {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.extracted-text-view {
+  background: #ffffff;
+}
+
+.extracted-text-header {
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.extracted-raw-text {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #334155;
+  margin: 0;
 }
 
 .dsw-empty {

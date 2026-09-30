@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue'
 import { userStore, OFFICIAL_EVALUATION_ITEMS, formatDeadlineDisplay } from '../stores/userStore'
+import { INITIAL_REAL_FILES } from '../stores/studentSubmissionsData'
 import { withBase } from 'vitepress'
 
 // Authentification Enseignant
@@ -13,7 +14,8 @@ const showPin = ref(false)
 const selectedEmail = ref('')
 const dossierFilter = ref('all') // 'all' | 'part1' | 'part2' | 'quiz' | 'submitted_only'
 const expandedTexts = ref({})
-const activeDocPreview = ref(null) // { fileId, fileName, type: 'pdf'|'docx'|'other', dataUrl, htmlContent, loading, error }
+const expandedQuizAnswers = ref({})
+const activeDocPreview = ref(null) // { fileId, fileName, type: 'pdf'|'docx'|'other', dataUrl, blobUrl, extractedText, viewMode, htmlContent, loading, error }
 const isAnalyzingFile = ref({})
 const gradeSaveFeedbacks = ref({})
 
@@ -84,13 +86,13 @@ const filteredItems = computed(() => {
 
   switch (dossierFilter.value) {
     case 'part1':
-      return all.filter(it => it.part === 1 && it.category !== 'quiz')
+      return all.filter(it => it.part === 1 && it.id !== 'quiz' && it.category !== 'quiz')
     case 'part2':
       return all.filter(it => it.part === 2)
     case 'quiz':
-      return all.filter(it => it.category === 'quiz')
+      return all.filter(it => it.id === 'quiz' || it.category === 'quiz')
     case 'submitted_only':
-      return all.filter(it => it.completed)
+      return all.filter(it => it.completed || (it.quizAttempts && it.quizAttempts.length > 0))
     case 'all':
     default:
       return all
@@ -125,31 +127,79 @@ function toggleTextExpand(id) {
   expandedTexts.value[id] = !expandedTexts.value[id]
 }
 
-// Aperçu direct Word (Mammoth) ou PDF (iframe)
+function toggleQuizExpand(id) {
+  expandedQuizAnswers.value[id] = !expandedQuizAnswers.value[id]
+}
+
+function closeDocPreview() {
+  if (activeDocPreview.value?.blobUrl && activeDocPreview.value.blobUrl.startsWith('blob:')) {
+    try { URL.revokeObjectURL(activeDocPreview.value.blobUrl) } catch (e) {}
+  }
+  activeDocPreview.value = null
+}
+
+// Aperçu direct Word (Mammoth) ou PDF (Blob URL native) ou Texte Brut
 async function toggleDocumentPreview(file) {
   if (!file) return
   if (activeDocPreview.value && activeDocPreview.value.fileId === file.id) {
-    activeDocPreview.value = null
+    closeDocPreview()
     return
+  }
+  closeDocPreview()
+
+  // Chercher les données si manquantes en mémoire locale
+  let fileDataUrl = file.dataUrl || ''
+  let fileExtractedText = file.extractedText || ''
+  if (!fileDataUrl || fileDataUrl.length < 50) {
+    const realMatch = INITIAL_REAL_FILES.find((rf) => 
+      rf.id === file.id || 
+      ((rf.userEmail || '').toLowerCase() === (file.userEmail || '').toLowerCase() && rf.exerciseId === file.exerciseId)
+    )
+    if (realMatch) {
+      if (realMatch.dataUrl) fileDataUrl = realMatch.dataUrl
+      if (realMatch.extractedText) fileExtractedText = realMatch.extractedText
+      file.dataUrl = fileDataUrl
+      if (!file.fileSize && realMatch.fileSize) file.fileSize = realMatch.fileSize
+    }
   }
 
   const fileName = file.formattedFileName || file.originalFileName || 'Document'
   const isPdf = (file.fileType && file.fileType.includes('pdf')) || fileName.toLowerCase().endsWith('.pdf')
   const isDocx = (file.fileType && file.fileType.includes('word')) || fileName.toLowerCase().endsWith('.docx') || fileName.toLowerCase().endsWith('.doc')
 
+  let blobUrl = ''
+  if (isPdf && fileDataUrl) {
+    try {
+      const base64Data = fileDataUrl.includes(',') ? fileDataUrl.split(',')[1] : fileDataUrl
+      const binaryStr = atob(base64Data)
+      const len = binaryStr.length
+      const bytes = new Uint8Array(len)
+      for (let i = 0; i < len; i++) {
+        bytes[i] = binaryStr.charCodeAt(i)
+      }
+      const blob = new Blob([bytes], { type: 'application/pdf' })
+      blobUrl = URL.createObjectURL(blob)
+    } catch (e) {
+      console.warn('Erreur Blob PDF:', e)
+    }
+  }
+
   activeDocPreview.value = {
     fileId: file.id,
     fileName,
     type: isPdf ? 'pdf' : (isDocx ? 'docx' : 'other'),
-    dataUrl: file.dataUrl || '',
+    dataUrl: fileDataUrl,
+    blobUrl,
+    extractedText: fileExtractedText,
+    viewMode: isPdf ? 'pdf' : (isDocx ? 'docx' : 'text'),
     htmlContent: '',
     loading: isDocx,
     error: ''
   }
 
-  if (isDocx && file.dataUrl) {
+  if (isDocx && fileDataUrl) {
     try {
-      const base64Data = file.dataUrl.includes(',') ? file.dataUrl.split(',')[1] : file.dataUrl
+      const base64Data = fileDataUrl.includes(',') ? fileDataUrl.split(',')[1] : fileDataUrl
       const binaryStr = atob(base64Data)
       const len = binaryStr.length
       const bytes = new Uint8Array(len)
@@ -159,17 +209,36 @@ async function toggleDocumentPreview(file) {
       const mammothModule = await import('mammoth/mammoth.browser.js')
       const mammoth = mammothModule.default || mammothModule
       const res = await mammoth.convertToHtml({ arrayBuffer: bytes.buffer })
-      activeDocPreview.value.htmlContent = res.value || '<p><em>Document Word sans contenu textuel détectable.</em></p>'
+      activeDocPreview.value.htmlContent = res.value || ''
       activeDocPreview.value.loading = false
+      if (!activeDocPreview.value.htmlContent && fileExtractedText) {
+        activeDocPreview.value.viewMode = 'text'
+      }
     } catch (e) {
-      activeDocPreview.value.error = "Aperçu HTML direct indisponible. Veuillez télécharger le document Word pour l'ouvrir."
-      activeDocPreview.value.loading = false
+      console.warn('Erreur conversion Word:', e)
+      if (fileExtractedText) {
+        activeDocPreview.value.viewMode = 'text'
+        activeDocPreview.value.loading = false
+      } else {
+        activeDocPreview.value.error = "Aperçu HTML direct indisponible. Veuillez télécharger le document Word pour l'ouvrir."
+        activeDocPreview.value.loading = false
+      }
     }
   }
 }
 
 function downloadFile(file) {
   if (file) {
+    if (!file.dataUrl) {
+      const realMatch = INITIAL_REAL_FILES.find((rf) => 
+        rf.id === file.id || 
+        ((rf.userEmail || '').toLowerCase() === (file.userEmail || '').toLowerCase() && rf.exerciseId === file.exerciseId)
+      )
+      if (realMatch && realMatch.dataUrl) {
+        file.dataUrl = realMatch.dataUrl
+        if (!file.fileSize && realMatch.fileSize) file.fileSize = realMatch.fileSize
+      }
+    }
     userStore.downloadSubmittedFile(file)
   }
 }
@@ -383,15 +452,46 @@ function formatSize(bytes) {
             </div>
 
             <!-- CONTENU SPÉCIFIQUE QUIZ -->
-            <div v-if="item.category === 'quiz'" class="sic-quiz-content">
-              <div v-if="!item.quizAttempts || item.quizAttempts.length === 0" class="sic-empty-quiz">
+            <div v-if="item.id === 'quiz' || item.category === 'quiz'" class="sic-quiz-content">
+              <div v-if="(!item.quizAttempts || item.quizAttempts.length === 0) && (!currentDossier?.quizzes || currentDossier.quizzes.length === 0)" class="sic-empty-quiz">
                 Aucune tentative réalisée par l'étudiant pour ce quiz.
               </div>
               <div v-else class="sic-quiz-attempts">
-                <div v-for="att in item.quizAttempts" :key="att.id" class="quiz-att-row">
-                  <div class="qar-date">Tentative du {{ att.submittedAt }}</div>
-                  <div class="qar-score">
-                    <strong>{{ att.score }}</strong> / {{ att.totalPoints }} pts ({{ att.percentage }}%)
+                <div 
+                  v-for="(att, aIdx) in ((item.quizAttempts && item.quizAttempts.length > 0) ? item.quizAttempts : currentDossier.quizzes)" 
+                  :key="att?.id || aIdx" 
+                  class="quiz-att-card"
+                >
+                  <div class="quiz-att-row">
+                    <div class="qar-meta">
+                      <span class="quiz-mod-tag">{{ att.moduleId }}</span>
+                      <strong>{{ att.moduleTitle || ('Module ' + att.moduleId) }}</strong>
+                      <span class="qar-date">Passé le {{ att.submittedAt || 'En ligne' }}</span>
+                    </div>
+                    <div class="qar-score">
+                      <strong>{{ att.score }}</strong> / {{ att.totalPoints }} pts ({{ att.percentage }}%)
+                    </div>
+                  </div>
+
+                  <!-- Détail des réponses si disponibles -->
+                  <div v-if="att.answers && att.answers.length > 0" class="qar-answers-container">
+                    <button @click="toggleQuizExpand(att.id || aIdx)" class="btn-toggle-quiz-details">
+                      {{ expandedQuizAnswers[att.id || aIdx] ? '▲ Masquer les réponses détaillées' : '▼ Voir les ' + att.answers.length + ' réponses de l\'étudiant' }}
+                    </button>
+                    <div v-if="expandedQuizAnswers[att.id || aIdx]" class="qar-answers-list">
+                      <div v-for="(ans, qIdx) in att.answers" :key="ans?.questionId || qIdx" class="qar-ans-item">
+                        <div class="qar-q-title"><strong>Q{{ qIdx + 1 }}.</strong> {{ ans.questionText }}</div>
+                        <div class="qar-user-reply">
+                          <span>Réponse : <em>{{ ans.userAnswer }}</em></span>
+                          <span :class="['qar-ans-badge', ans.isCorrect ? 'correct' : 'partial']">
+                            {{ ans.points ?? 0 }} / {{ ans.maxPoints ?? 1 }} pt(s)
+                          </span>
+                        </div>
+                        <div v-if="ans.explanation || ans.openFeedback" class="qar-ans-fb">
+                          💡 {{ ans.explanation || ans.openFeedback }}
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -437,7 +537,7 @@ function formatSize(bytes) {
                       :class="['btn-preview-doc', activeDocPreview?.fileId === item.file.id ? 'active' : '']"
                       title="Afficher le document directement dans la page pour lecture"
                     >
-                      {{ activeDocPreview?.fileId === item.file.id ? '✕ Masquer la lecture' : '📖 Visualiser le document (Word / PDF)' }}
+                      {{ activeDocPreview?.fileId === item.file.id ? '✕ Fermer la lecture' : '📖 Lire le document (Word / PDF)' }}
                     </button>
                     <button 
                       @click="downloadFile(item.file)" 
@@ -452,13 +552,42 @@ function formatSize(bytes) {
                 <!-- VISUALISEUR INTÉGRÉ WORD / PDF DIRECT -->
                 <div v-if="activeDocPreview?.fileId === item.file?.id" class="sdv-viewer-container">
                   <div class="svc-header">
-                    <span>Aperçu direct : <strong>{{ activeDocPreview.fileName }}</strong> ({{ activeDocPreview.type.toUpperCase() }})</span>
-                    <button @click="activeDocPreview = null" class="svc-close" title="Fermer">✕</button>
+                    <div class="svc-header-left">
+                      <span>Aperçu direct : <strong>{{ activeDocPreview.fileName }}</strong></span>
+                      <span class="svc-tag">{{ activeDocPreview.type.toUpperCase() }}</span>
+                    </div>
+
+                    <div class="svc-header-actions">
+                      <button 
+                        v-if="activeDocPreview.extractedText" 
+                        class="svc-mode-btn"
+                        :class="{ active: activeDocPreview.viewMode === 'text' }"
+                        @click="activeDocPreview.viewMode = activeDocPreview.viewMode === 'text' ? (activeDocPreview.type === 'pdf' ? 'pdf' : 'docx') : 'text'"
+                        :title="activeDocPreview.viewMode === 'text' ? 'Afficher la mise en page originale' : 'Afficher le texte brut intégral'"
+                      >
+                        {{ activeDocPreview.viewMode === 'text' ? '📄 Page Originale' : '📝 Texte Intégral' }}
+                      </button>
+                      <button @click="downloadFile(item.file)" class="svc-btn-dl" title="Télécharger">📥</button>
+                      <button @click="closeDocPreview()" class="svc-close" title="Fermer">✕</button>
+                    </div>
                   </div>
 
-                  <!-- PDF via iframe -->
-                  <div v-if="activeDocPreview.type === 'pdf'" class="svc-pdf-wrapper">
-                    <iframe :src="activeDocPreview.dataUrl" class="svc-pdf-frame"></iframe>
+                  <!-- MODE TEXTE INTÉGRAL (GARANTIE 100% VISIBILITÉ SANS BUG IFRAME) -->
+                  <div v-if="activeDocPreview.viewMode === 'text' && activeDocPreview.extractedText" class="svc-docx-sheet extracted-text-view">
+                    <div class="extracted-text-header">
+                      <h5>📄 Transcription intégrale du document</h5>
+                      <span class="extracted-hint">Texte complet extrait du fichier remis par l'étudiant.</span>
+                    </div>
+                    <pre class="extracted-raw-text">{{ activeDocPreview.extractedText }}</pre>
+                  </div>
+
+                  <!-- PDF via iframe avec Blob URL -->
+                  <div v-else-if="activeDocPreview.type === 'pdf'" class="svc-pdf-wrapper">
+                    <iframe 
+                      :src="activeDocPreview.blobUrl || activeDocPreview.dataUrl" 
+                      class="svc-pdf-frame"
+                      title="Lecteur PDF intégré"
+                    ></iframe>
                   </div>
 
                   <!-- Word via Mammoth HTML -->
@@ -466,14 +595,22 @@ function formatSize(bytes) {
                     <div v-if="activeDocPreview.loading" class="svc-loading">
                       ⏳ Conversion du document Word en cours...
                     </div>
-                    <div v-else-if="activeDocPreview.error" class="svc-error">
+                    <div v-else-if="activeDocPreview.error && !activeDocPreview.extractedText" class="svc-error">
                       ⚠️ {{ activeDocPreview.error }}
                     </div>
-                    <div v-else class="svc-docx-sheet" v-html="activeDocPreview.htmlContent"></div>
+                    <div v-else-if="activeDocPreview.htmlContent" class="svc-docx-sheet" v-html="activeDocPreview.htmlContent"></div>
+                    <div v-else-if="activeDocPreview.extractedText" class="svc-docx-sheet extracted-text-view">
+                      <pre class="extracted-raw-text">{{ activeDocPreview.extractedText }}</pre>
+                    </div>
                   </div>
 
                   <div v-else class="svc-fallback">
-                    Format non supporté pour l'aperçu direct. Veuillez télécharger le fichier.
+                    <div v-if="activeDocPreview.extractedText" class="svc-docx-sheet extracted-text-view">
+                      <pre class="extracted-raw-text">{{ activeDocPreview.extractedText }}</pre>
+                    </div>
+                    <div v-else>
+                      Format non supporté pour l'aperçu direct. Veuillez télécharger le fichier.
+                    </div>
                   </div>
                 </div>
 
@@ -1156,10 +1293,109 @@ function formatSize(bytes) {
   font-size: 0.88rem;
 }
 
+.quiz-att-card {
+  background: var(--vp-c-bg-soft);
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-divider);
+  padding: 10px 14px;
+  margin-bottom: 8px;
+}
+
+.qar-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.quiz-mod-tag {
+  background: #3b82f6;
+  color: white;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.qar-answers-container {
+  margin-top: 8px;
+  border-top: 1px dashed var(--vp-c-divider);
+  padding-top: 8px;
+}
+
+.btn-toggle-quiz-details {
+  background: none;
+  border: 1px solid var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-toggle-quiz-details:hover {
+  background: var(--vp-c-brand-1);
+  color: white;
+}
+
+.qar-answers-list {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.qar-ans-item {
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 0.84rem;
+}
+
+.qar-q-title {
+  margin-bottom: 4px;
+  color: var(--vp-c-text-1);
+}
+
+.qar-user-reply {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.qar-ans-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.qar-ans-badge.correct {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.qar-ans-badge.partial {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.qar-ans-fb {
+  font-size: 0.78rem;
+  color: var(--vp-c-text-2);
+  border-left: 2px solid #3b82f6;
+  padding-left: 6px;
+  margin-top: 4px;
+}
+
 /* VIEWER INTÉGRÉ */
 .sdv-viewer-container {
   margin-top: 0.8rem;
-  border: 2px solid var(--vp-c-brand-1);
+  border: 2px solid #3b82f6;
   border-radius: 8px;
   background: var(--vp-c-bg);
   overflow: hidden;
@@ -1169,35 +1405,116 @@ function formatSize(bytes) {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--vp-c-brand-1);
+  background: #1e3a8a;
   color: white;
   padding: 6px 12px;
   font-size: 0.84rem;
   font-weight: 600;
 }
 
+.svc-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.svc-tag {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.svc-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.svc-mode-btn {
+  background: #2563eb;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.svc-mode-btn.active {
+  background: #ffffff;
+  color: #1e3a8a;
+}
+
+.svc-btn-dl {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  padding: 3px 7px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
 .svc-close {
   background: none;
   border: none;
   color: white;
-  font-size: 1rem;
+  font-size: 1.1rem;
   cursor: pointer;
   font-weight: 700;
+  margin-left: 4px;
 }
 
 .svc-pdf-frame {
   width: 100%;
-  height: 520px;
+  height: 70vh;
+  min-height: 520px;
   border: none;
+  display: block;
 }
 
 .svc-docx-sheet {
-  max-height: 520px;
+  max-height: 70vh;
+  min-height: 500px;
   overflow-y: auto;
-  padding: 1.5rem;
+  padding: 2rem 2.5rem;
   background: white;
   color: #1e293b;
-  line-height: 1.6;
+  line-height: 1.7;
+}
+
+.extracted-text-view {
+  background: #ffffff;
+}
+
+.extracted-text-header {
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.extracted-text-header h5 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 1rem;
+}
+
+.extracted-hint {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.extracted-raw-text {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #334155;
+  margin: 0;
 }
 
 .svc-loading, .svc-error, .svc-fallback {

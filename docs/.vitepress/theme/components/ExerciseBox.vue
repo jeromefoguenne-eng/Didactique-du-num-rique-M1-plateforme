@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { userStore, formatDeadlineDisplay, getAlarmLevelInfo, parseDeadline, GOOGLE_DRIVE_EXERCISES_FOLDER_URL } from '../stores/userStore'
 import { withBase } from 'vitepress'
 
@@ -15,6 +15,56 @@ const props = defineProps({
 })
 
 const currentUser = computed(() => userStore.currentUser)
+const selectedFile = ref(null)
+const isUploading = ref(false)
+const uploadFeedback = ref(null)
+const isDragging = ref(false)
+const showCriteria = ref(false)
+
+function onFileSelect(e) {
+  const f = e.target.files?.[0]
+  if (f) {
+    selectedFile.value = f
+    uploadFeedback.value = null
+  }
+}
+
+function onFileDrop(e) {
+  isDragging.value = false
+  const f = e.dataTransfer?.files?.[0]
+  if (f) {
+    selectedFile.value = f
+    uploadFeedback.value = null
+  }
+}
+
+async function handleDirectUpload() {
+  if (!selectedFile.value) return
+  isUploading.value = true
+  uploadFeedback.value = null
+  try {
+    const res = await userStore.uploadStudentFile(
+      props.exerciseId,
+      props.exerciseTitle,
+      selectedFile.value
+    )
+    uploadFeedback.value = {
+      success: res.success,
+      message: res.message
+    }
+    if (res.success) {
+      selectedFile.value = null
+      userStore.syncFromStorage()
+    }
+  } catch (err) {
+    uploadFeedback.value = {
+      success: false,
+      message: "Une erreur est survenue lors de l'enregistrement de votre fichier."
+    }
+  } finally {
+    isUploading.value = false
+  }
+}
 
 // Liens de téléchargement officiels (Word, PDF, Drive, Google Docs)
 const downloadLinks = computed(() => {
@@ -211,16 +261,16 @@ onMounted(() => {
       </div>
     </div>
 
-    <!-- SECTION REDIRECTION VERS L'ESPACE MEMBRE POUR LE DÉPÔT -->
+    <!-- SECTION DÉPÔT EN LIGNE DIRECT & REDIRECTION ESPACE MEMBRE -->
     <div class="box-member-redirect-card">
       <div class="bmrc-header">
         <div class="bmrc-icon-block">
           <span class="bmrc-icon">📮</span>
         </div>
         <div class="bmrc-info">
-          <h5>Dépôt des travaux & Évaluation IA</h5>
+          <h5>Dépôt de votre travail & Évaluation continue</h5>
           <p>
-            Les travaux pratiques se déposent désormais <strong>exclusivement dans votre Espace Membre personnel</strong> afin de garantir un archivage sécurisé, un suivi individualisé de vos échéances et la génération immédiate de votre diagnostic pédagogique par l'IA.
+            Déposez votre document Word (.docx) ou PDF (.pdf) ci-dessous. Dès votre dépôt, votre travail est instantanément archivé sur Google Drive et analysé selon la grille des 4 critères institutionnels du cours.
           </p>
         </div>
       </div>
@@ -231,20 +281,95 @@ onMounted(() => {
           <span class="bfs-icon">📄</span>
           <div>
             <div class="bfs-name"><strong>Travail actuellement enregistré :</strong> {{ attachedFile.formattedFileName }}</div>
-            <div class="bfs-meta">Déposé le {{ attachedFile.submittedAt }} • Taille : {{ Math.round(attachedFile.fileSize / 1024) }} Ko</div>
+            <div class="bfs-meta">Déposé le {{ attachedFile.submittedAt }} • Taille : {{ Math.round((attachedFile.fileSize || 0) / 1024) }} Ko</div>
           </div>
         </div>
         <div class="bfs-right">
           <span v-if="attachedFile.aiCorrection" class="bfs-ai-score">
             🤖 Diagnostic IA : <strong>{{ attachedFile.aiCorrection.suggestedScore }} / 10 pts</strong>
           </span>
+          <button v-if="attachedFile.aiCorrection?.criteriaTable" class="btn-toggle-crit" @click="showCriteria = !showCriteria">
+            {{ showCriteria ? '▲ Masquer les critères' : '▼ Détail des 4 critères' }}
+          </button>
         </div>
       </div>
 
-      <div class="bmrc-action-row">
+      <!-- Détail des 4 critères institutionnels (collapsible) -->
+      <div v-if="attachedFile?.aiCorrection && showCriteria" class="direct-crit-table">
+        <div class="crit-summary">{{ attachedFile.aiCorrection.summary }}</div>
+        <table class="crit-table">
+          <thead>
+            <tr>
+              <th>Critère institutionnel</th>
+              <th>Note</th>
+              <th>Justification pédagogique</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(c, idx) in attachedFile.aiCorrection.criteriaTable" :key="idx">
+              <td><strong>{{ c.name }}</strong></td>
+              <td class="crit-score-cell">{{ c.score }} / {{ c.maxScore }}</td>
+              <td>{{ c.justification }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Formulaire de dépôt direct si l'étudiant est connecté -->
+      <div v-if="currentUser" class="direct-upload-box">
+        <div 
+          class="dropzone-area" 
+          :class="{ 'is-dragover': isDragging, 'has-file': !!selectedFile }"
+          @dragover.prevent="isDragging = true"
+          @dragleave.prevent="isDragging = false"
+          @drop.prevent="onFileDrop"
+        >
+          <input 
+            type="file" 
+            :id="'file-direct-' + exerciseId" 
+            accept=".pdf,.docx,.doc" 
+            class="hidden-file-input" 
+            @change="onFileSelect" 
+          />
+          <label :for="'file-direct-' + exerciseId" class="dropzone-label">
+            <span class="dropzone-icon">📎</span>
+            <div v-if="!selectedFile" class="dropzone-text">
+              <strong>Glissez-déposez votre devoir ici</strong> ou <span class="browse-link">parcourez vos fichiers</span>
+              <div class="dropzone-hint">Formats acceptés : PDF (.pdf) ou Word (.docx) • Max 15 Mo</div>
+            </div>
+            <div v-else class="dropzone-file-selected">
+              <span>📄 Fichier sélectionné : <strong>{{ selectedFile.name }}</strong> ({{ Math.round(selectedFile.size / 1024) }} Ko)</span>
+            </div>
+          </label>
+        </div>
+
+        <div v-if="uploadFeedback" class="upload-feedback-msg" :class="uploadFeedback.success ? 'fb-success' : 'fb-error'">
+          {{ uploadFeedback.success ? '✅ ' : '⚠️ ' }}{{ uploadFeedback.message }}
+        </div>
+
+        <div class="direct-actions-row">
+          <button 
+            v-if="selectedFile" 
+            class="btn-direct-submit" 
+            :disabled="isUploading" 
+            @click="handleDirectUpload"
+          >
+            <span v-if="isUploading">⏳ Enregistrement et analyse en cours...</span>
+            <span v-else>🚀 Déposer et analyser mon travail</span>
+          </button>
+          <a :href="withBase('/espace-membre')" class="btn-goto-member">
+            <span>👤 Accéder à mon Espace Membre complet →</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Si l'étudiant n'est pas encore identifié -->
+      <div v-else class="anonymous-prompt">
+        <p class="anon-text">
+          👋 Pour déposer votre travail et consulter vos notes, veuillez vous connecter avec votre compte étudiant :
+        </p>
         <a :href="withBase('/espace-membre')" class="btn-goto-member">
-          <span v-if="attachedFile">📂 Consulter ou remplacer mon document dans mon Espace Membre →</span>
-          <span v-else>👉 Déposer mon travail dans mon Espace Membre →</span>
+          <span>🔐 Me connecter / Accéder à mon Espace Membre →</span>
         </a>
       </div>
     </div>
@@ -661,5 +786,193 @@ onMounted(() => {
 .btn-goto-member:hover {
   opacity: 0.92;
   transform: translateY(-1px);
+}
+
+.btn-toggle-crit {
+  background: transparent;
+  border: 1px solid #c7d2fe;
+  color: #4338ca;
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.btn-toggle-crit:hover {
+  background: #e0e7ff;
+}
+
+.direct-crit-table {
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  padding: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.crit-summary {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--vp-c-brand-1);
+  margin-bottom: 0.6rem;
+  line-height: 1.45;
+}
+
+.crit-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.crit-table th {
+  background: var(--vp-c-bg-soft);
+  text-align: left;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--vp-c-divider);
+  font-weight: 600;
+}
+
+.crit-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--vp-c-divider);
+  vertical-align: top;
+}
+
+.crit-score-cell {
+  font-weight: 700;
+  color: #1e3a8a;
+  white-space: nowrap;
+}
+
+.direct-upload-box {
+  margin-top: 0.75rem;
+}
+
+.dropzone-area {
+  border: 2px dashed var(--vp-c-brand-1);
+  border-radius: 8px;
+  background: var(--vp-c-bg-soft);
+  padding: 1rem;
+  text-align: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.dropzone-area.is-dragover {
+  border-color: #10b981;
+  background: #ecfdf5;
+}
+
+.dropzone-area.has-file {
+  border-style: solid;
+  border-color: #3b82f6;
+  background: #eff6ff;
+}
+
+.hidden-file-input {
+  display: none;
+}
+
+.dropzone-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+
+.dropzone-icon {
+  font-size: 1.8rem;
+}
+
+.dropzone-text {
+  font-size: 0.88rem;
+  color: var(--vp-c-text-1);
+}
+
+.browse-link {
+  color: var(--vp-c-brand-1);
+  text-decoration: underline;
+}
+
+.dropzone-hint {
+  font-size: 0.76rem;
+  color: var(--vp-c-text-2);
+  margin-top: 0.2rem;
+}
+
+.dropzone-file-selected {
+  font-size: 0.9rem;
+  color: #1d4ed8;
+}
+
+.upload-feedback-msg {
+  margin-top: 0.7rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.fb-success {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.fb-error {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.direct-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.9rem;
+}
+
+.btn-direct-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 16px;
+  background: #059669;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 5px rgba(5, 150, 105, 0.25);
+}
+
+.btn-direct-submit:hover:not(:disabled) {
+  background: #047857;
+  transform: translateY(-1px);
+}
+
+.btn-direct-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.anonymous-prompt {
+  background: var(--vp-c-bg-soft);
+  border: 1px dashed var(--vp-c-divider);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.anon-text {
+  margin: 0 0 0.8rem 0;
+  font-size: 0.88rem;
+  color: var(--vp-c-text-2);
 }
 </style>

@@ -365,8 +365,8 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
   },
   {
     id: 'exercice-05',
-    title: 'Exercice 5 : Défi 20 min Canva (Affiche mot de passe)',
-    shortTitle: 'Ex 5 (Canva Sécurité)',
+    title: 'Exercice 5 : Défi — Créer une vidéo pour les réseaux sociaux',
+    shortTitle: 'Ex 5 (Défi Vidéo)',
     part: 1,
     partLabel: 'Partie 1 : Travaux Plateforme (100 pts)',
     maxPoints: 10,
@@ -510,7 +510,7 @@ export const EXERCISE_DOCS_DATA: Record<string, { docId: string; fileBase: strin
   'exercice-02': { docId: '1o9vsf5fptzG1EH56oycz7SkD_UwmUKXm', fileBase: 'Exercice-02.docx', title: 'Atelier 2 : Évaluation critique d\'une information' },
   'exercice-03': { docId: '12XENuZM1WVyeCnRfu62Oh1_tG8Gkc1Z1', fileBase: 'Exercice-03.docx', title: 'Atelier 3 : Conception d\'un guide numérique élèves' },
   'exercice-04': { docId: '1kUSfjlioxrG-i-ZrVbzQOpxH072f_2db', fileBase: 'Exercice-04.docx', title: 'Atelier 4 : Escape Game FMTTN (Cyber-Enquête)' },
-  'exercice-05': { docId: '1GuqhxxFNJllg4vR_wLeD5A4CtYNyJ4mj', fileBase: 'Exercice-05.docx', title: 'Atelier 5 : Défi 20 min Canva (Affiche mot de passe)' },
+  'exercice-05': { docId: '1GuqhxxFNJllg4vR_wLeD5A4CtYNyJ4mj', fileBase: 'Exercice-05.docx', title: 'Atelier 5 : Défi — Créer une vidéo pour les réseaux sociaux' },
   'exercice-06': { docId: '1mfCTqwo-2l9k_wdLzIu3qRWOJuBxrqJv', fileBase: 'Exercice-06.docx', title: 'Atelier 6 : Démarche itérative (Concevoir & tester un mini-jeu)' },
   'exercice-07': { docId: '1Vjy9xrqLG-xuktmMmmOQ6Kh8I-hXiIzV', fileBase: 'Exercice-07.docx', title: 'Atelier 7 : Défi Hardware & Peer Learning (Démonter un PC)' },
   'exercice-08': { docId: '1MV1xWWb5ZtcuRhFn_JIVG6UHeFle6IUI', fileBase: 'Exercice-08.docx', title: 'Atelier 8 : Grilles d\'évaluation critériées' },
@@ -822,20 +822,21 @@ export const EXERCISE_DIDACTIC_PROFILES: Record<string, ExerciseDidacticProfile>
   },
   'exercice-05': {
     id: 'exercice-05',
-    title: 'Atelier 5 : Défi 20 min Canva (Affiche mot de passe)',
-    shortTitle: 'Atelier 5 (Canva Sécurité)',
-    requiredKeywords: ['mot de passe', 'canva', 'securite', 'affiche'],
+    title: 'Atelier 5 : Défi — Créer une vidéo pour les réseaux sociaux (Éducation aux médias)',
+    shortTitle: 'Atelier 5 (Défi Vidéo)',
+    requiredKeywords: ['video', 'defi', 'reseaux sociaux', 'education aux medias'],
     domainKeywords: [
-      'mot de passe', 'affiche', 'canva', 'securite', 'robuste', 'caracteres', 'longueur',
-      'majuscule', 'minuscule', 'chiffre', 'symbole', 'special', '30 mots', 'visuel',
-      'icones', '30 secondes', 'ergonomie', 'comprehension', 'eleve', 'gestionnaire', 'mfa',
-      'authentification', 'anssi', 'regles', 'defi express'
+      'video', 'defi', 'reseaux sociaux', 'education aux medias', 'tiktok', 'reels', 'shorts',
+      'format vertical', '9:16', '50 minutes', 'fake news', 'source fiable', 'biais cognitifs',
+      'intelligence artificielle', 'ia', 'algorithme', 'information', 'opinion', 'publicite',
+      'manipulation', 'bulles informationnelles', 'verification', 'esprit critique', 'accroche',
+      'scenario', 'montage', 'capcut', 'canva', 'smartphone', 'equipe'
     ],
-    expectedSummary: "Affiche visuelle Canva percutante vulgarisant les règles d'un mot de passe robuste (max 30 mots, max 3 visuels).",
+    expectedSummary: "Vidéo courte (30s à 1 min, format vertical 9:16) ou fiche de conception réalisée en 50 minutes en équipe pour sensibiliser un public scolaire à un enjeu clé d'éducation aux médias.",
     questionsCles: [
-      "Respect strict des contraintes formelles (max 30 mots, max 3 visuels)",
-      "Clarté des règles de cybersécurité pour des élèves",
-      "Efficacité visuelle et lisibilité immédiate"
+      "Respect des contraintes du défi (50 minutes, durée 30s-1min, format vertical 9:16, un seul message central)",
+      "Pertinence et clarté de l'enjeu d'éducation aux médias traité pour un public scolaire",
+      "Qualité de l'accroche, dynamisme audiovisuel et adéquation aux codes des réseaux sociaux (TikTok/Reels/Shorts)"
     ]
   },
   'exercice-06': {

@@ -1,13 +1,45 @@
 ---
-title: "Atelier 5 : Défi 20 minutes Canva (Affiche mot de passe)"
-description: "Défi express de communication visuelle : concevoir une affiche percutante sur la sécurité des mots de passe."
+title: "Atelier 5 : Défi — Créer une vidéo pour les réseaux sociaux (Éducation aux médias)"
+description: "Défi express en 50 minutes : concevoir et réaliser une vidéo courte (30s à 1 min) destinée aux réseaux sociaux pour sensibiliser un public scolaire à un enjeu d’éducation aux médias."
 ---
 
-# Atelier 5 : Défi 20 minutes Canva (Affiche mot de passe)
+# Atelier 5 : Défi — Créer une vidéo pour les réseaux sociaux
 
 <Badge type="info" text="Exercice 5 (10 points)" /> <Badge type="tip" text="Document Officiel" />
 
-Défi express de communication visuelle : concevoir une affiche percutante sur la sécurité des mots de passe.
+Défi express en **50 minutes** : concevez et réalisez une vidéo de **30 secondes à 1 minute** destinée aux réseaux sociaux pour sensibiliser un public scolaire à un enjeu d’éducation aux médias.
+
+Vous pouvez vous inspirer des codes de créateurs de contenus et de chaînes spécialisées (par exemple *Esprit critique*), tout en développant votre propre concept.
+
+---
+
+## 🎯 Votre Mission & Sujets au Choix
+
+En équipe, choisissez **un point précis d’éducation aux médias**, par exemple :
+
+- 🔍 **Reconnaître une fake news** ou une information douteuse ;
+- 📰 **Identifier une source fiable** ;
+- 🧠 **Comprendre les biais cognitifs** ;
+- 🤖 **Repérer une image générée par IA** ;
+- ⚙️ **Comprendre le fonctionnement des algorithmes** ;
+- ⚖️ **Distinguer information, opinion et publicité** ;
+- 🎭 **Repérer une technique de manipulation** ;
+- 🫧 **Comprendre les bulles informationnelles** ;
+- 🛡️ **Vérifier une information avant de la partager** ;
+- 📢 **Identifier un contenu sponsorisé** ou une publicité déguisée.
+
+Produisez une **vidéo courte, dynamique et compréhensible**, pensée pour être publiée sur **TikTok, Instagram Reels ou YouTube Shorts**.
+
+---
+
+## ⏱ Contraintes du Défi
+
+- ⏱ **50 minutes maximum** pour concevoir et réaliser la vidéo
+- 🎬 **30 secondes à 1 minute**
+- 📱 **Format vertical privilégié (9:16)**
+- 🎯 **Un seul message ou apprentissage central**
+- 👥 **Travail en équipe**
+- 🛠 **Utilisation libre des outils disponibles** : smartphone, Canva, CapCut, IA générative, etc.
 
 ---
 
@@ -16,9 +48,9 @@ Défi express de communication visuelle : concevoir une affiche percutante sur l
 <div class="callout-exercise">
   <div class="callout-title">📋 Consignes & Document de Travail en Ligne</div>
   <p>
-    Le sujet intégral et la grille d'analyse de cet exercice sont mis à disposition sur le Google Docs officiel du cours en <strong>mode lecture seule</strong> :
+    Le sujet intégral et les consignes de cet exercice sont mis à disposition sur le Google Docs officiel du cours en <strong>mode lecture seule</strong> :
   </p>
-    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 1.2rem 0;">
+  <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 1.2rem 0;">
     <a 
       href="/documents/Exercice-05.docx" 
       download 
@@ -55,7 +87,7 @@ Défi express de communication visuelle : concevoir une affiche percutante sur l
   </div>
   <div style="font-size: 0.88rem; color: var(--vp-c-text-2); line-height: 1.5; background: var(--vp-c-bg-soft); padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid var(--vp-c-divider);">
     ℹ️ <strong>Modalités d'utilisation :</strong><br />
-    Le document est configuré en <em>mode lecture seule</em> (non modifiable directement). Pour rédiger vos réponses, ouvrez le lien ci-dessus puis :
+    Le document est configuré en <em>mode lecture seule</em>. Pour rédiger la fiche de synthèse de votre vidéo, ouvrez le lien ci-dessus puis :
     <ul>
       <li>Soit téléchargez le fichier sur votre ordinateur : <strong>Fichier → Télécharger → Microsoft Word (.docx)</strong> ou <strong>Document PDF (.pdf)</strong>.</li>
       <li>Soit créez votre propre copie dans votre Google Drive : <strong>Fichier → Créer une copie</strong>.</li>
@@ -70,7 +102,7 @@ Défi express de communication visuelle : concevoir une affiche percutante sur l
 <div class="callout-vigilance">
   <div class="callout-title">⚠️ Dépôt obligatoire sur votre Espace Personnel</div>
   <p>
-    Une fois votre devoir rédigé, vous devez <strong>impérativement le déposer au format Word (<code>.docx</code>) ou PDF</strong> sur votre <a href="/espace-membre"><strong>Espace Membre Étudiant</strong></a> (onglet <em>« Dépôt de Travaux »</em>) ou directement via le module interactif ci-dessous.
+    Une fois votre vidéo et/ou votre fiche de conception rédigée (contenant le lien de visionnage de votre vidéo ou le fichier), vous devez <strong>impérativement la déposer au format Word (<code>.docx</code>), PDF ou vidéo</strong> sur votre <a href="/espace-membre"><strong>Espace Membre Étudiant</strong></a> (onglet <em>« Dépôt de Travaux »</em>) ou directement via le module interactif ci-dessous.
   </p>
   <p style="margin-bottom: 0; font-size: 0.88rem;">
     Le fichier sera automatiquement libellé selon la nomenclature officielle (<code>NOM_Prenom_exercice-05_...</code>) et transmis à votre enseignant. Cet exercice est valorisé à hauteur de <strong>10 points</strong> dans votre évaluation continue.
@@ -78,7 +110,7 @@ Défi express de communication visuelle : concevoir une affiche percutante sur l
 </div>
 
 <ClientOnly>
-  <ExerciseBox exerciseId="exercice-05" exerciseTitle="Atelier 5 : Défi 20 minutes Canva (Affiche mot de passe)" />
+  <ExerciseBox exerciseId="exercice-05" exerciseTitle="Atelier 5 : Défi — Créer une vidéo pour les réseaux sociaux" />
 </ClientOnly>
 
 ---

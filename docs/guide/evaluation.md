@@ -48,7 +48,7 @@ Le barème s'articule autour de deux volets complémentaires totalisant **200 po
 | ↳ *Atelier 2 : Évaluation critique d'une information* | *10 pts* | *5%* | [📥 Télécharger l'Exercice 2 ↗](https://docs.google.com/document/d/1o9vsf5fptzG1EH56oycz7SkD_UwmUKXm/preview) |
 | ↳ *Atelier 3 : Conception d'un guide numérique élèves* | *10 pts* | *5%* | [📥 Télécharger l'Exercice 3 ↗](https://docs.google.com/document/d/12XENuZM1WVyeCnRfu62Oh1_tG8Gkc1Z1/preview) |
 | ↳ *Atelier 4 : Escape Game FMTTN (Cyber-Enquête)* | *10 pts* | *5%* | [📥 Télécharger l'Exercice 4 ↗](https://docs.google.com/document/d/1kUSfjlioxrG-i-ZrVbzQOpxH072f_2db/preview) |
-| ↳ *Atelier 5 : Défi 20 min Canva (Affiche mot de passe)* | *10 pts* | *5%* | [📥 Télécharger l'Exercice 5 ↗](https://docs.google.com/document/d/1GuqhxxFNJllg4vR_wLeD5A4CtYNyJ4mj/preview) |
+| ↳ *Atelier 5 : Défi 50 min (Vidéo réseaux sociaux - Éducation aux médias)* | *10 pts* | *5%* | [📥 Télécharger l'Exercice 5 ↗](https://docs.google.com/document/d/1GuqhxxFNJllg4vR_wLeD5A4CtYNyJ4mj/preview) |
 | ↳ *Atelier 6 : Démarche itérative & Mini-jeu (Playtest)* | *10 pts* | *5%* | [📥 Télécharger l'Exercice 6 ↗](https://docs.google.com/document/d/1mfCTqwo-2l9k_wdLzIu3qRWOJuBxrqJv/preview) |
 | ↳ *Atelier 7 : Défi Hardware PC & Peer Learning* | *10 pts* | *5%* | [📥 Télécharger l'Exercice 7 ↗](https://docs.google.com/document/d/1Vjy9xrqLG-xuktmMmmOQ6Kh8I-hXiIzV/preview) |
 | ↳ *Atelier 8 : Construire des grilles d'évaluation critériées* | *10 pts* | *5%* | [📥 Télécharger l'Exercice 8 ↗](https://docs.google.com/document/d/1MV1xWWb5ZtcuRhFn_JIVG6UHeFle6IUI/preview) |

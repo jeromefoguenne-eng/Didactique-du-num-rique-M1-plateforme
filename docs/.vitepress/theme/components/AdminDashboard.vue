@@ -583,7 +583,7 @@ const exerciseOptions = [
   { id: 'exercice-02', title: 'Atelier 2 : Peut-on faire confiance ?' },
   { id: 'exercice-03', title: 'Atelier 3 : Guide numérique élèves' },
   { id: 'exercice-04', title: 'Atelier 4 : Escape Game FMTTN' },
-  { id: 'exercice-05', title: 'Atelier 5 : Défi 20 min Canva' },
+  { id: 'exercice-05', title: 'Atelier 5 : Défi Vidéo Réseaux Sociaux' },
   { id: 'exercice-06', title: 'Atelier 6 : Défi Hardware PC' },
   { id: 'exercice-video', title: 'Atelier 7 : Capsule Vidéo' },
   { id: 'projet-jeu', title: 'Projet : Dossier Jeu de société' }
@@ -1293,7 +1293,7 @@ function saveActiveStudentGrid() {
 }
 
 function exportAllResultsToExcel() {
-  let csv = `Nom de famille;Prénom;Email institutionnel;Suivi Délais IA;Quiz (/20);Ex 1 DigComp (/10);Ex 2 Info critique (/10);Ex 3 Guide élèves (/10);Ex 4 Escape Game (/10);Ex 5 Canva mot de passe (/10);Ex 6 Démarche itérative (/10);Ex 7 Hardware PC (/10);Ex 8 Grilles critériées (/10);SOUS-TOTAL PLATEFORME (/100);PROJET JEU NOTE GLOBALE (/100);Étape 1 Règles;Étape 2 Photos;Étape 3 Cartes IA;Étape 4 Plateau Laser;Étape 5 Pions 3D;Étape 6 Vidéo;Étape 7 Playtest;Étape 8 Présentation & Leçon;SOUS-TOTAL PROJET JEU (/100);TOTAL GÉNÉRAL (/200);NOTE FINALE (/20);POURCENTAGE;RÉSULTAT;MENTION;FEEDBACK GÉNÉRAL\n`
+  let csv = `Nom de famille;Prénom;Email institutionnel;Suivi Délais IA;Quiz (/20);Ex 1 DigComp (/10);Ex 2 Info critique (/10);Ex 3 Guide élèves (/10);Ex 4 Escape Game (/10);Ex 5 Défi Vidéo Réseaux Sociaux (/10);Ex 6 Démarche itérative (/10);Ex 7 Hardware PC (/10);Ex 8 Grilles critériées (/10);SOUS-TOTAL PLATEFORME (/100);PROJET JEU NOTE GLOBALE (/100);Étape 1 Règles;Étape 2 Photos;Étape 3 Cartes IA;Étape 4 Plateau Laser;Étape 5 Pions 3D;Étape 6 Vidéo;Étape 7 Playtest;Étape 8 Présentation & Leçon;SOUS-TOTAL PROJET JEU (/100);TOTAL GÉNÉRAL (/200);NOTE FINALE (/20);POURCENTAGE;RÉSULTAT;MENTION;FEEDBACK GÉNÉRAL\n`
 
   users.value.forEach(u => {
     if (!u || !u.email) return

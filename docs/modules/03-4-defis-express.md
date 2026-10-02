@@ -30,24 +30,31 @@ L'élève est placé dans une posture d'expérimentation et de résolution. Il p
 ## 📝 Exercice Pratique Associé : Méthode Péda 4 (Le Défi Express)
 
 <div class="callout-exercise" style="margin: 1.5rem 0;">
-  <div class="callout-title">📋 Exercice 05 — Défi 20 minutes Canva : Affiche mot de passe sécurisé</div>
+  <div class="callout-title">📋 Exercice 05 — Défi 50 minutes : Créer une vidéo pour les réseaux sociaux</div>
   <p>
-    Cet exercice applique la méthodologie du défi express sous contrainte temporelle et technique forte : concevoir en 20 minutes chrono avec Canva une infographie explicative percutante (max. 30 mots, max. 3 visuels) pour sensibiliser les élèves à la sécurité des mots de passe.
+    Cet exercice applique la méthodologie du défi sous contrainte temporelle, technique et didactique forte : concevoir et réaliser en <strong>50 minutes chrono</strong> une vidéo courte (30 secondes à 1 minute, format vertical 9:16) destinée aux réseaux sociaux (TikTok, Reels, Shorts) pour sensibiliser un public scolaire à un enjeu clé d'<strong>éducation aux médias</strong> (fake news, sources fiables, IA, algorithmes, esprit critique...).
   </p>
-  <div style="margin: 1.2rem 0;">
+  <div style="margin: 1.2rem 0; display: flex; flex-wrap: wrap; gap: 10px;">
+    <a 
+      href="/ateliers/exercice-05" 
+      class="btn-primary"
+      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: white !important; padding: 9px 16px; border-radius: 8px; font-weight: 600; background: var(--vp-c-brand-1);"
+    >
+      <span>🚀 Consulter la fiche complète de l'Atelier 05 →</span>
+    </a>
     <a 
       href="https://docs.google.com/document/d/1GuqhxxFNJllg4vR_wLeD5A4CtYNyJ4mj/preview" 
       target="_blank" 
       rel="noopener noreferrer"
       class="btn-primary"
-      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: white !important; padding: 9px 16px; border-radius: 8px; font-weight: 600; background: var(--vp-c-brand-1);"
+      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: var(--vp-c-text-1) !important; padding: 9px 16px; border-radius: 8px; font-weight: 600; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);"
     >
-      <span>📄 Ouvrir l'Exercice 05 sur Google Docs (Lecture seule) →</span>
+      <span>📄 Ouvrir le sujet sur Google Docs (Lecture seule) ↗</span>
     </a>
   </div>
 
   <p style="margin-top: 1rem; margin-bottom: 0; font-size: 0.92rem; color: var(--vp-c-text-2);">
-    📤 <strong>Dépôt du travail :</strong> Une fois votre exercice rédigé, déposez votre fichier Word ou PDF directement dans votre <a href="/espace-membre"><strong>Espace Membre</strong></a> (onglet <em>« Dépôt de Travaux »</em>).
+    📤 <strong>Dépôt du travail :</strong> Une fois votre vidéo et fiche rédigées, déposez votre document directement dans votre <a href="/espace-membre"><strong>Espace Membre</strong></a> (onglet <em>« Dépôt de Travaux »</em>) ou sur la page de l'<a href="/ateliers/exercice-05"><strong>Atelier 5</strong></a>.
   </p>
 </div>
 
@@ -55,7 +62,7 @@ L'élève est placé dans une posture d'expérimentation et de résolution. Il p
 
 ## 🎓 Auto-évaluation & Réflexivité (3.4)
 
-Testez votre compréhension didactique du défi pédagogique express et réalisez votre retour réflexif sur l'Exercice 05 (Affiche Canva 20 min) :
+Testez votre compréhension didactique du défi pédagogique express et réalisez votre retour réflexif sur l'Exercice 05 (Défi vidéo réseaux sociaux en 50 min) :
 
 <ClientOnly>
   <QuizBox moduleId="03-4" moduleTitle="3.4 Le défi pédagogique" />

@@ -4,5 +4,6 @@ docs/.vitepress/cache
 .DS_Store
 *.py
 Thumbs.db
-slides_dump.txt
 scripts/*.json
+slides_dump.txt
+scratch/

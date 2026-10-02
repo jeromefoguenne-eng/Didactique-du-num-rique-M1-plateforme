@@ -795,14 +795,14 @@ const MODULE_QUESTIONS = {
     {
       id: 'q6',
       type: 'open',
-      title: "6. Réflexivité sur l'Exercice 05 (Défi 20 minutes Canva : Affiche mot de passe)",
-      text: "À partir de votre expérience lors de l'Exercice 05 (créer en 20 minutes une affiche Canva percutante sur la sécurité des mots de passe avec max 30 mots et 3 visuels), analysez comment ces contraintes radicales ont orienté votre processus de conception. Quels éléments secondaires avez-vous dû sacrifier pour garantir une compréhension immédiate par un élève, et qu'avez-vous appris sur l'efficacité visuelle ?",
+      title: "6. Réflexivité sur l'Exercice 05 (Défi 50 minutes : Vidéo réseaux sociaux & Éducation aux médias)",
+      text: "À partir de votre expérience lors de l'Exercice 05 (concevoir et réaliser en 50 minutes chrono une vidéo verticale de 30s à 1min destinée aux réseaux sociaux sur un enjeu d'éducation aux médias), analysez comment ces contraintes fortes (temps limité, format court 9:16, cible scolaire) ont orienté vos choix didactiques et scénaristiques. Quel message unique avez-vous privilégié, quels éléments secondaires avez-vous dû sacrifier, et qu'avez-vous appris sur l'accroche et la médiatisation d'un savoir ?",
       points: 5,
-      modelAnswer: "La contrainte des 20 minutes interdit de se perdre dans l'exploration infinie des modèles Canva : il a fallu choisir une idée forte immédiatement (ex: la métaphore de la clé de maison ou la phrase secrète). La contrainte des 30 mots et 3 visuels a exigé de renoncer aux explications techniques complexes (longueur en bits, force brute) pour retenir un mot d'ordre mémorisable ('Longueur + Majuscule + Symbole = Mot de passe blindé'). Cette expérience prouve qu'en didactique visuelle, 'moins c'est plus' : épurer un document renforce son impact pédagogique auprès des élèves.",
+      modelAnswer: "La contrainte des 50 minutes et du format très court (30 à 60 secondes en 9:16) impose d'éliminer immédiatement les discours théoriques abstraits : il a fallu identifier un angle d'accroche immédiat dès les 3 premières secondes (ex. une mise en situation frappante d'une fake news ou d'un deepfake) et se focaliser sur un seul réflexe opérationnel vérifiable pour l'élève. Le travail d'équipe a nécessité une répartition claire et rapide des rôles (écriture du script, captation/voix, montage/habillage express sur CapCut ou Canva). Cette expérience prouve qu'en didactique des médias, capter l'attention d'un public jeune exige de synthétiser l'information sans la dénaturer, en adoptant les codes visuels et narratifs de leur écosystème numérique.",
       rubricCriteria: [
-        "Analyse de l'impact de la contrainte temporelle sur la prise de décision rapide.",
-        "Explicitation des arbitrages et sacrifices d'informations superflues au profit de la lisibilité.",
-        "Déduction d'une règle d'efficacité didactique pour la communication visuelle en classe."
+        "Analyse de l'impact de la contrainte temporelle (50 min) et du travail d'équipe sur l'efficacité décisionnelle.",
+        "Explicitation du choix du message central d'éducation aux médias et des arbitrages/sacrifices scénaristiques réalisés.",
+        "Déduction d'une règle didactique sur l'accroche, la vulgarisation et les codes des réseaux sociaux (TikTok/Reels/Shorts) pour les élèves."
       ]
     }
   ],

@@ -160,7 +160,7 @@ const availableExercises = [
   },
   { 
     id: 'exercice-05', 
-    title: 'Exercice 5 : Défi 20 minutes (Affiche Canva mot de passe)',
+    title: 'Exercice 5 : Défi — Créer une vidéo pour les réseaux sociaux (Éducation aux médias)',
     category: 'Plateforme',
     points: 10,
     docUrl: 'https://docs.google.com/document/d/1GuqhxxFNJllg4vR_wLeD5A4CtYNyJ4mj/preview'

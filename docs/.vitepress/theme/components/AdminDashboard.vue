@@ -194,7 +194,20 @@ const filteredQuizAttempts = computed(() => {
       (quizModuleFilter.value === '01-2' && (rawMod.includes('Feb') || rawMod.includes('Fév') || rawMod === '1.2')) ||
       (quizModuleFilter.value === '01-1' && (rawMod.includes('Jan') || rawMod === '1.1')) ||
       (quizModuleFilter.value === '03-1' && (rawMod.includes('Mar') || rawMod === '3.1'))
-    const matchStd = quizStudentFilter.value === 'all' || (q.userEmail || '').toLowerCase() === quizStudentFilter.value.toLowerCase()
+
+    let matchStd = true
+    if (quizStudentFilter.value !== 'all') {
+      const target = quizStudentFilter.value.toLowerCase()
+      const u = userStore.findUserByQuery ? userStore.findUserByQuery(target) : null
+      const allowed = new Set([target])
+      if (u?.email) allowed.add(u.email.toLowerCase())
+      if (u?.aliases && Array.isArray(u.aliases)) {
+        for (const a of u.aliases) {
+          if (a) allowed.add(a.toLowerCase())
+        }
+      }
+      matchStd = allowed.has((q.userEmail || '').toLowerCase())
+    }
     return matchMod && matchStd
   })
 })

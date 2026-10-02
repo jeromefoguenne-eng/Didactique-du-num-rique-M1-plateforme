@@ -240,6 +240,20 @@ export function parseDeadline(dtStr: string | undefined | null): Date | null {
   return isNaN(fallback.getTime()) ? null : fallback
 }
 
+/**
+ * Convertit toute date (ISO, FR, horodatage) en millisecondes pour comparaison et tri strict
+ */
+export function parseDateSafe(dt: any): number {
+  if (!dt) return 0
+  if (typeof dt === 'number') return dt
+  const s = String(dt).trim()
+  if (!s) return 0
+  const d = parseDeadline(s)
+  if (d && !isNaN(d.getTime())) return d.getTime()
+  const fallback = new Date(s)
+  return isNaN(fallback.getTime()) ? 0 : fallback.getTime()
+}
+
 export function formatDeadlineDisplay(dtStr: any): string {
   if (!dtStr || typeof dtStr !== 'string' || !dtStr.trim()) return 'Non fixée'
   const d = parseDeadline(dtStr)
@@ -1840,33 +1854,34 @@ if (typeof window !== 'undefined') {
     if (!rf || !rf.userEmail || !rf.exerciseId) return
     const em = rf.userEmail.trim().toLowerCase()
     if (initialDeletedUsers.includes(em)) return
-    const existing = state.submittedFiles.find(f => f && (f.id === rf.id || (f.userEmail && f.userEmail.trim().toLowerCase() === em && (f.formattedFileName === rf.formattedFileName || f.exerciseId === rf.exerciseId))))
-    if (existing) {
-      if (!existing.dataUrl || existing.dataUrl.length < 100) {
-        existing.dataUrl = rf.dataUrl
-      }
-      if (!existing.fileSize || existing.fileSize === 0) {
-        existing.fileSize = rf.fileSize
-      }
-      if ((rf as any).extractedText) {
-        (existing as any).extractedText = (rf as any).extractedText
-      }
-      if (rf.aiCorrection && (!existing.aiCorrection || existing.aiCorrection.suggestedScore === 0)) {
-        existing.aiCorrection = rf.aiCorrection
-      }
-      if (rf.formattedFileName) existing.formattedFileName = rf.formattedFileName
-      if (rf.driveUrl && !existing.driveUrl) existing.driveUrl = rf.driveUrl
-    } else {
+    const existingIdx = state.submittedFiles.findIndex(f => 
+      f && f.userEmail && f.userEmail.trim().toLowerCase() === em && f.exerciseId === rf.exerciseId
+    )
+    if (existingIdx === -1) {
       state.submittedFiles.push(rf)
+    } else {
+      const existing = state.submittedFiles[existingIdx]
+      const tExisting = parseDateSafe(existing.submittedAt)
+      const tRf = parseDateSafe(rf.submittedAt)
+      if (tRf >= tExisting) {
+        if (existing.teacherGrade && existing.teacherGrade.status === 'graded') {
+          rf.teacherGrade = existing.teacherGrade
+        }
+        state.submittedFiles[existingIdx] = rf
+      } else {
+        if (!existing.dataUrl && rf.dataUrl) existing.dataUrl = rf.dataUrl
+        if (!(existing as any).extractedText && (rf as any).extractedText) {
+          (existing as any).extractedText = (rf as any).extractedText
+        }
+        if (!existing.driveUrl && rf.driveUrl) existing.driveUrl = rf.driveUrl
+      }
     }
   })
 
   // Strict deduplication des fichiers : garder uniquement le plus récent par étudiant et par atelier
   const dedupFilesMap = new Map<string, SubmittedFile>()
   const sortedFiles = [...state.submittedFiles].sort((a, b) => {
-    const ta = new Date(a.submittedAt || 0).getTime()
-    const tb = new Date(b.submittedAt || 0).getTime()
-    return ta - tb
+    return parseDateSafe(a.submittedAt) - parseDateSafe(b.submittedAt)
   })
   for (const f of sortedFiles) {
     if (!f || !f.userEmail || !f.exerciseId) continue
@@ -1879,8 +1894,11 @@ if (typeof window !== 'undefined') {
     } else {
       const newest = f
       if (!newest.dataUrl && prev.dataUrl) newest.dataUrl = prev.dataUrl
-      if (!newest.extractedText && prev.extractedText) newest.extractedText = prev.extractedText
+      if (!newest.extractedText && prev.extractedText) (newest as any).extractedText = (prev as any).extractedText
       if (!newest.driveUrl && prev.driveUrl) newest.driveUrl = prev.driveUrl
+      if (prev.teacherGrade && prev.teacherGrade.status === 'graded' && (!newest.teacherGrade || newest.teacherGrade.status !== 'graded')) {
+        newest.teacherGrade = prev.teacherGrade
+      }
       dedupFilesMap.set(key, newest)
     }
   }
@@ -1892,18 +1910,25 @@ if (typeof window !== 'undefined') {
     if (!rs || !rs.userEmail || !rs.exerciseId) return
     const em = rs.userEmail.trim().toLowerCase()
     if (initialDeletedUsers.includes(em)) return
-    const existing = state.submissions.find(s => s && s.userEmail && s.userEmail.trim().toLowerCase() === em && s.exerciseId === rs.exerciseId)
-    if (!existing) {
+    const existingIdx = state.submissions.findIndex(s => 
+      s && s.userEmail && s.userEmail.trim().toLowerCase() === em && s.exerciseId === rs.exerciseId
+    )
+    if (existingIdx === -1) {
       state.submissions.push(rs)
-    } else if (!existing.answer && rs.answer) {
-      existing.answer = rs.answer
+    } else {
+      const existing = state.submissions[existingIdx]
+      const tExisting = parseDateSafe(existing.submittedAt)
+      const tRs = parseDateSafe(rs.submittedAt)
+      if (tRs >= tExisting) {
+        state.submissions[existingIdx] = rs
+      } else if (!existing.answer && rs.answer) {
+        existing.answer = rs.answer
+      }
     }
   })
   const dedupSubsMap = new Map<string, Submission>()
   const sortedSubs = [...state.submissions].sort((a, b) => {
-    const ta = new Date(a.submittedAt || 0).getTime()
-    const tb = new Date(b.submittedAt || 0).getTime()
-    return ta - tb
+    return parseDateSafe(a.submittedAt) - parseDateSafe(b.submittedAt)
   })
   for (const s of sortedSubs) {
     if (!s || !s.userEmail || !s.exerciseId) continue
@@ -1927,25 +1952,36 @@ if (typeof window !== 'undefined') {
     if (!rq || !rq.userEmail) return
     const em = rq.userEmail.trim().toLowerCase()
     if (initialDeletedUsers.includes(em)) return
-    const existing = state.quizAttempts.find(q => q && (
-      (rq.id && q.id === rq.id) ||
-      (q.userEmail && q.userEmail.trim().toLowerCase() === em && q.moduleId === rq.moduleId && q.submittedAt === rq.submittedAt)
-    ))
-    if (!existing) {
+    const normRq = normalizeQuizModuleId(rq.moduleId || (rq as any).quizId)
+    rq.moduleId = normRq.id
+    rq.moduleTitle = normRq.title
+
+    const existingIdx = state.quizAttempts.findIndex(q => {
+      if (!q || !q.userEmail) return false
+      const normQ = normalizeQuizModuleId(q.moduleId || (q as any).quizId)
+      return q.userEmail.trim().toLowerCase() === em && normQ.id === normRq.id
+    })
+    if (existingIdx === -1) {
       state.quizAttempts.push(rq)
-    } else if (rq.answers && (!existing.answers || existing.answers.length === 0)) {
-      existing.answers = rq.answers
-      existing.score = rq.score
-      existing.totalPoints = rq.totalPoints
-      existing.percentage = rq.percentage
-      existing.moduleTitle = rq.moduleTitle
+    } else {
+      const existing = state.quizAttempts[existingIdx]
+      const tExisting = parseDateSafe(existing.submittedAt)
+      const tRq = parseDateSafe(rq.submittedAt)
+      if (tRq >= tExisting) {
+        if ((!rq.answers || rq.answers.length === 0) && existing.answers && existing.answers.length > 0) {
+          rq.answers = existing.answers
+        }
+        state.quizAttempts[existingIdx] = rq
+      } else {
+        if ((!existing.answers || existing.answers.length === 0) && rq.answers && rq.answers.length > 0) {
+          existing.answers = rq.answers
+        }
+      }
     }
   })
   const dedupQuizzesMap = new Map<string, QuizAttempt>()
   const sortedQuizzes = [...state.quizAttempts].sort((a, b) => {
-    const ta = new Date(a.submittedAt || 0).getTime()
-    const tb = new Date(b.submittedAt || 0).getTime()
-    return ta - tb
+    return parseDateSafe(a.submittedAt) - parseDateSafe(b.submittedAt)
   })
   for (const q of sortedQuizzes) {
     if (!q || !q.userEmail) continue
@@ -3348,7 +3384,7 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
     }
 
     // 1. Calcul du Quiz Diagnostique (max 20 pts)
-    const userQuizzes = state.quizAttempts.filter(q => (q?.userEmail || '').toLowerCase() === targetEmail)
+    const userQuizzes = this.getUserQuizAttempts(targetEmail)
     let quizAiScore = 0
     if (userQuizzes.length > 0) {
       const avgPct = userQuizzes.reduce((acc, q) => acc + (q.percentage || 0), 0) / userQuizzes.length
@@ -3357,6 +3393,9 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
     }
 
     // 2. Construction dynamique des 17 composantes de l'évaluation
+    const userFiles = this.getUserFiles(targetEmail)
+    const userSubs = this.getUserSubmissions(targetEmail)
+
     const allEvaluationItems = OFFICIAL_EVALUATION_ITEMS.map(def => {
       if (def.id === 'quiz') {
         const isQuizDone = userQuizzes.length > 0
@@ -3400,8 +3439,8 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
       }
 
       // Exercices 1 à 8, projet-jeu et étapes 9 à 16
-      const file = state.submittedFiles.find(f => (f?.userEmail || '').toLowerCase() === targetEmail && f?.exerciseId === def.id)
-      const hasSub = state.submissions.some(s => (s?.userEmail || '').toLowerCase() === targetEmail && s?.exerciseId === def.id && (s?.answer || (s as any)?.content || '').trim().length > 10)
+      const file = userFiles.find(f => f?.exerciseId === def.id)
+      const hasSub = userSubs.some(s => s?.exerciseId === def.id && (s?.answer || (s as any)?.content || '').trim().length > 10)
       const isDone = !!file || hasSub
 
       const effDeadline = this.getExerciseDeadline(def.id)
@@ -4149,9 +4188,27 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
   },
 
   getUserQuizAttempts(email?: string): QuizAttempt[] {
-    const targetEmail = email || state.currentUser?.email
-    if (!targetEmail) return []
-    return state.quizAttempts.filter(q => q.userEmail.toLowerCase() === targetEmail.toLowerCase())
+    const rawEmail = (email || state.currentUser?.email || '').trim().toLowerCase()
+    if (!rawEmail) return []
+    const user = findUserByQuery(rawEmail)
+    const allowed = new Set<string>([rawEmail])
+    if (user?.email) allowed.add(user.email.toLowerCase())
+    if ((user as any)?.aliases && Array.isArray((user as any).aliases)) {
+      for (const a of (user as any).aliases) if (a) allowed.add(a.toLowerCase())
+    }
+    return state.quizAttempts.filter(q => q && q.userEmail && allowed.has(q.userEmail.toLowerCase()))
+  },
+
+  getUserSubmissions(email?: string): Submission[] {
+    const rawEmail = (email || state.currentUser?.email || '').trim().toLowerCase()
+    if (!rawEmail) return []
+    const user = findUserByQuery(rawEmail)
+    const allowed = new Set<string>([rawEmail])
+    if (user?.email) allowed.add(user.email.toLowerCase())
+    if ((user as any)?.aliases && Array.isArray((user as any).aliases)) {
+      for (const a of (user as any).aliases) if (a) allowed.add(a.toLowerCase())
+    }
+    return state.submissions.filter(s => s && s.userEmail && allowed.has(s.userEmail.toLowerCase()))
   },
 
   getAllQuizAttempts(): QuizAttempt[] {

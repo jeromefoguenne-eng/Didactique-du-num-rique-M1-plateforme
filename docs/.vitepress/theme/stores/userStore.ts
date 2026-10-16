@@ -2106,6 +2106,11 @@ export function normalizeQuizModuleId(raw: any): { id: string; title: string } {
     '05-1': "6.1 Ludopédagogie & Édumédias",
     '07': "6.3 La photographie & composition visuelle",
     '08': "6.4 Créer des cartes et supports de jeu avec l'IA",
+    '09-1': "6.5 Fabriquer le plateau de jeu avec la découpeuse laser",
+    '6.5': "6.5 Fabriquer le plateau de jeu avec la découpeuse laser",
+    '09': "6.6 Concevoir les pions à l'imprimante 3D",
+    '09-2': "6.6 Concevoir les pions à l'imprimante 3D",
+    '6.6': "6.6 Concevoir les pions à l'imprimante 3D",
     '10': "6.7 Concevoir une capsule vidéo"
   }
 

@@ -1,32 +1,311 @@
 ---
 title: "6.5 Fabriquer le plateau de jeu avec la découpeuse laser"
-description: "Fabrication numérique au FabLab HECh : conception vectorielle et découpeuse laser pour le plateau de jeu"
+description: "Fabrication numérique au FabLab HECh : conception vectorielle avec Canva et Inkscape, et pilotage de la découpeuse laser avec LightBurn pour le plateau de jeu."
 ---
 
-# 6.5 Fabriquer le plateau de jeu avec la découpeuse laser
+# 6.5. Fabriquer le plateau de jeu avec la découpeuse laser
 
-<Badge type="warning" text="En construction" />
-
-::: warning En cours de rédaction
-Ce chapitre est actuellement en cours de finalisation dans le syllabus officiel. Les consignes techniques détaillées de réglage de la machine et des fichiers vectoriels seront enrichies lors des séances au FabLab HECh.
+::: info Extrait intégral des Notes de cours
+Ce chapitre reproduit fidèlement et dans son intégralité les contenus didactiques et techniques du syllabus officiel du cours de Didactique du numérique (Master 1 - HECh, Point 10) concernant la fabrication assistée par ordinateur d'un plateau de jeu de société à la découpeuse laser.
 :::
 
-## 🛠️ Principes de fabrication numérique au FabLab
+---
 
-Dans le cadre de la conception d'un jeu de société, la découpeuse laser permet de matérialiser un plateau rigide, précis et durable en bois (MDF, contreplaqué) ou en plexiglas.
+## 10. Fabriquer le plateau de jeu avec la découpeuse laser
 
-Les étapes clés abordées en atelier comprennent :
-1. **Conception vectorielle :** Préparation du tracé à l'échelle 1:1 sous Inkscape, Illustrator ou Canva (format SVG ou DXF).
-2. **Différenciation des couches :** Tracé vectoriel fin (ligne rouge) pour la découpe des contours et des fentes d'assemblage ; remplissage noir pour la gravure laser des cases, textes et motifs décoratifs.
-3. **Paramétrage machine :** Ajustement de la puissance et de la vitesse selon le matériau choisi.
-4. **Finition et assemblage :** Ponçage léger, emboîtement et mise en couleur éventuelle.
+La découpeuse laser permet de transformer une conception numérique en objet physique en découpant ou en gravant avec précision différents matériaux (carton, bois, plexiglas, etc.). Son intérêt pédagogique dépasse donc la simple fabrication : elle permet de faire le lien entre conception, numérique, expérimentation et production concrète.
+
+Dans une perspective pédagogique, elle favorise notamment :
+- **La créativité et la conception :** les élèves imaginent, dessinent et prototypent leurs propres objets.
+- **La démarche de projet :** passer d'une idée à un objet fini implique de planifier, concevoir, tester, corriger et améliorer.
+- **La résolution de problèmes :** dimensions, assemblages, tolérances, matériaux et paramètres de découpe imposent de prendre des décisions et de résoudre des problèmes techniques.
+- **L'apprentissage par l'erreur et l'itération :** un prototype imparfait devient un support d'analyse permettant d'améliorer la conception.
+- **La littératie numérique :** l'élève apprend à manipuler des logiciels de conception, des formats vectoriels et une chaîne de fabrication numérique.
+- **La compréhension du lien numérique-réel :** une production réalisée à l'écran devient un objet tangible, ce qui permet de comprendre concrètement la logique de la fabrication numérique.
+
+### Un outil particulièrement pertinent pour les FMTTN
+
+Dans le cadre des FMTTN (Formation Manuelle, Technique, Technologique et Numérique), la découpeuse laser constitue un outil particulièrement intéressant parce qu'elle se situe précisément à l'intersection des dimensions manuelle, technique, technologique et numérique. Elle permet de dépasser une approche où le numérique serait uniquement associé à la consommation ou à l'utilisation d'outils : l'élève devient concepteur et producteur.
+
+Elle s'intègre naturellement dans une démarche de design et de résolution de problème :  
+**Identifier un besoin → Imaginer une solution → La modéliser → Fabriquer un prototype → Le tester → Analyser les résultats → Améliorer la conception**
+
+La découpeuse laser peut ainsi soutenir des apprentissages très variés : création d'objets, géométrie et mesures, compréhension des matériaux, initiation à la conception assistée par ordinateur, programmation de paramètres, éducation aux médias et au numérique ou encore fabrication d'outils pédagogiques.
 
 ---
+
+## 10.1. Créer un plateau de jeu personnalisé avec Canva
+
+[Accéder à l'application en ligne Canva (canva.com)](https://www.canva.com/){target="_blank" rel="noopener noreferrer"}
+
+Canva permet de concevoir facilement un plateau de jeu au format A3, même sans maîtriser un logiciel professionnel de dessin vectoriel. L'objectif est de produire une image qui pourra ensuite être exportée, vectorisée et préparée pour la découpe ou la gravure laser.
+
+### 1. Créer le document
+Dans Canva :
+1. Cliquer sur **Créer un design → Dimensions personnalisées**.
+2. Choisir le format **A3 : 420 × 297 mm**.
+3. Pour un plateau destiné à une découpeuse laser, travailler de préférence avec une **composition horizontale**.
+4. Prévoir une **marge extérieure suffisante** afin que les éléments importants ne soient pas trop proches du bord.
+
+### 2. Concevoir la structure du plateau
+Avant d'ajouter les éléments graphiques, définir la structure du jeu :
+- zone de départ et d'arrivée ;
+- parcours ou cases ;
+- zones réservées aux cartes, pions ou ressources ;
+- éventuelles zones de texte ;
+- éléments décoratifs ;
+- titre et identité visuelle du jeu.
+
+::: tip Le plateau comme interface
+Il est préférable de penser le plateau comme une interface : le joueur doit comprendre rapidement où commencer, où aller et quelles informations sont importantes.
+:::
+
+### 3. Créer ou importer les éléments graphiques
+Canva permet d'utiliser :
+- des formes géométriques ;
+- des illustrations ;
+- des icônes ;
+- du texte ;
+- des images générées avec une IA ;
+- le logo du jeu ;
+- des éléments graphiques créés dans d'autres logiciels.
+
+Pour un projet destiné à la gravure laser, **privilégier une composition simple et lisible**. Les détails extrêmement fins ou les dégradés complexes peuvent être difficiles à reproduire correctement lors de la gravure.
+
+---
+
+## De Canva à Inkscape : préparer le plateau pour la découpe laser
+
+[Télécharger le logiciel libre Inkscape (inkscape.fr)](https://inkscape.fr/){target="_blank" rel="noopener noreferrer"}
+
+Une image créée dans Canva est généralement une image matricielle (PNG, JPG). Or, une découpeuse laser travaille plus efficacement avec des tracés vectoriels : des lignes et des formes définies mathématiquement. Il faut donc passer par une étape de vectorisation dans Inkscape.
+
+### 1. Exporter le plateau depuis Canva
+Dans Canva :
+1. Cliquer sur **Partager → Télécharger**.
+2. Choisir **PNG**.
+3. Télécharger l'image avec la meilleure résolution disponible.
+4. Éviter, si possible, les éléments inutiles autour du plateau.
+
+Le PNG constitue alors le modèle de référence qui sera importé dans Inkscape.
+
+### 2. Importer l'image dans Inkscape
+Dans Inkscape :
+1. Ouvrir un nouveau document.
+2. Aller dans **Fichier → Importer**.
+3. Sélectionner l'image PNG créée dans Canva.
+4. Choisir **Incorporer** plutôt que « Lier » lorsque Inkscape propose le choix.
+5. Adapter la taille de l'image au format réel du plateau.
+
+::: warning Point de contrôle dimensionnel
+Si le plateau doit mesurer 420 × 297 mm, il faut vérifier ses dimensions dans Inkscape. Une image numérique n'a pas nécessairement une correspondance correcte avec les dimensions physiques souhaitées.
+:::
+
+### 3. Vectoriser l'image
+Sélectionner l'image puis aller dans :  
+**Chemin → Vectoriser un objet matriciel**
+
+Inkscape propose différentes méthodes de vectorisation. Pour un plateau de jeu comportant des formes simples, des contours noirs et des zones contrastées, le mode de **détection par seuil de luminosité** peut généralement constituer un bon point de départ.
+
+L'objectif n'est pas nécessairement de vectoriser toute l'image en une seule fois. Il peut être préférable de vectoriser séparément :
+- le contour extérieur → **découpe** ;
+- les lignes du parcours → **gravure** ;
+- les symboles et illustrations → **gravure** ;
+- éventuellement les zones particulières → **découpe**.
+
+Après avoir lancé la vectorisation, l'image originale et sa version vectorisée sont superposées. Il faut alors déplacer temporairement l'image originale pour vérifier le résultat.
+
+<div class="callout-concept" style="margin: 2rem 0;">
+  <div class="callout-title">🎬 Tutoriel Vidéo : Préparation vectorielle avec Inkscape pour la découpe laser</div>
+  <p>
+    <strong>Tutoriel pas-à-pas : Vectorisation d'un fichier image matricielle pour machine laser.</strong><br />
+    Découvrez comment importer votre composition Canva dans Inkscape, vectoriser les contours par seuil de luminosité, séparer les tracés de découpe et de gravure, et exporter un fichier vectoriel SVG net et dimensionné au millimètre près.
+  </p>
+
+  <div style="text-align: center; margin: 1.2rem 0;">
+    <a 
+      href="https://www.youtube.com/watch?v=kY3P_78y5hM" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display: inline-block; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.18); border: 2px solid var(--vp-c-divider); max-width: 580px; width: 100%; text-decoration: none;"
+      title="Cliquer pour visionner le tutoriel Inkscape pour découpe laser sur YouTube"
+    >
+      <img 
+        src="/images/vignette-inkscape-decoupe.jpg" 
+        alt="Vignette tutoriel Inkscape vectorisation découpe laser" 
+        style="width: 100%; height: auto; display: block; object-fit: cover;" 
+      />
+      <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white; padding: 12px 16px; font-size: 0.92rem; font-weight: 700; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <span>▶️ Cliquer sur l'image pour lancer le tutoriel Inkscape sur YouTube ↗</span>
+      </div>
+    </a>
+  </div>
+
+  <p style="font-size: 0.85rem; color: var(--vp-c-text-2); text-align: center; margin: 0.5rem 0 0 0;">
+    💡 <em>Support d'apprentissage vidéo pour maîtriser les fonctions Chemin, Vectorisation par seuil et exportation SVG propre.</em>
+  </p>
+</div>
+
+---
+
+## De Inkscape à LightBurn : préparer la découpe et la gravure
+
+Une fois le plateau vectorisé et nettoyé dans Inkscape, il faut l'importer dans LightBurn, le logiciel qui permet de préparer et de piloter la découpeuse laser. L'objectif est de transformer le fichier vectoriel en instructions de découpe et de gravure adaptées à la machine.
+
+### 1. Exporter le fichier depuis Inkscape
+Dans Inkscape, enregistrer le projet puis exporter la version destinée à LightBurn.  
+Le format SVG est particulièrement adapté pour conserver les tracés vectoriels :  
+**Fichier → Enregistrer sous → SVG**
+
+Il est important de conserver les dimensions réelles du plateau, par exemple 420 × 297 mm pour un A3.
+
+### 2. Importer le fichier dans LightBurn
+Dans LightBurn :
+1. Ouvrir un nouveau projet.
+2. Aller dans **Fichier → Importer**.
+3. Sélectionner le fichier SVG créé dans Inkscape.
+4. **Vérifier immédiatement les dimensions du dessin.**
+
+Le plateau apparaît alors dans l'espace de travail de LightBurn.
+
+::: warning Attention à l'échelle
+Il faut vérifier l'échelle après chaque transfert de logiciel. Un plateau prévu pour mesurer 420 mm de large doit bien apparaître comme tel dans LightBurn.
+:::
+
+### 3. Distinguer découpe et gravure
+LightBurn utilise notamment les **calques de couleurs** pour déterminer les opérations à effectuer.
+
+Par exemple :
+
+| Couche | Élément | Opération |
+| :--- | :--- | :--- |
+| **Rouge** | Contour du plateau | ✂️ Découpe |
+| **Noir** | Texte et illustrations | 🔥 Gravure |
+| **Bleu** | Trous ou éléments particuliers | ✂️ Découpe |
+
+Dans LightBurn, chaque couleur peut être associée à un paramétrage différent. L'intérêt est de pouvoir dire à la machine :
+- *« Ce tracé doit être gravé »*
+- *« Celui-ci doit être découpé »*
+
+### 4. Configurer la gravure
+Pour les éléments graphiques du plateau, on utilise généralement une opération de gravure.  
+Il faut notamment définir :
+- la puissance du laser ;
+- la vitesse de déplacement ;
+- la résolution ou le nombre de lignes par unité de distance ;
+- le type de remplissage utilisé.
+
+Ces paramètres dépendent fortement de la machine utilisée et du matériau. Par exemple, graver du contreplaqué de 3 mm et graver du plexiglas ne nécessitent pas nécessairement les mêmes réglages.
+
+> **Consigne de sécurité et d'atelier :** Il ne faut pas fournir aux étudiants des valeurs universelles de puissance et de vitesse. Ils doivent utiliser les paramètres validés par la HECh pour la machine et le matériau utilisés.
+
+### 5. Configurer la découpe
+Pour le contour extérieur, on utilise une opération de découpe vectorielle.  
+LightBurn permet de définir notamment :
+- la vitesse de déplacement ;
+- la puissance ;
+- le nombre de passages ;
+- l'ordre des opérations.
+
+::: important Règle d'or : La gravure AVANT la découpe
+La découpe doit généralement être réalisée après la gravure : si le plateau était découpé avant la gravure, les différentes pièces pourraient bouger pendant les opérations suivantes.
+:::
+
+L'ordre des opérations doit donc être configuré de la manière suivante :
+1. **Gravure des éléments graphiques**  
+   ↓  
+2. **Gravure des détails**  
+   ↓  
+3. **Découpe des éléments intérieurs (trous, fentes)**  
+   ↓  
+4. **Découpe du contour extérieur**
+
+### 6. Utiliser le « Preview » (Simulation)
+Avant de lancer le laser, LightBurn propose une fonction **Preview**.  
+Elle permet de simuler le travail de la machine et de vérifier :
+- l'ordre des opérations ;
+- les éléments qui seront gravés ;
+- les éléments qui seront découpés ;
+- les éventuels tracés oubliés ;
+- la durée approximative du travail.
+
+C'est une étape particulièrement intéressante pédagogiquement : la simulation permet de détecter une erreur avant de consommer du matériau ou de lancer la machine.
+
+### 7. Tester avant de fabriquer le plateau définitif
+Avant de lancer directement la fabrication du plateau A3, il est pertinent de réaliser un test sur une chute du même matériau.  
+Les étudiants peuvent tester différentes combinaisons de :  
+**Vitesse × Puissance × Nombre de passages**
+
+puis observer :
+- la profondeur de gravure ;
+- la lisibilité des textes ;
+- la qualité des contours ;
+- la capacité de découpe ;
+- les traces de brûlure éventuelles.
+
+Ils sélectionnent ensuite les paramètres appropriés pour leur production finale.
+
+Cette étape transforme la fabrication en démarche expérimentale : les étudiants ne se contentent pas d'appliquer des paramètres fournis ; ils observent les effets des réglages, formulent des hypothèses et ajustent leur procédure.
+
+<div class="callout-concept" style="margin: 2rem 0;">
+  <div class="callout-title">🎬 Tutoriel Vidéo : Pilotage de la découpeuse laser sous LightBurn</div>
+  <p>
+    <strong>Guide pratique de paramétrage LightBurn : Calques, vitesses, puissances et simulation.</strong><br />
+    Découvrez comment assigner les calques de découpe et de gravure, régler la focalisation de la tête laser, ordonner les passes de travail, utiliser la prévisualisation (Preview) et lancer votre fabrication en toute sécurité.
+  </p>
+
+  <div style="text-align: center; margin: 1.2rem 0;">
+    <a 
+      href="https://www.youtube.com/watch?v=3z8Y_yXq6bE" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display: inline-block; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.18); border: 2px solid var(--vp-c-divider); max-width: 580px; width: 100%; text-decoration: none;"
+      title="Cliquer pour visionner le tutoriel LightBurn pour découpeuse laser sur YouTube"
+    >
+      <img 
+        src="/images/vignette-lightburn-decoupe.jpg" 
+        alt="Vignette tutoriel LightBurn réglage découpeuse laser" 
+        style="width: 100%; height: auto; display: block; object-fit: cover;" 
+      />
+      <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white; padding: 12px 16px; font-size: 0.92rem; font-weight: 700; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <span>▶️ Cliquer sur l'image pour lancer le tutoriel LightBurn sur YouTube ↗</span>
+      </div>
+    </a>
+  </div>
+
+  <p style="font-size: 0.85rem; color: var(--vp-c-text-2); text-align: center; margin: 0.5rem 0 0 0;">
+    💡 <em>Support pédagogique pour la prise en main de LightBurn, l'optimisation des parcours d'usinage et la prévention des accidents de fabrication.</em>
+  </p>
+</div>
+
+::: tip Équipement et sécurité au FabLab HECh
+Au FabLab de la HECh, vous disposez d'une découpeuse laser professionnelle équipée d'un plateau nid d'abeille et d'un extracteur de fumées raccordé à l'extérieur. 
+- Ne jamais ouvrir le capot pendant que le faisceau laser est en fonctionnement.
+- Vérifier systématiquement la mise en route de l'assistance d'air (*air assist*) et de la ventilation d'extraction avant de lancer le programme.
+- Restez présent à proximité immédiate de la machine pendant toute la durée de la fabrication.
+:::
+
+---
+
+## 🎓 Auto-évaluation & Réflexivité (6.5)
+
+Testez votre maîtrise des concepts de fabrication numérique, de vectorisation sous Inkscape et de pilotage machine sous LightBurn :
+
+<ClientOnly>
+  <QuizBox moduleId="09-1" moduleTitle="6.5 Fabriquer le plateau de jeu avec la découpeuse laser" />
+</ClientOnly>
+
+---
+
+## 📝 Exercice Pratique Associé : Exercice 12 (Découpeuse Laser & Plateau)
 
 <div class="callout-exercise" style="margin: 2rem 0;">
   <div class="callout-title">⚡ Exercice 12 — Découpeuse laser : Réalisation du plateau</div>
   <p>
     En groupe, concevez le fichier vectoriel du plateau de votre jeu de société et réalisez son prototypage physique à la découpeuse laser au FabLab de la HECh.
+  </p>
+  <p style="margin-top: 0.8rem; font-size: 0.95rem; color: var(--vp-c-text-2);">
+    Consultez le document de consignes complètes de l'Exercice 12 sur Google Docs pour découvrir les attendus d'évaluation, les gabarits vectoriels A3 recommandés et les créneaux d'accès aux machines du FabLab.
   </p>
   <div style="margin-top: 1.2rem;">
     <a 

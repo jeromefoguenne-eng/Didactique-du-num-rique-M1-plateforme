@@ -1586,6 +1586,96 @@ const MODULE_QUESTIONS = {
       ]
     }
   ],
+  '09-1': [
+    {
+      id: 'q1',
+      type: 'qcm',
+      title: "1. Intérêt pédagogique de la découpeuse laser dans les FMTTN",
+      text: "Selon le syllabus, pourquoi la découpeuse laser constitue-t-elle un outil particulièrement pertinent dans le cadre du cours de FMTTN (Formation Manuelle, Technique, Technologique et Numérique) ?",
+      options: [
+        "Parce qu'elle se situe précisément à l'intersection des dimensions manuelle, technique, technologique et numérique, transformant l'élève de simple consommateur en concepteur et producteur à travers une démarche de résolution de problème.",
+        "Parce qu'elle permet d'éviter tout apprentissage de logiciels informatiques en automatisant entièrement la pensée de l'élève.",
+        "Parce qu'elle remplace définitivement l'ensemble des travaux manuels et artisanaux par une machine industrielle autonome.",
+        "Parce qu'elle utilise un laser ultraviolet sans aucun danger ni besoin d'extraction d'air."
+      ],
+      correctIndex: 0,
+      points: 3,
+      explanation: "La découpeuse laser concrétise l'articulation FMTTN : l'élève part d'un besoin réel, conçoit numériquement, calibre des paramètres physiques et analyse le résultat tangible."
+    },
+    {
+      id: 'q2',
+      type: 'qcm',
+      title: "2. Image matricielle vs Tracé vectoriel (Canva vers Inkscape)",
+      text: "Pourquoi le syllabus préconise-t-il une étape de vectorisation dans Inkscape plutôt que d'envoyer directement l'image PNG exportée de Canva à la découpeuse laser ?",
+      options: [
+        "Parce que Canva efface automatiquement toutes les images après 10 minutes.",
+        "Parce qu'une image PNG matricielle est constituée d'une grille fixe de pixels, alors qu'une découpeuse laser travaille avec une précision géométrique optimale à partir de tracés vectoriels définis mathématiquement (chemins de découpe et contours).",
+        "Parce que le logiciel Inkscape est obligatoire sous peine d'endommager la carte mère de la découpeuse.",
+        "Parce que le format SVG est le seul format lisible par un vidéoprojecteur de classe."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Le laser suit des coordonnées vectorielles continues (chemins) pour couper ou graver avec netteté, contrairement aux pixels d'une image matricielle qui créent des contours flous ou crénelés."
+    },
+    {
+      id: 'q3',
+      type: 'qcm',
+      title: "3. Différenciation Découpe vs Gravure dans LightBurn",
+      text: "Dans le logiciel de pilotage LightBurn, quel procédé technique permet de signifier à la machine quels éléments doivent être découpés et lesquels doivent être gravés sur le plateau de jeu ?",
+      options: [
+        "L'assignation de calques de couleurs différentes (ex. Noir pour la gravure des textes/illustrations, Rouge pour la découpe du contour extérieur et Bleu pour les perçages).",
+        "L'obligation de peindre le bois avec des feutres indélébiles avant de l'insérer dans la machine.",
+        "Le changement manuel de la lentille laser au milieu de l'opération pendant que le laser fonctionne.",
+        "L'utilisation exclusive de lettres majuscules pour la découpe et de lettres minuscules pour la gravure."
+      ],
+      correctIndex: 0,
+      points: 3,
+      explanation: "Dans LightBurn, chaque couleur de calque correspond à un mode d'opération distinct (Cut, Scan/Fill) avec ses propres réglages de vitesse, puissance et nombre de passages."
+    },
+    {
+      id: 'q4',
+      type: 'qcm',
+      title: "4. Ordre chronologique des opérations laser",
+      text: "Pourquoi est-il impératif de paramétrer l'ordre des opérations pour effectuer la gravure des éléments graphiques AVANT la découpe du contour extérieur du plateau ?",
+      options: [
+        "Parce que le laser chauffe trop s'il découpe en premier.",
+        "Parce que les cartouches d'encre de la machine s'épuisent plus vite lors de la découpe.",
+        "Parce que si le plateau était découpé en premier, la pièce détachée risquerait de bouger, de vibrer ou de basculer sur le nid d'abeille, ruinant la précision des gravures ultérieures.",
+        "Parce que le règlement de sécurité de l'école interdit d'inverser les couleurs dans LightBurn."
+      ],
+      correctIndex: 2,
+      points: 3,
+      explanation: "La pièce doit rester solidaire de la plaque brute pour conserver une stabilité parfaite pendant que la tête laser exécute les gravures fines et les perçages intérieurs."
+    },
+    {
+      id: 'q5',
+      type: 'qcm',
+      title: "5. Simulation Preview et démarche expérimentale sur chutes",
+      text: "Quelle double précaution méthodologique le syllabus recommande-t-il avant de lancer la fabrication définitive d'un plateau A3 à la découpeuse laser ?",
+      options: [
+        "Lancer immédiatement la découpe à puissance maximale sans regarder l'écran.",
+        "Faire une prière et éteindre l'extracteur d'air pour économiser l'électricité.",
+        "Utiliser la fonction Preview pour simuler les trajectoires et temps d'exécution, puis réaliser un test préliminaire sur une chute du même matériau pour valider le triplet vitesse/puissance/passes.",
+        "Demander à l'agent d'entretien de découper le plateau à la scie sauteuse manuelle."
+      ],
+      correctIndex: 2,
+      points: 3,
+      explanation: "La simulation numérique (Preview) évite les erreurs de parcours et le test sur chute permet d'ajuster expérimentalement la gravure et la découpe en fonction des réactions réelles du matériau."
+    },
+    {
+      id: 'q6',
+      type: 'open',
+      title: "6. Analyse réflexive sur la réalisation du plateau (Exercice 12 — Découpeuse laser)",
+      text: "Dans le cadre de l'Exercice 12 (Réalisation du plateau de jeu à la découpeuse laser), analysez votre démarche : comment avez-vous structuré votre plateau sous Canva pour qu'il fonctionne comme une interface lisible (cases, zones cartes, marges techniques) ? Quelles difficultés avez-vous rencontrées lors de la vectorisation sous Inkscape ou du paramétrage sous LightBurn (calques découpe/gravure, gestion de l'échelle A3, essais sur chutes) ? Enfin, comment exploiteriez-vous cette situation d'apprentissage avec des élèves en valorisant la démarche d'essais-erreurs ?",
+      points: 5,
+      modelAnswer: "Exemple de retour réflexif : Pour notre jeu, nous avons conçu un plateau A3 horizontal sous Canva en intégrant des marges de sécurité de 10 mm et des emplacements réservés pour les cartes de jeu. Lors du passage sous Inkscape, la vectorisation par seuil de luminosité a nécessité d'épurer les petits détails pour éviter un crénelage excessif du bois. Dans LightBurn, nous avons séparé les éléments en deux calques : calque noir en mode remplissage (vitesse 300 mm/s, puissance 20%) pour graver le logo et le parcours, et calque rouge en mode ligne (vitesse 15 mm/s, puissance 80%, 2 passes) pour découper les contours extérieurs. Le test sur une chute de MDF 3 mm a révélé de légères traces de brûlure que nous avons atténuées en augmentant la vitesse. En classe de secondaire (FMTTN), cette démarche transforme l'erreur en levier pédagogique : tester sur chute permet aux élèves de confronter le modèle virtuel aux contraintes physiques réelles de la matière.",
+      rubricCriteria: [
+        "Explicitation de la conception du plateau en tant qu'interface ergonomique de jeu.",
+        "Maîtrise technique de la chaîne numérique (Canva -> Inkscape -> LightBurn) et différenciation découpe/gravure.",
+        "Réflexion didactique sur la démarche d'essais-erreurs et l'expérimentation matérielle en classe FMTTN."
+      ]
+    }
+  ],
   '09': [
     {
       id: 'q1',

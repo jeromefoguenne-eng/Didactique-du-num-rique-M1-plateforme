@@ -153,7 +153,7 @@ Il n'est pas obligatoire de passer par une image générée par IA. Il est tout 
 
 **Tinkercad** est une application web gratuite de conception 3D, particulièrement adaptée aux débutants et au milieu scolaire. Elle permet de créer des objets en assemblant, déplaçant, redimensionnant et combinant des formes élémentaires (cubes, cylindres, sphères, cônes, etc.).
 
-<div style="display: flex; gap: 12px; flex-wrap: wrap; margin: 1.5rem 0;">
+<div style="display: flex; gap: 12px; flex-wrap: wrap; margin: 1.2rem 0;">
   <a 
     href="https://www.tinkercad.com/" 
     target="_blank" 
@@ -163,15 +163,37 @@ Il n'est pas obligatoire de passer par une image générée par IA. Il est tout 
   >
     <span>🌐 Ouvrir l'application web Tinkercad ↗</span>
   </a>
-  <a 
-    href="https://www.youtube.com/watch?v=XL1XVV6gQ9E" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    class="btn-secondary"
-    style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: #1e293b !important; padding: 10px 18px; border-radius: 8px; font-weight: 600; background: #e2e8f0; border: 1px solid #cbd5e1;"
-  >
-    <span>📺 Voir le tutoriel vidéo pour débutants sur YouTube ↗</span>
-  </a>
+</div>
+
+<div class="callout-concept" style="margin: 1.8rem 0;">
+  <div class="callout-title">🎬 Tutoriel Vidéo : Débuter et modéliser avec Tinkercad</div>
+  <p>
+    <strong>Prise en main pas-à-pas de Tinkercad pour débutants.</strong><br />
+    Découvrez comment manipuler le plan de construction, assembler et redimensionner des formes géométriques primaires (cubes, cylindres, cônes), utiliser les fonctions d'alignement et de perçage, et exporter votre pièce en fichier STL prêt pour le tranchage.
+  </p>
+
+  <div style="text-align: center; margin: 1.2rem 0;">
+    <a 
+      href="https://www.youtube.com/watch?v=XL1XVV6gQ9E" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      style="display: inline-block; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.18); border: 2px solid var(--vp-c-divider); max-width: 580px; width: 100%; text-decoration: none;"
+      title="Cliquer pour visionner le tutoriel vidéo Tinkercad sur YouTube"
+    >
+      <img 
+        src="/images/vignette-tinkercad.jpg" 
+        alt="Vignette tutoriel vidéo Tinkercad pour débutants" 
+        style="width: 100%; height: auto; display: block; object-fit: cover;" 
+      />
+      <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white; padding: 12px 16px; font-size: 0.92rem; font-weight: 700; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <span>▶️ Cliquer sur l'image pour lancer le tutoriel Tinkercad sur YouTube ↗</span>
+      </div>
+    </a>
+  </div>
+
+  <p style="font-size: 0.85rem; color: var(--vp-c-text-2); text-align: center; margin: 0.5rem 0 0 0;">
+    💡 <em>Support d'apprentissage vidéo pour concevoir directement des pions géométriques stables et réguliers.</em>
+  </p>
 </div>
 
 #### Comment créer un pion pas-à-pas avec Tinkercad ?
@@ -218,11 +240,10 @@ Il existe également des outils payants très performants sur le marché (tels q
         controls 
         playsinline 
         preload="metadata" 
-        :poster="$withBase('/images/tuto-impression-3d-poster.jpg')"
-        :src="$withBase('/videos/tuto-impression-3d.mp4')"
+        poster="/images/tuto-impression-3d-poster.jpg"
         style="width: 100%; height: auto; display: block; background: #000; border-radius: 10px;"
       >
-        <source :src="$withBase('/videos/tuto-impression-3d.mp4')" type="video/mp4" />
+        <source src="/videos/tuto-impression-3d.mp4" type="video/mp4" />
         Votre navigateur ne prend pas en charge la lecture directe de vidéos HTML5.
       </video>
     </div>

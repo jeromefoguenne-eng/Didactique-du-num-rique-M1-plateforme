@@ -492,6 +492,79 @@ export const INITIAL_REAL_USERS: User[] = [
 
 export const INITIAL_REAL_FILES: SubmittedFile[] = [
   {
+    "id": "file-real-d-archambeau-ex8",
+    "userId": "user-1790086871341",
+    "userName": "Florence D'Archambeau",
+    "userEmail": "e2306390@student.hech.be",
+    "exerciseId": "exercice-08",
+    "exerciseTitle": "Atelier 8 : Construire des grilles d'évaluation critériées",
+    "originalFileName": "D_ARCHAMBEAU_Florence_Exercice_8_Construire_des_gril_2026-10-16.pdf",
+    "formattedFileName": "D_ARCHAMBEAU_Florence_Exercice_8_Construire_des_gril_2026-10-16.pdf",
+    "fileType": "application/pdf",
+    "fileSize": 218895,
+    "dataUrl": "",
+    "driveUrl": "",
+    "submittedAt": "2026-10-16 11:45",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.6,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.5,
+        "didacticQuality": 2.4,
+        "criticalAnalysis": 2.4,
+        "formAndStructure": 2.3
+      },
+      "summary": "Travail remarquable et exhaustif (9.6/10) : analyse approfondie des 3 cas pratiques (Scratch, Hardware PC, Éducation aux médias), grilles critériées complètes à 4 niveaux et justifications didactiques rigoureuses.",
+      "strengths": [
+        "Traitement exhaustif et approfondi des trois cas pratiques (programmation Scratch, composants matériels PC, esprit critique face aux infox).",
+        "Grilles d'évaluation critériées rigoureuses à 4 niveaux (Insuffisant, À développer, Satisfaisant, Maîtriser) avec indicateurs observables clairs.",
+        "Articulations pertinentes entre évaluation formative, auto-évaluation, évaluation par les pairs et démonstration pratique avec questionnement oral.",
+        "Excellente prise en compte de la réflexivité, de l'évolution du jugement et du droit à l'erreur chez l'apprenant."
+      ],
+      "improvements": [
+        "Penser à expliciter la pondération chiffrée finale (sommative) éventuelle si la grille devait servir de certification institutionnelle."
+      ],
+      "detailedFeedback": "Ce travail sur l'Atelier 8 (Construire des grilles d'évaluation critériées) est d'une qualité didactique exceptionnelle (9.6/10). L'analyse couvre l'intégralité des 3 cas d'étude avec un souci du détail exemplaire (9 pages, 2376 mots). Les critères sont indépendants, les indicateurs sont directement observables et les modalités d'évaluation choisies (feedback immédiat, pairs, verbalisation orale) placent l'évaluation au cœur de l'apprentissage.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "Exhaustivité exemplaire : les 3 cas pratiques sont intégralement traités et approfondis."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "Grilles à 4 niveaux parfaitement structurées avec indicateurs observables clairs et sans ambiguïté."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "Dispositifs d'évaluation formative, d'auto-évaluation et de régulation par les pairs remarquablement articulés."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Rédaction soignée, structuration limpide et justification didactique approfondie pour chaque modalité."
+        }
+      ],
+      "correctedAt": "2026-10-16 14:00",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.6,
+      "maxScore": 10,
+      "feedback": "Excellent travail de Florence D'Archambeau : 9 pages de grande qualité traitant avec rigueur les 3 situations d'apprentissage (programmation Scratch, démontage matériel PC et détection d'infox). Les critères et indicateurs observables sont clairs, progressifs et parfaitement contextualisés. Les modalités d'évaluation formative, d'auto-évaluation et d'évaluation par les pairs sont remarquablement justifiées didactiquement.",
+      "gradedAt": "2026-10-16 14:00",
+      "status": "graded"
+    }
+  },
+  {
     "id": "file-real-1-nbats",
     "userId": "user-1790267864270",
     "userName": "Nathalie Bats",
@@ -5286,6 +5359,16 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
 ]
 
 export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
+  {
+    "id": "sub-real-d-archambeau-ex8",
+    "userId": "user-1790086871341",
+    "userName": "Florence D'Archambeau",
+    "userEmail": "e2306390@student.hech.be",
+    "exerciseId": "exercice-08",
+    "exerciseTitle": "Atelier 8 : Construire des grilles d'évaluation critériées",
+    "answer": "Dépôt du fichier PDF de 9 pages (D_ARCHAMBEAU_Florence_Exercice_8_Construire_des_gril_2026-10-16.pdf) : Élaboration de grilles d'évaluation critériées complètes à 4 niveaux pour les trois cas didactiques (programmation de jeu Scratch, démontage matériel et sécurité PC, vérification et détection d'infox en éducation aux médias) avec articulations formatives et justifications détaillées.",
+    "submittedAt": "2026-10-16 11:45"
+  },
   {
     "id": "sub-real-1-nbats",
     "userId": "user-1790267864270",

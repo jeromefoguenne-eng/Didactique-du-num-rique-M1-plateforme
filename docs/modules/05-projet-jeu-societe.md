@@ -42,8 +42,8 @@ const subCategories = [
   },
   {
     title: "6.6 Réaliser des pions grâce à l'imprimante 3D",
-    tag: "En construction",
-    desc: "Modélisation 3D, tranchage et impression des pions personnalisés au FabLab HECh.",
+    tag: "Impression 3D",
+    desc: "Modélisation 3D, IA générative, tranchage et impression des pions personnalisés au FabLab HECh.",
     link: "/modules/09-pions-3d",
     image: "/images/subcategories/sub-6-6-hardware.jpg"
   },

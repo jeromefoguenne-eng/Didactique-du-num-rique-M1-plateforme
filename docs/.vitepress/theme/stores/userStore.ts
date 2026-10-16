@@ -1415,7 +1415,7 @@ function generateDidacticAiCorrection(file: SubmittedFile, textContent: string =
   }
 
   // CAS 3 : TRAVAIL CONFORME — ÉVALUATION CRITÉRIÉE NUANCÉE ET CONTINUE
-  // Permet d'obtenir toute la plage de notes réelles : 7.0, 7.5, 8.0, 8.5, 9.0, 9.5 / 10
+  // Permet d'obtenir toute la plage de notes réelles : de 4.0 à 9.5 / 10
   
   // Détection de travaux d'excellence pour l'Exercice 2 (recherche scientifique Hjetland / Frontiers in Psychiatry / JAMA / 24 min vs 2h)
   const normText = normalizeTextForAi(textContent)
@@ -1424,43 +1424,86 @@ function generateDidacticAiCorrection(file: SubmittedFile, textContent: string =
     (normText.includes('24') || normText.includes('minute') || normText.includes('deux heures') || normText.includes('2 heures') || normText.includes('scroller') || normText.includes('operationnalis'))
   )
 
-  // Critère A (Concordance aux consignes, 0-2.5) : basé sur le ratio des concepts requis abordés
+  // Critère A (Concordance aux consignes & Exhaustivité, 0-2.5) : basé sur le ratio des concepts/étapes abordés
   const totalConcepts = p.conceptClusters ? p.conceptClusters.length : p.requiredKeywords.length
   const reqFraction = foundReq.length / Math.max(1, totalConcepts)
-  let c1 = isEx2ScientificMastery ? 2.5 : Math.min(2.5, Math.max(1.8, Math.round((1.5 + (reqFraction * 0.9)) * 10) / 10))
+  let c1 = 1.0
+  if (isEx2ScientificMastery) {
+    c1 = 2.5
+  } else if (reqFraction >= 0.8) {
+    c1 = 2.2 + (reqFraction >= 1.0 ? 0.3 : 0.1)
+  } else if (reqFraction >= 0.5) {
+    c1 = 1.6 + (reqFraction * 0.8)
+  } else if (reqFraction >= 0.25) {
+    c1 = 1.2 + (reqFraction * 0.8)
+  } else {
+    c1 = 1.0
+  }
+  c1 = Math.min(2.5, Math.max(0.8, Math.round(c1 * 10) / 10))
 
-  // Critère B (Exactitude conceptuelle, 0-2.5) : basé sur la richesse du lexique didactique et scientifique
+  // Critère B (Exactitude conceptuelle & Maîtrise didactique, 0-2.5) : basé sur la densité conceptuelle réelle
   const domCount = foundDom.length
-  let c2 = 1.8
-  if (isEx2ScientificMastery) c2 = 2.4
-  else if (domCount >= 8 || wordsCount >= 300) c2 = 2.3
-  else if (domCount >= 5 || wordsCount >= 200) c2 = 2.1
-  else c2 = 1.9
+  let c2 = 1.0
+  if (isEx2ScientificMastery) {
+    c2 = 2.5
+  } else if (domCount >= 10 && wordsCount >= 350) {
+    c2 = 2.4
+  } else if (domCount >= 7 && wordsCount >= 250) {
+    c2 = 2.1
+  } else if (domCount >= 4 && wordsCount >= 150) {
+    c2 = 1.8
+  } else if (domCount >= 2) {
+    c2 = 1.4
+  } else {
+    c2 = 1.0
+  }
+  c2 = Math.min(2.5, Math.max(0.8, Math.round(c2 * 10) / 10))
 
-  // Critère C & D (Analyse critique et transfert, 0-2.5) : basé sur la consistance et l'argumentation
-  let c3 = 1.8
-  if (isEx2ScientificMastery) c3 = 2.3
-  else if (wordsCount >= 350) c3 = 2.3
-  else if (wordsCount >= 220) c3 = 2.1
-  else c3 = 1.9
+  // Critère C & D (Analyse critique, opérationnalisation & transfert, 0-2.5)
+  // Valorise l'argumentation pédagogique et l'ancrage vers les élèves de secondaire
+  let c3 = 1.0
+  if (isEx2ScientificMastery) {
+    c3 = 2.3
+  } else if (wordsCount >= 400 && domCount >= 6) {
+    c3 = 2.3
+  } else if (wordsCount >= 250 && domCount >= 4) {
+    c3 = 2.0
+  } else if (wordsCount >= 150) {
+    c3 = 1.6
+  } else if (wordsCount >= 70) {
+    c3 = 1.2
+  } else {
+    c3 = 0.9
+  }
+  c3 = Math.min(2.5, Math.max(0.8, Math.round(c3 * 10) / 10))
 
-  // Critère E & H (Communication et réflexivité, 0-2.5) : clarté, posture et articulation
-  let c4 = 1.8
-  if (isEx2ScientificMastery) c4 = 2.3
-  else if (wordsCount >= 250 && domCount >= 5) c4 = 2.2
-  else c4 = 1.9
+  // Critère E & H (Communication, structure & réflexivité, 0-2.5)
+  let c4 = 1.0
+  if (isEx2ScientificMastery) {
+    c4 = 2.2
+  } else if (wordsCount >= 300 && domCount >= 5) {
+    c4 = 2.2
+  } else if (wordsCount >= 180) {
+    c4 = 1.9
+  } else if (wordsCount >= 80) {
+    c4 = 1.5
+  } else {
+    c4 = 1.1
+  }
+  c4 = Math.min(2.5, Math.max(0.8, Math.round(c4 * 10) / 10))
 
-  // Total arrondi au demi-point le plus proche (ex: 7.5, 8.0, 8.5, 9.0, 9.5)
+  // Calcul du total réel sans palier artificiel de 6.5
   const sumRaw = c1 + c2 + c3 + c4
-  let finalScore = isEx2ScientificMastery ? 9.5 : Math.round(sumRaw * 2) / 2
-  finalScore = Math.max(6.5, Math.min(9.5, finalScore))
+  let finalScore = isEx2ScientificMastery ? 9.5 : Math.round(sumRaw * 10) / 10
+  finalScore = Math.max(3.5, Math.min(9.8, finalScore))
 
   // Qualification pédagogique
   let appreciation = ""
   if (finalScore >= 9.0) appreciation = "Excellente production didactique"
   else if (finalScore >= 8.0) appreciation = "Très bon travail, rigoureux et pertinent"
   else if (finalScore >= 7.0) appreciation = "Bon travail, attendus maîtrisés"
-  else appreciation = "Travail satisfaisant"
+  else if (finalScore >= 5.5) appreciation = "Travail satisfaisant mais perfectible"
+  else appreciation = "Travail incomplet nécessitant un approfondissement"
 
   // Construction des points forts réels
   const strengths: string[] = []
@@ -3455,15 +3498,15 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
       if (!isDone) {
         aiScore = 0
         aiSummary = 'Exercice non rendu (0 pt)'
-      } else if (file?.aiCorrection?.suggestedScore !== undefined) {
-        const rawScore = Number(file.aiCorrection.suggestedScore) || 8.5
+      } else if (file?.aiCorrection?.suggestedScore !== undefined && file.aiCorrection.suggestedScore !== null) {
+        const rawScore = Number(file.aiCorrection.suggestedScore)
         // Mise à l'échelle sur le barème max de l'élément (ex: 100 pts, 10 pts ou 0 pt)
         aiScore = def.maxPoints > 0 ? Math.round(((rawScore / 10) * def.maxPoints) * 10) / 10 : 0
         aiSummary = file.aiCorrection.summary || 'Devoir analysé par l\'IA'
       } else if (def.maxPoints > 0) {
-        // Devoir remis sans rapport IA spécifique : note formative par défaut à 85% du max
-        aiScore = Math.round((def.maxPoints * 0.85) * 10) / 10
-        aiSummary = 'Travail déposé en attente de validation'
+        // Devoir remis en attente d'évaluation : pas de note artificielle
+        aiScore = 0
+        aiSummary = file?.aiCorrection?.summary || 'Travail déposé en attente de validation'
       }
 
       // Cote enseignant enregistrée (ou reprise de l'ancienne évaluation)

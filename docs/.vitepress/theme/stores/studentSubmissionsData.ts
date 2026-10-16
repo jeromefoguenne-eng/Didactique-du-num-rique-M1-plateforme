@@ -9,451 +9,484 @@ export const INITIAL_REAL_USERS: User[] = [
     "email": "sarah.dubois@student.hech.be",
     "firstName": "Sarah",
     "lastName": "Dubois",
-    "role": "student",
+    "password": "",
+    "passwordSet": false,
     "registeredAt": "2026-09-30T06:15:55.275Z",
     "status": "active",
-    "password": "",
-    "passwordSet": false
+    "role": "student"
   },
   {
     "id": "user-1790748956449",
     "email": "maxime.lambert@student.hech.be",
     "firstName": "Maxime",
     "lastName": "Lambert",
-    "role": "student",
+    "password": "etudiant2026",
+    "passwordSet": true,
     "registeredAt": "2026-09-30T06:15:56.450Z",
     "status": "active",
-    "password": "etudiant2026",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790748957166",
     "email": "thomas.bastien@student.hech.be",
     "firstName": "Thomas",
     "lastName": "Bastien",
-    "role": "student",
+    "password": "etudiant2026",
+    "passwordSet": true,
     "registeredAt": "2026-09-30T06:15:57.166Z",
     "status": "active",
-    "password": "etudiant2026",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1789634810517",
     "email": "jerome.foguenne@hech.be",
-    "firstName": "Jérôme",
+    "firstName": "jerome",
     "lastName": "Foguenne",
-    "role": "admin",
+    "password": "Ronald1984@",
+    "passwordSet": true,
     "registeredAt": "2026-09-17 08:46",
     "status": "active",
-    "password": "Ronald1984@",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790748466647",
     "email": "camille.testeur@student.hech.be",
     "firstName": "Camille",
     "lastName": "Testeur",
-    "role": "student",
+    "password": "testpassword2026",
+    "passwordSet": true,
     "registeredAt": "2026-09-30 06:07",
     "status": "active",
-    "password": "testpassword2026",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-auto-test",
     "email": "lucas.direct@student.hech.be",
     "firstName": "Lucas",
     "lastName": "Direct",
-    "role": "student",
+    "password": "monmotdepasse",
+    "passwordSet": true,
     "registeredAt": "2026-09-23 09:00",
     "status": "active",
-    "password": "monmotdepasse",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790087067817",
     "email": "josephine.staffe@student.hech.be",
     "firstName": "Joséphine",
     "lastName": "Staffe",
-    "role": "student",
+    "password": "Phine@79",
+    "passwordSet": true,
     "registeredAt": "2026-09-22 14:24",
     "status": "active",
-    "password": "Phine@79",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790087728833",
-    "email": "caroline.hockers@student.hech.be",
+    "email": "hockers.caroline@outlook.com",
     "firstName": "Caroline",
     "lastName": "Hockers",
-    "role": "student",
+    "password": "Line010293@",
+    "passwordSet": true,
     "registeredAt": "2026-09-22 14:35",
     "status": "active",
-    "password": "Line010293@",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790086815448",
     "email": "e2604966@student.hech.be",
     "firstName": "Nathalie",
     "lastName": "D'accardo",
-    "role": "student",
+    "password": "1234",
+    "passwordSet": true,
     "registeredAt": "2026-09-22 14:20",
     "status": "active",
-    "password": "1234",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790088747296",
     "email": "e141977@student.hech.be",
     "firstName": "Stephanie",
     "lastName": "Mülverstedt",
-    "role": "student",
+    "password": "CemnO4me.",
+    "passwordSet": true,
     "registeredAt": "2026-09-22 14:52",
     "status": "active",
-    "password": "CemnO4me.",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790086794458",
     "email": "dalia.smaali@student.hech.be",
     "firstName": "Dalia",
     "lastName": "Smaali",
-    "role": "student",
+    "password": "Vicenza1830*",
+    "passwordSet": true,
     "registeredAt": "2026-09-22 14:19",
     "status": "active",
-    "password": "Vicenza1830*",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790163391889",
     "email": "chloe.steckx@student.hech.be",
     "firstName": "Chloé",
     "lastName": "Steckx",
-    "role": "student",
+    "password": "#Porcinet2003",
+    "passwordSet": true,
     "registeredAt": "2026-09-23 11:36",
     "status": "active",
-    "password": "#Porcinet2003",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790086699294",
     "email": "aurelie.schreurs@student.hech.be",
     "firstName": "Aurélie",
     "lastName": "Schreurs",
-    "role": "student",
+    "password": "aureetju250608",
+    "passwordSet": true,
     "registeredAt": "2026-09-22 14:18",
     "status": "active",
-    "password": "aureetju250608",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790087241045",
     "email": "e2303712@student.hech.be",
     "firstName": "Michael",
     "lastName": "Jamar",
-    "role": "student",
+    "password": "Bg3mm",
+    "passwordSet": true,
     "registeredAt": "2026-09-22 14:27",
     "status": "active",
-    "password": "Bg3mm",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790086778709",
     "email": "j.wasterlain@student.hech.be",
     "firstName": "Justin",
     "lastName": "Wasterlain",
-    "role": "student",
+    "password": "Just99!!",
+    "passwordSet": true,
     "registeredAt": "2026-09-22 14:19",
     "status": "active",
-    "password": "Just99!!",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790088167344",
-    "email": "daphne.depuis@student.hech.be",
+    "email": "daphne.depuis@gmail.com",
     "firstName": "Daphné",
     "lastName": "Depuis",
-    "role": "student",
+    "password": "1234",
+    "passwordSet": true,
     "registeredAt": "2026-09-22 14:42",
     "status": "active",
-    "password": "1234",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790108903773",
     "email": "jonathan.valenzano@student.hech.be",
     "firstName": "Jonathan",
     "lastName": "Valenzano",
-    "role": "student",
+    "password": "Numerique302",
+    "passwordSet": true,
     "registeredAt": "2026-09-22 20:28",
     "status": "active",
-    "password": "Numerique302",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790086820996",
     "email": "e161029@student.hech.be",
     "firstName": "Jordan",
     "lastName": "Casamento",
-    "role": "student",
+    "password": "Syadchloda021097",
+    "passwordSet": true,
     "registeredAt": "2026-09-22 14:20",
     "status": "active",
-    "password": "Syadchloda021097",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790086808994",
     "email": "e2505429@student.hech.be",
     "firstName": "Juliette",
     "lastName": "Renard",
-    "role": "student",
+    "password": "R@monhappy77",
+    "passwordSet": true,
     "registeredAt": "2026-09-22 14:20",
     "status": "active",
-    "password": "R@monhappy77",
-    "passwordSet": true
+    "role": "student"
+  },
+  {
+    "id": "user-1790171235999",
+    "email": "caroline.hockers@outlook.com",
+    "firstName": "Caroline",
+    "lastName": "Hockers",
+    "password": "Line010293@",
+    "passwordSet": true,
+    "registeredAt": "2026-09-23 13:47",
+    "status": "active",
+    "role": "student"
   },
   {
     "id": "user-1790086813518",
     "email": "julien.esposito@student.hech.be",
     "firstName": "Julien",
     "lastName": "Esposito",
-    "role": "student",
+    "password": "Monica10329.",
+    "passwordSet": true,
     "registeredAt": "2026-09-22 14:20",
     "status": "active",
-    "password": "Monica10329.",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790086792053",
     "email": "alexiane.collard@student.hech.be",
     "firstName": "Alexiane",
     "lastName": "Collard",
-    "role": "student",
+    "password": "g@5Wfzjt",
+    "passwordSet": true,
     "registeredAt": "2026-09-22 14:19",
     "status": "active",
-    "password": "g@5Wfzjt",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790086816015",
     "email": "vanhee.anais.mail@gmail.com",
     "firstName": "Anaïs",
     "lastName": "Vanhee",
-    "role": "student",
+    "password": "Siana17/07",
+    "passwordSet": true,
     "registeredAt": "2026-09-22 14:20",
     "status": "active",
-    "password": "Siana17/07",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790107355120",
     "email": "ctp.truong@student.hech.be",
     "firstName": "Thien",
     "lastName": "Truong",
-    "role": "student",
+    "password": "Tikazia13*",
+    "passwordSet": true,
     "registeredAt": "2026-09-22 20:02",
     "status": "active",
-    "password": "Tikazia13*",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790189590610",
     "email": "sabrina.siragusa@student.hech.be",
     "firstName": "Sabrina",
     "lastName": "Siragusa",
-    "role": "student",
+    "password": "Elephant1!",
+    "passwordSet": true,
     "registeredAt": "2026-09-23 18:53",
     "status": "active",
-    "password": "Elephant1!",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790086871341",
     "email": "e2306390@student.hech.be",
     "firstName": "Florence",
-    "lastName": "D'Archambeau",
-    "role": "student",
+    "lastName": "D’Archambeau",
+    "password": "Geebeeleo4554.",
+    "passwordSet": true,
     "registeredAt": "2026-09-22 14:21",
     "status": "active",
-    "password": "Geebeeleo4554.",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790101734242",
     "email": "vincianne.schoonbroodt@student.hech.be",
     "firstName": "Vincianne",
     "lastName": "SCHOONBROODT",
-    "role": "student",
+    "password": "Rivageois75@",
+    "passwordSet": true,
     "registeredAt": "2026-09-22 18:28",
     "status": "active",
-    "password": "Rivageois75@",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790267864270",
     "email": "nbats@student.hech.be",
     "firstName": "Nathalie",
     "lastName": "Bats",
-    "role": "student",
+    "password": "Jetudie",
+    "passwordSet": true,
     "registeredAt": "2026-09-24 16:37",
     "status": "active",
-    "password": "Jetudie",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "usr-1",
     "email": "lucas.mercier@student.hech.be",
     "firstName": "Lucas",
     "lastName": "Mercier",
-    "role": "student",
+    "password": "hech",
+    "passwordSet": true,
     "registeredAt": "2026-09-20 09:30",
     "status": "active",
-    "password": "hech",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "usr-2",
     "email": "camille.renard@student.hech.be",
     "firstName": "Camille",
     "lastName": "Renard",
-    "role": "student",
+    "password": "hech",
+    "passwordSet": true,
     "registeredAt": "2026-09-20 10:15",
     "status": "active",
-    "password": "hech",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790086729864",
     "email": "laura.mokeddem@student.hech.be",
     "firstName": "Laura",
     "lastName": "Mokeddem",
-    "role": "student",
+    "password": "Choupie1510/",
+    "passwordSet": true,
     "registeredAt": "2026-09-22 14:18",
     "status": "active",
-    "password": "Choupie1510/",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790341332326",
     "email": "e142655@student.hech.be",
     "firstName": "Marielle",
     "lastName": "Van Dijk",
-    "role": "student",
+    "password": "01Sep2026!",
+    "passwordSet": true,
     "registeredAt": "2026-09-25 13:02",
     "status": "active",
-    "password": "01Sep2026!",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790341470352",
     "email": "g.vromen@student.hech.be",
     "firstName": "Gérard",
     "lastName": "Vromen",
-    "role": "student",
+    "password": "Mayagg04*",
+    "passwordSet": true,
     "registeredAt": "2026-09-25 13:04",
     "status": "active",
-    "password": "Mayagg04*",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790343401573",
     "email": "e2301886@student.hech.be",
     "firstName": "Emma",
     "lastName": "DI MASCIA",
-    "role": "student",
+    "password": "Em-Ol1610",
+    "passwordSet": true,
     "registeredAt": "2026-09-25 13:36",
     "status": "active",
-    "password": "Em-Ol1610",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790086853720",
     "email": "victor.weishaupt@student.hech.be",
     "firstName": "Victor",
     "lastName": "Weishaupt",
-    "role": "student",
+    "password": "Vic060105,",
+    "passwordSet": true,
     "registeredAt": "2026-09-22 14:20",
     "status": "active",
-    "password": "Vic060105,",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790343751310",
     "email": "mathis.rodes@student.hech.be",
     "firstName": "Mathis",
     "lastName": "Rodès",
-    "role": "student",
+    "password": "Salomemathis0233@",
+    "passwordSet": true,
     "registeredAt": "2026-09-25 13:42",
     "status": "active",
-    "password": "Salomemathis0233@",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790345777275",
     "email": "e2301877@student.hech.be",
     "firstName": "Amélie",
     "lastName": "Sarlet",
-    "role": "student",
+    "password": "Mariehelene@1406",
+    "passwordSet": true,
     "registeredAt": "2026-09-25 14:16",
     "status": "active",
-    "password": "Mariehelene@1406",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790345813088",
     "email": "e2306513@student.hech.be",
     "firstName": "Sara",
     "lastName": "Cheng",
-    "role": "student",
+    "password": "BJYXszd1085.",
+    "passwordSet": true,
     "registeredAt": "2026-09-25 14:16",
     "status": "active",
-    "password": "BJYXszd1085.",
-    "passwordSet": true
+    "role": "student"
+  },
+  {
+    "id": "user-1790171419944",
+    "email": "caroline.hockers@student.hech.be",
+    "firstName": "Caroline",
+    "lastName": "Hockers",
+    "password": "hech2026",
+    "passwordSet": true,
+    "registeredAt": "2026-09-23 13:50",
+    "status": "active",
+    "role": "student"
   },
   {
     "id": "user-1790086705048",
     "email": "olivier.henrion@student.hech.be",
     "firstName": "Olivier",
     "lastName": "Henrion",
-    "role": "student",
+    "password": "Chipoli1",
+    "passwordSet": true,
     "registeredAt": "2026-09-22 14:18",
     "status": "active",
-    "password": "Chipoli1",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790769304036",
     "email": "e2305392@student.hech.be",
     "firstName": "Amadou Bamba",
     "lastName": "Traoré",
-    "role": "student",
+    "password": "Notredame=90abt",
+    "passwordSet": true,
     "registeredAt": "2026-09-30 11:55",
     "status": "active",
-    "password": "Notredame=90abt",
-    "passwordSet": true
+    "role": "student"
   },
   {
     "id": "user-1790776932667",
     "email": "e142155@student.hech.be",
     "firstName": "Maude",
     "lastName": "Pierre",
-    "role": "student",
+    "password": "3V2LJ!NAr2gCnry",
+    "passwordSet": true,
     "registeredAt": "2026-09-30 14:02",
     "status": "active",
-    "password": "3V2LJ!NAr2gCnry",
-    "passwordSet": true
+    "role": "student"
+  },
+  {
+    "id": "user-1790087420453",
+    "email": "daphne.depuis@student.hech.be",
+    "firstName": "Daphné",
+    "lastName": "Depuis",
+    "password": "1234",
+    "passwordSet": true,
+    "registeredAt": "2026-09-22 14:30",
+    "status": "active",
+    "role": "student"
   },
   {
     "id": "user-1790845672868",
     "email": "e2608214@student.hech.be",
     "firstName": "Aurore",
     "lastName": "Dabolin",
-    "role": "student",
+    "password": "17061991metallicA",
+    "passwordSet": true,
     "registeredAt": "2026-10-01 09:07",
     "status": "active",
-    "password": "17061991metallicA",
-    "passwordSet": true
+    "role": "student"
   }
 ]
 
@@ -473,7 +506,63 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Nathalie Bats – Master S3 26/27\nExercice 1.1A − Compétent, partiellement \ncompétent ou incompétent ?\nLes 10 profils\nProfil 1 – Sarah\n \n   : l’experte en IA\n \n \nPARTIELLEMENT COMPÉTENTE\n●\nSait faire : prompts précis, reformuler des requêtes, résumer, générer d’idées. Elle est très à \nl’aise avec les chats IA.\n●\nLimites : elle accepte passivement les réponses de l’IA, n’identifie pas les sources \noriginales, ne détecte pas les informations fausses.\n●\nAdaptation / autonomie technique : oui, pour l’usage de l’outil.\n●\nRegard critique : quasi absent (principale limite).\n●\nResponsabilité : défaillante, car elle se déresponsabilise (« c’est l’IA qui a répondu ») au lieu\nde vérifier.\nElle a une maîtrise technique réelle, mais manque de pensée critique et de responsabilité : elle est \ncompétente sur une dimension seulement.\nProfil 2 – Thomas\n \n   : le débrouillard\n \n \nCOMPÉTENT\n●\nSait faire : rechercher un outil adapté à une tâche, comparer des options, apprendre via des \ntutoriels, expérimenter, produire un contenu adapté au public visé.\n●\nLimites : peu de logiciels maîtrisés au départ, il est peu à l’aise avec les nouvelles interfaces \n(mais il compense).\n●\nAdaptation : très forte, il sait faire face à la nouveauté.\n●\nAutonomie : cherche seul une solution avant de demander de l’aide.\n●\nRegard critique / responsabilité : évalue les outils, adapte sa production au demandeur. La \ncompétence numérique n’est pas la connaissance d’un outil précis mais la capacité à \napprendre à s’en servir : il agit de façon pertinente et autonome.\nProfil 3 – Lina\n \n   : la spécialiste des réseaux sociaux\n \n \nPARTIELLEMENT COMPÉTENTE\n1 / 4\n\nNathalie Bats – Master S3 26/27\n●\nSait faire : elle a une maîtrise experte de plusieurs réseaux, créer des contenus vidéo, \nanalyser des statistiques.\n●\nLimites : aucune conscience du consentement, du droit à l’image, de la conservation des \ndonnées ou des conséquences de la diffusion.\n●\nAdaptation / autonomie : probable dans son domaine, mais ça reste cantonné aux réseaux \nsociaux.\n●\nRegard critique : absent sur les enjeux éthiques et juridiques.\n●\nResponsabilité : très défaillante. Elle publie l’image d’autrui sans son consentement.\nBeaucoup d’habiletés techniques, mais une dimension centrale (droit, éthique, conséquences) qui \nest absente.\nProfil 4 – \n \n Hugo\n \n   : le sceptique\n \n \nCOMPÉTENT\n●\nSait faire : vérifier une information (source, date, auteur, recoupement), ne pas partager sans \nvérifier, trouver seul une ressource pour progresser.\n●\nLimites : peu d’habiletés techniques (logiciels, montages complexes).\n●\nAdaptation / autonomie : oui : il cherche des ressources pour progresser seul.\n●\nRegard critique : TB – croisement des sources, identification de l’auteur.\n●\nResponsabilité : oui, il ne diffuse pas sans vérifier.\nComme Thomas, il montre que la compétence numérique est avant tout une posture critique et \nautonome, pas une accumulation de réflexes techniques.\nProfil 5 – Julie\n \n   : l’experte des logiciels\n \n \nPARTIELLEMENT COMPÉTENTE\n●\nSait faire : usage avancé de nombreux logiciels bureautiques ; aider les autres.\n●\nLimites : elle refuse la nouveauté, confond compétence et nombre d’outils maîtrisés.\n●\nAdaptation : très faible car elle refuse d’expérimenter seule un nouvel outil.\n●\nAutonomie : dépend d’une formation ou d’explications pas-à-pas pour tout changement.\n●\nRegard critique / responsabilité : ??.\nCompétence technique qui est figée : elle se révèlerait vite incompétente dès qu’un de ses logiciels \nserait remplacé.\nProfil 6 – Mehdi\n \n   : le chercheur rapide\n \n \nPARTIELLEMENT COMPÉTENT\n●\nSait faire : rechercher efficacement et rapidement une information.\n2 / 4\n\nNathalie Bats – Master S3 26/27\n●\nLimites : il se contente des premiers résultats, n’analyse pas les sources, confond répétition \nd’une information et véracité.\n●\nAutonomie : technique seulement.\n●\nRegard critique : faible : il ne questionne ni l’auteur, ni la fiabilité.\n●\nResponsabilité : il risque de diffuser de fausses informations.\nBonne habileté sur les outils, mais l’esprit critique fait défaut.\nProfil 7 – Emma\n \n   : la prudente\n \n \nCOMPÉTENTE (ou partiellement compétente si on cherche aussi l’autonomie technique)\n●\nSait faire : sécuriser ses comptes (gestionnaire de mots de passe, double authentification), \ngérer sa confidentialité, réfléchir avant de transmettre des données, connaître ses limites.\n●\nLimites : faible en bureautique avancée ; elle dépend de l’autre pour certains problèmes \ntechniques.\n●\nAutonomie : partielle : elle demande de l’aide, mais cherche aussi une solution.\n●\nRegard critique / responsabilité : très forts sur la vie privée et la sécurité.\nTB niveau des dimensions en sécurité/responsabilité. Ses limites sont compensées par l’honnêteté \nsur ses lacunes. Discutable entre « compétente » et « partiellement compétente ».\nProfil 8 – Lucas\n \n   : le technicien\n \n \nPARTIELLEMENT COMPÉTENT\n●\nSait faire : installation, configuration, dépannage, compréhension du matériel ; il est \nautonome face aux pannes.\n●\nLimites : il considère les domaines des données personnelles, des algorithmiques et de \nl’éthique comme « secondaires ».\n●\nAutonomie : TB sur le technique.\n●\nRegard critique : réduit à l’efficacité (« si ça fonctionne ») : il ne s’interroge pas « plus \nloin ».\n●\nResponsabilité : absente sur les enjeux éthiques et de données.\nExcellent technicien, mais la compétence numérique ne se limite pas à faire fonctionner les \nchoses…\nProfil 9 – Chloé\n \n   : l’utilisatrice critique\n \n \nCOMPÉTENTE\n●\nSait faire : utiliser l’IA comme outil d’appui (idées, reformulation), vérifier les informations \net les sources, adapter l’outil à la tâche, expliquer les limites d’un outil.\n3 / 4\n\nNathalie Bats – Master S3 26/27\n●\nLimites : /\n●\nAdaptation / autonomie : oui. Elle évalue la pertinence de l’outil avant usage.\n●\nRegard critique : TB, elle ne prend jamais une réponse pour une vérité, recoupe, corrige.\n●\nResponsabilité : oui, elle transmet une usage éclairé aux autres.\nTB : elle est pertinente, autonome et responsable à la fois.\nProfil 10 – Nathan\n \n   : le reproducteur\n \n \nINCOMPÉTENT (au sens de l’exercice)\n●\nSait faire : reproduire une procédure déjà montrée.\n●\nLimites : dès qu’une situation change légèrement, il est perdu ; ne cherche pas la cause d’un \nproblème.\n●\nAdaptation : quasi nulle.\n●\nAutonomie : nulle, il dépend systématiquement d’une personne qui lui montre \n« exactement » quoi faire.\n●\nRegard critique : semble absent.\nComme vu précédemment, les habiletés techniques ne suffisent pas. Sans autonomie ni adaptabilité,\nla personne ne dispose pas des ressources pour agir pertinemment dans les situations qu’elle \nrencontre.\n4 / 4",
     "driveUrl": "",
     "submittedAt": "2026-09-24 18:50",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.1,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.2,
+        "didacticQuality": 2.4,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.1/10) : 4/5 notions clés intégrées, 703 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : digcomp, competence, profil, ethique.",
+        "Vocabulaire didactique approprié (competence, habilete, profil, domaine).",
+        "Développement textuel argumenté (703 mots)."
+      ],
+      "improvements": [
+        "Approfondir les concepts complémentaires : differenciation."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 1 : Diagnostic de compétences (DigComp 2.2)\" obtient la note de 9.1/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "4/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "19 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (703 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.1,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.1/10) : 4/5 notions clés intégrées, 703 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-2-nbats",
@@ -490,7 +579,64 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Nathalie Bats Master S3 26/27\nExercice 02 — Peut-on faire confiance à cette \ninformation ?\nSujet : « Une étude scientifique vient de prouver que regarder son téléphone avant de dormir fait \nperdre 2 heures de sommeil chaque nuit. »\n1. Méthode de vérification\nAvant toute recherche, on suspend son jugement : on ne partage pas, on vérifie.\nInformations à rechercher pour juger de la fiabilité :\n1. L'origine : qui a publié cette affirmation en premier, et sur quel type de site ?\n2. La source primaire : de quelle étude s'agit-il exactement (auteurs, revue, année, DOI) ? \n3. L'auteur / le diffuseur : un scientifique identifiable ou un site anonyme qui cherche des \nclics ?\n4. La formulation : le vocabulaire (« prouver », chiffre choc de « 2 heures », causalité \naffirmée) est-il compatible avec ce que la science produit réellement ?\n5. Le recoupement : au moins deux sources scientifiques indépendantes (PubMed / Google \nScholar / Crossref) pour confirmer ou nuancer ?\nConcrètement : je dois faire des requêtes avec des opérateurs (étude, téléphone, sommeil, 2 heures) \npour remonter la chaîne des republications jusqu'à l'origine, puis rechercher en anglais sur les bases \nscientifiques.\n2. L'enquête\nOrigine : en remontant les republications, je tombe sur des sites de contenu sans auteur ni date. \nAucune étude précise n'est jamais citée.\nAuteurs / diffuseurs : aucun auteur identifiable à l'origine ; diffuseurs anonymes, sans \nresponsabilité éditoriale.\nSources scientifiques (trouvées via Scholar/PubMed/Crossref — elles existent, mais peuvent dire \nautre chose) :\n•\nExelmans & Van den Bulck (2016), Social Science & Medicine, DOI \n10.1016/j.socscimed.2015.11.037 (PMID 26688552) : corrélation entre un usage nocturne \ndu téléphone et gêne du sommeil perçue mais pas de causalité prouvée.\n•\nCarter et al. (2016), JAMA Pediatrics (PMID 27802500) : méta-analyse — association \nfaible à modérée et hétérogène, pas de causalité et jamais de notion de « 2 h ».\n1 / 3\n\nNathalie Bats Master S3 26/27\n•\nLemola et al. (2015) (PMID 25204836) : causalité inverse observée — les mauvais \ndormeurs utilisent davantage leur téléphone la nuit.\n•\nBrautsch et al. (2023), Sleep Medicine Reviews (PMID 36638702).\nRecoupement : ces sources indépendantes (revues à comité de lecture, indexées PubMed) \nconcordent entre elles et contredisent l'affirmation : ni « preuve », ni 2 heures, ni causalité \nvraiment établie.\nConclusion : l'affirmation n'est pas vérifiable (pas de source primaire) et fausse dans sa forme \n(chiffre gonflé, corrélation présentée comme preuve).\n3. Mon avis\nJe ne partagerai pas cette information avec des élèves.\n1. Pas de source primaire traçable (auteur, revue, date, DOI absents), ce qui est la condition \nde base d'une info scientifique partageable et qui n'est pas rempli.\n2. Ce que la science dit vraiment : une corrélation modeste (Exelmans 2016 ; Carter 2016), \nparfois inverse (Lemola 2015), mais jamais une « preuve » de « 2 h » (Brautsch 2023).\n3. Responsabilité : partager une info invérifiable, c'est alimenter la désinformation.\nEn revanche, ça pourrait être un bon support de cours : je pourrais la donner à vérifier aux élèves \n(situation d'investigation).\n4. Restitution de 2 minutes\n1. Décision : je ne l'aurais pas partagée car il n'y a pas de source primaire, le chiffre peut être \ngonflé, la causalité est présentée comme une « preuve » alors que les études ne montrent \nqu'une corrélation, (parfois même inverse).\n2. Éléments du choix : les 4 études ci-dessus (PMID/DOI) qui concordent et contredisent le « \n2 h prouvé ».\n3. Méthode : suspendre son jugement → chercher l'origine et la source primaire avec des \nopérateurs → vérifier sur PubMed/Scholar/Crossref → recouper ≥ 2 sources indépendantes.\n4. Difficulté rencontrée : remonter jusqu'à la vraie origine me semble presque impossible \n(contenu reposté sans lien) ; et les vraies études sont en anglais et payantes. C'est facile à lire\net difficile à vérifier donc.\nSources (vérifiables)\n•\nExelmans L., Van den Bulck J. (2016). Bedtime mobile phone use and sleep in adults. Social\nScience & Medicine, 148, 93-101. https://doi.org/10.1016/j.socscimed.2015.11.037 (PMID \n26688552)\n2 / 3\n\nNathalie Bats Master S3 26/27\n•\nCarter B., Rees P., Hale L., Bhattacharjee D., Paradkar M.S. (2016). Association between \nportable screen-based media device access or use and sleep outcomes: A systematic review \nand meta-analysis. JAMA Pediatrics, 170(12), 1202-1208. PMID 27802500\n•\nLemola S. et al. (2015). Adolescents' electronic media use at night, sleep disturbance, and \ndepressive symptoms. J Youth Adolesc., 44(2), 405-418. PMID 25204836\n•\nBrautsch L.A. et al. (2023). Digital media use and sleep in late adolescence and young \nadulthood: A systematic review. Sleep Medicine Reviews, 68, 101742. PMID 36638702\n3 / 3",
     "driveUrl": "",
     "submittedAt": "2026-09-25 09:43",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.5,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.5,
+        "didacticQuality": 2.5,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 531 mots d'analyse.",
+      "strengths": [
+        "Enquête scientifique exemplaire remontant aux sources primaires (PubMed / revues à comité de lecture).",
+        "Déconstruction argumentée du sensationnalisme médiatique et de la confusion corrélation/causalité.",
+        "Positionnement didactique pertinent et proposition de situation-problème pour les élèves."
+      ],
+      "improvements": [
+        "Préparer la restitution orale de 2 minutes pour partager cette démarche avec le groupe.",
+        "Maintenir ce haut niveau d'exigence pour les étapes de prototypage."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 2 : Évaluation critique d'une information\" obtient la note de 9.5/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "5/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "16 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (531 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.5,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 531 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-3-nbats",
@@ -507,7 +653,65 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "🚀\nL'ARCHE FMTTN\nSAS FINAL PRÊT\nOfficier : Cadet FMTTN Nathalie B\nTEMPS AVANT SURCHARGE FATALE\n09:33\nDossier d'Enquête (5/5)\nRéférentiel FMTTN (103 p.)\nEXPÉDITION INTERGALACTIQUE SAUVÉE\nLES PASSAGERS SONT SAINS ET SAUFS !\nGrâce à votre maîtrise des savoirs et démarches de la FMTTN, tous les\nsystèmes vitaux de l'Arche sont rétablis. L'expédition reprend sa route\nvers la nouvelle planète habitable !\nTemps Restant\n9:33\nScore Didactique\n60%\nPassagers Sauvés\n1 450 Colons\nDistinction\nExpert FMTTN\nBILAN DES COMPÉTENCES NUMÉRIQUES VALIDÉES (RÉFÉRENTIEL FWB) :\n1. Architecture & Matériel (p. 43, 63) :\nDistinction mémoire vive (volatile) et stockage\npermanent (disque SSD/Cloud).\n2. Recherche Critique & IoT (p. 43, 73, 76) :\nRepérage des publicités, fiabilité des sources et\nchaîne Capteurs ➔ Traitement ➔ Sorties.\n3. Pensée Algorithmique (p. 50, 56, 101) :\nSymboles normalisés de logigrammes et\ndistinction Algorithme (méthode) vs Programme\n(code).\n4. Cybersécurité & Médias (p. 24, 49, 100) :\nLes 5 types de traces numériques, détection du\nphishing et éducation critique (CSEM).\n5. Régulations de Classe (p. 24-26, 43, 74) :\nAccompagnement pédagogique actif face aux\ntableurs, e-mails, boucles et droits d'auteur.\n6. Les 4 Champs Curriculaires (p. 24-25) :\nDonnées, Communication, Création de contenus\net Sécurité au cœur du Tronc Commun.\nRejouer l'expédition\nConsulter le Référentiel Complet",
     "driveUrl": "",
     "submittedAt": "2026-09-27 12:29",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 6.3,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 1.4,
+        "didacticQuality": 1.8,
+        "criticalAnalysis": 1.6,
+        "formAndStructure": 1.5
+      },
+      "summary": "Travail satisfaisant mais perfectible (6.3/10) : 2/5 notions clés intégrées, 139 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : fmttn, cyber.",
+        "Vocabulaire didactique approprié (fmttn, cyber, code, numerique).",
+        "Rédaction synthétique et soignée."
+      ],
+      "improvements": [
+        "Approfondir les concepts complémentaires : escape game, enigme, jeu.",
+        "Développer davantage l'analyse réflexive en illustrant avec des situations d'élèves concrètes.",
+        "Expliciter plus précisément les modalités d'accompagnement et de différenciation en classe."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 4 : Escape Game FMTTN (Cyber-Enquête)\" obtient la note de 6.3/10 (Travail satisfaisant mais perfectible). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 1.4,
+          "maxScore": 2.5,
+          "justification": "2/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 1.8,
+          "maxScore": 2.5,
+          "justification": "7 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 1.6,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (139 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 1.5,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 6.3,
+      "maxScore": 10,
+      "feedback": "Travail satisfaisant mais perfectible (6.3/10) : 2/5 notions clés intégrées, 139 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-4-nbats",
@@ -524,7 +728,63 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "MOT DE PASSE\nSÉCURISÉ\nLong, unique, imprévisible \nMinimum 12 caractères :\nphrase + chiffres + symbole\nUn mot de passe différent par\ncompte\n\nNathalie Bats - Master S3 26/27\nExercice 5 — Défi Canva : \n \n \naffiche « Mot de passe sécurisé »\nTexte de présentation du défi\nVous avez sans doute dix comptes, et souvent un seul mot de passe pour tous. C'est\nprécisément ce que mon affiche cherche à corriger.\nAvant de la concevoir, j'ai analysé les infos importantes à connaître pour réaliser un message \nsécurisé, j'ai posé mes idées sur papier, et lancé une proposition Canva en lien avec mes choix.\nJ'ai choisi trois messages, pas plus, et une règle par message. En effet, un élève ne retient pas une \nliste à rallonge : il retient ce qu'il peut réciter en un souffle.\nAinsi : long, unique, imprévisible ; minimum 12 caractères : phrase + chiffres + symbole ; et un mot\nde passe différent par compte. \nJ'ai utilisé un vocabulaire du quotidien, c'est donc accessible dès l'école primaire.\nAussi une consigne seule ne suffit pas souvent : chaque règle est donc doublée d'une icône, ce qui \npermet de comprendre l'affiche sans même la lire en entier — la flèche qui se répète pour « \nimprévisible », les lettres mélangées pour la diversité des caractères, le cadenas avec une seule clé \npour la sécurité et le mot de passe unique.\nMes choix de mise en page ne sont pas décoratifs : un fond blanc neutre pour ne pas distraire, deux \ncouleurs seulement, un titre en majuscules pour qu'on sache en une seconde de quoi il s'agit. C'est \npour cette raison que le message se prend en main en moins de trente secondes : l'œil descend de \npastille en pastille, une idée par ligne.\nJ'ai tenu les contraintes au chiffre près : 20 mots sur les 30 autorisés, 3 éléments visuels sur les 3 \npermis. En bref, mon affiche n'explique pas la théorie du mot de passe — elle donne trois gestes \nsimples à faire maintenant, et c'est exactement ce dont un élève a besoin.\nUne limite assumée\nLe premier pictogramme (point d'interrogation + flèches) est le moins lisible instinctivement des \ntrois : « imprévisible » s'y devine plus qu'il ne se lit. C'est pourquoi je prendrai le temps de \nl'expliquer aux élèves.\n1 / 1",
     "driveUrl": "",
     "submittedAt": "2026-09-26 12:37",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 5.9,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 1.0,
+        "didacticQuality": 1.4,
+        "criticalAnalysis": 1.6,
+        "formAndStructure": 1.9
+      },
+      "summary": "Travail satisfaisant mais perfectible (5.9/10) : 1/4 notions clés intégrées, 260 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : defi.",
+        "Développement textuel argumenté (260 mots)."
+      ],
+      "improvements": [
+        "Approfondir les concepts complémentaires : video, reseaux sociaux, education aux medias.",
+        "Expliciter plus précisément les modalités d'accompagnement et de différenciation en classe."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 5 : Défi Vidéo Réseaux Sociaux (Éducation aux médias)\" obtient la note de 5.9/10 (Travail satisfaisant mais perfectible). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 1.0,
+          "maxScore": 2.5,
+          "justification": "1/4 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 1.4,
+          "maxScore": 2.5,
+          "justification": "2 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 1.6,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (260 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 1.9,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 5.9,
+      "maxScore": 10,
+      "feedback": "Travail satisfaisant mais perfectible (5.9/10) : 1/4 notions clés intégrées, 260 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-5-nbats",
@@ -541,7 +801,61 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Nathalie Bats- Master S3 26/27\nExercice 6\nLien du Genially créé\nhttps://view.genially.com/6ab9078a5c545d5725e4a4f7\nPublic cible\n•\nÂge : 10 à 12 ans (élèves de 5e et 6e primaires).\n•\nCaractéristiques : À cet âge, les enfants ont une bonne motricité fine pour les mécaniques de\nglisser-déposer sur écran. Ils sont capables de comprendre l'impact environnemental global \net de dépasser le simple automatisme pour analyser les exceptions et les filières de recyclage\ncomplexes (comme le Recypark).\nObjectif pédagogique global\n•\nDévelopper l'éco-citoyenneté et l'esprit critique des élèves en les rendant capables de trier \ncorrectement les déchets du quotidien selon les normes actuelles en Belgique, tout en \nidentifiant les filières spécifiques pour les déchets dangereux ou encombrants.\nObjectifs opérationnels (ce que l'élève sait faire à la fin \ndu jeu) :\n•\nAssocier un déchet ménager courant à son bac de tri de couleur (Bleu PMC, Vert Compost, \nJaune Carton, Noir Tout-venant).\n•\nDistinguer les déchets ménagers des déchets spéciaux (piles, ampoules) nécessitant un \napport en point de collecte (Bebat/Recupel) ou au Recypark (parc à conteneurs).\nRègles du jeu\n•\nMécanique principale (\"Cherche et trouve\" & \"Glisser-déposer\") : Sur chaque écran \nd'environnement, l'élève doit repérer les 3 déchets visuels dissimulés dans le décor. Il doit \nensuite cliquer dessus et les faire glisser physiquement dans le bon contenant situé en bas de \nl'écran.\n•\nSystème de validation (Quiz final) : Après l'exploration des milieux, l'élève doit répondre \ncorrectement à une vignette interactive à choix multiples (QCM) portant sur les piles, les \nampoules et le rôle du Recypark.\n•\nCondition de victoire : L'élève réussit le jeu lorsqu'il a exploré les 3 zones (Cuisine, Jardin, \nÉcole), correctement trié les 9 déchets et validé l'étape de la question avancée pour obtenir \nson badge final.\n1 / 4\n\nNathalie Bats- Master S3 26/27\nScénario : \"Mission Ville Propre\"\nL'accroche (Introduction) : La ville est en plein désordre, des déchets ont été abandonnés partout \npar négligence. Le joueur est investi d'une mission de confiance d'agent de tri et doit nettoyer la \nville quartier par quartier.\nLa progression (Corps du jeu) : L'élève voyage à travers 3 environnements familiers qui génèrent \ndes déchets différents :\n•\nLa cuisine : Gestion des emballages propres, du verre et des restes organiques (Canette → \nPMC, Pomme → Compost, Boîte vide → Carton).\n•\nLe parc : Confrontation avec la nature et la pollution extérieure (Bouteille → PMC, Feuilles \nmortes → Compost, Sac vide en papier → Carton).\n•\nLa cour d'école : Tri lié aux activités scolaires et aux pièges courants (Vieux cahier → \nCarton, Emballage de jus vide → Ballon crevé → Tout-venant).\nLe rebondissement pédagogique : Une fois la ville nettoyée en surface, le jeu pousse l'élève à \nréfléchir aux objets plus complexes qui ne vont jamais dans les poubelles de la maison (piles de la \ncalculatrice, ampoules de la classe).\nLe dénouement (Conclusion) : Une fois les connaissances validées, la ville redevient propre et \nverdoyante. L'élève reçoit officiellement son badge virtuel de \"Citoyen Éco-responsable\" \naccompagné d'un rappel des règles d'or pour ancrer durablement les bonnes pratiques.\nLien du questionnaire Forms\nBienvenue dans le test du mini-jeu sur le tri ! – Remplir le formulaire\nAnalyser et améliorer \nTravaillant à distance et seule, je ne peux que me projeter dans les réponses que j'aurais pu obtenir \nde mes collègues.\nDans les pistes d'amélioration, j'aurais pu avoir : \n•\ndes images de poubelles telles qu'on en rencontre en Belgique ;\n•\ndes images générées par IA pour le fond et pour les déchets à glisser-déposer de manière à \nce que ça se fonde mieux dans le décor et sois plus réaliste (version non-payante dans \nlaquelle je ne peux pas générer d'image mais j'aurais pu passer par un autre générateur) ;\n•\ndavantage de slides ;\n•\ndavantage de question à cocher ;\n•\ndes questions moins simples et engageant davantage la réflexion des élèves ;\n•\nla possibilité de zoomer sur le déchet à glisser-déposer de manière à ce qu'il soit intégré \nproportionnellement dans l'image de fond tout en permettant de mieux le voir si on zoome \ndessus (dans ma version non-payante, je n'avais pas accès au fait de mettre plusieurs options\nd'interactivité) ;\n•\n...\nLien du Genially retravaillé\nhttps://view.genially.com/6ab922f5758e604706d272a7\n2 / 4\n\nNathalie Bats- Master S3 26/27\nLes 3 améliorations choisies sur cette base sont les :\n•\nimages de poubelles telles qu'on en rencontre en Belgique ;\n•\n3 slides en plus ;\n•\ndavantage de questions à cocher (cf dans les slides en plus) ;\n•\ndes questions moins simples et engageant davantage la réflexion des élèves (cf dans les \nslides en plus). J'y ai également ajouté une explication en cas d'erreur.\nSi je disposais de plus de temps devant moi, ou si j'avais la version payante de Genially, j'aurais \ngénéré les images proposées et améliorer l'interactivité.\nSynthèse des apprentissages de la démarche itérative\nPour ce projet, j’ai dû travailler seule et à distance. N'ayant pas de panel de testeurs sous la main, \nj'ai dû mener une démarche réflexive et me projeter dans les retours, les critiques et les blocages \npotentiels que mes collègues ou des élèves auraient pu rencontrer face à ma première version.\nVoici ce que cette méthode de travail par cycles (concevoir \n analyser \n modifier) m'a \n➔\n➔\nconcrètement apporté :\nUne prise de conscience des limites techniques et ergonomiques\nCette démarche m'a forcée à regarder ma propre création avec un œil extérieur et critique. J'ai \nréalisé que la version gratuite de Genially imposait des barrières (impossibilité de cumuler les \ninteractivités pour faire un zoom sur un déchet, ou de générer des images directement). Sans cette \nphase d'analyse, je me serais contentée d'un jeu fonctionnel mais incomplet. Elle m'a appris à \nanticiper les besoins de l'utilisateur : par exemple, comprendre qu'un déchet réduit à sa taille \nproportionnelle dans le décor devient invisible pour l'élève si on ne peut pas zoomer dessus.\nLe passage d'un tri \"automatique\" à un tri \"réfléchi\"\nInitialement, mon jeu était très simple. En me projetant dans l'évaluation, j'ai compris que pour des \nenfants de 10-12 ans, cliquer mécaniquement sur des poubelles n'était pas assez challengeant. \nL'itération m'a poussée à hausser le niveau pédagogique. J'ai ajouté 3 slides et des questions plus \ncomplexes, notamment sur les \"faux amis\" (mouchoirs sales, boîtes de pizza grasses). Ce que j'ai \nappris, c'est qu'un bon outil pédagogique ne doit pas juste valider une bonne réponse, il doit faire \nréfléchir.\nL'importance de la \"pédagogie de l'erreur\" et de l'ancrage local\nEn analysant ma première version, j'ai vu deux gros angles morts : le manque de repères locaux et \nl'absence de feedback en cas d'échec. Grâce à l'itération, j'ai corrigé cela dans la version finale en \nintégrant :\n• Les vraies poubelles telles qu'on les rencontre en Belgique, ce qui donne un sens concret au jeu \npour l'enfant.\n• Des explications en cas d'erreur, pour que le jeu devienne un espace d'apprentissage bienveillant \noù l'erreur est constructive.\nUne compétence d'adaptation face aux contraintes\nEnfin, cette démarche m'a apporté de la flexibilité. Faute de pouvoir générer des visuels par l'IA de \nGenially ou d'avoir la version payante, j'ai dû ruser pour améliorer le réalisme et l'interactivité. J'ai \ncompris que l'éco-conception d'un jeu est un compromis permanent entre l'idéal pédagogique (ce \n3 / 4\n\nNathalie Bats- Master S3 26/27\nque j'aurais voulu faire avec plus de temps ou un budget : fonds réalistes par IA externe, options de \nzoom) et la réalité technique.\nLes limites du travail en solo et la richesse de la co-conception\nCette expérience en autonomie était déjà très enrichissante en soi, mais elle m'a fait réaliser \nl'importance du travail d'équipe. Si j'avais effectivement pu réaliser ces phases de test avec des \npairs, il est probable que j'aurais reçu des remarques et des conseils précieux sortant probablement \nde mon propre cadre de perception. En effet, en tant que conceptrice du jeu, mon regard était \nnécessairement biaisé par ma connaissance du projet. Des regards extérieurs auraient pu m'apporter \nune aide technique ou créative et pointer des angles morts que je ne pouvais pas voir seule. Le jeu \nfinal en aurait été encore plus riche et robuste.\n4 / 4",
     "driveUrl": "",
     "submittedAt": "2026-09-27 17:13",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.3,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.4,
+        "didacticQuality": 2.4,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.3/10) : 5/5 notions clés intégrées, 943 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : mini-jeu, dechet, tri, genially.",
+        "Vocabulaire didactique approprié (mini-jeu, dechets, tri, genially).",
+        "Développement textuel argumenté (943 mots)."
+      ],
+      "improvements": [],
+      "detailedFeedback": "Ce travail sur \"Atelier 6 : Démarche itérative (Concevoir & tester un mini-jeu)\" obtient la note de 9.3/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "5/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "17 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (943 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.3,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.3/10) : 5/5 notions clés intégrées, 943 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-6-nbats",
@@ -558,7 +872,63 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Nathalie Bats – Master S3 26/27\nCas 1 – Recherche d’information (personnalité \nscientifique) – 2e secondaire (S2)\n1. Apprentissages visés\nSavoir – (3e primaire, acquis de départ) : « Utiliser, adéquatement en contexte, les termes dont \nmoteur de recherche, barre de recherche, navigateur. »\nSavoir-faire – (2e secondaire) : « Identifier des éléments nécessaires au questionnement de la \nfiabilité d’une source (URL, date de publication et/ou de mise à jour, auteur, diffuseur…). » et (2e \nsecondaire) : « Identifier l’intention de chaque élément figurant sur une page Web. »\nCompétences – (2e secondaire) : « Rechercher un contenu, en autonomie*, au moyen d’un moteur \nde recherche pertinent, en utilisant des opérateurs et/ou des options avancées, en justifiant sa \nstratégie. » et (2e secondaire) : « Évaluer la fiabilité contextuelle d’une source, à l’aide d’une grille \ncritériée. »\nCapacité réflexive : justifier sa stratégie de recherche, donc conscientiser un geste ordinairement \nimplicite.\n2. La grille\nCritère 1 – Stratégie de recherche\nIndicateurs : choix explicite d’un moteur pertinent ; usage d’au moins un opérateur (\"\", site:, date:\n…) ; trace écrite de la justification.\nNon acquis : tape n’importe quelle question dans n’importe quel moteur, ne justifie pas.\nEn voie : utilise un opérateur mais ne peut pas expliquer pourquoi ce moteur/ce choix.\nAcquis : moteur choisi et opérateur utilisés à bon escient, stratégie justifiée oralement.\nDépassé : adapte sa requête en cours de route selon les résultats obtenus, compare deux \nmoteurs.\nCritère 2 – Sélection des informations pertinentes\nIndicateurs : informations en lien avec la personnalité scientifique demandée ; recoupement d’au \nmoins 2 sources ; hiérarchie entre information utile / anecdotique.\nNon acquis : copie-colle le premier résultat sans lien avec la consigne.\nEn voie : informations pertinentes mais une seule source, sans tri.\nAcquis : sélection pertinente recoupée sur au moins 2 sources.\nDépassé : hiérarchise et critique les écarts entre les sources trouvées.\nCritère 3 – Identification de la fiabilité des sources\nIndicateurs : relève URL, auteur, date, diffuseur ; distingue fait / opinion ; conclut de façon nuancée \n(« vérifiable », « non vérifiable », pas « vrai/faux » brut).\nNon acquis : accepte une source sans vérifier quoi que ce soit.\nEn voie : relève 1 ou 2 éléments (ex. l’auteur) mais ne questionne pas.\nAcquis : identifie les 4 éléments et motive son jugement de fiabilité.\nDépassé : interroge aussi l’intention de la page : publicité, militantisme, \ndésinformation.\n3. Dispositif d’évaluation\nDiagnostique en début de séquence (que sait-il déjà faire ?) puis formative : la grille est distribuée \navant la tâche, l’élève s’évalue, l’enseignant régule. Pas de sommative ici : l’objectif est la stratégie,\npas la performance du jour.\n4. Justification de mes choix\nJ’ai retenu 3 critères qui correspondent chacun à un attendu différent, pour que la note porte sur \nl’apprentissage visé et pas sur la beauté de la fiche. Les indicateurs sont observables : on peut \npointer sur la feuille « ici tu as utilisé un opérateur », « ici tu as noté la date ».\n1 / 4\n\nNathalie Bats – Master S3 26/27\nLa progression des niveaux va de subir l’outil (taper au hasard) à piloter l’outil (adapter sa \nstratégie) : c’est exactement le chemin de l’autonomie visée par la compétence. La modalité \ndiagnostique plus formative se justifie parce que la compétence se construit sur la durée : la noter\nen sommative sanctionnerait un point de départ, pas une progression.\nCas 6 – Démontage et remontage d’un ordinateur – 2e \nsecondaire (S2)\n1. Apprentissages visés\nSavoir – (1re secondaire, acquis de départ, champ « Informations et données ») : « Utiliser, \nadéquatement et en contexte, le terme périphérique. »\nSavoir-faire – (2e secondaire, champ « Objets technologiques ») : « Démonter un objet \ntechnologique* (en tout ou en partie) incluant une ou plusieurs machine(s) simple(s) et un circuit \nélectrique simple, en utilisant des outils adaptés ; le remonter sur la base de traces du démontage. »\nSavoir-faire – (2e secondaire) : « Expliciter des informations d’un dessin* technique, d’une fiche \ntechnique et/ou d’un mode d’emploi, en lien avec un objet technologique*. »\nÀ mobiliser : identifier les composants (carte mère, alimentation, RAM, disque…), expliquer leur \nfonction, remonter la machine et la vérifier fonctionnelle.\n2. La grille\nCritère 1 – Démontage et remontage avec outils adaptés\nIndicateurs : utilise le bon outil (tournevis adapté) ; démonte sans forcer ; remonte en respectant \nl’ordre inverse ; l’ordinateur redémarre.\nNon acquis : mauvais outil, force, ou ne remonte pas la machine.\nEn voie : démonte correctement mais remonte avec de l’aide ou sans vérifier.\nAcquis : démonte et remonte seul, la machine fonctionne.\nDépassé : anticipe (range les vis par étape) et vérifie avant de rallumer.\nCritère 2 – Identification et fonction des composants\nIndicateurs : nomme au moins 5 composants avec leur vocabulaire exact (dont « périphérique ») ; \nassocie chaque composant à sa fonction (stockage, mémoire vive, alimentation…).\nNon acquis : ne nomme que boîtier, écran, clavier.\nEn voie : nomme les composants mais ne peut pas expliquer leurs fonctions.\nAcquis : nomme les composants internes et explique la fonction de chacun.\nDépassé : relie les fonctions entre elles (« sans RAM, le processeur ne peut rien traiter »).\nCritère 3 – Traces du démontage\nIndicateurs : photos ou croquis pris pendant le démontage, dans l’ordre ; légendes justes ;\nles traces permettent réellement de remonter sans aide.\nNon acquis : aucune trace, ou des photos hors séquence illisibles.\nEn voie : des traces existent mais incomplètes (floues, sans légende, dans le désordre).\nAcquis : les traces sont complètes, ordonnées et légendées.\nDépassé : les traces sont assez complètes pour qu’un camarade remonte la machine à sa place.\n3. Dispositif d’évaluation\nSommative (performance réalisée en atelier, observée en direct) + évaluation par les pairs sur le \ncritère 3 : chaque binôme teste s’il pourrait remonter la machine d’après les traces de l’autre. \nFormatif pendant l’atelier : l’enseignant circule et régule le geste.\n4. Justification de mes choix\n2 / 4\n\nNathalie Bats – Master S3 26/27\nJ’ai choisi ce cas parce que tout s’y observe : l’outil utilisé, le geste, le nom du composant, la \nfonction expliquée, la machine qui redémarre. Aucun critère ne repose sur une appréciation floue : \nou l’ordinateur s’allume, ou non ; ou la trace permet de remonter, ou non.\nLes niveaux progressent du geste dépendant (il faut le montrer) vers l’autonomie (il refait seul, puis \nil transmet à un pair par ses traces) – la nuance vient de l’attendu lui-même : « en utilisant\ndes outils adaptés » et « sur la base de traces du démontage » sont deux exigences distinctes, donc \ndeux critères distincts selon moi. L’évaluation par les pairs se justifie ici plus que partout ailleurs :\nle critère 3 est justement conçu pour être testable par un autre.\nCas 10 – Portfolio réflexif sur ses pratiques numériques\n– 1re secondaire (S1)\n1. Apprentissages visés\nSavoir – (1re secondaire, champ « Informations et données ») : « Utiliser, adéquatement en \ncontexte, les notions et les termes dont droit à la vie privée, droit à l’oubli, droit de retrait, liberté \nd’expression/de censure/de modération, licence open source*. »\nCompétence – (1re secondaire, champ « Sécurité ») : « Gérer son identité numérique*, ses traces, \nses données personnelles, de manière responsable. »\nÀ mobiliser : analyser ses propres pratiques (usages réels vs déclarés), les objectiver par des traces \n(temps d’écran, historiques, captures).\nCapacité réflexive : se définir un objectif personnel d’amélioration et s’y tenir.\n2. La grille\nCritère 1 – Objectivation des constats\nIndicateurs : appuie chaque affirmation sur une trace (capture, statistique, exemple daté) ; distingue \nconstat / interprétation / jugement.\nNon acquis : « je passe trop de temps sur mon téléphone », sans aucune preuve.\nEn voie : quelques constats objectivés, la plupart restent des impressions.\nAcquis : chaque pratique décrite est appuyée par une trace observable.\nDépassé : croise ses traces avec celles d’un pair ou d’une source pour nuancer.\nCritère 2 – Analyse (et pas seulement description)\nIndicateurs : explique pourquoi (déclencheur, contexte) ; identifie une contradiction entre ce qu’il \ndit et ce qu’il fait ; met en lien usage numérique et effet sur sa vie réelle.\nNon acquis : décrit ses applications sans analyse.\nEn voie : décrit et commente, mais sans relier aux causes.\nAcquis : analyse au moins une pratique en profondeur (déclencheur, conséquence).\nDépassé : analyse une contradiction assumée (« je dis que X, mes traces montrent Y »).\nCritère 3 – Objectif personnel et suivi\nIndicateurs : objectif SMART (utilisé en coaching) relié à l’analyse ; critère de réussite formulé et \nvérifiable ; prévoit un moment de vérification.\nNon acquis : pas d’objectif, ou un objectif flou (« moins d’écrans »).\nEn voie : objectif clair mais non mesurable, sans suivi.\nAcquis : objectif mesurable avec une preuve prévue pour le vérifier.\nDépassé : objectif co-construit avec le groupe et prévu pour être re-testé en collectif.\n3. Dispositif d’évaluation\nAuto-évaluation d’abord (le portfolio est par nature un outil auto-centré), complétée d’une \névaluation par les pairs sur le seul critère 1 (les traces sont vérifiables par un autre), jamais \nsommative : on ne note pas l’intimité de ses pratiques.\n4. Justification de mes choix\n3 / 4\n\nNathalie Bats – Master S3 26/27\nC’est le cas où l’effet Hawthorne est le plus fort : si la grille est notée, l’élève produit du réflexif \npour la note, et l’objectif d’honnêteté est trahi. C’est pour cette raison que je choisirais l’auto-\névaluation. Le critère « par les pairs » se limite à ce qui est objectivable (les traces), pour protéger la\npart intime des deux autres. Enfin, la progression des niveaux suit le cheminement réel de la \nréflexivité : décrire → expliquer → se corriger ; une simple description ne constitue pas une analyse\nréflexive, et c’est précisément ce que le niveau « en voie » signale.\n4 / 4",
     "driveUrl": "",
     "submittedAt": "2026-09-26 18:00",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.1,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.2,
+        "didacticQuality": 2.4,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.1/10) : 4/5 notions clés intégrées, 1106 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : grille, evaluation, critere, indicateur.",
+        "Vocabulaire didactique approprié (grille, evaluation, criteriee, critere).",
+        "Développement textuel argumenté (1106 mots)."
+      ],
+      "improvements": [
+        "Approfondir les concepts complémentaires : maitrise."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 8 : Construire des grilles d'évaluation critériées\" obtient la note de 9.1/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "4/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "11 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (1106 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.1,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.1/10) : 4/5 notions clés intégrées, 1106 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-7-alexiane.collard",
@@ -575,7 +945,63 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 1.1A — Compétent, partiellement compétent ou \nincompétent ? \n \nProfil 1 – Sarah : l’experte en IA \n1. Que sait faire cette personne ? Elle sait utiliser l’outil correctement. \n \n2. Que ne sait-elle pas faire ou ne comprend-elle pas ? Elle ne sait pas vérifier les sources et ne fait pas \npreuve d’esprit critique.   \n \n3. Est-elle capable de s'adapter ? Non, pas vraiment. \n \n4. Est-elle autonome ? Je ne pense pas, parce qu’elle n’est pas capable de vérifier les informations données \npar l’IA. \n \n5. Est-elle capable de porter un regard critique ? Absolument pas.  \n \n6. Agit-elle de manière responsable ? Non, elle suppose que l’IA a toujours raison et que si l’IA se trompe, \nce n’est pas de sa faute.  \n \nConclusion :  \nSarah est partiellement compétente. Elle possède des compétences techniques concernant l’utilisation \nmais elle n’a pas de compétence réflexive. Elle ne porte pas de regard critique et ne vérifie pas les \ninformations.  \n \nProfil 2 – Thomas : le débrouillard  \n1. Que sait faire cette personne ? Il sait se débrouiller et s’adapte à tous les outils.  \n \n2. Que ne sait-elle pas faire ou ne comprend-elle pas ? Quand il ne maitrise pas un sujet, il sait s’adapter.  \n \n3. Est-elle capable de s'adapter ? Il s’adapte en regardant des tutoriels. \n \n4. Est-elle autonome ? Il est très autonome. Il est autodidacte.  \n \n5. Est-elle capable de porter un regard critique ? Oui \n \n6. Agit-elle de manière responsable ? Oui \n \nConclusion : Thomas est compétent. Il est capable de faire des recherches. Il est autonome et autodidacte.\n\nProfil 3 – Lina : la spécialiste des réseaux sociaux \n1. Que sait faire cette personne ? Produire du contenu sur les réseaux sociaux et analyser les statistiques.  \n \n2. Que ne sait-elle pas faire ou ne comprend-elle pas ? Elle ne comprend pas l’importance du \nconsentement et les conséquences qui peuvent découler de ses publications. \n \n3. Est-elle capable de s'adapter ? Peu d’informations pour le savoir précisément mais elle sait utiliser \nplusieurs plateformes.  \n \n4. Est-elle autonome ? Elle semble autonome dans l’utilisation de plusieurs plateformes (publications et \nanalyse). \n \n5. Est-elle capable de porter un regard critique ? Non, elle ne prend pas de recul par rapport à la situation. \nElle pense être la meilleure de sa classe.  \n \n6. Agit-elle de manière responsable ? Elle n’est pas responsable. Elle ne demande pas le consentement \navant une publication.  \n \nConclusion : Elle est partiellement compétente. Elle ne connaît pas les bases et ne sait visiblement pas ce \nqu’est le consentement. Elle sait utiliser les réseaux sociaux mais elle ne connait pas les règles de RGPD. \nElle se dédouane de toute responsabilité.  \n \nProfil 4 – Hugo : le sceptique \n1. Que sait faire cette personne ? Il sait chercher l’origine de l’information, vérifier la date et consulter \nplusieurs sources. Il possède des bonnes capacités de recherche. \n \n2. Que ne sait-elle pas faire ou ne comprend-elle pas ? Il ne sait pas utiliser les réseaux sociaux ou des \nlogiciels.  \n \n3. Est-elle capable de s'adapter ? Oui, quand il ne comprend pas, il cherche une ressource lui permettant \nde progresser.  \n \n4. Est-elle autonome ? Oui \n \n5. Est-elle capable de porter un regard critique ? Oui, avant de partager une information, il vérifie \nl’information.  \n \n6. Agit-elle de manière responsable ? Oui, il évite de diffuser des informations qui pourraient être fausses. \n \nConclusion : Hugo est partiellement compétent. Il n’a pas une maitrise technique des outils informatique \nmais il fait preuve d’esprit critique.  Il est autonome et capable de vérifier les sources.\n\nProfil 5 – Julie : l’experte des logiciels \n1. Que sait faire cette personne ? Elle a de bonnes compétences techniques.  \n \n2. Que ne sait-elle pas faire ou ne comprend-elle pas ? Elle ne sait pas s’adapter à de nouveaux outils.  \n \n3. Est-elle capable de s'adapter ? Sa capacité d’adaptation semble extrêmement limitée.  \n \n4. Est-elle autonome ? Oui, lorsqu’elle connait le logiciel. Sinon, non.  \n \n5. Est-elle capable de porter un regard critique ? Oui \n \n6. Agit-elle de manière responsable ? Oui \n \nConclusion : Julie est partiellement compétente. Elle a de bonnes compétences techniques mais aucune \ncapacité d’adaptation et peu d’autonomie.  \n \nProfil 6 – Mehdi : le chercheur rapide \n1. Que sait faire cette personne ? Il sait utiliser efficacement les moteurs de recherche et accéder \nrapidement aux informations.  \n \n2. Que ne sait-elle pas faire ou ne comprend-elle pas ? Il ne sait pas vérifier les informations et il se \ncontente du premier résultat qu’il trouve.  \n \n3. Est-elle capable de s'adapter ? Je ne sais pas.  \n \n4. Est-elle autonome ? Oui, il est automne pour rechercher une information mais il doit encore apprendre à \nvérifier si cette information est fiable et s’assurer de sa véracité \n \n5. Est-elle capable de porter un regard critique ? Il ne porte pas un regard critique sur l’information. Il \nconsidère que les informations qu’il trouve sont automatiquement vraies.  \n \n6. Agit-elle de manière responsable ? Il doit apprendre à vérifier les informations avant de les partager.  \n \nConclusion : Mehdi est partiellement compétent. Il a des compétences techniques et sait utiliser des \nmoteurs de recherche. Cependant, il doit développer son esprit critique et être capable de vérifier la \nfiabilité des sources.\n\nProfil 7 – Emma : la prudente \n1. Que sait faire cette personne ? Emma est compétente en matière de sécurité et protection des données. \n \n2. Que ne sait-elle pas faire ou ne comprend-elle pas ? Elle possède des lacunes concernant les logiciels.  \n \n3. Est-elle capable de s'adapter ? Elle s’adapte en cherchant des solutions et en demandant de l’aide.  \n \n4. Est-elle autonome ? Oui, elle cherche une solution ou demande de l’aide si elle ne trouve pas la solution \nseule.  \n \n5. Est-elle capable de porter un regard critique ? Oui, elle réfléchit avant de transmettre des données \npersonnelles et elle fait attention aux informations qu’elle publie.  \n \n6. Agit-elle de manière responsable ? Oui, elle protège ses comptes.  \n \nConclusion : Emma est partiellement compétente. Elle a de nombreuses compétences en matière de \nsécurité et de protection des données. Cependant, elle éprouve des difficultés lorsqu’elle doit utiliser un \nlogiciel et elle a souvent besoin d’aide.  \n \n \nProfil 8 – Lucas : le technicien  \n1. Que sait faire cette personne ? Il possède de bonnes compétences techniques et informatiques. \n \n2. Que ne sait-elle pas faire ou ne comprend-elle pas ? Il accorde peu d’importance à la protection des \ndonnées.  \n \n3. Est-elle capable de s'adapter ? Oui, il peut s’adapter lorsqu’il rencontre un problème technique.  \n \n4. Est-elle autonome ? Oui, il trouve généralement la solution lui-même.  \n \n5. Est-elle capable de porter un regard critique ? Non, pas vraiment.  \n \n6. Agit-elle de manière responsable ? Non, pas vraiment. Il n’est pas très attentif aux données personnelles \nni à l’éthique.  \n \n \nConclusion : Lucas est compétent en ce qui concerne les compétences techniques. Il est capable de \nrésoudre des problèmes, de configurer un ordinateur et il fait preuve d’une grande autonomie. En \nrevanche, il n’est pas réellement compétent concernant les questions relatives aux données personnelles.\n\nProfil 9 – Chloé : l’utilisatrice critique \n1. Que sait faire cette personne ? Elle utilise plusieurs outils d’IA. Elle consulte les sources et se demande \ntoujours si les informations qu’elle a trouvées sont pertinentes.  \n \n2. Que ne sait-elle pas faire ou ne comprend-elle pas ? Le texte ne mentionne rien à ce sujet. \n \n3. Est-elle capable de s'adapter ? Elle a une bonne capacité d’adaptation et se demande si utiliser un outil \nest pertinent pour la tâche qu’elle doit réaliser.  \n \n4. Est-elle autonome ? Elle est autonome et elle est capable d’aider ses camarades lorsqu’ils en ont besoin.  \n \n5. Est-elle capable de porter un regard critique ? Oui, elle ne considère jamais une réponse générée comme \nune vérité. Elle se questionne et modifie les productions obtenues. Elle se pose des questions sur la \npertinence d’utiliser un outil avant de le faire.  \n \n6. Agit-elle de manière responsable ? Oui, elle sait expliquer ses limites et expliquer les situations dans \nlesquelles il vaut mieux ne pas l’utiliser.  \n \nConclusion : Chloé est compétente. Elle maîtrise toutes les compétences numériques. Elle fait preuve \nd’autonomie et d’esprit critique. Elle est également capable d’évaluer la pertinence des outils qu’elle utilise \net de connaitre les limites.  \n \nProfil 10 – Nathan : le reproducteur  \n1. Que sait faire cette personne ? Il est capable de reproduire des procédures.  \n \n2. Que ne sait-elle pas faire ou ne comprend-elle pas ? Il ne sait pas s’adapter à une nouvelle situation. Il ne \nsait pas résoudre un problème qui apparaît.   \n \n3. Est-elle capable de s'adapter ? Absolument pas, il sait reproduire des procédures mais s’il y a des \nchangements, il ne sait plus comment procéder.   \n \n4. Est-elle autonome ? Il n’est pas autonome. Il a toujours besoin de quelqu’un pour l’aider et lui montrer \ndes nouvelles procédures. \n \n5. Est-elle capable de porter un regard critique ?  Non, il ne sait pas quoi faire quand ça ne fonctionne pas \ncomme prévu.  \n \n6. Agit-elle de manière responsable ? Il demande de l’aide quand il ne sait pas exactement ce qu’il doit \nfaire.  \n \nConclusion : Nathan est partiellement compétent. Il sait reproduire des procédures mais il est incapable de \ns’adapter à une situation nouvelle.",
     "driveUrl": "",
     "submittedAt": "2026-09-28 22:29",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.1,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.2,
+        "didacticQuality": 2.4,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.1/10) : 4/5 notions clés intégrées, 1088 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : competence, profil, differenciation, ethique.",
+        "Vocabulaire didactique approprié (competence, profil, information, securite).",
+        "Développement textuel argumenté (1088 mots)."
+      ],
+      "improvements": [
+        "Approfondir les concepts complémentaires : digcomp."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 1 : Diagnostic de compétences (DigComp 2.2)\" obtient la note de 9.1/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "4/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "16 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (1088 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.1,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.1/10) : 4/5 notions clés intégrées, 1088 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-8-e2301886",
@@ -592,7 +1018,63 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 1.1A — Compétent, partiellement compétent ou \nincompétent ? \nObjectif \nVous allez analyser différentes situations afin de réfléchir à ce que signifie réellement être \ncompétent numériquement. \nL'objectif n'est pas de déterminer qui maîtrise le plus d'outils, mais d'identifier les différentes \ndimensions qui permettent de caractériser une compétence numérique. \nConsigne \nEn groupe de 3 à 4 étudiants, prenez connaissance des profils distribués. \nPour chaque profil, vous devez attribuer une seule des trois catégories suivantes : \n🟢 COMPÉTENT \nLa personne dispose de ressources suffisantes pour agir de manière pertinente, autonome et \nresponsable dans les situations décrites. \n🟠 PARTIELLEMENT COMPÉTENT \nLa personne maîtrise certaines dimensions de la compétence numérique, mais présente des \nlimites importantes dans d'autres dimensions. \n🔴 INCOMPÉTENT \nLa personne ne dispose pas des ressources nécessaires pour agir de manière pertinente dans \nles situations décrites. \nAttention : « incompétent » ne signifie pas que la personne est incapable d'utiliser le numérique. \nElle peut posséder certaines habiletés techniques tout en étant insuffisamment compétente \ndans la situation considérée. \n \nPour chaque profil \nDiscutez collectivement des questions suivantes : \n1. Que sait faire cette personne ?​\nIdentifiez ses connaissances et ses savoir-faire. \n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?​\nRepérez ses limites. \n3. Est-elle capable de s'adapter ?​\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ? \n4. Est-elle autonome ?​\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un \ntutoriel ou d'une procédure ? \n5. Est-elle capable de porter un regard critique ?​\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\n\n6. Agit-elle de manière responsable ?​\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les \nconséquences de ses actions ? \n \nLes 10 profils \nProfil 1 — Sarah : l'experte en IA \nSarah utilise quotidiennement ChatGPT pour ses études. Elle sait rédiger des prompts précis, \ndemander différentes versions d'une réponse, résumer des textes et générer des idées. Elle \nobtient rapidement des productions qui lui semblent de bonne qualité. \nEn revanche, elle vérifie rarement les informations fournies par l'IA. Lorsqu'une réponse contient \nune référence ou une statistique, elle considère généralement qu'elle est correcte. Elle ne \ncherche pas systématiquement à identifier les sources originales. \nLorsqu'on lui signale qu'une réponse est fausse, elle répond : « Je ne pouvais pas le savoir, c'est \nl'IA qui a répondu. » \n🟠 PARTIELLEMENT COMPÉTENT \n1. Que sait faire cette personne ?​\nElle sait utiliser ChatGPT, rédiger des prompts précis, demander différentes versions d’une \nréponse, résumer des textes et générer des idées. \n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?​\nElle ne vérifie pas les informations et pense que l’IA a toujours raison. \n3. Est-elle capable de s'adapter ?​\nNon car elle dit qu’elle ne pouvait pas savoir. \n4. Est-elle autonome ?​\nOui. \n5. Est-elle capable de porter un regard critique ?​\nNon. \n6. Agit-elle de manière responsable ?​\nOn ne sait pas. \n \nProfil 2 — Thomas : le débrouillard \nThomas ne connaît pas beaucoup de logiciels et n'a jamais utilisé Canva. Il n'est pas \nparticulièrement à l'aise lorsqu'il découvre une nouvelle interface. \nLorsqu'on lui demande de créer une infographie, il commence cependant par rechercher des \noutils permettant de réaliser cette tâche. Il compare plusieurs possibilités, consulte des tutoriels \net expérimente. \nAprès plusieurs essais, il parvient à produire une infographie adaptée au public auquel elle est \ndestinée. \nLorsqu'il rencontre une difficulté, il cherche généralement une solution avant de demander de \nl'aide. \n🔴 INCOMPÉTENT\n\n1. Que sait faire cette personne ?​\nIl fait plusieurs recherches avant de réaliser un projet. \n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?​\nIl connait peu de logiciels. \n3. Est-elle capable de s'adapter ?​\nOui, il cherche une solution avant de demander de l’aide. \n4. Est-elle autonome ?​\nOui. \n5. Est-elle capable de porter un regard critique ?​\nOui, il compare plusieurs possibilités. \n6. Agit-elle de manière responsable ?​\nOn ne sait pas. \n \nProfil 3 — Lina : la spécialiste des réseaux sociaux \nLina maîtrise parfaitement Instagram, TikTok et Snapchat. Elle connaît les différentes \nfonctionnalités, sait créer des vidéos, utiliser les tendances et analyser les statistiques de ses \npublications. \nElle publie régulièrement des photographies et vidéos de ses amis. Elle considère que les \ncontenus présents sur son smartphone peuvent être publiés librement. \nElle ne s'interroge pas particulièrement sur le consentement des personnes photographiées, la \nconservation des contenus ou les conséquences de leur diffusion. \nElle affirme : \n« Je suis probablement la personne la plus compétente en numérique de ma classe. » \n🟠 PARTIELLEMENT COMPÉTENT \n1. Que sait faire cette personne ?​\nElle maitrise Instagram, TikTok et Snapchat. lle connaît les différentes fonctionnalités, sait créer \ndes vidéos, utiliser les tendances et analyser les statistiques de ses publications. \n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?​\n/ \n3. Est-elle capable de s'adapter ?​\nOn ne sait pas. \n4. Est-elle autonome ?​\nOui. \n5. Est-elle capable de porter un regard critique ?​\nOn ne sait pas. \n6. Agit-elle de manière responsable ?​\nNon, elle ne s'interroge pas particulièrement sur le consentement des personnes \nphotographiées, la conservation des contenus ou les conséquences de leur diffusion.\n\nProfil 4 — Hugo : le sceptique \nHugo utilise peu les réseaux sociaux et ne connaît pas la plupart des applications utilisées par \nses camarades. Il éprouve parfois des difficultés avec certains logiciels et ne sait pas réaliser des \nmontages vidéo complexes. \nLorsqu'il reçoit une information étonnante sur Internet, il ne la partage cependant jamais \nimmédiatement. Il cherche l'origine de l'information, vérifie la date, consulte plusieurs sources \net tente d'identifier l'auteur. \nLorsqu'il ne comprend pas quelque chose, il cherche généralement une ressource lui \npermettant de progresser. \n🔴 INCOMPÉTENT \n1. Que sait faire cette personne ?​\n/ \n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?​\nIl utilise peu les réseaux sociaux et a des difficultés avec les logiciels. \n3. Est-elle capable de s'adapter ?​\nOui, il fait des recherches sur l’origine de l’information, vérifie la date et consulte plusieurs \nsources. \n4. Est-elle autonome ?​\nOui, il cherche une ressource pour progresser. \n5. Est-elle capable de porter un regard critique ?​\nOui, il vérifie les informations trouvées. \n6. Agit-elle de manière responsable ?​\nOn ne sait pas. \n \nProfil 5 — Julie : l'experte des logiciels \nJulie maîtrise très bien Word, Excel, PowerPoint et plusieurs logiciels professionnels. Elle connaît \nde nombreuses fonctions avancées et ses camarades font régulièrement appel à elle lorsqu'ils \nrencontrent un problème. \nElle refuse cependant presque systématiquement d'utiliser de nouveaux outils. \nLorsqu'un logiciel est remplacé dans son établissement, elle demande qu'on lui explique \nprécisément chaque étape et préfère attendre une formation plutôt que d'expérimenter seule. \nElle considère que sa compétence numérique repose principalement sur le nombre de logiciels \nqu'elle maîtrise. \n🟠 PARTIELLEMENT COMPÉTENT \n1. Que sait faire cette personne ?​\nElle maîtrise Word, Excel, PowerPoint et plusieurs logiciels professionnels. Elle connaît de \nnombreuses fonctions avancées. \n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?​\nUtiliser les nouveaux logiciels. \n3. Est-elle capable de s'adapter ?​\nOui, elle demande une explication pour les nouveaux outils.\n\n4. Est-elle autonome ?​\nNon, elle attend une formation pour utiliser un logiciel. \n5. Est-elle capable de porter un regard critique ? \nOn ne sait pas. \n6. Agit-elle de manière responsable ?​\nOn ne sait pas. \n \nProfil 6 — Mehdi : le chercheur rapide \nMehdi sait utiliser efficacement les moteurs de recherche. Lorsqu'un professeur lui donne une \nquestion, il trouve rapidement une réponse sur Internet. \nPour gagner du temps, il consulte généralement les premiers résultats proposés par le moteur \nde recherche. Il regarde rarement qui a publié l'information et ne vérifie pas systématiquement \nles sources. \nLorsque plusieurs sites donnent la même information, il considère qu'elle est nécessairement \nvraie. \nIl explique : \n« Je trouve toujours ce que je cherche sur Internet. » \n🟠 PARTIELLEMENT COMPÉTENT \n1. Que sait faire cette personne ?​\nIl sait utiliser les moteurs de recherches. \n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?​\n/ \n3. Est-elle capable de s'adapter ?​\nNon, il considère une information toujours vraie. \n4. Est-elle autonome ?​\nOui. \n5. Est-elle capable de porter un regard critique ?​\nNon, car il considère une information toujours vraie. \n6. Agit-elle de manière responsable ?​\nNon, il ne regarde pas les sources et qui a publié l’information. \n \nProfil 7 — Emma : la prudente \nEmma ne maîtrise pas particulièrement les fonctions avancées des logiciels bureautiques. Elle \ndemande régulièrement de l'aide lorsqu'elle rencontre une difficulté technique. \nElle utilise cependant un gestionnaire de mots de passe, active la double authentification et \nvérifie régulièrement les paramètres de confidentialité de ses comptes. \nElle réfléchit avant de transmettre des données personnelles à une application et fait attention \naux informations qu'elle publie.\n\nLorsqu'elle ne sait pas utiliser un outil, elle cherche une solution ou demande de l'aide plutôt \nque de prétendre savoir faire. \n🟠 PARTIELLEMENT COMPÉTENT \n1. Que sait faire cette personne ?​\nElle utilise un gestionnaire de mots de passe, active la double authentification et vérifie les \nparamètres de confidentialité de ses comptes. \n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?​\nElle ne maitrise pas les logiciels avancés. \n3. Est-elle capable de s'adapter ?​\nElle demande de l’aide. \n4. Est-elle autonome ?​\nNon, elle demande de l’aide. \n5. Est-elle capable de porter un regard critique ?​\nOui. \n6. Agit-elle de manière responsable ?​\nOui. \n \nProfil 8 — Lucas : le technicien \nLucas est passionné d'informatique. Il sait installer des logiciels, configurer un ordinateur, \nrésoudre de nombreux problèmes techniques et comprendre les caractéristiques du matériel. \nLorsqu'un problème apparaît, il parvient généralement à trouver une solution par lui-même. \nEn revanche, il considère que les questions relatives aux données personnelles, aux \nalgorithmes, aux biais ou à l'éthique sont secondaires. \nPour lui : \n« Si ça fonctionne et que ça permet de faire ce qu'on veut, c'est que c'est un bon outil. » \n🟠 PARTIELLEMENT COMPÉTENT \n1. Que sait faire cette personne ?​\nIl sait installer des logiciels, configurer un ordinateur, résoudre des problèmes techniques et \ncomprendre les caractéristiques du matériel. \n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?​\n/ \n3. Est-elle capable de s'adapter ?​\nIl trouve des solutions en cas de problèmes. \n4. Est-elle autonome ?​\nOui, il trouve les solutions lui-même.. \n5. Est-elle capable de porter un regard critique ?​\nNon. \n6. Agit-elle de manière responsable ?​\nIl ne se préoccupe pas des questions éthiques.\n\nProfil 9 — Chloé : l'utilisatrice critique \nChloé utilise régulièrement des outils d'IA pour ses études. Elle les utilise notamment pour \ngénérer des idées, reformuler certains passages ou explorer différentes pistes. \nElle ne considère toutefois jamais une réponse générée comme une vérité définitive. Elle vérifie \nles informations importantes, consulte les sources originales et modifie les productions \nobtenues. \nAvant d'utiliser un outil, elle se demande également s'il est réellement pertinent pour la tâche. \nElle est capable d'expliquer à ses camarades ce que l'outil peut faire, ses limites et les situations \ndans lesquelles il vaut mieux ne pas l'utiliser. \n🟢 COMPÉTENT \n1. Que sait faire cette personne ?​\nElle utilise régulièrement des outils d'IA, pour générer des idées, reformuler certains passages \nou explorer différentes pistes et elle est capable d'expliquer à ses camarades ce que l'outil peut \nfaire, ses limites et les situations dans lesquelles il vaut mieux ne pas l'utiliser. \n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?​\n/ \n3. Est-elle capable de s'adapter ?​\nOn ne sait pas \n4. Est-elle autonome ?​\nOui, elle se demande quand un outil est réellement pertinent. \n5. Est-elle capable de porter un regard critique ?​\nOui. \n6. Agit-elle de manière responsable ?​\nOui. \n \nProfil 10 — Nathan : le reproducteur \nNathan utilise facilement les applications que ses amis lui montrent. Lorsqu'on lui explique une \nprocédure, il est capable de la reproduire rapidement. \nIl sait donc utiliser de nombreux outils. \nEn revanche, lorsqu'une situation légèrement différente se présente, il ne sait généralement plus \ncomment procéder. Il demande alors à quelqu'un de lui montrer exactement ce qu'il doit faire. \nLorsqu'un problème apparaît, il essaie rarement d'en comprendre la cause ou de rechercher \nlui-même une solution. \nIl explique : \n« Je sais utiliser les outils quand on m'a montré comment faire, mais je ne sais jamais quoi faire \nquand ça ne marche pas comme prévu. » \n🟠 PARTIELLEMENT COMPÉTENT \n1. Que sait faire cette personne ?​\nIl utilise des applications qu’on lui a montré.\n\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?​\nIl ne sait pas utiliser un logiciel lorsqu’il n’y est pas adapté. \n3. Est-elle capable de s'adapter ?​\nNon, il ne sait pas quoi faire. \n4. Est-elle autonome ?​\nNon, il demande de l’aide. \n5. Est-elle capable de porter un regard critique ?​\nNon, il n’essaye pas de comprendre les causes. \n6. Agit-elle de manière responsable ?​\nOn ne sait pas.",
     "driveUrl": "",
     "submittedAt": "2026-09-27 17:21",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.7,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 1.8,
+        "didacticQuality": 2.4,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Très bon travail, rigoureux et pertinent (8.7/10) : 3/5 notions clés intégrées, 1599 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : competence, profil, ethique.",
+        "Vocabulaire didactique approprié (competence, habilete, profil, information).",
+        "Développement textuel argumenté (1599 mots)."
+      ],
+      "improvements": [
+        "Approfondir les concepts complémentaires : digcomp, differenciation."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 1 : Diagnostic de compétences (DigComp 2.2)\" obtient la note de 8.7/10 (Très bon travail, rigoureux et pertinent). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 1.8,
+          "maxScore": 2.5,
+          "justification": "3/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "17 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (1599 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 8.7,
+      "maxScore": 10,
+      "feedback": "Très bon travail, rigoureux et pertinent (8.7/10) : 3/5 notions clés intégrées, 1599 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-9-e2306390",
@@ -609,7 +1091,63 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 1.1A — Compétent, partiellement compétent \nou incompétent ? \nObjectif \nVous allez analyser différentes situations afin de réfléchir à ce que signifie réellement être \ncompétent numériquement. \nL'objectif n'est pas de déterminer qui maîtrise le plus d'outils, mais d'identifier les différentes \ndimensions qui permettent de caractériser une compétence numérique. \nConsigne \nEn groupe de 3 à 4 étudiants, prenez connaissance des profils distribués. \nPour chaque profil, vous devez attribuer une seule des trois catégories suivantes : \n  COMPÉTENT \nLa personne dispose de ressources suffisantes pour agir de manière pertinente, autonome et \nresponsable dans les situations décrites. \n  PARTIELLEMENT COMPÉTENT \nLa personne maîtrise certaines dimensions de la compétence numérique, mais présente des \nlimites importantes dans d'autres dimensions. \n  INCOMPÉTENT \nLa personne ne dispose pas des ressources nécessaires pour agir de manière pertinente dans \nles situations décrites. \nAttention : « incompétent » ne signifie pas que la personne est incapable d'utiliser le \nnumérique. Elle peut posséder certaines habiletés techniques tout en étant insuffisamment \ncompétente dans la situation considérée. \n \nPour chaque profil \nDiscutez collectivement des questions suivantes : \n1. Que sait faire cette personne ? \nIdentifiez ses connaissances et ses savoir-faire. \n2. Que ne sait-elle pas faire ou ne comprend-elle pas ? \nRepérez ses limites. \n3. Est-elle capable de s'adapter ? \nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\n\n4. Est-elle autonome ? \nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un \ntutoriel ou d'une procédure ? \n5. Est-elle capable de porter un regard critique ? \nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ? \n6. Agit-elle de manière responsable ? \nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les \nconséquences de ses actions ? \n \nLes 10 profils \nProfil 1 — Sarah : l'experte en IA \nSarah utilise quotidiennement ChatGPT pour ses études. Elle sait rédiger des prompts précis, \ndemander différentes versions d'une réponse, résumer des textes et générer des idées. Elle \nobtient rapidement des productions qui lui semblent de bonne qualité. \nEn revanche, elle vérifie rarement les informations fournies par l'IA. Lorsqu'une réponse \ncontient une référence ou une statistique, elle considère généralement qu'elle est correcte. Elle \nne cherche pas systématiquement à identifier les sources originales. \nLorsqu'on lui signale qu'une réponse est fausse, elle répond : « Je ne pouvais pas le savoir, c'est \nl'IA qui a répondu. » \nPartiellement compétente  \n- \nElle sait rédiger des prompts précis. \n- \nElle vérifie rarement les informations fournies. \n- \nElle ne recherche pas les sources originales. \n- \nElle manque donc d’esprit critique face aux réponses de l’IA. \n- \nElle ne prend pas suffisamment sa responsabilité d’utilisatrice, puisqu’elle \nrejette la faute sur l’IA lorsqu’une information est fausse. \n \n \nProfil 2 — Thomas : le débrouillard \nThomas ne connaît pas beaucoup de logiciels et n'a jamais utilisé Canva. Il n'est pas \nparticulièrement à l'aise lorsqu'il découvre une nouvelle interface. \nLorsqu'on lui demande de créer une infographie, il commence cependant par rechercher des \noutils permettant de réaliser cette tâche. Il compare plusieurs possibilités, consulte des tutoriels \net expérimente. \nAprès plusieurs essais, il parvient à produire une infographie adaptée au public auquel elle est \ndestinée.\n\nLorsqu'il rencontre une difficulté, il cherche généralement une solution avant de demander de \nl'aide. \nCOMPÉTENT \n- \nPas à l’aise avec les nouvelles interfaces \n- \nIl s’informe sur les outils, il compare plusieurs outils avant de choisir  \n- \nFait preuve d’autonomie face aux difficultés \n \nProfil 3 — Lina : la spécialiste des réseaux sociaux \nLina maîtrise parfaitement Instagram, TikTok et Snapchat. Elle connaît les différentes \nfonctionnalités, sait créer des vidéos, utiliser les tendances et analyser les statistiques de ses \npublications. \nElle publie régulièrement des photographies et vidéos de ses amis. Elle considère que les \ncontenus présents sur son smartphone peuvent être publiés librement. \nElle ne s'interroge pas particulièrement sur le consentement des personnes photographiées, la \nconservation des contenus ou les conséquences de leur diffusion. \nElle affirme : \n« Je suis probablement la personne la plus compétente en numérique de ma classe. » \nPARTIELLEMENT COMPÉTENT \n- \nElle maitrise très bien les réseaux sociaux \n- \nSait créer des contenus \n- \nNe respecte pas le consentement et le droit à l’image, elle ne réfléchit pas aux \nconséquences de la diffusion et de la conservation des contenus.  \n- \nManque de réflexion critique.  \n \nProfil 4 — Hugo : le sceptique \nHugo utilise peu les réseaux sociaux et ne connaît pas la plupart des applications utilisées par \nses camarades. Il éprouve parfois des difficultés avec certains logiciels et ne sait pas réaliser \ndes montages vidéo complexes. \nLorsqu'il reçoit une information étonnante sur Internet, il ne la partage cependant jamais \nimmédiatement. Il cherche l'origine de l'information, vérifie la date, consulte plusieurs sources \net tente d'identifier l'auteur. \nLorsqu'il ne comprend pas quelque chose, il cherche généralement une ressource lui \npermettant de progresser. \nCOMPÉTENT\n\n- \nIl vérifie des sources avant de les divulgués, croise plusieurs sources avant de \nconsidérer une information comme fiable. Il vérifie la date, l’origine et l’auteur.  \n- \nMaîtrise moins certains outils et applications numériques.  \n \nProfil 5 — Julie : l'experte des logiciels \nJulie maîtrise très bien Word, Excel, PowerPoint et plusieurs logiciels professionnels. Elle connaît \nde nombreuses fonctions avancées et ses camarades font régulièrement appel à elle lorsqu'ils \nrencontrent un problème. \nElle refuse cependant presque systématiquement d'utiliser de nouveaux outils. \nLorsqu'un logiciel est remplacé dans son établissement, elle demande qu'on lui explique \nprécisément chaque étape et préfère attendre une formation plutôt que d'expérimenter seule. \nElle considère que sa compétence numérique repose principalement sur le nombre de logiciels \nqu'elle maîtrise. \nPARTIELLEMENT COMPÉTENT \n- \nMaitrise très bien de nombreux logiciel et leur fonctions avancées.  \n- \nElle aide les autres lorsqu’ils rencontrent une difficulté \n- \nElle possède des difficultés à s’adapter au nouveau changement, elle n’aime pas \ndécouvrir des nouveaux outils. Elle manque d’autonomie face a de nouveaux logiciels.  \n \nProfil 6 — Mehdi : le chercheur rapide \nMehdi sait utiliser efficacement les moteurs de recherche. Lorsqu'un professeur lui donne une \nquestion, il trouve rapidement une réponse sur Internet. \nPour gagner du temps, il consulte généralement les premiers résultats proposés par le moteur \nde recherche. Il regarde rarement qui a publié l'information et ne vérifie pas systématiquement \nles sources. \nLorsque plusieurs sites donnent la même information, il considère qu'elle est nécessairement \nvraie. \nIl explique : \n« Je trouve toujours ce que je cherche sur Internet. » \nINCOMPÉTENT \n- \nSait utiliser un moteur de recherche  \n- \nTrouve rapidement les informations recherchées.  \n- \nSe limite aux premiers résultats proposés.  \n- \nVérifie rarement l’auteur et la source de l’information \n- \nPense que la répétions de plusieurs sites est forcément vraie\n\n- \nManque d’esprit critique    \n \nProfil 7 — Emma : la prudente \nEmma ne maîtrise pas particulièrement les fonctions avancées des logiciels bureautiques. Elle \ndemande régulièrement de l'aide lorsqu'elle rencontre une difficulté technique. \nElle utilise cependant un gestionnaire de mots de passe, active la double authentification et \nvérifie régulièrement les paramètres de confidentialité de ses comptes. \nElle réfléchit avant de transmettre des données personnelles à une application et fait attention \naux informations qu'elle publie. \nLorsqu'elle ne sait pas utiliser un outil, elle cherche une solution ou demande de l'aide plutôt \nque de prétendre savoir faire. \nCOMPÉTENT \n- \nNe maitrise pas toutes les fonctions avancées des logiciels bureautiques \n- \nSait chercher des solutions si elle rencontre des difficultés \n- \nSait demander de l’aide  \n- \nUtilise la double authentification \n- \nVérifie ses paramètres de confidentialité \n- \nFait attention aux informations qu’elle publie \n \nProfil 8 — Lucas : le technicien \nLucas est passionné d'informatique. Il sait installer des logiciels, configurer un ordinateur, \nrésoudre de nombreux problèmes techniques et comprendre les caractéristiques du matériel. \nLorsqu'un problème apparaît, il parvient généralement à trouver une solution par lui-même. \nEn revanche, il considère que les questions relatives aux données personnelles, aux \nalgorithmes, aux biais ou à l'éthique sont secondaires. \nPour lui : \n« Si ça fonctionne et que ça permet de faire ce qu'on veut, c'est que c'est un bon outil. » \nPARTIELLEMENT COMPÉTENT \n- \nPossède de très bonnes compétences en informatique  \n- \nSait installer/ configurer des logiciels.  \n- \nNéglige la protection des données personnelles  \n- \nNéglige les enjeux éthiques et ne prends pas suffisamment en comptes les algorithmes \net leurs biais.\n\nProfil 9 — Chloé : l'utilisatrice critique \nChloé utilise régulièrement des outils d'IA pour ses études. Elle les utilise notamment pour \ngénérer des idées, reformuler certains passages ou explorer différentes pistes. \nElle ne considère toutefois jamais une réponse générée comme une vérité définitive. Elle vérifie \nles informations importantes, consulte les sources originales et modifie les productions \nobtenues. \nAvant d'utiliser un outil, elle se demande également s'il est réellement pertinent pour la tâche. \nElle est capable d'expliquer à ses camarades ce que l'outil peut faire, ses limites et les situations \ndans lesquelles il vaut mieux ne pas l'utiliser. \nCOMPÉTENTE \n- \nUtilise l’IA pour générer des idées, reformer et explorer différentes pistes. Elle connaît \net ses expliquer les possibilités et les limites. Adapte et modifie les productions \ngénérées par l’IA.  \n- \nVérifie les informations importantes. \n- \nConsulte les sources originales.   \n \nProfil 10 — Nathan : le reproducteur \nNathan utilise facilement les applications que ses amis lui montrent. Lorsqu'on lui explique une \nprocédure, il est capable de la reproduire rapidement. \nIl sait donc utiliser de nombreux outils. \nEn revanche, lorsqu'une situation légèrement différente se présente, il ne sait généralement \nplus comment procéder. Il demande alors à quelqu'un de lui montrer exactement ce qu'il doit \nfaire. \nLorsqu'un problème apparaît, il essaie rarement d'en comprendre la cause ou de rechercher \nlui-même une solution. \nIl explique : \n« Je sais utiliser les outils quand on m'a montré comment faire, mais je ne sais jamais quoi faire \nquand ça ne marche pas comme prévu. » \nPARTIELLEMENT COMPÉTENT \n- \nSait utiliser de nombreux outils numériques. Il est capable de reproduire rapidement \nune procédure. \n- \nIl a des difficultés à s’adapter à une nouvelle situation. Cherche rarement à comprendre \nl’origine du problème.",
     "driveUrl": "",
     "submittedAt": "2026-09-24 10:43",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.7,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 1.8,
+        "didacticQuality": 2.4,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Très bon travail, rigoureux et pertinent (8.7/10) : 3/5 notions clés intégrées, 1250 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : competence, profil, ethique.",
+        "Vocabulaire didactique approprié (competence, habilete, profil, information).",
+        "Développement textuel argumenté (1250 mots)."
+      ],
+      "improvements": [
+        "Approfondir les concepts complémentaires : digcomp, differenciation."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 1 : Diagnostic de compétences (DigComp 2.2)\" obtient la note de 8.7/10 (Très bon travail, rigoureux et pertinent). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 1.8,
+          "maxScore": 2.5,
+          "justification": "3/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "19 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (1250 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 8.7,
+      "maxScore": 10,
+      "feedback": "Très bon travail, rigoureux et pertinent (8.7/10) : 3/5 notions clés intégrées, 1250 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-10-jerome.foguenne",
@@ -626,7 +1164,63 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Prompter une musique\n\nPour générer des chansons de haute qualité avec l'IA musicale Gemini (Lyria), il est recommandé de structurer son prompt autour de 5 piliers fondamentaux, qui constituent la « formule secrète » de Google. Voici le détail de ces cinq parties :\n\n1. Le genre musical Il faut définir le type de chanson souhaité (pop, rap, musique classique, musique de pub, etc.). Vous pouvez préciser un sous-genre, cibler une époque (comme les années 80), ou même fusionner plusieurs styles pour créer un nouveau genre. Astuce importante : Pour contourner les limites liées aux droits d'auteur, il ne faut jamais nommer directement un artiste célèbre (comme Ed Sheeran ou Taylor Swift) ; décrivez plutôt ses caractéristiques vocales ou son succès (par exemple : « chanteuse pop américaine qui truste les charts »).\n\n2. Le tempo et l'ambiance Ce pilier sert à définir l'énergie et l'émotion que vous souhaitez transmettre à vos auditeurs. Vous devez décrire le rythme (BPM rapide ou lent) et l'atmosphère globale du morceau, qu'il s'agisse d'euphorie, de mélancolie, ou d'une ambiance plus sombre et mystérieuse.\n\n3. Les instruments Il est conseillé d'indiquer les instruments désirés pour votre morceau, mais en vous limitant strictement à deux ou trois instruments maximum. Si vous mentionnez trop d'instruments dans votre prompt, l'intelligence artificielle risque de s'y perdre, ce qui réduira sa créativité.\n\n4. La voix Vous devez spécifier les caractéristiques de l'interprète. Cela inclut le genre (voix d'homme ou de femme), l'attitude et l'émotion (voix posée, rassurante, émotive, en train de crier), des spécificités de timbre (voix rauque ou de fumeur), ainsi que la tessiture (comme soprano ou baryton).\n\n5. Les paroles Ce dernier pilier est dédié au storytelling. Bien qu'il soit possible de laisser Lyria générer les paroles en même temps que la musique, cela lui demande beaucoup d'efforts et a tendance à produire des morceaux plus courts et moins aboutis. L'idéal est donc de fournir vos propres paroles (que vous pouvez préalablement générer avec une IA textuelle comme Gemini) directement dans le prompt.\n\nUne fois ces cinq éléments définis, la bonne pratique consiste à les assembler et à rédiger votre prompt sous la forme d'un paragraphe complet pour éviter d'obtenir une musique avec une orchestration plate et sans personnalité.",
     "driveUrl": "",
     "submittedAt": "2026-09-26 10:39",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 5.9,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 1.0,
+        "didacticQuality": 1.4,
+        "criticalAnalysis": 1.6,
+        "formAndStructure": 1.9
+      },
+      "summary": "Travail satisfaisant mais perfectible (5.9/10) : 1/5 notions clés intégrées, 278 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : ethique.",
+        "Développement textuel argumenté (278 mots)."
+      ],
+      "improvements": [
+        "Approfondir les concepts complémentaires : digcomp, competence, profil.",
+        "Expliciter plus précisément les modalités d'accompagnement et de différenciation en classe."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 1 : Diagnostic de compétences (DigComp 2.2)\" obtient la note de 5.9/10 (Travail satisfaisant mais perfectible). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 1.0,
+          "maxScore": 2.5,
+          "justification": "1/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 1.4,
+          "maxScore": 2.5,
+          "justification": "3 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 1.6,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (278 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 1.9,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 5.9,
+      "maxScore": 10,
+      "feedback": "Travail satisfaisant mais perfectible (5.9/10) : 1/5 notions clés intégrées, 278 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-11-e2303712",
@@ -643,7 +1237,61 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 1 Diagnostic de compétences numériques (DigComp 2.2)\n\nCas 1 Sara :\n\nBonne maitrise de l’IA :\n\nElle sait bien utiliser ChatGPT, faire de bons prompts, demander plusieurs versions, résumer et trouver des idées.\n\nEsprit critique faible :\n\nElle croit trop facilement ce que lui répond l’IA. Elle vérifie peu les informations et les sources.\n\nResponsabilité faible :\n\nQuand l’IA se trompe, elle considère que ce n’est pas vraiment sa faute puisque c’est l’IA qui a donné la réponse.\n\nSarah est partiellement compétente.\nElle possède de bonnes habiletés opératoires avec ChatGPT et sait bien utiliser l’outil. Par contre, son manque d’esprit critique et de responsabilité fait que cette maîtrise technique ne suffit pas à parler d’une compétence numérique complète.\n\nCas 2 : Thomas\n\nMaitrise / limites :\nThomas ne connait pas beaucoup de logiciels et n’est pas particulièrement à l’aise lorsqu’il en découvre un nouveau.\n\nAdaptabilité :\nQuand il doit faire une infographie, il cherche plusieurs outils, compare ce qui existe, consulte des tutoriels et teste jusqu’à arriver à quelque chose qui convient.\n\nAutonomie :\nQuand il rencontre un problème, il cherche d’abord une solution par lui-même avant de demander de l’aide.\n\nThomas est compétent en numérique.\nMême s’il ne maitrise pas énormément d’outils, il sait mobiliser les ressources dont il dispose pour s’adapter à une situation nouvelle et trouver une solution par lui-même.\n\nCas 3 : Lina\n\nMaitrise :\nLina maitrise très bien plusieurs réseaux sociaux. Elle sait créer des vidéos, utiliser les tendances, analyser les statistiques de ses publications et connait bien leurs différentes fonctionnalités.\n\nResponsabilité / esprit critique :\nLina ne réfléchit pas assez au consentement ni aux conséquences de ce qu’elle publie. Elle partage des photos et vidéos de ses amis sans vraiment se demander s’ils sont d’accord, ni ce que ces contenus peuvent devenir une fois diffusés.\n\nLina est partiellement compétente en numérique.\nElle possède de bonnes habiletés techniques sur les réseaux sociaux, mais cela ne suffit pas à faire d’elle quelqu’un de pleinement compétent puisqu’elle prend trop peu en compte le consentement et les conséquences de ses publications.\n\nCas 4 : Hugo\n\nMaitrise / limites :\nHugo maitrise peu les réseaux sociaux et certains outils numériques. Il ne sait pas non plus réaliser de montages vidéo complexes.\n\nEsprit critique :\nHugo possède un très bon esprit critique. Lorsqu’il reçoit une information étonnante, il cherche son origine, vérifie la date, consulte plusieurs sources et essaie d’identifier l’auteur.\n\nAdaptabilité :\nLorsqu’il ne comprend pas quelque chose, il cherche une ressource lui permettant de progresser.\n\nAutonomie :\nIl cherche généralement cette ressource par lui-même et essaie donc de résoudre ses difficultés sans dépendre directement de quelqu’un.\n\nHugo est compétent en numérique.\nMême s’il possède certaines limites techniques, il sait mobiliser ses connaissances et son esprit critique de manière pertinente lorsqu’il est confronté à une information ou à une difficulté.\n\nCas 5 : Julie\nJulie maitrise très bien plusieurs logiciels de la suite Office ainsi que plusieurs logiciels professionnels. Elle connait aussi des fonctions avancées et peut aider les autres lorsqu’ils rencontrent un problème.\n\nAdaptabilité :\nJulie est réfractaire au changement et refuse presque systématiquement les nouveaux outils.\n\nAutonomie :\nLorsqu’elle doit apprendre un nouvel outil, elle préfère attendre une formation ou des explications précises plutôt que d’expérimenter par elle-même.\n\nJulie est partiellement compétente en numérique.\nElle possède de très bonnes habiletés opératoires sur les outils qu’elle connait. Par contre, elle a du mal à les mobiliser dès qu’elle est confrontée à un nouvel outil, ce qui limite son adaptabilité et son autonomie.\n\nCas 6 : Mehdi\n\nMehdi maitrise efficacement les moteurs de recherche et sait formuler une recherche lui permettant de trouver rapidement une réponse.\n\nAutonomie :\nIl est capable de chercher seul une réponse sur Internet et ne dépend pas forcément de quelqu’un pour trouver une information.\n\nEsprit critique :\nSon esprit critique est cependant très limité. Il consulte surtout les premiers résultats, vérifie rarement l’auteur ou la source et considère qu’une information répétée sur plusieurs sites est forcément vraie.\n\nMehdi est partiellement compétent en numérique.\nIl possède l’habileté technique nécessaire pour utiliser efficacement un moteur de recherche. Par contre, il manque d’esprit critique pour évaluer la fiabilité des résultats, donc cette habileté ne suffit pas à faire de lui quelqu’un de pleinement compétent.\n\nCas 7 : Emma\n\nMaitrise / limites :\nEmma ne maitrise pas particulièrement les fonctions avancées des logiciels bureautiques et demande régulièrement de l’aide lorsqu’elle rencontre une difficulté technique.\n\nAdaptabilité :\nLorsqu’elle ne sait pas utiliser un outil, elle cherche une solution ou demande de l’aide. Elle sait donc réagir lorsqu’elle est confrontée à quelque chose qu’elle ne connait pas.\n\nAutonomie :\nElle n’est pas toujours autonome puisqu’elle demande régulièrement de l’aide, mais elle sait aussi chercher elle-même une solution.\n\nResponsabilité :\nEmma possède de très bons réflexes de sécurité. Elle utilise un gestionnaire de mots de passe, active la double authentification, vérifie ses paramètres de confidentialité et réfléchit avant de partager des données personnelles.\n\nEmma est compétente en numérique.\nElle a quelques limites techniques, mais elle sait mobiliser les bonnes ressources lorsqu’elle rencontre un problème et adopte surtout une utilisation responsable du numérique.\n\nCas 8 : Lucas\n\nMaitrise :\nLucas possède une très bonne maitrise technique. Il sait installer des logiciels, configurer un ordinateur et résoudre de nombreux problèmes par lui-même.\n\nAutonomie / adaptabilité :\nLorsqu’un problème apparait, Lucas arrive généralement à trouver une solution seul.\n\nEsprit critique :\nIl prend peu de recul sur les outils qu’il utilise. Les questions liées aux algorithmes et aux biais lui paraissent secondaires, tant que l’outil fonctionne.\n\nResponsabilité :\nIl accorde également peu d’importance aux données personnelles et aux questions d’éthique.\n\nLucas est partiellement compétent en numérique.\nSon profil montre une très forte maîtrise opératoire et une bonne autonomie technique. Par contre, il prend trop peu en compte les biais, les données personnelles et les questions d’éthique, ce qui limite sa compétence numérique.\n\nCas 9 : Chloé\n\nChloé sait utiliser les outils d’IA pour générer des idées, reformuler ou explorer différentes pistes.\n\nEsprit critique :\nElle ne considère jamais les réponses de l’IA comme forcément vraies. Elle vérifie les informations importantes, consulte les sources originales et modifie les réponses obtenues.\n\nPertinence / autonomie :\nAvant d’utiliser un outil, elle se demande s’il est réellement adapté à la tâche. Elle comprend aussi ses limites et sait expliquer dans quelles situations il vaut mieux ne pas l’utiliser.\n\nChloé est compétente en numérique.\nElle ne se limite pas à savoir utiliser l’outil : elle mobilise aussi son esprit critique, vérifie les informations et juge si l’IA est réellement pertinente pour la situation.\n\nCas 10 : Nathan\n\nNathan sait utiliser plusieurs outils lorsqu’on lui a montré comment faire. Il est capable de reproduire rapidement une procédure connue.\n\nAdaptabilité :\nNathan s’adapte très mal. Dès que la situation change un peu, il ne sait plus quoi faire et a besoin qu’on lui montre exactement la nouvelle procédure.\n\nAutonomie :\nIl est très peu autonome. Lorsqu’un problème apparait, il cherche rarement à comprendre sa cause ou à trouver une solution par lui-même.\n\nNathan est incompétent en numérique.\nIl possède certaines habiletés opératoires puisqu’il sait reproduire une procédure connue. Par contre, son profil montre qu’il n’arrive pas à mobiliser ces habiletés dans une situation nouvelle. Son manque d’autonomie et d’adaptabilité fait donc qu’elles ne deviennent pas une véritable compétence numérique.\n\nConclusion :\nAu final, le truc important c’est de pas confondre habileté opératoire et compétence numérique. Quelqu’un peut très bien être bon techniquement, savoir utiliser un outil et quand même être limité dès qu’il faut réfléchir, s’adapter ou vérifier ce qu’il fait. En tant que futur enseignant, je dois donc regarder le profil complet de l’élève et pas juste voir s’il sait faire tourner l’outil. La compétence, c’est surtout savoir mobiliser ses habiletés correctement selon la situation.",
     "driveUrl": "",
     "submittedAt": "2026-09-27 16:13",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.3,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.4,
+        "didacticQuality": 2.4,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.3/10) : 5/5 notions clés intégrées, 1021 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : digcomp, competence, profil, differenciation.",
+        "Vocabulaire didactique approprié (digcomp, competence, habilete, operatoire).",
+        "Développement textuel argumenté (1021 mots)."
+      ],
+      "improvements": [],
+      "detailedFeedback": "Ce travail sur \"Atelier 1 : Diagnostic de compétences (DigComp 2.2)\" obtient la note de 9.3/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "5/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "23 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (1021 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.3,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.3/10) : 5/5 notions clés intégrées, 1021 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-12-laura.mokeddem",
@@ -660,7 +1308,64 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Numérique et didactique - Exercice 1  \n \nProfil 1 – Sarah : partiellement compétente \nElle est capable d’utiliser ChatGPT et lui donne des prompts assez précis que pour \nobtenir ce qu’elle souhaite. MAIS, elle ne vérifie pas ses sources après, elle estime que \nsi l’IA lui a donné une réponse, elle est forcément correcte.  \nProfil 2 – Thomas : compétent \nIl ne connait pas tout, mais est capable de se débrouiller face à une difficulté. Il \ns’adapte, effectue des recherches si nécessaire. Il est autonome dans ses recherches \net cherche d’abord un tutoriel plutôt que de demander directement à quelqu'un.  \nProfil 3 – Lina : partiellement compétente  \nElle connait les réseaux sociaux et sait les utiliser. Elle sait faire des montages vidéoS \net connait les tendances. Par contre, elle ignore complétement les règles RGPD sur les \ndroits à l’image \nProfil 4 – Hugo : compétent \nIl ne maîtrise pas tous les codes des réseaux sociaux, il ne sait pas farie de montage \nvidéo. Par contre, il vérifie les informations qu’il retrouve sur internet. Il vérifie ses \nsources et croisent les informations pour savoir si c’est vrai. Il fait des recherches \nquand il a besoin de comprendre ou de progresser sur quelque chose. \nProfil 5 – Julie : partiellement compétente  \nElle maîtrise les logiciels dont elle a besoin dans son travail et peut facilement aider les \nautres et leur expliquer s’ils ont besoin. Par contre, elle n’est pas autonome dans ses \napprentissages. Pour un nouveau logiciel, il faut qu’on lui explique tout avant qu’elle \ncommence à l’utiliser.  \nProfil 6 – Mehdi : incompétent \nIl fait une confiance aveugle à internet. Il ne remet jamais en question les informations \nqu’il y trouve et ne vérifie pas les sources.  \nProfil 7 – Emma : partiellement compétente  \nElle connait les règles de sécurités et de confidentialité. Elle est prudente avant de \ntransmettre des données qu’elle ne voudrait pas. Elle dit quand elle ne sait pas plutôt \nque de prétendre savoir tout faire.  \nProfil 8 – Lucas : partiellement compétent\n\nIl se débrouille très bien en informatique. Il sait installer des logiciels et résoudre \nbeaucoup de problèmes techniques. Cependant, il se fout complètement des règles \nRGPD et estime que tout cela est secondaire. Le fonctionnel est plus important à ses \nyeux \nProfil 9 - Chloé : Compétente  \nElle sait utiliser les IA comme outils pour des recherches. Mais cela ne reste que des \noutils. Elle vérifie ses informations en les croisant et en vérifiant les sources. Elle \nmaîtrise assez bien le sujet que pour pouvoir expliquer aux autres ses avantages et ses \nlimites.  \nProfil 10 - Nathan : incompétent \nIl ne maîtrise pas les applications ou logiciel. Il est simplement capable de reproduire \nexactement ce qu’on lui montre. Si un détail change, il est perdu et ne sait plus rien \nfaire. Il ne cherchera pas une solution par lui-même, il faut obligatoirement que \nquelqu’un lui montre à nouveau.",
     "driveUrl": "",
     "submittedAt": "2026-09-25 13:48",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.4,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 1.8,
+        "didacticQuality": 2.4,
+        "criticalAnalysis": 2.0,
+        "formAndStructure": 2.2
+      },
+      "summary": "Très bon travail, rigoureux et pertinent (8.4/10) : 3/5 notions clés intégrées, 356 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : profil, differenciation, ethique.",
+        "Vocabulaire didactique approprié (profil, information, securite, problemes).",
+        "Développement textuel argumenté (356 mots)."
+      ],
+      "improvements": [
+        "Approfondir les concepts complémentaires : digcomp, competence.",
+        "Expliciter plus précisément les modalités d'accompagnement et de différenciation en classe."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 1 : Diagnostic de compétences (DigComp 2.2)\" obtient la note de 8.4/10 (Très bon travail, rigoureux et pertinent). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 1.8,
+          "maxScore": 2.5,
+          "justification": "3/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "14 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.0,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (356 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 8.4,
+      "maxScore": 10,
+      "feedback": "Très bon travail, rigoureux et pertinent (8.4/10) : 3/5 notions clés intégrées, 356 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-13-mathis.rodes",
@@ -677,7 +1382,63 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Profil 1 — Sarah : l'experte en IA\n\nSarah utilise quotidiennement ChatGPT pour ses études. Elle sait rédiger des prompts précis, demander différentes versions d'une réponse, résumer des textes et générer des idées. Elle obtient rapidement des productions qui lui semblent de bonne qualité.\n\nEn revanche, elle vérifie rarement les informations fournies par l'IA. Lorsqu'une réponse contient une référence ou une statistique, elle considère généralement qu'elle est correcte. Elle ne cherche pas systématiquement à identifier les sources originales.\n\nLorsqu'on lui signale qu'une réponse est fausse, elle répond : « Je ne pouvais pas le savoir, c'est l'IA qui a répondu. »\n\nPartiellement compétent\n\nProfil 2 — Thomas : le débrouillard\n\nThomas ne connaît pas beaucoup de logiciels et n'a jamais utilisé Canva. Il n'est pas particulièrement à l'aise lorsqu'il découvre une nouvelle interface.\n\nLorsqu'on lui demande de créer une infographie, il commence cependant par rechercher des outils permettant de réaliser cette tâche. Il compare plusieurs possibilités, consulte des tutoriels et expérimente.\n\nAprès plusieurs essais, il parvient à produire une infographie adaptée au public auquel elle est destinée.\n\nLorsqu'il rencontre une difficulté, il cherche généralement une solution avant de demander de l'aide.\n\nCompétent\n\nProfil 3 — Lina : la spécialiste des réseaux sociaux\n\nLina maîtrise parfaitement Instagram, TikTok et Snapchat. Elle connaît les différentes fonctionnalités, sait créer des vidéos, utiliser les tendances et analyser les statistiques de ses publications.\n\nElle publie régulièrement des photographies et vidéos de ses amis. Elle considère que les contenus présents sur son smartphone peuvent être publiés librement.\n\nElle ne s'interroge pas particulièrement sur le consentement des personnes photographiées, la conservation des contenus ou les conséquences de leur diffusion.\n\nElle affirme :\n\n« Je suis probablement la personne la plus compétente en numérique de ma classe. »\n\nPartiellement compétent\n\nProfil 4 — Hugo : le sceptique\n\nHugo utilise peu les réseaux sociaux et ne connaît pas la plupart des applications utilisées par ses camarades. Il éprouve parfois des difficultés avec certains logiciels et ne sait pas réaliser des montages vidéo complexes.\n\nLorsqu'il reçoit une information étonnante sur Internet, il ne la partage cependant jamais immédiatement. Il cherche l'origine de l'information, vérifie la date, consulte plusieurs sources et tente d'identifier l'auteur.\n\nLorsqu'il ne comprend pas quelque chose, il cherche généralement une ressource lui permettant de progresser.\n\nCompétent\n\nProfil 5 — Julie : l'experte des logiciels\n\nJulie maîtrise très bien Word, Excel, PowerPoint et plusieurs logiciels professionnels. Elle connaît de nombreuses fonctions avancées et ses camarades font régulièrement appel à elle lorsqu'ils rencontrent un problème.\n\nElle refuse cependant presque systématiquement d'utiliser de nouveaux outils.\n\nLorsqu'un logiciel est remplacé dans son établissement, elle demande qu'on lui explique précisément chaque étape et préfère attendre une formation plutôt que d'expérimenter seule.\n\nElle considère que sa compétence numérique repose principalement sur le nombre de logiciels qu'elle maîtrise.\n\nPartiellement compétent\n\nProfil 6 — Mehdi : le chercheur rapide\n\nMehdi sait utiliser efficacement les moteurs de recherche. Lorsqu'un professeur lui donne une question, il trouve rapidement une réponse sur Internet.\n\nPour gagner du temps, il consulte généralement les premiers résultats proposés par le moteur de recherche. Il regarde rarement qui a publié l'information et ne vérifie pas systématiquement les sources.\n\nLorsque plusieurs sites donnent la même information, il considère qu'elle est nécessairement vraie.\n\nIl explique :\n\n« Je trouve toujours ce que je cherche sur Internet. »\n\nPartiellement compétent\n\nProfil 7 — Emma : la prudente\n\nEmma ne maîtrise pas particulièrement les fonctions avancées des logiciels bureautiques. Elle demande régulièrement de l'aide lorsqu'elle rencontre une difficulté technique.\n\nElle utilise cependant un gestionnaire de mots de passe, active la double authentification et vérifie régulièrement les paramètres de confidentialité de ses comptes.\n\nElle réfléchit avant de transmettre des données personnelles à une application et fait attention aux informations qu'elle publie.\n\nLorsqu'elle ne sait pas utiliser un outil, elle cherche une solution ou demande de l'aide plutôt que de prétendre savoir faire.\n\nCompétent\n\nProfil 8 — Lucas : le technicien\n\nLucas est passionné d'informatique. Il sait installer des logiciels, configurer un ordinateur, résoudre de nombreux problèmes techniques et comprendre les caractéristiques du matériel.\n\nLorsqu'un problème apparaît, il parvient généralement à trouver une solution par lui-même.\n\nEn revanche, il considère que les questions relatives aux données personnelles, aux algorithmes, aux biais ou à l'éthique sont secondaires.\n\nPour lui :\n\n« Si ça fonctionne et que ça permet de faire ce qu'on veut, c'est que c'est un bon outil. »\n\nPartiellement compétent\n\nProfil 9 — Chloé : l'utilisatrice critique\n\nChloé utilise régulièrement des outils d'IA pour ses études. Elle les utilise notamment pour générer des idées, reformuler certains passages ou explorer différentes pistes.\n\nElle ne considère toutefois jamais une réponse générée comme une vérité définitive. Elle vérifie les informations importantes, consulte les sources originales et modifie les productions obtenues.\n\nAvant d'utiliser un outil, elle se demande également s'il est réellement pertinent pour la tâche.\n\nElle est capable d'expliquer à ses camarades ce que l'outil peut faire, ses limites et les situations dans lesquelles il vaut mieux ne pas l'utiliser.\n\nCompétent\n\nProfil 10 — Nathan : le reproducteur\n\nNathan utilise facilement les applications que ses amis lui montrent. Lorsqu'on lui explique une procédure, il est capable de la reproduire rapidement.\n\nIl sait donc utiliser de nombreux outils.\n\nEn revanche, lorsqu'une situation légèrement différente se présente, il ne sait généralement plus comment procéder. Il demande alors à quelqu'un de lui montrer exactement ce qu'il doit faire.\n\nLorsqu'un problème apparaît, il essaie rarement d'en comprendre la cause ou de rechercher lui-même une solution.\n\nIl explique :\n\n« Je sais utiliser les outils quand on m'a montré comment faire, mais je ne sais jamais quoi faire quand ça ne marche pas comme prévu. »\n\nIncompétent",
     "driveUrl": "",
     "submittedAt": "2026-09-25 15:43",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.7,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 1.8,
+        "didacticQuality": 2.4,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Très bon travail, rigoureux et pertinent (8.7/10) : 3/5 notions clés intégrées, 730 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : competence, profil, ethique.",
+        "Vocabulaire didactique approprié (competence, profil, information, problemes).",
+        "Développement textuel argumenté (730 mots)."
+      ],
+      "improvements": [
+        "Approfondir les concepts complémentaires : digcomp, differenciation."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 1 : Diagnostic de compétences (DigComp 2.2)\" obtient la note de 8.7/10 (Très bon travail, rigoureux et pertinent). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 1.8,
+          "maxScore": 2.5,
+          "justification": "3/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "15 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (730 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 8.7,
+      "maxScore": 10,
+      "feedback": "Très bon travail, rigoureux et pertinent (8.7/10) : 3/5 notions clés intégrées, 730 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-14-sabrina.siragusa",
@@ -694,7 +1455,63 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 1.1A\nSIRAGUSA Sabrina\nVALENZANO Jonathan\n1\n2\n3\n4\n5\n6\nConnaissances et SF\nLimites\nAdaptation\nAutonomie\nRegard critique\nResponsabilité\nConclusion\nSarah\nRégider des prompts précis pour une IA \ngénérative.\nReformulation d'une réponse donnée par l'IA.\nDemander des résumés des textes et générer des \nidées.\nElle ne comprend pas que l'IA peut se tromper.\n/\n/\nElle ne vérifie pas les informations \n(référence, statistique).\nElle ne cherche pas à identifier les sources \noriginales.\nRemet la faute sur l'IA en cas \nd'erreur.\nThomas\nIl sait rechercher un outil qui pourra l'aider à \nréaliser son travail.\nIl sait comparer les différentes options, \nexpérimenter un logiciel.\nIl ne connait pas beaucoup de logiciels (Ex. \nCanva).\nIl n'est pas à l'aise avec une interface \ninconnue.\nIl expérimente, il recherche \nune solution avant de \ndemander de l'aide.\nTrès bonne.\nIl a un regard critique sur l'utilisation (en \nconsulte plusieurs et expérimente).\n/\nLina\nMaitrise des réseaux sociaux.\nCréation de vidéos.\nUtilisation des tendances.\nAnalyse \"statistique\" de ses publications.\n/\nAdaptation uniquement dans \nson domaine (réseaux \nsociaux).\n/\n/\nProblèmes de la protection de la \nvie privée (publication libre sans \nconsulter les individus \nconcernés).\nProblèmes de conservation des \ncontenus et de leur diffusion.\nHugo\nRéalisation de montage de vidéos simples.\nMaitrise certains logiciels.\nRecherche d'informations sur internet.\nPeu d'utilisation des réseaux sociaux.\nManque de connaissance dans certaines \napplications et logiciels.\nNe sait pas réaliser un montage vidéo \ncomplexe.\nIl recherche une ressource lui \npermettant de progresser.\nDépend d'une ressource.\nIl recherche la véracité d'une information \nétonnante (origine, date, auteurs).\nIl ne partage pas jamais \nimmédiatement l'information \nétonnante avant de vérifier sa \nvéracité.\nJulie\nLa suite Office et autres logiciels professionnels \n(niveau avancé).\nPartager ses connaissances d'un logiciel.\nNe veut pas expérimenter seule un nouveau \nlogiciel.\nElle attend une formation ou \nune explicaion précise de \nchaque étape.\nDépend de formations ou de \npersonnes référentes.\n/\n/\nMehdi\nUtilisation efficace des moteurs de recherche.\n/\nRecherche l'information sur \ninternet.\nDépend d'une recherche internet.\nNe vérifie pas les sources.\nRegarde les sources dans l'ordre \nd'apparition sans regarder si la source \nqualitative.\nNaïvité numérique (une réponse qui \napparait plusieurs n'est pas forcément la \nbonne).\n/\nEmma\nMaitrise les fonctions de base des logiciels de \nbureautique.\nMaitrise un gestionnaire de mot de passe.\nMaitrise la double identification.\nVérifier les paramètres de confidentialité de ses \ncomptes.\nRecherche une solution.\nNe maitrise pas les fonctions avancées des \nlogiciels de bureautique.\nRecherche une solution ou \ndemande de l'aide.\nPeut rechercher une solution par \nelle-même mais peut demander de \nl'aide à une personne référente \n(difficulté technique ou quand elle \nne trouve pas la solution).\nSe questionne sur la confidentialité des \ninformations sur ses comptes.\nVérifie ce qu'elle transmet à une \napplication (données \npersonnelles).\nFais attention à ce qu'elle publie.\nDouble identification.\nConfidentialité des comptes.\nLucas\nInstallation de logiciels.\nConfiguration d'un ordinateur.\nRésolution de problèmes techniques et \ncompréhension des caractéristiques du matériel.\n/\nParvient à solutionner le \nproblème par lui-même.\nIl est automone.\nRegard critique secondaire (biais des \ninformations, algorithmes…).\nSe base uniquement sur le \nfonctionnement.\nNon, la confidentialité, l'éthique \net les données personnelles sont \nsecondaires.\nChloé\nUtiliser l'IA afin de générer des idées, reformuler \ndes passages ou explorer ≠ pistes.\nVérifier les informations importantes.\nConsulter les sources originales.\nModifier les productions obtenues.\nExpliquer ce que l'outil peut faire, ses limites et \nquand il ne faut pas l'utiliser.\n/\nUtilise l'IA.\nAutonomie liée à l'utilisation de \nl'IA.\nTrès bon, elle ne considère pas qu'une \nréponse générée est une vérité.\nVérifie les informations importantes, \nconsulte les sources les originales.\nSe questionne en amont sur la pertinence \nd'un outil.\nRecherche les sources originales \n(droits d'auteur).\nNathan\nReproduire rapidement une procédure.\nUtilisation de nombreux outils préalablement \nexpliqués.\nLimité aux outils connus.\nNe comprend pas la cause d'un problème.\nEssaie rarement de rechercher une solution.\nMauvais (ne comprend pas la \ncause, ne cherche de solution \net ne sait pas quoi faire quand \ncela ne fonctionne pas).\nDépend toujours d'autruis.\nOn doit lui montrer exactement la \nprocédure (imitation).\nAucun, reproduit sans comprendre.\nNe prend aucune responsabilité.",
     "driveUrl": "",
     "submittedAt": "2026-09-23 20:54",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.1,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.2,
+        "didacticQuality": 2.4,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.1/10) : 4/5 notions clés intégrées, 510 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : digcomp, competence, profil, ethique.",
+        "Vocabulaire didactique approprié (domaine, information, creation, resolution).",
+        "Développement textuel argumenté (510 mots)."
+      ],
+      "improvements": [
+        "Approfondir les concepts complémentaires : differenciation."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 1 : Diagnostic de compétences (DigComp 2.2)\" obtient la note de 9.1/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "4/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "17 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (510 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.1,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.1/10) : 4/5 notions clés intégrées, 510 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-15-sabrina.siragusa",
@@ -711,7 +1528,64 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 02 — Peut-on faire confiance à cette information ? \nVotre mission \nVous découvrez sur Internet l'affirmation suivante : \n« Une étude scientifique vient de prouver que regarder son téléphone avant de dormir fait \nperdre 2 heures de sommeil chaque nuit. » \nAvant de la partager avec des élèves, vous devez déterminer si cette information est suffisamment \nfiable. \nPar groupes de 3 à 4 : \n1. Construisez votre méthode de vérification \nQuelles informations devez-vous rechercher pour pouvoir déterminer si cette affirmation est \nfiable ? \n1. Rechercher l’origine exacte de l’affirmation. \n2. Rechercher des articles scientifiques sur le sujet en utilisant les différentes plateformes de \nrecherche. \n3. Analyser les articles scientifiques trouvés. \n4. Croiser les différentes sources entre elles. \n5. Valider ou invalider l’affirmation. \n \n2. Menez l'enquête \nUtilisez Internet pour vérifier l'information. Recherchez notamment : \no \nl'origine de l'affirmation ; \no \nla source scientifique éventuelle ; \no \nl'auteur ou l'organisme à l'origine de l'information ; \no \nd'autres sources permettant de confirmer ou de nuancer l'affirmation. \n \nL’origine de l’affirmation est inconnue mais un groupe de chercheurs norvégiens (Hjetland GJ, \nSkogen JC, Hysing M, Gradisar M and Sivertsen B) s’est penché sur la question mais uniquement \nchez les étudiants universitaires norvégiens. Les résultats de cette recherche ont été publiés le \n31 mars 2025 dans « Frontiers in Psychiatry ». Les chercheurs ont démontré qu’une heure d’écran \nsupplémentaire au lit était associée à une réduction du temps de sommeil de 24 minutes (et non \nde deux heures). D’autres publications permettent de dire qu’il y a bien des effets négatifs quant \nà l’utilisation du téléphone avant de s’endormir sans pour autant donner d’information relative \nau temps de sommeil perdu.\n\n3. Prenez une décision \nRépondez à la question : \n« Partageriez-vous cette information avec des élèves ? » NON \nJustifiez votre réponse à partir de sources vérifiables. \nNon, l’affirmation n’est pas assez opérationnalisée. En effet, on ne connait pas la population \nétudiée pour affirmer cela. De plus, la formulation « regarder son téléphone » n’indique en rien \nla réelle utilisation que la personne en fait (regarder une vidéo ou uniquement scroller). Des \ninformations essentielles pour prendre en compte tous les éléments de cette affirmation sont \nmanquantes. Il est, donc, nécessaire de réaliser une recherche approfondie en amont avant de \nproposer celle-ci aux apprenants. Pour vérifier correctement l’affirmation, nous avons utilisé \nGoogleScholar et PubMed afin d’obtenir différents articles de recherche sur le sujet dans le but \nde croiser les informations. \nIl est, tout de même, compliqué de trouver des articles scientifiques reprenant des recherches \ngénérales sur ce sujet. De nombreux articles ciblent une population précise tant au niveau \ngéographique qu’au niveau de l’âge des personnes.  \n \nEn conclusion, l’affirmation est générique et celle-ci manque de précision. \n \nSources utilisées : \nHjetland GJ, Skogen JC, Hysing M, Gradisar M and Sivertsen B (2025) How and when screens \nare used: comparing different screen activities and sleep in Norwegian university students. \nFront. Psychiatry 16:1548273. doi: 10.3389/fpsyt.2025.1548273 \nBrosnan, B., Haszard, J. J., Meredith-Jones, K. A., Wickham, S. R., Galland, B. C., & Taylor, R. W. \n(2024). Screen use at bedtime and sleep duration and quality among youths. JAMA \npediatrics, 178(11), 1147-1154. \nDuraccio, K. M., Zaugg, K. K., Blackburn, R. C., & Jensen, C. D. (2021). Does iPhone night shift \nmitigate negative effects of smartphone use on sleep outcomes in emerging adults? Sleep \nHealth, 7(4), 478–484. https://doi.org/10.1016/j.sleh.2021.03.005 \nCette ressource pourrait être intéressante mais l’article est payant :  \nGarcia, A., Ramirez, C., Aguillon, A., Tirado, V., Paredes, L., Ibarra, A., & Valdez, P. (2017). \nSmartphone use during sleep time in Mexican adolescents. Sleep Medicine, 40(Suppl. 1), e106–\ne107. https://doi.org/10.1016/j.sleep.2017.11.310 \n \n4. Préparez une restitution de 2 minutes : \no \nvotre décision ;\n\no \nles éléments qui ont guidé votre choix ; \no \nvotre méthode de vérification ; \no \nune difficulté rencontrée. \n \nNous nous sommes penchés sur l’affirmation suivante : « Une étude scientifique vient de prouver que \nregarder son téléphone avant de dormir fait perdre 2 heures de sommeil chaque nuit. » \nNotre décision est claire : non, nous ne partagerions pas cette information telle quelle à nos élèves. \nPourquoi ce choix ? Tout d’abord, l’affirmation souffre d’un manque total d’opérationnalisation. Elle ne \nprécise ni la population étudiée, ni ce que recouvre l'expression « regarder son téléphone » — s'agit-il \nde visionner une vidéo, d'écouter un podcast ou de scroller passivement sur les réseaux sociaux ? De \nplus, en menant notre enquête via des bases de données comme Google Scholar et PubMed, nous \navons constaté que l’affirmation originale est générique et exagérée. Les recherches scientifiques, \ncomme les travaux récents de Hjetland et collaborateurs en 2025 sur les étudiants norvégiens, ou de \nl'étude de Brosnan et son équipe parue dans JAMA Pediatrics en 2024, montrent des impacts mesurés \net nuancés selon les usages et l'âge, bien loin du chiffre choc des 2 heures (sensationnalisme). Diffuser \nune information aussi imprécise risquerait de manquer de rigueur pédagogique. \nNotre méthode de vérification a consisté à interroger des moteurs de recherche académiques pour \ncroiser les sources, analyser les méthodologies et consulter des études ciblées. \nEnfin, la principale difficulté rencontrée a résidée dans la nature même de la littérature scientifique : il \nest très compliqué de trouver des articles proposant des conclusions générales applicables à tout le \nmonde. La grande majorité des recherches cible une population extrêmement précise, que ce soit en \ntermes de géographie, de tranche d’âge, ou se heurte parfois à des barrières d'accès (articles payants). \nEn conclusion, face à une affirmation aussi générique et manquant de précision, un travail approfondi \nde vérification s'impose toujours avant de la placer entre les mains des apprenants. \n \n \n \nRessources \nVous pouvez utiliser un moteur de recherche ainsi que : \n• \nGoogle Scholar \n• \nPubMed \n• \nCrossref \nUne IA peut vous aider dans vos recherches, mais ses réponses doivent être vérifiées à partir de \nsources fiables.",
     "driveUrl": "",
     "submittedAt": "2026-09-26 16:00",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.5,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.5,
+        "didacticQuality": 2.5,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 714 mots d'analyse.",
+      "strengths": [
+        "Enquête scientifique exemplaire remontant aux sources primaires (PubMed / revues à comité de lecture).",
+        "Déconstruction argumentée du sensationnalisme médiatique et de la confusion corrélation/causalité.",
+        "Positionnement didactique pertinent et proposition de situation-problème pour les élèves."
+      ],
+      "improvements": [
+        "Préparer la restitution orale de 2 minutes pour partager cette démarche avec le groupe.",
+        "Maintenir ce haut niveau d'exigence pour les étapes de prototypage."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 2 : Évaluation critique d'une information\" obtient la note de 9.5/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "5/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "21 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (714 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.5,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 714 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-16-chloe.steckx",
@@ -728,7 +1602,64 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Profil 1\n \n   → Partiellement compétent \n \n 🟠\n1. Rédiger un prompt pour demander des reformulations / résumés / idées sur une problématique.\n2. Vérifier systématiquement la fiabilité / véracité de l’information produite.\n3. Non, elle rejette la faute sur l’IA.\n4. Non, elle dépend de ChatGPT.\n5. Elle en se remet pas en question et se dédouane en rejetant la faute sur l’IA.\n6. Pas de mention.\nProfil 2 → Compétent 🟢\n1. Rechercher des outils (tutoriels par exemple), expérimenter et comparer des possibilités.\n2. Utilisation de Canva pour créer une infographie (Débuter avec une interface inconnue en \ngénéral).\n3. Oui, il recherche de l’aide via des tutoriels notamment.\n4. Oui, il utilise des tutoriels mais expérimente et compare les possibilités par lui-même. De plus, il \nne demande de l’aide à quelqu’un qu’en derniers recours.\n5. Oui puisqu’il compare les possibilités.\n6. Pas de mention.\nProfil 3 → Partiellement compétent 🟠\n1. Gérer les différents aspects (création de contenu, fonctionnalités, statistiques). des principaux \nréseaux sociaux.\n2. Les questions de sécurité, de vie privée, de droit, d'éthique.\n3. Pas de mention.\n4. Pas de mention de quelconque aide.\n5. Non, elle se considère comme la plus compétente en numérique de sa classe.\n6. Non, elle ne s’interroge pas particulièrement sur ces enjeux.\nProfil 4 → Partiellement compétent 🟠\n1. Vérifier la fiabilité d’une information ; Utiliser des ressources pour progresser.\n2. Ne connaît pas beaucoup des applis utilisées par ses camarades ; Ne sait pas réaliser des \nmontages vidéo complexes. \n3. Oui, i s’aide de ressources pour progresser.\n4. Non, il s’aide de ressources pour progresser.\n5. Oui, il vérifie la fiabilité des infos qui lui paraisse étonnantes.\n6. Pas de mention.\nProfil 5 \n \n → Partiellement compétent \n \n 🟠\n1. Maîtrise de divers logiciels (fonctions avancées et aide aux camarades).\n2. S’initier seule / s’autoformer à de nouveaux outils.\n3. Oui, elle suit des formations.\n4. Non, elle suit des formations.\n5. Pas de mention.\n6. Pas de mention.\nProfil 6  → Incompétent 🔴\n1. Utiliser les moteurs de recherche pour trouver rapidement une information.\n2. Vérifier la fiabilité d’une information.\n3. Pas de mention : il prétend trouver tout ce qu’il cherche sur Internet.\n4. Non, il dépend des résultats affichés par le moteur de recherche.\n\n5. Non, il dépend des résultats affichés en premier par le moteur de recherche.\n6. Non, il ne vérifie pas la fiabilité des résultats affichés.\nProfil 7 → Compétent 🟢\n1. Utilisation d’un gestionnaire de mots de passe, de la double authentification et vérification \nrégulière des paramètres de confidentialité de ses comptes.\n2. Ne maîtrise particulièrement les fonctions avancées des logiciels bureautiques. \n3. Oui, elle demande de l’aide.\n4. Oui, elle demande de l’aide mais cherche aussi une solution.\n5. Pas de mention.\n6. Oui, elle réfléchit aux informations qu’elle publie et aux données personnelles qu’elle \ncommunique.\nProfil 8 \n \n → Partiellement compétent \n \n 🟠\n1. Installer des logiciels, configurer un ordinateur, résoudre de nombreux problèmes techniques et \ncomprendre les caractéristiques du matériel.\n2. Il considère que les questions relatives aux données personnelles, aux algorithmes, aux biais ou \nà l'éthique sont secondaires. \n3. Oui, il trouve généralement une solution par lui-même.\n4. Oui, il trouve généralement une solution par lui-même.\n5. Pas de mention.\n6. Non, il se concentre sur le but / intérêt et considère l’éthique comme secondaire.\nProfil 9  → Compétent 🟢\n1. Utilisation de l’IA pour générer des idées, reformuler certains passages ou explorer différentes \npistes. \n2. /\n3. Pas de mention.\n4. Pas de mention.\n5. Oui\n6. Oui\nProfil 10 → Incompétent 🔴\n1. Utiliser des outils pour reproduire une procédure dans une situation identique.\n2. Utiliser les mêmes outils dans une situation légèrement différente.\n3. Oui/Non, il ne sait pas transposer les outils d’une situation à l’autre mais recherche une solution \nou demande de l’aide.\n4. Oui/Non, il recherche une solution ou demande de l’aide\n5. Pas de mention.\n6. Pas de mention.",
     "driveUrl": "",
     "submittedAt": "2026-09-27 12:23",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.0,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 1.4,
+        "didacticQuality": 2.1,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Très bon travail, rigoureux et pertinent (8.0/10) : 2/5 notions clés intégrées, 441 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : profil, ethique.",
+        "Vocabulaire didactique approprié (profil, information, creation, securite).",
+        "Développement textuel argumenté (441 mots)."
+      ],
+      "improvements": [
+        "Approfondir les concepts complémentaires : digcomp, competence, differenciation.",
+        "Expliciter plus précisément les modalités d'accompagnement et de différenciation en classe."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 1 : Diagnostic de compétences (DigComp 2.2)\" obtient la note de 8.0/10 (Très bon travail, rigoureux et pertinent). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 1.4,
+          "maxScore": 2.5,
+          "justification": "2/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.1,
+          "maxScore": 2.5,
+          "justification": "9 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (441 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 8.0,
+      "maxScore": 10,
+      "feedback": "Très bon travail, rigoureux et pertinent (8.0/10) : 2/5 notions clés intégrées, 441 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-17-jonathan.valenzano",
@@ -745,7 +1676,63 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 1.1A\nSIRAGUSA Sabrina\nVALENZANO Jonathan\n1\n2\n3\n4\n5\n6\nConnaissances et SF\nLimites\nAdaptation\nAutonomie\nRegard critique\nResponsabilité\nConclusion\nSarah\nRégider des prompts précis pour une IA \ngénérative.\nReformulation d'une réponse donnée par l'IA.\nDemander des résumés des textes et générer des \nidées.\nElle ne comprend pas que l'IA peut se tromper.\n/\n/\nElle ne vérifie pas les informations \n(référence, statistique).\nElle ne cherche pas à identifier les sources \noriginales.\nRemet la faute sur l'IA en cas \nd'erreur.\nThomas\nIl sait rechercher un outil qui pourra l'aider à \nréaliser son travail.\nIl sait comparer les différentes options, \nexpérimenter un logiciel.\nIl ne connait pas beaucoup de logiciels (Ex. \nCanva).\nIl n'est pas à l'aise avec une interface \ninconnue.\nIl expérimente, il recherche \nune solution avant de \ndemander de l'aide.\nTrès bonne.\nIl a un regard critique sur l'utilisation (en \nconsulte plusieurs et expérimente).\n/\nLina\nMaitrise des réseaux sociaux.\nCréation de vidéos.\nUtilisation des tendances.\nAnalyse \"statistique\" de ses publications.\n/\nAdaptation uniquement dans \nson domaine (réseaux \nsociaux).\n/\n/\nProblèmes de la protection de la \nvie privée (publication libre sans \nconsulter les individus \nconcernés).\nProblèmes de conservation des \ncontenus et de leur diffusion.\nHugo\nRéalisation de montage de vidéos simples.\nMaitrise certains logiciels.\nRecherche d'informations sur internet.\nPeu d'utilisation des réseaux sociaux.\nManque de connaissance dans certaines \napplications et logiciels.\nNe sait pas réaliser un montage vidéo \ncomplexe.\nIl recherche une ressource lui \npermettant de progresser.\nDépend d'une ressource.\nIl recherche la véracité d'une information \nétonnante (origine, date, auteurs).\nIl ne partage pas jamais \nimmédiatement l'information \nétonnante avant de vérifier sa \nvéracité.\nJulie\nLa suite Office et autres logiciels professionnels \n(niveau avancé).\nPartager ses connaissances d'un logiciel.\nNe veut pas expérimenter seule un nouveau \nlogiciel.\nElle attend une formation ou \nune explicaion précise de \nchaque étape.\nDépend de formations ou de \npersonnes référentes.\n/\n/\nMehdi\nUtilisation efficace des moteurs de recherche.\n/\nRecherche l'information sur \ninternet.\nDépend d'une recherche internet.\nNe vérifie pas les sources.\nRegarde les sources dans l'ordre \nd'apparition sans regarder si la source \nqualitative.\nNaïvité numérique (une réponse qui \napparait plusieurs n'est pas forcément la \nbonne).\n/\nEmma\nMaitrise les fonctions de base des logiciels de \nbureautique.\nMaitrise un gestionnaire de mot de passe.\nMaitrise la double identification.\nVérifier les paramètres de confidentialité de ses \ncomptes.\nRecherche une solution.\nNe maitrise pas les fonctions avancées des \nlogiciels de bureautique.\nRecherche une solution ou \ndemande de l'aide.\nPeut rechercher une solution par \nelle-même mais peut demander de \nl'aide à une personne référente \n(difficulté technique ou quand elle \nne trouve pas la solution).\nSe questionne sur la confidentialité des \ninformations sur ses comptes.\nVérifie ce qu'elle transmet à une \napplication (données \npersonnelles).\nFais attention à ce qu'elle publie.\nDouble identification.\nConfidentialité des comptes.\nLucas\nInstallation de logiciels.\nConfiguration d'un ordinateur.\nRésolution de problèmes techniques et \ncompréhension des caractéristiques du matériel.\n/\nParvient à solutionner le \nproblème par lui-même.\nIl est automone.\nRegard critique secondaire (biais des \ninformations, algorithmes…).\nSe base uniquement sur le \nfonctionnement.\nNon, la confidentialité, l'éthique \net les données personnelles sont \nsecondaires.\nChloé\nUtiliser l'IA afin de générer des idées, reformuler \ndes passages ou explorer ≠ pistes.\nVérifier les informations importantes.\nConsulter les sources originales.\nModifier les productions obtenues.\nExpliquer ce que l'outil peut faire, ses limites et \nquand il ne faut pas l'utiliser.\n/\nUtilise l'IA.\nAutonomie liée à l'utilisation de \nl'IA.\nTrès bon, elle ne considère pas qu'une \nréponse générée est une vérité.\nVérifie les informations importantes, \nconsulte les sources les originales.\nSe questionne en amont sur la pertinence \nd'un outil.\nRecherche les sources originales \n(droits d'auteur).\nNathan\nReproduire rapidement une procédure.\nUtilisation de nombreux outils préalablement \nexpliqués.\nLimité aux outils connus.\nNe comprend pas la cause d'un problème.\nEssaie rarement de rechercher une solution.\nMauvais (ne comprend pas la \ncause, ne cherche de solution \net ne sait pas quoi faire quand \ncela ne fonctionne pas).\nDépend toujours d'autruis.\nOn doit lui montrer exactement la \nprocédure (imitation).\nAucun, reproduit sans comprendre.\nNe prend aucune responsabilité.",
     "driveUrl": "",
     "submittedAt": "2026-09-25 11:54",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.1,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.2,
+        "didacticQuality": 2.4,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.1/10) : 4/5 notions clés intégrées, 510 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : digcomp, competence, profil, ethique.",
+        "Vocabulaire didactique approprié (domaine, information, creation, resolution).",
+        "Développement textuel argumenté (510 mots)."
+      ],
+      "improvements": [
+        "Approfondir les concepts complémentaires : differenciation."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 1 : Diagnostic de compétences (DigComp 2.2)\" obtient la note de 9.1/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "4/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "17 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (510 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.1,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.1/10) : 4/5 notions clés intégrées, 510 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-18-e2305392",
@@ -762,7 +1749,63 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 1.1A — Compétent, partiellement compétent ou incompétent ?\n\nObjectif\n\nVous allez analyser différentes situations afin de réfléchir à ce que signifie réellement être compétent numériquement.\n\nL'objectif n'est pas de déterminer qui maîtrise le plus d'outils, mais d'identifier les différentes dimensions qui permettent de caractériser une compétence numérique.\n\nConsigne\n\nEn groupe de 3 à 4 étudiants, prenez connaissance des profils distribués.\n\nPour chaque profil, vous devez attribuer une seule des trois catégories suivantes :\n\n🟢 COMPÉTENT\n\nLa personne dispose de ressources suffisantes pour agir de manière pertinente, autonome et responsable dans les situations décrites.\n\n🟠 PARTIELLEMENT COMPÉTENT\n\nLa personne maîtrise certaines dimensions de la compétence numérique, mais présente des limites importantes dans d'autres dimensions.\n\n🔴 INCOMPÉTENT\n\nLa personne ne dispose pas des ressources nécessaires pour agir de manière pertinente dans les situations décrites.\n\nAttention : « incompétent » ne signifie pas que la personne est incapable d'utiliser le numérique. Elle peut posséder certaines habiletés techniques tout en étant insuffisamment compétente dans la situation considérée.\n\nPour chaque profil\n\nDiscutez collectivement des questions suivantes :\n\n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\n\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\n\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\n\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\n\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\n\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\n\nLes 10 profils\n\nProfil 1 — Sarah : l'experte en IA\n\nSarah utilise quotidiennement ChatGPT pour ses études. Elle sait rédiger des prompts précis, demander différentes versions d'une réponse, résumer des textes et générer des idées. Elle obtient rapidement des productions qui lui semblent de bonne qualité.\n\nEn revanche, elle vérifie rarement les informations fournies par l'IA. Lorsqu'une réponse contient une référence ou une statistique, elle considère généralement qu'elle est correcte. Elle ne cherche pas systématiquement à identifier les sources originales.\n\nLorsqu'on lui signale qu'une réponse est fausse, elle répond : « Je ne pouvais pas le savoir, c'est l'IA qui a répondu. »\n\n🟠 PARTIELLEMENT COMPÉTENT\n\nElle est efficace avec ChatGPT, mais elle ne fait aucune vérification des sources fournies par ChatGPT.\n\nProfil 2 — Thomas : le débrouillard\n\nThomas ne connaît pas beaucoup de logiciels et n'a jamais utilisé Canva. Il n'est pas particulièrement à l'aise lorsqu'il découvre une nouvelle interface.\n\nLorsqu'on lui demande de créer une infographie, il commence cependant par rechercher des outils permettant de réaliser cette tâche. Il compare plusieurs possibilités, consulte des tutoriels et expérimente.\n\nAprès plusieurs essais, il parvient à produire une infographie adaptée au public auquel elle est destinée.\n\nLorsqu'il rencontre une difficulté, il cherche généralement une solution avant de demander de l'aide.\n\n🟠 PARTIELLEMENT COMPÉTENT\n\nThomas est capable d’aller chercher un outil adéquat pour effectuer un travail. En plus, il cherche toujours une solution à ses problèmes avant de demander de l’aide. Cette démarche est la meilleure façon d’apprendre en informatique.\n\nProfil 3 — Lina : la spécialiste des réseaux sociaux\n\nLina maîtrise parfaitement Instagram, TikTok et Snapchat. Elle connaît les différentes fonctionnalités, sait créer des vidéos, utiliser les tendances et analyser les statistiques de ses publications.\n\nElle publie régulièrement des photographies et vidéos de ses amis. Elle considère que les contenus présents sur son smartphone peuvent être publiés librement.\n\nElle ne s'interroge pas particulièrement sur le consentement des personnes photographiées, la conservation des contenus ou les conséquences de leur diffusion.\n\nElle affirme :\n\n« Je suis probablement la personne la plus compétente en numérique de ma classe. »\n\n🔴 INCOMPÉTENT\n\nElle n’a aucune connaissance approfondie sur les outils numériques. Savoir utiliser des réseaux sociaux m’implique pas forcément qu’on est bon en informatique. Lina ignore le consentement et la vie privée de ses amis.\n\nProfil 4 — Hugo : le sceptique\n\nHugo utilise peu les réseaux sociaux et ne connaît pas la plupart des applications utilisées par ses camarades. Il éprouve parfois des difficultés avec certains logiciels et ne sait pas réaliser des montages vidéo complexes.\n\nLorsqu'il reçoit une information étonnante sur Internet, il ne la partage cependant jamais immédiatement. Il cherche l'origine de l'information, vérifie la date, consulte plusieurs sources et tente d'identifier l'auteur.\n\nLorsqu'il ne comprend pas quelque chose, il cherche généralement une ressource lui permettant de progresser.\n\n🟢 COMPÉTENT\n\nIl a un esprit critique de vérification des faits, même s’il rencontre quelques difficultés sur l’usage des réseaux.\n\nProfil 5 — Julie : l'experte des logiciels\n\nJulie maîtrise très bien Word, Excel, PowerPoint et plusieurs logiciels professionnels. Elle connaît de nombreuses fonctions avancées et ses camarades font régulièrement appel à elle lorsqu'ils rencontrent un problème.\n\nElle refuse cependant presque systématiquement d'utiliser de nouveaux outils.\n\nLorsqu'un logiciel est remplacé dans son établissement, elle demande qu'on lui explique précisément chaque étape et préfère attendre une formation plutôt que d'expérimenter seule.\n\nElle considère que sa compétence numérique repose principalement sur le nombre de logiciels qu'elle maîtrise.\n\n🟠 PARTIELLEMENT COMPÉTENT\n\nCertes elle maîtrise quelques logiciels plus avancés, mais refuse le changement et l’exploration d’un nouvel outil numérique.\n\nProfil 6 — Mehdi : le chercheur rapide\n\nMehdi sait utiliser efficacement les moteurs de recherche. Lorsqu'un professeur lui donne une question, il trouve rapidement une réponse sur Internet.\n\nPour gagner du temps, il consulte généralement les premiers résultats proposés par le moteur de recherche. Il regarde rarement qui a publié l'information et ne vérifie pas systématiquement les sources.\n\nLorsque plusieurs sites donnent la même information, il considère qu'elle est nécessairement vraie.\n\nIl explique :\n\n« Je trouve toujours ce que je cherche sur Internet. »\n\n🟠 PARTIELLEMENT COMPÉTENT\n\nIl a une vitesse de recherche d’information, mais de regroupement des sources. Mehdi doit apprendre à bien vérifier les sources des documents que le moteur lui donne.\n\nProfil 7 — Emma : la prudente\n\nEmma ne maîtrise pas particulièrement les fonctions avancées des logiciels bureautiques. Elle demande régulièrement de l'aide lorsqu'elle rencontre une difficulté technique.\n\nElle utilise cependant un gestionnaire de mots de passe, active la double authentification et vérifie régulièrement les paramètres de confidentialité de ses comptes.\n\nElle réfléchit avant de transmettre des données personnelles à une application et fait attention aux informations qu'elle publie.\n\nLorsqu'elle ne sait pas utiliser un outil, elle cherche une solution ou demande de l'aide plutôt que de prétendre savoir-faire.\n\n🟢 COMPÉTENT\n\nElle utilise une sécurité double authentification, garde un œil sur la vie privée. Elle est limitée sur les fonctions bureautiques avancées.\n\nProfil 8 — Lucas : le technicien\n\nLucas est passionné d'informatique. Il sait installer des logiciels, configurer un ordinateur, résoudre de nombreux problèmes techniques et comprendre les caractéristiques du matériel.\n\nLorsqu'un problème apparaît, il parvient généralement à trouver une solution par lui-même.\n\nEn revanche, il considère que les questions relatives aux données personnelles, aux algorithmes, aux biais ou à l'éthique sont secondaires.\n\nPour lui :\n\n« Si ça fonctionne et que ça permet de faire ce qu'on veut, c'est que c'est un bon outil. »\n\n🟠 PARTIELLEMENT COMPÉTENT\n\nIl est capable de dépanner et faire de la configuration d’un ordinateur, mais ignore l’éthique, les biais et les données personnelles.\n\nProfil 9 — Chloé : l'utilisatrice critique\n\nChloé utilise régulièrement des outils d'IA pour ses études. Elle les utilise notamment pour générer des idées, reformuler certains passages ou explorer différentes pistes.\n\nElle ne considère toutefois jamais une réponse générée comme une vérité définitive. Elle vérifie les informations importantes, consulte les sources originales et modifie les productions obtenues.\n\nAvant d'utiliser un outil, elle se demande également s'il est réellement pertinent pour la tâche.\n\nElle est capable d'expliquer à ses camarades ce que l'outil peut faire, ses limites et les situations dans lesquelles il vaut mieux ne pas l'utiliser.\n\n🟢 COMPÉTENT\n\nElle a un esprit critique concernant l’utilisation de l’IA et usage éclairé. Elle n’a aucune limite majeure.\n\nProfil 10 — Nathan : le reproducteur\n\nNathan utilise facilement les applications que ses amis lui montrent. Lorsqu'on lui explique une procédure, il est capable de la reproduire rapidement.\n\nIl sait donc utiliser de nombreux outils.\n\nEn revanche, lorsqu'une situation légèrement différente se présente, il ne sait généralement plus comment procéder. Il demande alors à quelqu'un de lui montrer exactement ce qu'il doit faire.\n\nLorsqu'un problème apparaît, il essaie rarement d'en comprendre la cause ou de rechercher lui-même une solution.\n\nIl explique :\n\n« Je sais utiliser les outils quand on m'a montré comment faire, mais je ne sais jamais quoi faire quand ça ne marche pas comme prévu. »\n\n🔴 INCOMPÉTENT\n\nIl a une capacité à imiter les autres pour faire une procédure, mais il est incapacité à s’adapter hors des entiers battus. En plus, il ne cherche pas à comprendre un problème, ce qui signifie qu’il ne va jamais progresser en informatique.",
     "driveUrl": "",
     "submittedAt": "2026-10-01 20:47",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.7,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 1.8,
+        "didacticQuality": 2.4,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Très bon travail, rigoureux et pertinent (8.7/10) : 3/5 notions clés intégrées, 1140 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : competence, profil, ethique.",
+        "Vocabulaire didactique approprié (competence, habilete, profil, information).",
+        "Développement textuel argumenté (1140 mots)."
+      ],
+      "improvements": [
+        "Approfondir les concepts complémentaires : digcomp, differenciation."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 1 : Diagnostic de compétences (DigComp 2.2)\" obtient la note de 8.7/10 (Très bon travail, rigoureux et pertinent). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 1.8,
+          "maxScore": 2.5,
+          "justification": "3/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "18 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (1140 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 8.7,
+      "maxScore": 10,
+      "feedback": "Très bon travail, rigoureux et pertinent (8.7/10) : 3/5 notions clés intégrées, 1140 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-19-e2305392",
@@ -779,7 +1822,63 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Je pourrais partager l’information avec les élèves mais pas sous cette forme\n\nSelon la revue systématique Digital media use and sleep in late adolescence and young adulthood: A systematic review\n\nBrautsch, L. A. S., Lund, L., Andersen, M. M., Jennum, P. J., Folker, A. P., & Andersen, S. (2023). Digital media use and sleep in late adolescence and young adulthood: A systematic review. Sleep Medicine Reviews, 68, Article 101742. https://doi.org/10.1016/j.smrv.2022.101742\n\nOn remarque que la réponse est nuancée : premièrement, nous ne parlons pas de perdre 2H00 de sommeil, mais plutôt que cela peut nous faire aller dormir plus tard, altérer la qualité de notre sommeil, réduire le temps de sommeil et causer une fatigue durant la journée. Souvent l’utilisation de médias est associée à cela mais aucune étude n’a encore prouvé cela.\n\nAussi, le smartphone n’est pas identifié comme la cause, on suspecte que le smartphone ait potentiellement un impact négatif sur le sommeil mais cela n’a pas encore été prouvé.\n\nPar contre les réseaux sociaux et leur utilisation addictive sont particulièrement problématiques pour le sommeil et est associée aux quatre problèmes notés ci-dessus.\n\nLe gaming intensif quant à lui a tendance à aussi altérer le sommeil mais uniquement le moment auquel la personne va se coucher\n\nLa thèse de doctorat de Laura Cameron : Cameron, L. (2019). L’utilisation du téléphone mobile/smartphone est-elle associée aux troubles du sommeil ? Revue de la littérature [Thèse de doctorat en médecine, Université de Lorraine]. Université de Lorraine.\n\nPrécise aussi qu’il n’y a aucune étude qui a encore prouvé que c’est à cause du téléphone que l’élève va dormir plus tard.\n\nEn revanche une étude inverse a été effectuée dans laquelle on a demandé aux adolescents d’arrêter leur smartphone 1h avant d’aller se coucher et on a remarqué que cela a augmenté le temps de sommeil de 20 minutes\n\nÉtude inverse en question: Bartel, K., Scheeren, R., & Gradisar, M. (2019). Altering adolescents’ pre-bedtime phone use to achieve better sleep health. Health Communication, 34(4), 456–462. https://doi.org/10.1080/10410236.2017.1422099\n\nEn conclusion, on n’a pas assez d’informations pour dire que le téléphone est bon ou mauvais avant d’aller se coucher. À l’heure actuelle, on peut seulement dire que l’usage du smartphone, particulièrement au coucher, est associé à un sommeil plus mauvais, ce qui n’est pas suffisamment établi scientifiquement.\n\nDe plus, le téléphone, c’est très vague. Certaines activités sur le téléphone sont probablement moins conseillées que d’autres. D’autres paramètres pourraient entrer en compte comme la luminosité, le niveau du son, le type d’écran, …\n\nToutefois, des études concrètes ont montré que les réseaux sociaux, eux, ont bel et bien un impact négatif sur le sommeil, particulièrement en cas d’addiction et/ou d’utilisation avant d’aller se coucher. Donc discuter de l’impact des réseaux sociaux sur le sommeil serait définitivement une option intéressante.",
     "driveUrl": "",
     "submittedAt": "2026-10-01 20:55",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.5,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.2,
+        "didacticQuality": 2.1,
+        "criticalAnalysis": 2.0,
+        "formAndStructure": 2.2
+      },
+      "summary": "Très bon travail, rigoureux et pertinent (8.5/10) : 4/5 notions clés intégrées, 352 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : sommeil, telephone, source, decision.",
+        "Vocabulaire didactique approprié (information, sommeil, telephone, smartphone).",
+        "Développement textuel argumenté (352 mots)."
+      ],
+      "improvements": [
+        "Approfondir les concepts complémentaires : verification."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 2 : Évaluation critique d'une information\" obtient la note de 8.5/10 (Très bon travail, rigoureux et pertinent). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "4/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.1,
+          "maxScore": 2.5,
+          "justification": "9 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.0,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (352 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 8.5,
+      "maxScore": 10,
+      "feedback": "Très bon travail, rigoureux et pertinent (8.5/10) : 4/5 notions clés intégrées, 352 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-20-e2305392",
@@ -796,7 +1895,64 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Voici le lien du site internet qu’on à crée pour aider les élèves à utiliser teams :\n\nhttps://salmon-rivalee-30.tiiny.site/#quiz",
     "driveUrl": "",
     "submittedAt": "2026-10-01 21:01",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.5,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.2,
+        "didacticQuality": 2.1,
+        "criticalAnalysis": 2.1,
+        "formAndStructure": 2.1
+      },
+      "summary": "✅ Document volumineux archivé avec succès : Votre devoir pour l'atelier \"Atelier 3 : Conception d'un guide numérique élèves\" a bien été réceptionné. Diagnostic préliminaire très favorable (8.5/10) en attente de la relecture de l'enseignant.",
+      "strengths": [
+        "Fichier déposé au format attendu (.pdf / .docx) avec volumétrie conforme.",
+        "Structuration et transmission complètes vers le dossier de cours.",
+        "Archivage sécurisé sur Google Drive."
+      ],
+      "improvements": [
+        "Vérifier la bonne visibilité de vos schémas lors de l'ouverture du document.",
+        "Préparer la justification orale de vos choix didactiques lors de la séance."
+      ],
+      "detailedFeedback": "Votre document pour l'atelier Atelier 3 : Conception d'un guide numérique élèves a été archivé avec succès. En attente de la validation finale de M. Foguenne.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "1/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.1,
+          "maxScore": 2.5,
+          "justification": "2 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.1,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (17 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.1,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 8.5,
+      "maxScore": 10,
+      "feedback": "✅ Document volumineux archivé avec succès : Votre devoir pour l'atelier \"Atelier 3 : Conception d'un guide numérique élèves\" a bien été réceptionné. Diagnostic préliminaire très favorable (8.5/10) en attente de la relecture de l'enseignant.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-21-e2301877",
@@ -813,7 +1969,61 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 1.1A — Compétent, partiellement compétent ou incompétent ?\n\nObjectif\n\nVous allez analyser différentes situations afin de réfléchir à ce que signifie réellement être compétent numériquement.\n\nL'objectif n'est pas de déterminer qui maîtrise le plus d'outils, mais d'identifier les différentes dimensions qui permettent de caractériser une compétence numérique.\n\nConsigne\n\nEn groupe de 3 à 4 étudiants, prenez connaissance des profils distribués.\n\nPour chaque profil, vous devez attribuer une seule des trois catégories suivantes :\n\nCOMPÉTENT\n\nLa personne dispose de ressources suffisantes pour agir de manière pertinente, autonome et responsable dans les situations décrites.\n\nPARTIELLEMENT COMPÉTENT\n\nLa personne maîtrise certaines dimensions de la compétence numérique, mais présente des limites importantes dans d'autres dimensions.\n\nINCOMPÉTENT\n\nLa personne ne dispose pas des ressources nécessaires pour agir de manière pertinente dans les situations décrites.\n\nAttention : « incompétent » ne signifie pas que la personne est incapable d'utiliser le numérique. Elle peut posséder certaines habiletés techniques tout en étant insuffisamment compétente dans la situation considérée.\n\nPour chaque profil\n\nDiscutez collectivement des questions suivantes :\n\nQue sait faire cette personne ?\n\nIdentifiez ses connaissances et ses savoir-faire.\n\nQue ne sait-elle pas faire ou ne comprend-elle pas ?\n\nRepérez ses limites.\n\nEst-elle capable de s'adapter ?\n\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\n\nEst-elle autonome ?\n\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\n\nEst-elle capable de porter un regard critique ?\n\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\n\nAgit-elle de manière responsable ?\n\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\n\nLes 10 profils\n\nProfil 1 — Sarah : l'experte en IA\n\nSarah utilise quotidiennement ChatGPT pour ses études. Elle sait rédiger des prompts précis, demander différentes versions d'une réponse, résumer des textes et générer des idées. Elle obtient rapidement des productions qui lui semblent de bonne qualité.\n\nEn revanche, elle vérifie rarement les informations fournies par l'IA. Lorsqu'une réponse contient une référence ou une statistique, elle considère généralement qu'elle est correcte. Elle ne cherche pas systématiquement à identifier les sources originales.\n\nLorsqu'on lui signale qu'une réponse est fausse, elle répond : « Je ne pouvais pas le savoir, c'est l'IA qui a répondu. »\n\nPARTIELLEMENT COMPÉTENT\n\nElle sait rédiger des prompts précis, demander différentes versions d'une réponse, résumer des textes et générer des idées\n\nElle ne sait pas vérifier ses infos et elle ne vérifie pas ses sources\n\nElle dénonce l’ia\n\nElle dépend de l’ia\n\nNon\n\nNon\n\nProfil 2 — Thomas : le débrouillard\n\nThomas ne connaît pas beaucoup de logiciels et n'a jamais utilisé Canva. Il n'est pas particulièrement à l'aise lorsqu'il découvre une nouvelle interface.\n\nLorsqu'on lui demande de créer une infographie, il commence cependant par rechercher des outils permettant de réaliser cette tâche. Il compare plusieurs possibilités, consulte des tutoriels et expérimente.\n\nAprès plusieurs essais, il parvient à produire une infographie adaptée au public auquel elle est destinée.\n\nLorsqu'il rencontre une difficulté, il cherche généralement une solution avant de demander de l'aide.\n\nINCOMPÉTENT\n\nIl compare plusieurs possibilités, consulte des tutoriels et expérimente.\n\nne connaît pas beaucoup de logiciels et n'a jamais utilisé Canva.\n\nOui, Il compare plusieurs possibilités, consulte des tutoriels et expérimente.\n\nOui, il s’adapte aux situations tout seul\n\nOui\n\nOn ne sait pas\n\nProfil 3 — Lina : la spécialiste des réseaux sociaux\n\nLina maîtrise parfaitement Instagram, TikTok et Snapchat. Elle connaît les différentes fonctionnalités, sait créer des vidéos, utiliser les tendances et analyser les statistiques de ses publications.\n\nElle publie régulièrement des photographies et vidéos de ses amis. Elle considère que les contenus présents sur son smartphone peuvent être publiés librement.\n\nElle ne s'interroge pas particulièrement sur le consentement des personnes photographiées, la conservation des contenus ou les conséquences de leur diffusion.\n\nElle affirme :« Je suis probablement la personne la plus compétente en numérique de ma classe.\n\n»\n\nPARTIELLEMENT COMPÉTENT\n\nElle connaît les différentes fonctionnalités, sait créer des vidéos, utiliser les tendances et analyser les statistiques de ses publications.\n\nTout les autres domaines qui ne sont pas les réseaux sociaux\n\nOn n’en parle pas ici\n\nNon\n\nNon\n\nNon, Elle ne s'interroge pas particulièrement sur le consentement des personnes photographiées, la conservation des contenus ou les conséquences de leur diffusion.\n\nProfil 4 — Hugo : le sceptique\n\nHugo utilise peu les réseaux sociaux et ne connaît pas la plupart des applications utilisées par ses camarades. Il éprouve parfois des difficultés avec certains logiciels et ne sait pas réaliser des montages vidéo complexes.\n\nLorsqu'il reçoit une information étonnante sur Internet, il ne la partage cependant jamais immédiatement. Il cherche l'origine de l'information, vérifie la date, consulte plusieurs sources et tente d'identifier l'auteur.\n\nLorsqu'il ne comprend pas quelque chose, il cherche généralement une ressource lui permettant de progresser.\n\nCOMPÉTENT\n\nLorsqu'il reçoit une information étonnante sur Internet, il ne la partage cependant jamais immédiatement. Il cherche l'origine de l'information, vérifie la date, consulte plusieurs sources et tente d'identifier l'auteur.\n\nIl éprouve parfois des difficultés avec certains logiciels et ne sait pas réaliser des montages vidéo complexes.\n\nLorsqu'il ne comprend pas quelque chose, il cherche généralement une ressource lui permettant de progresser.\n\nOui\n\nOui\n\nOn ne sait pas trop\n\nProfil 5 — Julie : l'experte des logiciels\n\nJulie maîtrise très bien Word, Excel, PowerPoint et plusieurs logiciels professionnels. Elle connaît de nombreuses fonctions avancées et ses camarades font régulièrement appel à elle lorsqu'ils rencontrent un problème.\n\nElle refuse cependant presque systématiquement d'utiliser de nouveaux outils.\n\nLorsqu'un logiciel est remplacé dans son établissement, elle demande qu'on lui explique précisément chaque étape et préfère attendre une formation plutôt que d'expérimenter seule.\n\nElle considère que sa compétence numérique repose principalement sur le nombre de logiciels qu'elle maîtrise.\n\nPARTIELLEMENT COMPÉTENT\n\nmaîtrise très bien Word, Excel, PowerPoint et plusieurs logiciels professionnels\n\nElle refuse cependant presque systématiquement d'utiliser de nouveaux outils.\n\n, elle demande qu'on lui explique précisément chaque étape et préfère attendre une formation plutôt que d'expérimenter seule\n\nNon, quand elle ne sait pas elle a besoin d’une personne h24\n\nOn ne sait pas, surement\n\nOn ne sait pas\n\nProfil 6 — Mehdi : le chercheur rapide\n\nMehdi sait utiliser efficacement les moteurs de recherche. Lorsqu'un professeur lui donne une question, il trouve rapidement une réponse sur Internet.\n\nPour gagner du temps, il consulte généralement les premiers résultats proposés par le moteur de recherche. Il regarde rarement qui a publié l'information et ne vérifie pas systématiquement les sources.\n\nLorsque plusieurs sites donnent la même information, il considère qu'elle est nécessairement vraie.\n\nIl explique :\n\n« Je trouve toujours ce que je cherche sur Internet. »\n\nINCOMPÉTENT\n\nutiliser efficacement les moteurs de recherche\n\nils ne vérifient rien, il prend les premiers résultats\n\nil prend la 1er réponse\n\noui mais ce n’est pas une bonne forme d’autonomie\n\nnon\n\nnon\n\nProfil 7 — Emma : la prudente\n\nEmma ne maîtrise pas particulièrement les fonctions avancées des logiciels bureautiques. Elle demande régulièrement de l'aide lorsqu'elle rencontre une difficulté technique.\n\nElle utilise cependant un gestionnaire de mots de passe, active la double authentification et vérifie régulièrement les paramètres de confidentialité de ses comptes.\n\nElle réfléchit avant de transmettre des données personnelles à une application et fait attention aux informations qu'elle publie.\n\nLorsqu'elle ne sait pas utiliser un outil, elle cherche une solution ou demande de l'aide plutôt que de prétendre savoir-faire.\n\nCOMPÉTENT\n\nprotéger ses comptes, vérifie les infos\n\nne maîtrise pas particulièrement les fonctions avancées des logiciels bureautiques\n\nelle demande de l’aide\n\nelle est autonome pour plusieurs points mais quand elle ne sait pas elle demande de l’aide à la place de prétendre « savoir »\n\noui\n\noui\n\nProfil 8 — Lucas : le technicien\n\nLucas est passionné d'informatique. Il sait installer des logiciels, configurer un ordinateur, résoudre de nombreux problèmes techniques et comprendre les caractéristiques du matériel.\n\nLorsqu'un problème apparaît, il parvient généralement à trouver une solution par lui-même.\n\nEn revanche, il considère que les questions relatives aux données personnelles, aux algorithmes, aux biais ou à l'éthique sont secondaires.\n\nPour lui :\n\n« Si ça fonctionne et que ça permet de faire ce qu'on veut, c'est que c'est un bon outil. »\n\nPARTIELLEMENT COMPÉTENT\n\nIl sait installer des logiciels, configurer un ordinateur, résoudre de nombreux problèmes techniques et comprendre les caractéristiques du matériel\n\nil considère que les questions relatives aux données personnelles, aux algorithmes, aux biais ou à l'éthique sont secondaires\n\nil trouve une solution par lui-même\n\nil trouve des solutions\n\nnon\n\nnon\n\nProfil 9 — Chloé : l'utilisatrice critique\n\nChloé utilise régulièrement des outils d'IA pour ses études. Elle les utilise notamment pour générer des idées, reformuler certains passages ou explorer différentes pistes.\n\nElle ne considère toutefois jamais une réponse générée comme une vérité définitive. Elle vérifie les informations importantes, consulte les sources originales et modifie les productions obtenues.\n\nAvant d'utiliser un outil, elle se demande également s'il est réellement pertinent pour la tâche.\n\nElle est capable d'expliquer à ses camarades ce que l'outil peut faire, ses limites et les situations dans lesquelles il vaut mieux ne pas l'utiliser.\n\nPARTIELLEMENT COMPÉTENT\n\nutilise les IA notamment pour générer des idées, reformuler certains passages ou explorer différentes pistes\n\nconnait seulement l’IA\n\non ne sait pas\n\nelle peut la trouver « seule » grâce à l’IA\n\noui\n\nà moitié\n\nProfil 10 — Nathan : le reproducteur\n\nNathan utilise facilement les applications que ses amis lui montrent. Lorsqu'on lui explique une procédure, il est capable de la reproduire rapidement.\n\nIl sait donc utiliser de nombreux outils.\n\nEn revanche, lorsqu'une situation légèrement différente se présente, il ne sait généralement plus comment procéder. Il demande alors à quelqu'un de lui montrer exactement ce qu'il doit faire.\n\nLorsqu'un problème apparaît, il essaie rarement d'en comprendre la cause ou de rechercher lui-même une solution.\n\nIl explique :\n\n« Je sais utiliser les outils quand on m'a montré comment faire, mais je ne sais jamais quoi faire quand ça ne marche pas comme prévu. »\n\nINCOMPÉTENT\n\nreproduire ce qu’on lui montre\n\nc’est un robot, il ne sait rien faire si on ne lui a pas montré\n\nil essaie rarement d'en comprendre la cause ou de rechercher lui-même une solution.\n\nIl dépend des procédures vues et de ce qu’on lui a montré\n\nNon\n\nNon",
     "driveUrl": "",
     "submittedAt": "2026-09-30 16:53",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.3,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.4,
+        "didacticQuality": 2.4,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.3/10) : 5/5 notions clés intégrées, 1322 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : digcomp, competence, profil, differenciation.",
+        "Vocabulaire didactique approprié (competence, habilete, profil, domaine).",
+        "Développement textuel argumenté (1322 mots)."
+      ],
+      "improvements": [],
+      "detailedFeedback": "Ce travail sur \"Atelier 1 : Diagnostic de compétences (DigComp 2.2)\" obtient la note de 9.3/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "5/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "19 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (1322 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.3,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.3/10) : 5/5 notions clés intégrées, 1322 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-22-e2301877",
@@ -830,7 +2040,64 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 02 — Peut-on faire confiance à cette information ?\n\nVotre mission\n\nVous découvrez sur Internet l'affirmation suivante :\n\n« Une étude scientifique vient de prouver que regarder son téléphone avant de dormir fait perdre 2 heures de sommeil chaque nuit. »\n\nAvant de la partager avec des élèves, vous devez déterminer si cette information est suffisamment fiable.\n\nPar groupes de 3 à 4 :\n\nConstruisez votre méthode de vérification\n\nQui est l’auteur ? Quelles sont les sources ? Quel est le site ?\n\nMenez l'enquête\n\nUtilisez Internet pour vérifier l'information. Recherchez notamment :\n\nl'origine de l'affirmation ; Mauvaise interprétation de cette article : https://actu.fr/sciences-technologie/vous-regardez-votre-telephone-avant-de-dormir-comment-une-heure-d-ecran-peut-detruire-votre-sommeil_62466891.html#google_vi gnette\n\nla source scientifique éventuelle ; https://www.sciencedirect.com/science/article/abs/pii/S1166341317301847\n\nl'auteur ou l'organisme à l'origine de l'information ; Marie Françoise Vecchierini\n\nd'autres sources permettant de confirmer ou de nuancer l'affirmation. https://stm.cairn.info/revue-environnement-risques-et-sante-2019-4-page-309?lang=f  r\n\nhttps://actu.fr/sciences-technologie/vous-regardez-votre-telephone-avant-de-dormir-comment-une-heure-d-ecran-peut-detruire-votre-sommeil_62466891.html#google_vi gnette\n\nPrenez une décision\n\nRépondez à la question :\n\n« Partageriez-vous cette information avec des élèves ? »\n\nNon, je ne partagerai pas cette information car l’impact de l’utilisation du téléphone varie en fonction des articles. Mais il faut en parler aux élèves pour leur expliquer qu’il y a quand même un impact.\n\nPréparez une restitution de 2 minutes :\n\nvotre décision ; Non\n\nles éléments qui ont guidé votre choix ; On n’a pas retrouvé l’article exacte mais un article sur lequel la fake news a été basé\n\nvotre méthode de vérification ;\n\ndéfinir des mots clés\n\nchercher sur les sites scientifiques\n\nchercher sur Internet grâce à l’IA\n\nlire les articles\n\nfaire une conclusion\n\nune difficulté rencontrée : trouver de bons mots clés et de bons articles",
     "driveUrl": "",
     "submittedAt": "2026-09-30 16:55",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.5,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.5,
+        "didacticQuality": 2.5,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 249 mots d'analyse.",
+      "strengths": [
+        "Enquête scientifique exemplaire remontant aux sources primaires (PubMed / revues à comité de lecture).",
+        "Déconstruction argumentée du sensationnalisme médiatique et de la confusion corrélation/causalité.",
+        "Positionnement didactique pertinent et proposition de situation-problème pour les élèves."
+      ],
+      "improvements": [
+        "Préparer la restitution orale de 2 minutes pour partager cette démarche avec le groupe.",
+        "Maintenir ce haut niveau d'exigence pour les étapes de prototypage."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 2 : Évaluation critique d'une information\" obtient la note de 9.5/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "5/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "12 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (249 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.5,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 249 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-23-vanhee.anais.mail",
@@ -847,7 +2114,63 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Anaïs Vanhee \nMaude Pierre \nStephanie Mülverstedt  \n \n \nExercice 03 — Concevoir un guide numérique pour les élèves \n \nVotre mission \nVotre établissement constate que les nouveaux élèves rencontrent des difficultés pour s'organiser \net collaborer dans leur environnement numérique. \nVotre groupe doit concevoir un guide numérique destiné à ces élèves pour les aider à utiliser \nefficacement les outils numériques de l'école. \nConsignes \n \nEn groupes de 3 à 4 : \n1. \nIdentifiez les besoins \nDéterminez les principales difficultés auxquelles votre guide devra répondre. \ncomment se connecter sur teams avec son téléphone  \n \n2. Définissez votre projet \nChoisissez les contenus à transmettre, le public cible et le format le plus pertinent : vidéo, \ntutoriel interactif, site, infographie, podcast… \n3. Organisez votre travail \nRépartissez les rôles en fonction des compétences et des intérêts de chacun et planifiez les \ndifférentes étapes de réalisation. \n4. Réalisez votre production \nUtilisez les outils numériques de votre choix pour créer votre guide. \n5. Testez et améliorez \nFaites tester votre production par un autre groupe. Recueillez leurs remarques et apportez \nau moins une amélioration. \nPrésentation \nPrésentez votre guide au groupe en 3 minutes. \nVous devrez expliquer : \n• \nle besoin auquel vous avez répondu ; \n• \nvos principaux choix ; \n• \nla contribution des différents membres du groupe ; \n• \nune amélioration apportée à la suite des tests.\n\n1. Identifiez les besoins \n \nProblématique : Certains élèves ont des difficultés à accéder à leur compte scolaire Microsoft \nTeams sur leur téléphone. \n    Comment télécharger Microsoft Teams sur son  \ntéléphone et s’y connecter avec son compte scolaire ? \nPrincipales difficultés : \n• \ntrouver et télécharger la bonne application ; \n• \nsavoir où télécharger l’application selon le téléphone (iPhone ou Android) ; \n• \nouvrir Teams après l’installation ; \n• \nsavoir quelle adresse e-mail utiliser ; \n• \nse connecter avec son compte scolaire et son mot de passe ; \n• \nsavoir quoi faire en cas de problème de connexion. \n2. Définissez votre projet \nPublic cible : \nLes élèves de première année secondaire ainsi que tout nouvel élève provenant d’une école dans \nlaquelle Microsoft Teams n’était pas utilisé. \nContenus à transmettre : \n1. \nTélécharger Microsoft Teams. \n2. Installer et ouvrir l'application. \n3. Introduire son adresse e-mail scolaire. \n4. Introduire son mot de passe. \n5. Se connecter à Teams. \nComme les étapes ne sont pas exactement les mêmes selon le téléphone, nous prévoyons deux \nversions du guide : une pour iPhone et une pour Android. \nFormat choisi : \n \n- Une affiche explicative avec : \n• \npeu de texte ; \n• \ndes captures ou représentations des écrans du téléphone ; \n• \ndes étapes numérotées ; \n• \ndes flèches indiquant où appuyer ; \n• \ndes couleurs permettant de distinguer les différentes étapes. \nCe format est adapté aux élèves car ils peuvent suivre les étapes une par une directement avec \nleur téléphone.\n\n3. Organisez votre travail \nNous allons répartir le travail en plusieurs étapes : \n1. \nTrouver un sujet à travail collectif \n2. Identifier toutes les étapes nécessaires pour télécharger Teams et se connecter.  \nà travail collectif \n3. Rédiger des consignes courtes et compréhensibles à Stephanie \n4. Créer la mise en page du guide à chatgpt avec les consignes de Stephanie \n5. Relire et vérifier le guide à Maude \n6. Faire tester le guide par un autre groupe à Anais \n \n4. Réalisez votre production \nNous réalisons deux guides numériques illustrés : \nGuide 1 : iPhone \nGuide 2 : Android \n• \ntélécharger Teams dans l'App Store ; \n• \nouvrir l'application ; \n• \nse connecter avec son compte scolaire. \n \n• \ntélécharger Teams dans le Google Play Store ; \n• \nouvrir l'application ; \n• \nse connecter avec son compte scolaire. \n \n \n5. Testez et améliorez \nNous faisons tester notre guide par un autre groupe sans lui expliquer les étapes oralement. \nNous lui demandons : \n• \nEst-ce que tu comprends directement ce que tu dois faire ? \n• \nLes étapes sont-elles dans le bon ordre ? \n• \nLes explications sont-elles assez courtes et claires ? \n• \nLes images permettent-elles de savoir où appuyer ? \n• \nY a-t-il une étape qui manque ? \n• \nPourrais-tu télécharger Teams et te connecter uniquement avec ce guide ? \nÀ la suite du test, nous avons décidé d’ajouter un QR code donnant accès à une vidéo explicative, \nafin que les élèves qui rencontrent encore des difficultés puissent suivre les différentes étapes en \nvidéo.",
     "driveUrl": "",
     "submittedAt": "2026-10-01 16:51",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.1,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.2,
+        "didacticQuality": 2.4,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.1/10) : 4/5 notions clés intégrées, 512 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : guide, eleve, numerique, outil.",
+        "Vocabulaire didactique approprié (guide, eleves, outils, numerique).",
+        "Développement textuel argumenté (512 mots)."
+      ],
+      "improvements": [
+        "Approfondir les concepts complémentaires : organisation."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 3 : Conception d'un guide numérique élèves\" obtient la note de 9.1/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "4/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "12 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (512 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.1,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.1/10) : 4/5 notions clés intégrées, 512 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-24-aurelie.schreurs",
@@ -864,7 +2187,64 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 02 — Peut-on faire confiance à cette information ? \nVotre mission \nVous découvrez sur Internet l'affirmation suivante : \n« Une étude scientifique vient de prouver que regarder son téléphone avant de dormir fait \nperdre 2 heures de sommeil chaque nuit. » \nAvant de la partager avec des élèves, vous devez déterminer si cette information est suffisamment \nfiable. \nPar groupes de 3 à 4 : \n1. Construisez votre méthode de vérification \nQuelles informations devez-vous rechercher pour pouvoir déterminer si cette affirmation est \nfiable ? \nPour vérifier cette affirmation, nous avons cherché son origine, l’existence éventuelle d’une \nétude scientifique avançant le chiffre de deux heures, les auteurs et la publication concernés, \nainsi que d’autres recherches permettant de confirmer ou de nuancer cette information. \n \n2. Menez l'enquête \nUtilisez Internet pour vérifier l'information. Recherchez notamment : \no \nL'origine de l'affirmation :  \nNous ne trouvons pas l’origine de l’information \no \nLa source scientifique éventuelle : \nNotre recherche sur Google Scholar, pubmed et crossref ne nous a pas mené à identifier une \nétude scientifique fiable démontrant que regarder son téléphone avant de dormir fait perdre \n2h chaque nuit. \no \nL'auteur ou l'organisme à l'origine de l'information :  \nAucune étude affirme que rester sur son téléphone avant de dormir fait perdre 2h de sommeil. \nIl s’agit probablement d’une reformulation médiatique faite pour faire réagir les gens.  \no \nD'autres sources permettant de confirmer ou de nuancer l'affirmation. \n\" Il est essentiel d’éviter les écrans avant de dormir pour améliorer la qualité de votre \nsommeil.\" - https://www.lamaisondesante.com \n\"Si vous allez utiliser des médias, comme regarder la télévision ou écouter de la musique, \navant de vous coucher, gardez une séance courte et ciblée et il est peu probable que vous \nrencontriez des résultats négatifs dans votre sommeil cette nuit-là\" - Morgan Ellithorpe de \nl'Université du Delaware (Etats-Unis) \n\"L’exposition aux écrans le soir est corrélée à la sévérité de l’insomnie et de l’hyperactivité\" - \nhttps://www.sciencedirect.com\n\n3. Prenez une décision \nRépondez à la question : \n« Partageriez-vous cette information avec des élèves ? » \nJustifiez votre réponse à partir de sources vérifiables. \nNotre décision est de ne pas partager cette information telle quelle avec des élèves. Nous avons \nd’abord essayé d’en trouver l’origine et l’étude scientifique qui justifiaient les deux heures de sommeil \nperdues. Nous avons ensuite recherché des publications scientifiques autour des concepts écrans et \nsommeils. En revanche, nous pourrions, par exemple, nuancer cette information et repartir du vécu des \nélèves. \nNous constatons que les études montrent effectivement un lien entre certains usages des écrans et le \nsommeil. Cependant, nous n’avons pas trouvé de source scientifique démontrant que regarder son \ntéléphone avant de dormir fait perdre systématiquement deux heures de sommeil chaque nuit. Une \nétude publiée en 2024 dans JAMA Pediatrics montre même que l’utilisation des écrans durant les deux \nheures précédant le coucher n’est pas associée à la plupart des mesures du sommeil tandis que \nl’utilisation d’un écran une fois au lit est davantage associée à une diminution du temps de sommeil. \nLa principale difficulté rencontrée a donc été de retrouver l’origine du chiffre très précis de 2 heures. \nCela montre qu’une affirmation qui parait scientifique parce qu’elle mentionne “une étude” et donne \nun chiffre précis n’est pas nécessairement fiable \nSources consultées :  \nhttps://www.lamaisondesante.com \nMorgan Ellithorpe | Communication | Collège des Arts et des Sciences | Université du Delaware) \nhttps://www.sciencedirect.com \nhttps://pubmed.ncbi.nlm.nih.gov/39226046/ \nhttps://www.unisante.ch/sites/default/files/upload/imco/imco2019-gr40-abstract-poster.pdf  \n \n4. Préparez une restitution de 2 minutes : \n \n- \nOn a effectué une recherche qui ne nous a pas permis de trouver l’origine précise de la \ncitation. \n- \nMême en recoupant les informations, nous n’avons pas trouvé cette information \n- \nNous avons effectué des recherches supplémentaires pour nuancer l’information. \n- \nAprès ces recherches, nous avons décidé de ne pas partager l’info car nous ne la trouvons pas \nfiable (au vu de nos recherches). \n- \nNos recherches montrent un lien entre le sommeil et l’utilisation des écrans sans pour autant \naffirmer que leur usage nuit au sommeil et sans mentionner la perte précise de 2h. \n- \nCertaines recherches montrent même une incidence par rapport au lieu où l’on utilise l’écran \n(salon, lit,...). \n- \nIl est important d’apporter de la nuance dans cette information et donc faire fonctionner notre \nesprit critique. \n- \nOn conclut qu’il s’agit d’une phrase choc écrite pour faire réagir.\n\nRessources   \nVous pouvez utiliser un moteur de recherche ainsi que : \n• \nGoogle Scholar \n• \nPubMed \n• \nCrossref \nUne IA peut vous aider dans vos recherches, mais ses réponses doivent être vérifiées à partir de \nsources fiables. \n \n \nCasamento Jordan \nD'accardo Nathalie  \nEsposito Julien  \nSchreurs Aurélie",
     "driveUrl": "",
     "submittedAt": "2026-09-30 15:13",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.5,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.5,
+        "didacticQuality": 2.5,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 597 mots d'analyse.",
+      "strengths": [
+        "Enquête scientifique exemplaire remontant aux sources primaires (PubMed / revues à comité de lecture).",
+        "Déconstruction argumentée du sensationnalisme médiatique et de la confusion corrélation/causalité.",
+        "Positionnement didactique pertinent et proposition de situation-problème pour les élèves."
+      ],
+      "improvements": [
+        "Préparer la restitution orale de 2 minutes pour partager cette démarche avec le groupe.",
+        "Maintenir ce haut niveau d'exigence pour les étapes de prototypage."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 2 : Évaluation critique d'une information\" obtient la note de 9.5/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "5/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "16 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (597 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.5,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 597 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-25-caroline.hockers",
@@ -881,7 +2261,63 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 1.1A — Compétent, partiellement compétent ou incompétent ? \nElève : Hockers Caroline \nObjectif \nVous allez analyser différentes situations afin de réfléchir à ce que signifie réellement être \ncompétent numériquement. \nL'objectif n'est pas de déterminer qui maîtrise le plus d'outils, mais d'identifier les différentes \ndimensions qui permettent de caractériser une compétence numérique. \nConsigne \nEn groupe de 3 à 4 étudiants, prenez connaissance des profils distribués. \nPour chaque profil, vous devez attribuer une seule des trois catégories suivantes : \n  COMPÉTENT \nLa personne dispose de ressources suffisantes pour agir de manière pertinente, autonome et \nresponsable dans les situations décrites. \n  PARTIELLEMENT COMPÉTENT \nLa personne maîtrise certaines dimensions de la compétence numérique, mais présente des \nlimites importantes dans d'autres dimensions. \n  INCOMPÉTENT \nLa personne ne dispose pas des ressources nécessaires pour agir de manière pertinente dans \nles situations décrites. \nAttention : « incompétent » ne signifie pas que la personne est incapable d'utiliser le \nnumérique. Elle peut posséder certaines habiletés techniques tout en étant insuffisamment \ncompétente dans la situation considérée. \n \nPour chaque profil \nDiscutez collectivement des questions suivantes : \n1. Que sait faire cette personne ? \nIdentifiez ses connaissances et ses savoir-faire. \n2. Que ne sait-elle pas faire ou ne comprend-elle pas ? \nRepérez ses limites. \n3. Est-elle capable de s'adapter ? \nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ? \n4. Est-elle autonome ? \nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un \ntutoriel ou d'une procédure ?\n\n5. Est-elle capable de porter un regard critique ? \nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ? \n6. Agit-elle de manière responsable ? \nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les \nconséquences de ses actions ? \nLes 10 profils \nProfil 1 — Sarah : l'experte en IA \nSarah utilise quotidiennement ChatGPT pour ses études. Elle sait rédiger des prompts précis, \ndemander différentes versions d'une réponse, résumer des textes et générer des idées. Elle \nobtient rapidement des productions qui lui semblent de bonne qualité. \nEn revanche, elle vérifie rarement les informations fournies par l'IA. Lorsqu'une réponse contient \nune référence ou une statistique, elle considère généralement qu'elle est correcte. Elle ne \ncherche pas systématiquement à identifier les sources originales. \nLorsqu'on lui signale qu'une réponse est fausse, elle répond : « Je ne pouvais pas le savoir, c'est \nl'IA qui a répondu. » \n Partiellement compétente. \nSarah utilise les outils informatiques correctement. Par contre, elle ne les remets pas en \nquestion. Elle manque d’adaptation : vu qu’elle ne vérifie pas ses réponses, lorsqu’elle est \nface à une erreur elle n’est pas capable de la justifier. Dans cette situation, Sarah n’est pas \nautonome, ne fait pas preuve de sens critique et n’agit pas de manière responsable. \n \nProfil 2 — Thomas : le débrouillard \nThomas ne connaît pas beaucoup de logiciels et n'a jamais utilisé Canva. Il n'est pas \nparticulièrement à l'aise lorsqu'il découvre une nouvelle interface. \nLorsqu'on lui demande de créer une infographie, il commence cependant par rechercher des \noutils permettant de réaliser cette tâche. Il compare plusieurs possibilités, consulte des \ntutoriels et expérimente. \nAprès plusieurs essais, il parvient à produire une infographie adaptée au public auquel elle est \ndestinée. \nLorsqu'il rencontre une difficulté, il cherche généralement une solution avant de demander de \nl'aide. \n Compétent. \nAu départ, Thomas connait ses limites et sait qu’il ne maîtrise pas l’outil. Mais cette \nsituation change car il cherche un maximum de ressources et mobilise ses savoir-faire \npour palier à ses difficultés. Il fait donc preuve d’autonomie, d’adaptation et d’esprit \ncritique tout en agissant de manière responsable.\n\nProfil 3 — Lina : la spécialiste des réseaux sociaux \nLina maîtrise parfaitement Instagram, TikTok et Snapchat. Elle connaît les différentes \nfonctionnalités, sait créer des vidéos, utiliser les tendances et analyser les statistiques de ses \npublications. \nElle publie régulièrement des photographies et vidéos de ses amis. Elle considère que les \ncontenus présents sur son smartphone peuvent être publiés librement. \nElle ne s'interroge pas particulièrement sur le consentement des personnes photographiées, la \nconservation des contenus ou les conséquences de leur diffusion. \nElle affirme : \n« Je suis probablement la personne la plus compétente en numérique de ma classe. » \n Partiellement compétente voir incompétente \nLina sait utiliser les outils visuels des réseaux sociaux mais ne connait aucune règle liée au \nRGPD.  Elle agit de manière irresponsable en ne demandant pas leur consentement aux \npersonnes concernées. Sur ce point elle ne fait ni preuve d’adaptation, ni d’autonomie et \nencore moins de sens critique.  \n \nProfil 4 — Hugo : le sceptique \nHugo utilise peu les réseaux sociaux et ne connaît pas la plupart des applications utilisées par \nses camarades. Il éprouve parfois des difficultés avec certains logiciels et ne sait pas réaliser \ndes montages vidéo complexes. \nLorsqu'il reçoit une information étonnante sur Internet, il ne la partage cependant jamais \nimmédiatement. Il cherche l'origine de l'information, vérifie la date, consulte plusieurs sources \net tente d'identifier l'auteur. \nLorsqu'il ne comprend pas quelque chose, il cherche généralement une ressource lui \npermettant de progresser. \n Partiellement compétent à compétent \nHugo ne maitrise pas correctement certains outils mais il sait où aller chercher les \ninformations de manière autonome pour vérifier la véracité des faits explicités par son \nentourage.  Il est capable de faire preuve de sens critique de manière responsable en \ncherchant les informations en les confrontant et en les analysant.\n\nProfil 5 — Julie : l'experte des logiciels \nJulie maîtrise très bien Word, Excel, PowerPoint et plusieurs logiciels professionnels. Elle \nconnaît de nombreuses fonctions avancées et ses camarades font régulièrement appel à elle \nlorsqu'ils rencontrent un problème. \nElle refuse cependant presque systématiquement d'utiliser de nouveaux outils. \nLorsqu'un logiciel est remplacé dans son établissement, elle demande qu'on lui explique \nprécisément chaque étape et préfère attendre une formation plutôt que d'expérimenter seule. \nElle considère que sa compétence numérique repose principalement sur le nombre de logiciels \nqu'elle maîtrise. \n Partiellement compétente à compétente. \nJulie a une très bonne capacité à utiliser les logiciels utiles à son quotidien, mais c’est une \npersonne qui n’aime pas le changement. Cependant, elle agit de manière responsable en \nse formant auprès de personnes compétentes afin d’évoluer. Elle ne le fait pas de manière \nautonome, mais cela est tout de même fait auprès de personnes qualifiées. Face aux \ninformations que nous donne cette situation, il n’est pas possible d’évaluer son sens \ncritique. Cela dépend de son attitude lors de sa formation.  \n \nProfil 6 — Mehdi : le chercheur rapide \nMehdi sait utiliser efficacement les moteurs de recherche. Lorsqu'un professeur lui donne une \nquestion, il trouve rapidement une réponse sur Internet. \nPour gagner du temps, il consulte généralement les premiers résultats proposés par le moteur \nde recherche. Il regarde rarement qui a publié l'information et ne vérifie pas systématiquement \nles sources. \nLorsque plusieurs sites donnent la même information, il considère qu'elle est nécessairement \nvraie. \nIl explique : \n« Je trouve toujours ce que je cherche sur Internet. » \n Incompétent \nMême si Mehdi sait taper une question dans un moteur de recherche et regarder si cette \ninformation a été donnée plusieurs fois, il ne fait pas preuve d’autonomie dans l’analyse de \nla situation. Il n’agit pas de manière responsable et ne porte pas de regard critique en \npassant l’étape de regarder les sources et les dates de publications.\n\nProfil 7 — Emma : la prudente \nEmma ne maîtrise pas particulièrement les fonctions avancées des logiciels bureautiques. Elle \ndemande régulièrement de l'aide lorsqu'elle rencontre une difficulté technique. \nElle utilise cependant un gestionnaire de mots de passe, active la double authentification et \nvérifie régulièrement les paramètres de confidentialité de ses comptes. \nElle réfléchit avant de transmettre des données personnelles à une application et fait attention \naux informations qu'elle publie. \nLorsqu'elle ne sait pas utiliser un outil, elle cherche une solution ou demande de l'aide plutôt \nque de prétendre savoir-faire. \n Partiellement compétente à compétente. \nMême si Emma ne maîtrise pas les fonctions avancées des logiciels elle s’adapte en \ndemandant de l’aide. Pour certains points elle est autonome et pour d’autres un peu moins. \nPar contre elle agit de manière très responsable avec les informations qu’elle possède et \nqu’elle publie.  \n \nProfil 8 — Lucas : le technicien \nLucas est passionné d'informatique. Il sait installer des logiciels, configurer un ordinateur, \nrésoudre de nombreux problèmes techniques et comprendre les caractéristiques du matériel. \nLorsqu'un problème apparaît, il parvient généralement à trouver une solution par lui-même. \nEn revanche, il considère que les questions relatives aux données personnelles, aux \nalgorithmes, aux biais ou à l'éthique sont secondaires. \nPour lui : \n« Si ça fonctionne et que ça permet de faire ce qu'on veut, c'est que c'est un bon outil. » \n Partiellement compétent \nMême si Lucas est autonome et compétent avec l’outil informatique et qu’il sait s’adapter \nau fur et à mesure, il n’est pas tout à fait compétent avec le numérique. Il serait rentré dans \nla catégorie des incompétents s’il divulguait les informations mais ce n’est pas le cas ici. Il \nporte juste un avis irresponsable qui manque d’esprit critique.\n\nProfil 9 — Chloé : l'utilisatrice critique \nChloé utilise régulièrement des outils d'IA pour ses études. Elle les utilise notamment pour \ngénérer des idées, reformuler certains passages ou explorer différentes pistes. \nElle ne considère toutefois jamais une réponse générée comme une vérité définitive. Elle vérifie \nles informations importantes, consulte les sources originales et modifie les productions \nobtenues. \nAvant d'utiliser un outil, elle se demande également s'il est réellement pertinent pour la tâche. \nElle est capable d'expliquer à ses camarades ce que l'outil peut faire, ses limites et les \nsituations dans lesquelles il vaut mieux ne pas l'utiliser. \n Compétente. \nChloé connait ses forces et ses faiblesses et est capable de s’adapter de manière \nautonome en cas de besoin. Elle est responsable et fait preuve d’esprit critique en vérifiant \nles informations importantes et les sources originales. \n \nProfil 10 — Nathan : le reproducteur \nNathan utilise facilement les applications que ses amis lui montrent. Lorsqu'on lui explique une \nprocédure, il est capable de la reproduire rapidement. \nIl sait donc utiliser de nombreux outils. \nEn revanche, lorsqu'une situation légèrement différente se présente, il ne sait généralement \nplus comment procéder. Il demande alors à quelqu'un de lui montrer exactement ce qu'il doit \nfaire. \nLorsqu'un problème apparaît, il essaie rarement d'en comprendre la cause ou de rechercher lui-\nmême une solution. \nIl explique : \n« Je sais utiliser les outils quand on m'a montré comment faire, mais je ne sais jamais quoi faire \nquand ça ne marche pas comme prévu. » \n Incompétent  \nNathan ne sait reproduire que ce qu’on lui propose en surface, mais n’est pas capable de \nchercher au-delà. En ne cherchant pas la cause d’un problème par lui-même il fait preuve \nd’un manque d’autonomie et d’adaptation.",
     "driveUrl": "",
     "submittedAt": "2026-09-30 22:23",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.1,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.2,
+        "didacticQuality": 2.4,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.1/10) : 4/5 notions clés intégrées, 1356 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : competence, profil, differenciation, ethique.",
+        "Vocabulaire didactique approprié (competence, habilete, profil, information).",
+        "Développement textuel argumenté (1356 mots)."
+      ],
+      "improvements": [
+        "Approfondir les concepts complémentaires : digcomp."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 1 : Diagnostic de compétences (DigComp 2.2)\" obtient la note de 9.1/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "4/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "20 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (1356 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.1,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.1/10) : 4/5 notions clés intégrées, 1356 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-26-caroline.hockers",
@@ -898,7 +2334,64 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 02 — Peut-on faire confiance à cette information ? \nCollard Alexiane  \nHockers Caroline \nStaffe Joséphine  \n \nVotre mission \nVous découvrez sur Internet l'affirmation suivante : \n« Une étude scientifique vient de prouver que regarder son téléphone avant de dormir fait perdre 2 heures de \nsommeil chaque nuit. » \nAvant de la partager avec des élèves, vous devez déterminer si cette information est suffisamment fiable. \nPar groupes de 3 à 4 : \n1. \nConstruisez votre méthode de vérification \nQuelles informations devez-vous rechercher pour pouvoir déterminer si cette affirmation est fiable ? \n- \nTaper la question dans un moteur de recherche (google/google scholar)  \n- \nAnalyser les différents articles proposés par l’IA (BBC, Actu.fr, euronews, 24h.ch) \n- \nLe nombre de sources  \n- \nL’auteur \n- \nLa date de l’article  \n \n2. Menez l'enquête \nUtilisez Internet pour vérifier l'information. Recherchez notamment : \n• \nl'origine de l'affirmation ;  \nNous n’avons pas trouvé l’origine précise de l’affirmation mais plutôt un croisement de plusieurs données qui nuance \nles propos.  \n• \nla source scientifique éventuelle ; \nUn article de la BBC qui nous parle d’un Dr Gunnhild Johnsen Hjetland, de l’institut norvégien de santé publique. \n• \nl'auteur ou l'organisme à l'origine de l'information ; \nAuteur de l’étude : Dr Gunnhild Johnsen Hjetland \nAuteur de l’article : Liv McMahon →  Présente sur les réseaux sociaux (X, Linkedin,…) \nAprès vérification, ces personnes sont bien réelles. \n• \nd'autres sources permettant de confirmer ou de nuancer l'affirmation. \nAutres sources proposées par l’IA mais l’article de base nuance déjà les propos.  \n \n3. Prenez une décision \nRépondez à la question : \n« Partageriez-vous cette information avec des élèves ? » \nJustifiez votre réponse à partir de sources vérifiables. \nJe ne partagerai pas cette information parce qu’elle est plus nuancée que l’affirmation de départ. Je leur expliquerai \nque l’utilisation du téléphone a un impact sur le sommeil. Je leur demanderai plutôt d’aller chercher les conséquences \nliées à l’utilisation de leur téléphone avant d’aller dormir.  \nSi nous sommes dans un objectif de recherche numérique, on peut leur donner l’affirmation en leur demandant de la \nvérifier et de la nuancer.\n\n4. \nPréparez une restitution de 2 minutes : \n• \nvotre décision ; \nOn ne communique pas cette affirmation mais on peut utiliser une version plus nuancée.  \n \n• \nles éléments qui ont guidé votre choix ; \nOn ne trouve pas d’article nous donnant l’affirmation précise.  \n• \nvotre méthode de vérification ; \nLa lecture de plusieurs articles en vérifiant si les sources et les auteurs existaient réellement.  \n• \nune difficulté rencontrée. \nL’affirmation n’apparait nulle part. C’est donc difficile de vérifier les différentes parties de l’affirmation.  \n \nRessources \nVous pouvez utiliser un moteur de recherche ainsi que : \n• \nGoogle Scholar \n• \nPubMed \n• \nCrossref \nUne IA peut vous aider dans vos recherches, mais ses réponses doivent être vérifiées à partir de sources fiables.",
     "driveUrl": "",
     "submittedAt": "2026-09-30 22:23",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.5,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.5,
+        "didacticQuality": 2.5,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 329 mots d'analyse.",
+      "strengths": [
+        "Enquête scientifique exemplaire remontant aux sources primaires (PubMed / revues à comité de lecture).",
+        "Déconstruction argumentée du sensationnalisme médiatique et de la confusion corrélation/causalité.",
+        "Positionnement didactique pertinent et proposition de situation-problème pour les élèves."
+      ],
+      "improvements": [
+        "Préparer la restitution orale de 2 minutes pour partager cette démarche avec le groupe.",
+        "Maintenir ce haut niveau d'exigence pour les étapes de prototypage."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 2 : Évaluation critique d'une information\" obtient la note de 9.5/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "5/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "14 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (329 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.5,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 329 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-27-caroline.hockers",
@@ -915,7 +2408,64 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 03 — Concevoir un guide numérique pour les élèves \nAlexiane Collard – Caroline Hockers – Joséphine Staffe  \n \nVotre mission \nVotre établissement constate que les nouveaux élèves rencontrent des \ndifficultés pour s'organiser et collaborer dans leur environnement \nnumérique. \nVotre groupe doit concevoir un guide numérique destiné à ces élèves pour \nles aider à utiliser efficacement les outils numériques de l'école. \nConsignes \nEn groupes de 3 à 4 : \nIdentifiez les besoins \nDéterminez les principales difficultés auxquelles votre guide devra répondre. \nIdentifier le niveau de chaque élève ; partir du principe que le guide (fiche \noutil) doive répondre au besoin d’un élève novice en informatique. \nCréer un guide efficace et non barbant. \n \nDéfinissez votre projet \nChoisissez les contenus à transmettre, le public cible et le format le plus \npertinent : vidéo, tutoriel interactif, site, infographie, podcast… \nFiche outil (vu le manque de temps) mais d’autres formats comme une vidéo \nserait pertinent.  \nThème : allumer l’ordinateur, ouvrir un programme (utilisation souris + clavier) \npuis éteindre l’ordinateur. + Créer un document + retrouver un fichier + \npremiers pas sur internet \nPublic cible : élève de première année + nouveaux élèves + … \n \nOrganisez votre travail \nRépartissez les rôles en fonction des compétences et des intérêts de \nchacun et planifiez les différentes étapes de réalisation. \nVu le temps (20 min) on a décidé d’utiliser Chat GPT en lui demandant de \ngénérer des consignes de fiche outil pour le thème souhaité. Nous avons\n\nensuite demandé de générer une image d’une fiche outil.  \nEn demandant la même chose à Gemini, nous obtenons une version \nbeaucoup plus condensée et plus pauvre des démarches.  \n \nNous avons vérifié le contenu des productions obtenues. \nChacun a eu son rôle : « secrétaire » + « architecte/gestionnaire » + \n« créateur/exécutant » \n \nRéalisez votre production \nUtilisez les outils numériques de votre choix pour créer votre guide. \nVoir ci-dessous. \nTestez et améliorez \nFaites tester votre production par un autre groupe. Recueillez leurs remarques \net apportez au moins une amélioration. \nPrésentation \nPrésentez votre guide au groupe en 3 minutes. \nVous devrez expliquer : \n• \nle besoin auquel vous avez répondu ; \n• \nvos principaux choix ; \n• \nla contribution des différents membres du groupe ; \n• \nune amélioration apportée à la suite des tests.",
     "driveUrl": "",
     "submittedAt": "2026-09-30 22:24",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.2,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.2,
+        "didacticQuality": 2.1,
+        "criticalAnalysis": 2.0,
+        "formAndStructure": 1.9
+      },
+      "summary": "Très bon travail, rigoureux et pertinent (8.2/10) : 4/5 notions clés intégrées, 273 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : guide, eleve, numerique, outil.",
+        "Vocabulaire didactique approprié (guide, eleves, outils, numerique).",
+        "Développement textuel argumenté (273 mots)."
+      ],
+      "improvements": [
+        "Approfondir les concepts complémentaires : organisation.",
+        "Expliciter plus précisément les modalités d'accompagnement et de différenciation en classe."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 3 : Conception d'un guide numérique élèves\" obtient la note de 8.2/10 (Très bon travail, rigoureux et pertinent). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "4/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.1,
+          "maxScore": 2.5,
+          "justification": "7 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.0,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (273 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 1.9,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 8.2,
+      "maxScore": 10,
+      "feedback": "Très bon travail, rigoureux et pertinent (8.2/10) : 4/5 notions clés intégrées, 273 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-28-chloe.steckx",
@@ -932,7 +2482,64 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 2 : Peut-on faire confiance à cette information ?\n1) Méthode de vérification\n \n \n\nChercher sur des IA proposant des articles scientifiques (Perplexity) ou un \nmoteur de recherche scientifique (Google Scholar, ERIC) ET vérifier les \nsources et leur fiabilité (auteur, date de publication, éditeur, la revue par \nles pairs, nombre de citations,  …)\n\nComparer les articles scientifiques entre eux afin de dégager les \nprincipaux thèmes.\n\nContacter, dans la mesure du possible, un professionnel du monde \nmédical.\n2) Enquête\n \n \n\nOrigine de l’information\nPasquinelli, E., & Bernard-Delorme, A. (2021, juillet). \n \n Écrans et sommeil : Que \n \n \ndit la recherche ?\n \n  Fondation La main à la pâte. \n \n \nhttps://fondation-lamap.org/sites/default/files/pdf/E%CC%81crans%20et%20so\nmmeil.pdf\nATTENTION : « La main à la pâte » n'est pas une revue scientifique soumise à \nune évaluation par les pairs (peer review) au sens scientifique du terme, mais \nune fondation éducative et pédagogique. Elle est plutôt évaluée par des \nutilisateurs, enseignants, mais pas à proprement parler par la communauté \nscientifique. \nHaut Conseil de la santé publique. (2019, 12 décembre). \n \n Avis relatif aux effets de\n \n  \nl’exposition des enfants et des jeunes aux écrans\n \n .   \nhttps://www.hcsp.fr/Explore.cgi/Telecharger?\nNomFichier=hcspa20191212_effedelexpodesenfaetdesjeunauxcr.pdf\n\nAutres articles nuançant l’information\nBrosnan, B., Haszard, J. J., Meredith-Jones, K. A., Wickham, S. R., Galland, B. \nC., & Taylor, R. W. (2024). Screen Use at Bedtime and Sleep Duration and \nQuality Among Youths. JAMA pediatrics, 178(11), 1147–1154. \nhttps://doi.org/10.1001/jamapediatrics.2024.2914\nHaghani, M., Abbasi, S., Abdoli, L., Shams, S. F., Baha'addini Baigy Zarandi, B. \nF., Shokrpour, N., Jahromizadeh, A., Mortazavi, S. A., & Mortazavi, S. M. J. \n(2024). Blue Light and Digital Screens Revisited: A New Look at Blue Light \nfrom the Vision Quality, Circadian Rhythm and Cognitive Functions \nPerspective. Journal of biomedical physics & engineering, 14(3), 213–228. \nhttps://doi.org/10.31661/jbpe.v0i0.2106-1355\n\nExercice 2 : Peut-on faire confiance à cette information ?\n3) Decision\n \n \nOn partage information mais en nuançant avec les éléments apportés par la \nlittérature scientifique.\n4) Restitution\n \n \n-\nDécision  :   on présente en leur demandant leur avis et puis on nuance en \nleur présentant les éléments concrets permettant de se positionner.\n-\nChoix\n \n   :  les articles scientifiques se contredisent dans le nombre d’heures \nperdues mais l’idée principale reste qu’il y a un impact sur le sommeil. La \ndiscorde s’installe sur le temps perdu la nuit.\n-\nMéthode de vérification\n \n   :  recherche d’articles scientifiques sur Perplexity, \nGoogle Scholar,… en utilisant les critères de fiabilité énoncés ci-dessus \n(rappel : auteur, date de publication, éditeur, la revue par les pairs, nombre \nde citations, …)\n-\nDifficulté\n \n   :  pas encore d’avis tranché ni de réelle solution à cette question. \nCela peut mener à certaines confusions si le recherche n’est pas assez \napprofondie.\nIdées pratiques\n\nConstruire avec les élèves une échelle de fiabilité pour évaluer une \ninformation  Les amener à la conclusion que tout n’est pas totalement \nvrai ou totalement faux, créer un esprit critique \n Construction de la notion de nuance",
     "driveUrl": "",
     "submittedAt": "2026-10-01 14:53",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.5,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.5,
+        "didacticQuality": 2.5,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 362 mots d'analyse.",
+      "strengths": [
+        "Enquête scientifique exemplaire remontant aux sources primaires (PubMed / revues à comité de lecture).",
+        "Déconstruction argumentée du sensationnalisme médiatique et de la confusion corrélation/causalité.",
+        "Positionnement didactique pertinent et proposition de situation-problème pour les élèves."
+      ],
+      "improvements": [
+        "Préparer la restitution orale de 2 minutes pour partager cette démarche avec le groupe.",
+        "Maintenir ce haut niveau d'exigence pour les étapes de prototypage."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 2 : Évaluation critique d'une information\" obtient la note de 9.5/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "5/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "13 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (362 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.5,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 362 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-29-e2301886",
@@ -949,7 +2556,64 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 02 — Peut-on faire confiance à cette information ? \nVotre mission \nVous découvrez sur Internet l'affirmation suivante : \n« Une étude scientifique vient de prouver que regarder son téléphone avant de dormir fait perdre 2 \nheures de sommeil chaque nuit. » \nAvant de la partager avec des élèves, vous devez déterminer si cette information est suffisamment fiable. \nPar groupes de 3 à 4 : \n1.​\nConstruisez votre méthode de vérification​\nQui est l’auteur ? Quelles sont les sources ? Quel est le site ?  \n2.​ Menez l'enquête​\nUtilisez Internet pour vérifier l'information. Recherchez notamment : \no​ l'origine de l'affirmation ; Mauvaise interprétation de cette article : \nhttps://actu.fr/sciences-technologie/vous-regardez-votre-telephone-avant-de-dormir-\ncomment-une-heure-d-ecran-peut-detruire-votre-sommeil_62466891.html#google_vi\ngnette \no​ la source scientifique éventuelle ; \nhttps://www.sciencedirect.com/science/article/abs/pii/S1166341317301847 \no​ l'auteur ou l'organisme à l'origine de l'information ; Marie Françoise Vecchierini \no​ d'autres sources permettant de confirmer ou de nuancer l'affirmation. \nhttps://stm.cairn.info/revue-environnement-risques-et-sante-2019-4-page-309?lang=f\nr \nhttps://actu.fr/sciences-technologie/vous-regardez-votre-telephone-avant-de-dormir-\ncomment-une-heure-d-ecran-peut-detruire-votre-sommeil_62466891.html#google_vi\ngnette \n3.​ Prenez une décision​\nRépondez à la question :  \n« Partageriez-vous cette information avec des élèves ? » \nNon, je ne partagerai pas cette information car l’impact de l’utilisation du téléphone varie en fonction des \narticles. Mais il faut en parler aux élèves pour leur expliquer qu’il y a quand même un impact.  \n4.​ Préparez une restitution de 2 minutes : \no​ votre décision ; Non, il manque du contexte et d'informations pour donner aux élèves.  \no​ les éléments qui ont guidé votre choix ; On n’a pas retrouvé l’article exact mais un article \nsur lequel la fake news a été basé. \no​ votre méthode de vérification ;  \n-​\ndéfinir des mots clés \n-​\nchercher sur les sites scientifiques \n-​\nchercher sur Internet grâce à l’IA \n-​\nlire les articles \n-​\nfaire une conclusion \no​ une difficulté rencontrée : trouver de bons mots clés et de bons articles",
     "driveUrl": "",
     "submittedAt": "2026-09-30 15:16",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.5,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.5,
+        "didacticQuality": 2.5,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 256 mots d'analyse.",
+      "strengths": [
+        "Enquête scientifique exemplaire remontant aux sources primaires (PubMed / revues à comité de lecture).",
+        "Déconstruction argumentée du sensationnalisme médiatique et de la confusion corrélation/causalité.",
+        "Positionnement didactique pertinent et proposition de situation-problème pour les élèves."
+      ],
+      "improvements": [
+        "Préparer la restitution orale de 2 minutes pour partager cette démarche avec le groupe.",
+        "Maintenir ce haut niveau d'exigence pour les étapes de prototypage."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 2 : Évaluation critique d'une information\" obtient la note de 9.5/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "5/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "12 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (256 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.5,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 256 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-30-e2301886",
@@ -966,7 +2630,65 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 03 — Concevoir un guide numérique pour les élèves\n\nVotre mission\n\nVotre établissement constate que les nouveaux élèves rencontrent des difficultés pour s'organiser et collaborer dans leur environnement numérique.\nVotre groupe doit concevoir un guide numérique destiné à ces élèves pour les aider à utiliser efficacement les outils numériques de l'école.\n\nConsignes\n\nIdentifiez les besoins\nDéterminez les principales difficultés auxquelles votre guide devra répondre.\nComprendre et savoir utiliser la plateforme de l’école (teams) \n-se connecter et gérer les notifications \n-utiliser la messagerie/ partager des documents\n-utiliser le calendrier et créer et participer à des réunions \n-déposer un devoir\n\nDéfinissez votre projet\nChoisissez les contenus à transmettre, le public cible et le format le plus pertinent : vidéo, tutoriel interactif, site, infographie, podcast…\nVidéo/ tuto avec une capture vidéo + voix. (pas le temps) \nDonc affiche générée par IA.\n\nOrganisez votre travail\nRépartissez les rôles en fonction des compétences et des intérêts de chacun et planifiez les différentes étapes de réalisation.\n\nRéalisez votre production\nUtilisez les outils numériques de votre choix pour créer votre guide.\n\nTestez et améliorez\nFaites tester votre production par un autre groupe. Recueillez leurs remarques et apportez au moins une amélioration.\nPour améliorer, faire une mind map interactive.\n\nPrésentation\nPrésentez votre guide au groupe en 3 minutes.\nVous devrez expliquer :\n\nle besoin auquel vous avez répondu ;\nL’utilisation de base de la plateforme qui permet elle-même de collaborer et s’organiser.\n\nvos principaux choix ;\nPar manque de temps car on aurait préférer une vidéo comme il en existe déjà. A refaire, une mind map interactive serait peut-être plus judicieuse.\n\nla contribution des différents membres du groupe ;\nNous avons réfléchi et créé le prompt ensemble.\n\nune amélioration apportée à la suite des tests.\nVoir mind map.",
     "driveUrl": "",
     "submittedAt": "2026-09-30 16:50",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.2,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.2,
+        "didacticQuality": 2.1,
+        "criticalAnalysis": 2.0,
+        "formAndStructure": 1.9
+      },
+      "summary": "Très bon travail, rigoureux et pertinent (8.2/10) : 4/5 notions clés intégrées, 231 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : guide, eleve, numerique, outil.",
+        "Vocabulaire didactique approprié (guide, eleves, outils, numerique).",
+        "Développement textuel argumenté (231 mots)."
+      ],
+      "improvements": [
+        "Approfondir les concepts complémentaires : organisation.",
+        "Développer davantage l'analyse réflexive en illustrant avec des situations d'élèves concrètes.",
+        "Expliciter plus précisément les modalités d'accompagnement et de différenciation en classe."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 3 : Conception d'un guide numérique élèves\" obtient la note de 8.2/10 (Très bon travail, rigoureux et pertinent). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "4/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.1,
+          "maxScore": 2.5,
+          "justification": "9 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.0,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (231 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 1.9,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 8.2,
+      "maxScore": 10,
+      "feedback": "Très bon travail, rigoureux et pertinent (8.2/10) : 4/5 notions clés intégrées, 231 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-31-jonathan.valenzano",
@@ -983,7 +2705,64 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 02 — Peut-on faire confiance à cette information ? \nVotre mission \nVous découvrez sur Internet l'affirmation suivante : \n« Une étude scientifique vient de prouver que regarder son téléphone avant de dormir fait \nperdre 2 heures de sommeil chaque nuit. » \nAvant de la partager avec des élèves, vous devez déterminer si cette information est suffisamment \nfiable. \nPar groupes de 3 à 4 : \n1. Construisez votre méthode de vérification \nQuelles informations devez-vous rechercher pour pouvoir déterminer si cette affirmation est \nfiable ? \n1. Rechercher l’origine exacte de l’affirmation. \n2. Rechercher des articles scientifiques sur le sujet en utilisant les différentes plateformes de \nrecherche. \n3. Analyser les articles scientifiques trouvés. \n4. Croiser les différentes sources entre elles. \n5. Valider ou invalider l’affirmation. \n \n2. Menez l'enquête \nUtilisez Internet pour vérifier l'information. Recherchez notamment : \no \nl'origine de l'affirmation ; \no \nla source scientifique éventuelle ; \no \nl'auteur ou l'organisme à l'origine de l'information ; \no \nd'autres sources permettant de confirmer ou de nuancer l'affirmation. \n \nL’origine de l’affirmation est inconnue mais un groupe de chercheurs norvégiens (Hjetland GJ, \nSkogen JC, Hysing M, Gradisar M and Sivertsen B) s’est penché sur la question mais uniquement \nchez les étudiants universitaires norvégiens. Les résultats de cette recherche ont été publiés le \n31 mars 2025 dans « Frontiers in Psychiatry ». Les chercheurs ont démontré qu’une heure d’écran \nsupplémentaire au lit était associée à une réduction du temps de sommeil de 24 minutes (et non \nde deux heures). D’autres publications permettent de dire qu’il y a bien des effets négatifs quant \nà l’utilisation du téléphone avant de s’endormir sans pour autant donner d’information relative \nau temps de sommeil perdu.\n\n3. Prenez une décision \nRépondez à la question : \n« Partageriez-vous cette information avec des élèves ? » NON \nJustifiez votre réponse à partir de sources vérifiables. \nNon, l’affirmation n’est pas assez opérationnalisée. En effet, on ne connait pas la population \nétudiée pour affirmer cela. De plus, la formulation « regarder son téléphone » n’indique en rien \nla réelle utilisation que la personne en fait (regarder une vidéo ou uniquement scroller). Des \ninformations essentielles pour prendre en compte tous les éléments de cette affirmation sont \nmanquantes. Il est, donc, nécessaire de réaliser une recherche approfondie en amont avant de \nproposer celle-ci aux apprenants. Pour vérifier correctement l’affirmation, nous avons utilisé \nGoogleScholar et PubMed afin d’obtenir différents articles de recherche sur le sujet dans le but \nde croiser les informations. \nIl est, tout de même, compliqué de trouver des articles scientifiques reprenant des recherches \ngénérales sur ce sujet. De nombreux articles ciblent une population précise tant au niveau \ngéographique qu’au niveau de l’âge des personnes.  \n \nEn conclusion, l’affirmation est générique et celle-ci manque de précision. \n \nSources utilisées : \nHjetland GJ, Skogen JC, Hysing M, Gradisar M and Sivertsen B (2025) How and when screens \nare used: comparing different screen activities and sleep in Norwegian university students. \nFront. Psychiatry 16:1548273. doi: 10.3389/fpsyt.2025.1548273 \nBrosnan, B., Haszard, J. J., Meredith-Jones, K. A., Wickham, S. R., Galland, B. C., & Taylor, R. W. \n(2024). Screen use at bedtime and sleep duration and quality among youths. JAMA \npediatrics, 178(11), 1147-1154. \nDuraccio, K. M., Zaugg, K. K., Blackburn, R. C., & Jensen, C. D. (2021). Does iPhone night shift \nmitigate negative effects of smartphone use on sleep outcomes in emerging adults? Sleep \nHealth, 7(4), 478–484. https://doi.org/10.1016/j.sleh.2021.03.005 \nCette ressource pourrait être intéressante mais l’article est payant :  \nGarcia, A., Ramirez, C., Aguillon, A., Tirado, V., Paredes, L., Ibarra, A., & Valdez, P. (2017). \nSmartphone use during sleep time in Mexican adolescents. Sleep Medicine, 40(Suppl. 1), e106–\ne107. https://doi.org/10.1016/j.sleep.2017.11.310 \n \n4. Préparez une restitution de 2 minutes : \no \nvotre décision ;\n\no \nles éléments qui ont guidé votre choix ; \no \nvotre méthode de vérification ; \no \nune difficulté rencontrée. \n \nNous nous sommes penchés sur l’affirmation suivante : « Une étude scientifique vient de prouver que \nregarder son téléphone avant de dormir fait perdre 2 heures de sommeil chaque nuit. » \nNotre décision est claire : non, nous ne partagerions pas cette information telle quelle à nos élèves. \nPourquoi ce choix ? Tout d’abord, l’affirmation souffre d’un manque total d’opérationnalisation. Elle ne \nprécise ni la population étudiée, ni ce que recouvre l'expression « regarder son téléphone » — s'agit-il \nde visionner une vidéo, d'écouter un podcast ou de scroller passivement sur les réseaux sociaux ? De \nplus, en menant notre enquête via des bases de données comme Google Scholar et PubMed, nous \navons constaté que l’affirmation originale est générique et exagérée. Les recherches scientifiques, \ncomme les travaux récents de Hjetland et collaborateurs en 2025 sur les étudiants norvégiens, ou de \nl'étude de Brosnan et son équipe parue dans JAMA Pediatrics en 2024, montrent des impacts mesurés \net nuancés selon les usages et l'âge, bien loin du chiffre choc des 2 heures (sensationnalisme). Diffuser \nune information aussi imprécise risquerait de manquer de rigueur pédagogique. \nNotre méthode de vérification a consisté à interroger des moteurs de recherche académiques pour \ncroiser les sources, analyser les méthodologies et consulter des études ciblées. \nEnfin, la principale difficulté rencontrée a résidée dans la nature même de la littérature scientifique : il \nest très compliqué de trouver des articles proposant des conclusions générales applicables à tout le \nmonde. La grande majorité des recherches cible une population extrêmement précise, que ce soit en \ntermes de géographie, de tranche d’âge, ou se heurte parfois à des barrières d'accès (articles payants). \nEn conclusion, face à une affirmation aussi générique et manquant de précision, un travail approfondi \nde vérification s'impose toujours avant de la placer entre les mains des apprenants. \n \n \n \nRessources \nVous pouvez utiliser un moteur de recherche ainsi que : \n• \nGoogle Scholar \n• \nPubMed \n• \nCrossref \nUne IA peut vous aider dans vos recherches, mais ses réponses doivent être vérifiées à partir de \nsources fiables.",
     "driveUrl": "",
     "submittedAt": "2026-09-30 14:27",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.5,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.5,
+        "didacticQuality": 2.5,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 714 mots d'analyse.",
+      "strengths": [
+        "Enquête scientifique exemplaire remontant aux sources primaires (PubMed / revues à comité de lecture).",
+        "Déconstruction argumentée du sensationnalisme médiatique et de la confusion corrélation/causalité.",
+        "Positionnement didactique pertinent et proposition de situation-problème pour les élèves."
+      ],
+      "improvements": [
+        "Préparer la restitution orale de 2 minutes pour partager cette démarche avec le groupe.",
+        "Maintenir ce haut niveau d'exigence pour les étapes de prototypage."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 2 : Évaluation critique d'une information\" obtient la note de 9.5/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "5/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "21 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (714 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.5,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 714 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-32-e161029",
@@ -1000,7 +2779,63 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 01.docx\nExercice 1.1A — Compétent, partiellement compétent ou incompétent ?\nObjectif\nVous allez analyser différentes situations afin de réfléchir à ce que signifie réellement être\ncompétent numériquement.\nL'objectif n'est pas de déterminer qui maîtrise le plus d'outils, mais d'identifier les\ndifférentes dimensions qui permettent de caractériser une compétence numérique.\nConsigne\nEn groupe de 3 à 4 étudiants, prenez connaissance des profils distribués.\nPour chaque profil, vous devez attribuer une seule des trois catégories suivantes :\n COMPÉTENT\nLa personne dispose de ressources suffisantes pour agir de manière pertinente, autonome et\nresponsable dans les situations décrites.\n PARTIELLEMENT COMPÉTENT\nLa personne maîtrise certaines dimensions de la compétence numérique, mais présente des\nlimites importantes dans d'autres dimensions.\n INCOMPÉTENT\nLa personne ne dispose pas des ressources nécessaires pour agir de manière pertinente dans\nles situations décrites.\nAttention : « incompétent » ne signifie pas que la personne est incapable d'utiliser le\nnumérique. Elle peut posséder certaines habiletés techniques tout en étant insuffisamment\ncompétente dans la situation considérée.\nPour chaque profil\nDiscutez collectivement des questions suivantes :\n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\n\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un\ntutoriel ou d'une procédure ?\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les\nconséquences de ses actions ?\nLes 10 profils\nProfil 1 — Sarah : l'experte en IA\nSarah utilise quotidiennement ChatGPT pour ses études. Elle sait rédiger des prompts\nprécis, demander différentes versions d'une réponse, résumer des textes et générer des\nidées. Elle obtient rapidement des productions qui lui semblent de bonne qualité.\nEn revanche, elle vérifie rarement les informations fournies par l'IA. Lorsqu'une réponse\ncontient une référence ou une statistique, elle considère généralement qu'elle est correcte.\nElle ne cherche pas systématiquement à identifier les sources originales.\nLorsqu'on lui signale qu'une réponse est fausse, elle répond : « Je ne pouvais pas le savoir,\nc'est l'IA qui a répondu. »\nProfil 2 — Thomas : le débrouillard\nThomas ne connaît pas beaucoup de logiciels et n'a jamais utilisé Canva. Il n'est pas\nparticulièrement à l'aise lorsqu'il découvre une nouvelle interface.\nLorsqu'on lui demande de créer une infographie, il commence cependant par rechercher\ndes outils permettant de réaliser cette tâche. Il compare plusieurs possibilités, consulte des\ntutoriels et expérimente.\nAprès plusieurs essais, il parvient à produire une infographie adaptée au public auquel elle\nest destinée.\nLorsqu'il rencontre une difficulté, il cherche généralement une solution avant de demander\nde l'aide.\nProfil 3 — Lina : la spécialiste des réseaux sociaux\n^\n·\nー\nー\n~\n〜\n⑱\n\nProfil 1:\nSarah\na\nSarah\nse vérifie pas constammentles\nsources\ndes réponses données\npar l'IA\n.\nElle\npossèdeartaines\nhabiletés\navec l'IA mais\nSevilement Chat GPT.\nProfil 2:\nThomas\nment des habiletés mais\nThomas ne possède pas force\nil fait\ndes recherches\n, compare , consulte des tutos et\nil expérimente\nen autonomie\n↓\n\nLina maîtrise parfaitement Instagram, TikTok et Snapchat. Elle connaît les différentes\nfonctionnalités, sait créer des vidéos, utiliser les tendances et analyser les statistiques de\nses publications.\nElle publie régulièrement des photographies et vidéos de ses amis. Elle considère que les\ncontenus présents sur son smartphone peuvent être publiés librement.\nElle ne s'interroge pas particulièrement sur le consentement des personnes photographiées,\nla conservation des contenus ou les conséquences de leur diffusion.\nElle affirme :\n« Je suis probablement la personne la plus compétente en numérique de ma classe. »\nProfil 4 — Hugo : le sceptique\nHugo utilise peu les réseaux sociaux et ne connaît pas la plupart des applications utilisées\npar ses camarades. Il éprouve parfois des difficultés avec certains logiciels et ne sait pas\nréaliser des montages vidéo complexes.\nLorsqu'il reçoit une information étonnante sur Internet, il ne la partage cependant jamais\nimmédiatement. Il cherche l'origine de l'information, vérifie la date, consulte plusieurs\nsources et tente d'identifier l'auteur.\nLorsqu'il ne comprend pas quelque chose, il cherche généralement une ressource lui\npermettant de progresser.\nProfil 5 — Julie : l'experte des logiciels\nJulie maîtrise très bien Word, Excel, PowerPoint et plusieurs logiciels professionnels. Elle\nconnaît de nombreuses fonctions avancées et ses camarades font régulièrement appel à elle\nlorsqu'ils rencontrent un problème.\nElle refuse cependant presque systématiquement d'utiliser de nouveaux outils.\nLorsqu'un logiciel est remplacé dans son établissement, elle demande qu'on lui explique\nprécisément chaque étape et préfère attendre une formation plutôt que d'expérimenter\nseule.\nElle considère que sa compétence numérique repose principalement sur le nombre de\nlogiciels qu'elle maîtrise.\nProfil 6 — Mehdi : le chercheur rapide\nMehdi sait utiliser efficacement les moteurs de recherche. Lorsqu'un professeur lui donne\n⑱\na\n.\n\nProfil\n3 :\nLina\na\nLina possède\ncertaines habiletés\navec les réseaux\nsociaux\nmais elle se s'interroge pas , ne\nse rend pas\ncomple que certaines choses nécessitentune recherche\nsupplémentaire.\nProfil4 :\nHugo\na\nHugo\na l'air d'être\nun minienn\nautonome mais\néprouve des difficultés\navec certainsoutils\n. Il n'a\npas l'air de rechercher des éléments pour s'améliorer-\nProfil 5 :\nJulie\na\nJulie\nmaitrise artains logiciels mais n'agit pas\n' autonome car elle a besoin de\nforcémentde manie\nformation au lieu detester elle-même\n\nune question, il trouve rapidement une réponse sur Internet.\nPour gagner du temps, il consulte généralement les premiers résultats proposés par le\nmoteur de recherche. Il regarde rarement qui a publié l'information et ne vérifie pas\nsystématiquement les sources.\nLorsque plusieurs sites donnent la même information, il considère qu'elle est\nnécessairement vraie.\nIl explique :\n« Je trouve toujours ce que je cherche sur Internet. »\nProfil 7 — Emma : la prudente\nEmma ne maîtrise pas particulièrement les fonctions avancées des logiciels bureautiques.\nElle demande régulièrement de l'aide lorsqu'elle rencontre une difficulté technique.\nElle utilise cependant un gestionnaire de mots de passe, active la double authentification et\nvérifie régulièrement les paramètres de confidentialité de ses comptes.\nElle réfléchit avant de transmettre des données personnelles à une application et fait\nattention aux informations qu'elle publie.\nLorsqu'elle ne sait pas utiliser un outil, elle cherche une solution ou demande de l'aide\nplutôt que de prétendre savoir faire.\nProfil 8 — Lucas : le technicien\nLucas est passionné d'informatique. Il sait installer des logiciels, configurer un ordinateur,\nrésoudre de nombreux problèmes techniques et comprendre les caractéristiques du\nmatériel.\nLorsqu'un problème apparaît, il parvient généralement à trouver une solution par lui-même.\nEn revanche, il considère que les questions relatives aux données personnelles, aux\nalgorithmes, aux biais ou à l'éthique sont secondaires.\nPour lui :\n« Si ça fonctionne et que ça permet de faire ce qu'on veut, c'est que c'est un bon outil. »\nProfil 9 — Chloé : l'utilisatrice critique\nChloé utilise régulièrement des outils d'IA pour ses études. Elle les utilise notamment pour\ngénérer des idées, reformuler certains passages ou explorer différentes pistes.\n.\n.\n\nProfil 6\n:\nMehdi\nIl consulte les premiers\nsites\nmais ne vérifie pas\nses infos/sources\n.\nProfil +:\nEmma\nEmma he posside pas forcément d'aptitudes de base\nmais effectue des recherches, essaie de trouver des solutions\net fait\ndes recherches\nswe\na qu'elle public\n.\nProfil\n8 .\nlucas\na\nLucas est autonome et a des aptitudes de base mais\nhe remet pas\nen\ncause les données personnelles l'éthique,\n'\n\nElle ne considère toutefois jamais une réponse générée comme une vérité définitive. Elle\nvérifie les informations importantes, consulte les sources originales et modifie les\nproductions obtenues.\nAvant d'utiliser un outil, elle se demande également s'il est réellement pertinent pour la\ntâche.\nElle est capable d'expliquer à ses camarades ce que l'outil peut faire, ses limites et les\nsituations dans lesquelles il vaut mieux ne pas l'utiliser.\nProfil 10 — Nathan : le reproducteur\nNathan utilise facilement les applications que ses amis lui montrent. Lorsqu'on lui explique\nune procédure, il est capable de la reproduire rapidement.\nIl sait donc utiliser de nombreux outils.\nEn revanche, lorsqu'une situation légèrement différente se présente, il ne sait généralement\nplus comment procéder. Il demande alors à quelqu'un de lui montrer exactement ce qu'il\ndoit faire.\nLorsqu'un problème apparaît, il essaie rarement d'en comprendre la cause ou de rechercher\nlui-même une solution.\nIl explique :\n« Je sais utiliser les outils quand on m'a montré comment faire, mais je ne sais jamais quoi\nfaire quand ça ne marche pas comme prévu. »\n.\na\n\nProfil 9 :\nChloe\nChloé utilise l'IA et remet les réponses\nen lause ef\nagit\nde manière autonome et responsable avec les\noutils numériques.\nProfil lo :\nNathan\na\nNathan\nest capable de reproduire\nce qu'on lui montre\nmais\nn'essaie pas , seul , d'y arriver ou de trouver\nuna solution.",
     "driveUrl": "",
     "submittedAt": "2026-09-30 15:17",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.1,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.2,
+        "didacticQuality": 2.4,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.1/10) : 4/5 notions clés intégrées, 1124 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : competence, profil, differenciation, ethique.",
+        "Vocabulaire didactique approprié (competence, habilete, profil, information).",
+        "Développement textuel argumenté (1124 mots)."
+      ],
+      "improvements": [
+        "Approfondir les concepts complémentaires : digcomp."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 1 : Diagnostic de compétences (DigComp 2.2)\" obtient la note de 9.1/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "4/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "18 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (1124 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.1,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.1/10) : 4/5 notions clés intégrées, 1124 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-33-e161029",
@@ -1017,7 +2852,64 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 02 — Peut-on faire confiance à cette information ? \nVotre mission \nVous découvrez sur Internet l'affirmation suivante : \n« Une étude scientifique vient de prouver que regarder son téléphone avant de dormir fait \nperdre 2 heures de sommeil chaque nuit. » \nAvant de la partager avec des élèves, vous devez déterminer si cette information est suffisamment \nfiable. \nPar groupes de 3 à 4 : \n1. Construisez votre méthode de vérification \nQuelles informations devez-vous rechercher pour pouvoir déterminer si cette affirmation est \nfiable ? \nPour vérifier cette affirmation, nous avons cherché son origine, l’existence éventuelle d’une \nétude scientifique avançant le chiffre de deux heures, les auteurs et la publication concernés, \nainsi que d’autres recherches permettant de confirmer ou de nuancer cette information. \n \n2. Menez l'enquête \nUtilisez Internet pour vérifier l'information. Recherchez notamment : \no \nL'origine de l'affirmation :  \nNous ne trouvons pas l’origine de l’information \no \nLa source scientifique éventuelle : \nNotre recherche sur Google Scholar, pubmed et crossref ne nous a pas mené à identifier une \nétude scientifique fiable démontrant que regarder son téléphone avant de dormir fait perdre \n2h chaque nuit. \no \nL'auteur ou l'organisme à l'origine de l'information :  \nAucune étude affirme que rester sur son téléphone avant de dormir fait perdre 2h de sommeil. \nIl s’agit probablement d’une reformulation médiatique faite pour faire réagir les gens.  \no \nD'autres sources permettant de confirmer ou de nuancer l'affirmation. \n\" Il est essentiel d’éviter les écrans avant de dormir pour améliorer la qualité de votre \nsommeil.\" - https://www.lamaisondesante.com \n\"Si vous allez utiliser des médias, comme regarder la télévision ou écouter de la musique, \navant de vous coucher, gardez une séance courte et ciblée et il est peu probable que vous \nrencontriez des résultats négatifs dans votre sommeil cette nuit-là\" - Morgan Ellithorpe de \nl'Université du Delaware (Etats-Unis) \n\"L’exposition aux écrans le soir est corrélée à la sévérité de l’insomnie et de l’hyperactivité\" - \nhttps://www.sciencedirect.com\n\n3. Prenez une décision \nRépondez à la question : \n« Partageriez-vous cette information avec des élèves ? » \nJustifiez votre réponse à partir de sources vérifiables. \nNotre décision est de ne pas partager cette information telle quelle avec des élèves. Nous avons \nd’abord essayé d’en trouver l’origine et l’étude scientifique qui justifiaient les deux heures de sommeil \nperdues. Nous avons ensuite recherché des publications scientifiques autour des concepts écrans et \nsommeils. En revanche, nous pourrions, par exemple, nuancer cette information et repartir du vécu des \nélèves. \nNous constatons que les études montrent effectivement un lien entre certains usages des écrans et le \nsommeil. Cependant, nous n’avons pas trouvé de source scientifique démontrant que regarder son \ntéléphone avant de dormir fait perdre systématiquement deux heures de sommeil chaque nuit. Une \nétude publiée en 2024 dans JAMA Pediatrics montre même que l’utilisation des écrans durant les deux \nheures précédant le coucher n’est pas associée à la plupart des mesures du sommeil tandis que \nl’utilisation d’un écran une fois au lit est davantage associée à une diminution du temps de sommeil. \nLa principale difficulté rencontrée a donc été de retrouver l’origine du chiffre très précis de 2 heures. \nCela montre qu’une affirmation qui parait scientifique parce qu’elle mentionne “une étude” et donne \nun chiffre précis n’est pas nécessairement fiable \nSources consultées :  \nhttps://www.lamaisondesante.com \nMorgan Ellithorpe | Communication | Collège des Arts et des Sciences | Université du Delaware) \nhttps://www.sciencedirect.com \nhttps://pubmed.ncbi.nlm.nih.gov/39226046/ \nhttps://www.unisante.ch/sites/default/files/upload/imco/imco2019-gr40-abstract-poster.pdf  \n \n4. Préparez une restitution de 2 minutes : \n \n- \nOn a effectué une recherche qui ne nous a pas permis de trouver l’origine précise de la \ncitation. \n- \nMême en recoupant les informations, nous n’avons pas trouvé cette information \n- \nNous avons effectué des recherches supplémentaires pour nuancer l’information. \n- \nAprès ces recherches, nous avons décidé de ne pas partager l’info car nous ne la trouvons pas \nfiable (au vu de nos recherches). \n- \nNos recherches montrent un lien entre le sommeil et l’utilisation des écrans sans pour autant \naffirmer que leur usage nuit au sommeil et sans mentionner la perte précise de 2h. \n- \nCertaines recherches montrent même une incidence par rapport au lieu où l’on utilise l’écran \n(salon, lit,...). \n- \nIl est important d’apporter de la nuance dans cette information et donc faire fonctionner notre \nesprit critique. \n- \nOn conclut qu’il s’agit d’une phrase choc écrite pour faire réagir.\n\nRessources   \nVous pouvez utiliser un moteur de recherche ainsi que : \n• \nGoogle Scholar \n• \nPubMed \n• \nCrossref \nUne IA peut vous aider dans vos recherches, mais ses réponses doivent être vérifiées à partir de \nsources fiables. \n \n \nCasamento Jordan \nD'accardo Nathalie  \nEsposito Julien  \nSchreurs Aurélie",
     "driveUrl": "",
     "submittedAt": "2026-09-30 15:15",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.5,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.5,
+        "didacticQuality": 2.5,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 597 mots d'analyse.",
+      "strengths": [
+        "Enquête scientifique exemplaire remontant aux sources primaires (PubMed / revues à comité de lecture).",
+        "Déconstruction argumentée du sensationnalisme médiatique et de la confusion corrélation/causalité.",
+        "Positionnement didactique pertinent et proposition de situation-problème pour les élèves."
+      ],
+      "improvements": [
+        "Préparer la restitution orale de 2 minutes pour partager cette démarche avec le groupe.",
+        "Maintenir ce haut niveau d'exigence pour les étapes de prototypage."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 2 : Évaluation critique d'une information\" obtient la note de 9.5/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "5/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "16 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (597 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.5,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 597 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-34-e161029",
@@ -1034,7 +2926,63 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 03 — Concevoir un guide numérique pour les \nélèves \nVotre mission \nVotre établissement constate que les nouveaux élèves rencontrent des difficultés pour \ns'organiser et collaborer dans leur environnement numérique. \nVotre groupe doit concevoir un guide numérique destiné à ces élèves pour les aider à \nutiliser efficacement les outils numériques de l'école. \nConsignes \nEn groupes de 3 à 4 : \n1. Identifiez les besoins \nDéterminez les principales difficultés auxquelles votre guide devra répondre. \n- \nAvoir ses codes \n- \nSe connecter sur la plateforme Teams \n- \nEnvoyer un message privé à un camarade ou un professeur. \n- \nCharte d’utilisation de Teams  \n2. Définissez votre projet \nChoisissez les contenus à transmettre, le public cible et le format le plus pertinent : \nvidéo, tutoriel interactif, site, infographie, podcast… \nNous souhaitons réaliser un guide pour des élèves de 1ère année ou nouveaux dans l’école (à \ntout moment de l’année) pour les aider à se connecter à la plateforme de l’établissement \nscolaire et d’utiliser celle-ci dans le but de collaborer avec des condisciples et/ou leurs \nenseignants. \nLe format qui nous semble le plus pertinent est un format papier réalisé à l’aide de Canva qui \nsera également disponible sur la plateforme Teams. \n3. Organisez votre travail \nRépartissez les rôles en fonction des compétences et des intérêts de chacun et \nplanifiez les différentes étapes de réalisation. \nEnsemble, nous avons réfléchi au format du guide. \nUne fois acté, Jordan travaille à la réalisation du document sur Canva en collaboration avec \nNathalie pour le contenu. \nJulien et Aurélie s’occupent de la rédaction de ce document.\n\n4. Réalisez votre production \nUtilisez les outils numériques de votre choix pour créer votre guide. \n \n5. Testez et améliorez \nFaites tester votre production par un autre groupe. Recueillez leurs remarques et \napportez au moins une amélioration. \n \nNotre avis par rapport à l’exercice : \nL’idée est bonne mais chronophage. Le cadre n’est pas défini sur les compétences à acquérir \navec ce guide qui nécessite des prérequis. \nPour rencontrer les délais qui nous ont été impartis, la coconstruction de l’ensemble de ces \nressources (ce document ainsi que le guide) s’est avéré indispensable. \nCe projet a été laborieux et nous a semblé non efficace car pour le rencontrer, nous avons dû \nscinder notre groupe de 4 en deux duos. Le duo ayant en charge la rédaction de ce \ndocument n’a pas acquis les compétences liées à conception du guide (Canva) mené par \nl’autre duo et inversement. \nLe projet pourrait être porteur de sens à condition de l’élaborer dans un timing plus large. \nPrésentation \nPrésentez votre guide au groupe en 3 minutes. \nVous devrez expliquer : \n• \nle besoin auquel vous avez répondu ; \n• \nvos principaux choix ; \n• \nla contribution des différents membres du groupe ; \n• \nune amélioration apportée à la suite des tests.\n\nLE GUIDE\n\nIndique ton adresse mail scolaire dès\nque tu ouvres l’application Teams.\nCONNEXION À TEAMS\nInsère ton mot de passe fourni par ton\nprofesseur sur la page suivante.\nAttention à l’orthographe et les\nmajuscules possibles !\n\nDans Microsoft Teams, cliquez sur\nl'icône « Chat » (Conversation)\ndans le menu de gauche. \nPour envoyer un message privé,\ncliquez sur « Nouveau message »\n(icône crayon). \nACCÉDER À LA MESSAGERIE PRIVÉE",
     "driveUrl": "",
     "submittedAt": "2026-09-30 16:57",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.8,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.2,
+        "didacticQuality": 2.4,
+        "criticalAnalysis": 2.0,
+        "formAndStructure": 2.2
+      },
+      "summary": "Très bon travail, rigoureux et pertinent (8.8/10) : 4/5 notions clés intégrées, 384 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : guide, eleve, numerique, outil.",
+        "Vocabulaire didactique approprié (guide, eleves, outils, numerique).",
+        "Développement textuel argumenté (384 mots)."
+      ],
+      "improvements": [
+        "Approfondir les concepts complémentaires : organisation."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 3 : Conception d'un guide numérique élèves\" obtient la note de 8.8/10 (Très bon travail, rigoureux et pertinent). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "4/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "13 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.0,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (384 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 8.8,
+      "maxScore": 10,
+      "feedback": "Très bon travail, rigoureux et pertinent (8.8/10) : 4/5 notions clés intégrées, 384 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-35-julien.esposito",
@@ -1051,7 +2999,64 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 02\nPeut-on faire confiance à cette information ?\n\nNumérique et didactique école\n\nAffirmation à vérifier : « Une étude scientifique vient de prouver que regarder son téléphone avant de dormir fait perdre 2 heures de sommeil chaque nuit. »\n\n1. Construire notre méthode de vérification\n\nPour vérifier cette affirmation, nous avons cherché son origine, l’existence éventuelle d’une étude scientifique avançant le chiffre de deux heures, les auteurs et la publication concernés, ainsi que d’autres recherches permettant de confirmer ou de nuancer cette information.\n\n2. Mener l’enquête\n\nNos recherches ne nous ont pas permis d’identifier une étude scientifique fiable démontrant que regarder son téléphone avant de dormir ferait perdre systématiquement deux heures de sommeil chaque nuit.\n\nEn revanche, plusieurs travaux scientifiques montrent des liens entre certains usages des écrans et le sommeil. Une étude publiée en 2024 dans JAMA Pediatrics, menée auprès de 79 jeunes de 11 à 14 ans, montre que l’utilisation d’un écran durant les deux heures précédant le coucher n’était pas associée à la plupart des mesures du sommeil. Par contre, l’utilisation d’un écran une fois au lit, notamment pour des activités interactives, était associée à une diminution du temps de sommeil.\n\nUne revue systématique portant sur 67 études avait également montré que l’utilisation des écrans était fréquemment associée à une durée de sommeil plus courte ou à un coucher plus tardif. Les auteurs précisaient cependant que les résultats disponibles ne permettaient pas d’établir avec certitude un lien de causalité.\n\n3. Notre décision\n\nNous ne partagerions pas cette information telle quelle avec des élèves.\n\nLes recherches consultées montrent qu’il peut exister un lien entre l’utilisation des écrans et le sommeil, particulièrement lorsque les écrans sont utilisés au moment du coucher. Cependant, nous n’avons pas trouvé de source scientifique permettant d’affirmer que regarder son téléphone avant de dormir fait perdre précisément deux heures de sommeil chaque nuit. L’affirmation est donc trop catégorique et donne un chiffre très précis qui n’est pas étayé par les sources consultées.\n\nNous pourrions plutôt dire aux élèves : « L’utilisation des écrans, notamment une fois au lit, peut être associée à un coucher plus tardif et à une diminution du temps de sommeil. »\n\n4. Restitution orale (2 minutes)\n\nNotre décision est de ne pas partager cette information telle quelle avec des élèves. Nous avons d’abord essayé d’en retrouver l’origine et l’étude scientifique qui justifierait les deux heures de sommeil perdues. Nous avons ensuite recherché des publications scientifiques sur les liens entre les écrans et le sommeil.\n\nNous avons constaté que des études montrent effectivement un lien entre certains usages des écrans et le sommeil. Cependant, nous n’avons pas trouvé de source scientifique démontrant que regarder son téléphone avant de dormir fait perdre systématiquement deux heures de sommeil chaque nuit. Une étude publiée en 2024 dans JAMA Pediatrics montre même que l’utilisation des écrans durant les deux heures précédant le coucher n’est pas associée à la plupart des mesures du sommeil, tandis que l’utilisation d’un écran une fois au lit est davantage associée à une diminution du temps de sommeil.\n\nLa principale difficulté rencontrée a donc été de retrouver l’origine du chiffre très précis de deux heures. Cela montre qu’une affirmation qui paraît scientifique parce qu’elle mentionne « une étude » et donne un chiffre précis n’est pas nécessairement fiable.\n\nSources consultées\n\nBrosnan, B. et al. (2024). Screen Use at Bedtime and Sleep Duration and Quality Among Youths. JAMA Pediatrics, 178(11), 1147-1154.\n\nHale, L. & Guan, S. (2015). Screen time and sleep among school-aged children and adolescents: a systematic literature review. Sleep Medicine Reviews, 21, 50-58.",
     "driveUrl": "",
     "submittedAt": "2026-09-30 15:41",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.5,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.5,
+        "didacticQuality": 2.5,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 474 mots d'analyse.",
+      "strengths": [
+        "Enquête scientifique exemplaire remontant aux sources primaires (PubMed / revues à comité de lecture).",
+        "Déconstruction argumentée du sensationnalisme médiatique et de la confusion corrélation/causalité.",
+        "Positionnement didactique pertinent et proposition de situation-problème pour les élèves."
+      ],
+      "improvements": [
+        "Préparer la restitution orale de 2 minutes pour partager cette démarche avec le groupe.",
+        "Maintenir ce haut niveau d'exigence pour les étapes de prototypage."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 2 : Évaluation critique d'une information\" obtient la note de 9.5/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "5/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "13 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (474 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.5,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 474 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-36-julien.esposito",
@@ -1068,7 +3073,63 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 03 — Concevoir un guide numérique pour les \nélèves \nVotre mission \nVotre établissement constate que les nouveaux élèves rencontrent des difficultés pour \ns'organiser et collaborer dans leur environnement numérique. \nVotre groupe doit concevoir un guide numérique destiné à ces élèves pour les aider à \nutiliser efficacement les outils numériques de l'école. \nConsignes \nEn groupes de 3 à 4 : \n1. Identifiez les besoins \nDéterminez les principales difficultés auxquelles votre guide devra répondre. \n- \nAvoir ses codes \n- \nSe connecter sur la plateforme Teams \n- \nEnvoyer un message privé à un camarade ou un professeur. \n- \nCharte d’utilisation de Teams  \n2. Définissez votre projet \nChoisissez les contenus à transmettre, le public cible et le format le plus pertinent : \nvidéo, tutoriel interactif, site, infographie, podcast… \nNous souhaitons réaliser un guide pour des élèves de 1ère année ou nouveaux dans l’école (à \ntout moment de l’année) pour les aider à se connecter à la plateforme de l’établissement \nscolaire et d’utiliser celle-ci dans le but de collaborer avec des condisciples et/ou leurs \nenseignants. \nLe format qui nous semble le plus pertinent est un format papier réalisé à l’aide de Canva qui \nsera également disponible sur la plateforme Teams. \n3. Organisez votre travail \nRépartissez les rôles en fonction des compétences et des intérêts de chacun et \nplanifiez les différentes étapes de réalisation. \nEnsemble, nous avons réfléchi au format du guide. \nUne fois acté, Jordan travaille à la réalisation du document sur Canva en collaboration avec \nNathalie pour le contenu. \nJulien et Aurélie s’occupent de la rédaction de ce document.\n\n4. Réalisez votre production \nUtilisez les outils numériques de votre choix pour créer votre guide. \n \n5. Testez et améliorez \nFaites tester votre production par un autre groupe. Recueillez leurs remarques et \napportez au moins une amélioration. \n \nNotre avis par rapport à l’exercice : \nL’idée est bonne mais chronophage. Le cadre n’est pas défini sur les compétences à acquérir \navec ce guide qui nécessite des prérequis. \nPour rencontrer les délais qui nous ont été impartis, la coconstruction de l’ensemble de ces \nressources (ce document ainsi que le guide) s’est avéré indispensable. \nCe projet a été laborieux et nous a semblé non efficace car pour le rencontrer, nous avons dû \nscinder notre groupe de 4 en deux duos. Le duo ayant en charge la rédaction de ce \ndocument n’a pas acquis les compétences liées à conception du guide (Canva) mené par \nl’autre duo et inversement. \nLe projet pourrait être porteur de sens à condition de l’élaborer dans un timing plus large. \nPrésentation \nPrésentez votre guide au groupe en 3 minutes. \nVous devrez expliquer : \n• \nle besoin auquel vous avez répondu ; \n• \nvos principaux choix ; \n• \nla contribution des différents membres du groupe ; \n• \nune amélioration apportée à la suite des tests.\n\nLE GUIDE\n\nIndique ton adresse mail scolaire dès\nque tu ouvres l’application Teams.\nCONNEXION À TEAMS\nInsère ton mot de passe fourni par ton\nprofesseur sur la page suivante.\nAttention à l’orthographe et les\nmajuscules possibles !\n\nDans Microsoft Teams, cliquez sur\nl'icône « Chat » (Conversation)\ndans le menu de gauche. \nPour envoyer un message privé,\ncliquez sur « Nouveau message »\n(icône crayon). \nACCÉDER À LA MESSAGERIE PRIVÉE",
     "driveUrl": "",
     "submittedAt": "2026-09-30 16:56",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.8,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.2,
+        "didacticQuality": 2.4,
+        "criticalAnalysis": 2.0,
+        "formAndStructure": 2.2
+      },
+      "summary": "Très bon travail, rigoureux et pertinent (8.8/10) : 4/5 notions clés intégrées, 384 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : guide, eleve, numerique, outil.",
+        "Vocabulaire didactique approprié (guide, eleves, outils, numerique).",
+        "Développement textuel argumenté (384 mots)."
+      ],
+      "improvements": [
+        "Approfondir les concepts complémentaires : organisation."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 3 : Conception d'un guide numérique élèves\" obtient la note de 8.8/10 (Très bon travail, rigoureux et pertinent). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "4/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "13 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.0,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (384 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 8.8,
+      "maxScore": 10,
+      "feedback": "Très bon travail, rigoureux et pertinent (8.8/10) : 4/5 notions clés intégrées, 384 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-37-e2505429",
@@ -1085,7 +3146,64 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Méthode de vérification\n\nChercher sur des IA proposant des articles scientifiques (Perplexity) ou un moteur de recherche scientifique (Google Scholar, ERIC) ET vérifier les sources et leur fiabilité (auteur, date de publication, éditeur, la revue par les pairs, nombre de citations,  …)\n\nComparer les articles scientifiques entre eux afin de dégager les principaux thèmes.\n\nContacter, dans la mesure du possible, un professionnel du monde médical.\n\nEnquête\n\nOrigine de l’information\n\nPasquinelli, E., & Bernard-Delorme, A. (2021, juillet). Écrans et sommeil : Que dit la recherche ? Fondation La main à la pâte. https://fondation-lamap.org/sites/default/files/pdf/E%CC%81crans%20et%20sommeil.pdf\n\nATTENTION : « La main à la pâte » n'est pas une revue scientifique soumise à une évaluation par les pairs (peer review) au sens scientifique du terme, mais une fondation éducative et pédagogique. Elle est plutôt évaluée par des utilisateurs, enseignants, mais pas à proprement parler par la communauté scientifique.\n\nHaut Conseil de la santé publique. (2019, 12 décembre). Avis relatif aux effets de l’exposition des enfants et des jeunes aux écrans. https://www.hcsp.fr/Explore.cgi/Telecharger?NomFichier=hcspa20191212_effedelexpodesenfaetdesjeunauxcr.pdf\n\nAutres articles nuançant l’information\n\nBrosnan, B., Haszard, J. J., Meredith-Jones, K. A., Wickham, S. R., Galland, B. C., & Taylor, R. W. (2024). Screen Use at Bedtime and Sleep Duration and Quality Among Youths. JAMA pediatrics, 178(11), 1147–1154. https://doi.org/10.1001/jamapediatrics.2024.2914\n\nHaghani, M., Abbasi, S., Abdoli, L., Shams, S. F., Baha'addini Baigy Zarandi, B. F., Shokrpour, N., Jahromizadeh, A., Mortazavi, S. A., & Mortazavi, S. M. J. (2024). Blue Light and Digital Screens Revisited: A New Look at Blue Light from the Vision Quality, Circadian Rhythm and Cognitive Functions Perspective. Journal of biomedical physics & engineering, 14(3), 213–228. https://doi.org/10.31661/jbpe.v0i0.2106-1355\n\nDecision\n\nOn partage information mais en nuançant avec les éléments apportés par la littérature scientifique.\n\nRestitution\n\nDécision : on présente en leur demandant leur avis et puis on nuance en leur présentant les éléments concrets permettant de se positionner.\n\nChoix : les articles scientifiques se contredisent dans le nombre d’heures perdues mais l’idée principale reste qu’il y a un impact sur le sommeil. La discorde s’installe sur le temps perdu la nuit.\n\nMéthode de vérification : recherche d’articles scientifiques sur Perplexity, Google Scholar,… en utilisant les critères de fiabilité énoncés ci-dessus (rappel : auteur, date de publication, éditeur, la revue par les pairs, nombre de citations, …)\n\nDifficulté : pas encore d’avis tranché ni de réelle solution à cette question. Cela peut mener à certaines confusions si le recherche n’est pas assez approfondie.\n\nIdées pratiques\n\nConstruire avec les élèves une échelle de fiabilité pour évaluer une information  Les amener à la conclusion que tout n’est pas totalement vrai ou totalement faux, créer un esprit critique\n\nConstruction de la notion de nuance",
     "driveUrl": "",
     "submittedAt": "2026-10-01 18:26",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.5,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.5,
+        "didacticQuality": 2.5,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 349 mots d'analyse.",
+      "strengths": [
+        "Enquête scientifique exemplaire remontant aux sources primaires (PubMed / revues à comité de lecture).",
+        "Déconstruction argumentée du sensationnalisme médiatique et de la confusion corrélation/causalité.",
+        "Positionnement didactique pertinent et proposition de situation-problème pour les élèves."
+      ],
+      "improvements": [
+        "Préparer la restitution orale de 2 minutes pour partager cette démarche avec le groupe.",
+        "Maintenir ce haut niveau d'exigence pour les étapes de prototypage."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 2 : Évaluation critique d'une information\" obtient la note de 9.5/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "5/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "13 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (349 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.5,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 349 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-38-j.wasterlain",
@@ -1102,7 +3220,64 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 02 — Peut-on faire confiance à cette information ?\n\nVotre mission\n\nVous découvrez sur Internet l'affirmation suivante :\n\n« Une étude scientifique vient de prouver que regarder son téléphone avant de dormir fait perdre 2 heures de sommeil chaque nuit. »\n\nAvant de la partager avec des élèves, vous devez déterminer si cette information est suffisamment fiable.\n\nPar groupes de 3 à 4 :\n\nConstruisez votre méthode de vérification\nQuelles informations devez-vous rechercher pour pouvoir déterminer si cette affirmation est fiable ?\n\n→ Se documenter sur le sujet en utilisant un moteur de recherche qualifié\n\nNous avons recherché si l’information identique existait → NON\n\nGoogle Scholar\n\nhttps://docnum.univ-lorraine.fr/public/BUMED_T_2019_CAMERON_LAURA.pdf\n\nC’est un mémoire\n\nPubMed\n\nhttps://pubmed.ncbi.nlm.nih.gov/36638702/\n\nhttps://pubmed.ncbi.nlm.nih.gov/32040492/\n\nhttps://pubmed.ncbi.nlm.nih.gov/27802500/\n\nhttps://pubmed.ncbi.nlm.nih.gov/41480345/\n\nhttps://pubmed.ncbi.nlm.nih.gov/41770550/\n\n→ Croisement des sources\n\n« Une étude scientifique » → Existe-t-elle réellement ?\n\n« vient de » → Est-elle récente ? 2016 - 2019 - 2020 - 2022 - 2025 - 2026\n\n« prouver » → L'étude permet-elle réellement d'établir une causalité ? OUI\n\n« regarder son téléphone avant de dormir » → Qu'a-t-on exactement demandé ou mesuré ?\n\n« fait perdre 2 heures chaque nuit » → Le résultat est-il réellement de 2 heures ? Pour qui ? Dans quelles conditions ? NON\n\nMenez l'enquête\nUtilisez Internet pour vérifier l'information. Recherchez notamment :\n\nl'origine de l'affirmation ;\n\nla source scientifique éventuelle ;\n\nl'auteur ou l'organisme à l'origine de l'information ;\n\nd'autres sources permettant de confirmer ou de nuancer l'affirmation.\n\nNous avons vérifié les sources, les auteurs, …\n\nPrenez une décision\nRépondez à la question :\n\n« Partageriez-vous cette information avec des élèves ? »\n\nJustifiez votre réponse à partir de sources vérifiables.\n\nNous partagerions mais sans donner la durée\n\n« Une étude scientifique vient de prouver que regarder son téléphone avant de dormir fait perdre du temps de sommeil chaque nuit. »\n\nLes articles montrent qu’il y a un lien de causalité mais pas sur la durée (2 heures)\n\nPréparez une restitution de 2 minutes :\n\nvotre décision ;\n\nNous partageons l’information mais sans donner un temps déterminé.\n\nles éléments qui ont guidé votre choix ;\n\nLes articles tendent à dire que le temps de sommeil est impacté mais la durée varie entre 5 et 30 min\n\nvotre méthode de vérification ;\n\nVérifier l’information à partir de moteur de recherche qualifié\n\nune difficulté rencontrée.\n\nVérifier la fiabilité des articles scientifiques proposés.\n\nRessources\n\nVous pouvez utiliser un moteur de recherche ainsi que :\n\nGoogle Scholar\n\nPubMed\n\nCrossref\n\nUne IA peut vous aider dans vos recherches, mais ses réponses doivent être vérifiées à partir de sources fiables.\n\nEn conclusion ; il est difficile de dire si une information FIABLE à 100%\n\nCette nuance de fiabilité amène l'esprit critique\n\nIl est intéressant de construire avec les jeunes, une échelle de fiabilité avec des éducateurs.\n\nM.RODES - J. WASTERLAIN - V SCHOONBROODT",
     "driveUrl": "",
     "submittedAt": "2026-09-30 15:33",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.5,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.5,
+        "didacticQuality": 2.5,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 369 mots d'analyse.",
+      "strengths": [
+        "Enquête scientifique exemplaire remontant aux sources primaires (PubMed / revues à comité de lecture).",
+        "Déconstruction argumentée du sensationnalisme médiatique et de la confusion corrélation/causalité.",
+        "Positionnement didactique pertinent et proposition de situation-problème pour les élèves."
+      ],
+      "improvements": [
+        "Préparer la restitution orale de 2 minutes pour partager cette démarche avec le groupe.",
+        "Maintenir ce haut niveau d'exigence pour les étapes de prototypage."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 2 : Évaluation critique d'une information\" obtient la note de 9.5/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "5/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "14 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (369 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.5,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 369 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-39-j.wasterlain",
@@ -1119,7 +3294,63 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Guide numérique destiné aux nouveaux élèves\n\nExercice 03 – Concevoir un guide numérique pour les élèves\n\n1. Besoins identifiés\n\nLes nouveaux élèves peuvent rencontrer plusieurs difficultés dans leur environnement numérique scolaire. Notre guide devra notamment répondre aux besoins suivants :\n\nretrouver facilement les documents et les consignes ;\n\norganiser correctement ses fichiers et ses dossiers ;\n\ngérer les devoirs et les différentes échéances ;\n\nutiliser efficacement les outils de travail collaboratif ;\n\npartager un document et travailler à plusieurs ;\n\ncommuniquer correctement avec les enseignants et les autres élèves ;\n\nsavoir quelle plateforme ou quel outil utiliser selon la situation.\n\n2. Définition du projet\n\nPublic cible : nouveaux élèves de l’établissement.\n\nObjectif : permettre aux nouveaux élèves de devenir rapidement autonomes dans l’utilisation des outils numériques de l’école.\n\nFormat choisi : un site ou tutoriel interactif accessible depuis un ordinateur ou un smartphone.\n\nLe guide sera organisé autour de plusieurs thèmes :\n\nOrganiser ses fichiers et ses dossiers\n\nGérer ses devoirs et ses échéances\n\nTravailler en groupe\n\nCommuniquer avec les enseignants\n\nAdopter les bonnes pratiques de sécurité numérique\n\nSavoir quoi faire en cas de problème\n\nChaque rubrique pourra contenir des explications courtes, des captures d’écran et, si nécessaire, de petites vidéos explicatives.\n\n3. Organisation du travail\n\nLes rôles seront répartis en fonction des compétences et des intérêts de chaque membre du groupe.\n\n4. Étapes de réalisation\n\nAnalyse : Identifier les principales difficultés rencontrées par les nouveaux élèves.\n\nConception : Choisir les informations importantes et construire la structure du guide.\n\nProduction : Créer le site ou le tutoriel et intégrer les textes, images et vidéos nécessaires.\n\nTest : Faire utiliser le guide par un autre groupe afin d’identifier les éventuelles difficultés.\n\nAmélioration : Analyser les remarques reçues et modifier le guide en conséquence.\n\n5. Test et amélioration\n\nAprès avoir fait tester notre production par un autre groupe, celui-ci pourrait nous signaler que certaines explications sont trop longues ou qu’il est difficile de trouver rapidement une information.\n\nÀ la suite de ces remarques, nous pourrions :\n\nraccourcir les textes ;\n\najouter un menu permettant d’accéder rapidement aux différentes rubriques ;\n\najouter davantage de captures d’écran ;\n\nmettre davantage en évidence les étapes importantes.\n\n6. Le site\n\nhttps://chatgpt.com/share/6abd1e37-345c-83eb-8a14-04484fa48c97",
     "driveUrl": "",
     "submittedAt": "2026-09-30 17:01",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.4,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.4,
+        "didacticQuality": 2.1,
+        "criticalAnalysis": 2.0,
+        "formAndStructure": 1.9
+      },
+      "summary": "Très bon travail, rigoureux et pertinent (8.4/10) : 5/5 notions clés intégrées, 283 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : guide, eleve, numerique, organisation.",
+        "Vocabulaire didactique approprié (guide, eleves, outils, numerique).",
+        "Développement textuel argumenté (283 mots)."
+      ],
+      "improvements": [
+        "Expliciter plus précisément les modalités d'accompagnement et de différenciation en classe."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 3 : Conception d'un guide numérique élèves\" obtient la note de 8.4/10 (Très bon travail, rigoureux et pertinent). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "5/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.1,
+          "maxScore": 2.5,
+          "justification": "11 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.0,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (283 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 1.9,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 8.4,
+      "maxScore": 10,
+      "feedback": "Très bon travail, rigoureux et pertinent (8.4/10) : 5/5 notions clés intégrées, 283 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-40-e142655",
@@ -1136,7 +3367,61 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 1.1A — Compétent, partiellement compétent ou incompétent ?\n\nObjectif\n\nVous allez analyser différentes situations afin de réfléchir à ce que signifie réellement être compétent numériquement.\n\nL'objectif n'est pas de déterminer qui maîtrise le plus d'outils, mais d'identifier les différentes dimensions qui permettent de caractériser une compétence numérique.\n\nConsigne\n\nEn groupe de 3 à 4 étudiants, prenez connaissance des profils distribués.\n\nPour chaque profil, vous devez attribuer une seule des trois catégories suivantes :\n\n🟢 COMPÉTENT\n\nLa personne dispose de ressources suffisantes pour agir de manière pertinente, autonome et responsable dans les situations décrites.\n\n🟠 PARTIELLEMENT COMPÉTENT\n\nLa personne maîtrise certaines dimensions de la compétence numérique, mais présente des limites importantes dans d'autres dimensions.\n\n🔴 INCOMPÉTENT\n\nLa personne ne dispose pas des ressources nécessaires pour agir de manière pertinente dans les situations décrites.\n\nAttention : « incompétent » ne signifie pas que la personne est incapable d'utiliser le numérique. Elle peut posséder certaines habiletés techniques tout en étant insuffisamment compétente dans la situation considérée.\n\nPour chaque profil\n\nDiscutez collectivement des questions suivantes :\n\n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\n\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\n\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\n\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\n\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\n\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\n\nLes 10 profils\n\nProfil 1 — Sarah : l'experte en IA\n\nSarah utilise quotidiennement ChatGPT pour ses études. Elle sait rédiger des prompts précis, demander différentes versions d'une réponse, résumer des textes et générer des idées. Elle obtient rapidement des productions qui lui semblent de bonne qualité.\n\nEn revanche, elle vérifie rarement les informations fournies par l'IA. Lorsqu'une réponse contient une référence ou une statistique, elle considère généralement qu'elle est correcte. Elle ne cherche pas systématiquement à identifier les sources originales.\n\nLorsqu'on lui signale qu'une réponse est fausse, elle répond : « Je ne pouvais pas le savoir, c'est l'IA qui a répondu. »\n\n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\n Elle est capable d’utiliser un logiciel d’IA. Elle est capable de rédiger un prompt afin d’obtenir des réponses.\n\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\n Elle ne vérifie pas ses sources et n’est donc pas capable de identifier si une réponse de l’IA est fiable ou non.\n\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\n Je suppose que Sarah rédigera un prompt précis dans lequel elle posera sa question afin d’obtenir une réponse mais nous n’en avons pas la certitude.\n\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\n Elle est capable de trouver une solution seule mais elle ne sera pas toujours adapter à la situation. Elle sait utiliser le logiciel seule mais n’est pas du tout autonome dans la vérification des données.\n\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\n Non. Elle admet que la réponse obtenu est « juste ». Elle ne vérifie pas ses sources et ne se demande pas si l’outil et les résultats obtenus sont fiable.\n\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\n Nous ne pouvons pas en être sûre. Néanmoins nous pouvons supposer que non étant donné qu’elle ne vérifie pas les sources, les informations données sont parfois fausses et peuvent avoir des conséquences par après (selon la question posée). Néanmoins les questions de la vie privée, la sécurité, l’éthique et le droit sont respectées à condition qu’elle ne révèle pas une de ces choses lorsqu’elle rédige son prompte à l’IA.\n\nINCOMPETENTE\n\nProfil 2 — Thomas : le débrouillard\n\nThomas ne connaît pas beaucoup de logiciels et n'a jamais utilisé Canva. Il n'est pas particulièrement à l'aise lorsqu'il découvre une nouvelle interface.\n\nLorsqu'on lui demande de créer une infographie, il commence cependant par rechercher des outils permettant de réaliser cette tâche. Il compare plusieurs possibilités, consulte des tutoriels et expérimente.\n\nAprès plusieurs essais, il parvient à produire une infographie adaptée au public auquel elle est destinée.\n\nLorsqu'il rencontre une difficulté, il cherche généralement une solution avant de demander de l'aide.\n\n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\n Au départ, la personne n’a pas énormément de connaissances du numérique. Il en assez pour faire une recherche (moteur de recherche) et d’acquérir par la suite des connaissances. Il sait comparer des informations obtenues. Il consulte et expérimente des outils pour réaliser une tâche\nIl est en voie d’acquisition pour la réalisation d’infographie.\n\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\n utiliser des (nouvelles) logiciels (avant d’avoir effectué une recherche sur ceux-ci).\n\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\n Thomas recherche des solutions, dans un premier temps, par lui-même à l’aide de moteurs de recherches, tutos, … Il va également essayer à plusieurs reprises de réaliser sa tâche sans aide. Mais si malgré cela il n’y arrive pas, il demande de l’aide à une personne.\n\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\n Thomas n’y arrive pas (toujours) seul. Il recherche toujours des possibilités pour réaliser une tâche en consultant des tutos et les expérimente afin de réaliser des infographies. On peut donc supposer qu’il sache faire de même pour d’autres tâches. On peut néanmoins dire qu’il est partiellement autonome car il n’a pas besoin de quelqu’un mais il a toujours besoin d’explications ou d’un tuto pour y arriver.\n\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nIl vérifie surement les informations car il compare toujours plusieurs possibilités mais nous n’en avons pas la certitude.\n\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nNous n’avons pas d’informations réelles. Nous pouvons supposer qu’il réfléchit un minimum étant donné qu'il compare ses possibilités mais sans en être sûre.\n\nOn peut supposer qu’il est compétent car nous n’avons pas toutes les informations\n\nProfil 3 — Lina : la spécialiste des réseaux sociaux\n\nLina maîtrise parfaitement Instagram, TikTok et Snapchat. Elle connaît les différentes fonctionnalités, sait créer des vidéos, utiliser les tendances et analyser les statistiques de ses publications.\n\nElle publie régulièrement des photographies et vidéos de ses amis. Elle considère que les contenus présents sur son smartphone peuvent être publiés librement.\n\nElle ne s'interroge pas particulièrement sur le consentement des personnes photographiées, la conservation des contenus ou les conséquences de leur diffusion.\n\nElle affirme :\n\n« Je suis probablement la personne la plus compétente en numérique de ma classe. »\n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\n Elle sait réaliser des publications, des photographies et vidéos. Elle maitrise également certains réseaux sociaux.\n\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\n Lina ne respecte pas les questions de responsabilité : droit à l’image, vie privé, ethique, …\nOn ne connait pas ses autres compétences.\n\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\n On pourrait supposer qu’elle puisse s’adapter en recherchant une solution car elle utilise des logiciels qui se mettent régulièrement à jour. Néanmoins, nous ne pouvons pas le garantir avec certitude.\n\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\n Là aussi, on peut supposer qu’elle recherche des solutions seules. On peut également supposer qu’elle fasse ses recherches sur des réseaux sociaux. Les résultats obtenus ne seront donc pas (souvent) fiable. Nous ne pouvons donc pas dire si oui ou non elle est autonome\n\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\n Non elle publie directement sans se poser de questions.\nLe résultat compte mais pas dans le domaine attendu : fiabilité.\n\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nNon\n\nIncompétente (elle a des compétences techniques mais n’a pas de regard critique et ne réagit pas de manière responsable)\n\nProfil 4 — Hugo : le sceptique\n\nHugo utilise peu les réseaux sociaux et ne connaît pas la plupart des applications utilisées par ses camarades. Il éprouve parfois des difficultés avec certains logiciels et ne sait pas réaliser des montages vidéo complexes.\n\nLorsqu'il reçoit une information étonnante sur Internet, il ne la partage cependant jamais immédiatement. Il cherche l'origine de l'information, vérifie la date, consulte plusieurs sources et tente d'identifier l'auteur.\n\nLorsqu'il ne comprend pas quelque chose, il cherche généralement une ressource lui permettant de progresser.\n\n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\n Il est capable d’effectuer une recherche sur internet pour vérifier des informations et leur fiabilité.\n\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\n Il maitrise moins l’tilisation des applications, des logiciels ou encore les réseaux sociaux.\n\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\n Hugo va chercher des solutions en s’assurant que le résultat soit fiable.\n\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\n Hugo se débrouille seul mais a besoin des informations (tutos, aide extérieure) pour réaliser des taches. Néanmoins il réalise cette tâche seul.\n\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\n Oui\n\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\n On peut supposer que oui mais nous n’en avons pas la certitude pour les aspects de la vie privée par exemple.\n\nOn peut donc dire qu’il est compétent voir Partiellement compétent n’ayant pas les informations réelles sur sa manière de réagir par rapport aux questions de sécurité, vie privée, …\n\nProfil 5 — Julie : l'experte des logiciels\n\nJulie maîtrise très bien Word, Excel, PowerPoint et plusieurs logiciels professionnels. Elle connaît de nombreuses fonctions avancées et ses camarades font régulièrement appel à elle lorsqu'ils rencontrent un problème.\n\nElle refuse cependant presque systématiquement d'utiliser de nouveaux outils.\n\nLorsqu'un logiciel est remplacé dans son établissement, elle demande qu'on lui explique précisément chaque étape et préfère attendre une formation plutôt que d'expérimenter seule.\n\nElle considère que sa compétence numérique repose principalement sur le nombre de logiciels qu'elle maîtrise.\n\n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\n Utiliser certains logiciels (Word, Excel, PowerPoint, logiciels professionnels).\n\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nUtiliser des nouveaux logiciels en expérimentant seule.\n\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\n Elle demande de l’aide à une personne extérieure. Elle va suivre une formation\n\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\n Elle ne recherche jamais une solution seule. Elle attend toujours la réponse par une personne (ou une formation)\n\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\n On peut supposer que non étant donné qu’elle demande toujours qu’on lui demande des explications détaillées ou une formation. Elle se repose sur des personnes ayant assez de connaissances mais nous n’avons pas la confirmation que les personnes ont des connaissances fiables.\n\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\n Nous pouvons supposer que oui mais nous n’en avons pas la certitude.\n\nPartiellement compétente (elle n’est pas autonome)\n\nProfil 6 — Mehdi : le chercheur rapide\n\nMehdi sait utiliser efficacement les moteurs de recherche. Lorsqu'un professeur lui donne une question, il trouve rapidement une réponse sur Internet.\n\nPour gagner du temps, il consulte généralement les premiers résultats proposés par le moteur de recherche. Il regarde rarement qui a publié l'information et ne vérifie pas systématiquement les sources.\n\nLorsque plusieurs sites donnent la même information, il considère qu'elle est nécessairement vraie.\n\nIl explique :\n\n« Je trouve toujours ce que je cherche sur Internet. »\n\n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\n Réaliser une recherche sur internet\n\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\n Vérifier si une réponse est fiable (vérifier l’auteur, être critique par rapport à une situation)\n\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\n Mehdi va réaliser une recherche « rapide » sur un moteur de recherche donc on peut supposer qu’il est capable mais nous ne pouvons pas l’affirmer.\n\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\n Mehdi est autonome mais ne va pas au bout du processus (vérification de l’information).\n\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\n Non. Mehdi est en bonne voie car il vérifie sur plusieurs sites mais malheureusement il prend les premières. Il n’utilise donc pas forcément des sites « fiables ».\n\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\n Nous n’en avons pas la certitude.\n\nPartiellement compétent\n\nProfil 7 — Emma : la prudente\n\nEmma ne maîtrise pas particulièrement les fonctions avancées des logiciels bureautiques. Elle demande régulièrement de l'aide lorsqu'elle rencontre une difficulté technique.\n\nElle utilise cependant un gestionnaire de mots de passe, active la double authentification et vérifie régulièrement les paramètres de confidentialité de ses comptes.\n\nElle réfléchit avant de transmettre des données personnelles à une application et fait attention aux informations qu'elle publie.\n\nLorsqu'elle ne sait pas utiliser un outil, elle cherche une solution ou demande de l'aide plutôt que de prétendre savoir faire.\n\n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\n Utiliser des logiciels (fonctions de base), réfléchit à la sécurité sur les applications.\n\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\n Trouver par soi-même une solution à un problème. Elle ne connait pas les fonctions avancées des logiciels.\n\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\n Oui en cherchant une solution ou en demandant de l’aide à quelqu’un.\n\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\n Non pas complètement car elle a souvent besoin d’une personne extérieure pour trouver une solution.\n\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\n On peut le supposer mais on n’en est pas certain.\n\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\noui : elle réfléchit avant de transmettre des données.\n\nPartiellement compétente\n\nProfil 8 — Lucas : le technicien\n\nLucas est passionné d'informatique. Il sait installer des logiciels, configurer un ordinateur, résoudre de nombreux problèmes techniques et comprendre les caractéristiques du matériel.\n\nLorsqu'un problème apparaît, il parvient généralement à trouver une solution par lui-même.\n\nEn revanche, il considère que les questions relatives aux données personnelles, aux algorithmes, aux biais ou à l'éthique sont secondaires.\n\nPour lui :\n\n« Si ça fonctionne et que ça permet de faire ce qu'on veut, c'est que c'est un bon outil. »\n\n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\n Lucas a beaucoup de ressources dans l’informatique (installer des logiciels, configurer un ordinateur, résoudre des problèmes techniques, comprendre les caractéristques).\n\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\n Il n’accorde pas d’importance aux données personnelles, … Il se limite aux connaissances de l’outil.\n\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\n On suppose qu’il recherche par lui-même des solutions en testant.\n\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\n La personne est autonome\n\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\n  Nous n’avons pas la certitude. On peut supposer qu’il soit critique sur le domaine dans lequel il a des connaissances (l’aspect outil).\n\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\n Non\n\nPartiellement compétent\n\nProfil 9 — Chloé : l'utilisatrice critique\n\nChloé utilise régulièrement des outils d'IA pour ses études. Elle les utilise notamment pour générer des idées, reformuler certains passages ou explorer différentes pistes.\n\nElle ne considère toutefois jamais une réponse générée comme une vérité définitive. Elle vérifie les informations importantes, consulte les sources originales et modifie les productions obtenues.\n\nAvant d'utiliser un outil, elle se demande également s'il est réellement pertinent pour la tâche.\n\nElle est capable d'expliquer à ses camarades ce que l'outil peut faire, ses limites et les situations dans lesquelles il vaut mieux ne pas l'utiliser.\n\n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nUtiliser l’IA de façon responsable, vérifier si l’information obtenue est fiable, vérifier ses sources, modifier des productions.\n\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\n Nous n’avons pas l’information\n\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\n On peut le supposer car elle semble pouvoir chercher une solution avec l’IA et remet le résultat en question par après.\n\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nOn peut supposer qu’elle est autonome (en utilisant l’IA)\n\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\n oui\n\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\n On peut le supposer. Dans le texte, on peut lire qu’elle réfléchit à sa façon d’utiliser les IA. Néanmoins, nous n’avons pas d’information exacte sur les questions d’éthique ou encore la vie privée.\n\nPersonne compétente\n\nProfil 10 — Nathan : le reproducteur\n\nNathan utilise facilement les applications que ses amis lui montrent. Lorsqu'on lui explique une procédure, il est capable de la reproduire rapidement.\n\nIl sait donc utiliser de nombreux outils.\n\nEn revanche, lorsqu'une situation légèrement différente se présente, il ne sait généralement plus comment procéder. Il demande alors à quelqu'un de lui montrer exactement ce qu'il doit faire.\n\nLorsqu'un problème apparaît, il essaie rarement d'en comprendre la cause ou de rechercher lui-même une solution.\n\nIl explique :\n\n« Je sais utiliser les outils quand on m'a montré comment faire, mais je ne sais jamais quoi faire quand ça ne marche pas comme prévu. »\n\n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\n Utiliser des logiciels (une fois expliquée) dans certaines limites (il répète les procédures qu’on lui a montré).\n\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\n Il ne sait utiliser que ce qu’on lui a expliquée. Nathan se retrouve donc vite limité. Il ne pourra donc pas s’adapter à des situations différentes.\n\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\n Il est bloqué. Il faut qu’une personne extérieure l’aide.\n\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\n Non Il est dépendant de personnes extérieurs\n\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\n Nous n’avons pas d’information à ce sujet. Néanmoins on pourrait considérer que Nathan pense que les informations données (concernant l’utilisation de logiciels)sont justes et ne va pas au-delà.\n\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\n Nous n’avons pas d’informations donc nous pouvons supposer que non.\n\nIncompétent dans le domaine décrit (on pourrait supposer partiellement incompétent n’ayant pas toutes les informations par exemple : manière responsable)",
     "driveUrl": "",
     "submittedAt": "2026-10-01 22:56",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.3,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.4,
+        "didacticQuality": 2.4,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.3/10) : 5/5 notions clés intégrées, 2786 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : digcomp, competence, profil, differenciation.",
+        "Vocabulaire didactique approprié (competence, habilete, profil, domaine).",
+        "Développement textuel argumenté (2786 mots)."
+      ],
+      "improvements": [],
+      "detailedFeedback": "Ce travail sur \"Atelier 1 : Diagnostic de compétences (DigComp 2.2)\" obtient la note de 9.3/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "5/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "18 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (2786 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.3,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.3/10) : 5/5 notions clés intégrées, 2786 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-41-mathis.rodes",
@@ -1153,7 +3438,64 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 02 — Peut-on faire confiance à cette information ?\n\nVotre mission\n\nVous découvrez sur Internet l'affirmation suivante :\n\n« Une étude scientifique vient de prouver que regarder son téléphone avant de dormir fait perdre 2 heures de sommeil chaque nuit. »\n\nAvant de la partager avec des élèves, vous devez déterminer si cette information est suffisamment fiable.\n\nPar groupes de 3 à 4 :\n\nConstruisez votre méthode de vérification\nQuelles informations devez-vous rechercher pour pouvoir déterminer si cette affirmation est fiable ?\n\n→ Se documenter sur le sujet en utilisant un moteur de recherche qualifié\n\nNous avons recherché si l’information identique existait → NON\n\nGoogle Scholar\n\nhttps://docnum.univ-lorraine.fr/public/BUMED_T_2019_CAMERON_LAURA.pdf\n\nC’est un mémoire\n\nPubMed\n\nhttps://pubmed.ncbi.nlm.nih.gov/36638702/\n\nhttps://pubmed.ncbi.nlm.nih.gov/32040492/\n\nhttps://pubmed.ncbi.nlm.nih.gov/27802500/\n\nhttps://pubmed.ncbi.nlm.nih.gov/41480345/\n\nhttps://pubmed.ncbi.nlm.nih.gov/41770550/\n\n→ Croisement des sources\n\n« Une étude scientifique » → Existe-t-elle réellement ?\n\n« vient de » → Est-elle récente ? 2016 - 2019 - 2020 - 2022 - 2025 - 2026\n\n« prouver » → L'étude permet-elle réellement d'établir une causalité ? OUI\n\n« regarder son téléphone avant de dormir » → Qu'a-t-on exactement demandé ou mesuré ?\n\n« fait perdre 2 heures chaque nuit » → Le résultat est-il réellement de 2 heures ? Pour qui ? Dans quelles conditions ? NON\n\nMenez l'enquête\nUtilisez Internet pour vérifier l'information. Recherchez notamment :\n\nl'origine de l'affirmation ;\n\nla source scientifique éventuelle ;\n\nl'auteur ou l'organisme à l'origine de l'information ;\n\nd'autres sources permettant de confirmer ou de nuancer l'affirmation.\n\nNous avons vérifié les sources, les auteurs, …\n\nPrenez une décision\nRépondez à la question :\n\n« Partageriez-vous cette information avec des élèves ? »\n\nJustifiez votre réponse à partir de sources vérifiables.\n\nNous partagerions mais sans donner la durée\n\n« Une étude scientifique vient de prouver que regarder son téléphone avant de dormir fait perdre du temps de sommeil chaque nuit. »\n\nLes articles montrent qu’il y a un lien de causalité mais pas sur la durée (2 heures)\n\nPréparez une restitution de 2 minutes :\n\nvotre décision ;\n\nNous partageons l’information mais sans donner un temps déterminé.\n\nles éléments qui ont guidé votre choix ;\n\nLes articles tendent à dire que le temps de sommeil est impacté mais la durée varie entre 5 et 30 min\n\nvotre méthode de vérification ;\n\nune difficulté rencontrée.\n\nVérifier la fiabilité des articles scientifiques proposés.\n\nRessources\n\nVous pouvez utiliser un moteur de recherche ainsi que :\n\nGoogle Scholar\n\nPubMed\n\nCrossref\n\nUne IA peut vous aider dans vos recherches, mais ses réponses doivent être vérifiées à partir de sources fiables.\n\nEn conclusion; il est difficile de dire si une information FIABLE à 100%\n\nCette nuance de fiabilité amène l'esprit critique\n\nIl est intéressant de construire avec les jeunes, une échelle de fiabilité avec des éducateurs.\n\nM.RODES - J. WASTERLAIN - V SCHOONBROODT",
     "driveUrl": "",
     "submittedAt": "2026-09-30 16:51",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.5,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.5,
+        "didacticQuality": 2.5,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 363 mots d'analyse.",
+      "strengths": [
+        "Enquête scientifique exemplaire remontant aux sources primaires (PubMed / revues à comité de lecture).",
+        "Déconstruction argumentée du sensationnalisme médiatique et de la confusion corrélation/causalité.",
+        "Positionnement didactique pertinent et proposition de situation-problème pour les élèves."
+      ],
+      "improvements": [
+        "Préparer la restitution orale de 2 minutes pour partager cette démarche avec le groupe.",
+        "Maintenir ce haut niveau d'exigence pour les étapes de prototypage."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 2 : Évaluation critique d'une information\" obtient la note de 9.5/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "5/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "14 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (363 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.5,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 363 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-42-mathis.rodes",
@@ -1170,7 +3512,63 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Guide numérique destiné aux nouveaux élèves\n\nExercice 03 – Concevoir un guide numérique pour les élèves\n\n1. Besoins identifiés\n\nLes nouveaux élèves peuvent rencontrer plusieurs difficultés dans leur environnement numérique scolaire. Notre guide devra notamment répondre aux besoins suivants :\n\nretrouver facilement les documents et les consignes ;\n\norganiser correctement ses fichiers et ses dossiers ;\n\ngérer les devoirs et les différentes échéances ;\n\nutiliser efficacement les outils de travail collaboratif ;\n\npartager un document et travailler à plusieurs ;\n\ncommuniquer correctement avec les enseignants et les autres élèves ;\n\nsavoir quelle plateforme ou quel outil utiliser selon la situation.\n\n2. Définition du projet\n\nPublic cible : nouveaux élèves de l’établissement.\n\nObjectif : permettre aux nouveaux élèves de devenir rapidement autonomes dans l’utilisation des outils numériques de l’école.\n\nFormat choisi : un site ou tutoriel interactif accessible depuis un ordinateur ou un smartphone.\n\nLe guide sera organisé autour de plusieurs thèmes :\n\nOrganiser ses fichiers et ses dossiers\n\nGérer ses devoirs et ses échéances\n\nTravailler en groupe\n\nCommuniquer avec les enseignants\n\nAdopter les bonnes pratiques de sécurité numérique\n\nSavoir quoi faire en cas de problème\n\nChaque rubrique pourra contenir des explications courtes, des captures d’écran et, si nécessaire, de petites vidéos explicatives.\n\n3. Organisation du travail\n\nLes rôles seront répartis en fonction des compétences et des intérêts de chaque membre du groupe.\n\n4. Étapes de réalisation\n\nAnalyse : Identifier les principales difficultés rencontrées par les nouveaux élèves.\n\nConception : Choisir les informations importantes et construire la structure du guide.\n\nProduction : Créer le site ou le tutoriel et intégrer les textes, images et vidéos nécessaires.\n\nTest : Faire utiliser le guide par un autre groupe afin d’identifier les éventuelles difficultés.\n\nAmélioration : Analyser les remarques reçues et modifier le guide en conséquence.\n\n5. Test et amélioration\n\nAprès avoir fait tester notre production par un autre groupe, celui-ci pourrait nous signaler que certaines explications sont trop longues ou qu’il est difficile de trouver rapidement une information.\n\nÀ la suite de ces remarques, nous pourrions :\n\nraccourcir les textes ;\n\najouter un menu permettant d’accéder rapidement aux différentes rubriques ;\n\najouter davantage de captures d’écran ;\n\nmettre davantage en évidence les étapes importantes.\n\n6. Le site\n\nhttps://chatgpt.com/share/6abd1e37-345c-83eb-8a14-04484fa48c97",
     "driveUrl": "",
     "submittedAt": "2026-09-30 16:46",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.4,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.4,
+        "didacticQuality": 2.1,
+        "criticalAnalysis": 2.0,
+        "formAndStructure": 1.9
+      },
+      "summary": "Très bon travail, rigoureux et pertinent (8.4/10) : 5/5 notions clés intégrées, 283 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : guide, eleve, numerique, organisation.",
+        "Vocabulaire didactique approprié (guide, eleves, outils, numerique).",
+        "Développement textuel argumenté (283 mots)."
+      ],
+      "improvements": [
+        "Expliciter plus précisément les modalités d'accompagnement et de différenciation en classe."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 3 : Conception d'un guide numérique élèves\" obtient la note de 8.4/10 (Très bon travail, rigoureux et pertinent). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "5/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.1,
+          "maxScore": 2.5,
+          "justification": "11 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.0,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (283 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 1.9,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 8.4,
+      "maxScore": 10,
+      "feedback": "Très bon travail, rigoureux et pertinent (8.4/10) : 5/5 notions clés intégrées, 283 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-43-e2303712",
@@ -1187,7 +3585,63 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Je pourrais partager l’information avec les élèves mais pas sous cette forme\n\nSelon la revue systématique Digital media use and sleep in late adolescence and young adulthood: A systematic review\n\nBrautsch, L. A. S., Lund, L., Andersen, M. M., Jennum, P. J., Folker, A. P., & Andersen, S. (2023). Digital media use and sleep in late adolescence and young adulthood: A systematic review. Sleep Medicine Reviews, 68, Article 101742. https://doi.org/10.1016/j.smrv.2022.101742\n\nOn remarque que la réponse est nuancée : premièrement, nous ne parlons pas de perdre 2H00 de sommeil, mais plutôt que cela peut nous faire aller dormir plus tard, altérer la qualité de notre sommeil, réduire le temps de sommeil et causer une fatigue durant la journée. Souvent l’utilisation de médias est associée à cela mais aucune étude n’a encore prouvé cela.\n\nAussi, le smartphone n’est pas identifié comme la cause, on suspecte que le smartphone ait potentiellement un impact négatif sur le sommeil mais cela n’a pas encore été prouvé.\n\nPar contre les réseaux sociaux et leur utilisation addictive sont particulièrement problématique pour le sommeil et est associée aux quatre problèmes notés ci-dessus.\n\nLe gaming intensif quant à lui a tendance à aussi altérer le sommeil mais uniquement le moment auquel la personne va se coucher\n\nLa thèse de doctorat de Laura Cameron : Cameron, L. (2019). L’utilisation du téléphone mobile/smartphone est-elle associée aux troubles du sommeil ? Revue de la littérature [Thèse de doctorat en médecine, Université de Lorraine]. Université de Lorraine.\n\nPrécise aussi qu’il n’y a aucune étude qui a encore prouvé que c’est à cause du téléphone que l’élève va dormir plus tard.\n\nPar contre une étude inverse a été effectuée dans laquelle on a demandé aux adolescents d’arrêter leur smartphone 1h avant d’aller se coucher et on a remarqué que cela a augmenté le temps de sommeil de 20 minutes\n\nL’étude inverse en question : Bartel, K., Scheeren, R., & Gradisar, M. (2019). Altering adolescents’ pre-bedtime phone use to achieve better sleep health. Health Communication, 34(4), 456–462. https://doi.org/10.1080/10410236.2017.1422099\n\nEn conclusion, on n’a pas assez d’informations pour dire que le téléphone est bon ou mauvais avant d’aller se coucher. À l’heure actuelle, on peut seulement dire que l’usage du smartphone, particulièrement au coucher, est associé à un sommeil plus mauvais, ce qui n’est pas suffisamment établi scientifiquement.\n\nDe plus, le téléphone, c’est très vague. Certaines activités sur le téléphone sont probablement moins conseillées que d’autres. D’autres paramètres pourraient entrer en compte comme la luminosité, le niveau du son, le type d’écran, …\n\nToutefois, des études concrètes ont montré que les réseaux sociaux, eux, ont bel et bien un impact négatif sur le sommeil, particulièrement en cas d’addiction et/ou d’utilisation avant d’aller se coucher. Donc discuter de l’impact des réseaux sociaux sur le sommeil serait définitivement une option intéressante.",
     "driveUrl": "",
     "submittedAt": "2026-09-30 19:22",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.5,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.2,
+        "didacticQuality": 2.1,
+        "criticalAnalysis": 2.0,
+        "formAndStructure": 2.2
+      },
+      "summary": "Très bon travail, rigoureux et pertinent (8.5/10) : 4/5 notions clés intégrées, 353 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : sommeil, telephone, source, decision.",
+        "Vocabulaire didactique approprié (information, sommeil, telephone, smartphone).",
+        "Développement textuel argumenté (353 mots)."
+      ],
+      "improvements": [
+        "Approfondir les concepts complémentaires : verification."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 2 : Évaluation critique d'une information\" obtient la note de 8.5/10 (Très bon travail, rigoureux et pertinent). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "4/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.1,
+          "maxScore": 2.5,
+          "justification": "9 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.0,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (353 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 8.5,
+      "maxScore": 10,
+      "feedback": "Très bon travail, rigoureux et pertinent (8.5/10) : 4/5 notions clés intégrées, 353 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-44-e2303712",
@@ -1204,7 +3658,64 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Voici le lien du site internet qu’on à crée pour aider les élèves à utiliser teams :\n\nhttps://salmon-rivalee-30.tiiny.site/#quiz",
     "driveUrl": "",
     "submittedAt": "2026-09-30 19:27",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.5,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.2,
+        "didacticQuality": 2.1,
+        "criticalAnalysis": 2.1,
+        "formAndStructure": 2.1
+      },
+      "summary": "✅ Document volumineux archivé avec succès : Votre devoir pour l'atelier \"Atelier 3 : Conception d'un guide numérique élèves\" a bien été réceptionné. Diagnostic préliminaire très favorable (8.5/10) en attente de la relecture de l'enseignant.",
+      "strengths": [
+        "Fichier déposé au format attendu (.pdf / .docx) avec volumétrie conforme.",
+        "Structuration et transmission complètes vers le dossier de cours.",
+        "Archivage sécurisé sur Google Drive."
+      ],
+      "improvements": [
+        "Vérifier la bonne visibilité de vos schémas lors de l'ouverture du document.",
+        "Préparer la justification orale de vos choix didactiques lors de la séance."
+      ],
+      "detailedFeedback": "Votre document pour l'atelier Atelier 3 : Conception d'un guide numérique élèves a été archivé avec succès. En attente de la validation finale de M. Foguenne.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "1/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.1,
+          "maxScore": 2.5,
+          "justification": "2 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.1,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (17 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.1,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 8.5,
+      "maxScore": 10,
+      "feedback": "✅ Document volumineux archivé avec succès : Votre devoir pour l'atelier \"Atelier 3 : Conception d'un guide numérique élèves\" a bien été réceptionné. Diagnostic préliminaire très favorable (8.5/10) en attente de la relecture de l'enseignant.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-45-e2604966",
@@ -1221,7 +3732,64 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 02 — Peut-on faire confiance à cette information ? \nVotre mission \nVous découvrez sur Internet l'affirmation suivante : \n« Une étude scientifique vient de prouver que regarder son téléphone avant de dormir fait \nperdre 2 heures de sommeil chaque nuit. » \nAvant de la partager avec des élèves, vous devez déterminer si cette information est suffisamment \nfiable. \nPar groupes de 3 à 4 : \n1. Construisez votre méthode de vérification \nQuelles informations devez-vous rechercher pour pouvoir déterminer si cette affirmation est \nfiable ? \nPour vérifier cette affirmation, nous avons cherché son origine, l’existence éventuelle d’une \nétude scientifique avançant le chiffre de deux heures, les auteurs et la publication concernés, \nainsi que d’autres recherches permettant de confirmer ou de nuancer cette information. \n \n2. Menez l'enquête \nUtilisez Internet pour vérifier l'information. Recherchez notamment : \no \nL'origine de l'affirmation :  \nNous ne trouvons pas l’origine de l’information \no \nLa source scientifique éventuelle : \nNotre recherche sur Google Scholar, pubmed et crossref ne nous a pas mené à identifier une \nétude scientifique fiable démontrant que regarder son téléphone avant de dormir fait perdre \n2h chaque nuit. \no \nL'auteur ou l'organisme à l'origine de l'information :  \nAucune étude affirme que rester sur son téléphone avant de dormir fait perdre 2h de sommeil. \nIl s’agit probablement d’une reformulation médiatique faite pour faire réagir les gens.  \no \nD'autres sources permettant de confirmer ou de nuancer l'affirmation. \n\" Il est essentiel d’éviter les écrans avant de dormir pour améliorer la qualité de votre \nsommeil.\" - https://www.lamaisondesante.com \n\"Si vous allez utiliser des médias, comme regarder la télévision ou écouter de la musique, \navant de vous coucher, gardez une séance courte et ciblée et il est peu probable que vous \nrencontriez des résultats négatifs dans votre sommeil cette nuit-là\" - Morgan Ellithorpe de \nl'Université du Delaware (Etats-Unis) \n\"L’exposition aux écrans le soir est corrélée à la sévérité de l’insomnie et de l’hyperactivité\" - \nhttps://www.sciencedirect.com\n\n3. Prenez une décision \nRépondez à la question : \n« Partageriez-vous cette information avec des élèves ? » \nJustifiez votre réponse à partir de sources vérifiables. \nNotre décision est de ne pas partager cette information telle quelle avec des élèves. Nous avons \nd’abord essayé d’en trouver l’origine et l’étude scientifique qui justifiaient les deux heures de sommeil \nperdues. Nous avons ensuite recherché des publications scientifiques autour des concepts écrans et \nsommeils. En revanche, nous pourrions, par exemple, nuancer cette information et repartir du vécu des \nélèves. \nNous constatons que les études montrent effectivement un lien entre certains usages des écrans et le \nsommeil. Cependant, nous n’avons pas trouvé de source scientifique démontrant que regarder son \ntéléphone avant de dormir fait perdre systématiquement deux heures de sommeil chaque nuit. Une \nétude publiée en 2024 dans JAMA Pediatrics montre même que l’utilisation des écrans durant les deux \nheures précédant le coucher n’est pas associée à la plupart des mesures du sommeil tandis que \nl’utilisation d’un écran une fois au lit est davantage associée à une diminution du temps de sommeil. \nLa principale difficulté rencontrée a donc été de retrouver l’origine du chiffre très précis de 2 heures. \nCela montre qu’une affirmation qui parait scientifique parce qu’elle mentionne “une étude” et donne \nun chiffre précis n’est pas nécessairement fiable \nSources consultées :  \nhttps://www.lamaisondesante.com \nMorgan Ellithorpe | Communication | Collège des Arts et des Sciences | Université du Delaware) \nhttps://www.sciencedirect.com \nhttps://pubmed.ncbi.nlm.nih.gov/39226046/ \nhttps://www.unisante.ch/sites/default/files/upload/imco/imco2019-gr40-abstract-poster.pdf  \n \n4. Préparez une restitution de 2 minutes : \n \n- \nOn a effectué une recherche qui ne nous a pas permis de trouver l’origine précise de la \ncitation. \n- \nMême en recoupant les informations, nous n’avons pas trouvé cette information \n- \nNous avons effectué des recherches supplémentaires pour nuancer l’information. \n- \nAprès ces recherches, nous avons décidé de ne pas partager l’info car nous ne la trouvons pas \nfiable (au vu de nos recherches). \n- \nNos recherches montrent un lien entre le sommeil et l’utilisation des écrans sans pour autant \naffirmer que leur usage nuit au sommeil et sans mentionner la perte précise de 2h. \n- \nCertaines recherches montrent même une incidence par rapport au lieu où l’on utilise l’écran \n(salon, lit,...). \n- \nIl est important d’apporter de la nuance dans cette information et donc faire fonctionner notre \nesprit critique. \n- \nOn conclut qu’il s’agit d’une phrase choc écrite pour faire réagir.\n\nRessources   \nVous pouvez utiliser un moteur de recherche ainsi que : \n• \nGoogle Scholar \n• \nPubMed \n• \nCrossref \nUne IA peut vous aider dans vos recherches, mais ses réponses doivent être vérifiées à partir de \nsources fiables. \n \n \nCasamento Jordan \nD'accardo Nathalie  \nEsposito Julien  \nSchreurs Aurélie",
     "driveUrl": "",
     "submittedAt": "2026-09-30 16:50",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.5,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.5,
+        "didacticQuality": 2.5,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 597 mots d'analyse.",
+      "strengths": [
+        "Enquête scientifique exemplaire remontant aux sources primaires (PubMed / revues à comité de lecture).",
+        "Déconstruction argumentée du sensationnalisme médiatique et de la confusion corrélation/causalité.",
+        "Positionnement didactique pertinent et proposition de situation-problème pour les élèves."
+      ],
+      "improvements": [
+        "Préparer la restitution orale de 2 minutes pour partager cette démarche avec le groupe.",
+        "Maintenir ce haut niveau d'exigence pour les étapes de prototypage."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 2 : Évaluation critique d'une information\" obtient la note de 9.5/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "5/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "16 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (597 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.5,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 597 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-46-e2604966",
@@ -1238,7 +3806,63 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 03 — Concevoir un guide numérique pour les \nélèves \nVotre mission \nVotre établissement constate que les nouveaux élèves rencontrent des difficultés pour \ns'organiser et collaborer dans leur environnement numérique. \nVotre groupe doit concevoir un guide numérique destiné à ces élèves pour les aider à \nutiliser efficacement les outils numériques de l'école. \nConsignes \nEn groupes de 3 à 4 : \n1. Identifiez les besoins \nDéterminez les principales difficultés auxquelles votre guide devra répondre. \n- \nAvoir ses codes \n- \nSe connecter sur la plateforme Teams \n- \nEnvoyer un message privé à un camarade ou un professeur. \n- \nCharte d’utilisation de Teams  \n2. Définissez votre projet \nChoisissez les contenus à transmettre, le public cible et le format le plus pertinent : \nvidéo, tutoriel interactif, site, infographie, podcast… \nNous souhaitons réaliser un guide pour des élèves de 1ère année ou nouveaux dans l’école (à \ntout moment de l’année) pour les aider à se connecter à la plateforme de l’établissement \nscolaire et d’utiliser celle-ci dans le but de collaborer avec des condisciples et/ou leurs \nenseignants. \nLe format qui nous semble le plus pertinent est un format papier réalisé à l’aide de Canva qui \nsera également disponible sur la plateforme Teams. \n3. Organisez votre travail \nRépartissez les rôles en fonction des compétences et des intérêts de chacun et \nplanifiez les différentes étapes de réalisation. \nEnsemble, nous avons réfléchi au format du guide. \nUne fois acté, Jordan travaille à la réalisation du document sur Canva en collaboration avec \nNathalie pour le contenu. \nJulien et Aurélie s’occupent de la rédaction de ce document.\n\n4. Réalisez votre production \nUtilisez les outils numériques de votre choix pour créer votre guide. \n \n5. Testez et améliorez \nFaites tester votre production par un autre groupe. Recueillez leurs remarques et \napportez au moins une amélioration. \n \nNotre avis par rapport à l’exercice : \nL’idée est bonne mais chronophage. Le cadre n’est pas défini sur les compétences à acquérir \navec ce guide qui nécessite des prérequis. \nPour rencontrer les délais qui nous ont été impartis, la coconstruction de l’ensemble de ces \nressources (ce document ainsi que le guide) s’est avéré indispensable. \nCe projet a été laborieux et nous a semblé non efficace car pour le rencontrer, nous avons dû \nscinder notre groupe de 4 en deux duos. Le duo ayant en charge la rédaction de ce \ndocument n’a pas acquis les compétences liées à conception du guide (Canva) mené par \nl’autre duo et inversement. \nLe projet pourrait être porteur de sens à condition de l’élaborer dans un timing plus large. \nPrésentation \nPrésentez votre guide au groupe en 3 minutes. \nVous devrez expliquer : \n• \nle besoin auquel vous avez répondu ; \n• \nvos principaux choix ; \n• \nla contribution des différents membres du groupe ; \n• \nune amélioration apportée à la suite des tests.\n\nLE GUIDE\n\nIndique ton adresse mail scolaire dès\nque tu ouvres l’application Teams.\nCONNEXION À TEAMS\nInsère ton mot de passe fourni par ton\nprofesseur sur la page suivante.\nAttention à l’orthographe et les\nmajuscules possibles !\n\nDans Microsoft Teams, cliquez sur\nl'icône « Chat » (Conversation)\ndans le menu de gauche. \nPour envoyer un message privé,\ncliquez sur « Nouveau message »\n(icône crayon). \nACCÉDER À LA MESSAGERIE PRIVÉE",
     "driveUrl": "",
     "submittedAt": "2026-09-30 16:59",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.8,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.2,
+        "didacticQuality": 2.4,
+        "criticalAnalysis": 2.0,
+        "formAndStructure": 2.2
+      },
+      "summary": "Très bon travail, rigoureux et pertinent (8.8/10) : 4/5 notions clés intégrées, 384 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : guide, eleve, numerique, outil.",
+        "Vocabulaire didactique approprié (guide, eleves, outils, numerique).",
+        "Développement textuel argumenté (384 mots)."
+      ],
+      "improvements": [
+        "Approfondir les concepts complémentaires : organisation."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 3 : Conception d'un guide numérique élèves\" obtient la note de 8.8/10 (Très bon travail, rigoureux et pertinent). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "4/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "13 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.0,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (384 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 8.8,
+      "maxScore": 10,
+      "feedback": "Très bon travail, rigoureux et pertinent (8.8/10) : 4/5 notions clés intégrées, 384 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-47-e2306513",
@@ -1255,7 +3879,61 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 1.1A — Compétent, partiellement compétent ou incompétent ? \nObjectif \nVous allez analyser différentes situations afin de réfléchir à ce que signifie réellement \nêtre compétent numériquement. \nL'objectif n'est pas de déterminer qui maîtrise le plus d'outils, mais d'identifier les \ndifférentes dimensions qui permettent de caractériser une compétence numérique. \nConsigne \nEn groupe de 3 à 4 étudiants, prenez connaissance des profils distribués. \nPour chaque profil, vous devez attribuer une seule des trois catégories suivantes : \n  COMPÉTENT \nLa personne dispose de ressources suffisantes pour agir de manière pertinente, \nautonome et responsable dans les situations décrites. \n  PARTIELLEMENT COMPÉTENT \nLa personne maîtrise certaines dimensions de la compétence numérique, mais \nprésente des limites importantes dans d'autres dimensions. \n  INCOMPÉTENT \nLa personne ne dispose pas des ressources nécessaires pour agir de manière pertinente \ndans les situations décrites. \nAttention : « incompétent » ne signifie pas que la personne est incapable d'utiliser le \nnumérique. Elle peut posséder certaines habiletés techniques tout en étant \ninsuffisamment compétente dans la situation considérée. \n \nPour chaque profil \nDiscutez collectivement des questions suivantes : \n1. Que sait faire cette personne ? \nIdentifiez ses connaissances et ses savoir-faire. \n2. Que ne sait-elle pas faire ou ne comprend-elle pas ? \nRepérez ses limites. \n3. Est-elle capable de s'adapter ? \nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\n\n4. Est-elle autonome ? \nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, \nd'un tutoriel ou d'une procédure ? \n5. Est-elle capable de porter un regard critique ? \nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ? \n6. Agit-elle de manière responsable ? \nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les \nconséquences de ses actions ? \n \nLes 10 profils \nProfil 1 — Sarah : l'experte en IA \nSarah utilise quotidiennement ChatGPT pour ses études. Elle sait rédiger des prompts \nprécis, demander différentes versions d'une réponse, résumer des textes et générer des \nidées. Elle obtient rapidement des productions qui lui semblent de bonne qualité. \nEn revanche, elle vérifie rarement les informations fournies par l'IA. Lorsqu'une réponse \ncontient une référence ou une statistique, elle considère généralement qu'elle est \ncorrecte. Elle ne cherche pas systématiquement à identifier les sources originales. \nLorsqu'on lui signale qu'une réponse est fausse, elle répond : « Je ne pouvais pas le \nsavoir, c'est l'IA qui a répondu. » \n \nProfil 2 — Thomas : le débrouillard \nThomas ne connaît pas beaucoup de logiciels et n'a jamais utilisé Canva. Il n'est pas \nparticulièrement à l'aise lorsqu'il découvre une nouvelle interface. \nLorsqu'on lui demande de créer une infographie, il commence cependant par \nrechercher des outils permettant de réaliser cette tâche. Il compare plusieurs \npossibilités, consulte des tutoriels et expérimente. \nAprès plusieurs essais, il parvient à produire une infographie adaptée au public auquel \nelle est destinée. \nLorsqu'il rencontre une difficulté, il cherche généralement une solution avant de \ndemander de l'aide. \n \nProfil 3 — Lina : la spécialiste des réseaux sociaux\n\nLina maîtrise parfaitement Instagram, TikTok et Snapchat. Elle connaît les différentes \nfonctionnalités, sait créer des vidéos, utiliser les tendances et analyser les statistiques \nde ses publications. \nElle publie régulièrement des photographies et vidéos de ses amis. Elle considère que \nles contenus présents sur son smartphone peuvent être publiés librement. \nElle ne s'interroge pas particulièrement sur le consentement des personnes \nphotographiées, la conservation des contenus ou les conséquences de leur diffusion. \nElle affirme : \n« Je suis probablement la personne la plus compétente en numérique de ma classe. » \n \nProfil 4 — Hugo : le sceptique \nHugo utilise peu les réseaux sociaux et ne connaît pas la plupart des applications \nutilisées par ses camarades. Il éprouve parfois des difficultés avec certains logiciels et \nne sait pas réaliser des montages vidéo complexes. \nLorsqu'il reçoit une information étonnante sur Internet, il ne la partage cependant \njamais immédiatement. Il cherche l'origine de l'information, vérifie la date, consulte \nplusieurs sources et tente d'identifier l'auteur. \nLorsqu'il ne comprend pas quelque chose, il cherche généralement une ressource lui \npermettant de progresser. \n \nProfil 5 — Julie : l'experte des logiciels \nJulie maîtrise très bien Word, Excel, PowerPoint et plusieurs logiciels professionnels. \nElle connaît de nombreuses fonctions avancées et ses camarades font régulièrement \nappel à elle lorsqu'ils rencontrent un problème. \nElle refuse cependant presque systématiquement d'utiliser de nouveaux outils. \nLorsqu'un logiciel est remplacé dans son établissement, elle demande qu'on lui \nexplique précisément chaque étape et préfère attendre une formation plutôt que \nd'expérimenter seule. \nElle considère que sa compétence numérique repose principalement sur le nombre de \nlogiciels qu'elle maîtrise. \n \nProfil 6 — Mehdi : le chercheur rapide\n\nMehdi sait utiliser efficacement les moteurs de recherche. Lorsqu'un professeur lui \ndonne une question, il trouve rapidement une réponse sur Internet. \nPour gagner du temps, il consulte généralement les premiers résultats proposés par le \nmoteur de recherche. Il regarde rarement qui a publié l'information et ne vérifie pas \nsystématiquement les sources. \nLorsque plusieurs sites donnent la même information, il considère qu'elle est \nnécessairement vraie. \nIl explique : \n« Je trouve toujours ce que je cherche sur Internet. » \n \nProfil 7 — Emma : la prudente \nEmma ne maîtrise pas particulièrement les fonctions avancées des logiciels \nbureautiques. Elle demande régulièrement de l'aide lorsqu'elle rencontre une difficulté \ntechnique. \nElle utilise cependant un gestionnaire de mots de passe, active la double \nauthentification et vérifie régulièrement les paramètres de confidentialité de ses \ncomptes. \nElle réfléchit avant de transmettre des données personnelles à une application et fait \nattention aux informations qu'elle publie. \nLorsqu'elle ne sait pas utiliser un outil, elle cherche une solution ou demande de l'aide \nplutôt que de prétendre savoir faire. \n \nProfil 8 — Lucas : le technicien \nLucas est passionné d'informatique. Il sait installer des logiciels, configurer un \nordinateur, résoudre de nombreux problèmes techniques et comprendre les \ncaractéristiques du matériel. \nLorsqu'un problème apparaît, il parvient généralement à trouver une solution par lui-\nmême. \nEn revanche, il considère que les questions relatives aux données personnelles, aux \nalgorithmes, aux biais ou à l'éthique sont secondaires. \nPour lui : \n« Si ça fonctionne et que ça permet de faire ce qu'on veut, c'est que c'est un bon outil. »\n\nProfil 9 — Chloé : l'utilisatrice critique \nChloé utilise régulièrement des outils d'IA pour ses études. Elle les utilise notamment \npour générer des idées, reformuler certains passages ou explorer différentes pistes. \nElle ne considère toutefois jamais une réponse générée comme une vérité définitive. \nElle vérifie les informations importantes, consulte les sources originales et modifie les \nproductions obtenues. \nAvant d'utiliser un outil, elle se demande également s'il est réellement pertinent pour la \ntâche. \nElle est capable d'expliquer à ses camarades ce que l'outil peut faire, ses limites et les \nsituations dans lesquelles il vaut mieux ne pas l'utiliser. \n \nProfil 10 — Nathan : le reproducteur \nNathan utilise facilement les applications que ses amis lui montrent. Lorsqu'on lui \nexplique une procédure, il est capable de la reproduire rapidement. \nIl sait donc utiliser de nombreux outils. \nEn revanche, lorsqu'une situation légèrement différente se présente, il ne sait \ngénéralement plus comment procéder. Il demande alors à quelqu'un de lui montrer \nexactement ce qu'il doit faire. \nLorsqu'un problème apparaît, il essaie rarement d'en comprendre la cause ou de \nrechercher lui-même une solution. \nIl explique : \n« Je sais utiliser les outils quand on m'a montré comment faire, mais je ne sais jamais \nquoi faire quand ça ne marche pas comme prévu. »\n\nProfil 1 : Partiellement compétent    \n1. Rédiger un prompt pour demander des reformulations / résumés / idées sur une \nproblématique. \n2. Vérifier systématiquement la fiabilité / véracité de l’information produite. \n3. Non, elle rejette la faute sur l’IA. \n4. Non, elle dépend de ChatGPT. \n5. Elle ne se remet pas en question et se dédouane en rejetant la faute sur l’IA. \n6. Pas de mention. \nProfil 2 : Compétent   \n1. Rechercher des outils (tutoriels par exemple), expérimenter et comparer des \npossibilités. \n2. Utilisation de Canva pour créer une infographie (débuter avec une interface \ninconnue en général). \n3. Oui, il recherche de l’aide via des tutoriels notamment. \n4. Oui, il utilise des tutoriels mais expérimente et compare les possibilités par lui-\nmême. De plus, il ne demande de l’aide à quelqu’un qu’en dernier recours. \n5. Oui puisqu’il compare les possibilités. \n6. Pas de mention. \nProfil 3 : Partiellement compétent  \n1. Gérer les différents aspects (création de contenu, fonctionnalités, statistiques) \ndes principaux réseaux sociaux. \n2. Les questions de sécurité, de vie privée, de droit, d'éthique. \n3. Pas de mention. \n4. Pas de mention de quelconque aide. \n5. Non, elle se considère comme la plus compétente en numérique de sa classe. \n6. Non, elle ne s’interroge pas particulièrement sur ces enjeux. \nProfil 4 : Partiellement compétent   \n1. Vérifier la fiabilité d’une information ; utiliser des ressources pour progresser. \n2. Ne connaît pas beaucoup des applis utilisées par ses camarades ; ne sait pas \nréaliser des montages vidéo complexes.  \n3. Oui, il s’aide de ressources pour progresser. \n4. Non, il s’aide de ressources pour progresser. \n5. Oui, il vérifie la fiabilité des infos qui lui paraissent étonnantes. \n6. Pas de mention. \nProfil 5 : Partiellement compétent    \n1. Maîtrise de divers logiciels (fonctions avancées et aide aux camarades).\n\n2. S’initier seule / s’autoformer à de nouveaux outils. \n3. Oui, elle suit des formations. \n4. Non, elle suit des formations. \n5. Pas de mention. \n6. Pas de mention. \nProfil 6 : Incompétent   \n1. Utiliser les moteurs de recherche pour trouver rapidement une information. \n2. Vérifier la fiabilité d’une information. \n3. Pas de mention : il prétend trouver tout ce qu’il cherche sur Internet. \n4. Non, il dépend des résultats affichés par le moteur de recherche. \n5. Non, il dépend des résultats affichés en premier par le moteur de recherche. \n6. Non, il ne vérifie pas la fiabilité des résultats affichés. \nProfil 7 :compétent   \n1. Utilisation d’un gestionnaire de mots de passe, de la double authentification et \nvérification régulière des paramètres de confidentialité de ses comptes. \n2. Ne maîtrise particulièrement les fonctions avancées des logiciels bureautiques.  \n3. Oui, elle demande de l’aide. \n4. Oui, elle demande de l’aide mais cherche aussi une solution. \n5. Pas de mention. \n6. Oui, elle réfléchit aux informations qu’elle publie et aux données personnelles \nqu’elle  \n1. communique. \nProfil 8 : Partiellement compétent    \n1. Installer des logiciels, configurer un ordinateur, résoudre de nombreux \nproblèmes techniques et comprendre les caractéristiques du matériel. \n2. Il considère que les questions relatives aux données personnelles, aux \nalgorithmes, aux biais ou à l'éthique sont secondaires.  \n3. Oui, il trouve généralement une solution par lui-même. \n4. Oui, il trouve généralement une solution par lui-même. \n5. Pas de mention. \n6. Non, il se concentre sur le but / intérêt et considère l’éthique comme secondaire. \nProfil 9 : compétent   \n1. Utilisation de l’IA pour générer des idées, reformuler certains passages ou \nexplorer différentes pistes.  \n2. / \n3. Pas de mention. \n4. Pas de mention.\n\n5. Oui \n6. Oui \nProfil 10 : Incompétent   \n1. Utiliser des outils pour reproduire une procédure dans une situation identique. \n2. Utiliser les mêmes outils dans une situation légèrement différente. \n3. Oui/Non, il ne sait pas transposer les outils d’une situation à l’autre mais \nrecherche une solution ou demande de l’aide. \n4. Oui/Non, il recherche une solution ou demande de l’aide \n5. Pas de mention. \n6. Pas de mention.",
     "driveUrl": "",
     "submittedAt": "2026-10-01 23:34",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.3,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.4,
+        "didacticQuality": 2.4,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.3/10) : 5/5 notions clés intégrées, 1380 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : sommeil, telephone, source, verification.",
+        "Vocabulaire didactique approprié (information, source, secondaire, verification).",
+        "Développement textuel argumenté (1380 mots)."
+      ],
+      "improvements": [],
+      "detailedFeedback": "Ce travail sur \"Atelier 2 : Évaluation critique d'une information\" obtient la note de 9.3/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "5/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "12 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (1380 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.3,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.3/10) : 5/5 notions clés intégrées, 1380 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-48-ctp.truong",
@@ -1272,7 +3950,64 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 02 — Peut-on faire confiance à cette information ?\n\nRecherche de l’origine de l’information\n\nEn tapant le titre de l’affirmation sur Internet, je n’ai trouvé aucun résultat reprenant exactement cette formulation.\n\nJ’ai cependant trouvé, sur le site Actu.fr, un article consacré à une étude norvégienne : https://actu.fr/sciences-technologie/vous-regardez-votre-telephone-avant-de-dormir-comment-une-heure-d-ecran-peut-detruire-votre-sommeil_62466891.html.\n\nCet article parle d’une heure d’écran et non de deux heures de sommeil perdues. De plus, il ne s’agit pas d’une étude récente qui « vient de prouver » cette information, puisque les données de cette étude datent de 2022.\n\nVérification de la source scientifique\n\nEn recherchant d’autres informations sur cette étude, j’ai trouvé, sur le site de la BBC, davantage de renseignements. L’article mentionne la Dre Gunnhild Johnsen Hjetland, chercheuse à l’Institut norvégien de santé publique et auteure principale de l’étude, publiée dans la revue scientifique Frontiers.\n\nÀ partir de ces informations, j’ai effectué une nouvelle recherche et je suis arrivée sur PubMed, un site gouvernemental et sécurisé des États-Unis : https://pubmed.ncbi.nlm.nih.gov/40270574/.\n\nCette source m’a permis de retrouver la publication scientifique et de vérifier les informations concernant l’étude.\n\nMa décision\n\nJe ne partagerais donc pas l’information de départ avec mes élèves telle qu’elle est formulée. Elle est trop catégorique et le chiffre de deux heures ne correspond pas aux informations que j’ai trouvées.\n\nJe me baserais plutôt sur les conclusions les plus prudentes de l’étude norvégienne. J’expliquerais aux élèves que l’utilisation d’un écran au moment du coucher peut avoir un effet négatif sur le sommeil, sans affirmer qu’elle fait systématiquement perdre deux heures de sommeil chaque nuit.\n\nPoint d’attention : le conflit d’intérêts\n\nUne remarque concernant une éventuelle déclaration de conflit d’intérêts apparaît dans l’étude :\n\nL’auteur MG était employé par WINK Sleep Pty Ltd. et Sleep Cycle AB. Les auteurs restants déclarent que la recherche a été menée en l’absence de relations commerciales ou financières qui pourraient être interprétées comme un conflit d’intérêts potentiel.\n\nCette déclaration ne signifie pas automatiquement que l’étude n’est pas fiable, mais elle constitue un point d’attention à prendre en compte lors de son analyse.\n\nJ’inviterais donc mes élèves à rechercher d’autres renseignements et à comparer cette étude avec d’autres articles, comme celui-ci : https://www.sciencesetavenir.fr/sante/sommeil-l-effet-nefaste-des-smartphones_13050.\n\nCette comparaison permettrait de vérifier si d’autres sources confirment ou nuancent les conclusions de l’étude.\n\nDifficulté rencontrée\n\nLa difficulté a été pour moi de vérifier des sources qu'en fait je n'avais pas. Les vraies informations ont cependant été faciles à trouver car beaucoup d'études ont été menées au sujet de temps d'écran avant le couché.\n\nUtilisation de l'IA\n\nJ'ai repris les informations et mon jugement et l'ai structuré et formulé à l'aide de l'IA.",
     "driveUrl": "",
     "submittedAt": "2026-09-30 22:51",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.5,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.5,
+        "didacticQuality": 2.5,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 351 mots d'analyse.",
+      "strengths": [
+        "Enquête scientifique exemplaire remontant aux sources primaires (PubMed / revues à comité de lecture).",
+        "Déconstruction argumentée du sensationnalisme médiatique et de la confusion corrélation/causalité.",
+        "Positionnement didactique pertinent et proposition de situation-problème pour les élèves."
+      ],
+      "improvements": [
+        "Préparer la restitution orale de 2 minutes pour partager cette démarche avec le groupe.",
+        "Maintenir ce haut niveau d'exigence pour les étapes de prototypage."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 2 : Évaluation critique d'une information\" obtient la note de 9.5/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "5/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "16 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (351 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.5,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 351 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-49-vincianne.schoonbroodt",
@@ -1289,7 +4024,63 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "SCHOONBROODT Vincianne\n\nExercice 1.1A — Compétent, partiellement compétent ou incompétent ?\n\nObjectif\n\nVous allez analyser différentes situations afin de réfléchir à ce que signifie réellement être compétent numériquement.\n\nL'objectif n'est pas de déterminer qui maîtrise le plus d'outils, mais d'identifier les différentes dimensions qui permettent de caractériser une compétence numérique.\n\nConsigne\n\nEn groupe de 3 à 4 étudiants, prenez connaissance des profils distribués.\n\nPour chaque profil, vous devez attribuer une seule des trois catégories suivantes :\n\n🟢 COMPÉTENT\n\nLa personne dispose de ressources suffisantes pour agir de manière pertinente, autonome et responsable dans les situations décrites.\n\n🟠 PARTIELLEMENT COMPÉTENT\n\nLa personne maîtrise certaines dimensions de la compétence numérique, mais présente des limites importantes dans d'autres dimensions.\n\n🔴 INCOMPÉTENT\n\nLa personne ne dispose pas des ressources nécessaires pour agir de manière pertinente dans les situations décrites.\n\nAttention : « incompétent » ne signifie pas que la personne est incapable d'utiliser le numérique. Elle peut posséder certaines habiletés techniques tout en étant insuffisamment compétente dans la situation considérée.\n\nPour chaque profil\n\nDiscutez collectivement des questions suivantes :\n\n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\n\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\n\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\n\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\n\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\n\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions.\n\nLes 10 profils\n\nProfil 1 — Sarah : l'experte en IA\n\nSarah utilise quotidiennement ChatGPT pour ses études. Elle sait rédiger des prompts précis, demander différentes versions d'une réponse, résumer des textes et générer des idées. Elle obtient rapidement des productions qui lui semblent de bonne qualité.\n\nEn revanche, elle vérifie rarement les informations fournies par l'IA. Lorsqu'une réponse contient une référence ou une statistique, elle considère généralement qu'elle est correcte. Elle ne cherche pas systématiquement à identifier les sources originales.\n\nLorsqu'on lui signale qu'une réponse est fausse, elle répond : « Je ne pouvais pas le savoir, c'est l'IA qui a répondu. »\n\nCompétent ? NON\n\nCe que cette personne sait faire ? Utiliser CHATGPT - Rédiger des prompts - Résumer des textes - générer de sidées\n\nCe que cette personne ne sait pas faire ? Vérifier les informations - Identifier les sources\n\nAdaptabilité ? Moyennement car elle sait adapter ses prompts mais ne remet pas en questions les réponses trouvées.\n\nAutonomie ? Elle pourrait trouver une solution mais elle ne veut pas !\n\nEsprit critique ? Non, elle ne vérifie pas et croît l’IA\n\nResponsable ? Non car elle ne vérifie pas les informations\n\nProfil 2 — Thomas : le débrouillard\n\nThomas ne connaît pas beaucoup de logiciels et n'a jamais utilisé Canva. Il n'est pas particulièrement à l'aise lorsqu'il découvre une nouvelle interface.\n\nLorsqu'on lui demande de créer une infographie, il commence cependant par rechercher des outils permettant de réaliser cette tâche. Il compare plusieurs possibilités, consulte des tutoriels et expérimente.\n\nAprès plusieurs essais, il parvient à produire une infographie adaptée au public auquel elle est destinée.\n\nLorsqu'il rencontre une difficulté, il cherche généralement une solution avant de demander de l'aide.\n\nCompétent ? OUI\n\nCe que cette personne sait faire ? Consulter des tutoriels - Expérimenter - Demander de l’aide\n\nCe que cette personne ne sait pas faire ?  Connaît peu de logiciels - Pas à l’aise avec els nouvelles interfaces\n\nAdaptabilité ?OUi car il cherche des solutions, des outils et consultes les tutos\n\nAutonomie ? Oui, elle cherche des solutions\n\nEsprit critique ? Oui, elle compare et teste pour trouver des solutions\n\nResponsable ? oui il cherche et il compare\n\nProfil 3 — Lina : la spécialiste des réseaux sociaux\n\nLina maîtrise parfaitement Instagram, TikTok et Snapchat. Elle connaît les différentes fonctionnalités, sait créer des vidéos, utiliser les tendances et analyser les statistiques de ses publications.\n\nElle publie régulièrement des photographies et vidéos de ses amis. Elle considère que les contenus présents sur son smartphone peuvent être publiés librement.\n\nElle ne s'interroge pas particulièrement sur le consentement des personnes photographiées, la conservation des contenus ou les conséquences de leur diffusion.\n\nElle affirme :\n\n« Je suis probablement la personne la plus compétente en numérique de ma classe. »\n\nCompétent ? NON\n\nCe que cette personne sait faire ? Maîtrise les réseaux sociaux - Créer des vidéos - Analyser des statistiques des publications\n\nCe que cette personne ne sait pas faire ? Ne demande pas l’accord avant de publier - Ne mesure pas les conséquences des publications\n\nAdaptabilité ? Elle ne s’adapte pas au niveau éthique - confidentiel !\n\nAutonomie ? Oui, elle pourrait !\n\nEsprit critique ? Non, elle ne respecte pas la vie privée\n\nResponsable ? Non, elle publie des photos sans demander l’accord !\n\nProfil 4 — Hugo : le sceptique\n\nHugo utilise peu les réseaux sociaux et ne connaît pas la plupart des applications utilisées par ses camarades. Il éprouve parfois des difficultés avec certains logiciels et ne sait pas réaliser des montages vidéo complexes.\n\nLorsqu'il reçoit une information étonnante sur Internet, il ne la partage cependant jamais immédiatement. Il cherche l'origine de l'information, vérifie la date, consulte plusieurs sources et tente d'identifier l'auteur.\n\nLorsqu'il ne comprend pas quelque chose, il cherche généralement une ressource lui permettant de progresser.\n\nCompétent ? OUI\n\nCe que cette personne sait faire ? Chercher l’origine et les sources d’une information - Identifier les auteurs -\n\nCe que cette personne ne sait pas faire ? Difficulté avec certains logiciels - Ne sait pas réaliser des vidéos\n\nAdaptabilité ? Oui car il cherche des ressources quand il est face à un problème\n\nAutonomie ? Oui, il cherche des solutions\n\nEsprit critique ? Oui, il vérifie les dates et les auteurs et compare.\n\nResponsable ? Oui il vérifie les informations avant de partager\n\nProfil 5 — Julie : l'experte des logiciels\n\nJulie maîtrise très bien Word, Excel, PowerPoint et plusieurs logiciels professionnels. Elle connaît de nombreuses fonctions avancées et ses camarades font régulièrement appel à elle lorsqu'ils rencontrent un problème.\n\nElle refuse cependant presque systématiquement d'utiliser de nouveaux outils.\n\nLorsqu'un logiciel est remplacé dans son établissement, elle demande qu'on lui explique précisément chaque étape et préfère attendre une formation plutôt que d'expérimenter seule.\n\nElle considère que sa compétence numérique repose principalement sur le nombre de logiciels qu'elle maîtrise.\n\nCompétent ? NON\n\nCe que cette personne sait faire ? Maîtrise de différents logiciels\n\nCe que cette personne ne sait pas faire ? Refuse d’utiliser des nouveaux outils- N'expérimente pas seule\n\nAdaptabilité ?NON, elle préfère attendr eue formation et refuse d'expérimenter des nouvelles choses\n\nAutonomie ? Non, elle veut des formations.\n\nEsprit critique ? NON car elle refuse les nouveaux outils\n\nResponsable  Pas vraiment dans le sens où elle fait uniquement ce qu’elle connaît.\n\nProfil 6 — Mehdi : le chercheur rapide\n\nMehdi sait utiliser efficacement les moteurs de recherche. Lorsqu'un professeur lui donne une question, il trouve rapidement une réponse sur Internet.\n\nPour gagner du temps, il consulte généralement les premiers résultats proposés par le moteur de recherche. Il regarde rarement qui a publié l'information et ne vérifie pas systématiquement les sources.\n\nLorsque plusieurs sites donnent la même information, il considère qu'elle est nécessairement vraie.\n\nIl explique :\n\n« Je trouve toujours ce que je cherche sur Internet. »\n\nCompétent ? NON\n\nCe que cette personne sait faire ? Utiliser un moteur de recherche\n\nCe que cette personne ne sait pas faire ? Ne vérifie pas ses sources\n\nAdaptabilité ?\n\nAutonomie ? oui, il sait\n\nEsprit critique ? Non car il ne vérifie pas\n\nResponsable  ? Non car il ne vérifie pas les sources\n\nProfil 7 — Emma : la prudente\n\nEmma ne maîtrise pas particulièrement les fonctions avancées des logiciels bureautiques. Elle demande régulièrement de l'aide lorsqu'elle rencontre une difficulté technique.\n\nElle utilise cependant un gestionnaire de mots de passe, active la double authentification et vérifie régulièrement les paramètres de confidentialité de ses comptes.\n\nElle réfléchit avant de transmettre des données personnelles à une application et fait attention aux informations qu'elle publie.\n\nLorsqu'elle ne sait pas utiliser un outil, elle cherche une solution ou demande de l'aide plutôt que de prétendre savoir faire.\n\nCompétent ? OUI\n\nCe que cette personne sait faire ? Demander de l’aide - Utiliser un gestionnaire de mdp - Activer la double validation - Vérifier les paramètres de confidentialité - Chercher des solutions\n\nCe que cette personne ne sait pas faire ? Manque de maîtrise dans les logicels de bureautique\n\nAdaptabilité ? Oui elle cherche des solutions et demande de l’aide\n\nAutonomie ? Non, elle demande de l’aide et ne cherche pas seul\n\nEsprit critique ? Oui quand elle réfléchit avant de partager\n\nResponsable  ? Oui car elle protège ses données et réfléchit avant de partager\n\nProfil 8 — Lucas : le technicien\n\nLucas est passionné d'informatique. Il sait installer des logiciels, configurer un ordinateur, résoudre de nombreux problèmes techniques et comprendre les caractéristiques du matériel.\n\nLorsqu'un problème apparaît, il parvient généralement à trouver une solution par lui-même.\n\nEn revanche, il considère que les questions relatives aux données personnelles, aux algorithmes, aux biais ou à l'éthique sont secondaires.\n\nPour lui :\n\n« Si ça fonctionne et que ça permet de faire ce qu'on veut, c'est que c'est un bon outil. »\n\nCompétent ? NON\n\nCe que cette personne sait faire ? Installer des nouveaux logiciels - Comprendre les caractéristique du matériel informatique - Résoudre des problèmes techniques\n\nCe que cette personne ne sait pas faire ? Ne respecte pas l’éthique - Données personnelles et algorithmes sont secondaires pour lui\n\nAdaptabilité ? Oui en cherchant à trouver seul des solutions\n\nAutonomie ? Oui\n\nEsprit critique ? Non, il considère l'éthique et biais comme secondaires.\n\nResponsable ? Non, il considère l'éthique et biais comme secondaires.\n\nProfil 9 — Chloé : l'utilisatrice critique\n\nChloé utilise régulièrement des outils d'IA pour ses études. Elle les utilise notamment pour générer des idées, reformuler certains passages ou explorer différentes pistes.\n\nElle ne considère toutefois jamais une réponse générée comme une vérité définitive. Elle vérifie les informations importantes, consulte les sources originales et modifie les productions obtenues.\n\nAvant d'utiliser un outil, elle se demande également s'il est réellement pertinent pour la tâche.\n\nElle est capable d'expliquer à ses camarades ce que l'outil peut faire, ses limites et les situations dans lesquelles il vaut mieux ne pas l'utiliser.\n\nCompétent ? OUI\n\nCe que cette personne sait faire ? Utilisation de l4IA - Générer des idées -  Vérifier les informations - Consulter less sources - Réfléchis à la pertinence des choses - Expliquer aux autres -\n\nCe que cette personne ne sait pas faire ?\n\nAdaptabilité ? oui elle sait adapter son utilisation de l’IA\n\nAutonomie ? oui\n\nEsprit critique ? Oui en vérifiant les informations\n\nResponsable ? Oui elle vérifiet et connait ses limites\n\nProfil 10 — Nathan : le reproducteur\n\nNathan utilise facilement les applications que ses amis lui montrent. Lorsqu'on lui explique une procédure, il est capable de la reproduire rapidement.\n\nIl sait donc utiliser de nombreux outils.\n\nEn revanche, lorsqu'une situation légèrement différente se présente, il ne sait généralement plus comment procéder. Il demande alors à quelqu'un de lui montrer exactement ce qu'il doit faire.\n\nLorsqu'un problème apparaît, il essaie rarement d'en comprendre la cause ou de rechercher lui-même une solution.\n\nIl explique :\n\n« Je sais utiliser les outils quand on m'a montré comment faire, mais je ne sais jamais quoi faire quand ça ne marche pas comme prévu. »\n\nCompétent ? NON\n\nCe que cette personne sait faire ? Utiliser des applications - Reproduire des procédures - Utiliser des nouveaux outils - Demander de l’aider\n\nCe que cette personne ne sait pas faire ? N’essaie pas de  comprendre et ne sait pas résoudre un problème seul\n\nAdaptabilité ? Non ne sait pas reproduire une procédure et est perdu au moindre problème\n\nAutonomie ? Non, il cherche rarement les solutions et dépend des autres\n\nEsprit critique ? NON car il ne cherche pas à comprendre\n\nResponsable ? Non car il ne cherche pas à comprendre",
     "driveUrl": "",
     "submittedAt": "2026-09-30 20:15",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.7,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 1.8,
+        "didacticQuality": 2.4,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Très bon travail, rigoureux et pertinent (8.7/10) : 3/5 notions clés intégrées, 1540 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : competence, profil, ethique.",
+        "Vocabulaire didactique approprié (competence, habilete, profil, information).",
+        "Développement textuel argumenté (1540 mots)."
+      ],
+      "improvements": [
+        "Approfondir les concepts complémentaires : digcomp, differenciation."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 1 : Diagnostic de compétences (DigComp 2.2)\" obtient la note de 8.7/10 (Très bon travail, rigoureux et pertinent). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 1.8,
+          "maxScore": 2.5,
+          "justification": "3/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "19 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (1540 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 8.7,
+      "maxScore": 10,
+      "feedback": "Très bon travail, rigoureux et pertinent (8.7/10) : 3/5 notions clés intégrées, 1540 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-50-vincianne.schoonbroodt",
@@ -1306,7 +4097,64 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "Exercice 02 — Peut-on faire confiance à cette information ?\n\nVotre mission\n\nVous découvrez sur Internet l'affirmation suivante :\n\n« Une étude scientifique vient de prouver que regarder son téléphone avant de dormir fait perdre 2 heures de sommeil chaque nuit. »\n\nAvant de la partager avec des élèves, vous devez déterminer si cette information est suffisamment fiable.\n\nPar groupes de 3 à 4 :\n\nConstruisez votre méthode de vérification\nQuelles informations devez-vous rechercher pour pouvoir déterminer si cette affirmation est fiable ?\n\n→ Se documenter sur le sujet en utilisant un moteur de recherche qualifié\n\nNous avons recherché si l’information identique existait → NON\n\nGoogle Scholar\n\nhttps://docnum.univ-lorraine.fr/public/BUMED_T_2019_CAMERON_LAURA.pdf\n\nC’est un mémoire\n\nPubMed\n\nhttps://pubmed.ncbi.nlm.nih.gov/36638702/\n\nhttps://pubmed.ncbi.nlm.nih.gov/32040492/\n\nhttps://pubmed.ncbi.nlm.nih.gov/27802500/\n\nhttps://pubmed.ncbi.nlm.nih.gov/41480345/\n\nhttps://pubmed.ncbi.nlm.nih.gov/41770550/\n\n→ Croisement des sources\n\n« Une étude scientifique » → Existe-t-elle réellement ?\n\n« vient de » → Est-elle récente ? 2016 - 2019 - 2020 - 2022 - 2025 - 2026\n\n« prouver » → L'étude permet-elle réellement d'établir une causalité ? OUI\n\n« regarder son téléphone avant de dormir » → Qu'a-t-on exactement demandé ou mesuré ?\n\n« fait perdre 2 heures chaque nuit » → Le résultat est-il réellement de 2 heures ? Pour qui ? Dans quelles conditions ? NON\n\nMenez l'enquête\nUtilisez Internet pour vérifier l'information. Recherchez notamment :\n\nl'origine de l'affirmation ;\n\nla source scientifique éventuelle ;\n\nl'auteur ou l'organisme à l'origine de l'information ;\n\nd'autres sources permettant de confirmer ou de nuancer l'affirmation.\n\nNous avons vérifié les sources, les auteurs, …\n\nPrenez une décision\nRépondez à la question :\n\n« Partageriez-vous cette information avec des élèves ? »\n\nJustifiez votre réponse à partir de sources vérifiables.\n\nNous partagerions mais sans donner la durée\n\n« Une étude scientifique vient de prouver que regarder son téléphone avant de dormir fait perdre du temps de sommeil chaque nuit. »\n\nLes articles montrent qu’il y a un lien de causalité mais pas sur la durée (2 heures)\n\nPréparez une restitution de 2 minutes :\n\nvotre décision ;\n\nNous partageons l’information mais sans donner un temps déterminé.\n\nles éléments qui ont guidé votre choix ;\n\nLes articles tendent à dire que le temps de sommeil est impacté mais la durée varie entre 5 et 30 min\n\nvotre méthode de vérification ;\n\nune difficulté rencontrée.\n\nVérifier la fiabilité des articles scientifiques proposés.\n\nRessources\n\nVous pouvez utiliser un moteur de recherche ainsi que :\n\nGoogle Scholar\n\nPubMed\n\nCrossref\n\nUne IA peut vous aider dans vos recherches, mais ses réponses doivent être vérifiées à partir de sources fiables.\n\nEn conclusion; il est difficile de dire si une information FIABLE à 100%\n\nCette nuance de fiabilité amène l'esprit critique\n\nIl est intéressant de construire avec les jeunes, une échelle de fiabilité avec des éducateurs.\n\nM.RODES - J. WASTERLAIN - V SCHOONBROODT",
     "driveUrl": "",
     "submittedAt": "2026-09-30 17:14",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.5,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.5,
+        "didacticQuality": 2.5,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 363 mots d'analyse.",
+      "strengths": [
+        "Enquête scientifique exemplaire remontant aux sources primaires (PubMed / revues à comité de lecture).",
+        "Déconstruction argumentée du sensationnalisme médiatique et de la confusion corrélation/causalité.",
+        "Positionnement didactique pertinent et proposition de situation-problème pour les élèves."
+      ],
+      "improvements": [
+        "Préparer la restitution orale de 2 minutes pour partager cette démarche avec le groupe.",
+        "Maintenir ce haut niveau d'exigence pour les étapes de prototypage."
+      ],
+      "detailedFeedback": "Ce travail sur \"Atelier 2 : Évaluation critique d'une information\" obtient la note de 9.5/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "5/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.5,
+          "maxScore": 2.5,
+          "justification": "14 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (363 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.5,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.5/10) : 5/5 notions clés intégrées, 363 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-51-vincianne.schoonbroodt",
@@ -1323,7 +4171,61 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "M.RODES - J. WASTERLAIN - V SCHOONBROODT\n\nExercice 03 — Concevoir un guide numérique pour les élèves\n\nVotre mission\n\nVotre établissement constate que les nouveaux élèves rencontrent des difficultés pour s'organiser et collaborer dans leur environnement numérique.\n\nVotre groupe doit concevoir un guide numérique destiné à ces élèves pour les aider à utiliser efficacement les outils numériques de l'école.\n\nConsignes\n\nEn groupes de 3 à 4 :\n\nIdentifiez les besoins\nDéterminez les principales difficultés auxquelles votre guide devra répondre.\n\nDéfinissez votre projet\nChoisissez les contenus à transmettre, le public cible et le format le plus pertinent : vidéo, tutoriel interactif, site, infographie, podcast…\n\nOrganisez votre travail\nRépartissez les rôles en fonction des compétences et des intérêts de chacun et planifiez les différentes étapes de réalisation.\n\nRéalisez votre production\nUtilisez les outils numériques de votre choix pour créer votre guide.\n\nTestez et améliorez\nFaites tester votre production par un autre groupe. Recueillez leurs remarques et apportez au moins une amélioration.\n\nPrésentation\n\nPrésentez votre guide au groupe en 3 minutes.\n\nVous devrez expliquer :\n\nle besoin auquel vous avez répondu ;\n\nvos principaux choix ;\n\nla contribution des différents membres du groupe ;\n\nune amélioration apportée à la suite des tests.\n\n1. Besoins identifiés\n\nLes nouveaux élèves peuvent rencontrer plusieurs difficultés dans leur environnement numérique scolaire. Notre guide devra notamment répondre aux besoins suivants :\n\n·         retrouver facilement les documents et les consignes ;\n\n·         organiser correctement ses fichiers et ses dossiers ;\n\n·         gérer les devoirs et les différentes échéances ;\n\n·         utiliser efficacement les outils de travail collaboratif ;\n\n·         partager un document et travailler à plusieurs ;\n\n·         communiquer correctement avec les enseignants et les autres élèves ;\n\n·         savoir quelle plateforme ou quel outil utiliser selon la situation.\n\n2. Définition du projet\n\nPublic cible : nouveaux élèves de l’établissement.\n\nObjectif : permettre aux nouveaux élèves de devenir rapidement autonomes dans l’utilisation des outils numériques de l’école.\n\nFormat choisi : un site ou tutoriel interactif accessible depuis un ordinateur ou un smartphone.\n\nLe guide sera organisé autour de plusieurs thèmes :\n\n1.    Organiser ses fichiers et ses dossiers\n\n2.    Gérer ses devoirs et ses échéances\n\n3.    Travailler en groupe\n\n4.    Communiquer avec les enseignants\n\n5.    Adopter les bonnes pratiques de sécurité numérique\n\n6.    Savoir quoi faire en cas de problème\n\nChaque rubrique pourra contenir des explications courtes, des captures d’écran et, si nécessaire, de petites vidéos explicatives.\n\n3. Organisation du travail\n\nLes rôles seront répartis en fonction des compétences et des intérêts de chaque membre du groupe.\n\n4. Étapes de réalisation\n\nAnalyse : Identifier les principales difficultés rencontrées par les nouveaux élèves.\n\nConception : Choisir les informations importantes et construire la structure du guide.\n\nProduction : Créer le site ou le tutoriel et intégrer les textes, images et vidéos nécessaires.\n\nTest : Faire utiliser le guide par un autre groupe afin d’identifier les éventuelles difficultés.\n\nAmélioration : Analyser les remarques reçues et modifier le guide en conséquence.\n\n5. Test et amélioration\n\nAprès avoir fait tester notre production par un autre groupe, celui-ci pourrait nous signaler que certaines explications sont trop longues ou qu’il est difficile de trouver rapidement une information.\n\nÀ la suite de ces remarques, nous pourrions :\n\n·         raccourcir les textes ;\n\n·         ajouter un menu permettant d’accéder rapidement aux différentes rubriques ;\n\n·         ajouter davantage de captures d’écran ;\n\n·         mettre davantage en évidence les étapes importantes.\n\n6. Le site\n\nhttps://chatgpt.com/share/6abd1e37-345c-83eb-8a14-04484fa48c97\n\nPersonnellement, j’ai beaucoup appris dans cette mission car je ne savais pas qu’il était possible de réaliser une page HTML si rapidement.\n\nVincianne",
     "driveUrl": "",
     "submittedAt": "2026-09-30 17:07",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.3,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.4,
+        "didacticQuality": 2.4,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.2
+      },
+      "summary": "Excellente production didactique (9.3/10) : 5/5 notions clés intégrées, 440 mots d'analyse.",
+      "strengths": [
+        "Mobilisation effective des notions centrales de l'atelier : guide, eleve, numerique, organisation.",
+        "Vocabulaire didactique approprié (guide, eleves, outils, numerique).",
+        "Développement textuel argumenté (440 mots)."
+      ],
+      "improvements": [],
+      "detailedFeedback": "Ce travail sur \"Atelier 3 : Conception d'un guide numérique élèves\" obtient la note de 9.3/10 (Excellente production didactique). L'analyse conceptuelle et la démarche de réflexion didactique sont bien engagées et directement mobilisables dans vos futures pratiques d'enseignement.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "5/5 concepts traités."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": 2.4,
+          "maxScore": 2.5,
+          "justification": "11 termes professionnels mobilisés."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Argumentation développée (440 mots)."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.2,
+          "maxScore": 2.5,
+          "justification": "Structure générale et recul didactique."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:27",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    },
+    "teacherGrade": {
+      "score": 9.3,
+      "maxScore": 10,
+      "feedback": "Excellente production didactique (9.3/10) : 5/5 notions clés intégrées, 440 mots d'analyse.",
+      "gradedAt": "2026-10-03 15:27",
+      "status": "graded"
+    }
   },
   {
     "id": "file-real-52-sarah.dubois",
@@ -1340,7 +4242,56 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "",
     "driveUrl": "https://drive.google.com/test-file",
     "submittedAt": "2026-09-15 13:35",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "pending",
+      "suggestedScore": null,
+      "maxScore": 10,
+      "summary": "📄 Dépôt enregistré (Dubois_Sarah_Atelier1.docx) : Fichier binaire correctement reçu. En attente de l'évaluation formative finale de l'enseignant.",
+      "strengths": [
+        "Fichier téléversé dans les délais au format attendu (.pdf / .docx).",
+        "Nommage du fichier conforme aux exigences de l'atelier."
+      ],
+      "improvements": [
+        "Préparer la présentation et la justification de votre travail lors de la séance en présentiel."
+      ],
+      "detailedFeedback": "Votre document Dubois_Sarah_Atelier1.docx a bien été enregistré. L'évaluation formative sera complétée par votre enseignant.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "Dépôt conforme enregistré."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:30",
+      "modelUsed": "Système d'archivage institutionnel HECh"
+    },
+    "teacherGrade": {
+      "score": null,
+      "maxScore": 10,
+      "feedback": "",
+      "gradedAt": "",
+      "status": "pending"
+    }
   },
   {
     "id": "file-real-53-sarah.dubois",
@@ -1357,7 +4308,56 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "",
     "driveUrl": "",
     "submittedAt": "2026-09-16 08:15",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "pending",
+      "suggestedScore": null,
+      "maxScore": 10,
+      "summary": "📄 Dépôt enregistré (DUBOIS_Sarah_Atelier-3_Guide-Numerique_2026-09-16.pdf) : Fichier binaire correctement reçu. En attente de l'évaluation formative finale de l'enseignant.",
+      "strengths": [
+        "Fichier téléversé dans les délais au format attendu (.pdf / .docx).",
+        "Nommage du fichier conforme aux exigences de l'atelier."
+      ],
+      "improvements": [
+        "Préparer la présentation et la justification de votre travail lors de la séance en présentiel."
+      ],
+      "detailedFeedback": "Votre document DUBOIS_Sarah_Atelier-3_Guide-Numerique_2026-09-16.pdf a bien été enregistré. L'évaluation formative sera complétée par votre enseignant.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "Dépôt conforme enregistré."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:30",
+      "modelUsed": "Système d'archivage institutionnel HECh"
+    },
+    "teacherGrade": {
+      "score": null,
+      "maxScore": 10,
+      "feedback": "",
+      "gradedAt": "",
+      "status": "pending"
+    }
   },
   {
     "id": "file-real-54-maxime.lambert",
@@ -1374,7 +4374,56 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "",
     "driveUrl": "",
     "submittedAt": "2026-09-16 09:30",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "pending",
+      "suggestedScore": null,
+      "maxScore": 10,
+      "summary": "📄 Dépôt enregistré (LAMBERT_Maxime_Atelier-5_Canva-MDP_2026-09-16.docx) : Fichier binaire correctement reçu. En attente de l'évaluation formative finale de l'enseignant.",
+      "strengths": [
+        "Fichier téléversé dans les délais au format attendu (.pdf / .docx).",
+        "Nommage du fichier conforme aux exigences de l'atelier."
+      ],
+      "improvements": [
+        "Préparer la présentation et la justification de votre travail lors de la séance en présentiel."
+      ],
+      "detailedFeedback": "Votre document LAMBERT_Maxime_Atelier-5_Canva-MDP_2026-09-16.docx a bien été enregistré. L'évaluation formative sera complétée par votre enseignant.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "Dépôt conforme enregistré."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:30",
+      "modelUsed": "Système d'archivage institutionnel HECh"
+    },
+    "teacherGrade": {
+      "score": null,
+      "maxScore": 10,
+      "feedback": "",
+      "gradedAt": "",
+      "status": "pending"
+    }
   },
   {
     "id": "file-real-55-thomas.bastien",
@@ -1391,7 +4440,56 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "",
     "driveUrl": "",
     "submittedAt": "2026-09-16 12:10",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "pending",
+      "suggestedScore": null,
+      "maxScore": 10,
+      "summary": "📄 Dépôt enregistré (BASTIEN_Thomas_Atelier-1_Diagnostic-DigComp_2026-09-16.pdf) : Fichier binaire correctement reçu. En attente de l'évaluation formative finale de l'enseignant.",
+      "strengths": [
+        "Fichier téléversé dans les délais au format attendu (.pdf / .docx).",
+        "Nommage du fichier conforme aux exigences de l'atelier."
+      ],
+      "improvements": [
+        "Préparer la présentation et la justification de votre travail lors de la séance en présentiel."
+      ],
+      "detailedFeedback": "Votre document BASTIEN_Thomas_Atelier-1_Diagnostic-DigComp_2026-09-16.pdf a bien été enregistré. L'évaluation formative sera complétée par votre enseignant.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "Dépôt conforme enregistré."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:30",
+      "modelUsed": "Système d'archivage institutionnel HECh"
+    },
+    "teacherGrade": {
+      "score": null,
+      "maxScore": 10,
+      "feedback": "",
+      "gradedAt": "",
+      "status": "pending"
+    }
   },
   {
     "id": "file-real-56-j.wasterlain",
@@ -1408,7 +4506,56 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "",
     "driveUrl": "",
     "submittedAt": "2026-09-22 12:38",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "pending",
+      "suggestedScore": null,
+      "maxScore": 10,
+      "summary": "📄 Dépôt enregistré (WASTERLAIN_Justin_Exercice_1_Diagnostic_de_compe_2026-09-22.docx) : Fichier binaire correctement reçu. En attente de l'évaluation formative finale de l'enseignant.",
+      "strengths": [
+        "Fichier téléversé dans les délais au format attendu (.pdf / .docx).",
+        "Nommage du fichier conforme aux exigences de l'atelier."
+      ],
+      "improvements": [
+        "Préparer la présentation et la justification de votre travail lors de la séance en présentiel."
+      ],
+      "detailedFeedback": "Votre document WASTERLAIN_Justin_Exercice_1_Diagnostic_de_compe_2026-09-22.docx a bien été enregistré. L'évaluation formative sera complétée par votre enseignant.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "Dépôt conforme enregistré."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:30",
+      "modelUsed": "Système d'archivage institutionnel HECh"
+    },
+    "teacherGrade": {
+      "score": null,
+      "maxScore": 10,
+      "feedback": "",
+      "gradedAt": "",
+      "status": "pending"
+    }
   },
   {
     "id": "file-real-57-daphne.depuis",
@@ -1425,7 +4572,56 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "",
     "driveUrl": "",
     "submittedAt": "2026-09-22 12:56",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "pending",
+      "suggestedScore": null,
+      "maxScore": 10,
+      "summary": "📄 Dépôt enregistré (DEPUIS_Daphne_Exercice_1_Diagnostic_de_compe_2026-09-22.docx) : Fichier binaire correctement reçu. En attente de l'évaluation formative finale de l'enseignant.",
+      "strengths": [
+        "Fichier téléversé dans les délais au format attendu (.pdf / .docx).",
+        "Nommage du fichier conforme aux exigences de l'atelier."
+      ],
+      "improvements": [
+        "Préparer la présentation et la justification de votre travail lors de la séance en présentiel."
+      ],
+      "detailedFeedback": "Votre document DEPUIS_Daphne_Exercice_1_Diagnostic_de_compe_2026-09-22.docx a bien été enregistré. L'évaluation formative sera complétée par votre enseignant.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "Dépôt conforme enregistré."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:30",
+      "modelUsed": "Système d'archivage institutionnel HECh"
+    },
+    "teacherGrade": {
+      "score": null,
+      "maxScore": 10,
+      "feedback": "",
+      "gradedAt": "",
+      "status": "pending"
+    }
   },
   {
     "id": "file-real-58-daphne.depuis",
@@ -1442,7 +4638,56 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "",
     "driveUrl": "",
     "submittedAt": "2026-09-24 05:23",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "pending",
+      "suggestedScore": null,
+      "maxScore": 10,
+      "summary": "📄 Dépôt enregistré (DEPUIS_Daphne_Exercice_2_Peut-on_faire_confi_2026-09-24.docx) : Fichier binaire correctement reçu. En attente de l'évaluation formative finale de l'enseignant.",
+      "strengths": [
+        "Fichier téléversé dans les délais au format attendu (.pdf / .docx).",
+        "Nommage du fichier conforme aux exigences de l'atelier."
+      ],
+      "improvements": [
+        "Préparer la présentation et la justification de votre travail lors de la séance en présentiel."
+      ],
+      "detailedFeedback": "Votre document DEPUIS_Daphne_Exercice_2_Peut-on_faire_confi_2026-09-24.docx a bien été enregistré. L'évaluation formative sera complétée par votre enseignant.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "Dépôt conforme enregistré."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:30",
+      "modelUsed": "Système d'archivage institutionnel HECh"
+    },
+    "teacherGrade": {
+      "score": null,
+      "maxScore": 10,
+      "feedback": "",
+      "gradedAt": "",
+      "status": "pending"
+    }
   },
   {
     "id": "file-real-59-vanhee.anais.mail",
@@ -1459,7 +4704,56 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "",
     "driveUrl": "",
     "submittedAt": "2026-09-22 12:52",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "pending",
+      "suggestedScore": null,
+      "maxScore": 10,
+      "summary": "📄 Dépôt enregistré (VANHEE_Anais_Exercice_1_Diagnostic_de_compe_2026-09-22.docx) : Fichier binaire correctement reçu. En attente de l'évaluation formative finale de l'enseignant.",
+      "strengths": [
+        "Fichier téléversé dans les délais au format attendu (.pdf / .docx).",
+        "Nommage du fichier conforme aux exigences de l'atelier."
+      ],
+      "improvements": [
+        "Préparer la présentation et la justification de votre travail lors de la séance en présentiel."
+      ],
+      "detailedFeedback": "Votre document VANHEE_Anais_Exercice_1_Diagnostic_de_compe_2026-09-22.docx a bien été enregistré. L'évaluation formative sera complétée par votre enseignant.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "Dépôt conforme enregistré."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:30",
+      "modelUsed": "Système d'archivage institutionnel HECh"
+    },
+    "teacherGrade": {
+      "score": null,
+      "maxScore": 10,
+      "feedback": "",
+      "gradedAt": "",
+      "status": "pending"
+    }
   },
   {
     "id": "file-real-60-julien.esposito",
@@ -1476,7 +4770,56 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "",
     "driveUrl": "",
     "submittedAt": "2026-09-22 12:36",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "pending",
+      "suggestedScore": null,
+      "maxScore": 10,
+      "summary": "📄 Dépôt enregistré (ESPOSITO_Julien_Exercice_1_Diagnostic_de_compe_2026-09-22.pdf) : Fichier binaire correctement reçu. En attente de l'évaluation formative finale de l'enseignant.",
+      "strengths": [
+        "Fichier téléversé dans les délais au format attendu (.pdf / .docx).",
+        "Nommage du fichier conforme aux exigences de l'atelier."
+      ],
+      "improvements": [
+        "Préparer la présentation et la justification de votre travail lors de la séance en présentiel."
+      ],
+      "detailedFeedback": "Votre document ESPOSITO_Julien_Exercice_1_Diagnostic_de_compe_2026-09-22.pdf a bien été enregistré. L'évaluation formative sera complétée par votre enseignant.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "Dépôt conforme enregistré."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:30",
+      "modelUsed": "Système d'archivage institutionnel HECh"
+    },
+    "teacherGrade": {
+      "score": null,
+      "maxScore": 10,
+      "feedback": "",
+      "gradedAt": "",
+      "status": "pending"
+    }
   },
   {
     "id": "file-real-61-e2505429",
@@ -1493,7 +4836,56 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "",
     "driveUrl": "",
     "submittedAt": "2026-09-22 12:41",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "pending",
+      "suggestedScore": null,
+      "maxScore": 10,
+      "summary": "📄 Dépôt enregistré (RENARD_Juliette_Exercice_1_Diagnostic_de_compe_2026-09-22.pdf) : Fichier binaire correctement reçu. En attente de l'évaluation formative finale de l'enseignant.",
+      "strengths": [
+        "Fichier téléversé dans les délais au format attendu (.pdf / .docx).",
+        "Nommage du fichier conforme aux exigences de l'atelier."
+      ],
+      "improvements": [
+        "Préparer la présentation et la justification de votre travail lors de la séance en présentiel."
+      ],
+      "detailedFeedback": "Votre document RENARD_Juliette_Exercice_1_Diagnostic_de_compe_2026-09-22.pdf a bien été enregistré. L'évaluation formative sera complétée par votre enseignant.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "Dépôt conforme enregistré."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:30",
+      "modelUsed": "Système d'archivage institutionnel HECh"
+    },
+    "teacherGrade": {
+      "score": null,
+      "maxScore": 10,
+      "feedback": "",
+      "gradedAt": "",
+      "status": "pending"
+    }
   },
   {
     "id": "file-real-62-e141977",
@@ -1510,7 +4902,56 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "",
     "driveUrl": "",
     "submittedAt": "2026-09-22 12:55",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "pending",
+      "suggestedScore": null,
+      "maxScore": 10,
+      "summary": "📄 Dépôt enregistré (MULVERSTEDT_Stephanie_Exercice_1_Diagnostic_de_compe_2026-09-22.pdf) : Fichier binaire correctement reçu. En attente de l'évaluation formative finale de l'enseignant.",
+      "strengths": [
+        "Fichier téléversé dans les délais au format attendu (.pdf / .docx).",
+        "Nommage du fichier conforme aux exigences de l'atelier."
+      ],
+      "improvements": [
+        "Préparer la présentation et la justification de votre travail lors de la séance en présentiel."
+      ],
+      "detailedFeedback": "Votre document MULVERSTEDT_Stephanie_Exercice_1_Diagnostic_de_compe_2026-09-22.pdf a bien été enregistré. L'évaluation formative sera complétée par votre enseignant.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "Dépôt conforme enregistré."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:30",
+      "modelUsed": "Système d'archivage institutionnel HECh"
+    },
+    "teacherGrade": {
+      "score": null,
+      "maxScore": 10,
+      "feedback": "",
+      "gradedAt": "",
+      "status": "pending"
+    }
   },
   {
     "id": "file-real-63-e2604966",
@@ -1527,7 +4968,56 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "",
     "driveUrl": "",
     "submittedAt": "2026-09-23 09:25",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "pending",
+      "suggestedScore": null,
+      "maxScore": 10,
+      "summary": "📄 Dépôt enregistré (D_ACCARDO_Nathalie_Exercice_1_Diagnostic_de_compe_2026-09-23.pdf) : Fichier binaire correctement reçu. En attente de l'évaluation formative finale de l'enseignant.",
+      "strengths": [
+        "Fichier téléversé dans les délais au format attendu (.pdf / .docx).",
+        "Nommage du fichier conforme aux exigences de l'atelier."
+      ],
+      "improvements": [
+        "Préparer la présentation et la justification de votre travail lors de la séance en présentiel."
+      ],
+      "detailedFeedback": "Votre document D_ACCARDO_Nathalie_Exercice_1_Diagnostic_de_compe_2026-09-23.pdf a bien été enregistré. L'évaluation formative sera complétée par votre enseignant.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "Dépôt conforme enregistré."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:30",
+      "modelUsed": "Système d'archivage institutionnel HECh"
+    },
+    "teacherGrade": {
+      "score": null,
+      "maxScore": 10,
+      "feedback": "",
+      "gradedAt": "",
+      "status": "pending"
+    }
   },
   {
     "id": "file-real-64-aurelie.schreurs",
@@ -1544,7 +5034,56 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "",
     "driveUrl": "",
     "submittedAt": "2026-09-22 13:10",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "pending",
+      "suggestedScore": null,
+      "maxScore": 10,
+      "summary": "📄 Dépôt enregistré (SCHREURS_Aurelie_Exercice_1_Diagnostic_de_compe_2026-09-22.pdf) : Fichier binaire correctement reçu. En attente de l'évaluation formative finale de l'enseignant.",
+      "strengths": [
+        "Fichier téléversé dans les délais au format attendu (.pdf / .docx).",
+        "Nommage du fichier conforme aux exigences de l'atelier."
+      ],
+      "improvements": [
+        "Préparer la présentation et la justification de votre travail lors de la séance en présentiel."
+      ],
+      "detailedFeedback": "Votre document SCHREURS_Aurelie_Exercice_1_Diagnostic_de_compe_2026-09-22.pdf a bien été enregistré. L'évaluation formative sera complétée par votre enseignant.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "Dépôt conforme enregistré."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:30",
+      "modelUsed": "Système d'archivage institutionnel HECh"
+    },
+    "teacherGrade": {
+      "score": null,
+      "maxScore": 10,
+      "feedback": "",
+      "gradedAt": "",
+      "status": "pending"
+    }
   },
   {
     "id": "file-real-65-dalia.smaali",
@@ -1561,7 +5100,56 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "",
     "driveUrl": "",
     "submittedAt": "2026-09-22 12:41",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "pending",
+      "suggestedScore": null,
+      "maxScore": 10,
+      "summary": "📄 Dépôt enregistré (SMAALI_Dalia_Exercice_1_Diagnostic_de_compe_2026-09-22.pdf) : Fichier binaire correctement reçu. En attente de l'évaluation formative finale de l'enseignant.",
+      "strengths": [
+        "Fichier téléversé dans les délais au format attendu (.pdf / .docx).",
+        "Nommage du fichier conforme aux exigences de l'atelier."
+      ],
+      "improvements": [
+        "Préparer la présentation et la justification de votre travail lors de la séance en présentiel."
+      ],
+      "detailedFeedback": "Votre document SMAALI_Dalia_Exercice_1_Diagnostic_de_compe_2026-09-22.pdf a bien été enregistré. L'évaluation formative sera complétée par votre enseignant.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "Dépôt conforme enregistré."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:30",
+      "modelUsed": "Système d'archivage institutionnel HECh"
+    },
+    "teacherGrade": {
+      "score": null,
+      "maxScore": 10,
+      "feedback": "",
+      "gradedAt": "",
+      "status": "pending"
+    }
   },
   {
     "id": "file-real-66-olivier.henrion",
@@ -1578,7 +5166,56 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "",
     "driveUrl": "",
     "submittedAt": "2026-09-22 12:21",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "pending",
+      "suggestedScore": null,
+      "maxScore": 10,
+      "summary": "📄 Dépôt enregistré (HENRION_Olivier_Exercice_1_Diagnostic_de_compe_2026-09-22.pdf) : Fichier binaire correctement reçu. En attente de l'évaluation formative finale de l'enseignant.",
+      "strengths": [
+        "Fichier téléversé dans les délais au format attendu (.pdf / .docx).",
+        "Nommage du fichier conforme aux exigences de l'atelier."
+      ],
+      "improvements": [
+        "Préparer la présentation et la justification de votre travail lors de la séance en présentiel."
+      ],
+      "detailedFeedback": "Votre document HENRION_Olivier_Exercice_1_Diagnostic_de_compe_2026-09-22.pdf a bien été enregistré. L'évaluation formative sera complétée par votre enseignant.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "Dépôt conforme enregistré."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:30",
+      "modelUsed": "Système d'archivage institutionnel HECh"
+    },
+    "teacherGrade": {
+      "score": null,
+      "maxScore": 10,
+      "feedback": "",
+      "gradedAt": "",
+      "status": "pending"
+    }
   },
   {
     "id": "file-real-67-e2301877",
@@ -1595,7 +5232,56 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "extractedText": "",
     "driveUrl": "",
     "submittedAt": "2026-09-30 12:51",
-    "driveSynced": true
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "pending",
+      "suggestedScore": null,
+      "maxScore": 10,
+      "summary": "📄 Dépôt enregistré (SARLET_Amelie_Exercice_3_Concevoir_un_guide__2026-09-30.docx) : Fichier binaire correctement reçu. En attente de l'évaluation formative finale de l'enseignant.",
+      "strengths": [
+        "Fichier téléversé dans les délais au format attendu (.pdf / .docx).",
+        "Nommage du fichier conforme aux exigences de l'atelier."
+      ],
+      "improvements": [
+        "Préparer la présentation et la justification de votre travail lors de la séance en présentiel."
+      ],
+      "detailedFeedback": "Votre document SARLET_Amelie_Exercice_3_Concevoir_un_guide__2026-09-30.docx a bien été enregistré. L'évaluation formative sera complétée par votre enseignant.",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "Dépôt conforme enregistré."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique (Critère B)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique (Critères C & D)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": null,
+          "maxScore": 2.5,
+          "justification": "En attente de validation."
+        }
+      ],
+      "correctedAt": "2026-10-03 15:30",
+      "modelUsed": "Système d'archivage institutionnel HECh"
+    },
+    "teacherGrade": {
+      "score": null,
+      "maxScore": 10,
+      "feedback": "",
+      "gradedAt": "",
+      "status": "pending"
+    }
   }
 ]
 

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: page
 title: "Didactique du Numérique"
 ---
@@ -29,6 +29,32 @@ title: "Didactique du Numérique"
     <a href="./admin" style="background: var(--vp-c-bg-soft); color: var(--vp-c-text-1); border: 1px solid var(--vp-c-divider); padding: 8px 18px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 0.92rem; display: inline-flex; align-items: center; gap: 6px;">
       🔒 Espace Enseignant (Admin)
     </a>
+  </div>
+
+  <!-- ENCADRÉ INSCRIPTION PRÉSENTATION JEU DE SOCIÉTÉ -->
+  <div style="max-width: 820px; margin: 0 auto 2rem auto; background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(147, 51, 234, 0.08) 100%); border: 1.5px solid var(--vp-c-brand-1); border-radius: 12px; padding: 1.2rem 1.6rem; text-align: left; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap;">
+    <div style="font-size: 2.2rem; line-height: 1; flex-shrink: 0;">
+      🎲
+    </div>
+    <div style="flex: 1; min-width: 260px;">
+      <h3 style="margin: 0 0 0.35rem 0; font-size: 1.05rem; font-weight: 700; color: var(--vp-c-text-1);">
+        Inscription pour votre présentation
+      </h3>
+      <p style="margin: 0 0 0.75rem 0; font-size: 0.95rem; color: var(--vp-c-text-2); line-height: 1.5;">
+        Inscrivez-vous pour votre présentation (évaluation de la partie <strong>« jeu de société »</strong> à réaliser en groupe) en cliquant sur le lien suivant :
+      </p>
+      <a 
+        href="https://docs.google.com/spreadsheets/d/1L-Fr9ISRoupFtvz2NXcsdkouJ583gKcaHe5hDvZ9nIc/edit?usp=sharing" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        style="display: inline-flex; align-items: center; gap: 8px; background: var(--vp-c-brand-1); color: #ffffff !important; font-weight: 600; font-size: 0.92rem; padding: 8px 18px; border-radius: 8px; text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,0.12); transition: transform 0.15s ease, opacity 0.15s ease;"
+        onmouseover="this.style.opacity='0.92'; this.style.transform='translateY(-1px)';"
+        onmouseout="this.style.opacity='1'; this.style.transform='translateY(0)';"
+      >
+        <span>📊 S'inscrire sur la feuille de passage</span>
+        <span style="font-size: 1.1rem; line-height: 1;">↗</span>
+      </a>
+    </div>
   </div>
 </div>
 

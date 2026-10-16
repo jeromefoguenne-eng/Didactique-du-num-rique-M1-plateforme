@@ -1586,6 +1586,96 @@ const MODULE_QUESTIONS = {
       ]
     }
   ],
+  '09': [
+    {
+      id: 'q1',
+      type: 'qcm',
+      title: "1. Constructionnisme et potentiel pédagogique de l'impression 3D",
+      text: "Selon le syllabus et les théories de Seymour Papert, quelle est la plus-value pédagogique centrale de l'introduction de l'impression 3D dans le cours de didactique du numérique (référentiel FMTTN) ?",
+      options: [
+        "Permettre aux élèves de passer du statut de simples consommateurs/utilisateurs à celui de concepteurs et fabricants, en confrontant leurs hypothèses à des objets physiques tangibles dans une démarche itérative.",
+        "Remplacer intégralement les cours d'arts plastiques et de mathématiques par des impressions automatiques sans réflexion préalable.",
+        "Réduire le temps d'apprentissage des élèves à moins de 5 minutes par séance grâce à la rapidité de dépôt du plastique.",
+        "Former exclusivement de futurs ouvriers spécialisés en plasturgie industrielle sans lien avec la pensée informatique."
+      ],
+      correctIndex: 0,
+      points: 3,
+      explanation: "L'impression 3D concrétise le constructionnisme de Papert : fabriquer un objet réel force l'élève à analyser un besoin, décomposer le problème, tester un prototype et itérer sur ses erreurs."
+    },
+    {
+      id: 'q2',
+      type: 'qcm',
+      title: "2. Comparaison des démarches : Tinkercad vs Génération IA (Gemini + conversion 3D)",
+      text: "Lors de la phase de conception du modèle de pion, quelles sont les caractéristiques distinctives entre la modélisation directe sous Tinkercad et la génération d'image via Gemini suivie d'une conversion 3D ?",
+      options: [
+        "Tinkercad produit uniquement des images 2D floues, alors que Gemini imprime directement l'objet en plastique sans ordinateur.",
+        "Tinkercad permet de contrôler directement la géométrie exacte, les dimensions et les assemblages de formes élémentaires, tandis que Gemini favorise l'idéation rapide de formes organiques et cartoon mais nécessite une étape ultérieure de conversion 2D vers 3D.",
+        "L'usage de Gemini est obligatoire pour respecter les normes de sécurité incendie du FabLab HECh.",
+        "Tinkercad est une application payante réservée aux entreprises, tandis que les IA sont toujours totalement fiables géométriquement."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Tinkercad offre une maîtrise volumétrique et dimensionnelle précise (formes solides, perçages), alors que l'IA générative apporte une richesse créative visuelle dont la faisabilité 3D reste à convertir et à vérifier."
+    },
+    {
+      id: 'q3',
+      type: 'qcm',
+      title: "3. Les limites critiques de la conversion 2D vers 3D (Studio 3D EduFog / Hunyuan3D)",
+      text: "Pourquoi un modèle 3D généré à partir d'une image 2D (via Studio 3D EduFog, Hunyuan3D ou Meshy) ne peut-il pas être envoyé aveuglément à l'impression sans inspection préalable ?",
+      options: [
+        "Parce qu'il faut impérativement distinguer la ressemblance visuelle, la qualité géométrique (continuité, absence de trous) et l'imprimabilité physique (parois fines, maillage étanche, surfaces planes d'appui).",
+        "Parce que l'imprimante 3D refuse d'imprimer tout fichier n'ayant pas été dessiné à la main sur papier millimétré.",
+        "Parce que les fichiers 3MF générés par IA contiennent des virus informatiques qui bloquent les moteurs pas à pas.",
+        "Parce qu'une image 2D contient déjà toute l'information tridimensionnelle cachée à l'arrière de l'objet sans aucune extrapolation."
+      ],
+      correctIndex: 0,
+      points: 3,
+      explanation: "Une IA estime ou devine les volumes non visibles. Le modèle virtuel peut paraître réussi à l'écran tout en présentant des défauts majeurs (coques ouvertes, parties flottantes, parois infimes) rendant l'impression impossible."
+    },
+    {
+      id: 'q4',
+      type: 'qcm',
+      title: "4. Le rôle du logiciel de tranchage (Slicing : Bambu Studio / Cura)",
+      text: "Quelle est la fonction exacte d'un logiciel de tranchage (tel que Bambu Studio au pôle TechnoP de la HECh, PrusaSlicer ou Cura) dans la chaîne de fabrication additive ?",
+      options: [
+        "Créer automatiquement le scénario pédagogique et l'évaluation critériée du cours de numérique.",
+        "Découper le modèle volumétrique (STL/3MF) en couches horizontales successives et calculer les trajectoires d'extrusion de matière (G-code), le remplissage et les supports pour la machine.",
+        "Refondre le plastique usagé à distance par ondes radio.",
+        "Colorer chimiquement le filament à l'intérieur de la bobine avant son insertion dans l'extrudeur."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Le trancheur traduit la géométrie mathématique 3D en instructions concrètes pas-à-pas pour l'imprimante : trajectoires de la buse chauffante, vitesse, débit de fil, structure interne (infill) et supports d'accroche."
+    },
+    {
+      id: 'q5',
+      type: 'qcm',
+      title: "5. Paramètres d'impression : supports, remplissage et première couche",
+      text: "Pour réussir l'impression d'un pion de jeu de société en PLA avec un compromis optimal entre qualité, solidité et temps d'impression, quelle recommandation technique du syllabus devez-vous appliquer ?",
+      options: [
+        "Mettre systématiquement le remplissage (infill) à 100%, supprimer la première couche et imprimer l'objet en suspension dans le vide.",
+        "Utiliser une hauteur de couche entre 0,12 et 0,20 mm, orienter une surface plane sur le plateau pour assurer l'adhérence et minimiser les supports, et surveiller attentivement le dépôt des premières couches.",
+        "Régler la hauteur de couche à 1,5 mm pour terminer l'impression en deux secondes sans plateau chauffant.",
+        "Désactiver le ventilateur de refroidissement et imprimer exclusivement sans filament."
+      ],
+      correctIndex: 1,
+      points: 3,
+      explanation: "Une hauteur de couche de 0,12-0,20 mm offre un excellent compromis détails/temps. Une base plane plaquée au plateau garantit la stabilité, évite les décollements (crucial lors des premières couches) et limite le gaspillage de supports."
+    },
+    {
+      id: 'q6',
+      type: 'open',
+      title: "6. Démarche de conception et réflexivité didactique (Exercice 13 — Pions 3D)",
+      text: "Dans le cadre de l'Exercice 13 (Réalisation des pions de votre jeu de société), analysez votre démarche de conception : quelle méthode avez-vous privilégiée (modélisation géométrique directe sous Tinkercad ou génération visuelle IA via Gemini puis conversion 3D) et pourquoi ? Quelles contraintes d'imprimabilité avez-vous dû anticiper ou rectifier (base plane, épaisseur des parois, surplombs, taille du pion adaptée au plateau) ? Enfin, comment transposeriez-vous cette activité dans une classe de secondaire en FMTTN en valorisant la démarche d'essais-erreurs et l'évaluation critériée ?",
+      points: 5,
+      modelAnswer: "Exemple de retour réflexif : Pour notre jeu de société, nous avons opté pour une approche hybride : nous avons d'abord généré un croquis de concept sous Gemini (petit robot avec chapeau), puis nous avons modélisé le pion directement dans Tinkercad afin de garantir une base circulaire stable de 25 mm et des parois suffisamment robustes sans porte-à-faux critique. Lors du tranchage sous Bambu Studio (hauteur de couche de 0,16 mm, remplissage 15%), nous avons vérifié que les bras ne nécessitaient pas de supports complexes susceptibles de dégrader la finition. En situation de classe en secondaire (FMTTN), cette activité permet d'inscrire les élèves dans une authentique démarche d'investigation : plutôt que d'attendre un objet parfait du premier coup, le premier prototype imprimé sert de révélateur des contraintes matérielles (solidité, équilibre, échelle par rapport aux cases du plateau). L'évaluation ne se focalise pas seulement sur l'esthétique du pion final, mais sur la grille critériée du syllabus : analyse du besoin, maîtrise du logiciel, rigueur des tests et capacité de l'élève à justifier ses choix d'amélioration technique et durable.",
+      rubricCriteria: [
+        "Explicitation et justification du choix de conception (Tinkercad, IA générative ou approche combinée).",
+        "Identification rigoureuse des contraintes physiques et techniques d'impression 3D (stabilité, épaisseur, surplombs, échelle).",
+        "Transposition didactique argumentée pour le cours de FMTTN (démarche par projet/itération, droit à l'erreur, grille critériée)."
+      ]
+    }
+  ],
   '10': [
     {
       id: 'q1',

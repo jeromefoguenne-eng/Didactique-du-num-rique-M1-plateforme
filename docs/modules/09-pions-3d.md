@@ -220,18 +220,30 @@ Les deux approches peuvent très avantageusement être combinées : générer un
 
 ---
 
-## Étape 2 — Transformer une image 2D en modèle 3D avec l'application EduFog
+## Étape 2 — Transformer une image 2D en modèle 3D avec le logiciel EduFog
 
-L'application **Studio 3D EduFog** permet de convertir une image de référence en un modèle tridimensionnel volumétrique. Elle constitue une alternative à la modélisation manuelle, notamment lorsque l'on souhaite obtenir une figurine ou un personnage plus organique que les formes géométriques habituelles de Tinkercad.
+L'application **Modélisation 3D EduFog** permet de convertir une image de référence en un modèle tridimensionnel volumétrique. Elle constitue une alternative à la modélisation manuelle, notamment lorsque l'on souhaite obtenir une figurine ou un personnage plus organique que les formes géométriques habituelles de Tinkercad.
 
 Il existe également des outils payants très performants sur le marché (tels que *Meshy* ou *Tripo3D*), ainsi que des modèles d'IA open-source gratuits intégrables localement sur GPU (comme *Hunyuan3D* de Tencent).
 
+<div style="display: flex; gap: 12px; flex-wrap: wrap; margin: 1.2rem 0;">
+  <a 
+    href="https://jeromefoguenne-eng.github.io/Modelisation-3D/" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    class="btn-primary"
+    style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: white !important; padding: 10px 18px; border-radius: 8px; font-weight: 600; background: #7c3aed;"
+  >
+    <span>🚀 Accéder au logiciel Modélisation 3D EduFog ↗</span>
+  </a>
+</div>
+
 <div class="callout-concept" style="margin: 2rem 0; padding: 1.5rem; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider); box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
   <div class="callout-title" style="display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 1.1rem; margin-bottom: 0.8rem; color: var(--vp-c-brand-1);">
-    <span>🎬 Tutoriel Vidéo : Utilisation de Studio 3D EduFog & Chaîne d'impression 3D</span>
+    <span>🎬 Tutoriel Vidéo : Utilisation de Modélisation 3D EduFog & Chaîne d'impression 3D</span>
   </div>
   <p style="margin-bottom: 1.2rem; font-size: 0.95rem; color: var(--vp-c-text-2);">
-    Visionnez cette démonstration pas-à-pas (8 min) pour découvrir comment importer votre image dans Studio 3D EduFog, paramétrer la conversion neuronale 3D, inspecter le maillage volumétrique et préparer le modèle pour le tranchage sous Bambu Studio.
+    Visionnez cette démonstration pas-à-pas (8 min) pour découvrir comment importer votre image dans Modélisation 3D EduFog, paramétrer la conversion neuronale 3D, inspecter le maillage volumétrique et préparer le modèle pour le tranchage sous Bambu Studio.
   </p>
 
   <div style="text-align: center; margin: 1.2rem 0;">
@@ -251,13 +263,13 @@ Il existe également des outils payants très performants sur le marché (tels q
 
   <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 1rem; padding-top: 0.8rem; border-top: 1px dashed var(--vp-c-divider);">
     <a 
-      href="https://tinyurl.com/studio3d-edufog" 
+      href="https://jeromefoguenne-eng.github.io/Modelisation-3D/" 
       target="_blank" 
       rel="noopener noreferrer"
       class="btn-primary"
       style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: white !important; padding: 9px 16px; border-radius: 8px; font-weight: 600; background: #7c3aed;"
     >
-      <span>🚀 Ouvrir le Studio 3D EduFog en direct ↗</span>
+      <span>🚀 Ouvrir le logiciel Modélisation 3D EduFog en direct ↗</span>
     </a>
     <span style="font-size: 0.85rem; color: var(--vp-c-text-3);">
       ⏱️ Durée : 8 min 21 s • Définition HD 1080p
@@ -268,7 +280,7 @@ Il existe également des outils payants très performants sur le marché (tels q
 ### Procédure de conversion en 4 étapes
 
 1. **Préparer l'image :** Choisir une image claire, avec un sujet principal bien identifiable, des contours nets et un arrière-plan blanc ou uni aussi simple que possible. Une vue de face ou de trois-quarts constitue le meilleur point de départ pour une figurine.
-2. **Importer l'image dans l'application :** Ouvrir Studio 3D EduFog et importer le fichier image. Suivre les indications de l'interface pour lancer la conversion neuronale et régler les paramètres disponibles.
+2. **Importer l'image dans l'application :** Ouvrir le logiciel [Modélisation 3D EduFog](https://jeromefoguenne-eng.github.io/Modelisation-3D/) et importer le fichier image. Suivre les indications de l'interface pour lancer la conversion neuronale et régler les paramètres disponibles.
 3. **Examiner le résultat en trois dimensions :** Faire pivoter le modèle à 360° pour inspecter les côtés, l'arrière, le dessus et le dessous. Vérifier que les volumes sont cohérents, que les détails anatomiques sont présents et que le maillage ne présente pas d'excroissances parasites.
 4. **Exporter le fichier :** Lorsque le résultat est satisfaisant, exporter le modèle dans un format standard compatible avec le trancheur de l'imprimante, idéalement `.3mf` ou `.stl`.
 

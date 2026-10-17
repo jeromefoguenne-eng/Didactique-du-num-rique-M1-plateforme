@@ -41,6 +41,7 @@ Retrouvez ici tous les documents de référence indispensables pour vos analyses
 
 - 🎮 **[Escape Game FMTTN — Cyber-Enquête](https://jeromefoguenne-eng.github.io/FMTTN---Escape-Game/)** : Jeu sérieux pour explorer les attendus du cours.
 - 🤖 **Assistant Cours FMTTN (HECh)** : Application IA dédiée à la génération et l'alignement des fiches de préparation.
+- 🧊 **[Modélisation 3D EduFog](https://jeromefoguenne-eng.github.io/Modelisation-3D/)** : Application en ligne de modélisation et conversion 3D pour la fabrication numérique des pions.
 - 🎨 **[Canva pour l'Éducation](https://www.canva.com/education/)** : Outil de conception graphique gratuit pour enseignants et étudiants.
 - 📐 **[Tinkercad](https://www.tinkercad.com/)** : Modeleur 3D en ligne gratuit pour concevoir vos pions.
 - ✒️ **[Inkscape](https://inkscape.org/fr/)** : Logiciel libre de dessin vectoriel pour la découpe laser (SVG).

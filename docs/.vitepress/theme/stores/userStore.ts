@@ -1800,6 +1800,7 @@ function setStorage<T>(key: string, val: T): boolean {
 
 export function isLocalEnvironment(): boolean {
   if (typeof window === 'undefined') return false
+  if (import.meta.env && !import.meta.env.DEV) return false
   const host = window.location.hostname
   return host === 'localhost' || host === '127.0.0.1' || host === '0.0.0.0' || host.startsWith('192.168.') || host.startsWith('10.')
 }

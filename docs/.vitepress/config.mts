@@ -2,6 +2,116 @@ import { defineConfig } from 'vitepress'
 import fs from 'node:fs'
 import path from 'node:path'
 
+function registerMiddlewares(server: any) {
+  server.middlewares.use('/api/backup-exercise', async (req: any, res: any) => {
+    if (req.method === 'POST') {
+      let body = ''
+      req.on('data', (chunk: any) => { body += chunk })
+      req.on('end', () => {
+        try {
+          const data = JSON.parse(body)
+          const driveDir = "C:\\Google Drive\\Prépas light\\HECh\\Péda\\Math-Num\\M1\\Didactique et numérique\\Exercices étudiants Plateforme"
+          if (!fs.existsSync(driveDir)) {
+            fs.mkdirSync(driveDir, { recursive: true })
+          }
+          // Création d'un sous-dossier dédié par nom d'étudiant
+          const rawStudent = data.studentName || data.userName || 'Etudiants'
+          const cleanStudentFolder = rawStudent.replace(/[/\\:*?"<>|]/g, '_').trim()
+          const studentDir = path.join(driveDir, cleanStudentFolder)
+          if (!fs.existsSync(studentDir)) {
+            fs.mkdirSync(studentDir, { recursive: true })
+          }
+
+          const fileName = data.fileName || `${cleanStudentFolder}_${data.exerciseId || 'Devoir'}.txt`
+          const targetPath = path.join(studentDir, fileName)
+
+          if (data.base64Data) {
+            const cleanBase64 = data.base64Data.includes(',') ? data.base64Data.split(',')[1] : data.base64Data
+            const buffer = Buffer.from(cleanBase64, 'base64')
+            fs.writeFileSync(targetPath, buffer)
+          } else if (data.content) {
+            fs.writeFileSync(targetPath, data.content, 'utf-8')
+          }
+
+          res.statusCode = 200
+          res.setHeader('Content-Type', 'application/json')
+          res.end(JSON.stringify({ status: 'success', path: targetPath }))
+        } catch (e: any) {
+          res.statusCode = 500
+          res.setHeader('Content-Type', 'application/json')
+          res.end(JSON.stringify({ status: 'error', message: e.message }))
+        }
+      })
+    } else {
+      res.statusCode = 405
+      res.end()
+    }
+  })
+
+  // Endpoint pour sauvegarder et charger les échéances directement sur le Google Drive et en local
+  server.middlewares.use('/api/backup-deadlines', async (req: any, res: any) => {
+    const driveDir = "C:\\Google Drive\\Prépas light\\HECh\\Péda\\Math-Num\\M1\\Didactique et numérique\\Exercices étudiants Plateforme"
+    const localDataDir = path.join(process.cwd(), 'docs', '.vitepress', 'data')
+    const driveDeadlinesFile = path.join(driveDir, 'deadlines.json')
+    const localDeadlinesFile = path.join(localDataDir, 'deadlines.json')
+
+    if (req.method === 'POST') {
+      let body = ''
+      req.on('data', (chunk: any) => { body += chunk })
+      req.on('end', () => {
+        try {
+          const data = JSON.parse(body)
+          const deadlinesData = data.deadlines || {}
+          const jsonStr = JSON.stringify(deadlinesData, null, 2)
+
+          // 1. Sauvegarde dans le Google Drive local
+          try {
+            if (!fs.existsSync(driveDir)) {
+              fs.mkdirSync(driveDir, { recursive: true })
+            }
+            fs.writeFileSync(driveDeadlinesFile, jsonStr, 'utf-8')
+          } catch (errDrive) {}
+
+          // 2. Sauvegarde de secours dans le projet local
+          try {
+            if (!fs.existsSync(localDataDir)) {
+              fs.mkdirSync(localDataDir, { recursive: true })
+            }
+            fs.writeFileSync(localDeadlinesFile, jsonStr, 'utf-8')
+          } catch (errLocal) {}
+
+          res.statusCode = 200
+          res.setHeader('Content-Type', 'application/json')
+          res.end(JSON.stringify({ status: 'success', count: Object.keys(deadlinesData).length }))
+        } catch (e: any) {
+          res.statusCode = 500
+          res.setHeader('Content-Type', 'application/json')
+          res.end(JSON.stringify({ status: 'error', message: e.message }))
+        }
+      })
+    } else if (req.method === 'GET') {
+      try {
+        let deadlines = {}
+        if (fs.existsSync(driveDeadlinesFile)) {
+          deadlines = JSON.parse(fs.readFileSync(driveDeadlinesFile, 'utf-8'))
+        } else if (fs.existsSync(localDeadlinesFile)) {
+          deadlines = JSON.parse(fs.readFileSync(localDeadlinesFile, 'utf-8'))
+        }
+        res.statusCode = 200
+        res.setHeader('Content-Type', 'application/json')
+        res.end(JSON.stringify({ status: 'success', deadlines }))
+      } catch (e: any) {
+        res.statusCode = 200
+        res.setHeader('Content-Type', 'application/json')
+        res.end(JSON.stringify({ status: 'success', deadlines: {} }))
+      }
+    } else {
+      res.statusCode = 405
+      res.end()
+    }
+  })
+}
+
 export default defineConfig({
   title: "Didactique du Numérique",
   titleTemplate: ":title | HECh",
@@ -17,128 +127,27 @@ export default defineConfig({
       {
         name: 'google-drive-backup-middleware',
         configureServer(server) {
-          server.middlewares.use('/api/backup-exercise', async (req, res) => {
-            if (req.method === 'POST') {
-              let body = ''
-              req.on('data', chunk => { body += chunk })
-              req.on('end', () => {
-                try {
-                  const data = JSON.parse(body)
-                  const driveDir = "C:\\Google Drive\\Prépas light\\HECh\\Péda\\Math-Num\\M1\\Didactique et numérique\\Exercices étudiants Plateforme"
-                  if (!fs.existsSync(driveDir)) {
-                    fs.mkdirSync(driveDir, { recursive: true })
-                  }
-                  // Création d'un sous-dossier dédié par nom d'étudiant
-                  const rawStudent = data.studentName || data.userName || 'Etudiants'
-                  const cleanStudentFolder = rawStudent.replace(/[/\\:*?"<>|]/g, '_').trim()
-                  const studentDir = path.join(driveDir, cleanStudentFolder)
-                  if (!fs.existsSync(studentDir)) {
-                    fs.mkdirSync(studentDir, { recursive: true })
-                  }
-
-                  const fileName = data.fileName || `${cleanStudentFolder}_${data.exerciseId || 'Devoir'}.txt`
-                  const targetPath = path.join(studentDir, fileName)
-
-                  if (data.base64Data) {
-                    const cleanBase64 = data.base64Data.includes(',') ? data.base64Data.split(',')[1] : data.base64Data
-                    const buffer = Buffer.from(cleanBase64, 'base64')
-                    fs.writeFileSync(targetPath, buffer)
-                  } else if (data.content) {
-                    fs.writeFileSync(targetPath, data.content, 'utf-8')
-                  }
-
-                  res.statusCode = 200
-                  res.setHeader('Content-Type', 'application/json')
-                  res.end(JSON.stringify({ status: 'success', path: targetPath }))
-                } catch (e: any) {
-                  res.statusCode = 500
-                  res.setHeader('Content-Type', 'application/json')
-                  res.end(JSON.stringify({ status: 'error', message: e.message }))
-                }
-              })
-            } else {
-              res.statusCode = 405
-              res.end()
-            }
-          })
-
-          // Endpoint pour sauvegarder et charger les échéances directement sur le Google Drive et en local
-          server.middlewares.use('/api/backup-deadlines', async (req, res) => {
-            const driveDir = "C:\\Google Drive\\Prépas light\\HECh\\Péda\\Math-Num\\M1\\Didactique et numérique\\Exercices étudiants Plateforme"
-            const localDataDir = path.join(process.cwd(), 'docs', '.vitepress', 'data')
-            const driveDeadlinesFile = path.join(driveDir, 'deadlines.json')
-            const localDeadlinesFile = path.join(localDataDir, 'deadlines.json')
-
-            if (req.method === 'POST') {
-              let body = ''
-              req.on('data', chunk => { body += chunk })
-              req.on('end', () => {
-                try {
-                  const data = JSON.parse(body)
-                  const deadlinesData = data.deadlines || {}
-                  const jsonStr = JSON.stringify(deadlinesData, null, 2)
-
-                  // 1. Sauvegarde dans le Google Drive local
-                  try {
-                    if (!fs.existsSync(driveDir)) {
-                      fs.mkdirSync(driveDir, { recursive: true })
-                    }
-                    fs.writeFileSync(driveDeadlinesFile, jsonStr, 'utf-8')
-                  } catch (errDrive) {}
-
-                  // 2. Sauvegarde de secours dans le projet local
-                  try {
-                    if (!fs.existsSync(localDataDir)) {
-                      fs.mkdirSync(localDataDir, { recursive: true })
-                    }
-                    fs.writeFileSync(localDeadlinesFile, jsonStr, 'utf-8')
-                  } catch (errLocal) {}
-
-                  res.statusCode = 200
-                  res.setHeader('Content-Type', 'application/json')
-                  res.end(JSON.stringify({ status: 'success', count: Object.keys(deadlinesData).length }))
-                } catch (e: any) {
-                  res.statusCode = 500
-                  res.setHeader('Content-Type', 'application/json')
-                  res.end(JSON.stringify({ status: 'error', message: e.message }))
-                }
-              })
-            } else if (req.method === 'GET') {
-              try {
-                let deadlines = {}
-                if (fs.existsSync(driveDeadlinesFile)) {
-                  deadlines = JSON.parse(fs.readFileSync(driveDeadlinesFile, 'utf-8'))
-                } else if (fs.existsSync(localDeadlinesFile)) {
-                  deadlines = JSON.parse(fs.readFileSync(localDeadlinesFile, 'utf-8'))
-                }
-                res.statusCode = 200
-                res.setHeader('Content-Type', 'application/json')
-                res.end(JSON.stringify({ status: 'success', deadlines }))
-              } catch (e: any) {
-                res.statusCode = 200
-                res.setHeader('Content-Type', 'application/json')
-                res.end(JSON.stringify({ status: 'success', deadlines: {} }))
-              }
-            } else {
-              res.statusCode = 405
-              res.end()
-            }
-          })
+          registerMiddlewares(server)
+        },
+        configurePreviewServer(server) {
+          registerMiddlewares(server)
         }
       }
-    ]
+    ],
+    build: {
+      chunkSizeWarningLimit: 1600
+    }
   },
 
   head: [
     ['meta', { 'http-equiv': 'X-Content-Type-Options', content: 'nosniff' }],
-    ['meta', { 'http-equiv': 'X-Frame-Options', content: 'SAMEORIGIN' }],
     ['meta', { 'http-equiv': 'Referrer-Policy', content: 'strict-origin-when-cross-origin' }],
     ['meta', { 'http-equiv': 'Permissions-Policy', content: 'camera=(), microphone=(), geolocation=(), payment=()' }],
     ['meta', {
       'http-equiv': 'Content-Security-Policy',
       content: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; media-src 'self' data: blob: https://drive.google.com; frame-src 'self' https://drive.google.com https://docs.google.com; connect-src 'self' http://localhost:* http://127.0.0.1:* https:;"
     }],
-    ['link', { rel: 'icon', type: 'image/png', href: '/images/logo-hech.png' }]
+    ['link', { rel: 'icon', type: 'image/png', href: '/Didactique-du-num-rique-M1-plateforme/images/logo-hech.png' }]
   ],
 
   themeConfig: {

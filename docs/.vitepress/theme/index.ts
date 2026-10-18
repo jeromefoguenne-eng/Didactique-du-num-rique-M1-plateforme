@@ -7,6 +7,7 @@ import ExerciseBox from './components/ExerciseBox.vue'
 import QuizBox from './components/QuizBox.vue'
 import CourseEvaluationForm from './components/CourseEvaluationForm.vue'
 import StudentDossierView from './components/StudentDossierView.vue'
+import { userStore } from './stores/userStore'
 import './custom.css'
 
 export default {
@@ -21,14 +22,12 @@ export default {
     app.component('QuizBox', QuizBox)
     app.component('CourseEvaluationForm', CourseEvaluationForm)
 
-    // Synchronisation Cloud automatique en arrière-plan dès le chargement de n'importe quelle page
+    // Synchronisation Cloud automatique en arrière-plan dès le chargement de n'importe quelle page côté client
     if (typeof window !== 'undefined') {
-      import('./stores/userStore').then(({ userStore }) => {
-        try {
-          userStore.syncFromStorage()
-          userStore.syncWithCloud().catch(() => {})
-        } catch (e) {}
-      })
+      try {
+        userStore.syncFromStorage()
+        userStore.syncWithCloud().catch(() => {})
+      } catch (e) {}
     }
   }
 }

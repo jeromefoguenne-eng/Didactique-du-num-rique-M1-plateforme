@@ -44,4 +44,4 @@ Retrouvez ici tous les documents de référence indispensables pour vos analyses
 - 🧊 **[Modélisation 3D EduFog](https://jeromefoguenne-eng.github.io/Modelisation-3D/)** : Application en ligne de modélisation et conversion 3D pour la fabrication numérique des pions.
 - 🎨 **[Canva pour l'Éducation](https://www.canva.com/education/)** : Outil de conception graphique gratuit pour enseignants et étudiants.
 - 📐 **[Tinkercad](https://www.tinkercad.com/)** : Modeleur 3D en ligne gratuit pour concevoir vos pions.
-- ✒️ **[Inkscape](https://inkscape.org/fr/)** : Logiciel libre de dessin vectoriel pour la découpe laser (SVG).
+- ✒️ **[VectorCraft — Suite ArtCraft](https://getartcraft.com/apps/vectorcraft)** : Application en ligne libre de dessin et vectorisation d'images (PNG/JPEG vers SVG) pour la découpeuse laser.

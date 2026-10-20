@@ -35,8 +35,8 @@ const subCategories = [
   },
   {
     title: "6.5 Fabriquer le plateau à la découpeuse laser",
-    tag: "En construction",
-    desc: "Découpeuse laser pour le plateau de jeu et gravure vectorielle au FabLab HECh.",
+    tag: "Découpeuse Laser & VectorCraft",
+    desc: "Découpeuse laser pour le plateau de jeu, vectorisation VectorCraft et gravure au FabLab HECh.",
     link: "/modules/09-prototypage-fablab",
     image: "/images/subcategories/sub-5-5-fablab.jpg"
   },

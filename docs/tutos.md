@@ -43,7 +43,7 @@ Retrouvez ci-dessous les grandes familles d'outils et de savoir-faire abordés a
     <div style="font-size: 1.8rem; margin-bottom: 0.5rem;">⚙️</div>
     <h3 style="margin: 0 0 0.5rem 0;">FabLab : 3D & Découpe Laser</h3>
     <p style="font-size: 0.9rem; color: var(--vp-c-text-2); line-height: 1.5;">
-      Prise en main pas-à-pas de <strong>Tinkercad</strong> et du logiciel <strong>Modélisation 3D EduFog</strong> pour concevoir des pions en 3D, et d'<strong>Inkscape</strong> pour exporter des fichiers vectoriels (SVG) prêts pour la découpeuse laser.
+      Prise en main pas-à-pas de <strong>Tinkercad</strong> et du logiciel <strong>Modélisation 3D EduFog</strong> pour concevoir des pions en 3D, et de <strong>VectorCraft (Suite ArtCraft)</strong> pour vectoriser et exporter des fichiers vectoriels (SVG) prêts pour la découpeuse laser.
     </p>
     <a href="/modules/09-prototypage-fablab" style="font-size: 0.88rem; font-weight: 600; color: var(--vp-c-brand-1);">
       Explorer le volet FabLab →

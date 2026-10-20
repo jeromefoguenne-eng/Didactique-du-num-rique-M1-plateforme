@@ -1,6 +1,6 @@
 ---
 title: "6.5 Fabriquer le plateau de jeu avec la découpeuse laser"
-description: "Fabrication numérique au FabLab HECh : conception vectorielle avec Canva et Inkscape, et pilotage de la découpeuse laser avec LightBurn pour le plateau de jeu."
+description: "Fabrication numérique au FabLab HECh : conception graphique avec Canva, vectorisation avec VectorCraft (Suite ArtCraft), et pilotage de la découpeuse laser avec LightBurn pour le plateau de jeu."
 ---
 
 # 6.5. Fabriquer le plateau de jeu avec la découpeuse laser
@@ -74,102 +74,198 @@ Pour un projet destiné à la gravure laser, **privilégier une composition simp
 
 ---
 
-## De Canva à Inkscape : préparer le plateau pour la découpe laser
+## De Canva à VectorCraft : vectoriser et préparer le plateau pour la découpe laser
 
-[Télécharger le logiciel libre Inkscape (inkscape.fr)](https://inkscape.fr/){target="_blank" rel="noopener noreferrer"}
+[Accéder directement à l'application VectorCraft (getartcraft.com/apps/vectorcraft)](https://getartcraft.com/apps/vectorcraft){target="_blank" rel="noopener noreferrer"}
 
-Une image créée dans Canva est généralement une image matricielle (PNG, JPG). Or, une découpeuse laser travaille plus efficacement avec des tracés vectoriels : des lignes et des formes définies mathématiquement. Il faut donc passer par une étape de vectorisation dans Inkscape.
+Une image conçue dans Canva est une **image matricielle (composée d'une grille fixe de pixels : PNG ou JPEG)**. Or, une découpeuse laser ne fonctionne pas comme une imprimante de bureau classique : elle est guidée par des coordonnées cartésiennes et des équations géométriques de courbes (tracés vectoriels). Pour que la machine puisse découper les contours du bois ou graver les motifs avec une précision chirurgicale, il est indispensable de transformer votre image de pixels en un fichier vectoriel (SVG).
 
-### 1. Exporter le plateau depuis Canva
-Dans Canva :
-1. Cliquer sur **Partager → Télécharger**.
-2. Choisir **PNG**.
-3. Télécharger l'image avec la meilleure résolution disponible.
-4. Éviter, si possible, les éléments inutiles autour du plateau.
+Pour cette étape, nous utilisons **VectorCraft**, l'outil de dessin vectoriel de nouvelle génération de la suite **ArtCraft**.
 
-Le PNG constitue alors le modèle de référence qui sera importé dans Inkscape.
+---
 
-### 2. Importer l'image dans Inkscape
-Dans Inkscape :
-1. Ouvrir un nouveau document.
-2. Aller dans **Fichier → Importer**.
-3. Sélectionner l'image PNG créée dans Canva.
-4. Choisir **Incorporer** plutôt que « Lier » lorsque Inkscape propose le choix.
-5. Adapter la taille de l'image au format réel du plateau.
+### 1. Présentation de la suite ArtCraft et de l'outil VectorCraft
 
-::: warning Point de contrôle dimensionnel
-Si le plateau doit mesurer 420 × 297 mm, il faut vérifier ses dimensions dans Inkscape. Une image numérique n'a pas nécessairement une correspondance correcte avec les dimensions physiques souhaitées.
-:::
+<div class="callout-concept">
+  <div class="callout-title">🎨 La suite ArtCraft : des outils créatifs libres, souverains et sans installation</div>
+  <p>
+    La <strong>suite ArtCraft</strong> (<a href="https://getartcraft.com/" target="_blank" rel="noopener noreferrer">getartcraft.com</a>) est un écosystème ouvert d'applications créatives et bureautiques professionnelles, pensé comme une alternative moderne et gratuite aux suites propriétaires lourdes (telles qu'Adobe Creative Cloud).
+  </p>
+  <ul>
+    <li><strong>Technologie de pointe (Rust & WebAssembly) :</strong> Les applications sont ultra-légères, ultra-rapides et s'exécutent directement dans votre navigateur web à 60 images par seconde, sans nécessiter aucune installation logicielle préalable ni compte obligatoire.</li>
+    <li><strong>Écosystème complet :</strong> La suite intègre <em>PhotoCraft</em> (retouche photo type Photoshop), <em>FilmCraft</em> (montage vidéo type Premiere Pro), <em>LightCraft</em> (développement photo RAW) et <strong>VectorCraft</strong> pour l'illustration vectorielle.</li>
+    <li><strong>Souveraineté et respect des données :</strong> Vos créations restent traitées localement dans la mémoire de votre navigateur, garantissant une confidentialité totale et une accessibilité immédiate depuis n'importe quel ordinateur d'école ou du FabLab.</li>
+  </ul>
+</div>
 
-### 3. Vectoriser l'image
-Sélectionner l'image puis aller dans :  
-**Chemin → Vectoriser un objet matriciel**
+**L'application VectorCraft** ([getartcraft.com/apps/vectorcraft](https://getartcraft.com/apps/vectorcraft)) se positionne comme l'équivalent libre d'Adobe Illustrator. Elle intègre tous les outils essentiels du graphisme vectoriel : tracé de courbes de Bézier à la plume, formes paramétriques, opérations booléennes (Pathfinder), gestion fine des calques, et surtout un **moteur de vectorisation automatique haute précision (*Image Trace*)** particulièrement performant pour convertir vos images PNG ou JPEG en tracés vectoriels mathématiques.
 
-Inkscape propose différentes méthodes de vectorisation. Pour un plateau de jeu comportant des formes simples, des contours noirs et des zones contrastées, le mode de **détection par seuil de luminosité** peut généralement constituer un bon point de départ.
+---
 
-L'objectif n'est pas nécessairement de vectoriser toute l'image en une seule fois. Il peut être préférable de vectoriser séparément :
-- le contour extérieur → **découpe** ;
-- les lignes du parcours → **gravure** ;
-- les symboles et illustrations → **gravure** ;
-- éventuellement les zones particulières → **découpe**.
+### 2. Pourquoi vectoriser une image matricielle (PNG/JPEG) pour la découpeuse laser ?
 
-Après avoir lancé la vectorisation, l'image originale et sa version vectorisée sont superposées. Il faut alors déplacer temporairement l'image originale pour vérifier le résultat.
+Une image matricielle (PNG ou JPG) est une grille fixe de carrés de couleur (pixels). Si vous zoomez sur les détails de votre plateau de jeu, les bordures deviennent floues et crénelées.
+
+Pour la découpeuse laser :
+1. **Pour découper :** Le faisceau laser doit suivre une ligne vectorielle continue (un chemin sans épaisseur). La tête laser se déplace physiquement le long de cette courbe pour trancher la matière (contreplaqué, MDF, plexiglas). Une image PNG ne possède pas de trajectoire : la machine ne saurait pas où couper !
+2. **Pour graver :** Si la machine peut techniquement graver une image de pixels par balayage horizontal ligne par ligne (comme une imprimante), cette méthode est très lente. Un tracé vectoriel permet une gravure au trait (*vector marking*) ultra-rapide et nette, ou un remplissage précis des formes fermées.
+
+La vectorisation consiste donc à **faire analyser les contours de votre image PNG par un algorithme mathématique qui recrée des lignes, des arcs et des polygones parfaits**.
+
+---
+
+### 3. Comment vectoriser une image PNG ou JPEG avec VectorCraft pas à pas
+
+Voici la méthode complète pour transformer votre plateau Canva en fichier vectoriel pour la découpeuse laser :
+
+#### Étape 1 — Exporter votre visuel depuis Canva
+1. Dans Canva, ouvrez votre plateau de jeu conçu au format **A3 (420 × 297 mm)**.
+2. Cliquez sur **Partager → Télécharger**.
+3. Sélectionnez le format **PNG** (ou **JPEG qualité maximale**).
+4. Cochez une résolution élevée (de préférence 300 DPI si disponible) et téléchargez le fichier.
+
+#### Étape 2 — Importer l'image dans VectorCraft
+1. Ouvrez votre navigateur web et rendez-vous sur : **[https://getartcraft.com/apps/vectorcraft](https://getartcraft.com/apps/vectorcraft)**.
+2. Créez un nouveau document ou définissez le plan de travail aux dimensions réelles de votre plateau : **Largeur = 420 mm**, **Hauteur = 297 mm**.
+3. Importez votre image PNG ou JPEG par simple **glisser-déposer** sur le canevas, ou via le menu **File → Import**.
+4. Ajustez l'image pour qu'elle occupe exactement l'espace du plateau A3.
+
+#### Étape 3 — Lancer la vectorisation d'image (*Image Trace*)
+1. Cliquez sur l'image avec l'outil de sélection (flèche noire) pour l'activer.
+2. Dans la barre d'options supérieure ou le panneau latéral droit, activez le bouton **Image Trace** (Vectoriser l'image).
+3. VectorCraft génère immédiatement un aperçu vectoriel en temps réel au-dessus de l'image de pixels.
+
+#### Étape 4 — Régler les paramètres de traçage pour le laser
+Pour obtenir un résultat optimal destiné à une découpeuse laser, ajustez les curseurs dans le panneau *Image Trace* :
+* **Mode de traçage :** Choisissez **Black & White (Noir et Blanc)** ou **Silhouettes**. Ce mode élimine les nuances de couleurs pour créer des contours ultra-nets parfaitement exploitables par la machine laser.
+* **Seuil de détection (*Threshold*) :** Ce curseur détermine à partir de quelle luminosité un pixel devient noir ou blanc. Augmentez-le légèrement pour que les lignes fines de votre parcours de jeu soient bien épaisses et continues.
+* **Lissage des courbes (*Curve / Line Snapping*) :** Activez l'alignement pour que les segments droits deviennent de vraies droites mathématiques et que les cercles soient réguliers, sans bosses.
+* **Réduction du bruit (*Noise / Ignore White*) :** Augmentez le filtre de bruit pour ignorer les petits artefacts de compression JPEG ou les poussières de pixels qui créeraient des micro-gravures indésirables. Cochez *Ignore White* pour supprimer automatiquement le fond blanc inutile.
+
+#### Étape 5 — Décomposer en tracés vectoriels (*Expand*)
+1. Une fois l'aperçu satisfaisant, cliquez sur le bouton **Expand** (Décomposer).
+2. L'image matricielle d'origine disparaît et laisse place à de **véritables tracés vectoriels modifiables** composés de points d'ancrage et de tangentes de Bézier.
+3. Vous pouvez désormais sélectionner chaque tracé individuellement, modifier un contour ou supprimer un élément parasite.
+
+#### Étape 6 — Séparer les couleurs pour LightBurn (Découpe vs Gravure)
+Pour que le logiciel de la découpeuse laser (LightBurn) sache exactement ce qu'il doit découper et ce qu'il doit graver, attribuez des couleurs conventionnelles :
+* **Contour extérieur du plateau :** Sélectionnez le rectangle périphérique de 420 × 297 mm et attribuez-lui un **contour rouge fin (épaisseur 0.1 mm ou filet technique)** sans fond de remplissage.
+* **Cases, textes et illustrations :** Attribuez-leur une couleur **noire** (fond noir pour la gravure de surface, ou contour noir pour la gravure au trait).
+
+#### Étape 7 — Exporter au format SVG
+1. Rendez-vous dans **File → Export**.
+2. Choisissez le format standard **SVG (Scalable Vector Graphics)**.
+3. Enregistrez le fichier sur votre clé USB ou votre espace Google Drive : il est prêt à être piloté au FabLab !
+
+---
+
+### 4. Exemple concret : Vectorisation d'un plateau de jeu conçu sous Canva
+
+Imaginons le cas concret d'un binôme d'étudiants préparant le plateau de leur jeu de société pour l'Exercice 12 :
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                       LE WORKFLOW DU PLATEAU DE JEU                         │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 1. CANVA (Graphisme)       → Création du plateau A3 avec cases, logos,      │
+│                              zones de pioche de cartes et consignes.        │
+│                              Export en fichier PNG haute résolution.        │
+│                                            ↓                                │
+│ 2. VECTORCRAFT (ArtCraft)  → Glisser-déposer du PNG sur le canevas A3.      │
+│                              Image Trace (Mode Noir & Blanc, seuil dosé).   │
+│                              Expand → Tracés Bézier mathématiques nets.     │
+│                              Contour externe = Rouge | Motifs internes = Noir│
+│                              Export en fichier SVG.                         │
+│                                            ↓                                │
+│ 3. LIGHTBURN (FabLab)      → Import du SVG. Détection des 2 couches :       │
+│                              • Couche Noire = Gravure rapide (300 mm/s)     │
+│                              • Couche Rouge = Découpe laser (15 mm/s)       │
+│                              Production physique en contreplaqué 3 mm.      │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+**Pourquoi cet exemple est typique en classe ?**
+* Sous Canva, l'élève a disposé un logo de son jeu généré par IA, 30 cases de parcours numérotées et deux rectangles prévus pour poser les pioches de cartes FMTTN.
+* Lorsqu'il exporte son travail, Canva produit un fichier PNG de 4960 × 3508 pixels.
+* En ouvrant **VectorCraft**, l'élève importe le PNG. En appliquant la fonction *Image Trace*, l'outil détecte les cases et les lettres des consignes : en 10 secondes, l'ensemble devient une mosaïque vectorielle parfaite.
+* L'élève sélectionne le rectangle de pourtour et lui applique la couleur rouge : la découpeuse saura qu'elle doit d'abord graver tout le plateau à faible puissance, puis découper la planche nette à forte puissance pour que le plateau se détache tout seul du panneau de bois !
+
+---
 
 <div class="callout-concept" style="margin: 2rem 0;">
-  <div class="callout-title">🎬 Tutoriel Vidéo : Préparation vectorielle avec Inkscape pour la découpe laser</div>
+  <div class="callout-title">🎬 Tutoriel Vidéo : Vectoriser une image (PNG / JPEG) pour la découpe et la gravure laser</div>
   <p>
-    <strong>Tutoriel pas-à-pas : Vectorisation d'un fichier image matricielle pour machine laser.</strong><br />
-    Découvrez comment importer votre composition Canva dans Inkscape, vectoriser les contours par seuil de luminosité, séparer les tracés de découpe et de gravure, et exporter un fichier vectoriel SVG net et dimensionné au millimètre près.
+    <strong>Tutoriel pas-à-pas en français : Transformer un visuel matriciel en fichier vectoriel SVG net et dimensionné.</strong><br />
+    Découvrez dans cette vidéo les principes indispensables de la vectorisation automatique, la suppression des fonds, le réglage des seuils de détection et la préparation d'un fichier SVG propre pour l'usinage au laser.
   </p>
 
   <div style="text-align: center; margin: 1.2rem 0;">
     <a 
-      href="https://www.youtube.com/watch?v=kY3P_78y5hM" 
+      href="https://www.youtube.com/watch?v=WnokVfJu5F0" 
       target="_blank" 
       rel="noopener noreferrer"
       style="display: inline-block; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.18); border: 2px solid var(--vp-c-divider); max-width: 580px; width: 100%; text-decoration: none;"
-      title="Cliquer pour visionner le tutoriel Inkscape pour découpe laser sur YouTube"
+      title="Cliquer pour visionner le tutoriel de vectorisation d'image en français sur YouTube"
     >
       <img 
-        src="/images/vignette-inkscape-decoupe.jpg" 
-        alt="Vignette tutoriel Inkscape vectorisation découpe laser" 
+        src="/images/vignette-vectorcraft-decoupe.jpg" 
+        alt="Vignette tutoriel VectorCraft vectorisation découpe laser" 
         style="width: 100%; height: auto; display: block; object-fit: cover;" 
       />
       <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white; padding: 12px 16px; font-size: 0.92rem; font-weight: 700; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px;">
-        <span>▶️ Cliquer sur l'image pour lancer le tutoriel Inkscape sur YouTube ↗</span>
+        <span>▶️ Cliquer pour lancer le tutoriel de vectorisation sur YouTube ↗</span>
       </div>
     </a>
   </div>
 
-  <p style="font-size: 0.85rem; color: var(--vp-c-text-2); text-align: center; margin: 0.5rem 0 0 0;">
-    💡 <em>Support d'apprentissage vidéo pour maîtriser les fonctions Chemin, Vectorisation par seuil et exportation SVG propre.</em>
+  <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 1rem;">
+    <a 
+      href="https://getartcraft.com/apps/vectorcraft" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="btn-primary"
+      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; color: white !important; padding: 9px 16px; border-radius: 8px; font-weight: 600; background: #0284c7;"
+    >
+      <span>🚀 Ouvrir VectorCraft en ligne (gratuit, sans installation) ↗</span>
+    </a>
+    <a 
+      href="https://www.youtube.com/watch?v=amtlbWQwYDs" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="btn-secondary"
+      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; padding: 9px 16px; border-radius: 8px; font-weight: 600; border: 1px solid var(--vp-c-divider);"
+    >
+      <span>📺 Démonstration de VectorCraft (Alternative Illustrator) ↗</span>
+    </a>
+  </div>
+
+  <p style="font-size: 0.85rem; color: var(--vp-c-text-2); text-align: center; margin: 0.8rem 0 0 0;">
+    💡 <em>Ressource recommandée pour les étudiants et enseignants : vectorisation sans installation complexe de logiciel lourd sur les machines du FabLab.</em>
   </p>
 </div>
 
 ---
 
-## De Inkscape à LightBurn : préparer la découpe et la gravure
+## De VectorCraft à LightBurn : préparer la découpe et la gravure
 
-Une fois le plateau vectorisé et nettoyé dans Inkscape, il faut l'importer dans LightBurn, le logiciel qui permet de préparer et de piloter la découpeuse laser. L'objectif est de transformer le fichier vectoriel en instructions de découpe et de gravure adaptées à la machine.
+Une fois votre plateau vectorisé et nettoyé dans VectorCraft, il faut l'importer dans LightBurn, le logiciel qui permet de préparer et de piloter la découpeuse laser du FabLab. L'objectif est d'assigner à chaque tracé vectoriel les instructions physiques de puissance et de vitesse adaptées au matériau.
 
-### 1. Exporter le fichier depuis Inkscape
-Dans Inkscape, enregistrer le projet puis exporter la version destinée à LightBurn.  
-Le format SVG est particulièrement adapté pour conserver les tracés vectoriels :  
-**Fichier → Enregistrer sous → SVG**
+### 1. Exporter le fichier SVG depuis VectorCraft
+Dans VectorCraft, assurez-vous que les cotes sont bien respectées (ex. 420 × 297 mm pour un format A3 standard) puis exportez le fichier :  
+**File → Export → SVG**
 
-Il est important de conserver les dimensions réelles du plateau, par exemple 420 × 297 mm pour un A3.
+Le format SVG conserve l'ensemble des coordonnées géométriques, l'échelle et la séparation des couleurs de calques.
 
 ### 2. Importer le fichier dans LightBurn
 Dans LightBurn :
-1. Ouvrir un nouveau projet.
-2. Aller dans **Fichier → Importer**.
-3. Sélectionner le fichier SVG créé dans Inkscape.
-4. **Vérifier immédiatement les dimensions du dessin.**
+1. Ouvrez un nouveau projet.
+2. Cliquez sur **Fichier → Importer** (ou faites glisser votre fichier SVG sur la grille de travail).
+3. **Vérifiez immédiatement les dimensions affichées en haut de l'écran.**
 
-Le plateau apparaît alors dans l'espace de travail de LightBurn.
+Le plateau apparaît alors fidèlement dans l'espace de travail de LightBurn.
 
-::: warning Attention à l'échelle
-Il faut vérifier l'échelle après chaque transfert de logiciel. Un plateau prévu pour mesurer 420 mm de large doit bien apparaître comme tel dans LightBurn.
+::: warning Attention à l'échelle (Format A3)
+Il est impératif de contrôler les dimensions après chaque transfert : un plateau A3 doit mesurer exactement 420 mm de large sur 297 mm de haut dans LightBurn.
 :::
 
 ### 3. Distinguer découpe et gravure
@@ -289,7 +385,7 @@ Au FabLab de la HECh, vous disposez d'une découpeuse laser professionnelle équ
 
 ## 🎓 Auto-évaluation & Réflexivité (6.5)
 
-Testez votre maîtrise des concepts de fabrication numérique, de vectorisation sous Inkscape et de pilotage machine sous LightBurn :
+Testez votre maîtrise des concepts de fabrication numérique, de vectorisation sous VectorCraft et de pilotage machine sous LightBurn :
 
 <ClientOnly>
   <QuizBox moduleId="09-1" moduleTitle="6.5 Fabriquer le plateau de jeu avec la découpeuse laser" />

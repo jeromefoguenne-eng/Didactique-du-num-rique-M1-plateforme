@@ -1605,12 +1605,12 @@ const MODULE_QUESTIONS = {
     {
       id: 'q2',
       type: 'qcm',
-      title: "2. Image matricielle vs Tracé vectoriel (Canva vers Inkscape)",
-      text: "Pourquoi le syllabus préconise-t-il une étape de vectorisation dans Inkscape plutôt que d'envoyer directement l'image PNG exportée de Canva à la découpeuse laser ?",
+      title: "2. Image matricielle vs Tracé vectoriel (Canva vers VectorCraft)",
+      text: "Pourquoi le syllabus préconise-t-il une étape de vectorisation dans VectorCraft (Suite ArtCraft) plutôt que d'envoyer directement l'image PNG exportée de Canva à la découpeuse laser ?",
       options: [
         "Parce que Canva efface automatiquement toutes les images après 10 minutes.",
         "Parce qu'une image PNG matricielle est constituée d'une grille fixe de pixels, alors qu'une découpeuse laser travaille avec une précision géométrique optimale à partir de tracés vectoriels définis mathématiquement (chemins de découpe et contours).",
-        "Parce que le logiciel Inkscape est obligatoire sous peine d'endommager la carte mère de la découpeuse.",
+        "Parce que le logiciel VectorCraft est obligatoire sous peine d'endommager la carte mère de la découpeuse.",
         "Parce que le format SVG est le seul format lisible par un vidéoprojecteur de classe."
       ],
       correctIndex: 1,
@@ -1666,12 +1666,12 @@ const MODULE_QUESTIONS = {
       id: 'q6',
       type: 'open',
       title: "6. Analyse réflexive sur la réalisation du plateau (Exercice 12 — Découpeuse laser)",
-      text: "Dans le cadre de l'Exercice 12 (Réalisation du plateau de jeu à la découpeuse laser), analysez votre démarche : comment avez-vous structuré votre plateau sous Canva pour qu'il fonctionne comme une interface lisible (cases, zones cartes, marges techniques) ? Quelles difficultés avez-vous rencontrées lors de la vectorisation sous Inkscape ou du paramétrage sous LightBurn (calques découpe/gravure, gestion de l'échelle A3, essais sur chutes) ? Enfin, comment exploiteriez-vous cette situation d'apprentissage avec des élèves en valorisant la démarche d'essais-erreurs ?",
+      text: "Dans le cadre de l'Exercice 12 (Réalisation du plateau de jeu à la découpeuse laser), analysez votre démarche : comment avez-vous structuré votre plateau sous Canva pour qu'il fonctionne comme une interface lisible (cases, zones cartes, marges techniques) ? Quelles difficultés avez-vous rencontrées lors de la vectorisation sous VectorCraft ou du paramétrage sous LightBurn (calques découpe/gravure, gestion de l'échelle A3, essais sur chutes) ? Enfin, comment exploiteriez-vous cette situation d'apprentissage avec des élèves en valorisant la démarche d'essais-erreurs ?",
       points: 5,
-      modelAnswer: "Exemple de retour réflexif : Pour notre jeu, nous avons conçu un plateau A3 horizontal sous Canva en intégrant des marges de sécurité de 10 mm et des emplacements réservés pour les cartes de jeu. Lors du passage sous Inkscape, la vectorisation par seuil de luminosité a nécessité d'épurer les petits détails pour éviter un crénelage excessif du bois. Dans LightBurn, nous avons séparé les éléments en deux calques : calque noir en mode remplissage (vitesse 300 mm/s, puissance 20%) pour graver le logo et le parcours, et calque rouge en mode ligne (vitesse 15 mm/s, puissance 80%, 2 passes) pour découper les contours extérieurs. Le test sur une chute de MDF 3 mm a révélé de légères traces de brûlure que nous avons atténuées en augmentant la vitesse. En classe de secondaire (FMTTN), cette démarche transforme l'erreur en levier pédagogique : tester sur chute permet aux élèves de confronter le modèle virtuel aux contraintes physiques réelles de la matière.",
+      modelAnswer: "Exemple de retour réflexif : Pour notre jeu, nous avons conçu un plateau A3 horizontal sous Canva en intégrant des marges de sécurité de 10 mm et des emplacements réservés pour les cartes de jeu. Lors du passage sous VectorCraft, la fonction Image Trace en mode noir et blanc a nécessité d'ajuster le seuil et le lissage pour épurer les détails pour éviter un crénelage excessif du bois. Dans LightBurn, nous avons séparé les éléments en deux calques : calque noir en mode remplissage (vitesse 300 mm/s, puissance 20%) pour graver le logo et le parcours, et calque rouge en mode ligne (vitesse 15 mm/s, puissance 80%, 2 passes) pour découper les contours extérieurs. Le test sur une chute de MDF 3 mm a révélé de légères traces de brûlure que nous avons atténuées en augmentant la vitesse. En classe de secondaire (FMTTN), cette démarche transforme l'erreur en levier pédagogique : tester sur chute permet aux élèves de confronter le modèle virtuel aux contraintes physiques réelles de la matière.",
       rubricCriteria: [
         "Explicitation de la conception du plateau en tant qu'interface ergonomique de jeu.",
-        "Maîtrise technique de la chaîne numérique (Canva -> Inkscape -> LightBurn) et différenciation découpe/gravure.",
+        "Maîtrise technique de la chaîne numérique (Canva -> VectorCraft -> LightBurn) et différenciation découpe/gravure.",
         "Réflexion didactique sur la démarche d'essais-erreurs et l'expérimentation matérielle en classe FMTTN."
       ]
     }

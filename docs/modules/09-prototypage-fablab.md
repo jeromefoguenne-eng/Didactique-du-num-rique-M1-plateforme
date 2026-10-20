@@ -162,19 +162,19 @@ Pour une fabrication numérique propre et optimisée à la découpeuse laser, **
 ---
 
 <div class="callout-concept" style="margin: 2rem 0;">
-  <div class="callout-title">🎬 Tutoriel Vidéo : Vectoriser une image (PNG / JPEG) pour la découpe et la gravure laser</div>
+  <div class="callout-title">🎬 Tutoriel Vidéo : Convertir une image (JPG / PNG) en SVG avec VectorCraft</div>
   <p>
-    <strong>Tutoriel pas-à-pas en français : Transformer un visuel matriciel en fichier vectoriel SVG net et dimensionné.</strong><br />
-    Découvrez dans cette vidéo les principes indispensables de la vectorisation automatique, la suppression des fonds, le réglage des seuils de détection et la préparation d'un fichier SVG propre pour l'usinage au laser.
+    <strong>Tutoriel pas-à-pas : Vectorisation d'une image matricielle pour machine laser.</strong><br />
+    Découvrez dans cette vidéo comment convertir facilement une image JPG ou PNG en tracé vectoriel SVG avec VectorCraft (Window → Image Trace) pour préparer votre découpe et gravure laser au FabLab.
   </p>
 
   <div style="text-align: center; margin: 1.2rem 0;">
     <a 
-      href="https://www.youtube.com/watch?v=WnokVfJu5F0" 
+      href="https://www.youtube.com/watch?v=TkDvRTyi2h4" 
       target="_blank" 
       rel="noopener noreferrer"
       style="display: inline-block; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.18); border: 2px solid var(--vp-c-divider); max-width: 580px; width: 100%; text-decoration: none;"
-      title="Cliquer pour visionner le tutoriel de vectorisation d'image en français sur YouTube"
+      title="Cliquer pour visionner le tutoriel VectorCraft (JPG to SVG) sur YouTube"
     >
       <img 
         src="/images/vignette-vectorcraft-decoupe.jpg" 
@@ -182,7 +182,7 @@ Pour une fabrication numérique propre et optimisée à la découpeuse laser, **
         style="width: 100%; height: auto; display: block; object-fit: cover;" 
       />
       <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white; padding: 12px 16px; font-size: 0.92rem; font-weight: 700; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px;">
-        <span>▶️ Cliquer pour lancer le tutoriel de vectorisation sur YouTube ↗</span>
+        <span>▶️ Cliquer pour lancer le tutoriel VectorCraft sur YouTube ↗</span>
       </div>
     </a>
   </div>
@@ -198,13 +198,13 @@ Pour une fabrication numérique propre et optimisée à la découpeuse laser, **
       <span>🚀 Ouvrir VectorCraft en ligne (gratuit, sans installation) ↗</span>
     </a>
     <a 
-      href="https://www.youtube.com/watch?v=amtlbWQwYDs" 
+      href="https://www.youtube.com/watch?v=TkDvRTyi2h4" 
       target="_blank" 
       rel="noopener noreferrer"
       class="btn-secondary"
       style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none !important; padding: 9px 16px; border-radius: 8px; font-weight: 600; border: 1px solid var(--vp-c-divider);"
     >
-      <span>📺 Démonstration de VectorCraft (Alternative Illustrator) ↗</span>
+      <span>📺 Voir le tutoriel sur YouTube (How to Convert JPG to SVG) ↗</span>
     </a>
   </div>
 

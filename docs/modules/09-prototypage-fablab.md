@@ -114,81 +114,50 @@ La vectorisation consiste donc à **faire analyser les contours de votre image P
 
 ---
 
-### 3. Comment vectoriser une image PNG ou JPEG avec VectorCraft pas à pas
+### 3. Comment vectoriser une image avec VectorCraft pas à pas
 
-Voici la méthode complète pour transformer votre plateau Canva en fichier vectoriel pour la découpeuse laser :
+Pour vectoriser une image dans VectorCraft, suivez scrupuleusement les 5 étapes suivantes :
 
-#### Étape 1 — Exporter votre visuel depuis Canva
-1. Dans Canva, ouvrez votre plateau de jeu conçu au format **A3 (420 × 297 mm)**.
-2. Cliquez sur **Partager → Télécharger**.
-3. Sélectionnez le format **PNG** (ou **JPEG qualité maximale**).
-4. Cochez une résolution élevée (de préférence 300 DPI si disponible) et téléchargez le fichier.
-
-#### Étape 2 — Importer l'image dans VectorCraft
-1. Ouvrez votre navigateur web et rendez-vous sur : **[https://getartcraft.com/apps/vectorcraft](https://getartcraft.com/apps/vectorcraft)**.
-2. Créez un nouveau document ou définissez le plan de travail aux dimensions réelles de votre plateau : **Largeur = 420 mm**, **Hauteur = 297 mm**.
-3. Importez votre image PNG ou JPEG par simple **glisser-déposer** sur le canevas, ou via le menu **File → Import**.
-4. Ajustez l'image pour qu'elle occupe exactement l'espace du plateau A3.
-
-#### Étape 3 — Lancer la vectorisation d'image (*Image Trace*)
-1. Cliquez sur l'image avec l'outil de sélection (flèche noire) pour l'activer.
-2. Dans la barre d'options supérieure ou le panneau latéral droit, activez le bouton **Image Trace** (Vectoriser l'image).
-3. VectorCraft génère immédiatement un aperçu vectoriel en temps réel au-dessus de l'image de pixels.
-
-#### Étape 4 — Régler les paramètres de traçage pour le laser
-Pour obtenir un résultat optimal destiné à une découpeuse laser, ajustez les curseurs dans le panneau *Image Trace* :
-* **Mode de traçage :** Choisissez **Black & White (Noir et Blanc)** ou **Silhouettes**. Ce mode élimine les nuances de couleurs pour créer des contours ultra-nets parfaitement exploitables par la machine laser.
-* **Seuil de détection (*Threshold*) :** Ce curseur détermine à partir de quelle luminosité un pixel devient noir ou blanc. Augmentez-le légèrement pour que les lignes fines de votre parcours de jeu soient bien épaisses et continues.
-* **Lissage des courbes (*Curve / Line Snapping*) :** Activez l'alignement pour que les segments droits deviennent de vraies droites mathématiques et que les cercles soient réguliers, sans bosses.
-* **Réduction du bruit (*Noise / Ignore White*) :** Augmentez le filtre de bruit pour ignorer les petits artefacts de compression JPEG ou les poussières de pixels qui créeraient des micro-gravures indésirables. Cochez *Ignore White* pour supprimer automatiquement le fond blanc inutile.
-
-#### Étape 5 — Décomposer en tracés vectoriels (*Expand*)
-1. Une fois l'aperçu satisfaisant, cliquez sur le bouton **Expand** (Décomposer).
-2. L'image matricielle d'origine disparaît et laisse place à de **véritables tracés vectoriels modifiables** composés de points d'ancrage et de tangentes de Bézier.
-3. Vous pouvez désormais sélectionner chaque tracé individuellement, modifier un contour ou supprimer un élément parasite.
-
-#### Étape 6 — Séparer les couleurs pour LightBurn (Découpe vs Gravure)
-Pour que le logiciel de la découpeuse laser (LightBurn) sache exactement ce qu'il doit découper et ce qu'il doit graver, attribuez des couleurs conventionnelles :
-* **Contour extérieur du plateau :** Sélectionnez le rectangle périphérique de 420 × 297 mm et attribuez-lui un **contour rouge fin (épaisseur 0.1 mm ou filet technique)** sans fond de remplissage.
-* **Cases, textes et illustrations :** Attribuez-leur une couleur **noire** (fond noir pour la gravure de surface, ou contour noir pour la gravure au trait).
-
-#### Étape 7 — Exporter au format SVG
-1. Rendez-vous dans **File → Export**.
-2. Choisissez le format standard **SVG (Scalable Vector Graphics)**.
-3. Enregistrez le fichier sur votre clé USB ou votre espace Google Drive : il est prêt à être piloté au FabLab !
+1. **Sélectionne l'image à vectoriser :** Importez votre image PNG ou JPEG sur le plan de travail (ex. format A3 : 420 × 297 mm) et cliquez dessus avec la flèche de sélection pour l'activer.
+2. **Dans le menu supérieur, clique sur :**  
+   **Fenêtre → Vectorisation de l'image** (*Window → Image Trace*).
+3. **Dans le panneau qui s'ouvre, choisis un préréglage :**
+   * **Noir et blanc :** pour obtenir des contours nets de découpe ou de gravure silhouette.
+   * **Couleurs :** si tu veux conserver les différents éléments colorés.
+4. **Ajuste le seuil ou le nombre de couleurs, puis clique sur Décomposer (*Expand*)** pour transformer le résultat en tracés vectoriels éditables (courbes de Bézier avec points d'ancrage).
+5. **Nettoie le dessin et exporte-le en SVG :** Supprime les tracés parasites ou fonds inutiles, organise tes calques et exporte en SVG (*File → Export → SVG*).
 
 ---
 
-### 4. Exemple concret : Vectorisation d'un plateau de jeu conçu sous Canva
+### 4. Attention pour votre plateau de jeu : conseils méthodologiques
 
-Imaginons le cas concret d'un binôme d'étudiants préparant le plateau de leur jeu de société pour l'Exercice 12 :
+::: warning ⚠️ Attention pour la vectorisation de votre plateau
+Votre maquette de plateau créée sous Canva contient généralement beaucoup de texte, des cases, des illustrations, des icônes et des contours. **Une vectorisation automatique globale de l'ensemble de l'image risque de produire des milliers de tracés inutiles, des micro-boucles parasites et un fichier surchargé**, ce qui peut ralentir la découpeuse laser ou brûler excessivement le bois.
+:::
+
+Pour une fabrication numérique propre et optimisée à la découpeuse laser, **appliquez plutôt la méthode par décomposition modulaire :**
+
+* ✂️ **Vectoriser séparément les illustrations** que vous souhaitez découper ou graver en finesse (logos, silhouettes d'animaux, personnages, badges).
+* 📐 **Recréer les contours géométriques des cases** directement dans VectorCraft à l'aide des outils de formes vectorielles propres (rectangles, cercles, grilles, lignes droites) plutôt que de vectoriser des pixels de cases. Les lignes seront ainsi mathématiquement rectilignes au dixième de millimètre près.
+* ✍️ **Conserver ou réécrire le texte sous forme vectorielle** (outil Texte de VectorCraft) si vous souhaitez le graver avec une typographie nette et sans bavure.
+* 🎨 **Séparer rigoureusement les opérations de découpe et de gravure dans des calques distincts :**
+  * **Calque rouge (Découpe) :** uniquement le rectangle extérieur du plateau (420 × 297 mm) et d'éventuels perçages intérieurs traversants.
+  * **Calque noir (Gravure) :** les textes, les numéros de cases, les tracés de parcours et les illustrations décoratives.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                       LE WORKFLOW DU PLATEAU DE JEU                         │
+│                   MÉTHODE RECOMMANDÉE POUR LE PLATEAU                       │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│ 1. CANVA (Graphisme)       → Création du plateau A3 avec cases, logos,      │
-│                              zones de pioche de cartes et consignes.        │
-│                              Export en fichier PNG haute résolution.        │
-│                                            ↓                                │
-│ 2. VECTORCRAFT (ArtCraft)  → Glisser-déposer du PNG sur le canevas A3.      │
-│                              Image Trace (Mode Noir & Blanc, seuil dosé).   │
-│                              Expand → Tracés Bézier mathématiques nets.     │
-│                              Contour externe = Rouge | Motifs internes = Noir│
-│                              Export en fichier SVG.                         │
-│                                            ↓                                │
-│ 3. LIGHTBURN (FabLab)      → Import du SVG. Détection des 2 couches :       │
-│                              • Couche Noire = Gravure rapide (300 mm/s)     │
-│                              • Couche Rouge = Découpe laser (15 mm/s)       │
-│                              Production physique en contreplaqué 3 mm.      │
+│ 1. ÉLÉMENTS GRAPHIQUES & LOGOS  → Vectorisation via Fenêtre > Vectorisation  │
+│                                   (Image Trace) → Mode Noir & Blanc → Expand│
+│                                                                             │
+│ 2. CASES & PARCOURS GÉOMÉTRIQUE → Formes vectorielles créées dans           │
+│                                   VectorCraft (rectangles nets, sans pixels)│
+│                                                                             │
+│ 3. CONTOURS EXTÉRIEURS DU BOIS  → Rectangle A3 (420 × 297 mm) en filet rouge│
+│                                   dédié à la découpe finale.                │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
-
-**Pourquoi cet exemple est typique en classe ?**
-* Sous Canva, l'élève a disposé un logo de son jeu généré par IA, 30 cases de parcours numérotées et deux rectangles prévus pour poser les pioches de cartes FMTTN.
-* Lorsqu'il exporte son travail, Canva produit un fichier PNG de 4960 × 3508 pixels.
-* En ouvrant **VectorCraft**, l'élève importe le PNG. En appliquant la fonction *Image Trace*, l'outil détecte les cases et les lettres des consignes : en 10 secondes, l'ensemble devient une mosaïque vectorielle parfaite.
-* L'élève sélectionne le rectangle de pourtour et lui applique la couleur rouge : la découpeuse saura qu'elle doit d'abord graver tout le plateau à faible puissance, puis découper la planche nette à forte puissance pour que le plateau se détache tout seul du panneau de bois !
 
 ---
 

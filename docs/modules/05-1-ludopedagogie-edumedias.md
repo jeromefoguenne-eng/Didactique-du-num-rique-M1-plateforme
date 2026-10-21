@@ -105,6 +105,86 @@ Le joueur doit comprendre le système dans lequel il évolue et souhaite génér
 
 Il convient toutefois d'éviter une vision trop simpliste selon laquelle « jeu = motivation = meilleur apprentissage ». Le jeu n'est pas automatiquement pédagogique. Son efficacité dépend de la cohérence entre les mécanismes du jeu, les objectifs d'apprentissage, les consignes, le niveau des apprenants et le dispositif de débriefing. La ludopédagogie doit donc être pensée comme une ingénierie pédagogique, et non comme une simple animation.
 
+---
+
+### Préserver l’équilibre entre plaisir de jouer et apprentissage
+
+Un jeu pédagogique ne doit pas être considéré comme réussi uniquement parce que les joueurs ont appris quelque chose. Il faut également qu’ils aient envie de jouer, qu’ils comprennent le système et qu’ils puissent s’impliquer dans la partie.
+
+À l’inverse, un jeu très amusant ne garantit pas que les apprentissages visés ont été réalisés.
+
+Il convient donc de travailler sur quatre dimensions complémentaires :
+
+1. **Le défi**  
+   Le jeu doit proposer des difficultés adaptées aux capacités des joueurs. Une tâche trop facile devient répétitive ; une tâche trop difficile peut provoquer le découragement.  
+   *Exemple :* proposer des informations dont la fiabilité est plus ou moins évidente, puis augmenter progressivement la complexité des vérifications.
+
+2. **La liberté de décision**  
+   Les joueurs doivent pouvoir choisir entre plusieurs actions présentant des avantages, des coûts ou des risques différents.  
+   *Exemple :* consulter une source officielle, comparer plusieurs médias ou utiliser un jeton pour demander un indice. Chaque choix doit avoir un effet identifiable sur la partie.
+
+3. **Le retour sur les actions**  
+   Les joueurs doivent comprendre les conséquences de leurs décisions. Les retours peuvent prendre la forme de points, de ressources, d’indices, de réactions des autres joueurs ou d’une évolution de la situation.  
+   *Exemple :* une conclusion insuffisamment étayée entraîne la perte d’un point de crédibilité, mais permet au joueur de consulter un indice supplémentaire.
+
+4. **Le sens de l’activité**  
+   Les mécaniques doivent faire vivre une situation qui a du sens au regard du thème et des compétences visées.  
+   *Exemple :* simuler la propagation d’une rumeur est plus pertinent pour comprendre la viralité que d’attribuer arbitrairement des points à chaque bonne réponse.
+
+Ces dimensions ne sont pas indépendantes. Un défi intéressant peut devenir frustrant si les joueurs ne comprennent pas pourquoi ils échouent. Une mécanique pédagogique pertinente peut devenir ennuyeuse si elle se répète sans évolution.
+
+L’enjeu est de construire un système dans lequel les apprentissages contribuent au défi ludique et dans lequel le jeu donne envie de poursuivre l’activité.
+
+---
+
+### La place du débriefing
+
+L’apprentissage ne se réduit pas à ce qui se produit pendant la partie. Il est également important de prévoir un temps de retour sur l’expérience.
+
+Le débriefing permet notamment de :
+* **expliciter** les stratégies employées ;
+* **analyser** les erreurs et les décisions prises ;
+* **confronter** les raisonnements des joueurs ;
+* **relier** les situations vécues aux concepts théoriques ;
+* **transférer** les apprentissages vers des situations réelles.
+
+Par exemple, après une partie consacrée à la désinformation, l’enseignant peut demander aux joueurs pourquoi ils ont fait confiance à une source, quels indices les ont influencés et comment ils procéderaient face à une information similaire sur un réseau social.
+
+::: warning Attention au rôle du débriefing
+Il faut cependant éviter de considérer le débriefing comme un moyen de compenser systématiquement un jeu mal conçu. Les mécaniques doivent déjà solliciter les compétences ciblées ; le débriefing permet de les expliciter, de les discuter et de les consolider.
+:::
+
+---
+
+### Intégrer la dimension matérielle dans la conception
+
+Un jeu de société n’est pas uniquement constitué de règles. Il repose également sur un ensemble d’objets, de supports et de dispositifs qui rendent les actions possibles.
+
+Le plateau, les cartes, les pions, les dés, les jetons et le livret de règles forment un **système matériel** qui influence directement l’expérience des joueurs.
+
+La dimension matérielle doit donc être réfléchie dès la conception du prototype, et non uniquement au moment de fabriquer la version finale.
+
+#### Le matériel comme support des mécaniques
+
+Chaque élément matériel doit remplir une fonction identifiable.
+
+| Élément matériel | Fonction ludique possible | Exemple en éducation aux médias |
+| :--- | :--- | :--- |
+| **Plateau** | Organiser l’espace, les parcours ou la progression | Représenter les étapes d’une enquête journalistique |
+| **Cartes** | Introduire des informations, des événements ou des contraintes | Cartes « Source », « Rumeur », « Algorithme » ou « Défi » |
+| **Pions** | Représenter les joueurs ou leurs rôles | Journaliste, vérificateur, influenceur ou citoyen |
+| **Jetons** | Matérialiser une ressource limitée | Temps d’enquête, crédibilité, budget ou points d’attention |
+| **Dés** | Introduire du hasard ou déterminer une action | Déclencher un événement imprévu |
+| **Piste de score** | Rendre visible la progression | Mesurer la crédibilité d’une enquête ou la propagation d’une rumeur |
+| **Livret de règles** | Guider l’activité et limiter les ambiguïtés | Présenter la mise en place, les actions et les conditions de victoire |
+
+Le matériel ne doit pas être ajouté uniquement pour rendre le jeu plus esthétique. Il doit faciliter la compréhension, matérialiser une information ou permettre une interaction.
+
+::: tip Principe de conception
+Pour chaque élément matériel, demandez-vous **quelle action il rend possible** et si cette action **contribue au fonctionnement du jeu**.  
+Si un jeton n’a aucun effet sur les décisions des joueurs, sa présence n’est peut-être pas nécessaire.
+:::
+
 
 ---
 

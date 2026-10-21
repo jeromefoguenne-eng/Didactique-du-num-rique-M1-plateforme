@@ -3756,14 +3756,19 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
    */
   getStudentFullDossier(email?: string) {
     const targetEmail = (email || state.currentUser?.email || '').trim().toLowerCase()
-    const user = state.users.find(u => u && u.email && u.email.toLowerCase() === targetEmail)
+    const user = findUserByQuery(targetEmail) || state.users.find(u => u && u.email && u.email.toLowerCase() === targetEmail)
+    const allowed = new Set<string>([targetEmail])
+    if (user?.email) allowed.add(user.email.toLowerCase())
+    if ((user as any)?.aliases && Array.isArray((user as any).aliases)) {
+      for (const a of (user as any).aliases) if (a) allowed.add(a.toLowerCase())
+    }
     const evaluation = this.getStudentEvaluation(targetEmail)
-    const userFiles = state.submittedFiles.filter(f => (f?.userEmail || '').toLowerCase() === targetEmail)
-    const userSubs = state.submissions.filter(s => (s?.userEmail || '').toLowerCase() === targetEmail)
-    const userQuizzes = state.quizAttempts.filter(q => (q?.userEmail || '').toLowerCase() === targetEmail)
+    const userFiles = state.submittedFiles.filter(f => f?.userEmail && allowed.has(f.userEmail.toLowerCase()))
+    const userSubs = state.submissions.filter(s => s?.userEmail && allowed.has(s.userEmail.toLowerCase()))
+    const userQuizzes = state.quizAttempts.filter(q => q?.userEmail && allowed.has(q.userEmail.toLowerCase()))
 
     return {
-      user,
+      user: user || state.users.find(u => u && u.email && u.email.toLowerCase() === targetEmail),
       email: targetEmail,
       evaluation,
       files: userFiles,

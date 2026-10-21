@@ -605,7 +605,17 @@ const exerciseOptions = [
 const filteredSubmissions = computed(() => {
   return submissions.value.filter(sub => {
     const matchEx = selectedExerciseFilter.value === 'all' || sub.exerciseId === selectedExerciseFilter.value
-    const matchStudent = selectedStudentFilter.value === 'all' || sub.userEmail === selectedStudentFilter.value
+    let matchStudent = selectedStudentFilter.value === 'all'
+    if (!matchStudent) {
+      const target = selectedStudentFilter.value.toLowerCase()
+      const u = userStore.findUserByQuery ? userStore.findUserByQuery(target) : null
+      const allowed = new Set([target])
+      if (u?.email) allowed.add(u.email.toLowerCase())
+      if (u?.aliases && Array.isArray(u.aliases)) {
+        for (const a of u.aliases) if (a) allowed.add(a.toLowerCase())
+      }
+      matchStudent = allowed.has((sub.userEmail || '').toLowerCase())
+    }
     return matchEx && matchStudent
   })
 })
@@ -762,7 +772,17 @@ function saveTeacherGradeForFile(file) {
 
 const filteredFiles = computed(() => {
   return submittedFiles.value.filter(file => {
-    const matchStudent = fileStudentFilter.value === 'all' || file.userEmail === fileStudentFilter.value
+    let matchStudent = fileStudentFilter.value === 'all'
+    if (!matchStudent) {
+      const target = fileStudentFilter.value.toLowerCase()
+      const u = userStore.findUserByQuery ? userStore.findUserByQuery(target) : null
+      const allowed = new Set([target])
+      if (u?.email) allowed.add(u.email.toLowerCase())
+      if (u?.aliases && Array.isArray(u.aliases)) {
+        for (const a of u.aliases) if (a) allowed.add(a.toLowerCase())
+      }
+      matchStudent = allowed.has((file.userEmail || '').toLowerCase())
+    }
     const matchEx = fileExerciseFilter.value === 'all' || file.exerciseId === fileExerciseFilter.value
     
     let matchEval = true

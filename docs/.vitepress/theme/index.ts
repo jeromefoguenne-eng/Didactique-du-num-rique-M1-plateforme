@@ -1,6 +1,7 @@
 import DefaultTheme from 'vitepress/theme'
 import CourseTiles from './components/CourseTiles.vue'
 import SubCategoryTiles from './components/SubCategoryTiles.vue'
+import PowerpointTiles from './components/PowerpointTiles.vue'
 import MemberDashboard from './components/MemberDashboard.vue'
 import AdminDashboard from './components/AdminDashboard.vue'
 import ExerciseBox from './components/ExerciseBox.vue'
@@ -15,6 +16,7 @@ export default {
   enhanceApp({ app }) {
     app.component('CourseTiles', CourseTiles)
     app.component('SubCategoryTiles', SubCategoryTiles)
+    app.component('PowerpointTiles', PowerpointTiles)
     app.component('MemberDashboard', MemberDashboard)
     app.component('AdminDashboard', AdminDashboard)
     app.component('StudentDossierView', StudentDossierView)

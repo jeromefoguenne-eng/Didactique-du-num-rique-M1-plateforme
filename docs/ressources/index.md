@@ -29,7 +29,7 @@ const subCategories = [
   {
     title: "7.4 Présentations PowerPoint du cours",
     tag: "Diaporamas & Slides",
-    desc: "Diaporamas officiels présentés en cours : Introduction, Référentiel FMTTN & Méthodologie, et Évaluer un cours de numérique.",
+    desc: "Diaporamas officiels du cours disponibles en consultation Google Drive (mode lecteur) et téléchargement (.pptx) : Intro, FMTTN, Évaluation, Règles, Photo, Cartes IA, FabLab et Vidéo.",
     link: "/ressources/powerpoints",
     image: "/images/subcategories/sub-6-7-video.jpg"
   }

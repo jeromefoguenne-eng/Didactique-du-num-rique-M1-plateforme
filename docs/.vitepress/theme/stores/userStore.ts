@@ -112,7 +112,10 @@ export interface SubmittedFile {
   formattedFileName: string // ex: DUBOIS_Sarah_Atelier-01_2026-09-16.pdf
   fileType: string
   fileSize: number
+  fileUrl?: string
+  extractedText?: string
   dataUrl?: string
+  driveUrl?: string
   submittedAt: string
   driveSynced?: boolean
   aiCorrection?: AiCorrection
@@ -3089,15 +3092,30 @@ export const userStore = {
   },
 
   downloadSubmittedFile(file: SubmittedFile) {
+    const fileName = file.formattedFileName || file.originalFileName || 'document'
+    const targetFileUrl = (file as any).fileUrl || (fileName ? `/travaux-etudiants/${encodeURIComponent(fileName)}` : '')
+    if (typeof window !== 'undefined' && targetFileUrl) {
+      const link = document.createElement('a')
+      link.href = targetFileUrl.startsWith('http') ? targetFileUrl : (typeof (window as any).__VITEPRESS__ !== 'undefined' ? targetFileUrl : targetFileUrl)
+      link.download = fileName
+      link.target = '_blank'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      return
+    }
+
     let dataUrl = file.dataUrl || ''
     if (!dataUrl) {
       const realMatch = INITIAL_REAL_FILES.find((rf: any) =>
         rf.id === file.id ||
         ((rf.userEmail || '').toLowerCase() === (file.userEmail || '').toLowerCase() && rf.exerciseId === file.exerciseId)
       )
-      if (realMatch && realMatch.dataUrl) {
-        dataUrl = realMatch.dataUrl
-        file.dataUrl = dataUrl
+      if (realMatch) {
+        if (realMatch.dataUrl) {
+          dataUrl = realMatch.dataUrl
+          file.dataUrl = dataUrl
+        }
         if (!file.fileSize && realMatch.fileSize) file.fileSize = realMatch.fileSize
       }
     }

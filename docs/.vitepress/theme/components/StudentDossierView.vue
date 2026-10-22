@@ -138,7 +138,19 @@ function closeDocPreview() {
   activeDocPreview.value = null
 }
 
-// Aperçu direct Word (Mammoth) ou PDF (Blob URL native) ou Texte Brut
+function getDocumentPublicUrl(file) {
+  if (!file) return ''
+  if (file.fileUrl) {
+    return file.fileUrl.startsWith('http') ? file.fileUrl : withBase(file.fileUrl.startsWith('/') ? file.fileUrl : '/' + file.fileUrl)
+  }
+  const fileName = file.formattedFileName || file.originalFileName || ''
+  if (fileName) {
+    return withBase(`/travaux-etudiants/${encodeURIComponent(fileName)}`)
+  }
+  return ''
+}
+
+// Aperçu direct Word (Mammoth) ou PDF (Iframe directe / Blob URL) ou Texte Brut
 async function toggleDocumentPreview(file) {
   if (!file) return
   if (activeDocPreview.value && activeDocPreview.value.fileId === file.id) {
@@ -150,22 +162,23 @@ async function toggleDocumentPreview(file) {
   // Chercher les données si manquantes en mémoire locale
   let fileDataUrl = file.dataUrl || ''
   let fileExtractedText = file.extractedText || ''
-  if (!fileDataUrl || fileDataUrl.length < 50) {
-    const realMatch = INITIAL_REAL_FILES.find((rf) => 
-      rf.id === file.id || 
-      ((rf.userEmail || '').toLowerCase() === (file.userEmail || '').toLowerCase() && rf.exerciseId === file.exerciseId)
-    )
-    if (realMatch) {
-      if (realMatch.dataUrl) fileDataUrl = realMatch.dataUrl
-      if (realMatch.extractedText) fileExtractedText = realMatch.extractedText
-      file.dataUrl = fileDataUrl
-      if (!file.fileSize && realMatch.fileSize) file.fileSize = realMatch.fileSize
-    }
+  let fileUrl = getDocumentPublicUrl(file)
+
+  const realMatch = INITIAL_REAL_FILES.find((rf) => 
+    rf.id === file.id || 
+    ((rf.userEmail || '').toLowerCase() === (file.userEmail || '').toLowerCase() && rf.exerciseId === file.exerciseId)
+  )
+  if (realMatch) {
+    if (!fileDataUrl && realMatch.dataUrl) fileDataUrl = realMatch.dataUrl
+    if (!fileExtractedText && realMatch.extractedText) fileExtractedText = realMatch.extractedText
+    if (!fileUrl && realMatch.fileUrl) fileUrl = withBase(realMatch.fileUrl.startsWith('/') ? realMatch.fileUrl : '/' + realMatch.fileUrl)
+    if (!file.fileSize && realMatch.fileSize) file.fileSize = realMatch.fileSize
   }
 
   const fileName = file.formattedFileName || file.originalFileName || 'Document'
-  const isPdf = (file.fileType && file.fileType.includes('pdf')) || fileName.toLowerCase().endsWith('.pdf')
-  const isDocx = (file.fileType && file.fileType.includes('word')) || fileName.toLowerCase().endsWith('.docx') || fileName.toLowerCase().endsWith('.doc')
+  const ext = fileName.split('.').pop().toLowerCase()
+  const isPdf = ext === 'pdf' || (file.fileType && file.fileType.includes('pdf'))
+  const isDocx = ext === 'docx' || ext === 'doc' || (file.fileType && file.fileType.includes('word'))
 
   let blobUrl = ''
   if (isPdf && fileDataUrl) {
@@ -188,6 +201,7 @@ async function toggleDocumentPreview(file) {
     fileId: file.id,
     fileName,
     type: isPdf ? 'pdf' : (isDocx ? 'docx' : 'other'),
+    fileUrl,
     dataUrl: fileDataUrl,
     blobUrl,
     extractedText: fileExtractedText,
@@ -197,50 +211,73 @@ async function toggleDocumentPreview(file) {
     error: ''
   }
 
-  if (isDocx && fileDataUrl) {
+  if (isDocx) {
     try {
-      const base64Data = fileDataUrl.includes(',') ? fileDataUrl.split(',')[1] : fileDataUrl
-      const binaryStr = atob(base64Data)
-      const len = binaryStr.length
-      const bytes = new Uint8Array(len)
-      for (let i = 0; i < len; i++) {
-        bytes[i] = binaryStr.charCodeAt(i)
+      let arrayBuffer = null
+      if (fileUrl) {
+        try {
+          const resp = await fetch(fileUrl)
+          if (resp.ok) {
+            arrayBuffer = await resp.arrayBuffer()
+          }
+        } catch (fetchErr) {
+          console.warn('Fetch Word direct échoué, essai fallback:', fetchErr)
+        }
       }
-      const mammothModule = await import('mammoth/mammoth.browser.js')
-      const mammoth = mammothModule.default || mammothModule
-      const res = await mammoth.convertToHtml({ arrayBuffer: bytes.buffer })
-      activeDocPreview.value.htmlContent = res.value || ''
-      activeDocPreview.value.loading = false
-      if (!activeDocPreview.value.htmlContent && fileExtractedText) {
-        activeDocPreview.value.viewMode = 'text'
+
+      if (!arrayBuffer && fileDataUrl) {
+        const base64Data = fileDataUrl.includes(',') ? fileDataUrl.split(',')[1] : fileDataUrl
+        const binaryStr = atob(base64Data)
+        const len = binaryStr.length
+        const bytes = new Uint8Array(len)
+        for (let i = 0; i < len; i++) {
+          bytes[i] = binaryStr.charCodeAt(i)
+        }
+        arrayBuffer = bytes.buffer
+      }
+
+      if (arrayBuffer) {
+        const mammothModule = await import('mammoth/mammoth.browser.js')
+        const mammoth = mammothModule.default || mammothModule
+        const res = await mammoth.convertToHtml({ arrayBuffer })
+        activeDocPreview.value.htmlContent = res.value || ''
+        activeDocPreview.value.loading = false
+      } else {
+        if (fileExtractedText) {
+          activeDocPreview.value.viewMode = 'text'
+          activeDocPreview.value.loading = false
+        } else {
+          activeDocPreview.value.error = "Document Word accessible au téléchargement direct."
+          activeDocPreview.value.loading = false
+        }
       }
     } catch (e) {
       console.warn('Erreur conversion Word:', e)
       if (fileExtractedText) {
         activeDocPreview.value.viewMode = 'text'
-        activeDocPreview.value.loading = false
       } else {
-        activeDocPreview.value.error = "Aperçu HTML direct indisponible. Veuillez télécharger le document Word pour l'ouvrir."
-        activeDocPreview.value.loading = false
+        activeDocPreview.value.error = "Impossible de convertir ce document Word en aperçu web. Veuillez le télécharger pour le lire dans Microsoft Word."
       }
+      activeDocPreview.value.loading = false
     }
   }
 }
 
 function downloadFile(file) {
-  if (file) {
-    if (!file.dataUrl) {
-      const realMatch = INITIAL_REAL_FILES.find((rf) => 
-        rf.id === file.id || 
-        ((rf.userEmail || '').toLowerCase() === (file.userEmail || '').toLowerCase() && rf.exerciseId === file.exerciseId)
-      )
-      if (realMatch && realMatch.dataUrl) {
-        file.dataUrl = realMatch.dataUrl
-        if (!file.fileSize && realMatch.fileSize) file.fileSize = realMatch.fileSize
-      }
-    }
-    userStore.downloadSubmittedFile(file)
+  if (!file) return
+  const url = getDocumentPublicUrl(file)
+  const fileName = file.formattedFileName || file.originalFileName || 'document'
+  if (url) {
+    const link = document.createElement('a')
+    link.href = url
+    link.download = fileName
+    link.target = '_blank'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+    return
   }
+  userStore.downloadSubmittedFile(file)
 }
 
 // Réanalyse IA à la demande
@@ -567,7 +604,19 @@ function formatSize(bytes) {
                       >
                         {{ activeDocPreview.viewMode === 'text' ? '📄 Page Originale' : '📝 Texte Intégral' }}
                       </button>
-                      <button @click="downloadFile(item.file)" class="svc-btn-dl" title="Télécharger">📥</button>
+                      <a 
+                        v-if="activeDocPreview.fileUrl" 
+                        :href="activeDocPreview.fileUrl" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="svc-mode-btn"
+                        title="Ouvrir dans un nouvel onglet"
+                      >
+                        ↗️ Plein écran
+                      </a>
+                      <button @click="downloadFile(item.file)" class="svc-btn-dl" title="Télécharger le fichier original">
+                        📥 Télécharger
+                      </button>
                       <button @click="closeDocPreview()" class="svc-close" title="Fermer">✕</button>
                     </div>
                   </div>
@@ -581,10 +630,10 @@ function formatSize(bytes) {
                     <pre class="extracted-raw-text">{{ activeDocPreview.extractedText }}</pre>
                   </div>
 
-                  <!-- PDF via iframe avec Blob URL -->
+                  <!-- PDF via iframe avec fileUrl ou Blob URL -->
                   <div v-else-if="activeDocPreview.type === 'pdf'" class="svc-pdf-wrapper">
                     <iframe 
-                      :src="activeDocPreview.blobUrl || activeDocPreview.dataUrl" 
+                      :src="activeDocPreview.fileUrl || activeDocPreview.blobUrl || activeDocPreview.dataUrl" 
                       class="svc-pdf-frame"
                       title="Lecteur PDF intégré"
                     ></iframe>

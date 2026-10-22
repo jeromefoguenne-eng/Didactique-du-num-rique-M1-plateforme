@@ -1463,6 +1463,18 @@ function closeDocPreview() {
   activeDocPreview.value = null
 }
 
+function getAdminDocumentPublicUrl(file) {
+  if (!file) return ''
+  if (file.fileUrl) {
+    return file.fileUrl.startsWith('http') ? file.fileUrl : withBase(file.fileUrl.startsWith('/') ? file.fileUrl : '/' + file.fileUrl)
+  }
+  const fileName = file.formattedFileName || file.originalFileName || ''
+  if (fileName) {
+    return withBase(`/travaux-etudiants/${encodeURIComponent(fileName)}`)
+  }
+  return ''
+}
+
 async function toggleDocumentPreview(file) {
   if (!file) return
   if (activeDocPreview.value && activeDocPreview.value.fileId === file.id) {
@@ -1474,25 +1486,17 @@ async function toggleDocumentPreview(file) {
   // 1. Chercher les données complètes si non présentes dans le cache local
   let fileDataUrl = file.dataUrl || ''
   let fileExtractedText = file.extractedText || ''
-  if (!fileDataUrl || fileDataUrl.length < 50) {
-    const realMatch = INITIAL_REAL_FILES.find((rf) => 
-      rf.id === file.id || 
-      ((rf.userEmail || '').toLowerCase() === (file.userEmail || '').toLowerCase() && rf.exerciseId === file.exerciseId)
-    )
-    if (realMatch) {
-      if (realMatch.dataUrl) fileDataUrl = realMatch.dataUrl
-      if (realMatch.extractedText) fileExtractedText = realMatch.extractedText
-      file.dataUrl = fileDataUrl
-      if (!file.fileSize && realMatch.fileSize) file.fileSize = realMatch.fileSize
-    }
-  }
+  let fileUrl = getAdminDocumentPublicUrl(file)
 
-  // Si aucun contenu local mais stocké dans Google Drive
-  if (!fileDataUrl && !fileExtractedText && file.driveUrl) {
-    if (typeof window !== 'undefined') {
-      window.open(file.driveUrl, '_blank')
-    }
-    return
+  const realMatch = INITIAL_REAL_FILES.find((rf) => 
+    rf.id === file.id || 
+    ((rf.userEmail || '').toLowerCase() === (file.userEmail || '').toLowerCase() && rf.exerciseId === file.exerciseId)
+  )
+  if (realMatch) {
+    if (!fileDataUrl && realMatch.dataUrl) fileDataUrl = realMatch.dataUrl
+    if (!fileExtractedText && realMatch.extractedText) fileExtractedText = realMatch.extractedText
+    if (!fileUrl && realMatch.fileUrl) fileUrl = withBase(realMatch.fileUrl.startsWith('/') ? realMatch.fileUrl : '/' + realMatch.fileUrl)
+    if (!file.fileSize && realMatch.fileSize) file.fileSize = realMatch.fileSize
   }
 
   const fileName = file.formattedFileName || file.originalFileName || 'document'
@@ -1521,6 +1525,7 @@ async function toggleDocumentPreview(file) {
     fileId: file.id,
     fileName,
     type: isPdf ? 'pdf' : (isDocx ? 'docx' : 'other'),
+    fileUrl,
     dataUrl: fileDataUrl,
     blobUrl,
     extractedText: fileExtractedText,
@@ -1530,32 +1535,54 @@ async function toggleDocumentPreview(file) {
     error: ''
   }
 
-  if (isDocx && fileDataUrl) {
+  if (isDocx) {
     try {
-      const base64Data = fileDataUrl.includes(',') ? fileDataUrl.split(',')[1] : fileDataUrl
-      const binaryStr = atob(base64Data)
-      const len = binaryStr.length
-      const bytes = new Uint8Array(len)
-      for (let i = 0; i < len; i++) {
-        bytes[i] = binaryStr.charCodeAt(i)
+      let arrayBuffer = null
+      if (fileUrl) {
+        try {
+          const resp = await fetch(fileUrl)
+          if (resp.ok) {
+            arrayBuffer = await resp.arrayBuffer()
+          }
+        } catch (fetchErr) {
+          console.warn('Fetch Word direct échoué, essai fallback:', fetchErr)
+        }
       }
-      const mammothModule = await import('mammoth/mammoth.browser.js')
-      const mammoth = mammothModule.default || mammothModule
-      const res = await mammoth.convertToHtml({ arrayBuffer: bytes.buffer })
-      activeDocPreview.value.htmlContent = res.value || ''
-      activeDocPreview.value.loading = false
-      if (!activeDocPreview.value.htmlContent && fileExtractedText) {
-        activeDocPreview.value.viewMode = 'text'
+
+      if (!arrayBuffer && fileDataUrl) {
+        const base64Data = fileDataUrl.includes(',') ? fileDataUrl.split(',')[1] : fileDataUrl
+        const binaryStr = atob(base64Data)
+        const len = binaryStr.length
+        const bytes = new Uint8Array(len)
+        for (let i = 0; i < len; i++) {
+          bytes[i] = binaryStr.charCodeAt(i)
+        }
+        arrayBuffer = bytes.buffer
+      }
+
+      if (arrayBuffer) {
+        const mammothModule = await import('mammoth/mammoth.browser.js')
+        const mammoth = mammothModule.default || mammothModule
+        const res = await mammoth.convertToHtml({ arrayBuffer })
+        activeDocPreview.value.htmlContent = res.value || ''
+        activeDocPreview.value.loading = false
+      } else {
+        if (fileExtractedText) {
+          activeDocPreview.value.viewMode = 'text'
+          activeDocPreview.value.loading = false
+        } else {
+          activeDocPreview.value.error = "Document Word accessible au téléchargement direct."
+          activeDocPreview.value.loading = false
+        }
       }
     } catch (e) {
       console.warn('Erreur conversion Word:', e)
       if (fileExtractedText) {
         activeDocPreview.value.viewMode = 'text'
-        activeDocPreview.value.loading = false
       } else {
         activeDocPreview.value.error = "Impossible de convertir ce document Word en aperçu web. Veuillez le télécharger pour le lire dans Microsoft Word."
-        activeDocPreview.value.loading = false
       }
+      activeDocPreview.value.loading = false
     }
   }
 }
@@ -4081,6 +4108,16 @@ function toggleQuizExpand(id) {
                               >
                                 {{ activeDocPreview.viewMode === 'text' ? '📄 Page Originale' : '📝 Texte Intégral' }}
                               </button>
+                              <a 
+                                v-if="activeDocPreview.fileUrl" 
+                                :href="activeDocPreview.fileUrl" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                class="idv-mode-btn"
+                                title="Ouvrir dans un nouvel onglet"
+                              >
+                                ↗️ Plein écran
+                              </a>
                               <button @click="downloadFile(item.file)" class="idv-btn-dl" title="Télécharger le fichier original">
                                 📥 Télécharger
                               </button>
@@ -4114,10 +4151,10 @@ function toggleQuizExpand(id) {
                             </div>
                           </div>
 
-                          <!-- Aperçu PDF natif via iframe avec Blob URL -->
+                          <!-- Aperçu PDF natif via iframe avec fileUrl ou Blob URL -->
                           <div v-else-if="activeDocPreview.type === 'pdf'" class="idv-pdf-box">
                             <iframe 
-                              :src="activeDocPreview.blobUrl || activeDocPreview.dataUrl" 
+                              :src="activeDocPreview.fileUrl || activeDocPreview.blobUrl || activeDocPreview.dataUrl" 
                               class="dossier-pdf-frame" 
                               title="Lecteur PDF intégré"
                             ></iframe>

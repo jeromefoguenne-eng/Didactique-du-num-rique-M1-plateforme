@@ -673,15 +673,15 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "userEmail": "adrienne.david@student.hech.be",
     "exerciseId": "exercice-01",
     "exerciseTitle": "Atelier 1 : Diagnostic de compétences (DigComp 2.2)",
-    "originalFileName": "DAVID_Adrienne_Exercice_1_Diagnostic_de_compe_2026-10-15.docx",
-    "formattedFileName": "DAVID_Adrienne_Exercice_1_Diagnostic_de_compe_2026-10-15.docx",
+    "originalFileName": "DAVID_Adrienne_Exercice_1_Diagnostic_de_compe_2026-10-22.docx",
+    "formattedFileName": "DAVID_Adrienne_Exercice_1_Diagnostic_de_compe_2026-10-22.docx",
     "fileType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
     "fileSize": 21842,
-    "fileUrl": "/travaux-etudiants/DAVID_Adrienne_Exercice_1_Diagnostic_de_compe_2026-10-15.docx",
+    "fileUrl": "/travaux-etudiants/DAVID_Adrienne_Exercice_1_Diagnostic_de_compe_2026-10-22.docx",
     "dataUrl": "",
     "driveUrl": "",
     "extractedText": "Exercice 1.1A — Compétent, partiellement compétent ou incompétent ?\nProfil 1 : \n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nSarah sait comment écrire un bon prompt et ainsi avoir une réponse qui lui semble bien adaptée\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nElle ne vérifie jamais ses informations alors qu’on sait que l’IA peut commettre des erreurs \n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nOui, il faut qu’elle apprenne à vérifier les informations sur d’autres sources. Elle ne doit pas simplement copier coller les textes de l’ia, elle doit développer un regard critique sur les écrits de l’ia.\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nPas avec la manière dont elle utilise l’ia actuellement mais c’est une compétence qu’elle peut bien entendu développer et améliorer en se posant des questions sur la véracité des faits, en regardant des vidéos qui mettent en garde sur les productions de l’ia, en suivant des cours ou des formations.\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nNon, elle ne les vérifie aucune des informations\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nLe document ne le spécifie pas. \nProfil 2 : \n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nThomas est très autonome et débrouillard. Il cherche seul les réponses à ces questions en faisant des recherches et posent des questions si il est bloqué.\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nIl n’utilise pas des logiciels parce qu’il n’est pas à l’aise avec ces outils. \n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nOui, parce que quand il ne sait pas, il cherche de nouvelles ressources, de nouvelles informations pour se débloquer. \n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nOui, il est très autonome \n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nOui, j’ai envie de croire qu’il vérifie ses informations étant donné qu’il fait beaucoup de recherche\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nJe suppose que comme il ne semble pas à l’aise avec l’ia, c’est parce qu’il ne lui fait pas vraiment confiance. Il doit donc pour moi être responsable et prendre en compte la sécurité, les infos personnelles,…\nProfil 3 : \n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nLina maîtrise parfaitement Instagram, TikTok et Snapchat. Elle connaît les différentes fonctionnalités, sait créer des vidéos, utiliser les tendances et analyser les statistiques de ses publications.\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nSelon le document, elle ne semble pas se préoccuper de l’éthique étant donné qu’elle partage sur les réseaux sociaux des photos et vidéos d’autrui. \n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nOui, elle utilise différents réseaux sociaux sans problème\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nOui, elle sait très bien comment manier ces outils\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nNon, elle poste sur les réseau ce qu’elle a sur son téléphone.\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nElle n’a aucune notion de sécurité, de droit à l’image, de vie privée, …\nProfil 4 : \n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nHugo fait énormément de recherche pour être sure que ses informations soient correctes et cherche sans cesses des ressources pour répondre à ces questions.\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nIl ne sait pas bien utiliser les réseaux sociaux et utiliser des logiciels de montages vidéos \n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nJe pense qu’hugo est capable de s’adapter et d’apprendre énormément comme le document précise que quand il ne comprend pas quelque chose, il cherche des ressources lui permettant de progresser.\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nOui, il cherche seul et vérifie ses infos\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nOui, il cherche toujours à vérifier ses informations.\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nOui, il s’assure de vérifier ses informations avant de les diffuser\nProfil 5 : \n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nElle maitrise très bien les logiciels professionnels \n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nElle n’a pas l’air à l’aise avec la découverte de nouveaux outils\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nA l’aide de formations et d’explications oui mais tant qu’elle ne maitrisera pas jusqu’au bout des doigts la nouvelle plateforme, elle aura une réticence à utiliser le nouveau logiciel.\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nNon, elle ne cherche jamais seule les réponses à ces questions. Elle préfère stopper son travail plutôt que de trouser elle-même la solution.\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nOui, elle attend toujours la réponse d’un expert avant de se lancer dans l’inconnu\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nOui étant donné qu’elle n’utilise un logiciel que si elle est sure de celui-ci et de bien savoir le maitriser\nProfil 6 : \n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nUtilise très bien les moteurs de recherches et trouve facilement des réponses aux questions qu’on lui pose\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nIl prend en compte la première information qu’il trouve sans consulter plusieurs sources ou même vérifier cette source\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nIl cherche la réponse sur internet\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nOui, il cherche seul ses réponses\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nIl vérifie très très rapidement si quelques sources explique la même situation et prend souvent en compte la première qu’il voit\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nNon étant donné qu’il se base souvent sur la première source qu’il trouve sans s’assurer qu’elle est fiable et vraie. \nProfil 7 : \n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nEst très prudente concernant les informations et sait comment les sécuriser.\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nDifficultés technique dans les logiciels de bureautique \n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nOui dès que quelqu’un lui donne les explications pour utiliser un nouvel outil\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nOui, et lorsqu’elle ne sait pas utiliser un logiciel, elle demande de l’aide afin d’être débloquée\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nOui, elle se questionne sur ce qu’elle a le droit de partager ou non et sécurise bien ses données\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nOui, elle travaille dans une entreprise et sécurise bien ses données (ainsi que celles de l’entreprise) par des sécurités comme des mots de passes robuste, une double identification ect \nElle vérifie avant de transmettre des informations à autrui \nProfil 8 : \n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nIl sait installer des logiciels, configurer un ordinateur, résoudre de nombreux problèmes techniques et comprendre les caractéristiques du matériel.\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nIl ne prend pas en compte l’éthique dans son travail\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nIl cherche seul une solution à ce problème et y arrive généralement\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nOui, il est autonome\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nLe document ne le spécifie pas\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nNon, il part du principe que si ça fonctionne te ça l’aide à avancer, alors c’est un bon outil. Si les informations personnelles sont diffusées, ce n’est pas grave.\nProfil 10 : \nQue sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nS’adapte très facilement au numérique\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nAu mointre changement, il est perdu\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nDemande de l’aide à ses amis, demande une réexplication pour se débloquer.\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nNon, il a besoin qu’on lui explique comment fonctionne l’application\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nJe pense qu’il se fie seulement à ce qu’on lui explique \n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nNon, il essaie rarement de comprendre la cause ou de chercher des solutions, il se fie uniquement à ce que ses amis lui disent. \nProfil 9 : \n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nUtilise l’ia pour générer, reformuler ou explorer différentes pistes et se questionne toujours sur la véracité de ce que dit l’ia\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nJe ne vois pas de limite, elle semble consciente des risques que peut amaner l’ia ainsi de sa pertinence d’utilisation.\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nLe document ne le précise pas \n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nOui, elle cherche seule ses réponses et conseille même ses camarades\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nOui, elle sait que l’ia peut parfois dire des bêtises et vérifie les informations\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nOui, elle prévient même ses camarades des risques et limites de l’ia",
-    "submittedAt": "2026-10-15 14:00",
+    "submittedAt": "2026-10-22 14:00",
     "driveSynced": true,
     "aiCorrection": {
       "status": "analyzed",
@@ -730,7 +730,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
           "justification": "Document clair, structuration lisible et rédaction soignée."
         }
       ],
-      "correctedAt": "2026-10-15 14:05",
+      "correctedAt": "2026-10-22 14:05",
       "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
     }
   },
@@ -741,15 +741,15 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "userEmail": "adrienne.david@student.hech.be",
     "exerciseId": "exercice-02",
     "exerciseTitle": "Atelier 2 : Évaluation critique d'une information",
-    "originalFileName": "DAVID_Adrienne_Exercice_2_Peut-on_faire_confi_2026-10-17.docx",
-    "formattedFileName": "DAVID_Adrienne_Exercice_2_Peut-on_faire_confi_2026-10-17.docx",
+    "originalFileName": "DAVID_Adrienne_Exercice_2_Peut-on_faire_confi_2026-10-22.docx",
+    "formattedFileName": "DAVID_Adrienne_Exercice_2_Peut-on_faire_confi_2026-10-22.docx",
     "fileType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
     "fileSize": 17614,
-    "fileUrl": "/travaux-etudiants/DAVID_Adrienne_Exercice_2_Peut-on_faire_confi_2026-10-17.docx",
+    "fileUrl": "/travaux-etudiants/DAVID_Adrienne_Exercice_2_Peut-on_faire_confi_2026-10-22.docx",
     "dataUrl": "",
     "driveUrl": "",
     "extractedText": "Exercice 02 : \nEtant donné que c’est une recherche scientifique, je commencerais mes recherches sur google scholar afin d’essayer de trouver des informations qui confirme ou infirme cette hypothèse. Si jamais je ne trouve pas l’information, je peux toujours me rendre en bibliothèque et lire des revues scientifiques sur le sommeil, l’impact des écrans afin de trouver une réponse ou un début de réponse. \nMener l’enquête \nAucun article scientifique ne semble affirmer cette phrase. Elle semble inventée et ressemble plus à une information mal lue et exagérée. \nUne vaste étude norvégienne publiée dans Frontiers in Psychiatry a trouvé qu’une heure d’écran au lit était associée à environ 24 minutes de sommeil en moins et à une hausse de 59% du risque d’insomnie pas 2 heures\nLes chercheurs eux-mêmes précisent que ces résultats montrent une corrélation, pas une preuve que le téléphone cause directement la perte de sommeil.\nhttps://www.bbc.com/afrique/articles/cq67grgmn91\nRéduction de la durée du sommeil : L'utilisation du téléphone dans l'heure précédant le coucher ou au moment de se coucher est associée à un risque multiplié par 2 d'avoir une quantité de sommeil insuffisante, avec une perte de temps de sommeil allant de 10,8 à 45 minutes par nuit selon les études.\nhttps://docnum.univ-lorraine.fr/public/BUMED_T_2019_CAMERON_LAURA.pdf\nJe n’ai pas trouvé la source qui raconte ça, cette affirmation vient-elle des réseaux sociaux ? \nhttps://www.sciencedirect.com/science/article/abs/pii/S1877120324007596\nhttps://stm.cairn.info/revue-environnement-risques-et-sante-2019-4-page-309?lang=fr\nNon, je ne partagerais pas cette information avec les élèves étant donné que je ne suis pas sûre de sa véracité. Cependant, les recherches se mettent d’accord pour dire que le téléphone juste avant d’aller dormir limite la qualité du sommeil qui est lui très important lorsqu’on est à l’école et qu’on doit apprendre beaucoup de matière parce que c’est à ce moment là que ce consolide ce que les élèves ont appris durant la journée. \n https://theses.hal.science/tel-01557504/\nhttps://docnum.univ-lorraine.fr/public/BUMED_T_2019_CAMERON_LAURA.pdf",
-    "submittedAt": "2026-10-17 14:00",
+    "submittedAt": "2026-10-22 14:00",
     "driveSynced": true,
     "aiCorrection": {
       "status": "analyzed",
@@ -798,7 +798,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
           "justification": "Document clair, structuration lisible et rédaction soignée."
         }
       ],
-      "correctedAt": "2026-10-17 14:05",
+      "correctedAt": "2026-10-22 14:05",
       "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
     }
   },
@@ -809,27 +809,27 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     "userEmail": "adrienne.david@student.hech.be",
     "exerciseId": "exercice-03",
     "exerciseTitle": "Atelier 3 : Conception d'un guide numérique élèves",
-    "originalFileName": "DAVID_Adrienne_Exercice_3_Concevoir_un_guide__2026-10-21.pdf",
-    "formattedFileName": "DAVID_Adrienne_Exercice_3_Concevoir_un_guide__2026-10-21.pdf",
+    "originalFileName": "DAVID_Adrienne_Exercice_3_Concevoir_un_guide__2026-10-22.pdf",
+    "formattedFileName": "DAVID_Adrienne_Exercice_3_Concevoir_un_guide__2026-10-22.pdf",
     "fileType": "application/pdf",
-    "fileSize": 1836391,
-    "fileUrl": "/travaux-etudiants/DAVID_Adrienne_Exercice_3_Concevoir_un_guide__2026-10-21.pdf",
+    "fileSize": 4874332,
+    "fileUrl": "/travaux-etudiants/DAVID_Adrienne_Exercice_3_Concevoir_un_guide__2026-10-22.pdf",
     "dataUrl": "",
     "driveUrl": "",
-    "extractedText": "LE GUIDE\nNUMÉRIQUE\nVOL 1 : L’ÉQUIPE TEAMS\nDécouvrez les clés du succès pour travailler depuis\nn'importe où !\nP A R  A D R I E N N E  D A V I D\nE\n\nLES BESOINS\n1.RETROUVER LES EQUIPES ET DOCUMENTS\nDU COURS SUR TEAMS\n2.PARTAGER DES DOCUMENTS ET\nCOLLABORER\n3.PROTÉGER VOS DONNÉES PERSONNELLES \n\n1.TEAMS : \nLORSQUE TU ARRIVES SUR TEAMS, À GAUCHE DE TON ÉCRAN SE TROUVE UN MENU.  \n→ DANS L’ONGLET ACTIVITÉ, TU TROUVERAS DES NOTIFICATIONS QUI T’INDIQUENT QUE TES\nPROFS ONT AJOUTÉ DU CONTENU DANS UN COURS, QUE TU AS REÇU UN MESSAGE, ...\n→ DANS L’ONGLET CONVERSATION, TU TROUVERAS DES NOTIFICATIONS QUI T’INDIQUENT QUE TU AS REÇU UN\nMESSAGE DE TES PROFESSEURSS OU UN CAMARADE DE CLASSE\n→ DANS L’ONGLET AFFECTATIONS, TU TROUVERAS LES NOTES DE TES TRAVAUX AINSI QUE LES COMMENTAIRES\nDE TES ENSEIGNANTS ET TES DEVOIRS À VENIRS. \n→ DANS L’ONGLET CALENDRIER, TU PEUX NOTER TON EMPLOIE DU TEMPS, TES DEVOIRS, AINSI QUE LES\nRÉUNIONS TEAMS QUE TU AS AVEC TES GROUPES DE TRAVAUX ET TES PROFESSEURS\n→ DANS L’ONGLET APPELS, TU TROUVERAS L’HISTORIQUE DE TES APPELS \n→ EXPLICATION PAGE SUIVANTE \nCLIQUE SUR L’IMAGE \nPOUR TE CONNECTER\n\n2.COMMUNIQUER \nFOCUS SUR\nL’ONGLET : \nEQUIPE\n1.CLIQUE SUR LE COURS QUE TU CHERCHES DANS CETTE PAGE\nTU TE TROUVERAS ALORS SUR LE CANAL GÉNÉRAL DE L’ÉQUIPE\n. \nVIA CE CANAL, TON ENSEIGNANT PEUT T’ENVOYER DES MESSAGES ET COMMUNIQUER AVEC TOUTE LA CLASSE.\nPOUR RÉPONDRE À UN MESSAGE ENVOYÉ SUR LE CANAL, APPUIE SUR “RÉPONDRE” EN DESSOUS DU MESSAGE. POUR CRÉER UN\nNOUVEAU MESSAGE DANS LE CANAL, APPUIE SUR PUBLICATION ET RÉDIGE TON TEXTE. \n\n 2. TROUVER LES DOCUMENTS DÉPOSÉS PAR TON PROFESSEUR, CHANGE D’ONGLET ET CLIQUE SUR PARTAGÉ\n TU ARRIVERAS ALORS SUR CETTE PAGE OÙ TU CLIQUERAS SUR LES DOCUMENTS SOUHAITÉS. \nCOLLABORER\nPOUR PARTAGER UN DOCUMENT : \n1.OUVRE L'ÉQUIPE ET LE CANAL CONCERNÉS.\n2.CLIQUE SUR « PARTAGÉ » OU « FICHIERS », SELON TON INTERFACE.\n3.CLIQUE SUR FILES UPLOAD POUR IMPORTER UN DOCUMENT DE TON\nAPPAREIL SUR L’ÉQUIPE TEAMS.\n4.VÉRIFIE QUE LE DOCUMENT EST BIEN AU BON ENDROIT.\nATTENTION : DÉPOSE TON TRAVAIL DANS LE BON CANAL POUR QUE LES AUTRES PUISSENT LE\nRETROUVER.\nPOUR TRAVAILLER À PLUSIEURS SUR UN DOCUMENT : \n1.OUVRE LE DOCUMENT PARTAGÉ.\n2.VÉRIFIE QUE TU PEUX LE MODIFIER.\n3.AJOUTE TES IDÉES OU COMPLÈTE TA PARTIE.\n4.RELIS LE TRAVAIL AVANT DE QUITTER LE DOCUMENT.\nATTENTION : VÉRIFIER LES DROITS D'ACCÈS \nAVANT DE PARTAGER UN DOCUMENT, VÉRIFIE QUI PEUT LE CONSULTER OU\nLE MODIFIER. ACCORDE UNIQUEMENT LES AUTORISATIONS NÉCESSAIRES.\n\n3.PROTÉGER SES DONNÉES\nPERSONNELLES \n1. PROTÈGE TON MOT DE PASSE\nNE LE PARTAGE AVEC PERSONNE.\nCHOISIS UN MOT DE PASSE LONG ET DIFFICILE À DEVINER.\n       IL DOIT CONTENIR MINIMUM 12 CARACTÈRES DONT \n       - DES LETTRES MAJUSCULES \n       - DES LETTRES MINUSCULES \n       - DES CARACTÈRES SPÉCIAUX\n       - DES CHIFFRES\nNE L'ENREGISTRE PAS SUR UN ORDINATEUR PUBLIC.\n2. GARDE TES INFORMATIONS PRIVÉES\nNE PUBLIE PAS TON ADRESSE, TON NUMÉRO DE TÉLÉPHONE OU D'AUTRES INFORMATIONS SENSIBLES.\nUTILISE UNIQUEMENT LES INFORMATIONS NÉCESSAIRES POUR LE TRAVAIL SCOLAIRE.\n3. VÉRIFIE AVANT DE PARTAGER\nVÉRIFIE LES DESTINATAIRES DE TES MESSAGES ET DOCUMENTS.\nCONTRÔLE QUI PEUT CONSULTER OU MODIFIER TES FICHIERS.\nNE PARTAGE PAS UN LIEN CONFIDENTIEL AVEC TOUT LE MONDE.\n4. RESPECTE LA VIE PRIVÉE DES AUTRES\nDEMANDE L'AUTORISATION AVANT DE PARTAGER UNE PHOTO OU UNE CAPTURE D'ÉCRAN OÙ APPARAÎT UN CAMARADE.\nNE DIFFUSE PAS LES CONVERSATIONS PRIVÉES D'AUTRES PERSONNES.\n5. MÉFIE-TOI DES MESSAGES SUSPECTS\nNE CLIQUE PAS SUR UN LIEN DOUTEUX.\nNE COMMUNIQUE JAMAIS TON MOT DE PASSE PAR MESSAGE.\nEN CAS DE DOUTE, DEMANDE CONSEIL À UN ENSEIGNANT.",
-    "submittedAt": "2026-10-21 14:00",
+    "extractedText": "LE GUIDE\nNUMÉRIQUE\nVOL 1 : L’ÉQUIPE TEAMS\nDécouvrez les clés du succès pour travailler depuis\nn'importe où !\nP A R  A D R I E N N E  D A V I D\nE\n\nLES BESOINS\n1.RETROUVER LES EQUIPES ET DOCUMENTS\nDU COURS SUR TEAMS\n2.PARTAGER DES DOCUMENTS ET\nCOLLABORER\n3.PROTÉGER VOS DONNÉES PERSONNELLES \n\n\n2.COMMUNIQUER \nFOCUS SUR\nL’ONGLET : \nEQUIPE\n1.CLIQUE SUR LE COURS QUE TU CHERCHES DANS CETTE PAGE\nTU TE TROUVERAS ALORS SUR LE CANAL GÉNÉRAL DE L’ÉQUIPE\n. \nVIA CE CANAL, TON ENSEIGNANT PEUT T’ENVOYER DES MESSAGES ET COMMUNIQUER AVEC TOUTE\nLA CLASSE.\nPOUR RÉPONDRE À UN MESSAGE ENVOYÉ SUR LE CANAL, APPUIE SUR “RÉPONDRE” EN\nDESSOUS DU MESSAGE. POUR CRÉER UN NOUVEAU MESSAGE DANS LE CANAL, APPUIE SUR\nPUBLICATION ET RÉDIGE TON TEXTE. \n\n 2. TROUVER LES DOCUMENTS DÉPOSÉS PAR TON PROFESSEUR, CHANGE D’ONGLET ET CLIQUE SUR PARTAGÉ\n TU ARRIVERAS ALORS SUR CETTE PAGE OÙ TU CLIQUERAS SUR LES DOCUMENTS SOUHAITÉS. \nCOLLABORER\nPOUR PARTAGER UN DOCUMENT : \n1.OUVRE L'ÉQUIPE ET LE CANAL CONCERNÉS.\n2.CLIQUE SUR « PARTAGÉ » OU « FICHIERS », SELON TON INTERFACE.\n3.CLIQUE SUR FILES UPLOAD POUR IMPORTER UN DOCUMENT DE TON\nAPPAREIL SUR L’ÉQUIPE TEAMS.\n4.VÉRIFIE QUE LE DOCUMENT EST BIEN AU BON ENDROIT.\nATTENTION : DÉPOSE TON TRAVAIL DANS LE BON CANAL POUR QUE LES AUTRES PUISSENT LE\nRETROUVER.\nPOUR TRAVAILLER À PLUSIEURS SUR UN DOCUMENT : \n1.OUVRE LE DOCUMENT PARTAGÉ.\n2.VÉRIFIE QUE TU PEUX LE MODIFIER.\n3.AJOUTE TES IDÉES OU COMPLÈTE TA PARTIE.\n4.RELIS LE TRAVAIL AVANT DE QUITTER LE DOCUMENT.\nATTENTION : VÉRIFIER LES DROITS D'ACCÈS \nAVANT DE PARTAGER UN DOCUMENT, VÉRIFIE QUI PEUT LE CONSULTER OU\nLE MODIFIER. ACCORDE UNIQUEMENT LES AUTORISATIONS NÉCESSAIRES.",
+    "submittedAt": "2026-10-22 14:00",
     "driveSynced": true,
     "aiCorrection": {
       "status": "analyzed",
-      "suggestedScore": 9.0,
+      "suggestedScore": 8.5,
       "maxScore": 10,
       "rubricScores": {
-        "concordance": 2.34,
-        "didacticQuality": 2.25,
-        "criticalAnalysis": 2.25,
-        "formAndStructure": 2.16
+        "concordance": 2.21,
+        "didacticQuality": 2.12,
+        "criticalAnalysis": 2.12,
+        "formAndStructure": 2.05
       },
-      "summary": "Guide méthodologique de qualité (9.0/10) : Clarté des procédures et repères organisationnels pour les nouveaux élèves.",
+      "summary": "Guide méthodologique de qualité (8.5/10) : Clarté des procédures et repères organisationnels pour les nouveaux élèves.",
       "strengths": [
         "Structuration pas-à-pas des étapes clés (connexion, Teams, mot de passe, sauvegarde).",
         "Ton pédagogique bienveillant et adapté à des élèves du 1er degré.",
@@ -839,34 +839,34 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
         "Intégrer des consignes spécifiques pour l'accompagnement des élèves à besoins spécifiques (police adaptée, audio)."
       ],
       "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
-      "detailedFeedback": "Votre travail sur Atelier 3 (Guide numérique élèves) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (9.0/10).",
+      "detailedFeedback": "Votre travail sur Atelier 3 (Guide numérique élèves) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (8.5/10).",
       "criteriaTable": [
         {
           "name": "Concordance aux besoins du 1er degré & Pertinence (Critère A)",
-          "score": 2.34,
+          "score": 2.21,
           "maxScore": 2.5,
           "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
         },
         {
           "name": "Exactitude des procédures numériques & Organisation (Critère B)",
-          "score": 2.25,
+          "score": 2.12,
           "maxScore": 2.5,
           "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
         },
         {
           "name": "Accompagnement de l'autonomie & Pédagogie active (Critère C)",
-          "score": 2.25,
+          "score": 2.12,
           "maxScore": 2.5,
           "justification": "Posture critique développée et pistes didactiques applicables."
         },
         {
           "name": "Ergonomie visuelle, Clarté & Accessibilité (Critères E & H)",
-          "score": 2.16,
+          "score": 2.05,
           "maxScore": 2.5,
           "justification": "Document clair, structuration lisible et rédaction soignée."
         }
       ],
-      "correctedAt": "2026-10-21 14:05",
+      "correctedAt": "2026-10-22 14:05",
       "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
     }
   },
@@ -1008,6 +1008,74 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
   },
   {
     "id": "file-real-0006",
+    "userId": "user-alexiane.collard@student.hech.be",
+    "userName": "Alexiane Collard",
+    "userEmail": "alexiane.collard@student.hech.be",
+    "exerciseId": "exercice-04",
+    "exerciseTitle": "Atelier 4 : Escape Game FMTTN (Cyber-Enquête)",
+    "originalFileName": "COLLARD_Alexiane_Exercice_4_Escape_Game_FMTTN_C_2026-10-23.pdf",
+    "formattedFileName": "COLLARD_Alexiane_Exercice_4_Escape_Game_FMTTN_C_2026-10-23.pdf",
+    "fileType": "application/pdf",
+    "fileSize": 135919,
+    "fileUrl": "/travaux-etudiants/COLLARD_Alexiane_Exercice_4_Escape_Game_FMTTN_C_2026-10-23.pdf",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "",
+    "submittedAt": "2026-10-23 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.0,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.08,
+        "didacticQuality": 2.0,
+        "criticalAnalysis": 2.0,
+        "formAndStructure": 1.92
+      },
+      "summary": "Excellente participation et analyse de l'escape game (8.0/10) : Résolution des énigmes cyber et réflexion ludopédagogique.",
+      "strengths": [
+        "Résolution méthodique des énigmes de sécurité et d'hygiène numérique.",
+        "Analyse réflexive du rôle du jeu dans l'engagement cognitif de l'apprenant.",
+        "Compréhension de l'importance capitale du débriefing post-jeu pour institutionnaliser les savoirs."
+      ],
+      "improvements": [
+        "Détailler les questions de relance prévues lors du débriefing avec les élèves."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 4 (Escape Game FMTTN) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (8.0/10).",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux objectifs & Résolution de l'escape game (Critère A)",
+          "score": 2.08,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Maîtrise des concepts FMTTN & Cybersécurité (Critère B)",
+          "score": 2.0,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Analyse didactique & Phase d'institutionnalisation (Critère C)",
+          "score": 2.0,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Régulation réflexive & Travail collaboratif (Critères D & H)",
+          "score": 1.92,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-10-23 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0007",
     "userId": "user-audrey.vanceulebroeck@student.hech.be",
     "userName": "Audrey Van Ceulebroeck",
     "userEmail": "audrey.vanceulebroeck@student.hech.be",
@@ -1075,7 +1143,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0007",
+    "id": "file-real-0008",
     "userId": "user-audrey.vanceulebroeck@student.hech.be",
     "userName": "Audrey Van Ceulebroeck",
     "userEmail": "audrey.vanceulebroeck@student.hech.be",
@@ -1143,7 +1211,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0008",
+    "id": "file-real-0009",
     "userId": "user-audrey.vanceulebroeck@student.hech.be",
     "userName": "Audrey Van Ceulebroeck",
     "userEmail": "audrey.vanceulebroeck@student.hech.be",
@@ -1211,7 +1279,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0009",
+    "id": "file-real-0010",
     "userId": "user-audrey.vanceulebroeck@student.hech.be",
     "userName": "Audrey Van Ceulebroeck",
     "userEmail": "audrey.vanceulebroeck@student.hech.be",
@@ -1279,7 +1347,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0010",
+    "id": "file-real-0011",
     "userId": "user-audrey.vanceulebroeck@student.hech.be",
     "userName": "Audrey Van Ceulebroeck",
     "userEmail": "audrey.vanceulebroeck@student.hech.be",
@@ -1347,7 +1415,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0011",
+    "id": "file-real-0012",
     "userId": "user-aurelie.schreurs@student.hech.be",
     "userName": "Aurélie Schreurs",
     "userEmail": "aurelie.schreurs@student.hech.be",
@@ -1415,7 +1483,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0012",
+    "id": "file-real-0013",
     "userId": "user-aurelie.schreurs@student.hech.be",
     "userName": "Aurélie Schreurs",
     "userEmail": "aurelie.schreurs@student.hech.be",
@@ -1483,7 +1551,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0013",
+    "id": "file-real-0014",
     "userId": "user-aurelie.schreurs@student.hech.be",
     "userName": "Aurélie Schreurs",
     "userEmail": "aurelie.schreurs@student.hech.be",
@@ -1551,7 +1619,76 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0014",
+    "id": "file-real-0015",
+    "userId": "user-aurelie.schreurs@student.hech.be",
+    "userName": "Aurélie Schreurs",
+    "userEmail": "aurelie.schreurs@student.hech.be",
+    "exerciseId": "exercice-07",
+    "exerciseTitle": "Atelier 7 : Défi Hardware & Peer Learning (Démonter/Remonter un PC)",
+    "originalFileName": "SCHREURS_Aurelie_Exercice_7_Defi_Hardware_Peer__2026-11-06.docx",
+    "formattedFileName": "SCHREURS_Aurelie_Exercice_7_Defi_Hardware_Peer__2026-11-06.docx",
+    "fileType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "fileSize": 17637,
+    "fileUrl": "/travaux-etudiants/SCHREURS_Aurelie_Exercice_7_Defi_Hardware_Peer__2026-11-06.docx",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Exercice 07 - DÉFI HARDWARE\nDémonter, comprendre et reconstruire un ordinateur\nVotre mission\nPar groupes de 2 à 3, vous allez devoir démonter un ordinateur, comprendre son architecture, puis le remonter pour le rendre à nouveau fonctionnel.\nVous ne recevrez pas de procédure détaillée : à vous de chercher, expérimenter, collaborer et résoudre les problèmes.\nRègle d'or : si vous ne savez pas → cherchez.\nSi vous bloquez → demandez à un pair.\nSi cela ne fonctionne pas → analysez, testez et recommencez.\n1. OBSERVER\nAvant toute manipulation :\nidentifiez les principaux composants ;\nobservez leurs connexions ;\nphotographiez l'intérieur du PC ;\nformulez des hypothèses sur le rôle de chaque composant.\nTrace : complétez un tableau Composant → Fonction → Connexions.\n2. DÉMONTER\nDémontez progressivement le PC.\nÀ chaque étape :\nobservez avant d'agir ;\nidentifiez ce que vous allez retirer ou débrancher ;\nphotographiez les étapes importantes ;\nnotez les informations utiles pour le remontage ;\nconservez soigneusement les vis et composants.\nNe forcez jamais un composant. En cas de doute, arrêtez-vous et recherchez l'information.\n3. APPRENDRE AVEC SES PAIRS\nVous pouvez utiliser :\ndes ressources en ligne ;\ndes manuels ou documentations techniques ;\nl'aide des autres groupes.\nLorsqu'un groupe rencontre une difficulté, il doit d'abord chercher une solution, puis éventuellement demander l'aide d'un autre groupe.\nLorsque vous aidez un pair, expliquez votre raisonnement plutôt que de réaliser la manipulation à sa place.\n4. RECONSTRUIRE\nRemontez le PC en vous appuyant sur vos observations et vos recherches.\nVous devez être capables d'expliquer :\noù replacer chaque composant ;\nquelles connexions effectuer ;\ncomment les composants communiquent ;\npourquoi chaque branchement est nécessaire.\n5. RÉSOUDRE LE PROBLÈME\nLe PC ne redémarre pas ?\nC'est maintenant à vous de jouer.\nFormulez des hypothèses, testez-les et analysez les résultats.\nAvant de solliciter l'enseignant :\n1. J'observe → 2. Je cherche → 3. Je demande à un pair → 4. Je teste → 5. Je demande à l'enseignant.\n6. BILAN\nÀ la fin de l'activité, répondez en groupe :\nQuelle difficulté avons-nous rencontrée ?\nComment avons-nous trouvé la solution ?\nQu'avons-nous appris grâce à nos erreurs ?\nQu'est-ce qu'un autre groupe nous a appris ?\nQu'avons-nous compris grâce à la manipulation que nous aurions difficilement compris avec un cours théorique ?\nÀ REMETTRE\n1. Schéma annoté du PC\n2. Tableau Composant → Fonction → Connexions\n3. Photos des principales étapes\n4. Problèmes rencontrés et solutions trouvées\n5. Bilan réflexif\nLE DÉFI\nLa réussite ne consiste pas uniquement à faire redémarrer le PC.\nVous devez être capables de comprendre, expliquer et justifier vos choix.\nProblème → Recherche → Expérimentation → Peer learning → Résolution → Réflexion",
+    "submittedAt": "2026-11-06 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.3,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.42,
+        "didacticQuality": 2.33,
+        "criticalAnalysis": 2.33,
+        "formAndStructure": 2.22
+      },
+      "summary": "Très bon dossier Hardware et tutorat (9.3/10) : Identification rigoureuse des composants PC et scénarisation de l'apprentissage entre pairs.",
+      "strengths": [
+        "Identification précise des composants matériels (CPU, RAM, carte mère, stockage, bloc d'alimentation).",
+        "Intégration rigoureuse des consignes de sécurité physique et antistatique.",
+        "Scénarisation didactique du tutorat entre pairs avec étapes pas-à-pas et questionnement guidé.",
+        "Posture réflexive valorisant l'apprentissage actif par la manipulation."
+      ],
+      "improvements": [
+        "Expliciter les critères de validation que le tuteur pair vérifie avant de passer à l'étape suivante."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 7 (Hardware & Tutorat par les pairs) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (9.3/10).",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Identification des composants PC (Critère A)",
+          "score": 2.42,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Exactitude technique & Sécurité matérielle/antistatique (Critère B)",
+          "score": 2.33,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Dispositif de tutorat par les pairs & Clarté du guidage pas-à-pas (Critère C)",
+          "score": 2.33,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité pédagogique (Critères E & H)",
+          "score": 2.22,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-11-06 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0016",
     "userId": "user-aurelie.schreurs@student.hech.be",
     "userName": "Aurélie Schreurs",
     "userEmail": "aurelie.schreurs@student.hech.be",
@@ -1619,7 +1756,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0015",
+    "id": "file-real-0017",
     "userId": "user-chloe.steckx@student.hech.be",
     "userName": "Chloé Steckx",
     "userEmail": "chloe.steckx@student.hech.be",
@@ -1687,7 +1824,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0016",
+    "id": "file-real-0018",
     "userId": "user-chloe.steckx@student.hech.be",
     "userName": "Chloé Steckx",
     "userEmail": "chloe.steckx@student.hech.be",
@@ -1755,7 +1892,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0017",
+    "id": "file-real-0019",
     "userId": "user-chloe.steckx@student.hech.be",
     "userName": "Chloé Steckx",
     "userEmail": "chloe.steckx@student.hech.be",
@@ -1823,7 +1960,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0018",
+    "id": "file-real-0020",
     "userId": "user-chloe.steckx@student.hech.be",
     "userName": "Chloé Steckx",
     "userEmail": "chloe.steckx@student.hech.be",
@@ -1891,7 +2028,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0019",
+    "id": "file-real-0021",
     "userId": "user-chloe.steckx@student.hech.be",
     "userName": "Chloé Steckx",
     "userEmail": "chloe.steckx@student.hech.be",
@@ -1959,7 +2096,75 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0020",
+    "id": "file-real-0022",
+    "userId": "user-chloe.steckx@student.hech.be",
+    "userName": "Chloé Steckx",
+    "userEmail": "chloe.steckx@student.hech.be",
+    "exerciseId": "exercice-06",
+    "exerciseTitle": "Atelier 6 : Démarche itérative (Concevoir & tester un mini-jeu)",
+    "originalFileName": "STECKX_Chloe_Exercice_6_Demarche_iterative__2026-11-04.pdf",
+    "formattedFileName": "STECKX_Chloe_Exercice_6_Demarche_iterative__2026-11-04.pdf",
+    "fileType": "application/pdf",
+    "fileSize": 68719,
+    "fileUrl": "/travaux-etudiants/STECKX_Chloe_Exercice_6_Demarche_iterative__2026-11-04.pdf",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Projet de jeu éducatif sur Genially\n1. Objectif pédagogique\nÀ la fin du jeu, l’apprenant sera capable de reconnaître les principales catégories de déchets, de les \nassocier à la bonne poubelle et d’appliquer les règles essentielles du tri sélectif dans la vie \nquotidienne. Il aura aussi quelques notions de recyclage.\nPlus précisément, il devra être capable de :\n•\nIdentifier les  différentes  catégories de déchets : papier-carton, PMC, verre (blanc ou \ncoloré), déchets organiques et déchets résiduels, encombrants.\n•\nAssocier chaque déchet au conteneur approprié.\n•\nRepérer les erreurs de tri les plus fréquentes.\n•\nAdopter  des  comportements  responsables  pour  réduire  l’impact  des  déchets  sur \nl’environnement (ex : recyclage).\n2. Public cible : des élèves de P5\n3. Règles du jeu\nLe jeu repose sur un système de quatre missions successives. Il n’y a pas de règles ; le but de la \nséquence ainsi que la navigation dans l’interface sont clairement indiqués.\nRemarque : les consignes de tri doivent être adaptées aux règles locales de collecte, notamment \ncelles en vigueur en Wallonie ou dans la commune concernée.\n4. Scénario du jeu\nHistoire\nLa planète Triora est envahie par Pollutors, un peuple qui polluent Triora en jetant leurs déchets \ndans la nature. Les habitants ont oublié comment les trier correctement et les rues sont de plus en \nplus polluées.\nLe joueur incarne un apprenti gardien de la planète, recruté par Éco, une petite mascotte chargée \nde protéger l’environnement. Pour sauver Triora, il doit réussir plusieurs missions.\n\nDéroulement de l’aventure\n•\nIntroduction : L’invasion de Triora par les Pollutors et présentation de la mission.\n•\nMission 1 : Compléter un texte à trous sur le vocabulaire lié au recyclage et aux déchets.\n•\nMission 2 : Trier les déchets dans les bonnes poubelles.\n•\nMission 3 : Recycler les déchets.\n•\nMission 4 : Trier les encombrants et autres déchets particuliers.\n•\nConclusion : Le joueur sauve la planète Triora.\n5. Liens\n•\nDu Genially : https://view.genially.com/6ac9e6376ddf6a28c8afbb74\n•\nDu Google form : \nhttps://docs.google.com/forms/d/e/1FAIpQLSfHBCHfqHqnsvgX3WUnZsu14kv3FbRDtRJb_V\nkcoidtlTAMgQ/viewform?usp=publish-editor",
+    "submittedAt": "2026-11-04 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.6,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.24,
+        "didacticQuality": 2.15,
+        "criticalAnalysis": 2.15,
+        "formAndStructure": 2.06
+      },
+      "summary": "Démarche de conception itérative rigoureuse (8.6/10) : Conception, playtest et amélioration continue d'un mini-jeu.",
+      "strengths": [
+        "Réalisation d'un prototype interactif fonctionnel et engageant.",
+        "Recueil méthodique des retours de testeurs pairs et identification des points de friction.",
+        "Améliorations effectives apportées en version 2 pour clarifier les feedbacks."
+      ],
+      "improvements": [
+        "Intégrer une jauge de progression réflexive pour les joueurs."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 6 (Démarche itérative & jeu) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (8.6/10).",
+      "criteriaTable": [
+        {
+          "name": "Démarche itérative & Conception du mini-jeu (Critère A)",
+          "score": 2.24,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Alignement pédagogique FMTTN & Feedback apprenant (Critère B)",
+          "score": 2.15,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Analyse réflexive des playtests & Prise en compte de l'erreur (Critère C)",
+          "score": 2.15,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Qualité de la réalisation interactive & Progression (Critères D & H)",
+          "score": 2.06,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-11-04 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0023",
     "userId": "user-ctp.truong@student.hech.be",
     "userName": "Thien Truong",
     "userEmail": "ctp.truong@student.hech.be",
@@ -2027,7 +2232,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0021",
+    "id": "file-real-0024",
     "userId": "user-ctp.truong@student.hech.be",
     "userName": "Thien Truong",
     "userEmail": "ctp.truong@student.hech.be",
@@ -2095,7 +2300,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0022",
+    "id": "file-real-0025",
     "userId": "user-ctp.truong@student.hech.be",
     "userName": "Thien Truong",
     "userEmail": "ctp.truong@student.hech.be",
@@ -2163,7 +2368,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0023",
+    "id": "file-real-0026",
     "userId": "user-ctp.truong@student.hech.be",
     "userName": "Thien Truong",
     "userEmail": "ctp.truong@student.hech.be",
@@ -2231,7 +2436,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0024",
+    "id": "file-real-0027",
     "userId": "user-dalia.smaali@student.hech.be",
     "userName": "Dalia Smaali",
     "userEmail": "dalia.smaali@student.hech.be",
@@ -2299,7 +2504,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0025",
+    "id": "file-real-0028",
     "userId": "user-dalia.smaali@student.hech.be",
     "userName": "Dalia Smaali",
     "userEmail": "dalia.smaali@student.hech.be",
@@ -2367,7 +2572,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0026",
+    "id": "file-real-0029",
     "userId": "user-dalia.smaali@student.hech.be",
     "userName": "Dalia Smaali",
     "userEmail": "dalia.smaali@student.hech.be",
@@ -2435,7 +2640,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0027",
+    "id": "file-real-0030",
     "userId": "user-dalia.smaali@student.hech.be",
     "userName": "Dalia Smaali",
     "userEmail": "dalia.smaali@student.hech.be",
@@ -2503,7 +2708,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0028",
+    "id": "file-real-0031",
     "userId": "user-daphne.depuis@gmail.com",
     "userName": "Daphné Depuis",
     "userEmail": "daphne.depuis@gmail.com",
@@ -2571,7 +2776,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0029",
+    "id": "file-real-0032",
     "userId": "user-daphne.depuis@gmail.com",
     "userName": "Daphné Depuis",
     "userEmail": "daphne.depuis@gmail.com",
@@ -2639,7 +2844,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0030",
+    "id": "file-real-0033",
     "userId": "user-daphne.depuis@gmail.com",
     "userName": "Daphné Depuis",
     "userEmail": "daphne.depuis@gmail.com",
@@ -2707,7 +2912,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0031",
+    "id": "file-real-0034",
     "userId": "user-daphne.depuis@gmail.com",
     "userName": "Daphné Depuis",
     "userEmail": "daphne.depuis@gmail.com",
@@ -2775,7 +2980,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0032",
+    "id": "file-real-0035",
     "userId": "user-daphne.depuis@gmail.com",
     "userName": "Daphné Depuis",
     "userEmail": "daphne.depuis@gmail.com",
@@ -2843,7 +3048,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0033",
+    "id": "file-real-0036",
     "userId": "user-e141977@student.hech.be",
     "userName": "Stephanie Mülverstedt",
     "userEmail": "e141977@student.hech.be",
@@ -2911,7 +3116,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0034",
+    "id": "file-real-0037",
     "userId": "user-e141977@student.hech.be",
     "userName": "Stephanie Mülverstedt",
     "userEmail": "e141977@student.hech.be",
@@ -2979,7 +3184,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0035",
+    "id": "file-real-0038",
     "userId": "user-e141977@student.hech.be",
     "userName": "Stephanie Mülverstedt",
     "userEmail": "e141977@student.hech.be",
@@ -3047,7 +3252,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0036",
+    "id": "file-real-0039",
     "userId": "user-e141977@student.hech.be",
     "userName": "Stephanie Mülverstedt",
     "userEmail": "e141977@student.hech.be",
@@ -3115,7 +3320,75 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0037",
+    "id": "file-real-0040",
+    "userId": "user-e141977@student.hech.be",
+    "userName": "Stephanie Mülverstedt",
+    "userEmail": "e141977@student.hech.be",
+    "exerciseId": "exercice-06",
+    "exerciseTitle": "Atelier 6 : Démarche itérative (Concevoir & tester un mini-jeu)",
+    "originalFileName": "MULVERSTEDT_Stephanie_Exercice_6_Demarche_iterative__2026-11-04 (1).pdf",
+    "formattedFileName": "MULVERSTEDT_Stephanie_Exercice_6_Demarche_iterative__2026-11-04 (1).pdf",
+    "fileType": "application/pdf",
+    "fileSize": 145951,
+    "fileUrl": "/travaux-etudiants/MULVERSTEDT_Stephanie_Exercice_6_Demarche_iterative__2026-11-04 (1).pdf",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Exercice 06 – Concevoir un mini-jeu avec Genially  \n(+ questionnaire Forms) \n \nRéalisé par : Stephanie Mülverstedt, Maud Pierre et Audrey Van Ceulebroeck \n \nPrésentation de notre jeu « Sauve la planète » \nDans le cadre de cet exercice, nous avons conçu un jeu interactif sur le tri des \ndéchets, intitulé « Sauve la planète », destiné aux élèves de 10 à 12 ans. \nNotre objectif était d'apprendre aux élèves à reconnaître les différentes catégories \nde déchets et à les trier correctement. \nNous avons essayé de concevoir un jeu adapté à leur âge, avec des illustrations \nattrayantes et des consignes simples et compréhensibles. Au début du jeu, une fiche \nde rappel permet aux élèves de revoir les connaissances nécessaires pour répondre \naux questions. \nNous avons proposé différentes situations dans le jeu. Dans un premier temps, les \nélèves se retrouvent dans une cour de récréation où ils doivent ramasser les déchets \net les déposer dans les bonnes poubelles. Ensuite, plusieurs QCM leur sont \nproposés afin de déterminer quelle poubelle utiliser pour différents déchets. Ces \nactivités permettent aux élèves d'appliquer leurs connaissances dans des situations \nconcrètes. \nNous avons également choisi un scénario dans lequel la planète est triste au départ \net retrouve progressivement le sourire lorsque l'élève avance dans le jeu. Cela nous \nsemblait motivant pour les élèves et devait leur donner envie de poursuivre le jeu \njusqu'à la fin. \nNous avons ensuite envoyé notre jeu à plusieurs groupes afin qu'ils puissent le \ntester et donner leur avis à l'aide d'un questionnaire Google Forms. Ce \nquestionnaire portait sur plusieurs aspects du jeu : la clarté et l'utilité de la fiche de \nrappel, la compréhension du but et des consignes, la facilité d'utilisation des \néléments interactifs, l'intérêt du contenu, la motivation à poursuivre le jeu, la durée, \nle niveau de difficulté pour les enfants de 10 à 12 ans et les apprentissages réalisés. \nLes participants pouvaient également proposer des améliorations. \n \n \n\nGrâce aux réponses reçues, nous avons apporté plusieurs modifications : \n• \nNous avons réduit la quantité d'informations sur la fiche de rappel, car elle était trop \nchargée. \n• \nNous avons uniformisé les couleurs des titres pour rendre la présentation plus \ncohérente. \n• \nNous avons remplacé une image que certains participants avaient du mal à reconnaître. \nCes retours nous ont permis de nous rendre compte que certains éléments qui nous \nsemblaient clairs ne l'étaient pas nécessairement pour les utilisateurs. Nous avons \négalement compris l'importance de tester un jeu auprès d'autres personnes avant de \nle proposer aux élèves. Le test nous a donc aidés à améliorer notre jeu, notamment \nau niveau de la clarté des informations et de la présentation. \n \nLien vers notre jeu : \nhttps://view.genially.com/6ad06cc002f7a3ace07e82df?fbclid=IwY2xjawVXx89leHRuA2Flb\nQIxMABwZG9mBWJyaWQRMXlEUDU4VnMyczNZd09WY0VzcnRjBmFwcF9pZBAyMj\nIwMzkxNzg4MjAwODkyAAEfTLyn_Xu7q5Srxq86s78ntLrqGGsMqvhq1G3vKUKt_yZUN\nmmei8KzGJu7gNk_aem_3AD6BDXACUMBqByPTEeqTA  \n \nLien vers le questionnaire Forms : \nhttps://forms.cloud.microsoft/pages/responsepage.aspx?id=vy7wYjcDnUS8cQEMuRPstFHk\nHYHRBENMiXwaF3XHZbFURVFYT1cyR0pITjQ2Tk9IQ1oxUEJVN005Ti4u&fbclid=IwY\n2xjawVXx_VleHRuA2FlbQIxMABwZG9mBWJyaWQRMXlEUDU4VnMyczNZd09WY0V\nzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEfOy0hhMU7xXXrXsWIt2B1fGG8\nUWSXRMG7teZzrbPI1cAuOv-Dug7-SZ5ICVM_aem_A9MStd0VqWQq18r0WRyQ-\nA&route=shorturl",
+    "submittedAt": "2026-11-04 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.0,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.34,
+        "didacticQuality": 2.25,
+        "criticalAnalysis": 2.25,
+        "formAndStructure": 2.16
+      },
+      "summary": "Démarche de conception itérative rigoureuse (9.0/10) : Conception, playtest et amélioration continue d'un mini-jeu.",
+      "strengths": [
+        "Réalisation d'un prototype interactif fonctionnel et engageant.",
+        "Recueil méthodique des retours de testeurs pairs et identification des points de friction.",
+        "Améliorations effectives apportées en version 2 pour clarifier les feedbacks."
+      ],
+      "improvements": [
+        "Intégrer une jauge de progression réflexive pour les joueurs."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 6 (Démarche itérative & jeu) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (9.0/10).",
+      "criteriaTable": [
+        {
+          "name": "Démarche itérative & Conception du mini-jeu (Critère A)",
+          "score": 2.34,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Alignement pédagogique FMTTN & Feedback apprenant (Critère B)",
+          "score": 2.25,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Analyse réflexive des playtests & Prise en compte de l'erreur (Critère C)",
+          "score": 2.25,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Qualité de la réalisation interactive & Progression (Critères D & H)",
+          "score": 2.16,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-11-04 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0041",
     "userId": "user-e142155@student.hech.be",
     "userName": "Maude Pierre",
     "userEmail": "e142155@student.hech.be",
@@ -3183,7 +3456,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0038",
+    "id": "file-real-0042",
     "userId": "user-e142155@student.hech.be",
     "userName": "Maude Pierre",
     "userEmail": "e142155@student.hech.be",
@@ -3251,7 +3524,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0039",
+    "id": "file-real-0043",
     "userId": "user-e142155@student.hech.be",
     "userName": "Maude Pierre",
     "userEmail": "e142155@student.hech.be",
@@ -3319,7 +3592,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0040",
+    "id": "file-real-0044",
     "userId": "user-e142155@student.hech.be",
     "userName": "Maude Pierre",
     "userEmail": "e142155@student.hech.be",
@@ -3387,7 +3660,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0041",
+    "id": "file-real-0045",
     "userId": "user-e142155@student.hech.be",
     "userName": "Maude Pierre",
     "userEmail": "e142155@student.hech.be",
@@ -3455,7 +3728,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0042",
+    "id": "file-real-0046",
     "userId": "user-e142655@student.hech.be",
     "userName": "Marielle Van Dijk",
     "userEmail": "e142655@student.hech.be",
@@ -3523,7 +3796,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0043",
+    "id": "file-real-0047",
     "userId": "user-e142655@student.hech.be",
     "userName": "Marielle Van Dijk",
     "userEmail": "e142655@student.hech.be",
@@ -3591,7 +3864,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0044",
+    "id": "file-real-0048",
     "userId": "user-e142655@student.hech.be",
     "userName": "Marielle Van Dijk",
     "userEmail": "e142655@student.hech.be",
@@ -3659,7 +3932,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0045",
+    "id": "file-real-0049",
     "userId": "user-e142655@student.hech.be",
     "userName": "Marielle Van Dijk",
     "userEmail": "e142655@student.hech.be",
@@ -3727,7 +4000,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0046",
+    "id": "file-real-0050",
     "userId": "user-e142655@student.hech.be",
     "userName": "Marielle Van Dijk",
     "userEmail": "e142655@student.hech.be",
@@ -3795,7 +4068,76 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0047",
+    "id": "file-real-0051",
+    "userId": "user-e142655@student.hech.be",
+    "userName": "Marielle Van Dijk",
+    "userEmail": "e142655@student.hech.be",
+    "exerciseId": "exercice-07",
+    "exerciseTitle": "Atelier 7 : Défi Hardware & Peer Learning (Démonter/Remonter un PC)",
+    "originalFileName": "VAN_DIJK_Marielle_Atelier_7_Defi_Hardware_Peer_L_2026-11-06.pdf",
+    "formattedFileName": "VAN_DIJK_Marielle_Atelier_7_Defi_Hardware_Peer_L_2026-11-06.pdf",
+    "fileType": "application/pdf",
+    "fileSize": 646469,
+    "fileUrl": "/travaux-etudiants/VAN_DIJK_Marielle_Atelier_7_Defi_Hardware_Peer_L_2026-11-06.pdf",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Exercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nPhoto \nNom de la pièce \nFonction de la pièce \nDisque dur \nLe disque dur est un composant qui permet de stocker et de \nconserver les données de l’ordinateur de manière \npermanente, même lorsqu’il est éteint. \nIl contient notamment le système d’exploitation (Windows, \nLinux…), les logiciels installés ainsi que les fichiers \npersonnels (documents, photos, vidéos, etc.). \nIl permet également de lire et d’écrire des données, c’est-à-\ndire de retrouver des informations enregistrées ou d’en \nsauvegarder de nouvelles. \nDans un disque dur classique (HDD), les données sont \nenregistrées sur des plateaux magnétiques en rotation, \ngrâce à des têtes de lecture et d’écriture. \nContrairement à la mémoire vive (RAM), le disque dur \nconserve les informations lorsque l’alimentation électrique \nest coupée. \n \n \n \n \nProcesseur  \n(en dessous du \nventilateur) \nLe processeur est considéré comme le cerveau de \nl’ordinateur. Il est chargé d’exécuter les instructions des \nprogrammes et de réaliser les calculs nécessaires au \nfonctionnement de l’ordinateur. \nIl traite les informations provenant des logiciels et des \ndifférents composants. \nIl effectue notamment des opérations arithmétiques et \nlogiques (calculs, comparaisons, prises de décision). \nIl coordonne également l’exécution des instructions et les \néchanges de données avec les autres composants, \nnotamment la mémoire vive (RAM). \nSa vitesse de fonctionnement, exprimée en gigahertz (GHz), \net son nombre de cœurs influencent les performances de \nl’ordinateur. \nLe processeur produit de la chaleur et nécessite donc \nun système de refroidissement (ventilateur ou dissipateur \nthermique). \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nRAM \nLa mémoire vive (RAM) est un composant qui permet \nde stocker temporairement les données et les \ninstructions utilisées par l’ordinateur lorsqu’il fonctionne. \nElle conserve notamment les informations nécessaires à \nl’exécution des logiciels et des applications en cours \nd’utilisation. \nElle permet au processeur d’accéder rapidement aux \ndonnées dont il a besoin pour effectuer ses opérations. \nPlus la capacité de la RAM est importante, plus l’ordinateur \npeut gérer simultanément plusieurs programmes et des \ntâches exigeantes sans ralentissement lié au manque de \nmémoire. \nContrairement au disque dur, la RAM est une mémoire \nvolatile : toutes les données qu’elle contient disparaissent \nlorsque l’ordinateur est éteint. \nElle joue donc un rôle essentiel dans la rapidité et la \nfluidité du fonctionnement de l’ordinateur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nCarte graphique \nLa carte graphique est un composant chargé de traiter les \ndonnées graphiques et de produire les images affichées sur \nl’écran de l’ordinateur. \nElle transforme les informations numériques en images \nvisibles : textes, photos, vidéos, animations et images en 3D. \nElle possède un processeur graphique (GPU) spécialisé \ndans l’exécution rapide de nombreux calculs en parallèle. \nElle est particulièrement sollicitée pour les jeux vidéo, le \nmontage vidéo, la modélisation 3D et certaines applications \nd’intelligence artificielle. \nElle dispose généralement d’une mémoire vidéo \n(VRAM) permettant de stocker temporairement les données \nnécessaires à l'affichage. \nLe processeur graphique peut être intégré au processeur \nprincipal ou se trouver sur une carte graphique dédiée. \nLecteur CD \nLe lecteur CD est un périphérique qui permet de lire les \ninformations enregistrées sur un disque compact (CD). \nIl utilise un faisceau laser pour détecter les données \nnumériques présentes à la surface du disque. \nIl permet notamment de lire des CD audio, d’installer des \nlogiciels ou d’accéder à des fichiers enregistrés sur un CD-\nROM. \nCertains modèles, appelés graveurs CD, permettent \négalement d’écrire des données sur des CD enregistrables \n(CD-R) ou réinscriptibles (CD-RW). \nLe lecteur CD contient un moteur qui fait tourner le disque et \nun mécanisme qui déplace la tête de lecture laser. \nAujourd’hui, il est de moins en moins présent dans les \nordinateurs récents, car il est progressivement remplacé par \nles clés USB, les téléchargements et le stockage en ligne. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nCarte mère \nLa carte mère est le circuit électronique principal de \nl’ordinateur. Elle permet de connecter et de faire \ncommuniquer les différents composants entre eux. \nElle accueille notamment le processeur (CPU), la mémoire \nvive (RAM) et les connecteurs destinés aux périphériques et \naux unités de stockage. \nElle assure la circulation des données entre les composants \ngrâce à des circuits et des connexions électroniques. \nElle distribue également l’alimentation électrique nécessaire \nau fonctionnement de plusieurs composants. \nElle contient le BIOS/UEFI, un micrologiciel qui permet \nnotamment d’initialiser le matériel lors du démarrage de \nl’ordinateur. \nElle possède différents ports et connecteurs (USB, SATA, \nPCI Express, etc.) permettant de brancher des périphériques \net des composants supplémentaires. \nLa carte mère joue donc un rôle central dans le \nfonctionnement et la coordination de l'ensemble de \nl'ordinateur. \n \nVentilateur  \nLe ventilateur est un composant qui permet de refroidir les \néléments de l’ordinateur en favorisant la circulation de l’air. \nIl sert principalement à évacuer la chaleur produite par les \ncomposants électroniques, notamment le processeur (CPU) \net la carte graphique (GPU). \nIl contribue à maintenir une température de fonctionnement \nadaptée, afin d’éviter la surchauffe et les ralentissements. \nIl fonctionne grâce à un moteur électrique qui fait tourner des \npales, créant ainsi un flux d’air. \nIl est souvent associé à un dissipateur thermique, qui \nabsorbe et évacue la chaleur produite par le processeur. \nCertains ventilateurs font entrer de l’air frais dans le boîtier, \ntandis que d’autres expulsent l’air chaud vers l’extérieur. \nLe ventilateur contribue ainsi à préserver les performances, \nla stabilité et la durée de vie de l’ordinateur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nBloc d’alimentation \nLe bloc d’alimentation est un composant qui permet \nde fournir l’énergie électrique nécessaire au fonctionnement \nde l’ordinateur. \nIl transforme le courant alternatif (AC) provenant de la prise \nélectrique en courant continu (DC) utilisable par les \ncomposants électroniques. \nIl distribue cette énergie aux différents éléments de \nl’ordinateur, notamment la carte mère, le processeur, la carte \ngraphique et les unités de stockage. \nIl fournit plusieurs tensions électriques adaptées aux besoins \ndes composants, principalement 3,3 V, 5 V et 12 V. \nIl intègre également des systèmes de protection contre \ncertains problèmes électriques, comme les surtensions, les \nsurcharges et les courts-circuits. \nSa puissance, exprimée en watts (W), détermine la quantité \nmaximale d’énergie qu’il peut fournir. \nLe bloc d’alimentation est donc indispensable au \nfonctionnement stable et sécurisé de l’ordinateur. \n \nPorts de \nconnexion  \nLes ports de connexion sont des interfaces permettant de \nrelier l’ordinateur à des périphériques externes ou à d’autres \néquipements. \nIls permettent l’échange de données et de signaux entre \nl’ordinateur et les appareils connectés. \nIl existe différents types de ports, notamment les ports \nUSB (clavier, souris, clé USB), HDMI ou \nDisplayPort (écran), Ethernet RJ45 (réseau) et les prises \naudio (casque, microphone). \nCertains ports permettent également de fournir de l’énergie \nélectrique aux périphériques connectés, par exemple pour \nrecharger un smartphone. \nIls sont généralement situés à l’arrière ou à l’avant du boîtier \net sont reliés à la carte mère. \nLes ports de connexion jouent donc un rôle essentiel dans la \ncommunication entre l’ordinateur et son environnement \nextérieur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \n \n \n \n \nDans notre image : \n \nN° \nNom du Port \nFonction \n1 \nPS/2 \n(clavier/souris) \nConnexion d’un ancien clavier ou d’une \nsouris \n2 \nPort série (COM / \nDB9) \nConnexion de périphériques anciens \n3 \nDVI \nConnexion d’un écran \n4 \nHDMI \nConnexion d’un écran ou d’un téléviseur \n5 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n6 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n7 \nEthernet (RJ45) \nConnexion réseau / Internet par câble \n8 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n9 \nPrises audio Jack \n3,5 mm \nBleu : Connexion casque,  \nVert : haut-parleurs \nRose :  microphone \n10 \nVGA \nTransmission de l’image en analogique vers \nun écran \n11 \nHDMI \nConnexion d’un écran ou d’un téléviseur \n12 \nDVI \nConnexion d’un écran",
+    "submittedAt": "2026-11-06 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.2,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.39,
+        "didacticQuality": 2.3,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.21
+      },
+      "summary": "Très bon dossier Hardware et tutorat (9.2/10) : Identification rigoureuse des composants PC et scénarisation de l'apprentissage entre pairs.",
+      "strengths": [
+        "Identification précise des composants matériels (CPU, RAM, carte mère, stockage, bloc d'alimentation).",
+        "Intégration rigoureuse des consignes de sécurité physique et antistatique.",
+        "Scénarisation didactique du tutorat entre pairs avec étapes pas-à-pas et questionnement guidé.",
+        "Posture réflexive valorisant l'apprentissage actif par la manipulation."
+      ],
+      "improvements": [
+        "Expliciter les critères de validation que le tuteur pair vérifie avant de passer à l'étape suivante."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 7 (Hardware & Tutorat par les pairs) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (9.2/10).",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Identification des composants PC (Critère A)",
+          "score": 2.39,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Exactitude technique & Sécurité matérielle/antistatique (Critère B)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Dispositif de tutorat par les pairs & Clarté du guidage pas-à-pas (Critère C)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité pédagogique (Critères E & H)",
+          "score": 2.21,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-11-06 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0052",
     "userId": "user-e142655@student.hech.be",
     "userName": "Marielle Van Dijk",
     "userEmail": "e142655@student.hech.be",
@@ -3863,7 +4205,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0048",
+    "id": "file-real-0053",
     "userId": "user-e161029@student.hech.be",
     "userName": "Jordan Casamento",
     "userEmail": "e161029@student.hech.be",
@@ -3931,7 +4273,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0049",
+    "id": "file-real-0054",
     "userId": "user-e161029@student.hech.be",
     "userName": "Jordan Casamento",
     "userEmail": "e161029@student.hech.be",
@@ -3999,7 +4341,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0050",
+    "id": "file-real-0055",
     "userId": "user-e161029@student.hech.be",
     "userName": "Jordan Casamento",
     "userEmail": "e161029@student.hech.be",
@@ -4067,7 +4409,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0051",
+    "id": "file-real-0056",
     "userId": "user-e161029@student.hech.be",
     "userName": "Jordan Casamento",
     "userEmail": "e161029@student.hech.be",
@@ -4135,7 +4477,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0052",
+    "id": "file-real-0057",
     "userId": "user-e2301877@student.hech.be",
     "userName": "Amélie Sarlet",
     "userEmail": "e2301877@student.hech.be",
@@ -4203,7 +4545,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0053",
+    "id": "file-real-0058",
     "userId": "user-e2301877@student.hech.be",
     "userName": "Amélie Sarlet",
     "userEmail": "e2301877@student.hech.be",
@@ -4271,7 +4613,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0054",
+    "id": "file-real-0059",
     "userId": "user-e2301877@student.hech.be",
     "userName": "Amélie Sarlet",
     "userEmail": "e2301877@student.hech.be",
@@ -4339,7 +4681,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0055",
+    "id": "file-real-0060",
     "userId": "user-e2301877@student.hech.be",
     "userName": "Amélie Sarlet",
     "userEmail": "e2301877@student.hech.be",
@@ -4407,7 +4749,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0056",
+    "id": "file-real-0061",
     "userId": "user-e2301877@student.hech.be",
     "userName": "Amélie Sarlet",
     "userEmail": "e2301877@student.hech.be",
@@ -4475,7 +4817,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0057",
+    "id": "file-real-0062",
     "userId": "user-e2301886@student.hech.be",
     "userName": "Emma DI MASCIA",
     "userEmail": "e2301886@student.hech.be",
@@ -4543,7 +4885,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0058",
+    "id": "file-real-0063",
     "userId": "user-e2301886@student.hech.be",
     "userName": "Emma DI MASCIA",
     "userEmail": "e2301886@student.hech.be",
@@ -4611,7 +4953,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0059",
+    "id": "file-real-0064",
     "userId": "user-e2301886@student.hech.be",
     "userName": "Emma DI MASCIA",
     "userEmail": "e2301886@student.hech.be",
@@ -4679,7 +5021,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0060",
+    "id": "file-real-0065",
     "userId": "user-e2301886@student.hech.be",
     "userName": "Emma DI MASCIA",
     "userEmail": "e2301886@student.hech.be",
@@ -4747,7 +5089,75 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0061",
+    "id": "file-real-0066",
+    "userId": "user-e2301886@student.hech.be",
+    "userName": "Emma DI MASCIA",
+    "userEmail": "e2301886@student.hech.be",
+    "exerciseId": "exercice-08",
+    "exerciseTitle": "Atelier 8 : Construire des grilles d'évaluation critériées",
+    "originalFileName": "DI_MASCIA_Emma_Exercice_8_Construire_des_gril_2026-10-22.docx",
+    "formattedFileName": "DI_MASCIA_Emma_Exercice_8_Construire_des_gril_2026-10-22.docx",
+    "fileType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "fileSize": 480119,
+    "fileUrl": "/travaux-etudiants/DI_MASCIA_Emma_Exercice_8_Construire_des_gril_2026-10-22.docx",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Exercice 08 – Construire des grilles d’évaluation critériées\nObjectif\nL’objectif de cet exercice est de vous apprendre à construire une grille d’évaluation critériée adaptée à différents types d’apprentissages numériques.\nVous devrez être capables d’identifier les apprentissages réellement visés, de sélectionner des critères pertinents et de construire des indicateurs permettant d’observer différents niveaux de maîtrise.\nOrganisation\nTravail par groupes de 2 ou 3 étudiants.\nChaque groupe choisit 3 cas parmi les 10 proposés.\nPour chacun des trois cas, vous construisez une grille critériée différente.\nLes trois grilles doivent être accompagnées d’une justification de vos choix.\nPour chaque cas\n1. Identifiez les apprentissages visés\nDéterminez ce que l’élève doit :\nsavoir ;\nsavoir-faire ;\nmobiliser comme compétence ;\néventuellement développer comme capacité réflexive, autonomie ou esprit critique.\n2. Construisez la grille\nVotre grille doit comporter :\n3 à 5 critères directement liés aux apprentissages visés ;\n2 à 4 indicateurs observables par critère ;\n4 niveaux de maîtrise décrivant une progression qualitative.\nÉvitez les formulations vagues telles que « bon travail », « maîtrise bien » ou « production réussie ». Les descripteurs doivent permettre d'observer concrètement ce que l'élève est capable de faire.\n3. Précisez le dispositif d’évaluation\nIndiquez si votre grille est destinée à une :\névaluation diagnostique ;\névaluation formative ;\névaluation sommative ;\nauto-évaluation ;\névaluation par les pairs ;\nco-évaluation.\nPlusieurs modalités peuvent être combinées.\n4. Justifiez vos choix\nPour chaque grille, expliquez brièvement :\npourquoi vous avez retenu ces critères ;\npourquoi ces indicateurs permettent d’observer les apprentissages ;\ncomment les niveaux de maîtrise traduisent une progression ;\npourquoi vous avez choisi cette modalité d’évaluation.\nLes 10 cas de figure\n1. Recherche d’information \nRechercher des informations sur Internet concernant une personnalité scientifique, sélectionner des informations pertinentes et identifier des sources fiables.\n2. Création d’une vidéo \nRéaliser une vidéo de trois minutes destinée à expliquer un concept scientifique à des élèves plus jeunes.\n3. Éducation aux médias : info ou intox ? \nAnalyser des publications provenant des réseaux sociaux, vérifier leur fiabilité et justifier son analyse.\n Recherche d’information : \n1. Identifiez les apprentissages visés : \nSavoirs -> Connaitre les caractéristiques d’une source fiable : auteur identifiable, organisme reconnu, date de publication, références et informations vérifiables\nSavoir-faire -> Utiliser un moteur de recherche, choisir des mots-clés pertinents, consulter plusieurs sites et extraire les informations utiles.\nCompétence -> Rechercher, sélectionner, vérifier et organiser des informations provenant de différentes sources pour répondre à une question documentaire.\nLes élèves devront exercer leur esprit critique, justifier leur choix de source, comparer les informations et prendre conscience des limites des contenus en ligne\nLes élèves réaliseront des recherches de manière progressive sans dépendre constamment de l’enseignant\n2. Construisez la grille\nCritère 1 : Utilisation du moteur de recherche \nCritère 2 : Fiabilité des sources \nCritère 3 : Sélection et vérification des informations \nCritère 4 : Organisation des informations et référencement des sources\n3. Précisez le dispositif d’évaluation\nJe combinerai l’évaluation formative et l’auto-évaluation : Pendant l’exercice, on l’utiliserait pour aider les élèves à améliorer leur travail. Et à la fin, les élèves la compléteraient aussi pour après corriger son travail. \n4. Justifiez vos choix\nJ’ai choisi ces quatre critères car ils correspondent aux étapes essentielles d’une recherche d’information : rechercher, vérifier les sources, sélectionner les informations et les organiser. Les indicateurs permettent d’observer concrètement les capacités de l’élève, notamment son esprit critique. Les quatre niveaux de maîtrise montrent une progression allant d’un élève qui a besoin d’aide à un élève autonome, capable de justifier ses choix. La combinaison de l’évaluation formative et de l’auto-évaluation permet à l’élève de recevoir des conseils, de réfléchir à ses apprentissages et d’améliorer son travail.\n2. Création d’une vidéo \nRéaliser une vidéo de trois minutes destinée à expliquer un concept scientifique à des élèves plus jeunes.\nIdentification des apprentissages visés\nSavoirs : Comprendre le concept scientifique choisi et connaître le vocabulaire associé.\nSavoir-faire : Rechercher des informations fiables, rédiger un scénario et réaliser un montage vidéo.\nCompétences : Expliquer clairement un concept scientifique à des élèves plus jeunes en respectant la durée de trois minutes.\nCapacités réflexives et autonomie : Vérifier ses sources, évaluer sa production et identifier des améliorations possibles.\nGrille d’évaluation critériée\nLe dispositif d’évaluation\nL’évaluation choisie est une évaluation formative individuelle.\nChaque élève réalise une vidéo de trois minutes dans laquelle il explique un concept scientifique à des élèves plus jeunes. \nIl doit :\nRechercher des informations scientifiques fiables.\nExpliquer le concept de manière claire et adaptée au public.\nOrganiser ses idées et réaliser une vidéo structurée.\nVérifier ses sources et évaluer sa production.\nL’enseignant utilise la grille pour identifier les acquis et les difficultés de chaque élève, puis lui donne un retour afin qu’il puisse améliorer son travail.\nJustification des choix\nPourquoi avoir retenu ces critères ?\nLes quatre critères correspondent aux apprentissages visés. Ils permettent d’évaluer la compréhension scientifique, la capacité à expliquer un concept à un public plus jeune, l’organisation de la vidéo et l’utilisation des outils numériques ainsi que la fiabilité des sources.\nPourquoi avoir choisi ces indicateurs ?\nLes indicateurs sont observables et permettent d’évaluer concrètement le travail de l’élève, comme l’utilisation du vocabulaire scientifique, la structure de la vidéo ou la vérification des sources.\nComment les niveaux de maîtrise traduisent-ils une progression ?\nLes quatre niveaux vont d’une maîtrise insuffisante à une très bonne maîtrise. Ils permettent de distinguer les difficultés de l’élève, les apprentissages en cours et les objectifs atteints, voire dépassés.\nPourquoi avoir choisi cette modalité d’évaluation ?\nL’évaluation formative permet à l’enseignant d’identifier les acquis et les difficultés de chaque élève pendant la réalisation du projet. Son retour aide l’élève à corriger ses erreurs et à améliorer sa vidéo.\n\n3. Éducation aux médias : info ou intox ? \nApprentissages visés\n\nSavoir : Connaître les informations à vérifier pour savoir si une information fiable.\nSavoir-faire : Identifier la source d’une publication, recouper les informations et vérifier les faits à l’aide de sources fiables.\nCompétence : Analyser une publication provenant des réseaux sociaux, déterminer si elle est fiable ou douteuse et justifier sa conclusion à partir d’éléments vérifiables.\nCapacité réflexive : Prendre du recul face aux informations diffusées en ligne, remettre en question une première impression et adopter une attitude prudente avant de partager une publication.\n2. Grille d’évaluation critériée\n3. Dispositif d’évaluation\nJe propose une évaluation formative individuelle.\nChaque élève reçoit une publication issue d’un réseau social contenant une information dont la fiabilité doit être vérifiée. Il doit :\nIdentifier la source et relever les indices utiles.\nEffectuer des recherches pour vérifier l’information.\nComparer les résultats obtenus avec d’autres sources.\nConclure en justifiant sa réponse par écrit.\nL’enseignant utilise la grille pour repérer les acquis et les difficultés de chaque élève, puis lui donne un retour lui permettant d’améliorer sa méthode de vérification.\n4. Justification des choix\n\nPourquoi ces critères ?\nLes quatre critères correspondent aux étapes essentielles de l’analyse d’une publication : identifier sa provenance, vérifier les faits, exercer son esprit critique et justifier sa conclusion. Ils permettent d’évaluer la démarche de l’élève et pas uniquement sa capacité à donner une réponse correcte.\nPourquoi ces indicateurs ?\nLes indicateurs sont observables dans les recherches et dans la justification écrite de l’élève. Par exemple, on peut vérifier s’il a identifié l’auteur, consulté plusieurs sources ou expliqué sa conclusion à partir d’éléments précis.\nComment les niveaux traduisent-ils une progression ?\nLes quatre niveaux permettent de distinguer une absence de démarche, une démarche partielle, une vérification pertinente et une analyse autonome et approfondie. Cette progression permet à l’enseignant de repérer précisément ce que l’élève doit encore apprendre.\nPourquoi choisir une évaluation formative ?\nL’objectif est de développer une compétence qui nécessite de l’entraînement. L’évaluation formative permet à l’enseignant de fournir des conseils ciblés et à l’élève de progresser dans sa manière de rechercher, de vérifier et d’analyser l’information.",
+    "submittedAt": "2026-10-22 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.4,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.44,
+        "didacticQuality": 2.35,
+        "criticalAnalysis": 2.35,
+        "formAndStructure": 2.26
+      },
+      "summary": "Excellente grille critériée (9.4/10) : Définition d'indicateurs observables et structuration à 4 degrés d'acquisition.",
+      "strengths": [
+        "Critères didactiques indépendants et sans chevauchement.",
+        "Indicateurs observables clairs pour chaque niveau d'acquisition.",
+        "Mobilisation judicieuse de l'évaluation formative et de l'auto-évaluation."
+      ],
+      "improvements": [
+        "Proposer une version simplifiée 'falc' à destination directe de l'élève."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 8 (Grilles critériées) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (9.4/10).",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux situations d'apprentissage & Exhaustivité (Critère A)",
+          "score": 2.44,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Rigueur de la formulation critériée à 4 niveaux & Indicateurs observables (Critère B)",
+          "score": 2.35,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Articulation formative, auto-évaluation & régulation par les pairs (Critères C & D)",
+          "score": 2.35,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Qualité rédactionnelle, Clarté & Transposition didactique (Critères E & H)",
+          "score": 2.26,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-10-22 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0067",
     "userId": "user-e2303712@student.hech.be",
     "userName": "Michael Jamar",
     "userEmail": "e2303712@student.hech.be",
@@ -4815,7 +5225,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0062",
+    "id": "file-real-0068",
     "userId": "user-e2303712@student.hech.be",
     "userName": "Michael Jamar",
     "userEmail": "e2303712@student.hech.be",
@@ -4883,7 +5293,75 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0063",
+    "id": "file-real-0069",
+    "userId": "user-e2303712@student.hech.be",
+    "userName": "Michael Jamar",
+    "userEmail": "e2303712@student.hech.be",
+    "exerciseId": "exercice-06",
+    "exerciseTitle": "Atelier 6 : Démarche itérative (Concevoir & tester un mini-jeu)",
+    "originalFileName": "JAMAR_Michael_Exercice_6_Demarche_iterative__2026-10-23.docx",
+    "formattedFileName": "JAMAR_Michael_Exercice_6_Demarche_iterative__2026-10-23.docx",
+    "fileType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "fileSize": 14883,
+    "fileUrl": "/travaux-etudiants/JAMAR_Michael_Exercice_6_Demarche_iterative__2026-10-23.docx",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Contexte de l'activité\nCe jeu s'inscrit dans une séquence de cours consacrée à la cybersécurité, plus précisément à la création et à la protection des mots de passe, destinée à des élèves de 1re secondaire.\nIl intervient en début de séquence, avant toute présentation théorique, afin d'introduire la thématique de manière ludique.\nLes élèves sont amenés à retrouver des mots de passe de difficulté croissante en exploitant les informations publiées sur des profils de réseaux sociaux fictifs. L'objectif est de leur faire prendre conscience que certaines informations personnelles peuvent faciliter la découverte d'un mot de passe.\nLe jeu n'a pas pour objectif d'enseigner directement les notions théoriques. Il sert de situation de départ sur laquelle l'enseignant pourra s'appuyer pour construire la suite du cours.\nÀ l'issue de l'activité, une mise en commun permettra de revenir sur les stratégies utilisées par les élèves, d'identifier les faiblesses des mots de passe proposés et d'introduire les bonnes pratiques en matière de sécurité.\nLien genially :\nhttps://view.genially.com/6adb367d65be6b7ccc535f1f?fbclid=IwY2xjawVISmlleHRuA2FlbQIxMQBwZG9mBHNydGMGYXBwX2lkATAAAR5C1DMFQvGeA0ceWdh1Is8P9BhdIye7HiTwEQEcqjiuNp742pGvYiZTTK5A2w_aem_MYxfC5A0mCOwF0mzTLqifA\nLien google forms :\nhttps://docs.google.com/forms/d/e/1FAIpQLSfNEKqB6guj8XqjFjnYvZKkLSxrmu_ZNIvzzpFzphg6Jyjy_A/viewform",
+    "submittedAt": "2026-10-23 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.6,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.24,
+        "didacticQuality": 2.15,
+        "criticalAnalysis": 2.15,
+        "formAndStructure": 2.06
+      },
+      "summary": "Démarche de conception itérative rigoureuse (8.6/10) : Conception, playtest et amélioration continue d'un mini-jeu.",
+      "strengths": [
+        "Réalisation d'un prototype interactif fonctionnel et engageant.",
+        "Recueil méthodique des retours de testeurs pairs et identification des points de friction.",
+        "Améliorations effectives apportées en version 2 pour clarifier les feedbacks."
+      ],
+      "improvements": [
+        "Intégrer une jauge de progression réflexive pour les joueurs."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 6 (Démarche itérative & jeu) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (8.6/10).",
+      "criteriaTable": [
+        {
+          "name": "Démarche itérative & Conception du mini-jeu (Critère A)",
+          "score": 2.24,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Alignement pédagogique FMTTN & Feedback apprenant (Critère B)",
+          "score": 2.15,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Analyse réflexive des playtests & Prise en compte de l'erreur (Critère C)",
+          "score": 2.15,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Qualité de la réalisation interactive & Progression (Critères D & H)",
+          "score": 2.06,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-10-23 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0070",
     "userId": "user-e2305392@student.hech.be",
     "userName": "Amadou Bamba Traoré",
     "userEmail": "e2305392@student.hech.be",
@@ -4951,7 +5429,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0064",
+    "id": "file-real-0071",
     "userId": "user-e2305392@student.hech.be",
     "userName": "Amadou Bamba Traoré",
     "userEmail": "e2305392@student.hech.be",
@@ -5019,7 +5497,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0065",
+    "id": "file-real-0072",
     "userId": "user-e2305392@student.hech.be",
     "userName": "Amadou Bamba Traoré",
     "userEmail": "e2305392@student.hech.be",
@@ -5087,7 +5565,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0066",
+    "id": "file-real-0073",
     "userId": "user-e2305392@student.hech.be",
     "userName": "Amadou Bamba Traoré",
     "userEmail": "e2305392@student.hech.be",
@@ -5155,7 +5633,143 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0067",
+    "id": "file-real-0074",
+    "userId": "user-e2305392@student.hech.be",
+    "userName": "Amadou Bamba Traoré",
+    "userEmail": "e2305392@student.hech.be",
+    "exerciseId": "exercice-06",
+    "exerciseTitle": "Atelier 6 : Démarche itérative (Concevoir & tester un mini-jeu)",
+    "originalFileName": "TRAORE_Amadou_Bamba_Exercice_6_Demarche_iterative__2026-11-06.pdf",
+    "formattedFileName": "TRAORE_Amadou_Bamba_Exercice_6_Demarche_iterative__2026-11-06.pdf",
+    "fileType": "application/pdf",
+    "fileSize": 68719,
+    "fileUrl": "/travaux-etudiants/TRAORE_Amadou_Bamba_Exercice_6_Demarche_iterative__2026-11-06.pdf",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Projet de jeu éducatif sur Genially\n1. Objectif pédagogique\nÀ la fin du jeu, l’apprenant sera capable de reconnaître les principales catégories de déchets, de les \nassocier à la bonne poubelle et d’appliquer les règles essentielles du tri sélectif dans la vie \nquotidienne. Il aura aussi quelques notions de recyclage.\nPlus précisément, il devra être capable de :\n•\nIdentifier les  différentes  catégories de déchets : papier-carton, PMC, verre (blanc ou \ncoloré), déchets organiques et déchets résiduels, encombrants.\n•\nAssocier chaque déchet au conteneur approprié.\n•\nRepérer les erreurs de tri les plus fréquentes.\n•\nAdopter  des  comportements  responsables  pour  réduire  l’impact  des  déchets  sur \nl’environnement (ex : recyclage).\n2. Public cible : des élèves de P5\n3. Règles du jeu\nLe jeu repose sur un système de quatre missions successives. Il n’y a pas de règles ; le but de la \nséquence ainsi que la navigation dans l’interface sont clairement indiqués.\nRemarque : les consignes de tri doivent être adaptées aux règles locales de collecte, notamment \ncelles en vigueur en Wallonie ou dans la commune concernée.\n4. Scénario du jeu\nHistoire\nLa planète Triora est envahie par Pollutors, un peuple qui polluent Triora en jetant leurs déchets \ndans la nature. Les habitants ont oublié comment les trier correctement et les rues sont de plus en \nplus polluées.\nLe joueur incarne un apprenti gardien de la planète, recruté par Éco, une petite mascotte chargée \nde protéger l’environnement. Pour sauver Triora, il doit réussir plusieurs missions.\n\nDéroulement de l’aventure\n•\nIntroduction : L’invasion de Triora par les Pollutors et présentation de la mission.\n•\nMission 1 : Compléter un texte à trous sur le vocabulaire lié au recyclage et aux déchets.\n•\nMission 2 : Trier les déchets dans les bonnes poubelles.\n•\nMission 3 : Recycler les déchets.\n•\nMission 4 : Trier les encombrants et autres déchets particuliers.\n•\nConclusion : Le joueur sauve la planète Triora.\n5. Liens\n•\nDu Genially : https://view.genially.com/6ac9e6376ddf6a28c8afbb74\n•\nDu Google form : \nhttps://docs.google.com/forms/d/e/1FAIpQLSfHBCHfqHqnsvgX3WUnZsu14kv3FbRDtRJb_V\nkcoidtlTAMgQ/viewform?usp=publish-editor",
+    "submittedAt": "2026-11-06 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.6,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.24,
+        "didacticQuality": 2.15,
+        "criticalAnalysis": 2.15,
+        "formAndStructure": 2.06
+      },
+      "summary": "Démarche de conception itérative rigoureuse (8.6/10) : Conception, playtest et amélioration continue d'un mini-jeu.",
+      "strengths": [
+        "Réalisation d'un prototype interactif fonctionnel et engageant.",
+        "Recueil méthodique des retours de testeurs pairs et identification des points de friction.",
+        "Améliorations effectives apportées en version 2 pour clarifier les feedbacks."
+      ],
+      "improvements": [
+        "Intégrer une jauge de progression réflexive pour les joueurs."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 6 (Démarche itérative & jeu) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (8.6/10).",
+      "criteriaTable": [
+        {
+          "name": "Démarche itérative & Conception du mini-jeu (Critère A)",
+          "score": 2.24,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Alignement pédagogique FMTTN & Feedback apprenant (Critère B)",
+          "score": 2.15,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Analyse réflexive des playtests & Prise en compte de l'erreur (Critère C)",
+          "score": 2.15,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Qualité de la réalisation interactive & Progression (Critères D & H)",
+          "score": 2.06,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-11-06 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0075",
+    "userId": "user-e2305392@student.hech.be",
+    "userName": "Amadou Bamba Traoré",
+    "userEmail": "e2305392@student.hech.be",
+    "exerciseId": "exercice-08",
+    "exerciseTitle": "Atelier 8 : Construire des grilles d'évaluation critériées",
+    "originalFileName": "TRAORE_Amadou_Bamba_Exercice_8_Construire_des_gril_2026-10-23.docx",
+    "formattedFileName": "TRAORE_Amadou_Bamba_Exercice_8_Construire_des_gril_2026-10-23.docx",
+    "fileType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "fileSize": 23927,
+    "fileUrl": "/travaux-etudiants/TRAORE_Amadou_Bamba_Exercice_8_Construire_des_gril_2026-10-23.docx",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Projet d’évaluation critériée : apprentissages numériques.\nCas 1 : INTELLIGENCE ARTIFICIELLE\nSujet : Utiliser une IA génératrice pour créer une affiche, expérimenter différents prompts, comparer les résultats et justifier ses choix. \n1.  Apprentissages visés\n    • Savoir : Comprendre le fonctionnement global d’une IA génératrice d’image\n (génération textuelle, influence des prompts, limite et biais).\n     • Savoir-faire : Rédiger des prompts structurés, expérimenter des variations itératives et sélectionner la production la plus adaptée.\n     • Compétences : Collaborer et piloter un outil d’intelligence artificielle en tant qu’assistant créatif.\n      • Capacité réflexive : Analyser les écarts entre l’intention de départ et le résultat générée, et ajuster sa stratégie de questionnement.\n2. Grille d’évaluations\n3. Dispositif d’évaluation :\n       • Modalité : évaluation formative et auto-évaluation (via le journal de bord des prompts)\n         • Justification : l’intérêt pédagogique réside dans le processus d’essais-erreur. Suivre l’historique des prompts permet d’aider l’élève à progresser dans sa maîtrise d’outils.\n4. Justification des choix : l’évaluation ne juge pas seulement la beauté de l’affiche finale, mais la démarche méthodologique et le pilotage de l’outil. Ils ciblent l’historique des essais, la comparaison critique et la justification textuelle. \nCas 2 : RECHERCHE D’INFORMATION\nSujet : Recherche des informations sur internet concernant une personnalité scientifique, sélectionner des informations pertinentes et identifier des sources fiables. \n1.  Apprentissages visés\n    • Savoir : Connaître les critères de fiabilité d’une source et le vocabulaire spécifique aux moteurs de recherches.\n     • Savoir-faire : Formuler une requête de recherche efficace, trier et sélectionner des informations pertinentes par rapport à une bibliographie scientifique, et citer ses sources (références bibliographiques ou liens).\n     • Compétences : Mobiliser une stratégie de recherche documentaire autonome et méthodique face à un flux d’informations numériques\n      • Capacité réflexive : Prendre du recul par rapport au premier résultat affiché par un moteur de recherche et croiser les sources pour valider l’exactitude des informations.\n2. Grille d’évaluations\n3. Dispositif d’évaluation :\n       • Modalité : évaluation formative combinée à une auto-évaluation.\n         • Justification : l’élève utilise la grille comme guide pendant sa recherche pour s’ajuster en autonomie, tandis que l’enseignant l’utilise pour formulés des retours constructifs avant la production finale.\n4. Justification des choix : Ils ciblent directement le cœur de l’activité (trouver, trier, citer) sans se disperser sur la mise en page. D’autres part, ils traduisent des gestes professionnels observables. Pour terminer, la progression allant d’un comportement passif et imitateur (copier-coller) à une démarche de rigoureuse.\nCas 3 : EDUCATION AUX MEDIA : info ou intox ?\nSujet : Analyser des publications provenant des réseaux sociaux, vérifier leur fiabilité et justifie son analyse. \n1.  Apprentissages visés\n    • Savoir : Connaître les mécanismes de la désinformation (fake news) et les outils de numériques de vérification.\n     • Savoir-faire : Analyser une publication de réseau social, identifier les indices de manipulation. \n     • Compétences : Exercer son sens critique face à l’information numérique et argumenter sa position.\n      • Capacité réflexive : Démontrer une distance critique face à ses propres émotions ou croyance initiales face à une publication virale. \n2. Grille d’évaluations\n3. Dispositif d’évaluation :\n       • Modalité : évaluation par les pairs et co-évaluation.\n         • Justification : le traitement des fausses informations se prête idéalement au débat et au regard croisé pour déconstruire les biais cognitifs.\n4. Justification des choix : Ils isolent la capacité de repérage, l’enquête technique et la rigueur de l’argumentation. Par ailleurs, ils rendent observables des actions concrètes (utilisation d’outils, citation de preuves). En fin, la progression d’une adhésion naïve aux rumeurs vers une postures d’enquêteur critique outillé. \n.",
+    "submittedAt": "2026-10-23 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.3,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.42,
+        "didacticQuality": 2.33,
+        "criticalAnalysis": 2.33,
+        "formAndStructure": 2.22
+      },
+      "summary": "Excellente grille critériée (9.3/10) : Définition d'indicateurs observables et structuration à 4 degrés d'acquisition.",
+      "strengths": [
+        "Critères didactiques indépendants et sans chevauchement.",
+        "Indicateurs observables clairs pour chaque niveau d'acquisition.",
+        "Mobilisation judicieuse de l'évaluation formative et de l'auto-évaluation."
+      ],
+      "improvements": [
+        "Proposer une version simplifiée 'falc' à destination directe de l'élève."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 8 (Grilles critériées) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (9.3/10).",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux situations d'apprentissage & Exhaustivité (Critère A)",
+          "score": 2.42,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Rigueur de la formulation critériée à 4 niveaux & Indicateurs observables (Critère B)",
+          "score": 2.33,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Articulation formative, auto-évaluation & régulation par les pairs (Critères C & D)",
+          "score": 2.33,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Qualité rédactionnelle, Clarté & Transposition didactique (Critères E & H)",
+          "score": 2.22,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-10-23 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0076",
     "userId": "user-e2306390@student.hech.be",
     "userName": "Florence D’Archambeau",
     "userEmail": "e2306390@student.hech.be",
@@ -5223,7 +5837,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0068",
+    "id": "file-real-0077",
     "userId": "user-e2306390@student.hech.be",
     "userName": "Florence D’Archambeau",
     "userEmail": "e2306390@student.hech.be",
@@ -5291,7 +5905,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0069",
+    "id": "file-real-0078",
     "userId": "user-e2306390@student.hech.be",
     "userName": "Florence D’Archambeau",
     "userEmail": "e2306390@student.hech.be",
@@ -5359,7 +5973,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0070",
+    "id": "file-real-0079",
     "userId": "user-e2306390@student.hech.be",
     "userName": "Florence D’Archambeau",
     "userEmail": "e2306390@student.hech.be",
@@ -5427,7 +6041,75 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0071",
+    "id": "file-real-0080",
+    "userId": "user-e2306390@student.hech.be",
+    "userName": "Florence D’Archambeau",
+    "userEmail": "e2306390@student.hech.be",
+    "exerciseId": "exercice-06",
+    "exerciseTitle": "Atelier 6 : Démarche itérative (Concevoir & tester un mini-jeu)",
+    "originalFileName": "D_ARCHAMBEAU_Florence_Exercice_6_Demarche_iterative__2026-10-24.docx",
+    "formattedFileName": "D_ARCHAMBEAU_Florence_Exercice_6_Demarche_iterative__2026-10-24.docx",
+    "fileType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "fileSize": 14932,
+    "fileUrl": "/travaux-etudiants/D_ARCHAMBEAU_Florence_Exercice_6_Demarche_iterative__2026-10-24.docx",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Contexte de l'activité\nCe jeu s'inscrit dans une séquence de cours consacrée à la cybersécurité, plus précisément à la création et à la protection des mots de passe, destinée à des élèves de 1re secondaire.\nIl intervient en début de séquence, avant toute présentation théorique, afin d'introduire la thématique de manière ludique.\nLes élèves sont amenés à retrouver des mots de passe de difficulté croissante en exploitant les informations publiées sur des profils de réseaux sociaux fictifs. L'objectif est de leur faire prendre conscience que certaines informations personnelles peuvent faciliter la découverte d'un mot de passe.\nLe jeu n'a pas pour objectif d'enseigner directement les notions théoriques. Il sert de situation de départ sur laquelle l'enseignant pourra s'appuyer pour construire la suite du cours.\nÀ l'issue de l'activité, une mise en commun permettra de revenir sur les stratégies utilisées par les élèves, d'identifier les faiblesses des mots de passe proposés et d'introduire les bonnes pratiques en matière de sécurité.\nLien genially :\nhttps://view.genially.com/6adb367d65be6b7ccc535f1f?fbclid=IwY2xjawVISmlleHRuA2FlbQIxMQBwZG9mBHNydGMGYXBwX2lkATAAAR5C1DMFQvGeA0ceWdh1Is8P9BhdIye7HiTwEQEcqjiuNp742pGvYiZTTK5A2w_aem_MYxfC5A0mCOwF0mzTLqifA\nLien google forms :\nhttps://docs.google.com/forms/d/e/1FAIpQLSfNEKqB6guj8XqjFjnYvZKkLSxrmu_ZNIvzzpFzphg6Jyjy_A/viewform",
+    "submittedAt": "2026-10-24 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.6,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.24,
+        "didacticQuality": 2.15,
+        "criticalAnalysis": 2.15,
+        "formAndStructure": 2.06
+      },
+      "summary": "Démarche de conception itérative rigoureuse (8.6/10) : Conception, playtest et amélioration continue d'un mini-jeu.",
+      "strengths": [
+        "Réalisation d'un prototype interactif fonctionnel et engageant.",
+        "Recueil méthodique des retours de testeurs pairs et identification des points de friction.",
+        "Améliorations effectives apportées en version 2 pour clarifier les feedbacks."
+      ],
+      "improvements": [
+        "Intégrer une jauge de progression réflexive pour les joueurs."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 6 (Démarche itérative & jeu) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (8.6/10).",
+      "criteriaTable": [
+        {
+          "name": "Démarche itérative & Conception du mini-jeu (Critère A)",
+          "score": 2.24,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Alignement pédagogique FMTTN & Feedback apprenant (Critère B)",
+          "score": 2.15,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Analyse réflexive des playtests & Prise en compte de l'erreur (Critère C)",
+          "score": 2.15,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Qualité de la réalisation interactive & Progression (Critères D & H)",
+          "score": 2.06,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-10-24 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0081",
     "userId": "user-e2306390@student.hech.be",
     "userName": "Florence D’Archambeau",
     "userEmail": "e2306390@student.hech.be",
@@ -5503,7 +6185,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0072",
+    "id": "file-real-0082",
     "userId": "user-e2306513@student.hech.be",
     "userName": "Sara Cheng",
     "userEmail": "e2306513@student.hech.be",
@@ -5571,7 +6253,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0073",
+    "id": "file-real-0083",
     "userId": "user-e2306513@student.hech.be",
     "userName": "Sara Cheng",
     "userEmail": "e2306513@student.hech.be",
@@ -5639,7 +6321,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0074",
+    "id": "file-real-0084",
     "userId": "user-e2306513@student.hech.be",
     "userName": "Sara Cheng",
     "userEmail": "e2306513@student.hech.be",
@@ -5707,7 +6389,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0075",
+    "id": "file-real-0085",
     "userId": "user-e2505429@student.hech.be",
     "userName": "Juliette Renard",
     "userEmail": "e2505429@student.hech.be",
@@ -5775,7 +6457,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0076",
+    "id": "file-real-0086",
     "userId": "user-e2505429@student.hech.be",
     "userName": "Juliette Renard",
     "userEmail": "e2505429@student.hech.be",
@@ -5843,7 +6525,279 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0077",
+    "id": "file-real-0087",
+    "userId": "user-e2505429@student.hech.be",
+    "userName": "Juliette Renard",
+    "userEmail": "e2505429@student.hech.be",
+    "exerciseId": "exercice-04",
+    "exerciseTitle": "Atelier 4 : Escape Game FMTTN (Cyber-Enquête)",
+    "originalFileName": "RENARD_Juliette_Exercice_4_Escape_Game_FMTTN_C_2026-11-04.pdf",
+    "formattedFileName": "RENARD_Juliette_Exercice_4_Escape_Game_FMTTN_C_2026-11-04.pdf",
+    "fileType": "application/pdf",
+    "fileSize": 17575,
+    "fileUrl": "/travaux-etudiants/RENARD_Juliette_Exercice_4_Escape_Game_FMTTN_C_2026-11-04.pdf",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "L’escape game a été réalisé, mais je n’ai pas pu faire de capture d’écran. Vous nous aviez dit lors \ndu cours que ce n’était pas grave et que nous ne devions pas le refaire.",
+    "submittedAt": "2026-11-04 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.1,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.11,
+        "didacticQuality": 2.02,
+        "criticalAnalysis": 2.02,
+        "formAndStructure": 1.95
+      },
+      "summary": "Excellente participation et analyse de l'escape game (8.1/10) : Résolution des énigmes cyber et réflexion ludopédagogique.",
+      "strengths": [
+        "Résolution méthodique des énigmes de sécurité et d'hygiène numérique.",
+        "Analyse réflexive du rôle du jeu dans l'engagement cognitif de l'apprenant.",
+        "Compréhension de l'importance capitale du débriefing post-jeu pour institutionnaliser les savoirs."
+      ],
+      "improvements": [
+        "Détailler les questions de relance prévues lors du débriefing avec les élèves."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 4 (Escape Game FMTTN) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (8.1/10).",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux objectifs & Résolution de l'escape game (Critère A)",
+          "score": 2.11,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Maîtrise des concepts FMTTN & Cybersécurité (Critère B)",
+          "score": 2.02,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Analyse didactique & Phase d'institutionnalisation (Critère C)",
+          "score": 2.02,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Régulation réflexive & Travail collaboratif (Critères D & H)",
+          "score": 1.95,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-11-04 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0088",
+    "userId": "user-e2505429@student.hech.be",
+    "userName": "Juliette Renard",
+    "userEmail": "e2505429@student.hech.be",
+    "exerciseId": "exercice-05",
+    "exerciseTitle": "Atelier 5 : Défi — Créer une vidéo pour les réseaux sociaux",
+    "originalFileName": "RENARD_Juliette_Exercice_5_Defi_Creer_une_vide_2026-11-04.pdf",
+    "formattedFileName": "RENARD_Juliette_Exercice_5_Defi_Creer_une_vide_2026-11-04.pdf",
+    "fileType": "application/pdf",
+    "fileSize": 20187,
+    "fileUrl": "/travaux-etudiants/RENARD_Juliette_Exercice_5_Defi_Creer_une_vide_2026-11-04.pdf",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Lien vers la vidéo youtube  : \nhttps://youtube.com/shorts/O-sO6Fr255E?si=u4i6NamqWb0VU0VU",
+    "submittedAt": "2026-11-04 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.0,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.08,
+        "didacticQuality": 2.0,
+        "criticalAnalysis": 2.0,
+        "formAndStructure": 1.92
+      },
+      "summary": "Défi relevé avec brio (8.0/10) : Message percutant d'éducation aux médias adapté aux codes des réseaux sociaux.",
+      "strengths": [
+        "Respect des contraintes du défi (format court, concision, un seul message clé).",
+        "Adéquation aux codes visuels et narratifs des jeunes (TikTok/Reels/Shorts).",
+        "Sensibilisation efficace à la vigilance informationnelle ou à la cybersécurité."
+      ],
+      "improvements": [
+        "Préciser la source documentaire primaire en incrustation discrète."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 5 (Défi vidéo / médias) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (8.0/10).",
+      "criteriaTable": [
+        {
+          "name": "Respect des contraintes du défi (format, durée, concision) (Critère A)",
+          "score": 2.08,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Pertinence didactique du message d'éducation aux médias (Critère B)",
+          "score": 2.0,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Efficacité persuasive & Déconstruction des infox (Critère C)",
+          "score": 2.0,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Dynamisme visuel, Créativité & Ergonomie (Critères E & H)",
+          "score": 1.92,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-11-04 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0089",
+    "userId": "user-e2505429@student.hech.be",
+    "userName": "Juliette Renard",
+    "userEmail": "e2505429@student.hech.be",
+    "exerciseId": "exercice-06",
+    "exerciseTitle": "Atelier 6 : Démarche itérative (Concevoir & tester un mini-jeu)",
+    "originalFileName": "RENARD_Juliette_Atelier_6_Demarche_iterative_e_2026-11-04.pdf",
+    "formattedFileName": "RENARD_Juliette_Atelier_6_Demarche_iterative_e_2026-11-04.pdf",
+    "fileType": "application/pdf",
+    "fileSize": 21181,
+    "fileUrl": "/travaux-etudiants/RENARD_Juliette_Atelier_6_Demarche_iterative_e_2026-11-04.pdf",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Lien de mon Genially : https://view.genially.com/6aeb1a925a6f4b743843b301",
+    "submittedAt": "2026-11-04 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.1,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.11,
+        "didacticQuality": 2.02,
+        "criticalAnalysis": 2.02,
+        "formAndStructure": 1.95
+      },
+      "summary": "Démarche de conception itérative rigoureuse (8.1/10) : Conception, playtest et amélioration continue d'un mini-jeu.",
+      "strengths": [
+        "Réalisation d'un prototype interactif fonctionnel et engageant.",
+        "Recueil méthodique des retours de testeurs pairs et identification des points de friction.",
+        "Améliorations effectives apportées en version 2 pour clarifier les feedbacks."
+      ],
+      "improvements": [
+        "Intégrer une jauge de progression réflexive pour les joueurs."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 6 (Démarche itérative & jeu) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (8.1/10).",
+      "criteriaTable": [
+        {
+          "name": "Démarche itérative & Conception du mini-jeu (Critère A)",
+          "score": 2.11,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Alignement pédagogique FMTTN & Feedback apprenant (Critère B)",
+          "score": 2.02,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Analyse réflexive des playtests & Prise en compte de l'erreur (Critère C)",
+          "score": 2.02,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Qualité de la réalisation interactive & Progression (Critères D & H)",
+          "score": 1.95,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-11-04 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0090",
+    "userId": "user-e2505429@student.hech.be",
+    "userName": "Juliette Renard",
+    "userEmail": "e2505429@student.hech.be",
+    "exerciseId": "exercice-08",
+    "exerciseTitle": "Atelier 8 : Construire des grilles d'évaluation critériées",
+    "originalFileName": "RENARD_Juliette_Atelier_8_Construire_des_grill_2026-11-05 (1).pdf",
+    "formattedFileName": "RENARD_Juliette_Atelier_8_Construire_des_grill_2026-11-05 (1).pdf",
+    "fileType": "application/pdf",
+    "fileSize": 436082,
+    "fileUrl": "/travaux-etudiants/RENARD_Juliette_Atelier_8_Construire_des_grill_2026-11-05 (1).pdf",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Exercice 08 – Grilles critériées · Juliette Renard · 1 \nExercice 08 \nConstruire des grilles d’évaluation critériées \nJuliette Renard  ·  HECh – Les Rivageois  ·  Novembre 2026 \nCas 1 Création d’une vidéo \nRéaliser une vidéo de trois minutes destinées à expliquer un concept scientifique à des élèves plus jeunes. \nContexte : 3e secondaire, par groupes de trois, en lien avec le cours de sciences. Chaque groupe explique une \nnotion vue en classe (par exemple les phases de la Lune, le cycle de l’eau ou la photosynthèse, etc.) à des élèves \nde 5e-6e primaire d’une école partenaire. Le montage se fait dans un espace en ligne partagé par le groupe. \n1. Apprentissages visés \nContenu du référentiel \nAttendu \nAnnée \nSAVOIRS \nNotions spécifiques liées à \nl’éthique des médias \nnumériques \nUtiliser, adéquatement en contexte, les notions et les \ntermes dont droit à la vie privée, droit à l’oubli, droit de \nretrait, liberté d’expression/de censure/de modération, \nlicence open source*. \nS1 (prérequis) \nLicences « Creative Commons » \nSavoir ce qu’est une licence Creative Commons (définie \ndans le glossaire du référentiel) et ce que veulent dire les \nprincipales conditions (citer l’auteur, pas d’usage \ncommercial). \ncomplément \nLangage audiovisuel (chapitre \n6.7 du cours) \n• Connaître les principaux plans (gros plan, plan moyen, \nplan d’ensemble) et savoir à quoi ils servent. \n• Savoir ce qu’est un scénarimage (storyboard) : une \nsuite de cases dessinées, plan par plan, qui montre ce \nqu’on verra et ce qu’on entendra dans la vidéo avant de \nla filmer (cadrage, texte dit, son, durée). \n• Savoir à quoi sert une voix off : enregistrer l’explication \nà part, puis la poser sur les images. \ncomplément \nNotion scientifique expliquée \nBien comprendre la notion choisie (cours de sciences) et \nconnaître les erreurs que les élèves font souvent à son sujet. \ncomplément \nSAVOIR-FAIRE \nEffectuer le montage d’un son \net/ou d’une vidéo. \nUtiliser les fonctions de montage dont couper, copier, \ncoller, effacer. \nP5 (prérequis) \nAppliquer des principes \nd’élaboration d’un message \nmultimédia. \nAppliquer des principes d’élaboration d’un message \nmultimédia pour appuyer un discours. \nP6 (prérequis) \nUtiliser conjointement des \napplications*/des logiciels* \ndisponibles dans un espace \nnumérique. \nUtiliser conjointement des applications*/des logiciels* \ndisponibles dans un espace collaboratif numérique en \nligne. \nS3 \nParticiper dans un espace \ncollaboratif numérique. \nRepérer, accepter et/ou refuser les interventions des \ncollaborateurs. \nS3 \nUtiliser l’historique de \nrévisions. \nRevenir à une version antérieure du travail. \nS3 \n\nExercice 08 – Grilles critériées · Juliette Renard · 2 \nContenu du référentiel \nAttendu \nAnnée \nRespecter les droits de \npropriété. \nRespecter les droits de propriété, dans des situations de \ncommunication et de collaboration. \nS3 \nRespecter les droits à l’image \net à la voix. \nRespecter le droit à l’image et à la voix, dans des situations \nde communication et de collaboration. \nS3 \nCOMPÉTENCES \nProduire et traiter des \ncontenus multimédias. \nProduire et traiter des contenus multimédias de manière \ncollaborative. \nS3 \nCollaborer sur un contenu \nnumérique. \nCollaborer sur un contenu numérique. \nS3 \nLes lignes « complément » ne sont pas des attendus du référentiel FMTTN. Je prévois de les expliquer aux élèves \nde manière brève et précise avant le projet, pour les aider à concevoir leur vidéo. Les licences Creative Commons \nleur permettent de savoir quelles images et quelles musiques ils peuvent utiliser. Le langage audiovisuel, qui vient \ndu chapitre 6.7 du cours et de la partie « Langages médiatiques » de la brochure sur l’éducation aux médias, les \naide à choisir leurs plans et à préparer leur scénarimage. La notion scientifique, elle, vient du cours de sciences. \nDéfi pour les élèves plus rapides : les groupes qui avancent vite peuvent aller plus loin avec des notions du \nchapitre 6.7 qui dépassent le référentiel : les angles de prise de vue (plongée, contre-plongée), les raccords \n(champ/contrechamp, fondu) et les règles des 180° et des 30°. Ce défi n’est pas demandé à tout le monde et \nn’est pas nécessaire pour atteindre le niveau « Maîtrisé ». \nCapacités transversales \n• Communication : expliquer quelque chose à des enfants qui n’ont pas les mêmes connaissances. \n• Collaboration : se partager le travail, écouter les idées des autres et décider ensemble. \n• Esprit critique : regarder sa propre vidéo avec du recul et se demander ce que le public va comprendre. \n• Créativité : trouver des comparaisons et des images qui rendent la notion facile à comprendre. \n\nExercice 08 – Grilles critériées · Juliette Renard · 3 \n2. Grille critériée \nCritère et indicateurs observables \nÀ renforcer \nEn développement \nMaîtrisé \nTrès bonne maîtrise \n1. Contenu juste et bien organisé \n• Pas d’erreur scientifique \n• Simplifications qui restent justes \n• Une structure : accroche, explication, \nexemple, résumé \n• Environ trois minutes \nLa vidéo contient des erreurs ou \nparle d’autre chose que la notion. \nOn ne voit pas de fil conducteur. La \ndurée est très loin des trois \nminutes. \nLe contenu est plutôt juste, mais \nune simplification donne une idée \nfausse (par exemple : « la Lune \nchange de forme parce que la Terre \nlui fait de l’ombre »). Il manque une \npartie de la structure, souvent le \nrésumé. La durée est \napproximative. \nLa notion est juste et les \nsimplifications ne la déforment pas. \nOn retrouve l’accroche, \nl’explication, un exemple et un \nrésumé. La vidéo dure environ trois \nminutes. \nLe contenu est juste et complet \npour des élèves de primaire. Le \ngroupe pense à une erreur \nfréquente et l’explique dans la \nvidéo. Chaque partie sert vraiment \nà l’explication. \n2. Adaptée au public \n• Mots simples, mots difficiles expliqués \n• Exemples de la vie des enfants \n• Rythme qu’on peut suivre \n• Compréhension vérifiée avec un petit \nquestionnaire \nLes mots sont ceux d’un manuel ou \nd’un adulte, il n’y a pas d’exemple \net ça parle trop vite. Au \nquestionnaire, les enfants ne \nretiennent presque rien. \nIl y a quelques efforts (un exemple, \nun mot expliqué), mais pas partout, \net certains passages vont trop vite. \nLes réponses au questionnaire sont \nmoyennes. \nLes mots sont simples et les mots \ndifficiles sont expliqués. Les \nexemples parlent aux enfants et le \nrythme est bon. La plupart des \nenfants répondent bien aux \nquestions principales. \nToute la vidéo est pensée pour les \nenfants (ton, comparaisons, \nquestions posées au spectateur). Le \ngroupe regarde les réponses au \nquestionnaire et explique ce qu’il \nchangerait. \n3. Réalisation de la vidéo \n• Scénarimage fait avant de filmer \n• Image nette et bien cadrée, voix (ou \nvoix off) qu’on entend bien \n• Montage : couper, enchaîner, ajouter \ndes titres \n• Plans choisis pour aider à comprendre \nIl n’y a pas de scénarimage. L’image \nest floue ou mal cadrée, on \nn’entend pas la voix. Les morceaux \nsont mis bout à bout sans montage. \nLe scénarimage est très court et peu \nsuivi. L’image et le son sont bons \npar moments seulement (bruit de \nfond, contre-jour). Le montage est \nbasique, avec des coupures \nbrusques. Certaines images sont \njuste là pour décorer. \nLe scénarimage est complet et \nindique les plans prévus. L’image \nest nette, on entend bien la voix. Le \nmontage est soigné : les morceaux \ns’enchaînent, les titres sont lisibles \net les images illustrent l’explication. \nLe scénarimage évolue pendant le \nprojet. Le groupe explique pourquoi \nil a choisi tel plan (un gros plan pour \nmontrer un détail, un plan \nd’ensemble pour situer). Le \nmontage est fluide et il n’y a pas \nd’image inutile. \n4. Travail de groupe et droits \n• Chacun participe (visible dans \nl’historique des versions) \n• Les idées des autres sont discutées \navant d’être acceptées ou refusées \n• Images et musiques libres de droits ou \nsous licence Creative Commons, citées \n• Accord des personnes filmées ou \nenregistrées \nUne seule personne fait presque \ntout. Les images et musiques sont \nprises sur Internet sans vérifier les \ndroits et ne sont pas citées. Des \npersonnes sont filmées sans leur \naccord. \nLe travail est partagé mais pas de \nfaçon égale. Les commentaires dans \nl’espace en ligne sont peu utilisés. \nSeulement une partie des images et \nmusiques est vérifiée et citée. On \ndemande l’accord des personnes à \nl’oral, sans trace. \nChacun participe, on le voit dans \nl’historique des versions. Les idées \nsont discutées. Toutes les images et \nmusiques sont libres de droits ou \nsous licence Creative Commons et \ncitées au générique. Les personnes \nfilmées ont donné leur accord par \nécrit. \nLe groupe s’organise (planning, \nrôles clairs) et explique ses \ndécisions. Il revient à une ancienne \nversion quand c’est utile. Il choisit \nles licences en sachant ce qu’elles \npermettent (par exemple CC BY ou \nCC BY-NC) et respecte ces règles \nsans qu’on le lui rappelle. \n\nExercice 08 – Grilles critériées · Juliette Renard · 4 \n3. Dispositif d’évaluation \nLe projet est long, donc je prévois plusieurs moments d’évaluation : un diagnostic au départ, deux étapes \nformatives, une co-évaluation et une évaluation sommative à la fin. \nMoment \nModalité \nQui utilise la grille ? \nTrace / production \nPremière séance \nÉvaluation \ndiagnostique \nL’enseignant (sans la \ngrille) \nPetit défi : une vidéo de 30 \nsecondes à 1 minute faite en 50 \nminutes \nLancement \nDécouverte des critères \nLa classe, sur deux vidéos \nd’explication trouvées en \nligne (une réussie, une \nmoins réussie) \nGrille remplie ensemble \nAvant de filmer \nÉvaluation formative \n(étape 1) \nL’enseignant, critères 1 \net 3 \nScénario et scénarimage acceptés \nou à retravailler \nPremier montage Test auprès du public \n(étape 2) \nLes élèves de primaire \n(questionnaire de 3-4 \nquestions), puis le groupe \npour le critère 2 \nRéponses au questionnaire, liste de \nchangements à faire \nVersion finale \nCo-évaluation \nLe groupe et l’enseignant \nremplissent chacun la \ngrille, puis en discutent \nLes deux grilles comparées \nFin \nÉvaluation sommative \nL’enseignant, toute la \ngrille \nVidéo finale, historique des \nversions, petit bilan individuel \n \nDiagnostic : je reprends l’idée de l’exercice 05 fait au cours (« créer une vidéo pour les réseaux sociaux »). En 50 \nminutes, les groupes font une vidéo très courte sur un sujet simple. Cela permet à l’enseignant de voir ce que les \nélèves savent déjà faire (cadrer, enregistrer une voix, monter avec CapCut par exemple) et ce qu’il faudra leur \napprendre. \nÉtape 1 : l’enseignant vérifie le scénario avant le tournage, pour éviter que le groupe filme une explication fausse. \nLe professeur de sciences peut aider pour le critère 1. \nÉtape 2 : le premier montage est montré à des élèves de primaire, qui répondent à quelques questions sur la \nnotion. Le groupe regarde leurs réponses et améliore sa vidéo. \nCo-évaluation : le groupe et l’enseignant remplissent la grille chacun de leur côté, puis comparent. Ensuite, \nl’enseignant donne l’évaluation finale. Pour le critère 4, l’historique des versions et un petit bilan individuel \npermettent de voir ce que chacun a fait. \n4. Justification des choix \na) Les critères et les indicateurs \nPour les trois premiers critères, je me suis basée sur les trois dimensions de l’éducation aux médias de la brochure \n: le contenu (dimension informationnelle), le public (dimension sociale) et la technique (dimension technique). \nUne vidéo peut être bien filmée mais fausse, ou juste mais trop difficile pour des enfants. En séparant ces trois \naspects, on voit mieux ce que l’élève réussit et ce qui lui pose problème. \n• Contenu juste et bien organisé : quand on simplifie, on risque de dire des choses fausses. C’est pour ça que \nj’ai mis un indicateur sur les simplifications. La structure et la durée correspondent à l’attendu « appliquer \ndes principes d’élaboration d’un message multimédia pour appuyer un discours ». \n\nExercice 08 – Grilles critériées · Juliette Renard · 5 \n• Adaptée au public : c’est le cœur de la consigne, puisque la vidéo est pour des élèves plus jeunes. Le \nquestionnaire permet de vérifier ce que les enfants ont vraiment compris, au lieu de juste le supposer. \n• Réalisation de la vidéo : ce critère reprend les savoir-faire de montage du référentiel (couper, copier, coller, \neffacer) et quelques bases du chapitre 6.7. Je n’évalue pas seulement si c’est net et audible, mais aussi si les \nplans choisis aident à comprendre. Le scénarimage est un indicateur important : il oblige le groupe à réfléchir \nà la vidéo avant de filmer. \n• Travail de groupe et droits : en S3, le référentiel insiste sur le travail à plusieurs et sur le respect des droits « \ndans des situations de communication et de collaboration ». L’historique des versions et le générique sont \ndes traces faciles à vérifier. \nb) Les niveaux de maîtrise \nAu niveau « À renforcer », l’élève ne tient pas compte du critère. En « En développement », il en tient compte un \npeu ou pas tout le temps. En « Maîtrisé », il le fait à chaque fois. En « Très bonne maîtrise », il va plus loin : il \nprévoit une erreur fréquente, analyse les réponses du public ou explique ses choix de plans. \nc) Les modalités d’évaluation \n• Le diagnostic évite de croire que les élèves savent déjà faire une vidéo parce qu’ils filment souvent avec leur \ntéléphone. On voit ce qu’ils savent vraiment. \n• Les étapes formatives sont importantes parce que le projet dure longtemps. Une erreur dans le contenu ou \nun scénario pas clair coûte cher si on la découvre seulement à la fin. \n• Le test avec les élèves de primaire est l’évaluation la plus proche de la réalité : ce sont les vrais destinataires \nqui montrent si la vidéo fonctionne. C’est aussi la dimension sociale de l’éducation aux médias, qui \ns’intéresse à l’effet d’un média sur son public. \n• La co-évaluation est utile parce que certains critères laissent de la place à l’interprétation (un rythme « \nadapté », un exemple « parlant »). Comparer l’avis du groupe et celui de l’enseignant oblige les élèves à \nexpliquer leurs choix. \n• L’évaluation sommative arrive à la fin d’un projet complexe, après plusieurs occasions de s’améliorer. Elle est \ndonc juste pour les élèves. \n\nExercice 08 – Grilles critériées · Juliette Renard · 6 \nCas 2   Création d’un jeu numérique \nCréer avec Scratch un jeu comprenant un objectif, des règles, plusieurs niveaux et des interactions avec le joueur. \nContexte : 2e secondaire, par deux, à la fin d’une séquence sur les boucles, les conditions et les variables dans \nScratch. Le jeu est rendu en deux fois : une version 1, puis une version 2 améliorée, comme dans les projets de \nprogrammation que nous avons faits au cours. \n1. Apprentissages visés \nContenu du référentiel \nAttendu \nAnnée \nSAVOIRS \nProgrammation et \nlogigrammes* \nExpliquer les termes dont algorithme*, logigramme*, \ncondition, boucle, langage de programmation. \nP6 (prérequis) \nProgrammation et \nlogigrammes* \nDifférencier algorithme* et programme*. \nP6 (prérequis) \nProgrammation et \nlogigrammes* \nExpliquer le concept de variable. \nS1 (prérequis) \nProgrammation et \nlogigrammes* \nExpliquer l’effet des opérateurs logiques. \nS2 \nSAVOIR-FAIRE \nLire un algorithme* simple. \nVerbaliser un logigramme* intégrant une condition, une \nboucle, un opérateur logique et une variable. \nS2 \nÉcrire un algorithme* simple. \nÉcrire un logigramme* intégrant une condition, une \nboucle, un opérateur logique et une variable. \nS2 \nLire un programme* simple. \nLire un programme* intégrant une boucle, une condition, \nun opérateur logique et une variable. \nS2 \nÉcrire un programme* simple. \nTraduire un logigramme* intégrant une condition, une \nboucle, un opérateur logique et une variable en langage de \nprogrammation. \nS2 \nCOMPÉTENCES \nConcevoir un algorithme* pour \nrésoudre un problème simple. \nConcevoir un logigramme* intégrant une boucle, une \ncondition, un opérateur logique et une variable. \nS2 \nConcevoir un programme* \npour résoudre un problème. \nTraduire un logigramme* intégrant une boucle, une \ncondition, un opérateur logique et une variable en langage \nde programmation, le tester, le déboguer et l’optimiser. \nS2 \nDéfi pour les élèves plus rapides : les groupes qui finissent vite peuvent aller plus loin avec des notions vues \ndans les slides de programmation mais qui dépassent le référentiel de S2 : utiliser des clones (par exemple pour \nfaire apparaître plusieurs ennemis) ou une liste (par exemple pour garder les meilleurs scores). Ce défi est \nfacultatif et n’est pas nécessaire pour atteindre le niveau « Maîtrisé ». \nCapacités transversales \n• Autonomie : chercher d’où vient un bug et essayer des solutions avant de demander de l’aide. \n• Réflexivité : noter ce qu’on fait et expliquer comment on a corrigé une erreur. \n• Créativité : inventer son propre jeu tout en respectant la consigne. \n• Argumentation : donner un avis justifié sur le jeu d’un autre groupe. \n\nExercice 08 – Grilles critériées · Juliette Renard · 7 \n2. Grille critériée \nCritère et indicateurs observables \nÀ renforcer \nEn développement \nMaîtrisé \nTrès bonne maîtrise \n1. Conception du jeu \n• Logigramme fait avant de programmer \n• But et règles expliqués au joueur \n• Niveaux de plus en plus difficiles \nIl n’y a pas de logigramme, ou il n’a \nrien à voir avec le jeu. On ne \ncomprend pas le but ni comment on \ngagne ou on perd. Il n’y a qu’un \nniveau. \nLe logigramme montre seulement \nune partie des règles (souvent, la fin \nde partie manque). On comprend le \nbut, mais certaines règles ne sont \npas claires. Il y a plusieurs niveaux, \nmais ils se jouent pareil. \nLe logigramme montre les règles \nprincipales (déplacement, points, \nfin de partie) avec au moins une \nboucle et une condition. Le but et \nles règles sont expliqués au joueur. \nLe niveau 2 est plus difficile que le \nniveau 1 (plus rapide, plus \nd’obstacles…). \nLe logigramme contient une boucle, \nune condition, une variable et un \nopérateur logique, et il correspond \nau programme final. Les règles vont \nbien ensemble et une variable règle \nla difficulté des niveaux. \n2. Utilisation des blocs de \nprogrammation \n• Boucles (répéter, indéfiniment, \njusqu’à) \n• Conditions et capteurs testés en \ncontinu \n• Variables mises à zéro au début puis \nmodifiées \n• Opérateurs logiques (et, ou, non) \nLe programme est une suite de \nblocs sans boucle ni condition, ou il \ny a des blocs qui ne servent à rien \n(une variable créée mais jamais \nutilisée). \nIl y a des boucles et des conditions, \nmais mal placées : un test fait une \nseule fois en dehors d’une boucle, \nune variable pas remise à zéro, des \nblocs recopiés au lieu d’une boucle. \nPas d’opérateur logique. \nLes boucles et les conditions sont \nbien placées. Au moins deux \nvariables (par exemple le score et \nles vies) sont mises à zéro au début \npuis changent pendant la partie. Au \nmoins un opérateur logique est bien \nutilisé. \nLes blocs sont bien combinés : \nconditions les unes dans les autres, \nrègles avec un opérateur logique (« \nsi score > 10 et vies > 0 »), variable \nqui fait passer au niveau suivant. \nLes variables ont des noms clairs. \n3. Le jeu fonctionne \n• Le jeu redémarre bien au drapeau vert \n• Le jeu réagit aux touches du joueur \n• Le joueur voit son score, la fin de \npartie, entend des sons \n• Pas de blocage \nLe jeu ne se lance pas ou se bloque \ntrès vite. Le joueur ne peut rien \nfaire. \nLe jeu se lance, mais des bugs \ngênent (le lutin sort de l’écran, le \nscore ne revient pas à zéro, la partie \nne finit jamais). Le joueur n’a \nqu’une seule touche. \nLe jeu repart à zéro à chaque \ndrapeau vert, réagit aux touches et \naffiche le score et la fin de partie. Il \nreste peut-être de petits défauts, \nmais on peut jouer. \nOn peut jouer du début à la fin sans \nbug. Le joueur a plusieurs façons \nd’agir (clavier, souris, questions) et \nle jeu lui répond de plusieurs façons \n(score, vies, sons, messages, décor \nqui change). \n4. Tester, corriger, améliorer \n• Tests notés dans un carnet de bugs \n• Cause des erreurs trouvée et corrigée \n• Avis des autres groupes utilisés \n• Programme simplifié (boucles, blocs \npersonnalisés) \nL’élève ne teste pas son jeu ou ne \nfait rien quand on lui montre une \nerreur. Il attend que l’enseignant \ncorrige. \nL’élève trouve des erreurs en \ntestant, mais il a besoin de \nbeaucoup d’aide pour les corriger. Il \nn’utilise pas les avis des autres. Le \nprogramme reste long et répétitif. \nL’élève teste, trouve et corrige seul \nla plupart des erreurs. Il utilise au \nmoins un avis d’un autre groupe et \nremplace au moins une répétition \npar une boucle ou un bloc \npersonnalisé. \nL’élève teste chaque règle, même \nles cas rares. Il explique d’où venait \nune erreur et comment il l’a \ncorrigée. Il dit pourquoi il a suivi ou \nnon les avis reçus et simplifie son \nprogramme (blocs personnalisés, \nblocs inutiles enlevés). \n\nExercice 08 – Grilles critériées · Juliette Renard · 8 \n3. Dispositif d’évaluation \nJe suis l’ordre proposé dans le cours : on présente les critères, les élèves produisent, les pairs évaluent, les élèves \naméliorent, ils s’auto-évaluent, puis l’enseignant évalue. \nMoment \nModalité \nQui utilise la grille ? \nTrace / production \nDébut de \nséquence \nÉvaluation \ndiagnostique \nL’enseignant (sans la \ngrille) \nQuelques niveaux de Compute it! \npour voir ce que les élèves savent \nsur les boucles, les conditions et les \nvariables \nAvant le projet \nPrésentation des \ncritères \nLa classe \nGrille expliquée avec des exemples \nde jeux \nVersion 1 \nÉvaluation par les pairs \n(formative) \nUn autre groupe, critères \n1 à 3 \nFiche « une réussite, un point à \naméliorer, une idée », sans note \nEntre V1 et V2 \nAmélioration \nLe groupe \nCarnet de bugs : erreur, cause, \ncorrection, avis suivis ou non \nAvant la remise \nAuto-évaluation \nLe groupe, toute la grille \nGrille remplie, avec un exemple \npour chaque niveau choisi \nFin \nÉvaluation sommative \nL’enseignant, toute la \ngrille \nJeu final, logigramme et carnet de \nbugs \n \nPendant l’évaluation par les pairs, chaque groupe joue une dizaine de minutes au jeu d’un autre groupe et regarde \nson programme. Le critère 4 n’est pas évalué par les pairs, parce qu’ils ne voient pas comment l’autre groupe a \ntravaillé. \n4. Justification des choix \na) Les critères et les indicateurs \n• Conception du jeu : le référentiel demande de concevoir un logigramme avec une boucle, une condition, un \nopérateur logique et une variable. La consigne demande aussi un but, des règles et des niveaux, et il faut y \nréfléchir avant de programmer. Les slides du cours le disent : programmer sert surtout à apprendre à \norganiser et planifier la résolution d’un problème. \n• Utilisation des blocs : ce critère reprend les savoir-faire de la S2. Je ne regarde pas seulement si le bloc est là, \nmais s’il est bien utilisé. Par exemple, une condition en dehors d’une boucle n’est testée qu’une fois, et une \nvariable pas remise à zéro fausse le score dès la deuxième partie. Ce sont des erreurs fréquentes, qui aident \nà faire la différence entre les niveaux. \n• Le jeu fonctionne : un jeu, c’est fait pour jouer. Ce critère regarde le résultat du côté du joueur. On peut \nl’évaluer juste en jouant, donc les pairs peuvent le faire. \n• Tester, corriger, améliorer : le référentiel demande aussi de « tester, déboguer et optimiser ». Un jeu qui \nmarche a peut-être été corrigé par l’enseignant. À l’inverse, un jeu avec des défauts peut montrer que l’élève \na beaucoup cherché seul. Le carnet de bugs permet de voir ce travail. \nb) Les niveaux de maîtrise \nPour chaque critère, on passe de « le bloc ou la démarche n’est pas là » à « c’est là mais mal utilisé », puis à « c’est \nbien utilisé et l’élève le fait seul », et enfin à « l’élève combine plusieurs choses et peut expliquer ses choix ». Pour \nêtre « Maîtrisé », il faut au moins un opérateur logique bien utilisé, parce que c’est la nouveauté de la S2 par \nrapport à la S1. \n \n\nExercice 08 – Grilles critériées · Juliette Renard · 9 \nc) Les modalités d’évaluation \n• L’évaluation par les pairs est logique pour un jeu, puisqu’il est fait pour que d’autres y jouent. En lisant le \nprogramme d’un autre groupe, l’élève travaille aussi un attendu du référentiel (« lire un programme \nintégrant une boucle, une condition, un opérateur logique et une variable »). Un avis écrit aide plus qu’une \nnote pour améliorer la version 2. \n• L’auto-évaluation se fait après les avis des pairs, avec la même grille. L’élève peut comparer ce qu’il pense de \nson jeu et ce que les autres en ont dit. \n• L’évaluation sommative porte sur la version 2, donc sur ce que l’élève sait faire après avoir reçu des conseils. \nC’est plus juste que de noter la première version. \n\nExercice 08 – Grilles critériées · Juliette Renard · 10 \nCas 3   Démontage et remontage d’un ordinateur \nDémonter un ordinateur, identifier ses composants, expliquer leur fonction et remonter correctement la machine. \nContexte : 1re secondaire, par groupes de 2 ou 3, avec de vieux ordinateurs de bureau donnés par l’école. J’adapte \nen classe l’activité « Défi hardware » que nous avons faite au cours (exercice 07). Les élèves n’ont pas de mode \nd’emploi détaillé : ils doivent observer, démonter, chercher l’information, s’aider entre eux, puis remonter le PC \net le faire redémarrer. Chaque groupe a des outils, un bracelet antistatique, un bac pour les vis et de la \ndocumentation technique. \nCe que les élèves rendent : un schéma annoté du PC, un tableau « Composant → Fonction → Connexions », des \nphotos des étapes, les problèmes rencontrés et leurs solutions, et un bilan de groupe. La grille utilise ces traces et \nce que l’enseignant observe pendant l’activité. \n1. Apprentissages visés \nContenu du référentiel \nAttendu \nAnnée \nSAVOIRS \nVocabulaire spécifique au \nhardware* \nDistinguer hardware* de software*, mémoire vive de \nmémoire morte, stockage interne de stockage externe. \nS1 \nVocabulaire spécifique au \nhardware* \nUtiliser, adéquatement et en contexte, le terme \npériphérique. \nS1 \nÉquipements de protection \nÉnoncer les équipements de protection requis, en lien avec \nl’environnement de travail*, les consommables*, les outils, \nles ustensiles, les machines et les techniques*. \nS1 \nComposants d’un ordinateur \nNommer et situer les principaux composants (carte mère, \nprocesseur, mémoire vive, disque dur ou SSD, alimentation, \nventilateur) et dire à quoi ils servent. \ncomplément \nSAVOIR-FAIRE \nPréparer le poste de travail*, le \nmatériel* et les \nconsommables* nécessaires à \nune tâche. \nChoisir le matériel* et les consommables* parmi ce qui est \nmis à disposition. Les agencer sur son poste de travail*. \nVérifier l’opérationnalité du matériel* (qui peut faire \nl’objet d’un montage par l’élève). \nS1 \nGérer l’espace de travail. \nOrganiser et maintenir un espace de travail fonctionnel : \npropre, rangé, organisé. \nS1 \nLire un document technique*. \nExpliciter des informations d’une fiche technique, d’un \nmode d’emploi, en lien avec un objet technologique*. \nS1 \nAppliquer des techniques* de \nmontage et de démontage \nd’un objet technologique*. \nDémonter un objet technologique* (en tout ou en partie) \nincluant un circuit électrique simple, en utilisant des outils \nadaptés ; le remonter sur la base de traces du démontage. \nS1 \nCOMPÉTENCES \nExécuter une tâche en toute \nsécurité. \nAdopter, avec l’aide de l’enseignant, une attitude proactive \nqui prend en considération les risques et les dangers, pour \nsoi et pour les autres, lors de la préparation du poste de \ntravail* et de l’exécution des gestes techniques*, en \nrecourant notamment aux équipements de protection \nadéquats. \nS1 \n\nExercice 08 – Grilles critériées · Juliette Renard · 11 \nContenu du référentiel \nAttendu \nAnnée \nDiagnostiquer le \ndysfonctionnement d’un objet \ntechnologique* et intervenir \ndans la mesure du possible. \nDiagnostiquer et intervenir, dans la mesure du possible, sur \nun dysfonctionnement d’un objet technologique* incluant \nun circuit électrique simple. \nS1 \nLe référentiel parle d’« objet technologique » en général et ne cite pas les composants d’un ordinateur. J’ai ajouté \nla ligne « complément » parce que la consigne demande d’identifier les composants et d’expliquer leur fonction. \nCapacités transversales \n• Méthode : observer avant d’agir et garder des traces pour pouvoir revenir en arrière. \n• Autonomie : suivre la démarche « j’observe, je cherche, je demande à un pair, je teste, je demande à \nl’enseignant ». \n• Entraide : aider un autre groupe en expliquant, sans faire la manipulation à sa place. \n• Réflexivité : comprendre ses erreurs et ce qu’on a appris en manipulant. \n• Communication : expliquer à quoi sert un composant avec les bons mots. \n• Écocitoyenneté : comprendre qu’un ordinateur peut se réparer et resservir. Le référentiel de S1 invite \nd’ailleurs à penser à réparer avant de jeter. \n\nExercice 08 – Grilles critériées · Juliette Renard · 12 \n2. Grille critériée \nCritère et indicateurs observables \nÀ renforcer \nEn développement \nMaîtrisé \nTrès bonne maîtrise \n1. Sécurité et poste de travail \n• PC débranché et électricité statique \névitée avant d’ouvrir (bracelet, toucher \nle boîtier) \n• Bons outils, sans forcer \n• Vis et pièces rangées par étape dans le \nbac \nL’élève ouvre le PC sans le \ndébrancher ou sans se protéger de \nl’électricité statique, même après \nun rappel. Il utilise un mauvais outil \nou force. Les vis et les pièces sont \nmélangées sur la table. \nL’élève respecte les règles de \nsécurité seulement quand \nl’enseignant les rappelle. Il prend \nparfois un mauvais outil. Il range \nune partie des vis, mais sans les \nséparer par étape. \nL’élève débranche le PC et met son \nbracelet avant de commencer, sans \nrappel. Il utilise les bons outils sans \nforcer et range les vis et les pièces \npar étape. \nL’élève respecte toutes les règles \nsans rappel et sait expliquer \npourquoi (danger pour lui, danger \npour les composants). Son poste \nreste rangé jusqu’à la fin. Il prévient \nles autres quand il voit un danger. \n2. Démontage et traces \n• Observer et faire des hypothèses avant \nde toucher \n• Ordre logique (capot, câbles, cartes, \ncomposants) \n• Photos des étapes et notes pour le \nremontage \n• Gestes précis, sans forcer \nL’élève démonte sans regarder \navant, au hasard, ou arrache des \npièces. Il ne garde aucune trace. \nL’ordre est logique en partie. Les \ntraces sont incomplètes (quelques \nphotos dans le désordre, des étapes \noubliées). Il arrive que l’élève \ndébranche un câble en tirant sur le \nfil. \nL’élève regarde ce qu’il va enlever \navant d’agir, puis démonte dans un \nordre logique. Il photographie les \nétapes importantes et note ce qui \nservira au remontage. Il ouvre \ncorrectement les clips et les \nverrous. \nL’élève prévoit l’ordre du \ndémontage avant de commencer et \nsait dire pourquoi. Ses traces sont \ncomplètes et en ordre, un autre \ngroupe pourrait les utiliser. Aucune \npièce n’est abîmée. \n3. Les composants et leur rôle \n• Composants nommés et placés sur le \nschéma \n• Différences : mémoire vive / mémoire \nmorte, stockage interne / externe, \ncomposant / périphérique \n• Tableau « Composant → Fonction → \nConnexions » complet et juste \n• Explication de comment les \ncomposants travaillent ensemble \nL’élève connaît peu de composants \nou les confond (par exemple la \nmémoire vive et le disque dur). Il ne \nsait pas à quoi ils servent. \nL’élève connaît la plupart des \ncomposants, mais explique leur rôle \nde façon vague (« ça sert à faire \nmarcher l’ordi »). Il confond encore \nmémoire vive et stockage, ou \ncomposant et périphérique. \nL’élève nomme et place les \nprincipaux composants et explique \nle rôle de chacun avec les bons \nmots. Il fait la différence entre \nmémoire vive et mémoire morte, \nstockage interne et externe, \ncomposant et périphérique. \nL’élève explique comment les \ncomposants travaillent ensemble \n(par exemple : un programme passe \ndu disque à la mémoire vive pour \nêtre traité par le processeur). Il \nutilise les bons mots sans qu’on le \nlui demande et fait des liens avec \nson propre ordinateur ou son \ntéléphone. \n4. Remontage et résolution de \nproblème \n• Remontage à partir des traces \n• Branchements expliqués (pourquoi \nchaque câble est nécessaire) \n• Le PC redémarre \n• Si le PC ne démarre pas : hypothèses, \ntests, analyse \nL’élève n’arrive pas à remonter le \nPC, même avec de l’aide. Il reste \ndes pièces ou des vis. \nL’élève remonte avec beaucoup \nd’aide ou sans utiliser ses traces. Un \ncâble ou une pièce mal fixée \nempêche le démarrage, et il ne sait \npas comment chercher le problème. \nL’élève remonte le PC grâce à ses \ntraces et sait expliquer où va \nchaque pièce et pourquoi chaque \nbranchement est utile. Le PC \ndémarre. Sinon, l’élève propose au \nmoins une hypothèse et la teste. \nLe remontage est fait seul et \nproprement (câbles rangés). En cas \nde problème, l’élève propose \nplusieurs hypothèses (barrette de \nmémoire mal enfoncée, câble \nd’alimentation de la carte mère \noublié…), les teste une par une et \ncorrige. \n\nExercice 08 – Grilles critériées · Juliette Renard · 13 \nCritère et indicateurs observables \nÀ renforcer \nEn développement \nMaîtrisé \nTrès bonne maîtrise \n5. Entraide et bilan \n• Démarche suivie avant d’appeler \nl’enseignant (observer, chercher, \ndemander à un pair, tester) \n• Aide aux autres en expliquant \n• Bilan : difficultés, solutions, ce qu’on a \nappris de ses erreurs \nL’élève appelle l’enseignant dès le \npremier problème. Il ne parle pas \navec les autres groupes. Le bilan est \nabsent ou dit juste « on a réussi » \nou « c’était dur ». \nL’élève cherche parfois avant de \ndemander, mais saute souvent des \nétapes. Quand il aide quelqu’un, il \nfait la manipulation à sa place. Le \nbilan raconte ce qui s’est passé sans \ndire ce qu’il a appris. \nL’élève suit la démarche (observer, \nchercher, demander à un pair, \ntester) avant d’appeler l’enseignant. \nIl aide les autres en expliquant. Le \nbilan donne une difficulté, la \nsolution trouvée et ce qu’elle a \nappris au groupe. \nL’élève suit la démarche de lui-\nmême et pousse son groupe à le \nfaire aussi. Ses explications aident \nun autre groupe à avancer seul. Le \nbilan analyse les erreurs et dit ce \nque la manipulation a fait \ncomprendre mieux qu’un cours \nthéorique. \n\nExercice 08 – Grilles critériées · Juliette Renard · 14 \n3. Dispositif d’évaluation \nIci, beaucoup de choses ne se voient que pendant l’activité (les gestes, la sécurité, l’entraide). Le dispositif suit \ndonc les étapes du « Défi hardware » : observer, démonter, apprendre avec les autres, remonter, résoudre le \nproblème, faire le bilan. \nMoment \nModalité \nQui utilise la grille ? \nTrace / production \nSéance d’avant \nÉvaluation \ndiagnostique \nL’enseignant (sans la \ngrille) \nDessin « ce qu’il y a dans un \nordinateur » et tri de photos : \ncomposant ou périphérique \nDébut de l’atelier Présentation des \ncritères \nLa classe \nCritères 1 et 2 au tableau, règles de \nsécurité \nObserver, \ndémonter, \ns’entraider \nÉvaluation formative \npar observation \nL’enseignant, critères 1, 2 \net 5 \nLa grille sert de liste d’observation ; \nl’enseignant réagit tout de suite \nRemonter, \nrésoudre \nCo-évaluation (petit \nentretien) \nLe groupe et \nl’enseignant, critères 3 et \n4 \nExplication d’un composant tiré au \nsort et des branchements ; niveau \ndécidé ensemble \nAprès l’activité \nÉvaluation sommative \nL’enseignant, critères 3 à \n5 \nSchéma, tableau Composant → \nFonction → Connexions, photos, \nproblèmes et solutions, bilan \n \nDiagnostic : le dessin et le tri de photos montrent ce que les élèves imaginent. Beaucoup pensent par exemple \nque l’ordinateur est « dans » l’écran ou le clavier. L’enseignant sait alors ce qu’il doit expliquer. \nObservation : l’enseignant passe entre les postes avec la grille. Si une règle de sécurité n’est pas respectée, il \nintervient tout de suite. Pour la sécurité, on ne peut pas attendre la fin. \nEntretien : quand le PC est remonté, le groupe explique un composant tiré au sort et comment il est branché aux \nautres. Si le PC n’a pas redémarré, il explique ce qu’il a essayé. Les élèves disent d’abord où ils se situent sur les \ncritères 3 et 4, puis l’enseignant donne son avis. Ensemble, ils choisissent un point à travailler. \nÉvaluation sommative : elle porte sur le dossier rendu à la fin. La consigne du défi dit que « la réussite ne consiste \npas uniquement à faire redémarrer le PC ». Un groupe dont le PC ne redémarre pas peut donc avoir une bonne \névaluation s’il comprend et explique ce qu’il a fait. \n4. Justification des choix \na) Les critères et les indicateurs \n• Sécurité et poste de travail : le référentiel donne des règles de sécurité valables pour toutes les activités : \nconnaître les risques, utiliser les équipements de protection, respecter les règles. Ouvrir un PC présente deux \nrisques : pour l’élève (le courant) et pour les pièces (l’électricité statique). Les indicateurs transforment ces \nrègles en gestes qu’on peut voir. \n• Démontage et traces : l’attendu de S1 dit que l’élève remonte l’objet « sur la base de traces du démontage \n». Sans bonnes traces, le remontage est presque impossible. C’est pour ça que les traces sont un indicateur à \npart. \n• Les composants et leur rôle : ce critère vérifie le vocabulaire du hardware en vrai. Réciter « la mémoire vive \nest temporaire » ne suffit pas : il faut reconnaître la barrette dans le PC et expliquer à quoi elle sert. Le \ndernier indicateur fait la différence entre connaître des mots et comprendre comment l’ordinateur \nfonctionne. \n\nExercice 08 – Grilles critériées · Juliette Renard · 15 \n• Remontage et résolution de problème : voir le PC redémarrer est très concret, mais ce n’est pas suffisant. \nJ’ai ajouté l’explication des branchements et les hypothèses, ce qui correspond à la compétence « \ndiagnostiquer » du référentiel. Un PC qui ne démarre pas devient une occasion d’apprendre. \n• Entraide et bilan : toute l’activité repose sur l’entraide et sur les erreurs. Si on demande aux élèves de \nchercher, de s’aider et d’apprendre de leurs erreurs, il faut aussi l’évaluer. Ce critère reprend la démarche et \nles questions du bilan de la consigne. \nb) Les niveaux de maîtrise \nEn S1, le référentiel dit que l’élève agit « avec l’aide de l’enseignant ». Les niveaux suivent donc l’autonomie de \nl’élève : au début, il a besoin de rappels ou de beaucoup d’aide (À renforcer, En développement). Ensuite, il fait \ncorrectement sans rappel (Maîtrisé). Enfin, il sait expliquer ce qu’il fait et s’adapter quand il y a un problème (Très \nbonne maîtrise). \nc) Les modalités d’évaluation \n• Le diagnostic est utile parce que les élèves ont souvent une idée floue de ce qu’il y a dans un ordinateur. En \nle sachant, l’enseignant peut mieux cibler ses explications. \n• L’observation pendant l’activité est la seule façon d’évaluer des gestes et la sécurité. Le cours le dit : les \nsavoir-faire « doivent prioritairement être évalués en situation ». Un PC remonté ne montre pas comment \nl’élève a travaillé. \n• L’entretien permet d’entendre l’élève expliquer et de comparer son avis à celui de l’enseignant. En 1re \nsecondaire, les élèves ont encore peu l’habitude de s’auto-évaluer : cet entretien les aide à utiliser les \ncritères. \n• L’évaluation sommative du dossier porte sur la compréhension et la démarche, pas seulement sur le résultat. \nC’est ce que demande le défi : comprendre, expliquer et justifier ses choix.",
+    "submittedAt": "2026-11-05 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.4,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.44,
+        "didacticQuality": 2.35,
+        "criticalAnalysis": 2.35,
+        "formAndStructure": 2.26
+      },
+      "summary": "Excellente grille critériée (9.4/10) : Définition d'indicateurs observables et structuration à 4 degrés d'acquisition.",
+      "strengths": [
+        "Critères didactiques indépendants et sans chevauchement.",
+        "Indicateurs observables clairs pour chaque niveau d'acquisition.",
+        "Mobilisation judicieuse de l'évaluation formative et de l'auto-évaluation."
+      ],
+      "improvements": [
+        "Proposer une version simplifiée 'falc' à destination directe de l'élève."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 8 (Grilles critériées) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (9.4/10).",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux situations d'apprentissage & Exhaustivité (Critère A)",
+          "score": 2.44,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Rigueur de la formulation critériée à 4 niveaux & Indicateurs observables (Critère B)",
+          "score": 2.35,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Articulation formative, auto-évaluation & régulation par les pairs (Critères C & D)",
+          "score": 2.35,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Qualité rédactionnelle, Clarté & Transposition didactique (Critères E & H)",
+          "score": 2.26,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-11-05 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0091",
     "userId": "user-e2604966@student.hech.be",
     "userName": "Nathalie D'accardo",
     "userEmail": "e2604966@student.hech.be",
@@ -5911,7 +6865,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0078",
+    "id": "file-real-0092",
     "userId": "user-e2604966@student.hech.be",
     "userName": "Nathalie D'accardo",
     "userEmail": "e2604966@student.hech.be",
@@ -5979,7 +6933,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0079",
+    "id": "file-real-0093",
     "userId": "user-e2604966@student.hech.be",
     "userName": "Nathalie D'accardo",
     "userEmail": "e2604966@student.hech.be",
@@ -6047,7 +7001,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0080",
+    "id": "file-real-0094",
     "userId": "user-e2604966@student.hech.be",
     "userName": "Nathalie D'accardo",
     "userEmail": "e2604966@student.hech.be",
@@ -6115,7 +7069,144 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0081",
+    "id": "file-real-0095",
+    "userId": "user-e2604966@student.hech.be",
+    "userName": "Nathalie D'accardo",
+    "userEmail": "e2604966@student.hech.be",
+    "exerciseId": "exercice-07",
+    "exerciseTitle": "Atelier 7 : Défi Hardware & Peer Learning (Démonter/Remonter un PC)",
+    "originalFileName": "D_ACCARDO_Nathalie_Exercice_7_Defi_Hardware_Peer__2026-11-06.pdf",
+    "formattedFileName": "D_ACCARDO_Nathalie_Exercice_7_Defi_Hardware_Peer__2026-11-06.pdf",
+    "fileType": "application/pdf",
+    "fileSize": 539003,
+    "fileUrl": "/travaux-etudiants/D_ACCARDO_Nathalie_Exercice_7_Defi_Hardware_Peer__2026-11-06.pdf",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Exercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nPhoto \nNom de la pièce \nFonction de la pièce \nDisque dur \nLe disque dur est un composant qui permet de stocker et de \nconserver les données de l’ordinateur de manière \npermanente, même lorsqu’il est éteint. \nIl contient notamment le système d’exploitation (Windows, \nLinux…), les logiciels installés ainsi que les fichiers \npersonnels (documents, photos, vidéos, etc.). \nIl permet également de lire et d’écrire des données, c’est-à-\ndire de retrouver des informations enregistrées ou d’en \nsauvegarder de nouvelles. \nDans un disque dur classique (HDD), les données sont \nenregistrées sur des plateaux magnétiques en rotation, \ngrâce à des têtes de lecture et d’écriture. \nContrairement à la mémoire vive (RAM), le disque dur \nconserve les informations lorsque l’alimentation électrique \nest coupée. \n \n \n \n \nProcesseur  \n(en dessous du \nventilateur) \nLe processeur est considéré comme le cerveau de \nl’ordinateur. Il est chargé d’exécuter les instructions des \nprogrammes et de réaliser les calculs nécessaires au \nfonctionnement de l’ordinateur. \nIl traite les informations provenant des logiciels et des \ndifférents composants. \nIl effectue notamment des opérations arithmétiques et \nlogiques (calculs, comparaisons, prises de décision). \nIl coordonne également l’exécution des instructions et les \néchanges de données avec les autres composants, \nnotamment la mémoire vive (RAM). \nSa vitesse de fonctionnement, exprimée en gigahertz (GHz), \net son nombre de cœurs influencent les performances de \nl’ordinateur. \nLe processeur produit de la chaleur et nécessite donc \nun système de refroidissement (ventilateur ou dissipateur \nthermique). \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nRAM \nLa mémoire vive (RAM) est un composant qui permet \nde stocker temporairement les données et les \ninstructions utilisées par l’ordinateur lorsqu’il fonctionne. \nElle conserve notamment les informations nécessaires à \nl’exécution des logiciels et des applications en cours \nd’utilisation. \nElle permet au processeur d’accéder rapidement aux \ndonnées dont il a besoin pour effectuer ses opérations. \nPlus la capacité de la RAM est importante, plus l’ordinateur \npeut gérer simultanément plusieurs programmes et des \ntâches exigeantes sans ralentissement lié au manque de \nmémoire. \nContrairement au disque dur, la RAM est une mémoire \nvolatile : toutes les données qu’elle contient disparaissent \nlorsque l’ordinateur est éteint. \nElle joue donc un rôle essentiel dans la rapidité et la \nfluidité du fonctionnement de l’ordinateur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nCarte graphique \nLa carte graphique est un composant chargé de traiter les \ndonnées graphiques et de produire les images affichées sur \nl’écran de l’ordinateur. \nElle transforme les informations numériques en images \nvisibles : textes, photos, vidéos, animations et images en 3D. \nElle possède un processeur graphique (GPU) spécialisé \ndans l’exécution rapide de nombreux calculs en parallèle. \nElle est particulièrement sollicitée pour les jeux vidéo, le \nmontage vidéo, la modélisation 3D et certaines applications \nd’intelligence artificielle. \nElle dispose généralement d’une mémoire vidéo \n(VRAM) permettant de stocker temporairement les données \nnécessaires à l'affichage. \nLe processeur graphique peut être intégré au processeur \nprincipal ou se trouver sur une carte graphique dédiée. \nLecteur CD \nLe lecteur CD est un périphérique qui permet de lire les \ninformations enregistrées sur un disque compact (CD). \nIl utilise un faisceau laser pour détecter les données \nnumériques présentes à la surface du disque. \nIl permet notamment de lire des CD audio, d’installer des \nlogiciels ou d’accéder à des fichiers enregistrés sur un CD-\nROM. \nCertains modèles, appelés graveurs CD, permettent \négalement d’écrire des données sur des CD enregistrables \n(CD-R) ou réinscriptibles (CD-RW). \nLe lecteur CD contient un moteur qui fait tourner le disque et \nun mécanisme qui déplace la tête de lecture laser. \nAujourd’hui, il est de moins en moins présent dans les \nordinateurs récents, car il est progressivement remplacé par \nles clés USB, les téléchargements et le stockage en ligne. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nCarte mère \nLa carte mère est le circuit électronique principal de \nl’ordinateur. Elle permet de connecter et de faire \ncommuniquer les différents composants entre eux. \nElle accueille notamment le processeur (CPU), la mémoire \nvive (RAM) et les connecteurs destinés aux périphériques et \naux unités de stockage. \nElle assure la circulation des données entre les composants \ngrâce à des circuits et des connexions électroniques. \nElle distribue également l’alimentation électrique nécessaire \nau fonctionnement de plusieurs composants. \nElle contient le BIOS/UEFI, un micrologiciel qui permet \nnotamment d’initialiser le matériel lors du démarrage de \nl’ordinateur. \nElle possède différents ports et connecteurs (USB, SATA, \nPCI Express, etc.) permettant de brancher des périphériques \net des composants supplémentaires. \nLa carte mère joue donc un rôle central dans le \nfonctionnement et la coordination de l'ensemble de \nl'ordinateur. \n \nVentilateur  \nLe ventilateur est un composant qui permet de refroidir les \néléments de l’ordinateur en favorisant la circulation de l’air. \nIl sert principalement à évacuer la chaleur produite par les \ncomposants électroniques, notamment le processeur (CPU) \net la carte graphique (GPU). \nIl contribue à maintenir une température de fonctionnement \nadaptée, afin d’éviter la surchauffe et les ralentissements. \nIl fonctionne grâce à un moteur électrique qui fait tourner des \npales, créant ainsi un flux d’air. \nIl est souvent associé à un dissipateur thermique, qui \nabsorbe et évacue la chaleur produite par le processeur. \nCertains ventilateurs font entrer de l’air frais dans le boîtier, \ntandis que d’autres expulsent l’air chaud vers l’extérieur. \nLe ventilateur contribue ainsi à préserver les performances, \nla stabilité et la durée de vie de l’ordinateur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nBloc d’alimentation \nLe bloc d’alimentation est un composant qui permet \nde fournir l’énergie électrique nécessaire au fonctionnement \nde l’ordinateur. \nIl transforme le courant alternatif (AC) provenant de la prise \nélectrique en courant continu (DC) utilisable par les \ncomposants électroniques. \nIl distribue cette énergie aux différents éléments de \nl’ordinateur, notamment la carte mère, le processeur, la carte \ngraphique et les unités de stockage. \nIl fournit plusieurs tensions électriques adaptées aux besoins \ndes composants, principalement 3,3 V, 5 V et 12 V. \nIl intègre également des systèmes de protection contre \ncertains problèmes électriques, comme les surtensions, les \nsurcharges et les courts-circuits. \nSa puissance, exprimée en watts (W), détermine la quantité \nmaximale d’énergie qu’il peut fournir. \nLe bloc d’alimentation est donc indispensable au \nfonctionnement stable et sécurisé de l’ordinateur. \n \nPorts de \nconnexion  \nLes ports de connexion sont des interfaces permettant de \nrelier l’ordinateur à des périphériques externes ou à d’autres \néquipements. \nIls permettent l’échange de données et de signaux entre \nl’ordinateur et les appareils connectés. \nIl existe différents types de ports, notamment les ports \nUSB (clavier, souris, clé USB), HDMI ou \nDisplayPort (écran), Ethernet RJ45 (réseau) et les prises \naudio (casque, microphone). \nCertains ports permettent également de fournir de l’énergie \nélectrique aux périphériques connectés, par exemple pour \nrecharger un smartphone. \nIls sont généralement situés à l’arrière ou à l’avant du boîtier \net sont reliés à la carte mère. \nLes ports de connexion jouent donc un rôle essentiel dans la \ncommunication entre l’ordinateur et son environnement \nextérieur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \n \n \n \n \nDans notre image : \n \nN° \nNom du Port \nFonction \n1 \nPS/2 \n(clavier/souris) \nConnexion d’un ancien clavier ou d’une \nsouris \n2 \nPort série (COM / \nDB9) \nConnexion de périphériques anciens \n3 \nDVI \nConnexion d’un écran \n4 \nHDMI \nConnexion d’un écran ou d’un téléviseur \n5 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n6 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n7 \nEthernet (RJ45) \nConnexion réseau / Internet par câble \n8 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n9 \nPrises audio Jack \n3,5 mm \nBleu : Connexion casque,  \nVert : haut-parleurs \nRose :  microphone \n10 \nVGA \nTransmission de l’image en analogique vers \nun écran \n11 \nHDMI \nConnexion d’un écran ou d’un téléviseur \n12 \nDVI \nConnexion d’un écran",
+    "submittedAt": "2026-11-06 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.2,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.39,
+        "didacticQuality": 2.3,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.21
+      },
+      "summary": "Très bon dossier Hardware et tutorat (9.2/10) : Identification rigoureuse des composants PC et scénarisation de l'apprentissage entre pairs.",
+      "strengths": [
+        "Identification précise des composants matériels (CPU, RAM, carte mère, stockage, bloc d'alimentation).",
+        "Intégration rigoureuse des consignes de sécurité physique et antistatique.",
+        "Scénarisation didactique du tutorat entre pairs avec étapes pas-à-pas et questionnement guidé.",
+        "Posture réflexive valorisant l'apprentissage actif par la manipulation."
+      ],
+      "improvements": [
+        "Expliciter les critères de validation que le tuteur pair vérifie avant de passer à l'étape suivante."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 7 (Hardware & Tutorat par les pairs) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (9.2/10).",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Identification des composants PC (Critère A)",
+          "score": 2.39,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Exactitude technique & Sécurité matérielle/antistatique (Critère B)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Dispositif de tutorat par les pairs & Clarté du guidage pas-à-pas (Critère C)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité pédagogique (Critères E & H)",
+          "score": 2.21,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-11-06 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0096",
+    "userId": "user-e2604966@student.hech.be",
+    "userName": "Nathalie D'accardo",
+    "userEmail": "e2604966@student.hech.be",
+    "exerciseId": "exercice-08",
+    "exerciseTitle": "Atelier 8 : Construire des grilles d'évaluation critériées",
+    "originalFileName": "D_ACCARDO_Nathalie_Exercice_8_Construire_des_gril_2026-10-22.pdf",
+    "formattedFileName": "D_ACCARDO_Nathalie_Exercice_8_Construire_des_gril_2026-10-22.pdf",
+    "fileType": "application/pdf",
+    "fileSize": 105914,
+    "fileUrl": "/travaux-etudiants/D_ACCARDO_Nathalie_Exercice_8_Construire_des_gril_2026-10-22.pdf",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "DIDACTIQUE DU NUMÉRIQUE   •   EXERCICE 08     1\nDIDACTIQUE DU NUMÉRIQUE   /   EXERCICE 08\nÉvaluer ce que les élèves apprennent\nTrois situations numériques, trois grilles critériées\n01   Info ou intox ?\nAnalyser une information, vérifier et argumenter\n02   Mes données, ma vie privée\nIdentifier des risques et choisir des comportements adaptés\n03   Une vidéo pour expliquer\nRendre un concept scientifique accessible à des élèves plus jeunes\nNOTRE DÉMARCHE\nPour chaque situation, nous partons des apprentissages visés. Nous choisissons ensuite des critères et des indicateurs que l’on peut réellement \nobserver, puis nous décrivons quatre niveaux de maîtrise. Les modalités d’évaluation sont choisies en fonction de ce que les élèves doivent \nmontrer.\nCOMMENT LIRE LES GRILLES\nNiveau 1 : à renforcer    •    Niveau 2 : en développement    •    Niveau 3 : maîtrisé    •    Niveau 4 : maîtrise approfondie\nLes attendus cités dans les pages suivantes sont repris tels qu’ils figurent dans les tableaux « Contenus / attendus » des documents FMTTN fournis. Les situations, critères, \nindicateurs et descripteurs sont nos propositions pour cet exercice.\n\nDIDACTIQUE DU NUMÉRIQUE   •   EXERCICE 08     2\nEXERCICE 08   /   DIDACTIQUE DU NUMÉRIQUE\n01   Info ou intox ?\nCas 3 • Analyser des publications des réseaux sociaux, vérifier leur fiabilité et justifier son analyse.\nATTENDUS RETENUS • LIBELLÉS EXACTS\nSavoir — « Expliquer ce que sont les « Fake News » — la mésinformation et la désinformation —, leurs enjeux et énoncer des moyens permettant de les repérer. »\nSavoir — « Identifier les moyens de signaler ou bloquer un contenu partagé de manière inappropriée en ligne. »\nSavoir-faire — « Proposer et mettre en place des actions pertinentes pour faire face à des situations de cyberattaque, de cyberharcèlement, de cybermanipulation. »\nSituation : à partir de deux publications, l’élève relève des indices, vérifie les informations et explique sa décision de partage. Modalités : formative et évaluation par les pairs, \navec un retour avant la conclusion finale.\nCritère\nIndicateurs observables\n1 · À renforcer\n2 · En développement\n3 · Maîtrisé\n4 · Approfondi\nReconnaître les mécanismes \nde désinformation\n• Distingue mésinformation et \ndésinformation\n• Repère un indice trompeur\n• Explique le risque de diffusion\nConfond les notions et ne \nrepère pas d’indice.\nNomme une notion ou un \nindice sans l’expliquer.\nDistingue les notions, repère un \nindice et explique un risque.\nDistingue les notions et relie \nplusieurs indices aux effets \npossibles.\nVérifier une publication\n• Identifie auteur et date\n• Recherche la source d’origine\n• Confronte à une autre source\nAccepte la publication sans \nvérification.\nVérifie un élément, sans \nconfronter les sources.\nVérifie auteur, date et origine, \npuis confronte une source.\nConfronte plusieurs sources et \nexplique les éventuels écarts.\nJustifier un choix de partage\n• Formule une conclusion\n• Cite les éléments vérifiés\n• Évite d’exposer des données \nprivées\nDécide de partager sans \njustification.\nDonne un avis avec un indice \npeu précis.\nJustifie sa décision avec des \néléments vérifiés et protège les \ndonnées.\nArgumente de façon nuancée et \npropose une conduite \nresponsable.\nPOURQUOI CES CHOIX ?\nNous avons retenu la compréhension, la vérification et la justification, car reconnaître une fake news ne suffit pas. Les indicateurs montrent ce que l’élève fait réellement. Les \nniveaux passent d’une réaction spontanée à une analyse argumentée. Le retour des pairs permet de confronter les démarches et de revoir sa conclusion.\n\nDIDACTIQUE DU NUMÉRIQUE   •   EXERCICE 08     3\nEXERCICE 08   /   DIDACTIQUE DU NUMÉRIQUE\n02   Mes données, ma vie privée\nCas 7 • Analyser des situations numériques, identifier les risques et proposer des comportements adaptés.\nATTENDUS RETENUS • LIBELLÉS EXACTS\nSavoir — « Expliquer les risques liés à l’exposition de données personnelles ou de contenus sensibles. »\nSavoir-faire — « Repérer les informations relatives à la vie privée, lors de l’encodage de données personnelles, y compris avec une IA. »\nCompétence — « Gérer son identité numérique, ses traces, ses données personnelles, de manière responsable. »\nSituation : l’élève examine trois situations (formulaire, application et photo publiée), identifie les données concernées et propose des actions. Modalités : diagnostique au \ndépart, puis formative et auto-évaluation après l’analyse.\nCritère\nIndicateurs observables\n1 · À renforcer\n2 · En développement\n3 · Maîtrisé\n4 · Approfondi\nRepérer les données \npersonnelles\n• Repère les données \ndemandées\n• Distingue données sensibles et \ncourantes\n• Identifie les personnes \nconcernées\nNe reconnaît que quelques \ndonnées évidentes.\nRepère plusieurs données mais \noublie les plus sensibles.\nIdentifie les données et \ndistingue celles qui demandent \nune vigilance.\nRepère aussi les données \nindirectes et explique qui est \nconcerné.\nComprendre les risques\n• Relie une donnée à son usage\n• Décrit un risque concret\n• Explique une conséquence \npossible\nNe relie pas les données à un \nrisque.\nCite un risque sans expliquer la \nsituation.\nExplique un risque pertinent et \nsa conséquence.\nCompare plusieurs \nconséquences selon le contexte.\nChoisir une protection \nadaptée\n• Propose une action réalisable\n• Adapte l’action à la situation\n• Justifie son choix\nPropose une action absente ou \ninadaptée.\nPropose une action utile mais \npeu adaptée.\nChoisit une protection adaptée \net explique pourquoi.\nPropose plusieurs protections \net justifie leur priorité.\nPOURQUOI CES CHOIX ?\nNous voulons vérifier que l’élève ne se contente pas de définir une donnée personnelle, mais qu’il sait la reconnaître et agir. Les indicateurs portent sur des réponses \nconcrètes dans chaque situation. Les niveaux progressent du simple repérage vers des choix justifiés. Le diagnostic aide à connaître les idées de départ ; l’auto-évaluation \npermet ensuite de mesurer ce qui a changé.\n\nDIDACTIQUE DU NUMÉRIQUE   •   EXERCICE 08     4\nEXERCICE 08   /   DIDACTIQUE DU NUMÉRIQUE\n03   Une vidéo pour expliquer\nCas 2 • Réaliser une vidéo de trois minutes expliquant un concept scientifique à des élèves plus jeunes.\nATTENDUS RETENUS • LIBELLÉS EXACTS\nSavoir-faire — « Sélectionner un outil, une application ou un logiciel adéquat en fonction de l’intention. »\nSavoir-faire — « Utiliser les fonctions principales d’un outil de création de contenus. »\nCompétence — « Interagir et communiquer de manière orale et écrite, en sélectionnant et en utilisant des outils numériques adéquats. »\nSituation : par groupe, les élèves préparent un scénario, réalisent une vidéo de trois minutes et la présentent à un public plus jeune. Modalités : évaluation par les pairs sur un \npremier montage, amélioration, puis sommative sur la version finale.\nCritère\nIndicateurs observables\n1 · À renforcer\n2 · En développement\n3 · Maîtrisé\n4 · Approfondi\nExpliquer le concept\n• Informations exactes\n• Explication progressive\n• Exemple adapté au public\nLe concept reste incorrect ou \nincompréhensible.\nL’explication est partiellement \njuste mais manque d’étapes.\nLe concept est exact et expliqué \navec un exemple accessible.\nL’explication anticipe les \ndifficultés du jeune public.\nCommuniquer avec la vidéo\n• Accroche et ordre des idées\n• Voix et textes \ncompréhensibles\n• Images utiles au propos\nLe message est difficile à \nsuivre.\nLe message est compréhensible \npar moments seulement.\nLa vidéo est structurée, audible \net les images aident à \ncomprendre.\nLes choix de rythme et \nd’images renforcent \nl’apprentissage.\nMobiliser les outils de \ncréation\n• Choix d’un outil adapté\n• Montage et transitions utiles\n• Export et durée de 3 minutes\nNe parvient pas à produire une \nvidéo exploitable.\nProduit une vidéo mais avec \ndes problèmes de montage ou \nd’export.\nUtilise les fonctions utiles et \nlivre une vidéo exploitable de 3 \nmin.\nAjuste les outils et le montage \npour améliorer la clarté du \nmessage.\nPOURQUOI CES CHOIX ?\nNous avons choisi de regarder ce que la vidéo permet d’apprendre, la manière dont le message est transmis et l’utilisation des outils. Les indicateurs portent sur le contenu, la \ncommunication et des gestes techniques visibles. Les niveaux vont d’une production peu exploitable à une vidéo pensée pour son public. Les retours des pairs servent à \naméliorer le premier montage avant l’évaluation finale.",
+    "submittedAt": "2026-10-22 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.4,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.44,
+        "didacticQuality": 2.35,
+        "criticalAnalysis": 2.35,
+        "formAndStructure": 2.26
+      },
+      "summary": "Excellente grille critériée (9.4/10) : Définition d'indicateurs observables et structuration à 4 degrés d'acquisition.",
+      "strengths": [
+        "Critères didactiques indépendants et sans chevauchement.",
+        "Indicateurs observables clairs pour chaque niveau d'acquisition.",
+        "Mobilisation judicieuse de l'évaluation formative et de l'auto-évaluation."
+      ],
+      "improvements": [
+        "Proposer une version simplifiée 'falc' à destination directe de l'élève."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 8 (Grilles critériées) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (9.4/10).",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux situations d'apprentissage & Exhaustivité (Critère A)",
+          "score": 2.44,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Rigueur de la formulation critériée à 4 niveaux & Indicateurs observables (Critère B)",
+          "score": 2.35,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Articulation formative, auto-évaluation & régulation par les pairs (Critères C & D)",
+          "score": 2.35,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Qualité rédactionnelle, Clarté & Transposition didactique (Critères E & H)",
+          "score": 2.26,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-10-22 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0097",
     "userId": "user-g.vromen@student.hech.be",
     "userName": "Gérard Vromen",
     "userEmail": "g.vromen@student.hech.be",
@@ -6183,7 +7274,347 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0082",
+    "id": "file-real-0098",
+    "userId": "user-g.vromen@student.hech.be",
+    "userName": "Gérard Vromen",
+    "userEmail": "g.vromen@student.hech.be",
+    "exerciseId": "exercice-02",
+    "exerciseTitle": "Atelier 2 : Évaluation critique d'une information",
+    "originalFileName": "VROMEN_Gerard_Exercice_2_Peut-on_faire_confi_2026-10-22.docx",
+    "formattedFileName": "VROMEN_Gerard_Exercice_2_Peut-on_faire_confi_2026-10-22.docx",
+    "fileType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "fileSize": 26503,
+    "fileUrl": "/travaux-etudiants/VROMEN_Gerard_Exercice_2_Peut-on_faire_confi_2026-10-22.docx",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Exercice 02 — Peut-on faire confiance à cette information ?\nVotre mission\nVous découvrez sur Internet l'affirmation suivante :\n« Une étude scientifique vient de prouver que regarder son téléphone avant de dormir fait perdre 2 heures de sommeil chaque nuit. »\nAvant de la partager avec des élèves, vous devez déterminer si cette information est suffisamment fiable.\nPar groupes de 3 à 4 :\nConstruisez votre méthode de vérification\nQuelles informations devez-vous rechercher pour pouvoir déterminer si cette affirmation est fiable ?\n rechercher l’étude scientifique ou des rapports de référence qui dicte cette phrase en transformant la phrase de départ en information brute « regarder son téléphone avant de dormir fait perdre 2 heures de sommeil chaque nuit. » \nIl faut donc trouver la source d’origine (l’auteur ou l’émetteur) une fois la source trouvée, il faudrait vérifier sa spécialité et sa légitimité (est-il un expert dans le domaine, a-t-il un intérêt financier, politique ou idéologique à défendre cette affirmation) et la date d’origine. \n Les effets néfastes de l’utilisation du gsm avant de dormir (articles scientifiques, recherche global grâce à l’IA dans un premier instant)\n Une fois plusieurs articles les analyser et voir s’il y a des contradictions/des similitudes entre les différentes sources.\n Il faut également trouver les sources utilisés par l’auteur.\nMenez l'enquête\nUtilisez Internet pour vérifier l'information. Recherchez notamment :\nl'origine de l'affirmation ; sources médicales, press connue, IA mais avec une vérification des sources utilisés en ayant mis une condition « cite tes sources ». Néanmoins on ne trouve pas de réelle affirmation sur internet.\nla source scientifique éventuelle ;  Une idée est de vérifier des mémoires à condition d’avoir accès à une plateforme de l’université. \nl'auteur ou l'organisme à l'origine de l'information ; \nSur l’affirmation tel lequel nous n’avons pas trouvé.\nd'autres sources permettant de confirmer ou de nuancer l'affirmation.\nInsomnie : Une étude révèle que l'utilisation de téléphones portables avant le coucher est associée à un sommeil de moins bonne qualité - BBC News Afrique (BBC)\nLe manque de sommeil à l'ère du numérique : causes, conséquences et conseils (leading-midicine)\nSommeil et nouvelles technologies - INSV Institut National du Sommeil et de la Vigilance (institut sommeil)\nLe sommeil et les écrans - Étudiant-es Relais Santé - UNIGE  texte d’une université\nPrenez une décision\nRépondez à la question :Selon la source le temps de sommeil est diminuée mais on ne trouve pas exactement les « 2 heures » (il s’agit d’une moyenne symbolique). Cette diminution est liée à plusieurs facteurs : le fait scroller, retard de l’endormissement, effet biologique (hormone du sommeil est réduite)\n« Partageriez-vous cette information avec des élèves ? » Non : Nous n’avons pas la source qui citait exactement cette affirmation. Néanmoins nous avons des affirmations qui s’en approchent mais il s’agit d’une problématique où il n’y a pas de nombre réelle associé aux nombres d’heures perdues. Il en sort néanmoins qu’il y a une perte de sommeil par rapport à une personne qui n’utilise pas son gsm avant de dormir, mais cette perte n’est pas quantifiable.\nJustifiez votre réponse à partir de sources vérifiables.\nPréparez une restitution de 2 minutes :\nvotre décision ; Nous donnerons cette phrase selon un contexte donnée : Un élève qui devrait vérifier cette phrase dans le cadre du cours de numérique. Peut-on se fier à n’importe quelle citation ? Mais nous n’utiliserons pas cette phrase s’il s’agit d’une affirmation à transmettre aux élèves.\nles éléments qui ont guidé votre choix ; Ce n’est pas une vérité absolue. Il n’y a aucun site/citation qui explicite cette phrase.\nvotre méthode de vérification ;  Dans un premier instant, nous avons essayé de trouver la citation exacte dans un moteur de recherche. Ensuite, nous avons fait la recherche en allant sur l’IA afin de voir ce qu’il en dit. Ensuite nous avons essayé de trouver des documents scientifiques à propos de la réduction de sommeil suite à l’utilisation de gsm avant le sommeil. \nune difficulté rencontrée : Dans le peu de temps imparti, on a rencontré beaucoup de sites non fiables. Il fallait vérifier la source du site, vérifier la fiabilité et la pertinence pour chaque site. (On peut également considérer que le temps que chaque membre de l’équipe comprenne l’exercice a été un obstacle.)\nRessources\nVous pouvez utiliser un moteur de recherche ainsi que :\nGoogle Scholar\nPubMed\nCrossref\nUne IA peut vous aider dans vos recherches, mais ses réponses doivent être vérifiées à partir de sources fiables.",
+    "submittedAt": "2026-10-22 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.0,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.34,
+        "didacticQuality": 2.25,
+        "criticalAnalysis": 2.25,
+        "formAndStructure": 2.16
+      },
+      "summary": "Très bon travail d'investigation critique (9.0/10) : Réflexe de vérification et déconstruction du sensationnalisme.",
+      "strengths": [
+        "Posture de recul critique et suspension du jugement avant partage.",
+        "Méthode d'enquête et recherche de la source scientifique primaire.",
+        "Transposition pédagogique pertinente pour des élèves du secondaire."
+      ],
+      "improvements": [
+        "Approfondir le recoupement avec d'autres bases de données médicales (PubMed, Frontiers, JAMA)."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 2 (Esprit critique) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (9.0/10).",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Démarche d'investigation (Critère A)",
+          "score": 2.34,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Exactitude scientifique & Croisement de sources primaires (Critère B)",
+          "score": 2.25,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Analyse critique & Déconstruction sensationnaliste (Critère C)",
+          "score": 2.25,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Transposition didactique & Préparation défense orale (Critères D & H)",
+          "score": 2.16,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-10-22 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0099",
+    "userId": "user-g.vromen@student.hech.be",
+    "userName": "Gérard Vromen",
+    "userEmail": "g.vromen@student.hech.be",
+    "exerciseId": "exercice-03",
+    "exerciseTitle": "Atelier 3 : Conception d'un guide numérique élèves",
+    "originalFileName": "VROMEN_Gerard_Exercice_3_Concevoir_un_guide__2026-10-22.docx",
+    "formattedFileName": "VROMEN_Gerard_Exercice_3_Concevoir_un_guide__2026-10-22.docx",
+    "fileType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "fileSize": 17205,
+    "fileUrl": "/travaux-etudiants/VROMEN_Gerard_Exercice_3_Concevoir_un_guide__2026-10-22.docx",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Exercice 03 — Concevoir un guide numérique pour les élèves\nVotre mission\nVotre établissement constate que les nouveaux élèves rencontrent des difficultés pour s'organiser et collaborer dans leur environnement numérique. teams\nVotre groupe doit concevoir un guide numérique destiné à ces élèves pour les aider à utiliser efficacement les outils numériques de l'école.\nConsignes\nEn groupes de 3 à 4 :\nIdentifiez les besoins\nDéterminez les principales difficultés auxquelles votre guide devra répondre.\nSavoir s’identifier \nComprendre l’environnement (les options de base : voir une notifications, lire un message, répondre à un message, comment réaliser un devoir, comment télécharger un document, vidéo, …)\nComment naviguer dans l’équipe (canaux) \nAfficher les canaux masqués\nMoyen de diffuser\nDéfinissez votre projet\nChoisissez les contenus à transmettre, le public cible et le format le plus pertinent : vidéo, tutoriel interactif, site, infographie, podcast…\nContenu : Utilisation de base de teams.\nPublic : 1re secondaire et tous les nouveaux élèves\nFormat :application (Tuto interactif accessible sur téléphone (susceptible de faire évoluer) et d’ajouter des vidéo et des infographies)\nOrganisez votre travail\nRépartissez les rôles en fonction des compétences et des intérêts de chacun et planifiez les différentes étapes de réalisation.\nRédaction du contenu (voir 1) : Sabri\nPrétest : Mariëlle\nRelecture : Anita\nCréateur de l’application : Jona\n\nRéalisez votre production\nUtilisez les outils numériques de votre choix pour créer votre guide.\nIA pour créer l’application \nCanva si le timing le permet\nTestez et améliorez\nFaites tester votre production par un autre groupe. Recueillez leurs remarques et apportez au moins une amélioration.\nPrésentation\nPrésentez votre guide au groupe en 3 minutes.\nVous devrez expliquer :\nle besoin auquel vous avez répondu ;\nvos principaux choix ;\nla contribution des différents membres du groupe ;\nune amélioration apportée à la suite des tests.",
+    "submittedAt": "2026-10-22 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.7,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.26,
+        "didacticQuality": 2.17,
+        "criticalAnalysis": 2.17,
+        "formAndStructure": 2.1
+      },
+      "summary": "Guide méthodologique de qualité (8.7/10) : Clarté des procédures et repères organisationnels pour les nouveaux élèves.",
+      "strengths": [
+        "Structuration pas-à-pas des étapes clés (connexion, Teams, mot de passe, sauvegarde).",
+        "Ton pédagogique bienveillant et adapté à des élèves du 1er degré.",
+        "Présentation soignée favorisant la lisibilité et la mémorisation."
+      ],
+      "improvements": [
+        "Intégrer des consignes spécifiques pour l'accompagnement des élèves à besoins spécifiques (police adaptée, audio)."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 3 (Guide numérique élèves) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (8.7/10).",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux besoins du 1er degré & Pertinence (Critère A)",
+          "score": 2.26,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Exactitude des procédures numériques & Organisation (Critère B)",
+          "score": 2.17,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Accompagnement de l'autonomie & Pédagogie active (Critère C)",
+          "score": 2.17,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Ergonomie visuelle, Clarté & Accessibilité (Critères E & H)",
+          "score": 2.1,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-10-22 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0100",
+    "userId": "user-g.vromen@student.hech.be",
+    "userName": "Gérard Vromen",
+    "userEmail": "g.vromen@student.hech.be",
+    "exerciseId": "exercice-04",
+    "exerciseTitle": "Atelier 4 : Escape Game FMTTN (Cyber-Enquête)",
+    "originalFileName": "VROMEN_Gerard_Exercice_4_Escape_Game_FMTTN_C_2026-10-22.docx",
+    "formattedFileName": "VROMEN_Gerard_Exercice_4_Escape_Game_FMTTN_C_2026-10-22.docx",
+    "fileType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "fileSize": 151572,
+    "fileUrl": "/travaux-etudiants/VROMEN_Gerard_Exercice_4_Escape_Game_FMTTN_C_2026-10-22.docx",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "",
+    "submittedAt": "2026-10-22 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.0,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.08,
+        "didacticQuality": 2.0,
+        "criticalAnalysis": 2.0,
+        "formAndStructure": 1.92
+      },
+      "summary": "Excellente participation et analyse de l'escape game (8.0/10) : Résolution des énigmes cyber et réflexion ludopédagogique.",
+      "strengths": [
+        "Résolution méthodique des énigmes de sécurité et d'hygiène numérique.",
+        "Analyse réflexive du rôle du jeu dans l'engagement cognitif de l'apprenant.",
+        "Compréhension de l'importance capitale du débriefing post-jeu pour institutionnaliser les savoirs."
+      ],
+      "improvements": [
+        "Détailler les questions de relance prévues lors du débriefing avec les élèves."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 4 (Escape Game FMTTN) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (8.0/10).",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux objectifs & Résolution de l'escape game (Critère A)",
+          "score": 2.08,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Maîtrise des concepts FMTTN & Cybersécurité (Critère B)",
+          "score": 2.0,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Analyse didactique & Phase d'institutionnalisation (Critère C)",
+          "score": 2.0,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Régulation réflexive & Travail collaboratif (Critères D & H)",
+          "score": 1.92,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-10-22 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0101",
+    "userId": "user-g.vromen@student.hech.be",
+    "userName": "Gérard Vromen",
+    "userEmail": "g.vromen@student.hech.be",
+    "exerciseId": "exercice-06",
+    "exerciseTitle": "Atelier 6 : Démarche itérative (Concevoir & tester un mini-jeu)",
+    "originalFileName": "VROMEN_Gerard_Atelier_6_Demarche_iterative_e_2026-10-22.docx",
+    "formattedFileName": "VROMEN_Gerard_Atelier_6_Demarche_iterative_e_2026-10-22.docx",
+    "fileType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "fileSize": 26813,
+    "fileUrl": "/travaux-etudiants/VROMEN_Gerard_Atelier_6_Demarche_iterative_e_2026-10-22.docx",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Lien vers le Genially – Le tri des déchets :\nLien vers le questionnaire GoogleForms :\nLes 3 améliorations effectués : \n- Correction des fautes d’orthographe\n- Ajout d’exercices supplémentaires dans le tri des objets et des liens vers « où vont nos poubelles ensuite »\n- Ajout d’un diplôme à la fin du mini-jeu.\nCe que vous avez appris grâce au processus d'itération : \n- Le fait d’améliorer un jeu en le faisant tester + demander un retour via le googleforms permet de se rendre compte des fautes commis lors de la conception, il permet également de faire attention aux erreurs à éviter pour les prochains jeux. \n- Il y a également la découverte de fonctionnalités dont on ne connait pas l’existence. \n- La clarté de navigation n’est pas toujours optimale (un bouton caché, trop d’éléments, des images trop petits, …) \n- Il y a également l’optimisation du temps de création, autant au début il faut beaucoup de temps pour réaliser le genially autant à la fin, la correction est plus rapide étant donné qu’on connait les différents fonctionnalités (et ses limites)\nEn quoi le test de votre production a-t-il modifié votre manière de concevoir le jeu ?\nA l’avenir, il faudrait réaliser un brouillon (connaissant maintenant les différentes fonctionnalités) avant d’entamer la création afin de ne plus perdre du temps. Le but premier a été de créer le jeu, ayant plus de connaissances on peut trouver plus de situations problèmes, les yeux à venir auront des idées innovantes, des jeux  plus ludiques à insérer dans le jeu, … \nGroupe :\nD’accardo Nathalie Esposito Julien Shreurs Aurélie Van Dijk Mariëlle Vromen Gérard",
+    "submittedAt": "2026-10-22 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.6,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.24,
+        "didacticQuality": 2.15,
+        "criticalAnalysis": 2.15,
+        "formAndStructure": 2.06
+      },
+      "summary": "Démarche de conception itérative rigoureuse (8.6/10) : Conception, playtest et amélioration continue d'un mini-jeu.",
+      "strengths": [
+        "Réalisation d'un prototype interactif fonctionnel et engageant.",
+        "Recueil méthodique des retours de testeurs pairs et identification des points de friction.",
+        "Améliorations effectives apportées en version 2 pour clarifier les feedbacks."
+      ],
+      "improvements": [
+        "Intégrer une jauge de progression réflexive pour les joueurs."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 6 (Démarche itérative & jeu) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (8.6/10).",
+      "criteriaTable": [
+        {
+          "name": "Démarche itérative & Conception du mini-jeu (Critère A)",
+          "score": 2.24,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Alignement pédagogique FMTTN & Feedback apprenant (Critère B)",
+          "score": 2.15,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Analyse réflexive des playtests & Prise en compte de l'erreur (Critère C)",
+          "score": 2.15,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Qualité de la réalisation interactive & Progression (Critères D & H)",
+          "score": 2.06,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-10-22 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0102",
+    "userId": "user-g.vromen@student.hech.be",
+    "userName": "Gérard Vromen",
+    "userEmail": "g.vromen@student.hech.be",
+    "exerciseId": "exercice-08",
+    "exerciseTitle": "Atelier 8 : Construire des grilles d'évaluation critériées",
+    "originalFileName": "VROMEN_Gerard_Exercice_8_Construire_des_gril_2026-11-05.docx",
+    "formattedFileName": "VROMEN_Gerard_Exercice_8_Construire_des_gril_2026-11-05.docx",
+    "fileType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "fileSize": 42325,
+    "fileUrl": "/travaux-etudiants/VROMEN_Gerard_Exercice_8_Construire_des_gril_2026-11-05.docx",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Exercice 8 : Construire des grilles d’évaluation critériées\nCas 1 : Recherche d’information : Rechercher des informations sur Internet concernant une personnalité scientifique, sélectionner des informations pertinentes et identifier des sources fiables.\nApprentissages visés : \nSavoirs : \nUtiliser adéquatement en contexte, les termes dont moteur de recherche, barre de recherche et navigateur.\nSavoirs-faires :\nDéterminer un ou plusieurs mot(s)-clé(s) pertinent(s) pour effectuer une recherche.\nUtiliser des outils de recherche dont des moteurs de recherche, en considérant leurs spécificités.\nNaviguer entre plusieurs documents, sites, applications, onglets, logiciels.\nAssocier chaque élément du résultat de la recherche à son intention.\nPointer la source apparente d’un contenu.\n\nCompétences mobilisés : \nRechercher un contenu, au moyen d’un outil de recherche imposé, en utilisant une bibliothèque appropriée et des mots-clés choisis individuellement.\nQuestionner la fiabilité contextuelle d’une source, avec l’aide de l’enseignant.\nCompétences transversales :\nDévelopper une pensée critique et complexe : trouver, traiter et évaluer des sources d’information fiables en luttant contre les généralisations et le copier-coller naïf. S’interroger sur l’intention des producteurs et diffuseurs de contenus sur le Web.\nApprendre à apprendre : développer son environnement personnel d’apprentissage.\nDécouvrir le monde des activités professionnelles et s’orienter.\nSe connaître et développer son autonomie.\n\nSituation problème :\n« Pour le cours de sciences et le journal de l’école, ton enseignant te demande de réaliser un article sur le tri des déchets et leur impact sur l’environnement. Malheureusement, il est parti précipitamment en réunion et n’a laissé sur ton banc un petit post-it jaune avec trois indices très mystérieux. »\nSur le post-it se trouve : \nIndice 1 : « Une pelure d’orange met quelques semaines à disparaître tandis qu’un sac de plastique met 450 ans. Retrouvez la frontière exacte entre ce qui est biodégradable à l’échelle humaine et ce qui ne l’est pas »\nIndice 2 : « PMC, compost, papier-carton, bulles à verre, … »\nIndice 2 : « Notre poubelle verte, une source d’énergie ? »\nConsigne : « A partir de ces 3 indices, utilisez votre navigateur pour réaliser les recherches sur ceux-ci. Complète ton carnet de recherche associé ».\nLa leçon se passe en plusieurs étapes : \nEtape 1 : Test flash « détective des déchets »\nEtape 2 : Retour, en groupe classe : Réaliser un brainstorming sur les mots tapés dans la barre de recherche. Ensuite proposer les sites trouvés par les élèves et demander en groupe classe leur avis sur la fiabilité de la source.\nEtape 3 : Demander aux élèves de réaliser la situation problème.\nEtape 4 : Présentation du son travail auprès de 4 condisciples. Laisser les élèves se confronter à leurs recherches et les laisser améliorer leurs recherches.\nEtape 5 : Rendre le carnet de note + le travail \n\nLe carnet de recherche : \n\nDispositif d’évaluation\nIci la grille d’évaluation se porte sur le dispositif diagnostique (10 à 15 minutes) qui sera réalisé en étape 1.\nGrilles d’évaluation critériée\nJustification des choix\nRétention des critères : \nElles répondent directement au référentiel de FMTTN. Chaque critère est un acquis d’apprentissage dicté dans le volet numérique du référentiel. Dans les critères on évalue les critères savoirs, savoirs-faires et les compétences mobilisées et transversales. Il s’agit donc d’une situation très complète qui permet d’évaluer les leviers nécessaires pour résoudre le défi.\nEléments permettent l’observation des indicateurs\nIl y a des critères directement observables et donc mesurables qui sont laissés par des traces écrits.\nEtant donné que les élèves ont accès aux critères, les élèves savent exactement ce qui atteste la réussite. Ceci facilite l’auto-évaluation.\nL’enseignant peut donc très rapidement déceler les blocages méthodologiques et y remédier.\nTraduction de la progression\nIl y a une échelle descriptive composé de 4 niveaux (initial, intermédiaire, confirmé et expert) qui traduit le passage d'une démarche impulsive à une démarche autonome et réflexive.\nNiveau 1 : L’élève agit de manière intuitive.\nNiveau 2 : L’élève applique les gestes de base mais ne comprend pas toujours l’origine et commet toujours des maladresses.\nNiveau 3 (attendu en fin d’année) : L’élève maitrise la procédure recommandée et répond pleinement aux exigences de la consigne.\nNiveau 4 : L’élève dépasse l’attendu simple.\nChoix de cette modalité\nLe choix d’un test diagnostique : Ce test a permis de déterminer les représentations initiales sans note chiffrée dès le début de la situation-problème. Elle permet également de déterminer les pré-requis des élèves venant d’écoles et de milieux différents.\nCe test permet également, en fin de leçon, de mettre à l’évidence aux élèves leur progression dans les différents attendus (de la matière comme la compétence transversale)\nCas 2 : Education aux médias (info ou intox ?) Analyser des publications provenant des réseaux sociaux, vérifier leur fiabilité et justifier son analyse.\nApprentissages visés\nSavoirs : \nExpliquer la notion de « Fake News » comme étant une information délibérément fausse.\nRéseaux socionumériques : expliciter les spécificités des différents réseaux socionumériques.\nNavigation sécurisée : distinguer un protocole sécurisé HTTPS d’un protocole non sécurisé http.\nSavoirs-faires :\nRepérage de la source : sélectionner des mots-clés pertinents, pointer la source apparente d’un contenu.\nProposer et mettre en place des actions pertinentes et adaptées face à des situations de cyberattaque, cyberharcèlement ou cybermanipulation.\n\nCompétences mobilisés : \nQuestionner la fiabilité contextuelle d’une source, avec l’aide de l’enseignant.\n\nCompétences transversales :\nDévelopper une pensée critique et complexe : trouver, traiter et évaluer des sources d’information fiables en luttant contre les généralisations et le copier-coller naïf. S’interroger sur l’intention des producteurs et diffuseurs de contenus sur le Web.\nCréativité : Adopter une posture citoyenne et écoresponsable du numérique.\nSituation problème :\n« Ce matin, c’est l’effervescence totale dans la cour de récréation ! Un message vocal de 15 secondes accompagné d’un visuel circule à toute vitesse dans les groupes Facebook, WhatsApp et Snapchat de la classe. On y entend clairement la voix de ton directeur annoncer : « Bonjour à tous les élèves. En raison d’un problème technique dans l’établissement, tous les cours sont suspendus ce vendredi après-midi pour organiser un grand tournoi de jeux vidéo dans le gymnase. Rendez-vous sur le lien ci-dessous pour inscrire votre compte et recevoir un passe d’accès gratuit ! Vite il n’y en aura pas pour tout le monde.». La voix ressemble à celle du directeur et le message utilise le logo officiel de l’école ! Certains élèves fêtent déjà la nouvelle, tandis que d’autres s’apprêtent à remplir le formulaire d’inscription. Ta mission : étant dans la brigade « Info/intox », le secrétariat de l’école vous demande de mener une enquête en 40 minutes afin de vérifier s’il s’agit d’une vraie communication officielle ou d’un piège numérique. Rédige à la suite de celui-ci une note d’explication pour la classe »\nL’élève va devoir compléter un carnet d’enquête : \nDispositif d’évaluation\nL’exercice sera 5 sera ici un test formatif\nGrilles d’évaluation critériée\nJustification des choix\nRétention des critères : \nElles répondent directement au référentiel de FMTTN. Chaque critère est un acquis d’apprentissage dicté dans le volet numérique du référentiel. Dans les critères on évalue les critères savoirs, savoirs-faires et les compétences mobilisées et transversales. La compréhension théorique de la notion de « Fake News » est vérifié. Les élèves doivent montrer à l’enseignant comment ils aborderaient une informations. \nEléments permettent l’observation des indicateurs\nLa grille décrit des comportements et des gestes techniques et des traces mesurables. Les élèves peuvent une fois de plus vérifier ce qui les attend. La grille permet de déterminer le niveau de réflexion et la nature exacte de(s) erreur(s) de l’élève.\nTraduction de la progression\nUne fois de plus on passe par une échelle descriptive à 4 niveaux.\nLe niveau 1 est toujours dans l’impulsivité où l’élève clique aveuglément, relaie l’information sans vérifier et dépend totalement de l’enseignant.\nLe niveau 2 permet de voir si un élève applique des gestes techniques isolés mais conserve une hésitation.\nLe niveau 3 (toujours attendu en fin s1) sera la maitrise de la démarche complète exigé.\nLe niveau 4 : Il dépasse l’attendu et analyse les biais, le fonctionnement des algorithmes, …\nOn pourrait supposer que la plupart des élèves commencent au niveau 1 et en passant par les différentes activités, les élèves atteindront normalement le niveau 3.\nChoix de cette modalité\nLe choix de l’évaluation formative : ) ce stade la grille ne sanctionne pas mais permet un feedback immédiat et constructif. L’enseignant peut directement insister sur les lacunes et trouver des « remédiations ». \nUn des points sur lequel insiste le programme : apprendre à apprendre. A travers la test formatif, l’élève cherche donc à comprendre où sont ses difficultés et peut alors les rétablir pour le test sommatif (l’enseignant donne une info et un intox, l’élève va devoir trouver laquelle est info et intox. Ensuite ils doivent justifier et expliquer leur démarche réalisée. \nCas 3 : Intelligence artificielle : Utiliser une IA générative pour créer une affiche, expérimenter différents prompts, comparer les résultats et justifier ses choix.\nApprentissages visés (en S3)\nSavoirs : \nExemplifier des usages de l’IA.\nSavoirs-faires :\nUtiliser conjointement des applications/des logiciels disponibles dans un espace numérique en ligne\nCompétences mobilisés : \nInterroger/analyser le potentiel d’un algorithme (ex. : en matière d’intelligence artificielle [IA]\nCompétences transversales :\nApprendre à apprendre : être capable d’expliciter le sens de sa démarche et de ses choix.\nSituation problème :\n« Pour l’organisation de la journée sportive, le comité des élèves aimerait réaliser une affiche. Afin de gagner en temps, un des élèves propose de confier le travail à l’IA. Etant donné que tu es en charge des affiches pour le comité, tu vas devoir t’en charger. Tu dois essayer d’attirer le plus de monde à y participer. Il faut donc que tu génère un texte/slogan et que tu crées l’affiche à l’aide de l’I.A. »\nL’élève va devoir créer l’affiche à l’aide de son carnet de bord :\nDispositif d’évaluation\nL’évaluation se fait donc par les pairs.\nGrille d’évaluation critérié\nJustification des choix\nRétention des critères : \nLes 4 critères découlent directement du référentiel FMTTN.\nExemplifier des usages de l’IA : l’élève doit être capable de distinguer génération textuelle et la génération visuelle. Et il doit comprendre la diversité des applications algorithmiques.\nUtiliser conjointement des app/logiciels en ligne : l’élève doit pouvoir associer un générateur d’image à un outil de mise en page.\nInterroger/analyser le potentiel d’un algorithme d’IA : L’élève doit dépasser l’effet « magique » pour évaluer les biais, artefacts et limites réelles du modèle.\nApprendre à apprendre : l’élève doit analyser la métacognition de son travail.\nEléments permettent l’observation des indicateurs\nChaque niveau s’appuie sur des traces écrites et mesurables déposées dans le carnet de rouge (retranscription exacte du prompt)\nLes appréciations seront objectives : on évalue la méthodologie numérique pour sa pertinence, l’articulation des outils et la lucidité du regard porté sur l’algorithme.\nLes élèves savent ce qui est attendu permettant une auto-évaluation immédiate au cours de l’activité.\nTraduction de la progression\nNiveau 1 : l’élève subit l’outil. Il accepte la première image générée sans recul. Il ne sait pas combiner deux applications et ne parvient pas à expliquer ses prompts.\nNiveau 2 : L’élève utilise les outils de manière cloisonnée. Il repère des erreurs flagrants mais peine à ajuster son prompt ou à justifier ses choix.\nNiveau 3 : L’élève maitrise la démarche complète : il rédige un prompt structuré, combine conjointement les outils dans l’espace en ligne.\nNiveau 4 : L’élève maîtrise le fonctionnement général des algorithmes, optimise les mises en page et argumente la valeur ajoutée de l’intelligence humaine face à l’IA.\nChoix de cette modalité\nL’évaluation par les pairs permet d’un part une évaluation formative qui permet dans un premier temps d’améliorer son affiche en ajustant son prompt, … d’un autre part : les élèves peuvent donner des conseils et partager leurs prompts. Il y a donc d’abord le recherche par essais-erreurs. L’enseignant intervient donc en tant que guide. L’évaluation valorise surtout le développement de l’esprit critique, l’autonomie méthodologique et la capacité à devenir un utilisateur éclairé et responsable des technologies numériques.",
+    "submittedAt": "2026-11-05 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.4,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.44,
+        "didacticQuality": 2.35,
+        "criticalAnalysis": 2.35,
+        "formAndStructure": 2.26
+      },
+      "summary": "Excellente grille critériée (9.4/10) : Définition d'indicateurs observables et structuration à 4 degrés d'acquisition.",
+      "strengths": [
+        "Critères didactiques indépendants et sans chevauchement.",
+        "Indicateurs observables clairs pour chaque niveau d'acquisition.",
+        "Mobilisation judicieuse de l'évaluation formative et de l'auto-évaluation."
+      ],
+      "improvements": [
+        "Proposer une version simplifiée 'falc' à destination directe de l'élève."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 8 (Grilles critériées) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (9.4/10).",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux situations d'apprentissage & Exhaustivité (Critère A)",
+          "score": 2.44,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Rigueur de la formulation critériée à 4 niveaux & Indicateurs observables (Critère B)",
+          "score": 2.35,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Articulation formative, auto-évaluation & régulation par les pairs (Critères C & D)",
+          "score": 2.35,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Qualité rédactionnelle, Clarté & Transposition didactique (Critères E & H)",
+          "score": 2.26,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-11-05 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0103",
     "userId": "user-hockers.caroline@outlook.com",
     "userName": "Caroline Hockers",
     "userEmail": "hockers.caroline@outlook.com",
@@ -6251,7 +7682,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0083",
+    "id": "file-real-0104",
     "userId": "user-hockers.caroline@outlook.com",
     "userName": "Caroline Hockers",
     "userEmail": "hockers.caroline@outlook.com",
@@ -6319,7 +7750,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0084",
+    "id": "file-real-0105",
     "userId": "user-hockers.caroline@outlook.com",
     "userName": "Caroline Hockers",
     "userEmail": "hockers.caroline@outlook.com",
@@ -6387,7 +7818,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0085",
+    "id": "file-real-0106",
     "userId": "user-j.wasterlain@student.hech.be",
     "userName": "Justin Wasterlain",
     "userEmail": "j.wasterlain@student.hech.be",
@@ -6455,7 +7886,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0086",
+    "id": "file-real-0107",
     "userId": "user-j.wasterlain@student.hech.be",
     "userName": "Justin Wasterlain",
     "userEmail": "j.wasterlain@student.hech.be",
@@ -6523,7 +7954,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0087",
+    "id": "file-real-0108",
     "userId": "user-j.wasterlain@student.hech.be",
     "userName": "Justin Wasterlain",
     "userEmail": "j.wasterlain@student.hech.be",
@@ -6591,7 +8022,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0088",
+    "id": "file-real-0109",
     "userId": "user-j.wasterlain@student.hech.be",
     "userName": "Justin Wasterlain",
     "userEmail": "j.wasterlain@student.hech.be",
@@ -6659,7 +8090,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0089",
+    "id": "file-real-0110",
     "userId": "user-jonathan.valenzano@student.hech.be",
     "userName": "Jonathan Valenzano",
     "userEmail": "jonathan.valenzano@student.hech.be",
@@ -6729,7 +8160,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0090",
+    "id": "file-real-0111",
     "userId": "user-jonathan.valenzano@student.hech.be",
     "userName": "Jonathan Valenzano",
     "userEmail": "jonathan.valenzano@student.hech.be",
@@ -6797,7 +8228,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0091",
+    "id": "file-real-0112",
     "userId": "user-jonathan.valenzano@student.hech.be",
     "userName": "Jonathan Valenzano",
     "userEmail": "jonathan.valenzano@student.hech.be",
@@ -6865,7 +8296,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0092",
+    "id": "file-real-0113",
     "userId": "user-jonathan.valenzano@student.hech.be",
     "userName": "Jonathan Valenzano",
     "userEmail": "jonathan.valenzano@student.hech.be",
@@ -6933,7 +8364,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0093",
+    "id": "file-real-0114",
     "userId": "user-jonathan.valenzano@student.hech.be",
     "userName": "Jonathan Valenzano",
     "userEmail": "jonathan.valenzano@student.hech.be",
@@ -7001,7 +8432,416 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0094",
+    "id": "file-real-0115",
+    "userId": "user-jonathan.valenzano@student.hech.be",
+    "userName": "Jonathan Valenzano",
+    "userEmail": "jonathan.valenzano@student.hech.be",
+    "exerciseId": "exercice-07",
+    "exerciseTitle": "Atelier 7 : Défi Hardware & Peer Learning (Démonter/Remonter un PC)",
+    "originalFileName": "VALENZANO_Jonathan_Exercice_7_Defi_Hardware_Peer__2026-10-31.pdf",
+    "formattedFileName": "VALENZANO_Jonathan_Exercice_7_Defi_Hardware_Peer__2026-10-31.pdf",
+    "fileType": "application/pdf",
+    "fileSize": 658596,
+    "fileUrl": "/travaux-etudiants/VALENZANO_Jonathan_Exercice_7_Defi_Hardware_Peer__2026-10-31.pdf",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Anita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 1 \n \nExercice 07 - DÉFI HARDWARE \n \nL’ordinateur fonctionne. \n \n1. Observer \n \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 2 \n \nComposants \nFonction \nConnexions \nAlimentation \nApporter de l’électricité à la \ncarte mère. \n- \nCarte mère \nCarte mère \nRelier les composants entre \neux et alimenter certains \ncomposants en électricité. \n- \nAlimentation \n- \nProcesseur \n- \nLecteur optique \n- \nStockage SSD \n- \nVentilateur \n- \nRAM \nVentilateur \nGérer la température du \nprocesseur. \n- \nCarte mère \n- \nProcesseur (collé via une \npâte thermique) \nLecteur optique \nLire CD et DVD pour \ntransmettre les \ninformations. \n- \nCarte-mère  \no Alimentation \no Données \nRAM \nStocker les données de \nmanière temporaire. \n- \nCarte mère \n \nCes composants n’étaient pas visibles avant le démontage. \nProcesseur \nCoordinateur des \ncomposants et calculateur. \n- \nCarte mère \nStockage SSD \nStocker des données de \nmanière permanente. \n- \nCarte mère \nCarte graphique \nAfficher les images et les \nvidéos à l’écran. \nIntégrée à la carte mère \n \n2. Démonter \nNuméros \nÉléments retirés / Actions \nPhotos \n1 \nLa face latérale \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 3 \n2 \nLa face avant. \n \n3 \nL’emplacement du disque dur. \n \n4 \nLa structure qui tient le lecteur \noptique. \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 4 \n5 \nDéconnecter le lecteur optique. \n \n6 \nRetirer le lecteur optique de \nson support. \n \n7  \nRetirer la RAM. \n \n8 \nDéconnecter le ventilateur de la \ncarte mère et le retirer. \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 5 \n9 \nRetirer le dissipateur \nthermique. \n \n10 \nDéconnecter l’alimentation de \nla carte mère et retirer le bloc \nd’alimentation. \n \n11 \nDéconnecter tous les petits \ncâbles encore connectés à la \ncarte mère (SATA, connexion \naux éléments extérieurs). \n \n12 \nRetrait du SSD. \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 6 \n13 \nRetrait des vis tenant la carte \nmère et retrait de celle-ci. \n \n \n3. Apprendre \nNous avons utilisé une vidéo en ligne car nous rencontrions des difficultés pour retirer la \ncarte mère. \n \n4. Remonter \nPour le démontage, nous avons placé les différents éléments (vis et composants) dans \nl’ordre du retrait afin d’utiliser cette organisation pour le remontage (ordre inverse). \nDes photos des différentes connectiques ont été prises pour ne pas se tromper de câbles. \n \n   \n   \n \n \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 7 \n \n \n \n5. Démarrage de l’ordinateur \nAucun problème à signaler. \n \n \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 8 \n \n6. Bilan \n• \nQuelle difficulté avons-nous rencontrée ? \nNous avons éprouvé des difficultés à retirer la carte mère, nous avions même pensé \nqu’elle était peut-être collée. \nLors du remontage, la face avant ne s’emboitait pas correctement, un élément (la \nstructure pour un disque dur) n’était pas correctement placée. \n• \nComment avons-nous trouvé la solution ? \nNous avons visionné des vidéos pour comprendre comment retirer la carte mère sans \nforcer. \nNous avons démonté à nouveau l’élément gênant. \n• \nQu'avons-nous appris grâce à nos erreurs ? \nIl est important de se renseigner avant de faire quelque chose qui pourrait endommager \nle matériel. \nNe pas s’énerver et revenir sur des étapes précédentes pour palier le problème. \n• \nQu'est-ce qu'un autre groupe nous a appris ? \nNous étions en autonomie pour faire ce travail. \n• \nQu'avons-nous compris grâce à la manipulation que nous aurions difficilement compris avec un \ncours théorique ? \nLa manipulation permet de se plonger plus facilement dans l’ordinateur. On est obligé de \nrester concentrer tout le long de l’activité. La manipulation présente l’avantage \nd’observer l’ordinateur sur toutes ses coutures, de repérer l’organisation structurée qui \nest présente au niveau des câblages et placement des éléments. La manipulation \ndemande également d’autres compétences purement techniques afin de s’organiser au \nmieux lors du démontage par exemple. Cet exercice nous a permis de réfléchir et de \nnous poser des questions sur l’agencement des éléments, contrairement à un cours \nthéorique qui aurait probablement fourni les réponses sans que nous ayons à les \nchercher activement.  \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 9",
+    "submittedAt": "2026-10-31 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.2,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.39,
+        "didacticQuality": 2.3,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.21
+      },
+      "summary": "Très bon dossier Hardware et tutorat (9.2/10) : Identification rigoureuse des composants PC et scénarisation de l'apprentissage entre pairs.",
+      "strengths": [
+        "Identification précise des composants matériels (CPU, RAM, carte mère, stockage, bloc d'alimentation).",
+        "Intégration rigoureuse des consignes de sécurité physique et antistatique.",
+        "Scénarisation didactique du tutorat entre pairs avec étapes pas-à-pas et questionnement guidé.",
+        "Posture réflexive valorisant l'apprentissage actif par la manipulation."
+      ],
+      "improvements": [
+        "Expliciter les critères de validation que le tuteur pair vérifie avant de passer à l'étape suivante."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 7 (Hardware & Tutorat par les pairs) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (9.2/10).",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Identification des composants PC (Critère A)",
+          "score": 2.39,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Exactitude technique & Sécurité matérielle/antistatique (Critère B)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Dispositif de tutorat par les pairs & Clarté du guidage pas-à-pas (Critère C)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité pédagogique (Critères E & H)",
+          "score": 2.21,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-10-31 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0116",
+    "userId": "user-jonathan.valenzano@student.hech.be",
+    "userName": "Jonathan Valenzano",
+    "userEmail": "jonathan.valenzano@student.hech.be",
+    "exerciseId": "exercice-08",
+    "exerciseTitle": "Atelier 8 : Construire des grilles d'évaluation critériées",
+    "originalFileName": "VALENZANO_Jonathan_Exercice_8_Construire_des_gril_2026-10-22.pdf",
+    "formattedFileName": "VALENZANO_Jonathan_Exercice_8_Construire_des_gril_2026-10-22.pdf",
+    "fileType": "application/pdf",
+    "fileSize": 401789,
+    "fileUrl": "/travaux-etudiants/VALENZANO_Jonathan_Exercice_8_Construire_des_gril_2026-10-22.pdf",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Anita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 1 \nRecherche d’information \nIntitulé \nRechercher des informations sur Internet concernant une personnalité scientifique, \nsélectionner des informations pertinentes et identifier des sources fiables. \n1. Identification des apprentissages visés \nSavoirs  \n• Connaître les critères de validité d'une source web (auteur, date, institution, URL) ; \n• Connaître le vocabulaire spécifique lié à la biographie de la personnalité scientifique. \n \nLien avec le référentiel : Vocabulaire spécifique au réseau (Internet) et au software \n(moteur de recherche, navigateur, URL, extensions) \n \nSavoir-faire \n• Utiliser des moteurs de recherche de manière efficace (mots-clés, opérateurs) ;  \n• Croiser les sources ; \n• Filtrer l'information pertinente par rapport à la consigne. \n \nLien avec le référentiel : Utiliser un outil de recherche en s’adaptant à l’environnement, \ndéterminer des mots-clés pertinents, pointer la source apparente d’un contenu. \n \nCompétence mobilisée \n• Traiter des informations textuelles et documentaires pour restituer une synthèse \nrigoureuse et contextualisée. \nCapacités transversales \n• Esprit critique (évaluation de la fiabilité) ; \n• Autonomie dans la démarche de recherche. \n \nLien avec le référentiel : « Effectuer une recherche pour répondre à un besoin suivant \nune stratégie pertinente » et « Évaluer la fiabilité contextuelle d'une source ». \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 2 \nCritères \nIndicateurs \nA \nB \nC \nD \n1. Pertinence et \nsélection des \ninformations \n§ Sélectionne des \nfaits en lien direct \navec la consigne. \n \n§ Écarte les détails \nsuperflus. \n \n§ Couvre les \naspects clés de la \npersonnalité. \nEffectue une \nsélection rigoureuse \net synthétique qui \nmet en évidence les \néléments essentiels \ndu parcours de la \npersonnalité. \n \nHiérarchise \nl'information pour ne \ngarder que l'essentiel \net produit une \nsynthèse percutante. \nSélectionne des \ninformations \nfactuelles, \npertinentes et \ndirectement reliées à \nla consigne. \nSélectionne des \ninformations \ncorrectes mais \nincomplètes ou \ncomportant quelques \ndétails superflus. \nIntègre des \ninformations hors \nsujet ou omet des \naspects centraux de \nla consigne. \n2. Fiabilité et analyse \ndes sources \n§ Vérifie l'origine \ndes sites (auteur, \ninstitution, URL). \n \n§ Croise les \ninformations sur \nplusieurs sources. \n \n§ Identifie la date \nde publication et \nde mise à jour. \nAnalyse de manière \ncritique l'origine, les \nbiais potentiels et la \nlégitimité des sources \ndocumentaires \nconsultées. \nIdentifie et cite des \nsources \ninstitutionnelles ou \nacadémiques fiables \net croise au moins \ndeux sources \nindépendantes. \nUtilise des sources \nglobales mais ne \ncroise pas \nsystématiquement les \ninformations pour en \nvérifier l'exactitude. \nUtilise des sources \nnon vérifiées ou de \ntype encyclopédique \nparticipatif sans \nrecoupement \n(exemple : réseaux \nsociaux, blogs \nanonymes). \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 3 \nCritères \nIndicateurs \nA \nB \nC \nD \n3. Esprit critique et \ndistanciation \n§ Distingue les faits \ndes opinions ou \nrumeurs. \n§ Identifie les biais \néventuels. \n§ Justifie le choix \ndes sources \nretenues. \nExerce un regard \ncritique aiguisé, \ndétecte les biais \nhistoriques ou \néditoriaux et \nargumente \nsolidement ses choix \ndocumentaires. \nFait la distinction \nclaire entre faits \navérés et \ninterprétations ; \nexplique la valeur des \nsources choisies. \nRemet rarement en \nquestion les \naffirmations lues et \njustifie difficilement la \ncrédibilité des sites \nchoisis. \nRépète des \ninformations sans \nrecul ni \ndiscernement, en \nconfondant faits et \nrumeurs. \n4. Communication \n§ Explique la \nstratégie de \nrecherche \nemployée. \n§ Présente les \nrésultats \nclairement. \n§ Utilise un \nvocabulaire \nadapté. \nExplicite avec aisance \net rigueur toute sa \ndémarche \nméthodologique, \nprésente des \nrésultats \nsynthétiques et \nutilise un vocabulaire \ntechnique précis. \nExplique clairement \nsa stratégie de \nrecherche, présente \ndes résultats \nstructurés et emploie \nle vocabulaire \nnumérique adéquat. \nExplique globalement \nsa démarche mais de \nfaçon schématique, \nen oubliant de \nmentionner certains \nchoix de mots-clés \nou de sites. \nRestitue les résultats \nde manière confuse \nou est incapable \nd'expliquer comment \nil a mené sa \nrecherche sur \nInternet. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 4 \n2. Dispositif d’évaluation \nModalité \n• Co-évaluation ; \n• Évaluation formative. \nJustification \nL'évaluation formative permet à l'élève d'ajuster sa recherche en cours de route. La co-\névaluation (par les paires) est particulièrement intéressante : un élève analyse la \nbibliographie et la pertinence des sources sélectionnées par un camarade, ce qui renforce \nl'esprit critique par la confrontation des pratiques de recherche. \n \n3. Justification des choix pédagogiques \nChoix des critères \nLa recherche ne se résumant pas à un simple copier-coller, les critères ciblent à la fois la \nqualité du contenu (pertinence), la rigueur épistémologique (fiabilité et esprit critique) et \nla communication de l'élève.  \nIndicateurs observables \nLes indicateurs évitent le subjectif en ciblant des actions concrètes (croiser les sources, \nidentifier l'auteur, reformuler). \nProgression des niveaux \nLa progression va d'une collecte passive et non vérifiée (niveau D) à une démarche active, \ncritique, autonome et réflexive (niveau A). \nLe niveau A signifie : la maîtrise dépasse l’attendu. \nLe niveau B signifie : la maîtrise est conforme à l’attendu. \nLe niveau C signifie : la maîtrise est en proche de l’attendu. \nLe niveau D signifie : la maîtrise est très en deçà de l’attendu. \n \n \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 5 \nRemarques \nLes grilles officielles WBE utilisent une graduation normalisée à 4 niveaux (A, B, C, D) reposant \nsur une formulation trop vague comme pour le niveau A : La maîtrise dépasse l’attendu.  Nous \navons décidé de personnaliser chaque description de cellule de manière spécifique. \nLes documents officiels WBE intègrent également des critères incontournables et une échelle \nde validation par couleur (Bleu, Vert, Jaune, Orange). Nous avons décidé de ne pas définir les \ncritères incontournables. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 1 \nDémontage et remontage d’un ordinateur \nIntitulé \nDémonter un ordinateur, identifier ses composants, expliquer leur fonction et remonter \ncorrectement la machine. \n1. Identification des apprentissages visés \nSavoir  \n• Connaissance du nom et de la nature des composants internes de l'ordinateur (carte \nmère, processeur, mémoire vive, stockage, alimentation, cartes filles). \n \nLien avec le référentiel : Vocabulaire spécifique au hardware (distinction matériel/logiciel, \nmémoire vive / mémoire morte, stockage interne / externe, périphériques). \n \nSavoir-faire \n• Manipuler le matériel informatique avec précaution (gestes antistatiques, repérage de \nla visserie, débranchement des nappes) ; \n• Appliquer une procédure méthodique de démontage/remontage. \n \nLien avec le référentiel : Appliquer des règles de sécurité et de manipulation \nméthodique, organiser et gérer l'espace technique. \n \nCompétence mobilisée \n• Résoudre une tâche technique complexe en mobilisant habileté manuelle, \nraisonnement spatial et connaissances théoriques. \nCapacités transversales \n• Rigueur méthodologique ; \n• Respect des consignes de sécurité ;  \n• Autonomie ; \n• Persévérance face à un problème technique. \n \nLien avec le référentiel : Gérer et organiser des données matérielles et logicielles de \nmanière sécurisée et fonctionnelle. \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 2 \nCritères \nIndicateurs \nA \nB \nC \nD \n1. Sécurité et respect \ndu matériel \n§ Utilise les \nprécautions \nantistatiques (si \ndisponible). \n \n§ Manipulation \ndouce des \nconnectiques et \ncartes. \n \n§ Rangement \nordonné de la \nvisserie. \nGestes sûrs, \nprécautionneux et \nprofessionnels ; \nanticipe les risques \nde casse ou de court-\ncircuit. \nRespecte \nscrupuleusement les \nconsignes de \nmanipulation, utilise \nles outils adaptés et \nrange \nméthodiquement les \ncomposants. \nManipule avec \nprécaution globale \nmais oublie de \nsécuriser certains \néléments fragiles ou \ndésorganise la \nvisserie. \nForce les \nconnectiques, \nmanipule les cartes \npar les circuits \nimprimés ou néglige \nles risques \nélectrostatiques. \n2. Méthodologie et \nordre opératoire \n§ Suit l'ordre \nlogique de \ndémontage \n(périphériques ➔ \nalimentation ➔ \ncartes ➔ \nprocesseur). \n \n§ Maintien de \nl'espace de travail \npropre. \nMaîtrise parfaite de la \nchronologie, fluidité \ndes gestes, \nautonomie complète \ndans l'organisation de \nl'espace de travail. \nApplique \nrigoureusement la \nchronologie logique \nde démontage et de \nremontage sans \nprécipitation. \nSuit les grandes \nétapes mais commet \ndes erreurs d'ordre \n(exemple : oubli d'un \ncâble avant \nextraction de carte). \nProcède de manière \nanarchique, dévisse \ndes éléments sans \nlogique ou risque \nd'endommager la \nstructure. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 3 \nCritères \nIndicateurs \nA \nB \nC \nD \n3. Identification et \nfonction des \ncomposants \n§ Nomme \ncorrectement \nchaque \ncomposant (CPU, \nRAM, SSD, etc.). \n \n§ Explique \nprécisément le \nrôle de chaque \nélément. \nDémontre une \nexpertise \napprofondie en \nexpliquant non \nseulement le rôle, \nmais aussi les \ninteractions entre les \ncomposants. \nIdentifie sans \nhésitation tous les \ncomposants \nmanipulés et explicite \nclairement leur \nfonction technique. \nIdentifie les \ncomposants \nprincipaux mais \nhésite ou formule \ndes imprécisions sur \nleur rôle exact. \nConfond les \ncomposants majeurs \n(exemple : confusion \nentre RAM et \nstockage) et ignore \nleurs fonctions \nprincipales. \n4. Fonctionnement \nfinal de la machine \n§ La machine \nredémarre au \npremier essai. \n \n§ Tous les câbles \ninternes sont \ncorrectement \nrebranchés. \nRemontage \nimpeccable, gestion \nsoignée du \ncheminement des \ncâbles favorisant la \ncirculation d'air. \nLa machine \nredémarre du \npremier coup, \nattestant d'un \nremontage intègre et \nrigoureux. \nLa machine démarre \naprès l'identification \net la correction de \nquelques erreurs de \nraccordement par \nl'élève. \nLa machine ne \ndémarre pas à la \nsuite d’oublis majeurs \nde câblage ou des \ninversions de \nconnecteurs. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 4 \n2. Dispositif d’évaluation \nModalité \n• Évaluation formative en cours \n• Auto-évaluation (bilan des difficultés rencontrées). \nJustification \nCette activité combine un geste technique manuel et un savoir théorique. L'évaluation \nformative est indispensable pour intervenir immédiatement en cas de geste dangereux \npour le matériel. Le redémarrage de la machine offre une rétroaction immédiate et \nindiscutable à l'élève. \n \n3. Justification des choix pédagogiques \nChoix des critères \nLes critères couvrent l'ensemble de la compétence technique : la sécurité et le soin (savoir-\nêtre), la méthode (savoir-faire procédural), la théorie (savoirs) et le résultat final \n(performance). \nIndicateurs observables \nBasés sur des actions concrètes et vérifiables (la machine démarre, les connectiques sont \nmanipulées sans forcer, le vocabulaire est exact). \nProgression des niveaux \nTraduit le passage d'un tâtonnement risqué pour le matériel (niveau D) à une exécution \nexperte, soigneuse et autonome (niveau A). \nLe niveau A signifie : la maîtrise dépasse l’attendu. \nLe niveau B signifie : la maîtrise est conforme à l’attendu. \nLe niveau C signifie : la maîtrise est en proche de l’attendu. \nLe niveau D signifie : la maîtrise est très en deçà de l’attendu. \n \n \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 5 \nRemarques \nLes grilles officielles WBE utilisent une graduation normalisée à 4 niveaux (A, B, C, D) reposant \nsur une formulation trop vague comme pour le niveau A : La maîtrise dépasse l’attendu.  Nous \navons décidé de personnaliser chaque description de cellule de manière spécifique. \nLes documents officiels WBE intègrent également des critères incontournables et une échelle \nde validation par couleur (Bleu, Vert, Jaune, Orange). Nous avons décidé de ne pas définir les \ncritères incontournables. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 1 \nPrésentation multimédia \nIntitulé \nCréer une présentation destinée à sensibiliser les élèves au cyberharcèlement en sélectionnant \net organisant des informations et des contenus multimédias pertinents. \n1. Identification des apprentissages visés \nSavoirs  \n• Définition du cyberharcèlement ; \n• Identification des mécanismes de groupe ; \n• Identification des droits d’auteur, droit à l’image ; \n• Connaissance des ressources d'aide (lignes d'écoute, signalement). \n \nLien avec le référentiel : Vocabulaire invariant de production, droits d'auteur, droit à \nl'image et à la voix, respect de la vie privée et de la nétiquette. \n \nSavoir-faire \n• Structurer un message de sensibilisation percutant ; \n• Concevoir un support multimédia équilibré (texte, image, vidéo, audio) ;  \n• Citer les sources et respecter le droit à l'image / les droits d'auteur. \n \nLien avec le référentiel : Utiliser des fonctionnalités courantes d'un outil de présentation \n(intégration de médias), appliquer les principes d'élaboration d'un message multimédia \npour appuyer un discours. \n \nCompétence mobilisée \n• Communiquer efficacement à des fins de sensibilisation auprès d'un public cible (les \npairs) en mobilisant des langages multiples. \nCapacités transversales \n• Empathie ;  \n• Engagement citoyen ; \n• Créativité et maîtrise des outils de communication numérique. \n \nLien avec le référentiel : « Produire et traiter des contenus multimédias » et « \nInteragir/communiquer de manière responsable ». \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 2 \nCritères \nIndicateurs \nA \nB \nC \nD \n1. Pertinence et \nexactitude du \ncontenu \n§ Définitions \ncorrectes du \ncyberharcèlement. \n \n§ Distingue \nharcèlement et \ncyberharcèlement. \n \n§ Propose des \nsolutions \nconcrètes ou des \nrecours. \nLe contenu dépasse \nla simple restitution \nen proposant une \nanalyse rigoureuse \ndes dynamiques \nrelationnelles et des \nsolutions innovantes. \nLe contenu est exact, \ncomplet, bien \ndocumenté et \npropose des pistes \nde prévention claires \nadaptées au public. \nPrésente les notions \ngénérales mais \nmanque de précision \nsur les mécanismes \nou omet les \nsolutions/ressources. \nContenu lacunaire, \ncomportant des \nerreurs factuelles ou \ndes amalgames \npréjudiciables sur le \nsujet. \n2. Qualité de la \ncommunication et \nstructure \n§ Message clair et \npercutant. \n \n§ Enchaînement \nlogique des \ndiapositives ou \nsections. \n \n§ S'adresse \ndirectement au \npublic visé. \nCommunication \ncaptivante, narration \nfluide et impact \némotionnel/réflexif \nfort, suscitant \nl'adhésion immédiate. \nStructure claire, \naccroche efficace, \nton juste et \npersuasif, \nparfaitement adapté \naux élèves \nsensibilisés. \nStructure présente \nmais transitions \nmaladroites ; impact \nde sensibilisation \nmodéré sur le public. \nStructure décousue, \nmessages confus ou \nnon adaptés au \npublic visé (trop \ninfantilisants ou trop \njargonneux). \n \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 3 \nCritères \nIndicateurs \nA \nB \nC \nD \n3. Utilisation \njudicieuse des médias \n§ Illustrations/vidéos \nau service du \npropos (pas \ndécoratives). \n \n§ Lisibilité des \ndiapos (contraste, \nsobriété). \n \n§ Respect des droits \nd'auteur/images. \nUtilisation créative et \nmaîtrisée des \nressources \nmultimédias (rythme, \nesthétique, \naccessibilité, sources \nirréprochables). \nMédias \nsoigneusement \nchoisis, renforçant le \nmessage, diapositives \népurées et respect \ndes droits d'auteur. \nUtilise quelques \nmédias pertinents \nmais la mise en page \nnuit parfois à la \nlisibilité ou les \nsources d'images ne \nsont pas indiquées. \nSurcharge visuelle, \nmédias purement \ndécoratifs ou \nperturbateurs, non-\nrespect des droits \nd'auteur. \n4. Posture éthique et \nengagement \n§ Respect d'autrui \net empathie dans \nle traitement du \nsujet. \n \n§ Refus du \nsensationnalisme \ndéplacé. \nDéveloppe une \napproche nuancée, \nhumaine et \nconstructive, \nvalorisant l'entraide \net la responsabilité \ncollective. \nTraite le sujet avec \nsérieux, respect, \ndiscernement et \nempathie, \ndémontrant une \nréelle posture \ncitoyenne. \nTraite le sujet de \nmanière formelle et \ndistante, sans \nsusciter de réelle \nprise de conscience \nou d'empathie. \nUtilise un ton \nculpabilisant, \nmoralisateur ou au \ncontraire banalisant \nface aux situations \nprésentées. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 4 \n2. Dispositif d’évaluation \nModalité \n• Auto-évaluation suivie d’une évaluation par les pairs \n• Évaluation sommative. \nJustification \nLe sujet s'y prête particulièrement : la sensibilisation au cyberharcèlement vise le public \ncible (les pairs). L'évaluation par les pairs permet de mesurer si l'objectif de sensibilisation \net d'impact sur le public est réellement atteint. \n \n3. Justification des choix pédagogiques \nChoix des critères \nLa grille combine trois dimensions complémentaires : la rigueur des informations \nprésentées, la maîtrise technique et esthétique de la communication et des médias, ainsi \nque l’engagement citoyen et éthique. \nIndicateurs observables \nPermettent de vérifier objectivement si les notions légales et préventives sont présentes, \net si la forme graphique respecte les règles d'ergonomie multimédia (lisibilité, absence de \nsurcharge). \nProgression des niveaux \nÉvolue d'une production maladroite ou anxiogène (niveau D) à une création percutante, \néthique, rigoureuse et esthétiquement maîtrisée (niveau A). \nLe niveau de validation A signifie : la maîtrise dépasse l’attendu. \nLe niveau de validation B signifie : la maîtrise est conforme à l’attendu. \nLe niveau de validation C signifie : la maîtrise est en proche de l’attendu. \nLe niveau de validation D signifie : la maîtrise est très en deçà de l’attendu. \n \n \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 5 \nRemarques \nLes grilles officielles WBE utilisent une graduation normalisée à 4 niveaux (A, B, C, D) reposant \nsur une formulation trop vague comme pour le niveau A : La maîtrise dépasse l’attendu.  Nous \navons décidé de personnaliser chaque description de cellule de manière spécifique. \nLes documents officiels WBE intègrent également des critères incontournables et une échelle \nde validation par couleur (Bleu, Vert, Jaune, Orange). Nous avons décidé de garder l’idée des \ncouleurs et de critères incontournables qui représentent l’essentiel de l’apprentissage.",
+    "submittedAt": "2026-10-22 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.4,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.44,
+        "didacticQuality": 2.35,
+        "criticalAnalysis": 2.35,
+        "formAndStructure": 2.26
+      },
+      "summary": "Excellente grille critériée (9.4/10) : Définition d'indicateurs observables et structuration à 4 degrés d'acquisition.",
+      "strengths": [
+        "Critères didactiques indépendants et sans chevauchement.",
+        "Indicateurs observables clairs pour chaque niveau d'acquisition.",
+        "Mobilisation judicieuse de l'évaluation formative et de l'auto-évaluation."
+      ],
+      "improvements": [
+        "Proposer une version simplifiée 'falc' à destination directe de l'élève."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 8 (Grilles critériées) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (9.4/10).",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux situations d'apprentissage & Exhaustivité (Critère A)",
+          "score": 2.44,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Rigueur de la formulation critériée à 4 niveaux & Indicateurs observables (Critère B)",
+          "score": 2.35,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Articulation formative, auto-évaluation & régulation par les pairs (Critères C & D)",
+          "score": 2.35,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Qualité rédactionnelle, Clarté & Transposition didactique (Critères E & H)",
+          "score": 2.26,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-10-22 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0117",
+    "userId": "user-josephine.staffe@student.hech.be",
+    "userName": "Joséphine Staffe",
+    "userEmail": "josephine.staffe@student.hech.be",
+    "exerciseId": "exercice-01",
+    "exerciseTitle": "Atelier 1 : Diagnostic de compétences (DigComp 2.2)",
+    "originalFileName": "STAFFE_Josephine_Exercice_1_Diagnostic_de_compe_2026-10-23.docx",
+    "formattedFileName": "STAFFE_Josephine_Exercice_1_Diagnostic_de_compe_2026-10-23.docx",
+    "fileType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "fileSize": 23950,
+    "fileUrl": "/travaux-etudiants/STAFFE_Josephine_Exercice_1_Diagnostic_de_compe_2026-10-23.docx",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Exercice 1.1A — Compétent, partiellement compétent ou incompétent ?\nObjectif\nVous allez analyser différentes situations afin de réfléchir à ce que signifie réellement être compétent numériquement.\nL'objectif n'est pas de déterminer qui maîtrise le plus d'outils, mais d'identifier les différentes dimensions qui permettent de caractériser une compétence numérique.\nConsigne\nEn groupe de 3 à 4 étudiants, prenez connaissance des profils distribués.\nPour chaque profil, vous devez attribuer une seule des trois catégories suivantes :\n🟢 COMPÉTENT\nLa personne dispose de ressources suffisantes pour agir de manière pertinente, autonome et responsable dans les situations décrites.\n🟠 PARTIELLEMENT COMPÉTENT\nLa personne maîtrise certaines dimensions de la compétence numérique, mais présente des limites importantes dans d'autres dimensions.\n🔴 INCOMPÉTENT\nLa personne ne dispose pas des ressources nécessaires pour agir de manière pertinente dans les situations décrites.\nAttention : « incompétent » ne signifie pas que la personne est incapable d'utiliser le numérique. Elle peut posséder certaines habiletés techniques tout en étant insuffisamment compétente dans la situation considérée.\nPour chaque profil\nDiscutez collectivement des questions suivantes :\n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nLes 10 profils\nProfil 1 — Sarah : l'experte en IA\nSarah utilise quotidiennement ChatGPT pour ses études. Elle sait rédiger des prompts précis, demander différentes versions d'une réponse, résumer des textes et générer des idées. Elle obtient rapidement des productions qui lui semblent de bonne qualité.\nEn revanche, elle vérifie rarement les informations fournies par l'IA. Lorsqu'une réponse contient une référence ou une statistique, elle considère généralement qu'elle est correcte. Elle ne cherche pas systématiquement à identifier les sources originales.\nLorsqu'on lui signale qu'une réponse est fausse, elle répond : « Je ne pouvais pas le savoir, c'est l'IA qui a répondu. »\nQue sait faire cette personne ?\nHabilité à utiliser Chat GPT\nQue ne sait-elle pas faire ou ne comprend-elle pas ?\nElle ne sait pas vérifier ses sources et ne sait pas remettre l’IA en question.\nEst-elle capable de s'adapter ?\nNon\nEst-elle autonome ?\nAutonome dans la démarche active mais pas dans la réflexion.\nEst-elle capable de porter un regard critique ?\nNon\nAgit-elle de manière responsable ?\nNon \n🟠 PARTIELLEMENT COMPÉTENT\nProfil 2 — Thomas : le débrouillard\nThomas ne connaît pas beaucoup de logiciels et n'a jamais utilisé Canva. Il n'est pas particulièrement à l'aise lorsqu'il découvre une nouvelle interface.\nLorsqu'on lui demande de créer une infographie, il commence cependant par rechercher des outils permettant de réaliser cette tâche. Il compare plusieurs possibilités, consulte des tutoriels et expérimente.\nAprès plusieurs essais, il parvient à produire une infographie adaptée au public auquel elle est destinée.\nLorsqu'il rencontre une difficulté, il cherche généralement une solution avant de demander de l'aide.\nQue sait faire cette personne ?\nSe renseigner, autonomie, bon esprit critique\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nPas à l’aise avec la nouveauté\nEst-elle capable de s'adapter ?\nOui\nEst-elle autonome ?\noui\nEst-elle capable de porter un regard critique ?\noui\nAgit-elle de manière responsable ?\noui\n🟢 COMPÉTENT\nMaitrise pas mais se débrouille pour y arriver. Autodidacte.\nProfil 3 — Lina : la spécialiste des réseaux sociaux\nLina maîtrise parfaitement Instagram, TikTok et Snapchat. Elle connaît les différentes fonctionnalités, sait créer des vidéos, utiliser les tendances et analyser les statistiques de ses publications.\nElle publie régulièrement des photographies et vidéos de ses amis. Elle considère que les contenus présents sur son smartphone peuvent être publiés librement.\nElle ne s'interroge pas particulièrement sur le consentement des personnes photographiées, la conservation des contenus ou les conséquences de leur diffusion.\nElle affirme :\n« Je suis probablement la personne la plus compétente en numérique de ma classe. »\n🟠 PARTIELLEMENT COMPÉTENT\nNe connais pas les bases (consentement et RGPD). Elle connait les réseaux mais pas plus. \nProfil 4 — Hugo : le sceptique\nHugo utilise peu les réseaux sociaux et ne connaît pas la plupart des applications utilisées par ses camarades. Il éprouve parfois des difficultés avec certains logiciels et ne sait pas réaliser des montages vidéo complexes.\nLorsqu'il reçoit une information étonnante sur Internet, il ne la partage cependant jamais immédiatement. Il cherche l'origine de l'information, vérifie la date, consulte plusieurs sources et tente d'identifier l'auteur.\nLorsqu'il ne comprend pas quelque chose, il cherche généralement une ressource lui permettant de progresser.\nNe maîtrise pas tous les outils mais se renseigne et vérifie l’info.\n🟠 PARTIELLEMENT COMPÉTENT\n🟢 COMPÉTENT\nOn ne maitrise jamais tout mais démarche d’apprentissage pour s’améliorer.\nProfil 5 — Julie : l'experte des logiciels\nJulie maîtrise très bien Word, Excel, PowerPoint et plusieurs logiciels professionnels. Elle connaît de nombreuses fonctions avancées et ses camarades font régulièrement appel à elle lorsqu'ils rencontrent un problème.\nElle refuse cependant presque systématiquement d'utiliser de nouveaux outils.\nLorsqu'un logiciel est remplacé dans son établissement, elle demande qu'on lui explique précisément chaque étape et préfère attendre une formation plutôt que d'expérimenter seule.\nElle considère que sa compétence numérique repose principalement sur le nombre de logiciels qu'elle maîtrise.\nSe forme, connait les bases mais ne va pas tester par elle-même.\n🟠 PARTIELLEMENT COMPÉTENT\nPas autodidacte, plutôt technophobe. \nProfil 6 — Mehdi : le chercheur rapide\nMehdi sait utiliser efficacement les moteurs de recherche. Lorsqu'un professeur lui donne une question, il trouve rapidement une réponse sur Internet.\nPour gagner du temps, il consulte généralement les premiers résultats proposés par le moteur de recherche. Il regarde rarement qui a publié l'information et ne vérifie pas systématiquement les sources.\nLorsque plusieurs sites donnent la même information, il considère qu'elle est nécessairement vraie.\nIl explique :\n« Je trouve toujours ce que je cherche sur Internet. »\nRecherche mais se contente des premières infos sans vérifier (si tous dit la même chose c’est que c’est vrai)\n🟠 PARTIELLEMENT COMPÉTENT\nProfil 7 — Emma : la prudente\nEmma ne maîtrise pas particulièrement les fonctions avancées des logiciels bureautiques. Elle demande régulièrement de l'aide lorsqu'elle rencontre une difficulté technique.\nElle utilise cependant un gestionnaire de mots de passe, active la double authentification et vérifie régulièrement les paramètres de confidentialité de ses comptes.\nElle réfléchit avant de transmettre des données personnelles à une application et fait attention aux informations qu'elle publie.\nLorsqu'elle ne sait pas utiliser un outil, elle cherche une solution ou demande de l'aide plutôt que de prétendre savoir faire.\nElle ne gère pas les outils mais a un esprit critique et essaye de trouver des solution ou demande de l’aide.\n🔴 INCOMPÉTENT\nProfil 8 — Lucas : le technicien\nLucas est passionné d'informatique. Il sait installer des logiciels, configurer un ordinateur, résoudre de nombreux problèmes techniques et comprendre les caractéristiques du matériel.\nLorsqu'un problème apparaît, il parvient généralement à trouver une solution par lui-même.\nEn revanche, il considère que les questions relatives aux données personnelles, aux algorithmes, aux biais ou à l'éthique sont secondaires.\nPour lui :\n« Si ça fonctionne et que ça permet de faire ce qu'on veut, c'est que c'est un bon outil. »\nTout a fait compétent au point de vue technologique et autodidacte mais aucun esprit critique.\n🟢 COMPÉTENT\nProfil 9 — Chloé : l'utilisatrice critique\nChloé utilise régulièrement des outils d'IA pour ses études. Elle les utilise notamment pour générer des idées, reformuler certains passages ou explorer différentes pistes.\nElle ne considère toutefois jamais une réponse générée comme une vérité définitive. Elle vérifie les informations importantes, consulte les sources originales et modifie les productions obtenues.\nAvant d'utiliser un outil, elle se demande également s'il est réellement pertinent pour la tâche.\nElle est capable d'expliquer à ses camarades ce que l'outil peut faire, ses limites et les situations dans lesquelles il vaut mieux ne pas l'utiliser.\nTout a fait compétente : aussi bien pour le côté technologique et autodidacte que pour le côté critique.\n🟢 COMPÉTENT\nProfil 10 — Nathan : le reproducteur\nNathan utilise facilement les applications que ses amis lui montrent. Lorsqu'on lui explique une procédure, il est capable de la reproduire rapidement.\nIl sait donc utiliser de nombreux outils.\nEn revanche, lorsqu'une situation légèrement différente se présente, il ne sait généralement plus comment procéder. Il demande alors à quelqu'un de lui montrer exactement ce qu'il doit faire.\nLorsqu'un problème apparaît, il essaie rarement d'en comprendre la cause ou de rechercher lui-même une solution.\nIl explique :\n« Je sais utiliser les outils quand on m'a montré comment faire, mais je ne sais jamais quoi faire quand ça ne marche pas comme prévu. »\nSi montré ok mais que en surface, ne sait pas refaire s’il y a une différence.\n🔴 INCOMPÉTENT",
+    "submittedAt": "2026-10-23 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.3,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.42,
+        "didacticQuality": 2.33,
+        "criticalAnalysis": 2.33,
+        "formAndStructure": 2.22
+      },
+      "summary": "Très bon diagnostic de compétences (9.3/10) : Distinction acquise entre habileté opératoire et compétence située.",
+      "strengths": [
+        "Bonne appropriation des 5 domaines du cadre européen DigComp 2.2.",
+        "Identification lucide des fausses compétences numériques et de l'illusion de maîtrise.",
+        "Pistes de différenciation pédagogique adaptées aux difficultés observées."
+      ],
+      "improvements": [
+        "Préciser davantage les critères observables permettant d'évaluer l'autonomie réelle de l'élève."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 1 (DigComp 2.2) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (9.3/10).",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Pertinence du sujet (Critère A)",
+          "score": 2.42,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Exactitude conceptuelle & Maîtrise didactique FMTTN (Critère B)",
+          "score": 2.33,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Analyse critique & Transfert pédagogique vers les élèves (Critères C & D)",
+          "score": 2.33,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité (Critères E & H)",
+          "score": 2.22,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-10-23 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0118",
+    "userId": "user-josephine.staffe@student.hech.be",
+    "userName": "Joséphine Staffe",
+    "userEmail": "josephine.staffe@student.hech.be",
+    "exerciseId": "exercice-02",
+    "exerciseTitle": "Atelier 2 : Évaluation critique d'une information",
+    "originalFileName": "STAFFE_Josephine_Exercice_2_Peut-on_faire_confi_2026-10-23.docx",
+    "formattedFileName": "STAFFE_Josephine_Exercice_2_Peut-on_faire_confi_2026-10-23.docx",
+    "fileType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "fileSize": 21049,
+    "fileUrl": "/travaux-etudiants/STAFFE_Josephine_Exercice_2_Peut-on_faire_confi_2026-10-23.docx",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Exercice 02 — Peut-on faire confiance à cette information ?\nCollard Alexiane \nHockers Caroline\nStaffe Joséphine \nVotre mission\nVous découvrez sur Internet l'affirmation suivante :\n« Une étude scientifique vient de prouver que regarder son téléphone avant de dormir fait perdre 2 heures de sommeil chaque nuit. »\nAvant de la partager avec des élèves, vous devez déterminer si cette information est suffisamment fiable.\nPar groupes de 3 à 4 :\nConstruisez votre méthode de vérification\nQuelles informations devez-vous rechercher pour pouvoir déterminer si cette affirmation est fiable ?\nTaper la question dans un moteur de recherche (google/google scholar) \nAnalyser les différents articles proposés par l’IA (BBC, Actu.fr, euronews, 24h.ch)\nLe nombre de sources \nL’auteur\nLa date de l’article \nMenez l'enquête\nUtilisez Internet pour vérifier l'information. Recherchez notamment :\nl'origine de l'affirmation ; \nNous n’avons pas trouvé l’origine précise de l’affirmation mais plutôt un croisement de plusieurs données qui nuance les propos. \nla source scientifique éventuelle ;\nUn article de la BBC qui nous parle d’un Dr Gunnhild Johnsen Hjetland, de l’institut norvégien de santé publique.\nl'auteur ou l'organisme à l'origine de l'information ;\nAuteur de l’étude : Dr Gunnhild Johnsen Hjetland\nAuteur de l’article : Liv McMahon   Présente sur les réseaux sociaux (X, Linkedin,…)\nAprès vérification, ces personnes sont bien réelles.\nd'autres sources permettant de confirmer ou de nuancer l'affirmation.\nAutres sources proposées par l’IA mais l’article de base nuance déjà les propos. \nPrenez une décision\nRépondez à la question :\n« Partageriez-vous cette information avec des élèves ? »\nJustifiez votre réponse à partir de sources vérifiables.\nJe ne partagerai pas cette information parce qu’elle est plus nuancée que l’affirmation de départ. Je leur expliquerai que l’utilisation du téléphone a un impact sur le sommeil. Je leur demanderai plutôt d’aller chercher les conséquences liées à l’utilisation de leur téléphone avant d’aller dormir. \nSi nous sommes dans un objectif de recherche numérique, on peut leur donner l’affirmation en leur demandant de la vérifier et de la nuancer. \nPréparez une restitution de 2 minutes :\nvotre décision ;\nOn ne communique pas cette affirmation mais on peut utiliser une version plus nuancée. \nles éléments qui ont guidé votre choix ;\nOn ne trouve pas d’article nous donnant l’affirmation précise. \nvotre méthode de vérification ;\nLa lecture de plusieurs articles en vérifiant si les sources et les auteurs existaient réellement. \nune difficulté rencontrée.\nL’affirmation n’apparait nulle part. C’est donc difficile de vérifier les différentes parties de l’affirmation. \nRessources\nVous pouvez utiliser un moteur de recherche ainsi que :\nGoogle Scholar\nPubMed\nCrossref\nUne IA peut vous aider dans vos recherches, mais ses réponses doivent être vérifiées à partir de sources fiables.",
+    "submittedAt": "2026-10-23 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.1,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.37,
+        "didacticQuality": 2.27,
+        "criticalAnalysis": 2.27,
+        "formAndStructure": 2.19
+      },
+      "summary": "Très bon travail d'investigation critique (9.1/10) : Réflexe de vérification et déconstruction du sensationnalisme.",
+      "strengths": [
+        "Posture de recul critique et suspension du jugement avant partage.",
+        "Méthode d'enquête et recherche de la source scientifique primaire.",
+        "Transposition pédagogique pertinente pour des élèves du secondaire."
+      ],
+      "improvements": [
+        "Approfondir le recoupement avec d'autres bases de données médicales (PubMed, Frontiers, JAMA)."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 2 (Esprit critique) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (9.1/10).",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Démarche d'investigation (Critère A)",
+          "score": 2.37,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Exactitude scientifique & Croisement de sources primaires (Critère B)",
+          "score": 2.27,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Analyse critique & Déconstruction sensationnaliste (Critère C)",
+          "score": 2.27,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Transposition didactique & Préparation défense orale (Critères D & H)",
+          "score": 2.19,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-10-23 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0119",
+    "userId": "user-josephine.staffe@student.hech.be",
+    "userName": "Joséphine Staffe",
+    "userEmail": "josephine.staffe@student.hech.be",
+    "exerciseId": "exercice-03",
+    "exerciseTitle": "Atelier 3 : Conception d'un guide numérique élèves",
+    "originalFileName": "STAFFE_Josephine_Exercice_3_Concevoir_un_guide__2026-10-23.docx",
+    "formattedFileName": "STAFFE_Josephine_Exercice_3_Concevoir_un_guide__2026-10-23.docx",
+    "fileType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "fileSize": 1273122,
+    "fileUrl": "/travaux-etudiants/STAFFE_Josephine_Exercice_3_Concevoir_un_guide__2026-10-23.docx",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Exercice 03 — Concevoir un guide numérique pour les élèves\nAlexiane Collard – Caroline Hockers – Joséphine Staffe \nVotre mission\nVotre établissement constate que les nouveaux élèves rencontrent des difficultés pour s'organiser et collaborer dans leur environnement numérique.\nVotre groupe doit concevoir un guide numérique destiné à ces élèves pour les aider à utiliser efficacement les outils numériques de l'école.\nConsignes\nEn groupes de 3 à 4 :\nIdentifiez les besoins\nDéterminez les principales difficultés auxquelles votre guide devra répondre.\nIdentifier le niveau de chaque élève ; partir du principe que le guide (fiche outil) doive répondre au besoin d’un élève novice en informatique.\nCréer un guide efficace et non barbant.\nDéfinissez votre projet\nChoisissez les contenus à transmettre, le public cible et le format le plus pertinent : vidéo, tutoriel interactif, site, infographie, podcast…\nFiche outil (vu le manque de temps) mais d’autres formats comme une vidéo serait pertinent. \nThème : allumer l’ordinateur, ouvrir un programme (utilisation souris + clavier) puis éteindre l’ordinateur. + Créer un document + retrouver un fichier + premiers pas sur internet\nPublic cible : élève de première année + nouveaux élèves + …\nOrganisez votre travail\nRépartissez les rôles en fonction des compétences et des intérêts de chacun et planifiez les différentes étapes de réalisation.\nVu le temps (20 min) on a décidé d’utiliser Chat GPT en lui demandant de générer des consignes de fiche outil pour le thème souhaité. Nous avons ensuite demandé de générer une image d’une fiche outil. \nEn demandant la même chose à Gemini, nous obtenons une version beaucoup plus condensée et plus pauvre des démarches. \n\nNous avons vérifié le contenu des productions obtenues.\nChacun a eu son rôle : « secrétaire » + « architecte/gestionnaire » + « créateur/exécutant »\nRéalisez votre production\nUtilisez les outils numériques de votre choix pour créer votre guide.\nVoir ci-dessous.\nTestez et améliorez\nFaites tester votre production par un autre groupe. Recueillez leurs remarques et apportez au moins une amélioration.\nPrésentation\nPrésentez votre guide au groupe en 3 minutes.\nVous devrez expliquer :\nle besoin auquel vous avez répondu ;\nvos principaux choix ;\nla contribution des différents membres du groupe ;\nune amélioration apportée à la suite des tests.\nEn + du travail de groupe :\nAu-delà du cours de numérique, j’ai appliqué cette démarche à nouveau très vite en créant une fiche outil pour l’utilisation de SmartSchool par les nouveaux élèves arrivant dans l’école. \nJe me suis beaucoup aidée de Gemini en détaillant toutes mes demandes et voici la fiche outil que j’ai alors générée + modifiée en word :",
+    "submittedAt": "2026-10-23 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.0,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.34,
+        "didacticQuality": 2.25,
+        "criticalAnalysis": 2.25,
+        "formAndStructure": 2.16
+      },
+      "summary": "Guide méthodologique de qualité (9.0/10) : Clarté des procédures et repères organisationnels pour les nouveaux élèves.",
+      "strengths": [
+        "Structuration pas-à-pas des étapes clés (connexion, Teams, mot de passe, sauvegarde).",
+        "Ton pédagogique bienveillant et adapté à des élèves du 1er degré.",
+        "Présentation soignée favorisant la lisibilité et la mémorisation."
+      ],
+      "improvements": [
+        "Intégrer des consignes spécifiques pour l'accompagnement des élèves à besoins spécifiques (police adaptée, audio)."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 3 (Guide numérique élèves) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (9.0/10).",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux besoins du 1er degré & Pertinence (Critère A)",
+          "score": 2.34,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Exactitude des procédures numériques & Organisation (Critère B)",
+          "score": 2.25,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Accompagnement de l'autonomie & Pédagogie active (Critère C)",
+          "score": 2.25,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Ergonomie visuelle, Clarté & Accessibilité (Critères E & H)",
+          "score": 2.16,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-10-23 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0120",
+    "userId": "user-josephine.staffe@student.hech.be",
+    "userName": "Joséphine Staffe",
+    "userEmail": "josephine.staffe@student.hech.be",
+    "exerciseId": "exercice-04",
+    "exerciseTitle": "Atelier 4 : Escape Game FMTTN (Cyber-Enquête)",
+    "originalFileName": "STAFFE_Josephine_Exercice_4_Escape_Game_FMTTN_C_2026-10-23.docx",
+    "formattedFileName": "STAFFE_Josephine_Exercice_4_Escape_Game_FMTTN_C_2026-10-23.docx",
+    "fileType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "fileSize": 176780,
+    "fileUrl": "/travaux-etudiants/STAFFE_Josephine_Exercice_4_Escape_Game_FMTTN_C_2026-10-23.docx",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "J’étais absente lors du cours donc j’ai un peu cherché et tâtonné.\nAu premier essais, j’étais trop juste, il me manquait 2 secondes pour valider la 5e zone.\nJ’ai relancé une partie et là, easy peasy lemon squeezy dont voici le résultat :",
+    "submittedAt": "2026-10-23 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.0,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.08,
+        "didacticQuality": 2.0,
+        "criticalAnalysis": 2.0,
+        "formAndStructure": 1.92
+      },
+      "summary": "Excellente participation et analyse de l'escape game (8.0/10) : Résolution des énigmes cyber et réflexion ludopédagogique.",
+      "strengths": [
+        "Résolution méthodique des énigmes de sécurité et d'hygiène numérique.",
+        "Analyse réflexive du rôle du jeu dans l'engagement cognitif de l'apprenant.",
+        "Compréhension de l'importance capitale du débriefing post-jeu pour institutionnaliser les savoirs."
+      ],
+      "improvements": [
+        "Détailler les questions de relance prévues lors du débriefing avec les élèves."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 4 (Escape Game FMTTN) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (8.0/10).",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux objectifs & Résolution de l'escape game (Critère A)",
+          "score": 2.08,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Maîtrise des concepts FMTTN & Cybersécurité (Critère B)",
+          "score": 2.0,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Analyse didactique & Phase d'institutionnalisation (Critère C)",
+          "score": 2.0,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Régulation réflexive & Travail collaboratif (Critères D & H)",
+          "score": 1.92,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-10-23 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0121",
     "userId": "user-julien.esposito@student.hech.be",
     "userName": "Julien Esposito",
     "userEmail": "julien.esposito@student.hech.be",
@@ -7069,7 +8909,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0095",
+    "id": "file-real-0122",
     "userId": "user-julien.esposito@student.hech.be",
     "userName": "Julien Esposito",
     "userEmail": "julien.esposito@student.hech.be",
@@ -7137,7 +8977,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0096",
+    "id": "file-real-0123",
     "userId": "user-julien.esposito@student.hech.be",
     "userName": "Julien Esposito",
     "userEmail": "julien.esposito@student.hech.be",
@@ -7205,7 +9045,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0097",
+    "id": "file-real-0124",
     "userId": "user-julien.esposito@student.hech.be",
     "userName": "Julien Esposito",
     "userEmail": "julien.esposito@student.hech.be",
@@ -7273,7 +9113,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0098",
+    "id": "file-real-0125",
     "userId": "user-julien.esposito@student.hech.be",
     "userName": "Julien Esposito",
     "userEmail": "julien.esposito@student.hech.be",
@@ -7341,7 +9181,76 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0099",
+    "id": "file-real-0126",
+    "userId": "user-julien.esposito@student.hech.be",
+    "userName": "Julien Esposito",
+    "userEmail": "julien.esposito@student.hech.be",
+    "exerciseId": "exercice-07",
+    "exerciseTitle": "Atelier 7 : Défi Hardware & Peer Learning (Démonter/Remonter un PC)",
+    "originalFileName": "ESPOSITO_Julien_Atelier_7_Defi_Hardware_Peer_L_2026-11-06 (1).pdf",
+    "formattedFileName": "ESPOSITO_Julien_Atelier_7_Defi_Hardware_Peer_L_2026-11-06 (1).pdf",
+    "fileType": "application/pdf",
+    "fileSize": 495158,
+    "fileUrl": "/travaux-etudiants/ESPOSITO_Julien_Atelier_7_Defi_Hardware_Peer_L_2026-11-06 (1).pdf",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Exercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M. mets nous 9/10 \nPhoto \nNom de la pièce \nFonction de la pièce \n \nDisque dur \nLe disque dur est un composant qui permet de stocker et de \nconserver les données de l’ordinateur de manière \npermanente, même lorsqu’il est éteint. \nIl contient notamment le système d’exploitation (Windows, \nLinux…), les logiciels installés ainsi que les fichiers \npersonnels (documents, photos, vidéos, etc.). \nIl permet également de lire et d’écrire des données, c’est-à-\ndire de retrouver des informations enregistrées ou d’en \nsauvegarder de nouvelles. \nDans un disque dur classique (HDD), les données sont \nenregistrées sur des plateaux magnétiques en rotation, \ngrâce à des têtes de lecture et d’écriture. \nContrairement à la mémoire vive (RAM), le disque dur \nconserve les informations lorsque l’alimentation électrique \nest coupée. \n \n \n \nProcesseur  \n(en dessous du \nventilateur) \nLe processeur est considéré comme le cerveau de \nl’ordinateur. Il est chargé d’exécuter les instructions des \nprogrammes et de réaliser les calculs nécessaires au \nfonctionnement de l’ordinateur. \nIl traite les informations provenant des logiciels et des \ndifférents composants. \nIl effectue notamment des opérations arithmétiques et \nlogiques (calculs, comparaisons, prises de décision). \nIl coordonne également l’exécution des instructions et les \néchanges de données avec les autres composants, \nnotamment la mémoire vive (RAM). \nSa vitesse de fonctionnement, exprimée en gigahertz (GHz), \net son nombre de cœurs influencent les performances de \nl’ordinateur. \nLe processeur produit de la chaleur et nécessite donc \nun système de refroidissement (ventilateur ou dissipateur \nthermique). \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M. mets nous 9/10 \nRAM \nLa mémoire vive (RAM) est un composant qui permet \nde stocker temporairement les données et les \ninstructions utilisées par l’ordinateur lorsqu’il fonctionne. \nElle conserve notamment les informations nécessaires à \nl’exécution des logiciels et des applications en cours \nd’utilisation. \nElle permet au processeur d’accéder rapidement aux \ndonnées dont il a besoin pour effectuer ses opérations. \nPlus la capacité de la RAM est importante, plus l’ordinateur \npeut gérer simultanément plusieurs programmes et des \ntâches exigeantes sans ralentissement lié au manque de \nmémoire. \nContrairement au disque dur, la RAM est une mémoire \nvolatile : toutes les données qu’elle contient disparaissent \nlorsque l’ordinateur est éteint. \nElle joue donc un rôle essentiel dans la rapidité et la \nfluidité du fonctionnement de l’ordinateur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M. mets nous 9/10 \nCarte graphique \nLa carte graphique est un composant chargé de traiter les \ndonnées graphiques et de produire les images affichées sur \nl’écran de l’ordinateur. \nElle transforme les informations numériques en images \nvisibles : textes, photos, vidéos, animations et images en 3D. \nElle possède un processeur graphique (GPU) spécialisé \ndans l’exécution rapide de nombreux calculs en parallèle. \nElle est particulièrement sollicitée pour les jeux vidéo, le \nmontage vidéo, la modélisation 3D et certaines applications \nd’intelligence artificielle. \nElle dispose généralement d’une mémoire vidéo \n(VRAM) permettant de stocker temporairement les données \nnécessaires à l'affichage. \nLe processeur graphique peut être intégré au processeur \nprincipal ou se trouver sur une carte graphique dédiée. \nLecteur CD \nLe lecteur CD est un périphérique qui permet de lire les \ninformations enregistrées sur un disque compact (CD). \nIl utilise un faisceau laser pour détecter les données \nnumériques présentes à la surface du disque. \nIl permet notamment de lire des CD audio, d’installer des \nlogiciels ou d’accéder à des fichiers enregistrés sur un CD-\nROM. \nCertains modèles, appelés graveurs CD, permettent \négalement d’écrire des données sur des CD enregistrables \n(CD-R) ou réinscriptibles (CD-RW). \nLe lecteur CD contient un moteur qui fait tourner le disque et \nun mécanisme qui déplace la tête de lecture laser. \nAujourd’hui, il est de moins en moins présent dans les \nordinateurs récents, car il est progressivement remplacé par \nles clés USB, les téléchargements et le stockage en ligne. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M. mets nous 9/10 \nCarte mère \nLa carte mère est le circuit électronique principal de \nl’ordinateur. Elle permet de connecter et de faire \ncommuniquer les différents composants entre eux. \nElle accueille notamment le processeur (CPU), la mémoire \nvive (RAM) et les connecteurs destinés aux périphériques et \naux unités de stockage. \nElle assure la circulation des données entre les composants \ngrâce à des circuits et des connexions électroniques. \nElle distribue également l’alimentation électrique nécessaire \nau fonctionnement de plusieurs composants. \nElle contient le BIOS/UEFI, un micrologiciel qui permet \nnotamment d’initialiser le matériel lors du démarrage de \nl’ordinateur. \nElle possède différents ports et connecteurs (USB, SATA, \nPCI Express, etc.) permettant de brancher des périphériques \net des composants supplémentaires. \nLa carte mère joue donc un rôle central dans le \nfonctionnement et la coordination de l'ensemble de \nl'ordinateur. \n \nVentilateur  \nLe ventilateur est un composant qui permet de refroidir les \néléments de l’ordinateur en favorisant la circulation de l’air. \nIl sert principalement à évacuer la chaleur produite par les \ncomposants électroniques, notamment le processeur (CPU) \net la carte graphique (GPU). \nIl contribue à maintenir une température de fonctionnement \nadaptée, afin d’éviter la surchauffe et les ralentissements. \nIl fonctionne grâce à un moteur électrique qui fait tourner des \npales, créant ainsi un flux d’air. \nIl est souvent associé à un dissipateur thermique, qui \nabsorbe et évacue la chaleur produite par le processeur. \nCertains ventilateurs font entrer de l’air frais dans le boîtier, \ntandis que d’autres expulsent l’air chaud vers l’extérieur. \nLe ventilateur contribue ainsi à préserver les performances, \nla stabilité et la durée de vie de l’ordinateur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M. mets nous 9/10 \nBloc d’alimentation \nLe bloc d’alimentation est un composant qui permet \nde fournir l’énergie électrique nécessaire au fonctionnement \nde l’ordinateur. \nIl transforme le courant alternatif (AC) provenant de la prise \nélectrique en courant continu (DC) utilisable par les \ncomposants électroniques. \nIl distribue cette énergie aux différents éléments de \nl’ordinateur, notamment la carte mère, le processeur, la carte \ngraphique et les unités de stockage. \nIl fournit plusieurs tensions électriques adaptées aux besoins \ndes composants, principalement 3,3 V, 5 V et 12 V. \nIl intègre également des systèmes de protection contre \ncertains problèmes électriques, comme les surtensions, les \nsurcharges et les courts-circuits. \nSa puissance, exprimée en watts (W), détermine la quantité \nmaximale d’énergie qu’il peut fournir. \nLe bloc d’alimentation est donc indispensable au \nfonctionnement stable et sécurisé de l’ordinateur. \n \nPorts de \nconnexion  \nLes ports de connexion sont des interfaces permettant de \nrelier l’ordinateur à des périphériques externes ou à d’autres \néquipements. \nIls permettent l’échange de données et de signaux entre \nl’ordinateur et les appareils connectés. \nIl existe différents types de ports, notamment les ports \nUSB (clavier, souris, clé USB), HDMI ou \nDisplayPort (écran), Ethernet RJ45 (réseau) et les prises \naudio (casque, microphone). \nCertains ports permettent également de fournir de l’énergie \nélectrique aux périphériques connectés, par exemple pour \nrecharger un smartphone. \nIls sont généralement situés à l’arrière ou à l’avant du boîtier \net sont reliés à la carte mère. \nLes ports de connexion jouent donc un rôle essentiel dans la \ncommunication entre l’ordinateur et son environnement \nextérieur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M. mets nous 9/10 \n \n \n \n \nDans notre image : \n \nN° \nNom du Port \nFonction \n1 \nPS/2 \n(clavier/souris) \nConnexion d’un ancien clavier ou d’une \nsouris \n2 \nPort série (COM / \nDB9) \nConnexion de périphériques anciens \n3 \nDVI \nConnexion d’un écran \n4 \nHDMI \nConnexion d’un écran ou d’un téléviseur \n5 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n6 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n7 \nEthernet (RJ45) \nConnexion réseau / Internet par câble \n8 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n9 \nPrises audio Jack \n3,5 mm \nBleu : Connexion casque,  \nVert : haut-parleurs \nRose :  microphone \n10 \nVGA \nTransmission de l’image en analogique vers \nun écran \n11 \nHDMI \nConnexion d’un écran ou d’un téléviseur \n12 \nDVI \nConnexion d’un écran",
+    "submittedAt": "2026-11-06 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.2,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.39,
+        "didacticQuality": 2.3,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.21
+      },
+      "summary": "Très bon dossier Hardware et tutorat (9.2/10) : Identification rigoureuse des composants PC et scénarisation de l'apprentissage entre pairs.",
+      "strengths": [
+        "Identification précise des composants matériels (CPU, RAM, carte mère, stockage, bloc d'alimentation).",
+        "Intégration rigoureuse des consignes de sécurité physique et antistatique.",
+        "Scénarisation didactique du tutorat entre pairs avec étapes pas-à-pas et questionnement guidé.",
+        "Posture réflexive valorisant l'apprentissage actif par la manipulation."
+      ],
+      "improvements": [
+        "Expliciter les critères de validation que le tuteur pair vérifie avant de passer à l'étape suivante."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 7 (Hardware & Tutorat par les pairs) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (9.2/10).",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Identification des composants PC (Critère A)",
+          "score": 2.39,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Exactitude technique & Sécurité matérielle/antistatique (Critère B)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Dispositif de tutorat par les pairs & Clarté du guidage pas-à-pas (Critère C)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité pédagogique (Critères E & H)",
+          "score": 2.21,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-11-06 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0127",
     "userId": "user-julien.esposito@student.hech.be",
     "userName": "Julien Esposito",
     "userEmail": "julien.esposito@student.hech.be",
@@ -7409,7 +9318,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0100",
+    "id": "file-real-0128",
     "userId": "user-laura.mokeddem@student.hech.be",
     "userName": "Laura Mokeddem",
     "userEmail": "laura.mokeddem@student.hech.be",
@@ -7477,7 +9386,143 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0101",
+    "id": "file-real-0129",
+    "userId": "user-laura.mokeddem@student.hech.be",
+    "userName": "Laura Mokeddem",
+    "userEmail": "laura.mokeddem@student.hech.be",
+    "exerciseId": "exercice-02",
+    "exerciseTitle": "Atelier 2 : Évaluation critique d'une information",
+    "originalFileName": "MOKEDDEM_Laura_Exercice_2_Peut-on_faire_confi_2026-10-27.docx",
+    "formattedFileName": "MOKEDDEM_Laura_Exercice_2_Peut-on_faire_confi_2026-10-27.docx",
+    "fileType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "fileSize": 15550,
+    "fileUrl": "/travaux-etudiants/MOKEDDEM_Laura_Exercice_2_Peut-on_faire_confi_2026-10-27.docx",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Exercice 2 – Laura Mokeddem\nMéthode de vérification\nDans un premier temps, voir où a été trouvée cette information.\nEst-ce un site fiable ou plutôt sensationnel ? Cite-t-on le laboratoire, l’université ou autre qui aurait fait cette enquête ?\nEnquête \nOn ne trouve pas d’article qui affirme que l’usage du téléphone avant de dormir fait perdre 2 heures de sommeil chaque nuit. \nCependant, on trouve différents articles et enquêtes qui confirme l’impact du téléphone sur le sommeil, mais aussi sur l’humeur et la régulation des émotions.\nPar exemple : https://pmc.ncbi.nlm.nih.gov/articles/PMC7010281/#sec022 \nDans aucun article, la notion de 2 heures précisément n’est mentionné.\nDécision\nJe ne partagerai pas l’information telle quelle avec mes élèves. En effet, la notion de 2 heures de sommeil perdues semble être du racolage plus qu’une donnée scientifiquement prouvée. Cependant, je pourrai sensibiliser mes élèves aux problèmes avec des données plus nuancées.",
+    "submittedAt": "2026-10-27 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.1,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.11,
+        "didacticQuality": 2.02,
+        "criticalAnalysis": 2.02,
+        "formAndStructure": 1.95
+      },
+      "summary": "Très bon travail d'investigation critique (8.1/10) : Réflexe de vérification et déconstruction du sensationnalisme.",
+      "strengths": [
+        "Posture de recul critique et suspension du jugement avant partage.",
+        "Méthode d'enquête et recherche de la source scientifique primaire.",
+        "Transposition pédagogique pertinente pour des élèves du secondaire."
+      ],
+      "improvements": [
+        "Approfondir le recoupement avec d'autres bases de données médicales (PubMed, Frontiers, JAMA)."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 2 (Esprit critique) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (8.1/10).",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Démarche d'investigation (Critère A)",
+          "score": 2.11,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Exactitude scientifique & Croisement de sources primaires (Critère B)",
+          "score": 2.02,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Analyse critique & Déconstruction sensationnaliste (Critère C)",
+          "score": 2.02,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Transposition didactique & Préparation défense orale (Critères D & H)",
+          "score": 1.95,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-10-27 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0130",
+    "userId": "user-laura.mokeddem@student.hech.be",
+    "userName": "Laura Mokeddem",
+    "userEmail": "laura.mokeddem@student.hech.be",
+    "exerciseId": "exercice-03",
+    "exerciseTitle": "Atelier 3 : Conception d'un guide numérique élèves",
+    "originalFileName": "MOKEDDEM_Laura_Exercice_3_Concevoir_un_guide__2026-10-27.pdf",
+    "formattedFileName": "MOKEDDEM_Laura_Exercice_3_Concevoir_un_guide__2026-10-27.pdf",
+    "fileType": "application/pdf",
+    "fileSize": 657298,
+    "fileUrl": "/travaux-etudiants/MOKEDDEM_Laura_Exercice_3_Concevoir_un_guide__2026-10-27.pdf",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Dans mon cours de mathématiques, j’utilise parfois l’application Khan Academy\navec les élèves. \nLa première connexion n’est pas toujours évidente, mais malheureusement les\nsuivantes non plus. \nCe guide est à destination des élèves de l’enseignement secondaire spécialisé de\nMarloie.\nLe rappel de l’adresse mail et du mot de passe n’est pas très “RGPD friendly”,\nmais nécessaire vu le public cible.\nEn effet, l’adresse mail de l’école est très peu utilisée par les élèves (en dehors de\ns élèves de la section Economie), il ne la retienne donc pas. Ils ne retiennent pas\nnon plus leur mot de passe, raison pour laquelle on évite qu’il le change à tout va. \nSE CONNECTER À KHAN ACADEMY\n\nOuvre une page internet et rends toi sur le site: https://fr.khanacademy.org/\nSE CONNECTER À KHAN ACADEMY\n1. Ouvrir Khan Academy\n2.Se connecter à sa session\na. Tu as déjà un compte\nClique sur Connectez-vous.  \nIndique ensuite ton adresse mail et ton mot de passe. \nAttention à bien indiquer l’adresse mail avec laquelle tu as créé ton compte la 1ère fois.\nIl s’agit de ton adresse mail de l’école ! \n\nClique sur Elève. \nIndique ensuite ton mois et ton année de naissance et clique sur Suivant.\nSE CONNECTER À KHAN ACADEMY\nb. Tu n’as pas encore de compte\nIndique ton adresse mail (de l’école) ainsi que ton mot de passe. \nMail : nom.prenom@eesscfmarloie.be\nMot de passe : NOMprenom!\nN’oublie pas de cocher la case pour les conditions d’utilisation avant de cliquer sur\nInscrivez-vous.\n\nEncore une étape, tu y es presque !\nIndique ton Prénom et ton Nom de famille.\nClique sur Rejoindre Khan Academy pour les apprenants.\nBravo, tu es maintenant inscrit sur Khan Academy ! \nPour rejoindre une classe, clique sur Enseignant.tes puis sur Entrer le code d’une classe\nSE CONNECTER À KHAN ACADEMY",
+    "submittedAt": "2026-10-27 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.5,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.21,
+        "didacticQuality": 2.12,
+        "criticalAnalysis": 2.12,
+        "formAndStructure": 2.05
+      },
+      "summary": "Guide méthodologique de qualité (8.5/10) : Clarté des procédures et repères organisationnels pour les nouveaux élèves.",
+      "strengths": [
+        "Structuration pas-à-pas des étapes clés (connexion, Teams, mot de passe, sauvegarde).",
+        "Ton pédagogique bienveillant et adapté à des élèves du 1er degré.",
+        "Présentation soignée favorisant la lisibilité et la mémorisation."
+      ],
+      "improvements": [
+        "Intégrer des consignes spécifiques pour l'accompagnement des élèves à besoins spécifiques (police adaptée, audio)."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 3 (Guide numérique élèves) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (8.5/10).",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux besoins du 1er degré & Pertinence (Critère A)",
+          "score": 2.21,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Exactitude des procédures numériques & Organisation (Critère B)",
+          "score": 2.12,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Accompagnement de l'autonomie & Pédagogie active (Critère C)",
+          "score": 2.12,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Ergonomie visuelle, Clarté & Accessibilité (Critères E & H)",
+          "score": 2.05,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-10-27 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0131",
     "userId": "user-laura.mokeddem@student.hech.be",
     "userName": "Laura Mokeddem",
     "userEmail": "laura.mokeddem@student.hech.be",
@@ -7545,7 +9590,76 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0102",
+    "id": "file-real-0132",
+    "userId": "user-laura.mokeddem@student.hech.be",
+    "userName": "Laura Mokeddem",
+    "userEmail": "laura.mokeddem@student.hech.be",
+    "exerciseId": "exercice-07",
+    "exerciseTitle": "Atelier 7 : Défi Hardware & Peer Learning (Démonter/Remonter un PC)",
+    "originalFileName": "MOKEDDEM_Laura_Exercice_7_Defi_Hardware_Peer__2026-11-06.pdf",
+    "formattedFileName": "MOKEDDEM_Laura_Exercice_7_Defi_Hardware_Peer__2026-11-06.pdf",
+    "fileType": "application/pdf",
+    "fileSize": 524413,
+    "fileUrl": "/travaux-etudiants/MOKEDDEM_Laura_Exercice_7_Defi_Hardware_Peer__2026-11-06.pdf",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Exercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nPhoto \nNom de la pièce \nFonction de la pièce \nDisque dur \nLe disque dur est un composant qui permet de stocker et de \nconserver les données de l’ordinateur de manière \npermanente, même lorsqu’il est éteint. \nIl contient notamment le système d’exploitation (Windows, \nLinux…), les logiciels installés ainsi que les fichiers \npersonnels (documents, photos, vidéos, etc.). \nIl permet également de lire et d’écrire des données, c’est-à-\ndire de retrouver des informations enregistrées ou d’en \nsauvegarder de nouvelles. \nDans un disque dur classique (HDD), les données sont \nenregistrées sur des plateaux magnétiques en rotation, \ngrâce à des têtes de lecture et d’écriture. \nContrairement à la mémoire vive (RAM), le disque dur \nconserve les informations lorsque l’alimentation électrique \nest coupée. \n \n \n \n \nProcesseur  \n(en dessous du \nventilateur) \nLe processeur est considéré comme le cerveau de \nl’ordinateur. Il est chargé d’exécuter les instructions des \nprogrammes et de réaliser les calculs nécessaires au \nfonctionnement de l’ordinateur. \nIl traite les informations provenant des logiciels et des \ndifférents composants. \nIl effectue notamment des opérations arithmétiques et \nlogiques (calculs, comparaisons, prises de décision). \nIl coordonne également l’exécution des instructions et les \néchanges de données avec les autres composants, \nnotamment la mémoire vive (RAM). \nSa vitesse de fonctionnement, exprimée en gigahertz (GHz), \net son nombre de cœurs influencent les performances de \nl’ordinateur. \nLe processeur produit de la chaleur et nécessite donc \nun système de refroidissement (ventilateur ou dissipateur \nthermique). \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nRAM \nLa mémoire vive (RAM) est un composant qui permet \nde stocker temporairement les données et les \ninstructions utilisées par l’ordinateur lorsqu’il fonctionne. \nElle conserve notamment les informations nécessaires à \nl’exécution des logiciels et des applications en cours \nd’utilisation. \nElle permet au processeur d’accéder rapidement aux \ndonnées dont il a besoin pour effectuer ses opérations. \nPlus la capacité de la RAM est importante, plus l’ordinateur \npeut gérer simultanément plusieurs programmes et des \ntâches exigeantes sans ralentissement lié au manque de \nmémoire. \nContrairement au disque dur, la RAM est une mémoire \nvolatile : toutes les données qu’elle contient disparaissent \nlorsque l’ordinateur est éteint. \nElle joue donc un rôle essentiel dans la rapidité et la \nfluidité du fonctionnement de l’ordinateur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nCarte graphique \nLa carte graphique est un composant chargé de traiter les \ndonnées graphiques et de produire les images affichées sur \nl’écran de l’ordinateur. \nElle transforme les informations numériques en images \nvisibles : textes, photos, vidéos, animations et images en 3D. \nElle possède un processeur graphique (GPU) spécialisé \ndans l’exécution rapide de nombreux calculs en parallèle. \nElle est particulièrement sollicitée pour les jeux vidéo, le \nmontage vidéo, la modélisation 3D et certaines applications \nd’intelligence artificielle. \nElle dispose généralement d’une mémoire vidéo \n(VRAM) permettant de stocker temporairement les données \nnécessaires à l'affichage. \nLe processeur graphique peut être intégré au processeur \nprincipal ou se trouver sur une carte graphique dédiée. \nLecteur CD \nLe lecteur CD est un périphérique qui permet de lire les \ninformations enregistrées sur un disque compact (CD). \nIl utilise un faisceau laser pour détecter les données \nnumériques présentes à la surface du disque. \nIl permet notamment de lire des CD audio, d’installer des \nlogiciels ou d’accéder à des fichiers enregistrés sur un CD-\nROM. \nCertains modèles, appelés graveurs CD, permettent \négalement d’écrire des données sur des CD enregistrables \n(CD-R) ou réinscriptibles (CD-RW). \nLe lecteur CD contient un moteur qui fait tourner le disque et \nun mécanisme qui déplace la tête de lecture laser. \nAujourd’hui, il est de moins en moins présent dans les \nordinateurs récents, car il est progressivement remplacé par \nles clés USB, les téléchargements et le stockage en ligne. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nCarte mère \nLa carte mère est le circuit électronique principal de \nl’ordinateur. Elle permet de connecter et de faire \ncommuniquer les différents composants entre eux. \nElle accueille notamment le processeur (CPU), la mémoire \nvive (RAM) et les connecteurs destinés aux périphériques et \naux unités de stockage. \nElle assure la circulation des données entre les composants \ngrâce à des circuits et des connexions électroniques. \nElle distribue également l’alimentation électrique nécessaire \nau fonctionnement de plusieurs composants. \nElle contient le BIOS/UEFI, un micrologiciel qui permet \nnotamment d’initialiser le matériel lors du démarrage de \nl’ordinateur. \nElle possède différents ports et connecteurs (USB, SATA, \nPCI Express, etc.) permettant de brancher des périphériques \net des composants supplémentaires. \nLa carte mère joue donc un rôle central dans le \nfonctionnement et la coordination de l'ensemble de \nl'ordinateur. \n \nVentilateur  \nLe ventilateur est un composant qui permet de refroidir les \néléments de l’ordinateur en favorisant la circulation de l’air. \nIl sert principalement à évacuer la chaleur produite par les \ncomposants électroniques, notamment le processeur (CPU) \net la carte graphique (GPU). \nIl contribue à maintenir une température de fonctionnement \nadaptée, afin d’éviter la surchauffe et les ralentissements. \nIl fonctionne grâce à un moteur électrique qui fait tourner des \npales, créant ainsi un flux d’air. \nIl est souvent associé à un dissipateur thermique, qui \nabsorbe et évacue la chaleur produite par le processeur. \nCertains ventilateurs font entrer de l’air frais dans le boîtier, \ntandis que d’autres expulsent l’air chaud vers l’extérieur. \nLe ventilateur contribue ainsi à préserver les performances, \nla stabilité et la durée de vie de l’ordinateur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nBloc d’alimentation \nLe bloc d’alimentation est un composant qui permet \nde fournir l’énergie électrique nécessaire au fonctionnement \nde l’ordinateur. \nIl transforme le courant alternatif (AC) provenant de la prise \nélectrique en courant continu (DC) utilisable par les \ncomposants électroniques. \nIl distribue cette énergie aux différents éléments de \nl’ordinateur, notamment la carte mère, le processeur, la carte \ngraphique et les unités de stockage. \nIl fournit plusieurs tensions électriques adaptées aux besoins \ndes composants, principalement 3,3 V, 5 V et 12 V. \nIl intègre également des systèmes de protection contre \ncertains problèmes électriques, comme les surtensions, les \nsurcharges et les courts-circuits. \nSa puissance, exprimée en watts (W), détermine la quantité \nmaximale d’énergie qu’il peut fournir. \nLe bloc d’alimentation est donc indispensable au \nfonctionnement stable et sécurisé de l’ordinateur. \n \nPorts de \nconnexion  \nLes ports de connexion sont des interfaces permettant de \nrelier l’ordinateur à des périphériques externes ou à d’autres \néquipements. \nIls permettent l’échange de données et de signaux entre \nl’ordinateur et les appareils connectés. \nIl existe différents types de ports, notamment les ports \nUSB (clavier, souris, clé USB), HDMI ou \nDisplayPort (écran), Ethernet RJ45 (réseau) et les prises \naudio (casque, microphone). \nCertains ports permettent également de fournir de l’énergie \nélectrique aux périphériques connectés, par exemple pour \nrecharger un smartphone. \nIls sont généralement situés à l’arrière ou à l’avant du boîtier \net sont reliés à la carte mère. \nLes ports de connexion jouent donc un rôle essentiel dans la \ncommunication entre l’ordinateur et son environnement \nextérieur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \n \n \n \n \nDans notre image : \n \nN° \nNom du Port \nFonction \n1 \nPS/2 \n(clavier/souris) \nConnexion d’un ancien clavier ou d’une \nsouris \n2 \nPort série (COM / \nDB9) \nConnexion de périphériques anciens \n3 \nDVI \nConnexion d’un écran \n4 \nHDMI \nConnexion d’un écran ou d’un téléviseur \n5 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n6 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n7 \nEthernet (RJ45) \nConnexion réseau / Internet par câble \n8 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n9 \nPrises audio Jack \n3,5 mm \nBleu : Connexion casque,  \nVert : haut-parleurs \nRose :  microphone \n10 \nVGA \nTransmission de l’image en analogique vers \nun écran \n11 \nHDMI \nConnexion d’un écran ou d’un téléviseur \n12 \nDVI \nConnexion d’un écran",
+    "submittedAt": "2026-11-06 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.2,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.39,
+        "didacticQuality": 2.3,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.21
+      },
+      "summary": "Très bon dossier Hardware et tutorat (9.2/10) : Identification rigoureuse des composants PC et scénarisation de l'apprentissage entre pairs.",
+      "strengths": [
+        "Identification précise des composants matériels (CPU, RAM, carte mère, stockage, bloc d'alimentation).",
+        "Intégration rigoureuse des consignes de sécurité physique et antistatique.",
+        "Scénarisation didactique du tutorat entre pairs avec étapes pas-à-pas et questionnement guidé.",
+        "Posture réflexive valorisant l'apprentissage actif par la manipulation."
+      ],
+      "improvements": [
+        "Expliciter les critères de validation que le tuteur pair vérifie avant de passer à l'étape suivante."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 7 (Hardware & Tutorat par les pairs) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (9.2/10).",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Identification des composants PC (Critère A)",
+          "score": 2.39,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Exactitude technique & Sécurité matérielle/antistatique (Critère B)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Dispositif de tutorat par les pairs & Clarté du guidage pas-à-pas (Critère C)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité pédagogique (Critères E & H)",
+          "score": 2.21,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-11-06 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0133",
     "userId": "user-laura.mokeddem@student.hech.be",
     "userName": "Laura Mokeddem",
     "userEmail": "laura.mokeddem@student.hech.be",
@@ -7613,7 +9727,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0103",
+    "id": "file-real-0134",
     "userId": "user-mathis.rodes@student.hech.be",
     "userName": "Mathis Rodès",
     "userEmail": "mathis.rodes@student.hech.be",
@@ -7681,7 +9795,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0104",
+    "id": "file-real-0135",
     "userId": "user-mathis.rodes@student.hech.be",
     "userName": "Mathis Rodès",
     "userEmail": "mathis.rodes@student.hech.be",
@@ -7749,7 +9863,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0105",
+    "id": "file-real-0136",
     "userId": "user-mathis.rodes@student.hech.be",
     "userName": "Mathis Rodès",
     "userEmail": "mathis.rodes@student.hech.be",
@@ -7817,7 +9931,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0106",
+    "id": "file-real-0137",
     "userId": "user-mathis.rodes@student.hech.be",
     "userName": "Mathis Rodès",
     "userEmail": "mathis.rodes@student.hech.be",
@@ -7885,7 +9999,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0107",
+    "id": "file-real-0138",
     "userId": "user-nbats@student.hech.be",
     "userName": "Nathalie Bats",
     "userEmail": "nbats@student.hech.be",
@@ -7953,7 +10067,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0108",
+    "id": "file-real-0139",
     "userId": "user-olivier.henrion@student.hech.be",
     "userName": "Olivier Henrion",
     "userEmail": "olivier.henrion@student.hech.be",
@@ -8021,7 +10135,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0109",
+    "id": "file-real-0140",
     "userId": "user-olivier.henrion@student.hech.be",
     "userName": "Olivier Henrion",
     "userEmail": "olivier.henrion@student.hech.be",
@@ -8089,7 +10203,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0110",
+    "id": "file-real-0141",
     "userId": "user-olivier.henrion@student.hech.be",
     "userName": "Olivier Henrion",
     "userEmail": "olivier.henrion@student.hech.be",
@@ -8157,7 +10271,75 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0111",
+    "id": "file-real-0142",
+    "userId": "user-olivier.henrion@student.hech.be",
+    "userName": "Olivier Henrion",
+    "userEmail": "olivier.henrion@student.hech.be",
+    "exerciseId": "exercice-06",
+    "exerciseTitle": "Atelier 6 : Démarche itérative (Concevoir & tester un mini-jeu)",
+    "originalFileName": "HENRION_Olivier_Exercice_6_Demarche_iterative__2026-10-27.docx",
+    "formattedFileName": "HENRION_Olivier_Exercice_6_Demarche_iterative__2026-10-27.docx",
+    "fileType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "fileSize": 14883,
+    "fileUrl": "/travaux-etudiants/HENRION_Olivier_Exercice_6_Demarche_iterative__2026-10-27.docx",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Contexte de l'activité\nCe jeu s'inscrit dans une séquence de cours consacrée à la cybersécurité, plus précisément à la création et à la protection des mots de passe, destinée à des élèves de 1re secondaire.\nIl intervient en début de séquence, avant toute présentation théorique, afin d'introduire la thématique de manière ludique.\nLes élèves sont amenés à retrouver des mots de passe de difficulté croissante en exploitant les informations publiées sur des profils de réseaux sociaux fictifs. L'objectif est de leur faire prendre conscience que certaines informations personnelles peuvent faciliter la découverte d'un mot de passe.\nLe jeu n'a pas pour objectif d'enseigner directement les notions théoriques. Il sert de situation de départ sur laquelle l'enseignant pourra s'appuyer pour construire la suite du cours.\nÀ l'issue de l'activité, une mise en commun permettra de revenir sur les stratégies utilisées par les élèves, d'identifier les faiblesses des mots de passe proposés et d'introduire les bonnes pratiques en matière de sécurité.\nLien genially :\nhttps://view.genially.com/6adb367d65be6b7ccc535f1f?fbclid=IwY2xjawVISmlleHRuA2FlbQIxMQBwZG9mBHNydGMGYXBwX2lkATAAAR5C1DMFQvGeA0ceWdh1Is8P9BhdIye7HiTwEQEcqjiuNp742pGvYiZTTK5A2w_aem_MYxfC5A0mCOwF0mzTLqifA\nLien google forms :\nhttps://docs.google.com/forms/d/e/1FAIpQLSfNEKqB6guj8XqjFjnYvZKkLSxrmu_ZNIvzzpFzphg6Jyjy_A/viewform",
+    "submittedAt": "2026-10-27 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.6,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.24,
+        "didacticQuality": 2.15,
+        "criticalAnalysis": 2.15,
+        "formAndStructure": 2.06
+      },
+      "summary": "Démarche de conception itérative rigoureuse (8.6/10) : Conception, playtest et amélioration continue d'un mini-jeu.",
+      "strengths": [
+        "Réalisation d'un prototype interactif fonctionnel et engageant.",
+        "Recueil méthodique des retours de testeurs pairs et identification des points de friction.",
+        "Améliorations effectives apportées en version 2 pour clarifier les feedbacks."
+      ],
+      "improvements": [
+        "Intégrer une jauge de progression réflexive pour les joueurs."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 6 (Démarche itérative & jeu) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (8.6/10).",
+      "criteriaTable": [
+        {
+          "name": "Démarche itérative & Conception du mini-jeu (Critère A)",
+          "score": 2.24,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Alignement pédagogique FMTTN & Feedback apprenant (Critère B)",
+          "score": 2.15,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Analyse réflexive des playtests & Prise en compte de l'erreur (Critère C)",
+          "score": 2.15,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Qualité de la réalisation interactive & Progression (Critères D & H)",
+          "score": 2.06,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-10-27 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0143",
     "userId": "user-sabrina.siragusa@student.hech.be",
     "userName": "Sabrina Siragusa",
     "userEmail": "sabrina.siragusa@student.hech.be",
@@ -8225,7 +10407,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0112",
+    "id": "file-real-0144",
     "userId": "user-sabrina.siragusa@student.hech.be",
     "userName": "Sabrina Siragusa",
     "userEmail": "sabrina.siragusa@student.hech.be",
@@ -8293,7 +10475,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0113",
+    "id": "file-real-0145",
     "userId": "user-sabrina.siragusa@student.hech.be",
     "userName": "Sabrina Siragusa",
     "userEmail": "sabrina.siragusa@student.hech.be",
@@ -8361,7 +10543,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0114",
+    "id": "file-real-0146",
     "userId": "user-sabrina.siragusa@student.hech.be",
     "userName": "Sabrina Siragusa",
     "userEmail": "sabrina.siragusa@student.hech.be",
@@ -8429,7 +10611,144 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0115",
+    "id": "file-real-0147",
+    "userId": "user-sabrina.siragusa@student.hech.be",
+    "userName": "Sabrina Siragusa",
+    "userEmail": "sabrina.siragusa@student.hech.be",
+    "exerciseId": "exercice-07",
+    "exerciseTitle": "Atelier 7 : Défi Hardware & Peer Learning (Démonter/Remonter un PC)",
+    "originalFileName": "SIRAGUSA_Sabrina_Exercice_7_Defi_Hardware_Peer__2026-10-31.pdf",
+    "formattedFileName": "SIRAGUSA_Sabrina_Exercice_7_Defi_Hardware_Peer__2026-10-31.pdf",
+    "fileType": "application/pdf",
+    "fileSize": 658596,
+    "fileUrl": "/travaux-etudiants/SIRAGUSA_Sabrina_Exercice_7_Defi_Hardware_Peer__2026-10-31.pdf",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Anita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 1 \n \nExercice 07 - DÉFI HARDWARE \n \nL’ordinateur fonctionne. \n \n1. Observer \n \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 2 \n \nComposants \nFonction \nConnexions \nAlimentation \nApporter de l’électricité à la \ncarte mère. \n- \nCarte mère \nCarte mère \nRelier les composants entre \neux et alimenter certains \ncomposants en électricité. \n- \nAlimentation \n- \nProcesseur \n- \nLecteur optique \n- \nStockage SSD \n- \nVentilateur \n- \nRAM \nVentilateur \nGérer la température du \nprocesseur. \n- \nCarte mère \n- \nProcesseur (collé via une \npâte thermique) \nLecteur optique \nLire CD et DVD pour \ntransmettre les \ninformations. \n- \nCarte-mère  \no Alimentation \no Données \nRAM \nStocker les données de \nmanière temporaire. \n- \nCarte mère \n \nCes composants n’étaient pas visibles avant le démontage. \nProcesseur \nCoordinateur des \ncomposants et calculateur. \n- \nCarte mère \nStockage SSD \nStocker des données de \nmanière permanente. \n- \nCarte mère \nCarte graphique \nAfficher les images et les \nvidéos à l’écran. \nIntégrée à la carte mère \n \n2. Démonter \nNuméros \nÉléments retirés / Actions \nPhotos \n1 \nLa face latérale \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 3 \n2 \nLa face avant. \n \n3 \nL’emplacement du disque dur. \n \n4 \nLa structure qui tient le lecteur \noptique. \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 4 \n5 \nDéconnecter le lecteur optique. \n \n6 \nRetirer le lecteur optique de \nson support. \n \n7  \nRetirer la RAM. \n \n8 \nDéconnecter le ventilateur de la \ncarte mère et le retirer. \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 5 \n9 \nRetirer le dissipateur \nthermique. \n \n10 \nDéconnecter l’alimentation de \nla carte mère et retirer le bloc \nd’alimentation. \n \n11 \nDéconnecter tous les petits \ncâbles encore connectés à la \ncarte mère (SATA, connexion \naux éléments extérieurs). \n \n12 \nRetrait du SSD. \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 6 \n13 \nRetrait des vis tenant la carte \nmère et retrait de celle-ci. \n \n \n3. Apprendre \nNous avons utilisé une vidéo en ligne car nous rencontrions des difficultés pour retirer la \ncarte mère. \n \n4. Remonter \nPour le démontage, nous avons placé les différents éléments (vis et composants) dans \nl’ordre du retrait afin d’utiliser cette organisation pour le remontage (ordre inverse). \nDes photos des différentes connectiques ont été prises pour ne pas se tromper de câbles. \n \n   \n   \n \n \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 7 \n \n \n \n5. Démarrage de l’ordinateur \nAucun problème à signaler. \n \n \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 8 \n \n6. Bilan \n• \nQuelle difficulté avons-nous rencontrée ? \nNous avons éprouvé des difficultés à retirer la carte mère, nous avions même pensé \nqu’elle était peut-être collée. \nLors du remontage, la face avant ne s’emboitait pas correctement, un élément (la \nstructure pour un disque dur) n’était pas correctement placée. \n• \nComment avons-nous trouvé la solution ? \nNous avons visionné des vidéos pour comprendre comment retirer la carte mère sans \nforcer. \nNous avons démonté à nouveau l’élément gênant. \n• \nQu'avons-nous appris grâce à nos erreurs ? \nIl est important de se renseigner avant de faire quelque chose qui pourrait endommager \nle matériel. \nNe pas s’énerver et revenir sur des étapes précédentes pour palier le problème. \n• \nQu'est-ce qu'un autre groupe nous a appris ? \nNous étions en autonomie pour faire ce travail. \n• \nQu'avons-nous compris grâce à la manipulation que nous aurions difficilement compris avec un \ncours théorique ? \nLa manipulation permet de se plonger plus facilement dans l’ordinateur. On est obligé de \nrester concentrer tout le long de l’activité. La manipulation présente l’avantage \nd’observer l’ordinateur sur toutes ses coutures, de repérer l’organisation structurée qui \nest présente au niveau des câblages et placement des éléments. La manipulation \ndemande également d’autres compétences purement techniques afin de s’organiser au \nmieux lors du démontage par exemple. Cet exercice nous a permis de réfléchir et de \nnous poser des questions sur l’agencement des éléments, contrairement à un cours \nthéorique qui aurait probablement fourni les réponses sans que nous ayons à les \nchercher activement.  \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 9",
+    "submittedAt": "2026-10-31 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.2,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.39,
+        "didacticQuality": 2.3,
+        "criticalAnalysis": 2.3,
+        "formAndStructure": 2.21
+      },
+      "summary": "Très bon dossier Hardware et tutorat (9.2/10) : Identification rigoureuse des composants PC et scénarisation de l'apprentissage entre pairs.",
+      "strengths": [
+        "Identification précise des composants matériels (CPU, RAM, carte mère, stockage, bloc d'alimentation).",
+        "Intégration rigoureuse des consignes de sécurité physique et antistatique.",
+        "Scénarisation didactique du tutorat entre pairs avec étapes pas-à-pas et questionnement guidé.",
+        "Posture réflexive valorisant l'apprentissage actif par la manipulation."
+      ],
+      "improvements": [
+        "Expliciter les critères de validation que le tuteur pair vérifie avant de passer à l'étape suivante."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 7 (Hardware & Tutorat par les pairs) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (9.2/10).",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux consignes & Identification des composants PC (Critère A)",
+          "score": 2.39,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Exactitude technique & Sécurité matérielle/antistatique (Critère B)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Dispositif de tutorat par les pairs & Clarté du guidage pas-à-pas (Critère C)",
+          "score": 2.3,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Qualité de la communication & Réflexivité pédagogique (Critères E & H)",
+          "score": 2.21,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-10-31 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0148",
+    "userId": "user-sabrina.siragusa@student.hech.be",
+    "userName": "Sabrina Siragusa",
+    "userEmail": "sabrina.siragusa@student.hech.be",
+    "exerciseId": "exercice-08",
+    "exerciseTitle": "Atelier 8 : Construire des grilles d'évaluation critériées",
+    "originalFileName": "SIRAGUSA_Sabrina_Exercice_8_Construire_des_gril_2026-10-24.pdf",
+    "formattedFileName": "SIRAGUSA_Sabrina_Exercice_8_Construire_des_gril_2026-10-24.pdf",
+    "fileType": "application/pdf",
+    "fileSize": 401789,
+    "fileUrl": "/travaux-etudiants/SIRAGUSA_Sabrina_Exercice_8_Construire_des_gril_2026-10-24.pdf",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Anita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 1 \nRecherche d’information \nIntitulé \nRechercher des informations sur Internet concernant une personnalité scientifique, \nsélectionner des informations pertinentes et identifier des sources fiables. \n1. Identification des apprentissages visés \nSavoirs  \n• Connaître les critères de validité d'une source web (auteur, date, institution, URL) ; \n• Connaître le vocabulaire spécifique lié à la biographie de la personnalité scientifique. \n \nLien avec le référentiel : Vocabulaire spécifique au réseau (Internet) et au software \n(moteur de recherche, navigateur, URL, extensions) \n \nSavoir-faire \n• Utiliser des moteurs de recherche de manière efficace (mots-clés, opérateurs) ;  \n• Croiser les sources ; \n• Filtrer l'information pertinente par rapport à la consigne. \n \nLien avec le référentiel : Utiliser un outil de recherche en s’adaptant à l’environnement, \ndéterminer des mots-clés pertinents, pointer la source apparente d’un contenu. \n \nCompétence mobilisée \n• Traiter des informations textuelles et documentaires pour restituer une synthèse \nrigoureuse et contextualisée. \nCapacités transversales \n• Esprit critique (évaluation de la fiabilité) ; \n• Autonomie dans la démarche de recherche. \n \nLien avec le référentiel : « Effectuer une recherche pour répondre à un besoin suivant \nune stratégie pertinente » et « Évaluer la fiabilité contextuelle d'une source ». \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 2 \nCritères \nIndicateurs \nA \nB \nC \nD \n1. Pertinence et \nsélection des \ninformations \n§ Sélectionne des \nfaits en lien direct \navec la consigne. \n \n§ Écarte les détails \nsuperflus. \n \n§ Couvre les \naspects clés de la \npersonnalité. \nEffectue une \nsélection rigoureuse \net synthétique qui \nmet en évidence les \néléments essentiels \ndu parcours de la \npersonnalité. \n \nHiérarchise \nl'information pour ne \ngarder que l'essentiel \net produit une \nsynthèse percutante. \nSélectionne des \ninformations \nfactuelles, \npertinentes et \ndirectement reliées à \nla consigne. \nSélectionne des \ninformations \ncorrectes mais \nincomplètes ou \ncomportant quelques \ndétails superflus. \nIntègre des \ninformations hors \nsujet ou omet des \naspects centraux de \nla consigne. \n2. Fiabilité et analyse \ndes sources \n§ Vérifie l'origine \ndes sites (auteur, \ninstitution, URL). \n \n§ Croise les \ninformations sur \nplusieurs sources. \n \n§ Identifie la date \nde publication et \nde mise à jour. \nAnalyse de manière \ncritique l'origine, les \nbiais potentiels et la \nlégitimité des sources \ndocumentaires \nconsultées. \nIdentifie et cite des \nsources \ninstitutionnelles ou \nacadémiques fiables \net croise au moins \ndeux sources \nindépendantes. \nUtilise des sources \nglobales mais ne \ncroise pas \nsystématiquement les \ninformations pour en \nvérifier l'exactitude. \nUtilise des sources \nnon vérifiées ou de \ntype encyclopédique \nparticipatif sans \nrecoupement \n(exemple : réseaux \nsociaux, blogs \nanonymes). \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 3 \nCritères \nIndicateurs \nA \nB \nC \nD \n3. Esprit critique et \ndistanciation \n§ Distingue les faits \ndes opinions ou \nrumeurs. \n§ Identifie les biais \néventuels. \n§ Justifie le choix \ndes sources \nretenues. \nExerce un regard \ncritique aiguisé, \ndétecte les biais \nhistoriques ou \néditoriaux et \nargumente \nsolidement ses choix \ndocumentaires. \nFait la distinction \nclaire entre faits \navérés et \ninterprétations ; \nexplique la valeur des \nsources choisies. \nRemet rarement en \nquestion les \naffirmations lues et \njustifie difficilement la \ncrédibilité des sites \nchoisis. \nRépète des \ninformations sans \nrecul ni \ndiscernement, en \nconfondant faits et \nrumeurs. \n4. Communication \n§ Explique la \nstratégie de \nrecherche \nemployée. \n§ Présente les \nrésultats \nclairement. \n§ Utilise un \nvocabulaire \nadapté. \nExplicite avec aisance \net rigueur toute sa \ndémarche \nméthodologique, \nprésente des \nrésultats \nsynthétiques et \nutilise un vocabulaire \ntechnique précis. \nExplique clairement \nsa stratégie de \nrecherche, présente \ndes résultats \nstructurés et emploie \nle vocabulaire \nnumérique adéquat. \nExplique globalement \nsa démarche mais de \nfaçon schématique, \nen oubliant de \nmentionner certains \nchoix de mots-clés \nou de sites. \nRestitue les résultats \nde manière confuse \nou est incapable \nd'expliquer comment \nil a mené sa \nrecherche sur \nInternet. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 4 \n2. Dispositif d’évaluation \nModalité \n• Co-évaluation ; \n• Évaluation formative. \nJustification \nL'évaluation formative permet à l'élève d'ajuster sa recherche en cours de route. La co-\névaluation (par les paires) est particulièrement intéressante : un élève analyse la \nbibliographie et la pertinence des sources sélectionnées par un camarade, ce qui renforce \nl'esprit critique par la confrontation des pratiques de recherche. \n \n3. Justification des choix pédagogiques \nChoix des critères \nLa recherche ne se résumant pas à un simple copier-coller, les critères ciblent à la fois la \nqualité du contenu (pertinence), la rigueur épistémologique (fiabilité et esprit critique) et \nla communication de l'élève.  \nIndicateurs observables \nLes indicateurs évitent le subjectif en ciblant des actions concrètes (croiser les sources, \nidentifier l'auteur, reformuler). \nProgression des niveaux \nLa progression va d'une collecte passive et non vérifiée (niveau D) à une démarche active, \ncritique, autonome et réflexive (niveau A). \nLe niveau A signifie : la maîtrise dépasse l’attendu. \nLe niveau B signifie : la maîtrise est conforme à l’attendu. \nLe niveau C signifie : la maîtrise est en proche de l’attendu. \nLe niveau D signifie : la maîtrise est très en deçà de l’attendu. \n \n \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 5 \nRemarques \nLes grilles officielles WBE utilisent une graduation normalisée à 4 niveaux (A, B, C, D) reposant \nsur une formulation trop vague comme pour le niveau A : La maîtrise dépasse l’attendu.  Nous \navons décidé de personnaliser chaque description de cellule de manière spécifique. \nLes documents officiels WBE intègrent également des critères incontournables et une échelle \nde validation par couleur (Bleu, Vert, Jaune, Orange). Nous avons décidé de ne pas définir les \ncritères incontournables. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 1 \nDémontage et remontage d’un ordinateur \nIntitulé \nDémonter un ordinateur, identifier ses composants, expliquer leur fonction et remonter \ncorrectement la machine. \n1. Identification des apprentissages visés \nSavoir  \n• Connaissance du nom et de la nature des composants internes de l'ordinateur (carte \nmère, processeur, mémoire vive, stockage, alimentation, cartes filles). \n \nLien avec le référentiel : Vocabulaire spécifique au hardware (distinction matériel/logiciel, \nmémoire vive / mémoire morte, stockage interne / externe, périphériques). \n \nSavoir-faire \n• Manipuler le matériel informatique avec précaution (gestes antistatiques, repérage de \nla visserie, débranchement des nappes) ; \n• Appliquer une procédure méthodique de démontage/remontage. \n \nLien avec le référentiel : Appliquer des règles de sécurité et de manipulation \nméthodique, organiser et gérer l'espace technique. \n \nCompétence mobilisée \n• Résoudre une tâche technique complexe en mobilisant habileté manuelle, \nraisonnement spatial et connaissances théoriques. \nCapacités transversales \n• Rigueur méthodologique ; \n• Respect des consignes de sécurité ;  \n• Autonomie ; \n• Persévérance face à un problème technique. \n \nLien avec le référentiel : Gérer et organiser des données matérielles et logicielles de \nmanière sécurisée et fonctionnelle. \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 2 \nCritères \nIndicateurs \nA \nB \nC \nD \n1. Sécurité et respect \ndu matériel \n§ Utilise les \nprécautions \nantistatiques (si \ndisponible). \n \n§ Manipulation \ndouce des \nconnectiques et \ncartes. \n \n§ Rangement \nordonné de la \nvisserie. \nGestes sûrs, \nprécautionneux et \nprofessionnels ; \nanticipe les risques \nde casse ou de court-\ncircuit. \nRespecte \nscrupuleusement les \nconsignes de \nmanipulation, utilise \nles outils adaptés et \nrange \nméthodiquement les \ncomposants. \nManipule avec \nprécaution globale \nmais oublie de \nsécuriser certains \néléments fragiles ou \ndésorganise la \nvisserie. \nForce les \nconnectiques, \nmanipule les cartes \npar les circuits \nimprimés ou néglige \nles risques \nélectrostatiques. \n2. Méthodologie et \nordre opératoire \n§ Suit l'ordre \nlogique de \ndémontage \n(périphériques ➔ \nalimentation ➔ \ncartes ➔ \nprocesseur). \n \n§ Maintien de \nl'espace de travail \npropre. \nMaîtrise parfaite de la \nchronologie, fluidité \ndes gestes, \nautonomie complète \ndans l'organisation de \nl'espace de travail. \nApplique \nrigoureusement la \nchronologie logique \nde démontage et de \nremontage sans \nprécipitation. \nSuit les grandes \nétapes mais commet \ndes erreurs d'ordre \n(exemple : oubli d'un \ncâble avant \nextraction de carte). \nProcède de manière \nanarchique, dévisse \ndes éléments sans \nlogique ou risque \nd'endommager la \nstructure. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 3 \nCritères \nIndicateurs \nA \nB \nC \nD \n3. Identification et \nfonction des \ncomposants \n§ Nomme \ncorrectement \nchaque \ncomposant (CPU, \nRAM, SSD, etc.). \n \n§ Explique \nprécisément le \nrôle de chaque \nélément. \nDémontre une \nexpertise \napprofondie en \nexpliquant non \nseulement le rôle, \nmais aussi les \ninteractions entre les \ncomposants. \nIdentifie sans \nhésitation tous les \ncomposants \nmanipulés et explicite \nclairement leur \nfonction technique. \nIdentifie les \ncomposants \nprincipaux mais \nhésite ou formule \ndes imprécisions sur \nleur rôle exact. \nConfond les \ncomposants majeurs \n(exemple : confusion \nentre RAM et \nstockage) et ignore \nleurs fonctions \nprincipales. \n4. Fonctionnement \nfinal de la machine \n§ La machine \nredémarre au \npremier essai. \n \n§ Tous les câbles \ninternes sont \ncorrectement \nrebranchés. \nRemontage \nimpeccable, gestion \nsoignée du \ncheminement des \ncâbles favorisant la \ncirculation d'air. \nLa machine \nredémarre du \npremier coup, \nattestant d'un \nremontage intègre et \nrigoureux. \nLa machine démarre \naprès l'identification \net la correction de \nquelques erreurs de \nraccordement par \nl'élève. \nLa machine ne \ndémarre pas à la \nsuite d’oublis majeurs \nde câblage ou des \ninversions de \nconnecteurs. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 4 \n2. Dispositif d’évaluation \nModalité \n• Évaluation formative en cours \n• Auto-évaluation (bilan des difficultés rencontrées). \nJustification \nCette activité combine un geste technique manuel et un savoir théorique. L'évaluation \nformative est indispensable pour intervenir immédiatement en cas de geste dangereux \npour le matériel. Le redémarrage de la machine offre une rétroaction immédiate et \nindiscutable à l'élève. \n \n3. Justification des choix pédagogiques \nChoix des critères \nLes critères couvrent l'ensemble de la compétence technique : la sécurité et le soin (savoir-\nêtre), la méthode (savoir-faire procédural), la théorie (savoirs) et le résultat final \n(performance). \nIndicateurs observables \nBasés sur des actions concrètes et vérifiables (la machine démarre, les connectiques sont \nmanipulées sans forcer, le vocabulaire est exact). \nProgression des niveaux \nTraduit le passage d'un tâtonnement risqué pour le matériel (niveau D) à une exécution \nexperte, soigneuse et autonome (niveau A). \nLe niveau A signifie : la maîtrise dépasse l’attendu. \nLe niveau B signifie : la maîtrise est conforme à l’attendu. \nLe niveau C signifie : la maîtrise est en proche de l’attendu. \nLe niveau D signifie : la maîtrise est très en deçà de l’attendu. \n \n \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 5 \nRemarques \nLes grilles officielles WBE utilisent une graduation normalisée à 4 niveaux (A, B, C, D) reposant \nsur une formulation trop vague comme pour le niveau A : La maîtrise dépasse l’attendu.  Nous \navons décidé de personnaliser chaque description de cellule de manière spécifique. \nLes documents officiels WBE intègrent également des critères incontournables et une échelle \nde validation par couleur (Bleu, Vert, Jaune, Orange). Nous avons décidé de ne pas définir les \ncritères incontournables. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 1 \nPrésentation multimédia \nIntitulé \nCréer une présentation destinée à sensibiliser les élèves au cyberharcèlement en sélectionnant \net organisant des informations et des contenus multimédias pertinents. \n1. Identification des apprentissages visés \nSavoirs  \n• Définition du cyberharcèlement ; \n• Identification des mécanismes de groupe ; \n• Identification des droits d’auteur, droit à l’image ; \n• Connaissance des ressources d'aide (lignes d'écoute, signalement). \n \nLien avec le référentiel : Vocabulaire invariant de production, droits d'auteur, droit à \nl'image et à la voix, respect de la vie privée et de la nétiquette. \n \nSavoir-faire \n• Structurer un message de sensibilisation percutant ; \n• Concevoir un support multimédia équilibré (texte, image, vidéo, audio) ;  \n• Citer les sources et respecter le droit à l'image / les droits d'auteur. \n \nLien avec le référentiel : Utiliser des fonctionnalités courantes d'un outil de présentation \n(intégration de médias), appliquer les principes d'élaboration d'un message multimédia \npour appuyer un discours. \n \nCompétence mobilisée \n• Communiquer efficacement à des fins de sensibilisation auprès d'un public cible (les \npairs) en mobilisant des langages multiples. \nCapacités transversales \n• Empathie ;  \n• Engagement citoyen ; \n• Créativité et maîtrise des outils de communication numérique. \n \nLien avec le référentiel : « Produire et traiter des contenus multimédias » et « \nInteragir/communiquer de manière responsable ». \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 2 \nCritères \nIndicateurs \nA \nB \nC \nD \n1. Pertinence et \nexactitude du \ncontenu \n§ Définitions \ncorrectes du \ncyberharcèlement. \n \n§ Distingue \nharcèlement et \ncyberharcèlement. \n \n§ Propose des \nsolutions \nconcrètes ou des \nrecours. \nLe contenu dépasse \nla simple restitution \nen proposant une \nanalyse rigoureuse \ndes dynamiques \nrelationnelles et des \nsolutions innovantes. \nLe contenu est exact, \ncomplet, bien \ndocumenté et \npropose des pistes \nde prévention claires \nadaptées au public. \nPrésente les notions \ngénérales mais \nmanque de précision \nsur les mécanismes \nou omet les \nsolutions/ressources. \nContenu lacunaire, \ncomportant des \nerreurs factuelles ou \ndes amalgames \npréjudiciables sur le \nsujet. \n2. Qualité de la \ncommunication et \nstructure \n§ Message clair et \npercutant. \n \n§ Enchaînement \nlogique des \ndiapositives ou \nsections. \n \n§ S'adresse \ndirectement au \npublic visé. \nCommunication \ncaptivante, narration \nfluide et impact \némotionnel/réflexif \nfort, suscitant \nl'adhésion immédiate. \nStructure claire, \naccroche efficace, \nton juste et \npersuasif, \nparfaitement adapté \naux élèves \nsensibilisés. \nStructure présente \nmais transitions \nmaladroites ; impact \nde sensibilisation \nmodéré sur le public. \nStructure décousue, \nmessages confus ou \nnon adaptés au \npublic visé (trop \ninfantilisants ou trop \njargonneux). \n \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 3 \nCritères \nIndicateurs \nA \nB \nC \nD \n3. Utilisation \njudicieuse des médias \n§ Illustrations/vidéos \nau service du \npropos (pas \ndécoratives). \n \n§ Lisibilité des \ndiapos (contraste, \nsobriété). \n \n§ Respect des droits \nd'auteur/images. \nUtilisation créative et \nmaîtrisée des \nressources \nmultimédias (rythme, \nesthétique, \naccessibilité, sources \nirréprochables). \nMédias \nsoigneusement \nchoisis, renforçant le \nmessage, diapositives \népurées et respect \ndes droits d'auteur. \nUtilise quelques \nmédias pertinents \nmais la mise en page \nnuit parfois à la \nlisibilité ou les \nsources d'images ne \nsont pas indiquées. \nSurcharge visuelle, \nmédias purement \ndécoratifs ou \nperturbateurs, non-\nrespect des droits \nd'auteur. \n4. Posture éthique et \nengagement \n§ Respect d'autrui \net empathie dans \nle traitement du \nsujet. \n \n§ Refus du \nsensationnalisme \ndéplacé. \nDéveloppe une \napproche nuancée, \nhumaine et \nconstructive, \nvalorisant l'entraide \net la responsabilité \ncollective. \nTraite le sujet avec \nsérieux, respect, \ndiscernement et \nempathie, \ndémontrant une \nréelle posture \ncitoyenne. \nTraite le sujet de \nmanière formelle et \ndistante, sans \nsusciter de réelle \nprise de conscience \nou d'empathie. \nUtilise un ton \nculpabilisant, \nmoralisateur ou au \ncontraire banalisant \nface aux situations \nprésentées. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 4 \n2. Dispositif d’évaluation \nModalité \n• Auto-évaluation suivie d’une évaluation par les pairs \n• Évaluation sommative. \nJustification \nLe sujet s'y prête particulièrement : la sensibilisation au cyberharcèlement vise le public \ncible (les pairs). L'évaluation par les pairs permet de mesurer si l'objectif de sensibilisation \net d'impact sur le public est réellement atteint. \n \n3. Justification des choix pédagogiques \nChoix des critères \nLa grille combine trois dimensions complémentaires : la rigueur des informations \nprésentées, la maîtrise technique et esthétique de la communication et des médias, ainsi \nque l’engagement citoyen et éthique. \nIndicateurs observables \nPermettent de vérifier objectivement si les notions légales et préventives sont présentes, \net si la forme graphique respecte les règles d'ergonomie multimédia (lisibilité, absence de \nsurcharge). \nProgression des niveaux \nÉvolue d'une production maladroite ou anxiogène (niveau D) à une création percutante, \néthique, rigoureuse et esthétiquement maîtrisée (niveau A). \nLe niveau de validation A signifie : la maîtrise dépasse l’attendu. \nLe niveau de validation B signifie : la maîtrise est conforme à l’attendu. \nLe niveau de validation C signifie : la maîtrise est en proche de l’attendu. \nLe niveau de validation D signifie : la maîtrise est très en deçà de l’attendu. \n \n \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 5 \nRemarques \nLes grilles officielles WBE utilisent une graduation normalisée à 4 niveaux (A, B, C, D) reposant \nsur une formulation trop vague comme pour le niveau A : La maîtrise dépasse l’attendu.  Nous \navons décidé de personnaliser chaque description de cellule de manière spécifique. \nLes documents officiels WBE intègrent également des critères incontournables et une échelle \nde validation par couleur (Bleu, Vert, Jaune, Orange). Nous avons décidé de garder l’idée des \ncouleurs et de critères incontournables qui représentent l’essentiel de l’apprentissage.",
+    "submittedAt": "2026-10-24 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.4,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.44,
+        "didacticQuality": 2.35,
+        "criticalAnalysis": 2.35,
+        "formAndStructure": 2.26
+      },
+      "summary": "Excellente grille critériée (9.4/10) : Définition d'indicateurs observables et structuration à 4 degrés d'acquisition.",
+      "strengths": [
+        "Critères didactiques indépendants et sans chevauchement.",
+        "Indicateurs observables clairs pour chaque niveau d'acquisition.",
+        "Mobilisation judicieuse de l'évaluation formative et de l'auto-évaluation."
+      ],
+      "improvements": [
+        "Proposer une version simplifiée 'falc' à destination directe de l'élève."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 8 (Grilles critériées) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (9.4/10).",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux situations d'apprentissage & Exhaustivité (Critère A)",
+          "score": 2.44,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Rigueur de la formulation critériée à 4 niveaux & Indicateurs observables (Critère B)",
+          "score": 2.35,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Articulation formative, auto-évaluation & régulation par les pairs (Critères C & D)",
+          "score": 2.35,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Qualité rédactionnelle, Clarté & Transposition didactique (Critères E & H)",
+          "score": 2.26,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-10-24 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0149",
     "userId": "user-vanhee.anais.mail@gmail.com",
     "userName": "Anaïs Vanhee",
     "userEmail": "vanhee.anais.mail@gmail.com",
@@ -8497,7 +10816,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0116",
+    "id": "file-real-0150",
     "userId": "user-vincianne.schoonbroodt@student.hech.be",
     "userName": "Vincianne SCHOONBROODT",
     "userEmail": "vincianne.schoonbroodt@student.hech.be",
@@ -8565,7 +10884,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0117",
+    "id": "file-real-0151",
     "userId": "user-vincianne.schoonbroodt@student.hech.be",
     "userName": "Vincianne SCHOONBROODT",
     "userEmail": "vincianne.schoonbroodt@student.hech.be",
@@ -8633,7 +10952,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0118",
+    "id": "file-real-0152",
     "userId": "user-vincianne.schoonbroodt@student.hech.be",
     "userName": "Vincianne SCHOONBROODT",
     "userEmail": "vincianne.schoonbroodt@student.hech.be",
@@ -8701,7 +11020,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0119",
+    "id": "file-real-0153",
     "userId": "user-vincianne.schoonbroodt@student.hech.be",
     "userName": "Vincianne SCHOONBROODT",
     "userEmail": "vincianne.schoonbroodt@student.hech.be",
@@ -8769,7 +11088,7 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
     }
   },
   {
-    "id": "file-real-0120",
+    "id": "file-real-0154",
     "userId": "user-vincianne.schoonbroodt@student.hech.be",
     "userName": "Vincianne SCHOONBROODT",
     "userEmail": "vincianne.schoonbroodt@student.hech.be",
@@ -8835,6 +11154,142 @@ export const INITIAL_REAL_FILES: SubmittedFile[] = [
       "correctedAt": "2026-10-12 14:05",
       "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
     }
+  },
+  {
+    "id": "file-real-0155",
+    "userId": "user-vincianne.schoonbroodt@student.hech.be",
+    "userName": "Vincianne SCHOONBROODT",
+    "userEmail": "vincianne.schoonbroodt@student.hech.be",
+    "exerciseId": "exercice-06",
+    "exerciseTitle": "Atelier 6 : Démarche itérative (Concevoir & tester un mini-jeu)",
+    "originalFileName": "SCHOONBROODT_Vincianne_Atelier_6_Demarche_iterative_e_2026-10-27 (1).pdf",
+    "formattedFileName": "SCHOONBROODT_Vincianne_Atelier_6_Demarche_iterative_e_2026-10-27 (1).pdf",
+    "fileType": "application/pdf",
+    "fileSize": 114373,
+    "fileUrl": "/travaux-etudiants/SCHOONBROODT_Vincianne_Atelier_6_Demarche_iterative_e_2026-10-27 (1).pdf",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Jeu Genially sur le tri des déchets et formulaire pour ensuite améliorer le jeu \n \n \nJeu   https://view.genially.com/6ad06cc002f7a3ace07e82df \n \nFormulaire https://forms.cloud.microsoft/e/UF72vRDggB \n \nJeu version 2  https://view.genially.com/6ad9d9fda98ca06bc55de6dc \n \nL’objectif pédagogique du jeu est de permettre aux élèves de 10 à 12 ans de découvrir et de \nmémoriser les principales règles du tri des déchets grâce à un jeu numérique interactif. \nJe voulais un jeu facile à comprendre, visuel, ludique et accessible sans explications supplémentaires \npour des élèves de 10-12 ans. \nLes personnes qui ont répondu au formulaire et qui ont testé le jeu ont dit qu’il était facile à \ncomprendre et à utiliser. Ce jeu est intéressant et motivant.  \nLes points à améliorer conseillés sont : \n- \nPlus de dias \n- \nReformuler le mot résidu ou le définir \n- \nRéaliser une dia pour bien comprendre résidu \n- \nRenforcer la motivation grâce aux points, aux étoiles et à un message de réussite final. \nLe test du jeu m’a permis de comprendre qu’il ne suffit pas de créer un jeu pour qu’il soit adapté aux \nélèves. Il faut vérifier si les consignes sont faciles à comprendre, si le jeu est simple à utiliser et si les \nrègles du tri sont claires. \nGrâce aux remarques des testeurs, j’ai pu voir ce qu’il fallait améliorer. J’ai donc modifié mon jeu \npour créer une deuxième version. J’ai appris qu’il est important de tester son travail, d’écouter les avis \ndes autres et de faire des changements pour améliorer le jeu. \nDu cours, je retiens que la conception itérative consiste à créer une première version, la faire tester, \nanalyser les remarques et l’améliorer. Il est important de faire tester son travail par d’autres personnes, \ncar on ne remarque pas toujours soi-même les erreurs ou les difficultés. Un questionnaire permet de \nrecueillir des avis précis pour savoir ce qui fonctionne et ce qu’il faut modifier. Cette démarche fait \nappel à plusieurs compétences : analyser, évaluer et créer. Enfin, je retiens que les erreurs ne sont pas \ndes échecs, mais des occasions d’apprendre et d’améliorer sa production. \nVincianne SCHOONBROODT",
+    "submittedAt": "2026-10-27 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 8.6,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.24,
+        "didacticQuality": 2.15,
+        "criticalAnalysis": 2.15,
+        "formAndStructure": 2.06
+      },
+      "summary": "Démarche de conception itérative rigoureuse (8.6/10) : Conception, playtest et amélioration continue d'un mini-jeu.",
+      "strengths": [
+        "Réalisation d'un prototype interactif fonctionnel et engageant.",
+        "Recueil méthodique des retours de testeurs pairs et identification des points de friction.",
+        "Améliorations effectives apportées en version 2 pour clarifier les feedbacks."
+      ],
+      "improvements": [
+        "Intégrer une jauge de progression réflexive pour les joueurs."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 6 (Démarche itérative & jeu) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (8.6/10).",
+      "criteriaTable": [
+        {
+          "name": "Démarche itérative & Conception du mini-jeu (Critère A)",
+          "score": 2.24,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Alignement pédagogique FMTTN & Feedback apprenant (Critère B)",
+          "score": 2.15,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Analyse réflexive des playtests & Prise en compte de l'erreur (Critère C)",
+          "score": 2.15,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Qualité de la réalisation interactive & Progression (Critères D & H)",
+          "score": 2.06,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-10-27 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
+  },
+  {
+    "id": "file-real-0156",
+    "userId": "user-vincianne.schoonbroodt@student.hech.be",
+    "userName": "Vincianne SCHOONBROODT",
+    "userEmail": "vincianne.schoonbroodt@student.hech.be",
+    "exerciseId": "exercice-08",
+    "exerciseTitle": "Atelier 8 : Construire des grilles d'évaluation critériées",
+    "originalFileName": "SCHOONBROODT_Vincianne_Atelier_8_Construire_des_grill_2026-10-29.docx",
+    "formattedFileName": "SCHOONBROODT_Vincianne_Atelier_8_Construire_des_grill_2026-10-29.docx",
+    "fileType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "fileSize": 30933,
+    "fileUrl": "/travaux-etudiants/SCHOONBROODT_Vincianne_Atelier_8_Construire_des_grill_2026-10-29.docx",
+    "dataUrl": "",
+    "driveUrl": "",
+    "extractedText": "Exercice 08 – Construire des grilles d’évaluation critériées \nObjectif \nL’objectif de cet exercice est de vous apprendre à construire une grille d’évaluation critériée adaptée à différents types d’apprentissages numériques. \nVous devrez être capables d’identifier les apprentissages réellement visés, de sélectionner des critères pertinents et de construire des indicateurs permettant d’observer différents niveaux de maîtrise. \nOrganisation \nTravail par groupes de 2 ou 3 étudiants. \nChaque groupe choisit 3 cas parmi les 10 proposés. \nPour chacun des trois cas, vous construisez une grille critériée différente. \nLes trois grilles doivent être accompagnées d’une justification de vos choix. \nMon premier cas  \n5. Intelligence artificielle \nUtiliser une IA générative pour créer une affiche, expérimenter différents prompts, comparer les résultats et justifier ses choix. \nJe travaille dans l’enseignement secondaire spécialisé de Forme 3 et je choisis ce cas car les élèves peuvent réaliser une production concrète qui a du SENS pour eux. \nDans ce cas, je demanderais aux élèves d'utiliser l’IA pour créer une affiche pour présenter leur projet ERASMUS+ Corse à leurs parents, responsables. \n1. Identifiez les apprentissages visés \nDéterminez ce que l’élève doit : \nsavoir ;  \nComprendre ce que c’est qu’une intelligence artificielle générative et savoir qu’elle peut créer des textes et des images à partir d’une consigne \nComprendre ce qu’est un prompt et quel est son rôle \nConnaître les éléments essentiels d’une affiche \nSavoir que l’intelligence artificielle peut produire des erreurs (images - textes) \nAvoir connaissance des informations essentielles sur le projet ERASMUS+ Corse \nsavoir-faire ; \nRédiger un prompt simple pour obtenir une affiche adaptée au projet \nModifier le prompt pour améliorer l’affiche \nVérifier les informations sur l’affiche \nComparer les différents résultats en fonction des différents prompts \nmobiliser comme compétence ; \nPour ce travail, l’élève doit mobiliser les compétences suivantes  \n utiliser le numérique,  \ndévelopper son autonomie, \nexercer son esprit critique,  \ncommuniquer  \njustifier ses choix.  \n2. Construisez la grille \nVotre grille doit comporter : \n3 à 5 critères directement liés aux apprentissages visés ; \n2 à 4 indicateurs observables par critère ; \n4 niveaux de maîtrise décrivant une progression qualitative. \nLes quatre niveaux de maîtrise sont les suivants : \nNiveau 1 : À renforcer \nNiveau 2 : En développement \nNiveau 3 : Maîtrisé \nNiveau 4 : Très bonne maîtrise \nCritère 1 : Rédiger et améliorer un prompt \nIndicateur 1 : Dans son prompt, l’élève indique le sujet et l’objectif de l’affiche \nIndicateur 2 : Dans son prompt, l’élève précise les éléments qu’il attend et modifie le prompt pour améliorer le résultat \nCritère 2 : Comparer et développer l’esprit critique face aux résultats de l’intelligence artificielle \nIndicateur 1 : L’élève compare plusieurs propositions réalisées avec l’IA \nIndicateur 2 : L’élève repère et modifie les erreurs et les éléments qui ne correspondent pas au projet \nCritère 3 : Créer une affiche claire et adaptée au projet \nIndicateur 1 : L’élève sélectionne et présente les informations essentielles sur le projet Erasmus+.  \nIndicateur 2 : L’élève organise les textes et les images pour rendre son affiche lisible et attractive.  \nJe précise la date car dans l’enseignement spécialisé tous les élèves n’avancent pas au même rythme. \n3. Précisez le dispositif d’évaluation \nJe combine plusieurs modalités d’évaluation \névaluation formative ; Pendant la création de l’affiche, j’observe les démarches des élèves et si besoin je leur donne des conseils pour améliorer les prompts ou réaliser leur production. \névaluation sommative ; A la fin de l’activité, j’évalue l’affiche finale de chaque élève en fonction des critères. \nauto-évaluation ; Chaque élève utilise une autre grille pour identifier ses acquis et repérer ce qu’il pourrait améliorer. \n4. Justifiez vos choix \nPour chaque grille, expliquez brièvement : \npourquoi vous avez retenu ces critères ; \npourquoi ces indicateurs permettent d’observer les apprentissages ; \ncomment les niveaux de maîtrise traduisent une progression ; \npourquoi vous avez choisi cette modalité d’évaluation. \nJ’ai choisi cette situation parce qu’elle est directement liée au projet Erasmus+ en Corse et à la formation professionnelle des élèves de Forme 3. La réalisation de l’affiche répond à un besoin réel de l’école : informer les parents sur la mobilité et les stages professionnels. \nLes critères ont été retenus parce qu’ils correspondent aux principaux apprentissages visés. Il ne s’agit pas seulement de créer une affiche esthétique, mais aussi d’apprendre à formuler une demande à une IA, à comparer ses propositions et de vérifier les informations. \nLes indicateurs permettent d’observer concrètement les actions réalisées par les élèves. \nLes quatre niveaux de maîtrise décrivent une progression allant d’un élève qui a besoin d’une aide importante à un élève capable de travailler de manière autonome, d’adapter sa démarche et de justifier ses décisions. \nJ’ai choisi de combiner plusieurs modalités d’évaluation parce qu’elles permettent d’accompagner les élèves pendant leur apprentissage. L’auto-évaluation les aide également à prendre conscience de leurs progrès. \nEnfin, cette activité permet de développer des compétences numériques utiles dans la vie quotidienne et professionnelle. Elle sensibilise les élèves aux possibilités de l’intelligence artificielle, mais aussi à la nécessité de vérifier ses résultats et de conserver un regard critique sur les contenus qu’elle produit \nMon second cas \n3. Éducation aux médias : info ou intox ? \nAnalyser des publications provenant des réseaux sociaux, vérifier leur fiabilité et justifier son analyse. \nL’objectif sera d’apprendre aux élèves à ne pas croire automatiquement tout ce qu’ils voient sur les réseaux sociaux, à vérifier les informations et à expliquer leur avis. \nComme déjà précisé plus haut, je travaille dans l’enseignement secondaire spécialisé de Forme 3 et je choisis ce cas car les élèves sont régulièrement confrontés à des informations sur Internet et les réseaux sociaux. Il est important qu’ils apprennent à faire la différence entre une information fiable et une information fausse ou trompeuse. \nJe propose de partir d’informations concernant la Corse, dans le cadre du projet Erasmus+ de l’école. Les élèves analyseront différentes publications, par exemple sur les lieux à visiter, les traditions corses, la gastronomie ou les activités proposées sur l’île. \nIls devront vérifier les informations à l’aide de sources fiables, puis présenter leur analyse à un camarade. Une évaluation par les pairs permettra à chaque élève de donner un retour constructif sur le travail d’un autre élève. \n1. Identifiez les apprentissages visés \nDéterminez ce que l’élève doit : \nsavoir ; \nComprendre la différence entre une information, une opinion et une publicité \nSavoir que les publications sur les réseaux sociaux ne sont pas toujours vraies \nConnaître la base des indices de fiabilité (auteur - date - source et preuve) \nComprendre qu’une image peut-être modifiée ou sortie de son contexte \nsavoir-faire ; \nLire une information et identifier l’information principale \nIdentifier la source, l’auteur et la date de la publication \nRechercher et vérifier l’information sur un autre site \nComparer les informations trouvées \nExpliquer pourquoi une information paraît fiable ou non \nmobiliser comme compétence ; \nRechercher et vérifier une information sur internet \nDévelopper son esprit critique \nCommuniquer ses résultats et expliquer \n2. Construisez la grille \nVotre grille doit comporter : \n3 à 5 critères directement liés aux apprentissages visés ; \n2 à 4 indicateurs observables par critère ; \n4 niveaux de maîtrise décrivant une progression qualitative. \nLes quatre niveaux de maîtrise sont les suivants : \nNiveau 1 : À renforcer \nNiveau 2 : En développement \nNiveau 3 : Maîtrisé \nNiveau 4 : Très bonne maîtrise \nCritère 1 : Identifier et analyser une publication \nIndicateur 1 : L’élève identifie l’information principale d’une publication \nIndicateur 2 : L’élève identifie la date, la source et l’auteur de la publication \nCritère 2 : Vérifier la fiabilité des informations sur la Corse \nIndicateur 1 : L’élève recherche dans une autre source fiable s’il trouve la même information \nIndicateur 2 : L’élève compare les informations et relève les erreurs \nCritère 3 : Évaluer le travail d’un camarade \nIndicateur 1 : L’élève utilise la grille d’évaluation pour examiner le travail de son camarade \n3. Précisez le dispositif d’évaluation \névaluation formative ; Pendant l’activité, j’observe les élèves, je les guide dans leurs recherches s’ils en ont besoin et je les aide à vérifier les informations \nauto-évaluation ; Chaque élève réfléchit à ce qu’il a appris et aux difficultés qu’il a rencontrées \névaluation par les pairs : chaque élève examine le travail d’un autre élève à l’aide d’une grille simple  \nJ’évalue le travail d’un autre élève \nNom de l’élève évalué :  \nNom de l’élève qui évalue :  \n4. Justifiez vos choix \nPour chaque grille, expliquez brièvement : \npourquoi vous avez retenu ces critères ; \npourquoi ces indicateurs permettent d’observer les apprentissages ; \ncomment les niveaux de maîtrise traduisent une progression ; \npourquoi vous avez choisi cette modalité d’évaluation. \nJ’ai choisi ces critères car ils correspondent aux étapes nécessaires pour analyser une publication sur les réseaux sociaux : comprendre l’information, vérifier sa fiabilité, justifier son avis et évaluer le travail d’un camarade. \nLes indicateurs permettent d’observer concrètement les actions réalisées par les élèves, comme rechercher une source, comparer et justifier des informations. \nLes quatre niveaux de maîtrise montrent une progression entre un élève qui a besoin d’une aide importante et un élève qui réalise les tâches de manière autonome et peut expliquer son raisonnement. Les niveaux permettent de tenir compte des besoins et du rythme de chaque élève de Forme 3. \nJ’ai choisi de combiner l’évaluation formative, l’évaluation par les pairs et l’autoévaluation. L’évaluation formative permet d’accompagner les élèves pendant leurs recherches. L’évaluation par les pairs les aide à porter un regard critique sur un travail et à donner un avis respectueux. L’autoévaluation leur permet de prendre conscience de leurs progrès. \nEnfin, cette activité développe des compétences utiles dans la vie quotidienne et professionnelle. Elle apprend aux élèves à ne pas croire automatiquement les informations trouvées sur Internet et à vérifier les sources avant de partager une publication. \nMon 3ème cas \n7. Protection des données personnelles \nAnalyser différentes situations numériques, identifier les risques liés aux données personnelles et proposer des comportements adaptés. \nJe travaille dans l’enseignement secondaire spécialisé de Forme 3 et je choisis ce cas car les élèves utilisent ou seront amenés à utiliser des outils numériques dans leur vie quotidienne et professionnelle. Il est donc important qu’ils apprennent à protéger leurs données personnelles. \nJe propose de partir de situations concrètes : créer une adresse e-mail, choisir un mot de passe, recevoir un message suspect ou être sollicité pour communiquer ses identifiants. Les élèves devront identifier les risques et choisir les bons comportements pour protéger leurs informations personnelles. \n1. Identifiez les apprentissages visés \nDéterminez ce que l’élève doit : \nsavoir ;  \nComprendre ce que c’est qu’une donnée personnelle ; nom, prénom, adresse e-maill, numéro de tel … \nComprendre à quoi sert une adresse email et un mot de passe \nSavoir qu’un mot de passe doit rester secret \nConnaître les caractéristique d’un mot de passe dit “robuste” \nSavoir qu’un message peut être frauduleux et chercher à voler des informations personnelles \nsavoir-faire ;  \nIdentifier des données personnelles dans différentes situations \nChoisir un mot de passe robuste (sans le communiquer) \nRepérer les risques dans les messages suspects \nChoisir un comportement adapté et donc ne pas cliquer sur des liens suspects et ne pas communiquer son mot de passe \nModifier son mot de passe si nécessaire \nmobiliser comme compétence ; \nProtéger ses données personnelles \nUtiliser les outils numériques de manière responsable \nIdentifier un risque de fraude \nDévelopper son autonomie dans l’utilisation du numérique \n2. Construisez la grille \nVotre grille doit comporter : \n3 à 5 critères directement liés aux apprentissages visés ; \n2 à 4 indicateurs observables par critère ; \n4 niveaux de maîtrise décrivant une progression qualitative. \nLes quatre niveaux de maîtrise sont les suivants : \nNiveau 1 : À renforcer \nNiveau 2 : En développement \nNiveau 3 : Maîtrisé \nNiveau 4 : Très bonne maîtrise \nCritère 1 : Identifier les données personnelles et les informations confidentielles \nIndicateur 1 : L’élève identifie les informations personnelles dans diverses situations \nIndicateur 2 : L’élève identifie les informations qui ne doivent pas être communiquées, notamment son mot de passe \nCritère 2 : Choisir et protéger un mot de passe. \nIndicateur 1 : L’élève reconnaît les caractères d’un mot de passe robuste. \nIndicateur 2 : L’élève identifie les bonnes pratiques pour protéger son mot de passe. \nCritère 3 : Repérer les risques liés à l’adresse e-mail. \nIndicateur 1 : L’élève repère les éléments suspects dans un message ou dans un e-mail. \nIndicateur 2 : L’élève choisit un comportement adapté face à une demande suspecte. \n3. Précisez le dispositif d’évaluation \nIndiquez si votre grille est destinée à une : \névaluation formative ; pendant les exercices, j’observe les choix des élèves et je les aide à comprendre les risques.  \nauto-évaluation ; l’élève vérifie s’il connaît les bonnes pratiques pour protéger ses données personnelles \nco-évaluation; par groupe de 2, les élèves analysent plusieurs situations fictives où ils doivent par exemple choisir un mot de passe parmi plusieurs et réagir à un e-mail suspect. \nJe sais protéger mes données personnelles \nJe reconnais les principales données personnelles. \nJe sais qu’un mot de passe doit rester secret. \nJe sais reconnaître les caractéristiques d’un mot de passe robuste. \nJe sais repérer des indices dans un e-mail suspect. \nJe sais comment réagir si un message me semble dangereux. \n4. Justifiez vos choix \nPour chaque grille, expliquez brièvement : \npourquoi vous avez retenu ces critères ; \npourquoi ces indicateurs permettent d’observer les apprentissages ; \ncomment les niveaux de maîtrise traduisent une progression ; \npourquoi vous avez choisi cette modalité d’évaluation. \nJ’ai choisi ces critères car ils correspondent aux apprentissages essentiels pour apprendre aux élèves à protéger leurs données personnelles dans leur vie quotidienne et professionnelle. Il est important qu’ils puissent identifier les informations personnelles, comprendre pourquoi un mot de passe doit rester secret et savoir reconnaître les risques liés aux e-mails suspects. \nLes indicateurs permettent d’observer concrètement les apprentissages des élèves. Ils permettent notamment de vérifier si l’élève reconnaît les données personnelles, identifie les caractéristiques d’un mot de passe robuste, repère les éléments suspects dans un e-mail et choisit une réaction adaptée face à une situation à risque. \nLes quatre niveaux de maîtrise montrent une progression entre un élève qui a besoin d’une aide importante pour identifier les risques et un élève qui est capable de les repérer de manière autonome, d’expliquer ses choix et de proposer des solutions adaptées. Cette progression permet de tenir compte des besoins et du rythme de chaque élève de l’enseignement spécialisé de Forme 3. \nJ’ai choisi de combiner l’évaluation formative, l’auto-évaluation et la co-évaluation. L’évaluation formative me permet d’accompagner les élèves pendant les exercices et de les aider à comprendre leurs erreurs. L’auto-évaluation leur permet de prendre conscience de leurs acquis et des points qu’ils doivent encore améliorer. La co-évaluation, réalisée en binôme à partir de situations fictives, permet aux élèves d’échanger leurs idées, de comparer leurs choix et d’apprendre les bonnes pratiques ensemble. \nCette activité vise à développer l’autonomie des élèves et à les rendre plus responsables dans leur utilisation du numérique. Ces apprentissages leur seront utiles dans leur vie personnelle et professionnelle, notamment lorsqu’ils utiliseront une adresse e-mail, créeront un mot de passe ou recevront un message suspect. \n Je dois retenir pour ce cours",
+    "submittedAt": "2026-10-29 14:00",
+    "driveSynced": true,
+    "aiCorrection": {
+      "status": "analyzed",
+      "suggestedScore": 9.4,
+      "maxScore": 10,
+      "rubricScores": {
+        "concordance": 2.44,
+        "didacticQuality": 2.35,
+        "criticalAnalysis": 2.35,
+        "formAndStructure": 2.26
+      },
+      "summary": "Excellente grille critériée (9.4/10) : Définition d'indicateurs observables et structuration à 4 degrés d'acquisition.",
+      "strengths": [
+        "Critères didactiques indépendants et sans chevauchement.",
+        "Indicateurs observables clairs pour chaque niveau d'acquisition.",
+        "Mobilisation judicieuse de l'évaluation formative et de l'auto-évaluation."
+      ],
+      "improvements": [
+        "Proposer une version simplifiée 'falc' à destination directe de l'élève."
+      ],
+      "nextSteps": "Poursuivre sur cette dynamique pour les prochaines étapes du projet.",
+      "detailedFeedback": "Votre travail sur Atelier 8 (Grilles critériées) témoigne d'un investissement sérieux. L'analyse est argumentée et les concepts clés sont bien assimilés (9.4/10).",
+      "criteriaTable": [
+        {
+          "name": "Concordance aux situations d'apprentissage & Exhaustivité (Critère A)",
+          "score": 2.44,
+          "maxScore": 2.5,
+          "justification": "Consignes respectées, traitement sérieux et cohérent du sujet."
+        },
+        {
+          "name": "Rigueur de la formulation critériée à 4 niveaux & Indicateurs observables (Critère B)",
+          "score": 2.35,
+          "maxScore": 2.5,
+          "justification": "Bonne exactitude conceptuelle et ancrage dans les compétences visées."
+        },
+        {
+          "name": "Articulation formative, auto-évaluation & régulation par les pairs (Critères C & D)",
+          "score": 2.35,
+          "maxScore": 2.5,
+          "justification": "Posture critique développée et pistes didactiques applicables."
+        },
+        {
+          "name": "Qualité rédactionnelle, Clarté & Transposition didactique (Critères E & H)",
+          "score": 2.26,
+          "maxScore": 2.5,
+          "justification": "Document clair, structuration lisible et rédaction soignée."
+        }
+      ],
+      "correctedAt": "2026-10-29 14:05",
+      "modelUsed": "Évaluateur Didactique FMTTN (Révision critériée 2026)"
+    }
   }
 ];
 
@@ -8848,8 +11303,8 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "exerciseTitle": "Atelier 1 : Diagnostic de compétences (DigComp 2.2)",
     "answer": "Exercice 1.1A — Compétent, partiellement compétent ou incompétent ?\nProfil 1 : \n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nSarah sait comment écrire un bon prompt et ainsi avoir une réponse qui lui semble bien adaptée\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nElle ne vérifie jamais ses informations alors qu’on sait que l’IA peut commettre des erreurs \n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nOui, il faut qu’elle apprenne à vérifier les informations sur d’autres sources. Elle ne doit pas simplement copier coller les textes de l’ia, elle doit développer un regard critique sur les écrits de l’ia.\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nPas avec la manière dont elle utilise l’ia actuellement mais c’est une compétence qu’elle peut bien entendu développer et améliorer en se posant des questions sur la véracité des faits, en regardant des vidéos qui mettent en garde sur les productions de l’ia, en suivant des cours ou des formations.\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nNon, elle ne les vérifie aucune des informations\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nLe document ne le spécifie pas. \nProfil 2 : \n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nThomas est très autonome et débrouillard. Il cherche seul les réponses à ces questions en faisant des recherches et posent des questions si il est bloqué.\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nIl n’utilise pas des logiciels parce qu’il n’est pas à l’aise avec ces outils. \n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nOui, parce que quand il ne sait pas, il cherche de nouvelles ressources, de nouvelles informations pour se débloquer. \n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nOui, il est très autonome \n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nOui, j’ai envie de croire qu’il vérifie ses informations étant donné qu’il fait beaucoup de recherche\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nJe suppose que comme il ne semble pas à l’aise avec l’ia, c’est parce qu’il ne lui fait pas vraiment confiance. Il doit donc pour moi être responsable et prendre en compte la sécurité, les infos personnelles,…\nProfil 3 : \n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nLina maîtrise parfaitement Instagram, TikTok et Snapchat. Elle connaît les différentes fonctionnalités, sait créer des vidéos, utiliser les tendances et analyser les statistiques de ses publications.\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nSelon le document, elle ne semble pas se préoccuper de l’éthique étant donné qu’elle partage sur les réseaux sociaux des photos et vidéos d’autrui. \n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nOui, elle utilise différents réseaux sociaux sans problème\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nOui, elle sait très bien comment manier ces outils\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nNon, elle poste sur les réseau ce qu’elle a sur son téléphone.\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nElle n’a aucune notion de sécurité, de droit à l’image, de vie privée, …\nProfil 4 : \n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nHugo fait énormément de recherche pour être sure que ses informations soient correctes et cherche sans cesses des ressources pour répondre à ces questions.\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nIl ne sait pas bien utiliser les réseaux sociaux et utiliser des logiciels de montages vidéos \n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nJe pense qu’hugo est capable de s’adapter et d’apprendre énormément comme le document précise que quand il ne comprend pas quelque chose, il cherche des ressources lui permettant de progresser.\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nOui, il cherche seul et vérifie ses infos\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nOui, il cherche toujours à vérifier ses informations.\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nOui, il s’assure de vérifier ses informations avant de les diffuser\nProfil 5 : \n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nElle maitrise très bien les logiciels professionnels \n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nElle n’a pas l’air à l’aise avec la découverte de nouveaux outils\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nA l’aide de formations et d’explications oui mais tant qu’elle ne maitrisera pas jusqu’au bout des doigts la nouvelle plateforme, elle aura une réticence à utiliser le nouveau logiciel.\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nNon, elle ne cherche jamais seule les réponses à ces questions. Elle préfère stopper son travail plutôt que de trouser elle-même la solution.\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nOui, elle attend toujours la réponse d’un expert avant de se lancer dans l’inconnu\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nOui étant donné qu’elle n’utilise un logiciel que si elle est sure de celui-ci et de bien savoir le maitriser\nProfil 6 : \n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nUtilise très bien les moteurs de recherches et trouve facilement des réponses aux questions qu’on lui pose\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nIl prend en compte la première information qu’il trouve sans consulter plusieurs sources ou même vérifier cette source\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nIl cherche la réponse sur internet\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nOui, il cherche seul ses réponses\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nIl vérifie très très rapidement si quelques sources explique la même situation et prend souvent en compte la première qu’il voit\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nNon étant donné qu’il se base souvent sur la première source qu’il trouve sans s’assurer qu’elle est fiable et vraie. \nProfil 7 : \n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nEst très prudente concernant les informations et sait comment les sécuriser.\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nDifficultés technique dans les logiciels de bureautique \n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nOui dès que quelqu’un lui donne les explications pour utiliser un nouvel outil\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nOui, et lorsqu’elle ne sait pas utiliser un logiciel, elle demande de l’aide afin d’être débloquée\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nOui, elle se questionne sur ce qu’elle a le droit de partager ou non et sécurise bien ses données\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nOui, elle travaille dans une entreprise et sécurise bien ses données (ainsi que celles de l’entreprise) par des sécurités comme des mots de passes robuste, une double identification ect \nElle vérifie avant de transmettre des informations à autrui \nProfil 8 : \n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nIl sait installer des logiciels, configurer un ordinateur, résoudre de nombreux problèmes techniques et comprendre les caractéristiques du matériel.\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nIl ne prend pas en compte l’éthique dans son travail\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nIl cherche seul une solution à ce problème et y arrive généralement\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nOui, il est autonome\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nLe document ne le spécifie pas\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nNon, il part du principe que si ça fonctionne te ça l’aide à avancer, alors c’est un bon outil. Si les informations personnelles sont diffusées, ce n’est pas grave.\nProfil 10 : \nQue sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nS’adapte très facilement au numérique\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nAu mointre changement, il est perdu\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nDemande de l’aide à ses amis, demande une réexplication pour se débloquer.\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nNon, il a besoin qu’on lui explique comment fonctionne l’application\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nJe pense qu’il se fie seulement à ce qu’on lui explique \n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nNon, il essaie rarement de comprendre la cause ou de chercher des solutions, il se fie uniquement à ce que ses amis lui disent. \nProfil 9 : \n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nUtilise l’ia pour générer, reformuler ou explorer différentes pistes et se questionne toujours sur la véracité de ce que dit l’ia\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nJe ne vois pas de limite, elle semble consciente des risques que peut amaner l’ia ainsi de sa pertinence d’utilisation.\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nLe document ne le précise pas \n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nOui, elle cherche seule ses réponses et conseille même ses camarades\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nOui, elle sait que l’ia peut parfois dire des bêtises et vérifie les informations\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nOui, elle prévient même ses camarades des risques et limites de l’ia",
     "content": "Exercice 1.1A — Compétent, partiellement compétent ou incompétent ?\nProfil 1 : \n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nSarah sait comment écrire un bon prompt et ainsi avoir une réponse qui lui semble bien adaptée\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nElle ne vérifie jamais ses informations alors qu’on sait que l’IA peut commettre des erreurs \n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nOui, il faut qu’elle apprenne à vérifier les informations sur d’autres sources. Elle ne doit pas simplement copier coller les textes de l’ia, elle doit développer un regard critique sur les écrits de l’ia.\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nPas avec la manière dont elle utilise l’ia actuellement mais c’est une compétence qu’elle peut bien entendu développer et améliorer en se posant des questions sur la véracité des faits, en regardant des vidéos qui mettent en garde sur les productions de l’ia, en suivant des cours ou des formations.\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nNon, elle ne les vérifie aucune des informations\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nLe document ne le spécifie pas. \nProfil 2 : \n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nThomas est très autonome et débrouillard. Il cherche seul les réponses à ces questions en faisant des recherches et posent des questions si il est bloqué.\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nIl n’utilise pas des logiciels parce qu’il n’est pas à l’aise avec ces outils. \n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nOui, parce que quand il ne sait pas, il cherche de nouvelles ressources, de nouvelles informations pour se débloquer. \n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nOui, il est très autonome \n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nOui, j’ai envie de croire qu’il vérifie ses informations étant donné qu’il fait beaucoup de recherche\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nJe suppose que comme il ne semble pas à l’aise avec l’ia, c’est parce qu’il ne lui fait pas vraiment confiance. Il doit donc pour moi être responsable et prendre en compte la sécurité, les infos personnelles,…\nProfil 3 : \n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nLina maîtrise parfaitement Instagram, TikTok et Snapchat. Elle connaît les différentes fonctionnalités, sait créer des vidéos, utiliser les tendances et analyser les statistiques de ses publications.\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nSelon le document, elle ne semble pas se préoccuper de l’éthique étant donné qu’elle partage sur les réseaux sociaux des photos et vidéos d’autrui. \n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nOui, elle utilise différents réseaux sociaux sans problème\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nOui, elle sait très bien comment manier ces outils\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nNon, elle poste sur les réseau ce qu’elle a sur son téléphone.\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nElle n’a aucune notion de sécurité, de droit à l’image, de vie privée, …\nProfil 4 : \n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nHugo fait énormément de recherche pour être sure que ses informations soient correctes et cherche sans cesses des ressources pour répondre à ces questions.\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nIl ne sait pas bien utiliser les réseaux sociaux et utiliser des logiciels de montages vidéos \n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nJe pense qu’hugo est capable de s’adapter et d’apprendre énormément comme le document précise que quand il ne comprend pas quelque chose, il cherche des ressources lui permettant de progresser.\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nOui, il cherche seul et vérifie ses infos\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nOui, il cherche toujours à vérifier ses informations.\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nOui, il s’assure de vérifier ses informations avant de les diffuser\nProfil 5 : \n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nElle maitrise très bien les logiciels professionnels \n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nElle n’a pas l’air à l’aise avec la découverte de nouveaux outils\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nA l’aide de formations et d’explications oui mais tant qu’elle ne maitrisera pas jusqu’au bout des doigts la nouvelle plateforme, elle aura une réticence à utiliser le nouveau logiciel.\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nNon, elle ne cherche jamais seule les réponses à ces questions. Elle préfère stopper son travail plutôt que de trouser elle-même la solution.\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nOui, elle attend toujours la réponse d’un expert avant de se lancer dans l’inconnu\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nOui étant donné qu’elle n’utilise un logiciel que si elle est sure de celui-ci et de bien savoir le maitriser\nProfil 6 : \n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nUtilise très bien les moteurs de recherches et trouve facilement des réponses aux questions qu’on lui pose\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nIl prend en compte la première information qu’il trouve sans consulter plusieurs sources ou même vérifier cette source\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nIl cherche la réponse sur internet\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nOui, il cherche seul ses réponses\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nIl vérifie très très rapidement si quelques sources explique la même situation et prend souvent en compte la première qu’il voit\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nNon étant donné qu’il se base souvent sur la première source qu’il trouve sans s’assurer qu’elle est fiable et vraie. \nProfil 7 : \n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nEst très prudente concernant les informations et sait comment les sécuriser.\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nDifficultés technique dans les logiciels de bureautique \n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nOui dès que quelqu’un lui donne les explications pour utiliser un nouvel outil\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nOui, et lorsqu’elle ne sait pas utiliser un logiciel, elle demande de l’aide afin d’être débloquée\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nOui, elle se questionne sur ce qu’elle a le droit de partager ou non et sécurise bien ses données\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nOui, elle travaille dans une entreprise et sécurise bien ses données (ainsi que celles de l’entreprise) par des sécurités comme des mots de passes robuste, une double identification ect \nElle vérifie avant de transmettre des informations à autrui \nProfil 8 : \n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nIl sait installer des logiciels, configurer un ordinateur, résoudre de nombreux problèmes techniques et comprendre les caractéristiques du matériel.\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nIl ne prend pas en compte l’éthique dans son travail\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nIl cherche seul une solution à ce problème et y arrive généralement\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nOui, il est autonome\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nLe document ne le spécifie pas\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nNon, il part du principe que si ça fonctionne te ça l’aide à avancer, alors c’est un bon outil. Si les informations personnelles sont diffusées, ce n’est pas grave.\nProfil 10 : \nQue sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nS’adapte très facilement au numérique\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nAu mointre changement, il est perdu\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nDemande de l’aide à ses amis, demande une réexplication pour se débloquer.\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nNon, il a besoin qu’on lui explique comment fonctionne l’application\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nJe pense qu’il se fie seulement à ce qu’on lui explique \n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nNon, il essaie rarement de comprendre la cause ou de chercher des solutions, il se fie uniquement à ce que ses amis lui disent. \nProfil 9 : \n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\nUtilise l’ia pour générer, reformuler ou explorer différentes pistes et se questionne toujours sur la véracité de ce que dit l’ia\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\nJe ne vois pas de limite, elle semble consciente des risques que peut amaner l’ia ainsi de sa pertinence d’utilisation.\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\nLe document ne le précise pas \n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\nOui, elle cherche seule ses réponses et conseille même ses camarades\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\nOui, elle sait que l’ia peut parfois dire des bêtises et vérifie les informations\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nOui, elle prévient même ses camarades des risques et limites de l’ia",
-    "fileUrl": "/travaux-etudiants/DAVID_Adrienne_Exercice_1_Diagnostic_de_compe_2026-10-15.docx",
-    "submittedAt": "2026-10-15 14:00"
+    "fileUrl": "/travaux-etudiants/DAVID_Adrienne_Exercice_1_Diagnostic_de_compe_2026-10-22.docx",
+    "submittedAt": "2026-10-22 14:00"
   },
   {
     "id": "sub-real-0002",
@@ -8860,8 +11315,8 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "exerciseTitle": "Atelier 2 : Évaluation critique d'une information",
     "answer": "Exercice 02 : \nEtant donné que c’est une recherche scientifique, je commencerais mes recherches sur google scholar afin d’essayer de trouver des informations qui confirme ou infirme cette hypothèse. Si jamais je ne trouve pas l’information, je peux toujours me rendre en bibliothèque et lire des revues scientifiques sur le sommeil, l’impact des écrans afin de trouver une réponse ou un début de réponse. \nMener l’enquête \nAucun article scientifique ne semble affirmer cette phrase. Elle semble inventée et ressemble plus à une information mal lue et exagérée. \nUne vaste étude norvégienne publiée dans Frontiers in Psychiatry a trouvé qu’une heure d’écran au lit était associée à environ 24 minutes de sommeil en moins et à une hausse de 59% du risque d’insomnie pas 2 heures\nLes chercheurs eux-mêmes précisent que ces résultats montrent une corrélation, pas une preuve que le téléphone cause directement la perte de sommeil.\nhttps://www.bbc.com/afrique/articles/cq67grgmn91\nRéduction de la durée du sommeil : L'utilisation du téléphone dans l'heure précédant le coucher ou au moment de se coucher est associée à un risque multiplié par 2 d'avoir une quantité de sommeil insuffisante, avec une perte de temps de sommeil allant de 10,8 à 45 minutes par nuit selon les études.\nhttps://docnum.univ-lorraine.fr/public/BUMED_T_2019_CAMERON_LAURA.pdf\nJe n’ai pas trouvé la source qui raconte ça, cette affirmation vient-elle des réseaux sociaux ? \nhttps://www.sciencedirect.com/science/article/abs/pii/S1877120324007596\nhttps://stm.cairn.info/revue-environnement-risques-et-sante-2019-4-page-309?lang=fr\nNon, je ne partagerais pas cette information avec les élèves étant donné que je ne suis pas sûre de sa véracité. Cependant, les recherches se mettent d’accord pour dire que le téléphone juste avant d’aller dormir limite la qualité du sommeil qui est lui très important lorsqu’on est à l’école et qu’on doit apprendre beaucoup de matière parce que c’est à ce moment là que ce consolide ce que les élèves ont appris durant la journée. \n https://theses.hal.science/tel-01557504/\nhttps://docnum.univ-lorraine.fr/public/BUMED_T_2019_CAMERON_LAURA.pdf",
     "content": "Exercice 02 : \nEtant donné que c’est une recherche scientifique, je commencerais mes recherches sur google scholar afin d’essayer de trouver des informations qui confirme ou infirme cette hypothèse. Si jamais je ne trouve pas l’information, je peux toujours me rendre en bibliothèque et lire des revues scientifiques sur le sommeil, l’impact des écrans afin de trouver une réponse ou un début de réponse. \nMener l’enquête \nAucun article scientifique ne semble affirmer cette phrase. Elle semble inventée et ressemble plus à une information mal lue et exagérée. \nUne vaste étude norvégienne publiée dans Frontiers in Psychiatry a trouvé qu’une heure d’écran au lit était associée à environ 24 minutes de sommeil en moins et à une hausse de 59% du risque d’insomnie pas 2 heures\nLes chercheurs eux-mêmes précisent que ces résultats montrent une corrélation, pas une preuve que le téléphone cause directement la perte de sommeil.\nhttps://www.bbc.com/afrique/articles/cq67grgmn91\nRéduction de la durée du sommeil : L'utilisation du téléphone dans l'heure précédant le coucher ou au moment de se coucher est associée à un risque multiplié par 2 d'avoir une quantité de sommeil insuffisante, avec une perte de temps de sommeil allant de 10,8 à 45 minutes par nuit selon les études.\nhttps://docnum.univ-lorraine.fr/public/BUMED_T_2019_CAMERON_LAURA.pdf\nJe n’ai pas trouvé la source qui raconte ça, cette affirmation vient-elle des réseaux sociaux ? \nhttps://www.sciencedirect.com/science/article/abs/pii/S1877120324007596\nhttps://stm.cairn.info/revue-environnement-risques-et-sante-2019-4-page-309?lang=fr\nNon, je ne partagerais pas cette information avec les élèves étant donné que je ne suis pas sûre de sa véracité. Cependant, les recherches se mettent d’accord pour dire que le téléphone juste avant d’aller dormir limite la qualité du sommeil qui est lui très important lorsqu’on est à l’école et qu’on doit apprendre beaucoup de matière parce que c’est à ce moment là que ce consolide ce que les élèves ont appris durant la journée. \n https://theses.hal.science/tel-01557504/\nhttps://docnum.univ-lorraine.fr/public/BUMED_T_2019_CAMERON_LAURA.pdf",
-    "fileUrl": "/travaux-etudiants/DAVID_Adrienne_Exercice_2_Peut-on_faire_confi_2026-10-17.docx",
-    "submittedAt": "2026-10-17 14:00"
+    "fileUrl": "/travaux-etudiants/DAVID_Adrienne_Exercice_2_Peut-on_faire_confi_2026-10-22.docx",
+    "submittedAt": "2026-10-22 14:00"
   },
   {
     "id": "sub-real-0003",
@@ -8870,10 +11325,10 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "userEmail": "adrienne.david@student.hech.be",
     "exerciseId": "exercice-03",
     "exerciseTitle": "Atelier 3 : Conception d'un guide numérique élèves",
-    "answer": "LE GUIDE\nNUMÉRIQUE\nVOL 1 : L’ÉQUIPE TEAMS\nDécouvrez les clés du succès pour travailler depuis\nn'importe où !\nP A R  A D R I E N N E  D A V I D\nE\n\nLES BESOINS\n1.RETROUVER LES EQUIPES ET DOCUMENTS\nDU COURS SUR TEAMS\n2.PARTAGER DES DOCUMENTS ET\nCOLLABORER\n3.PROTÉGER VOS DONNÉES PERSONNELLES \n\n1.TEAMS : \nLORSQUE TU ARRIVES SUR TEAMS, À GAUCHE DE TON ÉCRAN SE TROUVE UN MENU.  \n→ DANS L’ONGLET ACTIVITÉ, TU TROUVERAS DES NOTIFICATIONS QUI T’INDIQUENT QUE TES\nPROFS ONT AJOUTÉ DU CONTENU DANS UN COURS, QUE TU AS REÇU UN MESSAGE, ...\n→ DANS L’ONGLET CONVERSATION, TU TROUVERAS DES NOTIFICATIONS QUI T’INDIQUENT QUE TU AS REÇU UN\nMESSAGE DE TES PROFESSEURSS OU UN CAMARADE DE CLASSE\n→ DANS L’ONGLET AFFECTATIONS, TU TROUVERAS LES NOTES DE TES TRAVAUX AINSI QUE LES COMMENTAIRES\nDE TES ENSEIGNANTS ET TES DEVOIRS À VENIRS. \n→ DANS L’ONGLET CALENDRIER, TU PEUX NOTER TON EMPLOIE DU TEMPS, TES DEVOIRS, AINSI QUE LES\nRÉUNIONS TEAMS QUE TU AS AVEC TES GROUPES DE TRAVAUX ET TES PROFESSEURS\n→ DANS L’ONGLET APPELS, TU TROUVERAS L’HISTORIQUE DE TES APPELS \n→ EXPLICATION PAGE SUIVANTE \nCLIQUE SUR L’IMAGE \nPOUR TE CONNECTER\n\n2.COMMUNIQUER \nFOCUS SUR\nL’ONGLET : \nEQUIPE\n1.CLIQUE SUR LE COURS QUE TU CHERCHES DANS CETTE PAGE\nTU TE TROUVERAS ALORS SUR LE CANAL GÉNÉRAL DE L’ÉQUIPE\n. \nVIA CE CANAL, TON ENSEIGNANT PEUT T’ENVOYER DES MESSAGES ET COMMUNIQUER AVEC TOUTE LA CLASSE.\nPOUR RÉPONDRE À UN MESSAGE ENVOYÉ SUR LE CANAL, APPUIE SUR “RÉPONDRE” EN DESSOUS DU MESSAGE. POUR CRÉER UN\nNOUVEAU MESSAGE DANS LE CANAL, APPUIE SUR PUBLICATION ET RÉDIGE TON TEXTE. \n\n 2. TROUVER LES DOCUMENTS DÉPOSÉS PAR TON PROFESSEUR, CHANGE D’ONGLET ET CLIQUE SUR PARTAGÉ\n TU ARRIVERAS ALORS SUR CETTE PAGE OÙ TU CLIQUERAS SUR LES DOCUMENTS SOUHAITÉS. \nCOLLABORER\nPOUR PARTAGER UN DOCUMENT : \n1.OUVRE L'ÉQUIPE ET LE CANAL CONCERNÉS.\n2.CLIQUE SUR « PARTAGÉ » OU « FICHIERS », SELON TON INTERFACE.\n3.CLIQUE SUR FILES UPLOAD POUR IMPORTER UN DOCUMENT DE TON\nAPPAREIL SUR L’ÉQUIPE TEAMS.\n4.VÉRIFIE QUE LE DOCUMENT EST BIEN AU BON ENDROIT.\nATTENTION : DÉPOSE TON TRAVAIL DANS LE BON CANAL POUR QUE LES AUTRES PUISSENT LE\nRETROUVER.\nPOUR TRAVAILLER À PLUSIEURS SUR UN DOCUMENT : \n1.OUVRE LE DOCUMENT PARTAGÉ.\n2.VÉRIFIE QUE TU PEUX LE MODIFIER.\n3.AJOUTE TES IDÉES OU COMPLÈTE TA PARTIE.\n4.RELIS LE TRAVAIL AVANT DE QUITTER LE DOCUMENT.\nATTENTION : VÉRIFIER LES DROITS D'ACCÈS \nAVANT DE PARTAGER UN DOCUMENT, VÉRIFIE QUI PEUT LE CONSULTER OU\nLE MODIFIER. ACCORDE UNIQUEMENT LES AUTORISATIONS NÉCESSAIRES.\n\n3.PROTÉGER SES DONNÉES\nPERSONNELLES \n1. PROTÈGE TON MOT DE PASSE\nNE LE PARTAGE AVEC PERSONNE.\nCHOISIS UN MOT DE PASSE LONG ET DIFFICILE À DEVINER.\n       IL DOIT CONTENIR MINIMUM 12 CARACTÈRES DONT \n       - DES LETTRES MAJUSCULES \n       - DES LETTRES MINUSCULES \n       - DES CARACTÈRES SPÉCIAUX\n       - DES CHIFFRES\nNE L'ENREGISTRE PAS SUR UN ORDINATEUR PUBLIC.\n2. GARDE TES INFORMATIONS PRIVÉES\nNE PUBLIE PAS TON ADRESSE, TON NUMÉRO DE TÉLÉPHONE OU D'AUTRES INFORMATIONS SENSIBLES.\nUTILISE UNIQUEMENT LES INFORMATIONS NÉCESSAIRES POUR LE TRAVAIL SCOLAIRE.\n3. VÉRIFIE AVANT DE PARTAGER\nVÉRIFIE LES DESTINATAIRES DE TES MESSAGES ET DOCUMENTS.\nCONTRÔLE QUI PEUT CONSULTER OU MODIFIER TES FICHIERS.\nNE PARTAGE PAS UN LIEN CONFIDENTIEL AVEC TOUT LE MONDE.\n4. RESPECTE LA VIE PRIVÉE DES AUTRES\nDEMANDE L'AUTORISATION AVANT DE PARTAGER UNE PHOTO OU UNE CAPTURE D'ÉCRAN OÙ APPARAÎT UN CAMARADE.\nNE DIFFUSE PAS LES CONVERSATIONS PRIVÉES D'AUTRES PERSONNES.\n5. MÉFIE-TOI DES MESSAGES SUSPECTS\nNE CLIQUE PAS SUR UN LIEN DOUTEUX.\nNE COMMUNIQUE JAMAIS TON MOT DE PASSE PAR MESSAGE.\nEN CAS DE DOUTE, DEMANDE CONSEIL À UN ENSEIGNANT.",
-    "content": "LE GUIDE\nNUMÉRIQUE\nVOL 1 : L’ÉQUIPE TEAMS\nDécouvrez les clés du succès pour travailler depuis\nn'importe où !\nP A R  A D R I E N N E  D A V I D\nE\n\nLES BESOINS\n1.RETROUVER LES EQUIPES ET DOCUMENTS\nDU COURS SUR TEAMS\n2.PARTAGER DES DOCUMENTS ET\nCOLLABORER\n3.PROTÉGER VOS DONNÉES PERSONNELLES \n\n1.TEAMS : \nLORSQUE TU ARRIVES SUR TEAMS, À GAUCHE DE TON ÉCRAN SE TROUVE UN MENU.  \n→ DANS L’ONGLET ACTIVITÉ, TU TROUVERAS DES NOTIFICATIONS QUI T’INDIQUENT QUE TES\nPROFS ONT AJOUTÉ DU CONTENU DANS UN COURS, QUE TU AS REÇU UN MESSAGE, ...\n→ DANS L’ONGLET CONVERSATION, TU TROUVERAS DES NOTIFICATIONS QUI T’INDIQUENT QUE TU AS REÇU UN\nMESSAGE DE TES PROFESSEURSS OU UN CAMARADE DE CLASSE\n→ DANS L’ONGLET AFFECTATIONS, TU TROUVERAS LES NOTES DE TES TRAVAUX AINSI QUE LES COMMENTAIRES\nDE TES ENSEIGNANTS ET TES DEVOIRS À VENIRS. \n→ DANS L’ONGLET CALENDRIER, TU PEUX NOTER TON EMPLOIE DU TEMPS, TES DEVOIRS, AINSI QUE LES\nRÉUNIONS TEAMS QUE TU AS AVEC TES GROUPES DE TRAVAUX ET TES PROFESSEURS\n→ DANS L’ONGLET APPELS, TU TROUVERAS L’HISTORIQUE DE TES APPELS \n→ EXPLICATION PAGE SUIVANTE \nCLIQUE SUR L’IMAGE \nPOUR TE CONNECTER\n\n2.COMMUNIQUER \nFOCUS SUR\nL’ONGLET : \nEQUIPE\n1.CLIQUE SUR LE COURS QUE TU CHERCHES DANS CETTE PAGE\nTU TE TROUVERAS ALORS SUR LE CANAL GÉNÉRAL DE L’ÉQUIPE\n. \nVIA CE CANAL, TON ENSEIGNANT PEUT T’ENVOYER DES MESSAGES ET COMMUNIQUER AVEC TOUTE LA CLASSE.\nPOUR RÉPONDRE À UN MESSAGE ENVOYÉ SUR LE CANAL, APPUIE SUR “RÉPONDRE” EN DESSOUS DU MESSAGE. POUR CRÉER UN\nNOUVEAU MESSAGE DANS LE CANAL, APPUIE SUR PUBLICATION ET RÉDIGE TON TEXTE. \n\n 2. TROUVER LES DOCUMENTS DÉPOSÉS PAR TON PROFESSEUR, CHANGE D’ONGLET ET CLIQUE SUR PARTAGÉ\n TU ARRIVERAS ALORS SUR CETTE PAGE OÙ TU CLIQUERAS SUR LES DOCUMENTS SOUHAITÉS. \nCOLLABORER\nPOUR PARTAGER UN DOCUMENT : \n1.OUVRE L'ÉQUIPE ET LE CANAL CONCERNÉS.\n2.CLIQUE SUR « PARTAGÉ » OU « FICHIERS », SELON TON INTERFACE.\n3.CLIQUE SUR FILES UPLOAD POUR IMPORTER UN DOCUMENT DE TON\nAPPAREIL SUR L’ÉQUIPE TEAMS.\n4.VÉRIFIE QUE LE DOCUMENT EST BIEN AU BON ENDROIT.\nATTENTION : DÉPOSE TON TRAVAIL DANS LE BON CANAL POUR QUE LES AUTRES PUISSENT LE\nRETROUVER.\nPOUR TRAVAILLER À PLUSIEURS SUR UN DOCUMENT : \n1.OUVRE LE DOCUMENT PARTAGÉ.\n2.VÉRIFIE QUE TU PEUX LE MODIFIER.\n3.AJOUTE TES IDÉES OU COMPLÈTE TA PARTIE.\n4.RELIS LE TRAVAIL AVANT DE QUITTER LE DOCUMENT.\nATTENTION : VÉRIFIER LES DROITS D'ACCÈS \nAVANT DE PARTAGER UN DOCUMENT, VÉRIFIE QUI PEUT LE CONSULTER OU\nLE MODIFIER. ACCORDE UNIQUEMENT LES AUTORISATIONS NÉCESSAIRES.\n\n3.PROTÉGER SES DONNÉES\nPERSONNELLES \n1. PROTÈGE TON MOT DE PASSE\nNE LE PARTAGE AVEC PERSONNE.\nCHOISIS UN MOT DE PASSE LONG ET DIFFICILE À DEVINER.\n       IL DOIT CONTENIR MINIMUM 12 CARACTÈRES DONT \n       - DES LETTRES MAJUSCULES \n       - DES LETTRES MINUSCULES \n       - DES CARACTÈRES SPÉCIAUX\n       - DES CHIFFRES\nNE L'ENREGISTRE PAS SUR UN ORDINATEUR PUBLIC.\n2. GARDE TES INFORMATIONS PRIVÉES\nNE PUBLIE PAS TON ADRESSE, TON NUMÉRO DE TÉLÉPHONE OU D'AUTRES INFORMATIONS SENSIBLES.\nUTILISE UNIQUEMENT LES INFORMATIONS NÉCESSAIRES POUR LE TRAVAIL SCOLAIRE.\n3. VÉRIFIE AVANT DE PARTAGER\nVÉRIFIE LES DESTINATAIRES DE TES MESSAGES ET DOCUMENTS.\nCONTRÔLE QUI PEUT CONSULTER OU MODIFIER TES FICHIERS.\nNE PARTAGE PAS UN LIEN CONFIDENTIEL AVEC TOUT LE MONDE.\n4. RESPECTE LA VIE PRIVÉE DES AUTRES\nDEMANDE L'AUTORISATION AVANT DE PARTAGER UNE PHOTO OU UNE CAPTURE D'ÉCRAN OÙ APPARAÎT UN CAMARADE.\nNE DIFFUSE PAS LES CONVERSATIONS PRIVÉES D'AUTRES PERSONNES.\n5. MÉFIE-TOI DES MESSAGES SUSPECTS\nNE CLIQUE PAS SUR UN LIEN DOUTEUX.\nNE COMMUNIQUE JAMAIS TON MOT DE PASSE PAR MESSAGE.\nEN CAS DE DOUTE, DEMANDE CONSEIL À UN ENSEIGNANT.",
-    "fileUrl": "/travaux-etudiants/DAVID_Adrienne_Exercice_3_Concevoir_un_guide__2026-10-21.pdf",
-    "submittedAt": "2026-10-21 14:00"
+    "answer": "LE GUIDE\nNUMÉRIQUE\nVOL 1 : L’ÉQUIPE TEAMS\nDécouvrez les clés du succès pour travailler depuis\nn'importe où !\nP A R  A D R I E N N E  D A V I D\nE\n\nLES BESOINS\n1.RETROUVER LES EQUIPES ET DOCUMENTS\nDU COURS SUR TEAMS\n2.PARTAGER DES DOCUMENTS ET\nCOLLABORER\n3.PROTÉGER VOS DONNÉES PERSONNELLES \n\n\n2.COMMUNIQUER \nFOCUS SUR\nL’ONGLET : \nEQUIPE\n1.CLIQUE SUR LE COURS QUE TU CHERCHES DANS CETTE PAGE\nTU TE TROUVERAS ALORS SUR LE CANAL GÉNÉRAL DE L’ÉQUIPE\n. \nVIA CE CANAL, TON ENSEIGNANT PEUT T’ENVOYER DES MESSAGES ET COMMUNIQUER AVEC TOUTE\nLA CLASSE.\nPOUR RÉPONDRE À UN MESSAGE ENVOYÉ SUR LE CANAL, APPUIE SUR “RÉPONDRE” EN\nDESSOUS DU MESSAGE. POUR CRÉER UN NOUVEAU MESSAGE DANS LE CANAL, APPUIE SUR\nPUBLICATION ET RÉDIGE TON TEXTE. \n\n 2. TROUVER LES DOCUMENTS DÉPOSÉS PAR TON PROFESSEUR, CHANGE D’ONGLET ET CLIQUE SUR PARTAGÉ\n TU ARRIVERAS ALORS SUR CETTE PAGE OÙ TU CLIQUERAS SUR LES DOCUMENTS SOUHAITÉS. \nCOLLABORER\nPOUR PARTAGER UN DOCUMENT : \n1.OUVRE L'ÉQUIPE ET LE CANAL CONCERNÉS.\n2.CLIQUE SUR « PARTAGÉ » OU « FICHIERS », SELON TON INTERFACE.\n3.CLIQUE SUR FILES UPLOAD POUR IMPORTER UN DOCUMENT DE TON\nAPPAREIL SUR L’ÉQUIPE TEAMS.\n4.VÉRIFIE QUE LE DOCUMENT EST BIEN AU BON ENDROIT.\nATTENTION : DÉPOSE TON TRAVAIL DANS LE BON CANAL POUR QUE LES AUTRES PUISSENT LE\nRETROUVER.\nPOUR TRAVAILLER À PLUSIEURS SUR UN DOCUMENT : \n1.OUVRE LE DOCUMENT PARTAGÉ.\n2.VÉRIFIE QUE TU PEUX LE MODIFIER.\n3.AJOUTE TES IDÉES OU COMPLÈTE TA PARTIE.\n4.RELIS LE TRAVAIL AVANT DE QUITTER LE DOCUMENT.\nATTENTION : VÉRIFIER LES DROITS D'ACCÈS \nAVANT DE PARTAGER UN DOCUMENT, VÉRIFIE QUI PEUT LE CONSULTER OU\nLE MODIFIER. ACCORDE UNIQUEMENT LES AUTORISATIONS NÉCESSAIRES.",
+    "content": "LE GUIDE\nNUMÉRIQUE\nVOL 1 : L’ÉQUIPE TEAMS\nDécouvrez les clés du succès pour travailler depuis\nn'importe où !\nP A R  A D R I E N N E  D A V I D\nE\n\nLES BESOINS\n1.RETROUVER LES EQUIPES ET DOCUMENTS\nDU COURS SUR TEAMS\n2.PARTAGER DES DOCUMENTS ET\nCOLLABORER\n3.PROTÉGER VOS DONNÉES PERSONNELLES \n\n\n2.COMMUNIQUER \nFOCUS SUR\nL’ONGLET : \nEQUIPE\n1.CLIQUE SUR LE COURS QUE TU CHERCHES DANS CETTE PAGE\nTU TE TROUVERAS ALORS SUR LE CANAL GÉNÉRAL DE L’ÉQUIPE\n. \nVIA CE CANAL, TON ENSEIGNANT PEUT T’ENVOYER DES MESSAGES ET COMMUNIQUER AVEC TOUTE\nLA CLASSE.\nPOUR RÉPONDRE À UN MESSAGE ENVOYÉ SUR LE CANAL, APPUIE SUR “RÉPONDRE” EN\nDESSOUS DU MESSAGE. POUR CRÉER UN NOUVEAU MESSAGE DANS LE CANAL, APPUIE SUR\nPUBLICATION ET RÉDIGE TON TEXTE. \n\n 2. TROUVER LES DOCUMENTS DÉPOSÉS PAR TON PROFESSEUR, CHANGE D’ONGLET ET CLIQUE SUR PARTAGÉ\n TU ARRIVERAS ALORS SUR CETTE PAGE OÙ TU CLIQUERAS SUR LES DOCUMENTS SOUHAITÉS. \nCOLLABORER\nPOUR PARTAGER UN DOCUMENT : \n1.OUVRE L'ÉQUIPE ET LE CANAL CONCERNÉS.\n2.CLIQUE SUR « PARTAGÉ » OU « FICHIERS », SELON TON INTERFACE.\n3.CLIQUE SUR FILES UPLOAD POUR IMPORTER UN DOCUMENT DE TON\nAPPAREIL SUR L’ÉQUIPE TEAMS.\n4.VÉRIFIE QUE LE DOCUMENT EST BIEN AU BON ENDROIT.\nATTENTION : DÉPOSE TON TRAVAIL DANS LE BON CANAL POUR QUE LES AUTRES PUISSENT LE\nRETROUVER.\nPOUR TRAVAILLER À PLUSIEURS SUR UN DOCUMENT : \n1.OUVRE LE DOCUMENT PARTAGÉ.\n2.VÉRIFIE QUE TU PEUX LE MODIFIER.\n3.AJOUTE TES IDÉES OU COMPLÈTE TA PARTIE.\n4.RELIS LE TRAVAIL AVANT DE QUITTER LE DOCUMENT.\nATTENTION : VÉRIFIER LES DROITS D'ACCÈS \nAVANT DE PARTAGER UN DOCUMENT, VÉRIFIE QUI PEUT LE CONSULTER OU\nLE MODIFIER. ACCORDE UNIQUEMENT LES AUTORISATIONS NÉCESSAIRES.",
+    "fileUrl": "/travaux-etudiants/DAVID_Adrienne_Exercice_3_Concevoir_un_guide__2026-10-22.pdf",
+    "submittedAt": "2026-10-22 14:00"
   },
   {
     "id": "sub-real-0004",
@@ -8901,6 +11356,18 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
   },
   {
     "id": "sub-real-0006",
+    "userId": "user-alexiane.collard@student.hech.be",
+    "userName": "Alexiane Collard",
+    "userEmail": "alexiane.collard@student.hech.be",
+    "exerciseId": "exercice-04",
+    "exerciseTitle": "Atelier 4 : Escape Game FMTTN (Cyber-Enquête)",
+    "answer": "",
+    "content": "",
+    "fileUrl": "/travaux-etudiants/COLLARD_Alexiane_Exercice_4_Escape_Game_FMTTN_C_2026-10-23.pdf",
+    "submittedAt": "2026-10-23 14:00"
+  },
+  {
+    "id": "sub-real-0007",
     "userId": "user-audrey.vanceulebroeck@student.hech.be",
     "userName": "Audrey Van Ceulebroeck",
     "userEmail": "audrey.vanceulebroeck@student.hech.be",
@@ -8912,7 +11379,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-11 14:00"
   },
   {
-    "id": "sub-real-0007",
+    "id": "sub-real-0008",
     "userId": "user-audrey.vanceulebroeck@student.hech.be",
     "userName": "Audrey Van Ceulebroeck",
     "userEmail": "audrey.vanceulebroeck@student.hech.be",
@@ -8924,7 +11391,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-11 14:00"
   },
   {
-    "id": "sub-real-0008",
+    "id": "sub-real-0009",
     "userId": "user-audrey.vanceulebroeck@student.hech.be",
     "userName": "Audrey Van Ceulebroeck",
     "userEmail": "audrey.vanceulebroeck@student.hech.be",
@@ -8936,7 +11403,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-18 14:00"
   },
   {
-    "id": "sub-real-0009",
+    "id": "sub-real-0010",
     "userId": "user-audrey.vanceulebroeck@student.hech.be",
     "userName": "Audrey Van Ceulebroeck",
     "userEmail": "audrey.vanceulebroeck@student.hech.be",
@@ -8948,7 +11415,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-18 14:00"
   },
   {
-    "id": "sub-real-0010",
+    "id": "sub-real-0011",
     "userId": "user-audrey.vanceulebroeck@student.hech.be",
     "userName": "Audrey Van Ceulebroeck",
     "userEmail": "audrey.vanceulebroeck@student.hech.be",
@@ -8960,7 +11427,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-18 14:00"
   },
   {
-    "id": "sub-real-0011",
+    "id": "sub-real-0012",
     "userId": "user-aurelie.schreurs@student.hech.be",
     "userName": "Aurélie Schreurs",
     "userEmail": "aurelie.schreurs@student.hech.be",
@@ -8972,7 +11439,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-09-30 14:00"
   },
   {
-    "id": "sub-real-0012",
+    "id": "sub-real-0013",
     "userId": "user-aurelie.schreurs@student.hech.be",
     "userName": "Aurélie Schreurs",
     "userEmail": "aurelie.schreurs@student.hech.be",
@@ -8984,7 +11451,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-20 14:00"
   },
   {
-    "id": "sub-real-0013",
+    "id": "sub-real-0014",
     "userId": "user-aurelie.schreurs@student.hech.be",
     "userName": "Aurélie Schreurs",
     "userEmail": "aurelie.schreurs@student.hech.be",
@@ -8996,7 +11463,19 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-14 14:00"
   },
   {
-    "id": "sub-real-0014",
+    "id": "sub-real-0015",
+    "userId": "user-aurelie.schreurs@student.hech.be",
+    "userName": "Aurélie Schreurs",
+    "userEmail": "aurelie.schreurs@student.hech.be",
+    "exerciseId": "exercice-07",
+    "exerciseTitle": "Atelier 7 : Défi Hardware & Peer Learning (Démonter/Remonter un PC)",
+    "answer": "Exercice 07 - DÉFI HARDWARE\nDémonter, comprendre et reconstruire un ordinateur\nVotre mission\nPar groupes de 2 à 3, vous allez devoir démonter un ordinateur, comprendre son architecture, puis le remonter pour le rendre à nouveau fonctionnel.\nVous ne recevrez pas de procédure détaillée : à vous de chercher, expérimenter, collaborer et résoudre les problèmes.\nRègle d'or : si vous ne savez pas → cherchez.\nSi vous bloquez → demandez à un pair.\nSi cela ne fonctionne pas → analysez, testez et recommencez.\n1. OBSERVER\nAvant toute manipulation :\nidentifiez les principaux composants ;\nobservez leurs connexions ;\nphotographiez l'intérieur du PC ;\nformulez des hypothèses sur le rôle de chaque composant.\nTrace : complétez un tableau Composant → Fonction → Connexions.\n2. DÉMONTER\nDémontez progressivement le PC.\nÀ chaque étape :\nobservez avant d'agir ;\nidentifiez ce que vous allez retirer ou débrancher ;\nphotographiez les étapes importantes ;\nnotez les informations utiles pour le remontage ;\nconservez soigneusement les vis et composants.\nNe forcez jamais un composant. En cas de doute, arrêtez-vous et recherchez l'information.\n3. APPRENDRE AVEC SES PAIRS\nVous pouvez utiliser :\ndes ressources en ligne ;\ndes manuels ou documentations techniques ;\nl'aide des autres groupes.\nLorsqu'un groupe rencontre une difficulté, il doit d'abord chercher une solution, puis éventuellement demander l'aide d'un autre groupe.\nLorsque vous aidez un pair, expliquez votre raisonnement plutôt que de réaliser la manipulation à sa place.\n4. RECONSTRUIRE\nRemontez le PC en vous appuyant sur vos observations et vos recherches.\nVous devez être capables d'expliquer :\noù replacer chaque composant ;\nquelles connexions effectuer ;\ncomment les composants communiquent ;\npourquoi chaque branchement est nécessaire.\n5. RÉSOUDRE LE PROBLÈME\nLe PC ne redémarre pas ?\nC'est maintenant à vous de jouer.\nFormulez des hypothèses, testez-les et analysez les résultats.\nAvant de solliciter l'enseignant :\n1. J'observe → 2. Je cherche → 3. Je demande à un pair → 4. Je teste → 5. Je demande à l'enseignant.\n6. BILAN\nÀ la fin de l'activité, répondez en groupe :\nQuelle difficulté avons-nous rencontrée ?\nComment avons-nous trouvé la solution ?\nQu'avons-nous appris grâce à nos erreurs ?\nQu'est-ce qu'un autre groupe nous a appris ?\nQu'avons-nous compris grâce à la manipulation que nous aurions difficilement compris avec un cours théorique ?\nÀ REMETTRE\n1. Schéma annoté du PC\n2. Tableau Composant → Fonction → Connexions\n3. Photos des principales étapes\n4. Problèmes rencontrés et solutions trouvées\n5. Bilan réflexif\nLE DÉFI\nLa réussite ne consiste pas uniquement à faire redémarrer le PC.\nVous devez être capables de comprendre, expliquer et justifier vos choix.\nProblème → Recherche → Expérimentation → Peer learning → Résolution → Réflexion",
+    "content": "Exercice 07 - DÉFI HARDWARE\nDémonter, comprendre et reconstruire un ordinateur\nVotre mission\nPar groupes de 2 à 3, vous allez devoir démonter un ordinateur, comprendre son architecture, puis le remonter pour le rendre à nouveau fonctionnel.\nVous ne recevrez pas de procédure détaillée : à vous de chercher, expérimenter, collaborer et résoudre les problèmes.\nRègle d'or : si vous ne savez pas → cherchez.\nSi vous bloquez → demandez à un pair.\nSi cela ne fonctionne pas → analysez, testez et recommencez.\n1. OBSERVER\nAvant toute manipulation :\nidentifiez les principaux composants ;\nobservez leurs connexions ;\nphotographiez l'intérieur du PC ;\nformulez des hypothèses sur le rôle de chaque composant.\nTrace : complétez un tableau Composant → Fonction → Connexions.\n2. DÉMONTER\nDémontez progressivement le PC.\nÀ chaque étape :\nobservez avant d'agir ;\nidentifiez ce que vous allez retirer ou débrancher ;\nphotographiez les étapes importantes ;\nnotez les informations utiles pour le remontage ;\nconservez soigneusement les vis et composants.\nNe forcez jamais un composant. En cas de doute, arrêtez-vous et recherchez l'information.\n3. APPRENDRE AVEC SES PAIRS\nVous pouvez utiliser :\ndes ressources en ligne ;\ndes manuels ou documentations techniques ;\nl'aide des autres groupes.\nLorsqu'un groupe rencontre une difficulté, il doit d'abord chercher une solution, puis éventuellement demander l'aide d'un autre groupe.\nLorsque vous aidez un pair, expliquez votre raisonnement plutôt que de réaliser la manipulation à sa place.\n4. RECONSTRUIRE\nRemontez le PC en vous appuyant sur vos observations et vos recherches.\nVous devez être capables d'expliquer :\noù replacer chaque composant ;\nquelles connexions effectuer ;\ncomment les composants communiquent ;\npourquoi chaque branchement est nécessaire.\n5. RÉSOUDRE LE PROBLÈME\nLe PC ne redémarre pas ?\nC'est maintenant à vous de jouer.\nFormulez des hypothèses, testez-les et analysez les résultats.\nAvant de solliciter l'enseignant :\n1. J'observe → 2. Je cherche → 3. Je demande à un pair → 4. Je teste → 5. Je demande à l'enseignant.\n6. BILAN\nÀ la fin de l'activité, répondez en groupe :\nQuelle difficulté avons-nous rencontrée ?\nComment avons-nous trouvé la solution ?\nQu'avons-nous appris grâce à nos erreurs ?\nQu'est-ce qu'un autre groupe nous a appris ?\nQu'avons-nous compris grâce à la manipulation que nous aurions difficilement compris avec un cours théorique ?\nÀ REMETTRE\n1. Schéma annoté du PC\n2. Tableau Composant → Fonction → Connexions\n3. Photos des principales étapes\n4. Problèmes rencontrés et solutions trouvées\n5. Bilan réflexif\nLE DÉFI\nLa réussite ne consiste pas uniquement à faire redémarrer le PC.\nVous devez être capables de comprendre, expliquer et justifier vos choix.\nProblème → Recherche → Expérimentation → Peer learning → Résolution → Réflexion",
+    "fileUrl": "/travaux-etudiants/SCHREURS_Aurelie_Exercice_7_Defi_Hardware_Peer__2026-11-06.docx",
+    "submittedAt": "2026-11-06 14:00"
+  },
+  {
+    "id": "sub-real-0016",
     "userId": "user-aurelie.schreurs@student.hech.be",
     "userName": "Aurélie Schreurs",
     "userEmail": "aurelie.schreurs@student.hech.be",
@@ -9008,7 +11487,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-20 14:00"
   },
   {
-    "id": "sub-real-0015",
+    "id": "sub-real-0017",
     "userId": "user-chloe.steckx@student.hech.be",
     "userName": "Chloé Steckx",
     "userEmail": "chloe.steckx@student.hech.be",
@@ -9020,7 +11499,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-21 14:00"
   },
   {
-    "id": "sub-real-0016",
+    "id": "sub-real-0018",
     "userId": "user-chloe.steckx@student.hech.be",
     "userName": "Chloé Steckx",
     "userEmail": "chloe.steckx@student.hech.be",
@@ -9032,7 +11511,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-01 14:00"
   },
   {
-    "id": "sub-real-0017",
+    "id": "sub-real-0019",
     "userId": "user-chloe.steckx@student.hech.be",
     "userName": "Chloé Steckx",
     "userEmail": "chloe.steckx@student.hech.be",
@@ -9044,7 +11523,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-12 14:00"
   },
   {
-    "id": "sub-real-0018",
+    "id": "sub-real-0020",
     "userId": "user-chloe.steckx@student.hech.be",
     "userName": "Chloé Steckx",
     "userEmail": "chloe.steckx@student.hech.be",
@@ -9056,7 +11535,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-12 14:00"
   },
   {
-    "id": "sub-real-0019",
+    "id": "sub-real-0021",
     "userId": "user-chloe.steckx@student.hech.be",
     "userName": "Chloé Steckx",
     "userEmail": "chloe.steckx@student.hech.be",
@@ -9068,7 +11547,19 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-21 14:00"
   },
   {
-    "id": "sub-real-0020",
+    "id": "sub-real-0022",
+    "userId": "user-chloe.steckx@student.hech.be",
+    "userName": "Chloé Steckx",
+    "userEmail": "chloe.steckx@student.hech.be",
+    "exerciseId": "exercice-06",
+    "exerciseTitle": "Atelier 6 : Démarche itérative (Concevoir & tester un mini-jeu)",
+    "answer": "Projet de jeu éducatif sur Genially\n1. Objectif pédagogique\nÀ la fin du jeu, l’apprenant sera capable de reconnaître les principales catégories de déchets, de les \nassocier à la bonne poubelle et d’appliquer les règles essentielles du tri sélectif dans la vie \nquotidienne. Il aura aussi quelques notions de recyclage.\nPlus précisément, il devra être capable de :\n•\nIdentifier les  différentes  catégories de déchets : papier-carton, PMC, verre (blanc ou \ncoloré), déchets organiques et déchets résiduels, encombrants.\n•\nAssocier chaque déchet au conteneur approprié.\n•\nRepérer les erreurs de tri les plus fréquentes.\n•\nAdopter  des  comportements  responsables  pour  réduire  l’impact  des  déchets  sur \nl’environnement (ex : recyclage).\n2. Public cible : des élèves de P5\n3. Règles du jeu\nLe jeu repose sur un système de quatre missions successives. Il n’y a pas de règles ; le but de la \nséquence ainsi que la navigation dans l’interface sont clairement indiqués.\nRemarque : les consignes de tri doivent être adaptées aux règles locales de collecte, notamment \ncelles en vigueur en Wallonie ou dans la commune concernée.\n4. Scénario du jeu\nHistoire\nLa planète Triora est envahie par Pollutors, un peuple qui polluent Triora en jetant leurs déchets \ndans la nature. Les habitants ont oublié comment les trier correctement et les rues sont de plus en \nplus polluées.\nLe joueur incarne un apprenti gardien de la planète, recruté par Éco, une petite mascotte chargée \nde protéger l’environnement. Pour sauver Triora, il doit réussir plusieurs missions.\n\nDéroulement de l’aventure\n•\nIntroduction : L’invasion de Triora par les Pollutors et présentation de la mission.\n•\nMission 1 : Compléter un texte à trous sur le vocabulaire lié au recyclage et aux déchets.\n•\nMission 2 : Trier les déchets dans les bonnes poubelles.\n•\nMission 3 : Recycler les déchets.\n•\nMission 4 : Trier les encombrants et autres déchets particuliers.\n•\nConclusion : Le joueur sauve la planète Triora.\n5. Liens\n•\nDu Genially : https://view.genially.com/6ac9e6376ddf6a28c8afbb74\n•\nDu Google form : \nhttps://docs.google.com/forms/d/e/1FAIpQLSfHBCHfqHqnsvgX3WUnZsu14kv3FbRDtRJb_V\nkcoidtlTAMgQ/viewform?usp=publish-editor",
+    "content": "Projet de jeu éducatif sur Genially\n1. Objectif pédagogique\nÀ la fin du jeu, l’apprenant sera capable de reconnaître les principales catégories de déchets, de les \nassocier à la bonne poubelle et d’appliquer les règles essentielles du tri sélectif dans la vie \nquotidienne. Il aura aussi quelques notions de recyclage.\nPlus précisément, il devra être capable de :\n•\nIdentifier les  différentes  catégories de déchets : papier-carton, PMC, verre (blanc ou \ncoloré), déchets organiques et déchets résiduels, encombrants.\n•\nAssocier chaque déchet au conteneur approprié.\n•\nRepérer les erreurs de tri les plus fréquentes.\n•\nAdopter  des  comportements  responsables  pour  réduire  l’impact  des  déchets  sur \nl’environnement (ex : recyclage).\n2. Public cible : des élèves de P5\n3. Règles du jeu\nLe jeu repose sur un système de quatre missions successives. Il n’y a pas de règles ; le but de la \nséquence ainsi que la navigation dans l’interface sont clairement indiqués.\nRemarque : les consignes de tri doivent être adaptées aux règles locales de collecte, notamment \ncelles en vigueur en Wallonie ou dans la commune concernée.\n4. Scénario du jeu\nHistoire\nLa planète Triora est envahie par Pollutors, un peuple qui polluent Triora en jetant leurs déchets \ndans la nature. Les habitants ont oublié comment les trier correctement et les rues sont de plus en \nplus polluées.\nLe joueur incarne un apprenti gardien de la planète, recruté par Éco, une petite mascotte chargée \nde protéger l’environnement. Pour sauver Triora, il doit réussir plusieurs missions.\n\nDéroulement de l’aventure\n•\nIntroduction : L’invasion de Triora par les Pollutors et présentation de la mission.\n•\nMission 1 : Compléter un texte à trous sur le vocabulaire lié au recyclage et aux déchets.\n•\nMission 2 : Trier les déchets dans les bonnes poubelles.\n•\nMission 3 : Recycler les déchets.\n•\nMission 4 : Trier les encombrants et autres déchets particuliers.\n•\nConclusion : Le joueur sauve la planète Triora.\n5. Liens\n•\nDu Genially : https://view.genially.com/6ac9e6376ddf6a28c8afbb74\n•\nDu Google form : \nhttps://docs.google.com/forms/d/e/1FAIpQLSfHBCHfqHqnsvgX3WUnZsu14kv3FbRDtRJb_V\nkcoidtlTAMgQ/viewform?usp=publish-editor",
+    "fileUrl": "/travaux-etudiants/STECKX_Chloe_Exercice_6_Demarche_iterative__2026-11-04.pdf",
+    "submittedAt": "2026-11-04 14:00"
+  },
+  {
+    "id": "sub-real-0023",
     "userId": "user-ctp.truong@student.hech.be",
     "userName": "Thien Truong",
     "userEmail": "ctp.truong@student.hech.be",
@@ -9080,7 +11571,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-09-30 14:00"
   },
   {
-    "id": "sub-real-0021",
+    "id": "sub-real-0024",
     "userId": "user-ctp.truong@student.hech.be",
     "userName": "Thien Truong",
     "userEmail": "ctp.truong@student.hech.be",
@@ -9092,7 +11583,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-08 14:00"
   },
   {
-    "id": "sub-real-0022",
+    "id": "sub-real-0025",
     "userId": "user-ctp.truong@student.hech.be",
     "userName": "Thien Truong",
     "userEmail": "ctp.truong@student.hech.be",
@@ -9104,7 +11595,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-07 14:00"
   },
   {
-    "id": "sub-real-0023",
+    "id": "sub-real-0026",
     "userId": "user-ctp.truong@student.hech.be",
     "userName": "Thien Truong",
     "userEmail": "ctp.truong@student.hech.be",
@@ -9116,7 +11607,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-20 14:00"
   },
   {
-    "id": "sub-real-0024",
+    "id": "sub-real-0027",
     "userId": "user-dalia.smaali@student.hech.be",
     "userName": "Dalia Smaali",
     "userEmail": "dalia.smaali@student.hech.be",
@@ -9128,7 +11619,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-04 14:00"
   },
   {
-    "id": "sub-real-0025",
+    "id": "sub-real-0028",
     "userId": "user-dalia.smaali@student.hech.be",
     "userName": "Dalia Smaali",
     "userEmail": "dalia.smaali@student.hech.be",
@@ -9140,7 +11631,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-11 14:00"
   },
   {
-    "id": "sub-real-0026",
+    "id": "sub-real-0029",
     "userId": "user-dalia.smaali@student.hech.be",
     "userName": "Dalia Smaali",
     "userEmail": "dalia.smaali@student.hech.be",
@@ -9152,7 +11643,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-15 14:00"
   },
   {
-    "id": "sub-real-0027",
+    "id": "sub-real-0030",
     "userId": "user-dalia.smaali@student.hech.be",
     "userName": "Dalia Smaali",
     "userEmail": "dalia.smaali@student.hech.be",
@@ -9164,7 +11655,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-15 14:00"
   },
   {
-    "id": "sub-real-0028",
+    "id": "sub-real-0031",
     "userId": "user-daphne.depuis@gmail.com",
     "userName": "Daphné Depuis",
     "userEmail": "daphne.depuis@gmail.com",
@@ -9176,7 +11667,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-06 14:00"
   },
   {
-    "id": "sub-real-0029",
+    "id": "sub-real-0032",
     "userId": "user-daphne.depuis@gmail.com",
     "userName": "Daphné Depuis",
     "userEmail": "daphne.depuis@gmail.com",
@@ -9188,7 +11679,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-06 14:00"
   },
   {
-    "id": "sub-real-0030",
+    "id": "sub-real-0033",
     "userId": "user-daphne.depuis@gmail.com",
     "userName": "Daphné Depuis",
     "userEmail": "daphne.depuis@gmail.com",
@@ -9200,7 +11691,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-07 14:00"
   },
   {
-    "id": "sub-real-0031",
+    "id": "sub-real-0034",
     "userId": "user-daphne.depuis@gmail.com",
     "userName": "Daphné Depuis",
     "userEmail": "daphne.depuis@gmail.com",
@@ -9212,7 +11703,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-13 14:00"
   },
   {
-    "id": "sub-real-0032",
+    "id": "sub-real-0035",
     "userId": "user-daphne.depuis@gmail.com",
     "userName": "Daphné Depuis",
     "userEmail": "daphne.depuis@gmail.com",
@@ -9224,7 +11715,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-19 14:00"
   },
   {
-    "id": "sub-real-0033",
+    "id": "sub-real-0036",
     "userId": "user-e141977@student.hech.be",
     "userName": "Stephanie Mülverstedt",
     "userEmail": "e141977@student.hech.be",
@@ -9236,7 +11727,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-02 14:00"
   },
   {
-    "id": "sub-real-0034",
+    "id": "sub-real-0037",
     "userId": "user-e141977@student.hech.be",
     "userName": "Stephanie Mülverstedt",
     "userEmail": "e141977@student.hech.be",
@@ -9248,7 +11739,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-02 14:00"
   },
   {
-    "id": "sub-real-0035",
+    "id": "sub-real-0038",
     "userId": "user-e141977@student.hech.be",
     "userName": "Stephanie Mülverstedt",
     "userEmail": "e141977@student.hech.be",
@@ -9260,7 +11751,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-07 14:00"
   },
   {
-    "id": "sub-real-0036",
+    "id": "sub-real-0039",
     "userId": "user-e141977@student.hech.be",
     "userName": "Stephanie Mülverstedt",
     "userEmail": "e141977@student.hech.be",
@@ -9272,7 +11763,19 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-12 14:00"
   },
   {
-    "id": "sub-real-0037",
+    "id": "sub-real-0040",
+    "userId": "user-e141977@student.hech.be",
+    "userName": "Stephanie Mülverstedt",
+    "userEmail": "e141977@student.hech.be",
+    "exerciseId": "exercice-06",
+    "exerciseTitle": "Atelier 6 : Démarche itérative (Concevoir & tester un mini-jeu)",
+    "answer": "Exercice 06 – Concevoir un mini-jeu avec Genially  \n(+ questionnaire Forms) \n \nRéalisé par : Stephanie Mülverstedt, Maud Pierre et Audrey Van Ceulebroeck \n \nPrésentation de notre jeu « Sauve la planète » \nDans le cadre de cet exercice, nous avons conçu un jeu interactif sur le tri des \ndéchets, intitulé « Sauve la planète », destiné aux élèves de 10 à 12 ans. \nNotre objectif était d'apprendre aux élèves à reconnaître les différentes catégories \nde déchets et à les trier correctement. \nNous avons essayé de concevoir un jeu adapté à leur âge, avec des illustrations \nattrayantes et des consignes simples et compréhensibles. Au début du jeu, une fiche \nde rappel permet aux élèves de revoir les connaissances nécessaires pour répondre \naux questions. \nNous avons proposé différentes situations dans le jeu. Dans un premier temps, les \nélèves se retrouvent dans une cour de récréation où ils doivent ramasser les déchets \net les déposer dans les bonnes poubelles. Ensuite, plusieurs QCM leur sont \nproposés afin de déterminer quelle poubelle utiliser pour différents déchets. Ces \nactivités permettent aux élèves d'appliquer leurs connaissances dans des situations \nconcrètes. \nNous avons également choisi un scénario dans lequel la planète est triste au départ \net retrouve progressivement le sourire lorsque l'élève avance dans le jeu. Cela nous \nsemblait motivant pour les élèves et devait leur donner envie de poursuivre le jeu \njusqu'à la fin. \nNous avons ensuite envoyé notre jeu à plusieurs groupes afin qu'ils puissent le \ntester et donner leur avis à l'aide d'un questionnaire Google Forms. Ce \nquestionnaire portait sur plusieurs aspects du jeu : la clarté et l'utilité de la fiche de \nrappel, la compréhension du but et des consignes, la facilité d'utilisation des \néléments interactifs, l'intérêt du contenu, la motivation à poursuivre le jeu, la durée, \nle niveau de difficulté pour les enfants de 10 à 12 ans et les apprentissages réalisés. \nLes participants pouvaient également proposer des améliorations. \n \n \n\nGrâce aux réponses reçues, nous avons apporté plusieurs modifications : \n• \nNous avons réduit la quantité d'informations sur la fiche de rappel, car elle était trop \nchargée. \n• \nNous avons uniformisé les couleurs des titres pour rendre la présentation plus \ncohérente. \n• \nNous avons remplacé une image que certains participants avaient du mal à reconnaître. \nCes retours nous ont permis de nous rendre compte que certains éléments qui nous \nsemblaient clairs ne l'étaient pas nécessairement pour les utilisateurs. Nous avons \négalement compris l'importance de tester un jeu auprès d'autres personnes avant de \nle proposer aux élèves. Le test nous a donc aidés à améliorer notre jeu, notamment \nau niveau de la clarté des informations et de la présentation. \n \nLien vers notre jeu : \nhttps://view.genially.com/6ad06cc002f7a3ace07e82df?fbclid=IwY2xjawVXx89leHRuA2Flb\nQIxMABwZG9mBWJyaWQRMXlEUDU4VnMyczNZd09WY0VzcnRjBmFwcF9pZBAyMj\nIwMzkxNzg4MjAwODkyAAEfTLyn_Xu7q5Srxq86s78ntLrqGGsMqvhq1G3vKUKt_yZUN\nmmei8KzGJu7gNk_aem_3AD6BDXACUMBqByPTEeqTA  \n \nLien vers le questionnaire Forms : \nhttps://forms.cloud.microsoft/pages/responsepage.aspx?id=vy7wYjcDnUS8cQEMuRPstFHk\nHYHRBENMiXwaF3XHZbFURVFYT1cyR0pITjQ2Tk9IQ1oxUEJVN005Ti4u&fbclid=IwY\n2xjawVXx_VleHRuA2FlbQIxMABwZG9mBWJyaWQRMXlEUDU4VnMyczNZd09WY0V\nzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEfOy0hhMU7xXXrXsWIt2B1fGG8\nUWSXRMG7teZzrbPI1cAuOv-Dug7-SZ5ICVM_aem_A9MStd0VqWQq18r0WRyQ-\nA&route=shorturl",
+    "content": "Exercice 06 – Concevoir un mini-jeu avec Genially  \n(+ questionnaire Forms) \n \nRéalisé par : Stephanie Mülverstedt, Maud Pierre et Audrey Van Ceulebroeck \n \nPrésentation de notre jeu « Sauve la planète » \nDans le cadre de cet exercice, nous avons conçu un jeu interactif sur le tri des \ndéchets, intitulé « Sauve la planète », destiné aux élèves de 10 à 12 ans. \nNotre objectif était d'apprendre aux élèves à reconnaître les différentes catégories \nde déchets et à les trier correctement. \nNous avons essayé de concevoir un jeu adapté à leur âge, avec des illustrations \nattrayantes et des consignes simples et compréhensibles. Au début du jeu, une fiche \nde rappel permet aux élèves de revoir les connaissances nécessaires pour répondre \naux questions. \nNous avons proposé différentes situations dans le jeu. Dans un premier temps, les \nélèves se retrouvent dans une cour de récréation où ils doivent ramasser les déchets \net les déposer dans les bonnes poubelles. Ensuite, plusieurs QCM leur sont \nproposés afin de déterminer quelle poubelle utiliser pour différents déchets. Ces \nactivités permettent aux élèves d'appliquer leurs connaissances dans des situations \nconcrètes. \nNous avons également choisi un scénario dans lequel la planète est triste au départ \net retrouve progressivement le sourire lorsque l'élève avance dans le jeu. Cela nous \nsemblait motivant pour les élèves et devait leur donner envie de poursuivre le jeu \njusqu'à la fin. \nNous avons ensuite envoyé notre jeu à plusieurs groupes afin qu'ils puissent le \ntester et donner leur avis à l'aide d'un questionnaire Google Forms. Ce \nquestionnaire portait sur plusieurs aspects du jeu : la clarté et l'utilité de la fiche de \nrappel, la compréhension du but et des consignes, la facilité d'utilisation des \néléments interactifs, l'intérêt du contenu, la motivation à poursuivre le jeu, la durée, \nle niveau de difficulté pour les enfants de 10 à 12 ans et les apprentissages réalisés. \nLes participants pouvaient également proposer des améliorations. \n \n \n\nGrâce aux réponses reçues, nous avons apporté plusieurs modifications : \n• \nNous avons réduit la quantité d'informations sur la fiche de rappel, car elle était trop \nchargée. \n• \nNous avons uniformisé les couleurs des titres pour rendre la présentation plus \ncohérente. \n• \nNous avons remplacé une image que certains participants avaient du mal à reconnaître. \nCes retours nous ont permis de nous rendre compte que certains éléments qui nous \nsemblaient clairs ne l'étaient pas nécessairement pour les utilisateurs. Nous avons \négalement compris l'importance de tester un jeu auprès d'autres personnes avant de \nle proposer aux élèves. Le test nous a donc aidés à améliorer notre jeu, notamment \nau niveau de la clarté des informations et de la présentation. \n \nLien vers notre jeu : \nhttps://view.genially.com/6ad06cc002f7a3ace07e82df?fbclid=IwY2xjawVXx89leHRuA2Flb\nQIxMABwZG9mBWJyaWQRMXlEUDU4VnMyczNZd09WY0VzcnRjBmFwcF9pZBAyMj\nIwMzkxNzg4MjAwODkyAAEfTLyn_Xu7q5Srxq86s78ntLrqGGsMqvhq1G3vKUKt_yZUN\nmmei8KzGJu7gNk_aem_3AD6BDXACUMBqByPTEeqTA  \n \nLien vers le questionnaire Forms : \nhttps://forms.cloud.microsoft/pages/responsepage.aspx?id=vy7wYjcDnUS8cQEMuRPstFHk\nHYHRBENMiXwaF3XHZbFURVFYT1cyR0pITjQ2Tk9IQ1oxUEJVN005Ti4u&fbclid=IwY\n2xjawVXx_VleHRuA2FlbQIxMABwZG9mBWJyaWQRMXlEUDU4VnMyczNZd09WY0V\nzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEfOy0hhMU7xXXrXsWIt2B1fGG8\nUWSXRMG7teZzrbPI1cAuOv-Dug7-SZ5ICVM_aem_A9MStd0VqWQq18r0WRyQ-\nA&route=shorturl",
+    "fileUrl": "/travaux-etudiants/MULVERSTEDT_Stephanie_Exercice_6_Demarche_iterative__2026-11-04 (1).pdf",
+    "submittedAt": "2026-11-04 14:00"
+  },
+  {
+    "id": "sub-real-0041",
     "userId": "user-e142155@student.hech.be",
     "userName": "Maude Pierre",
     "userEmail": "e142155@student.hech.be",
@@ -9284,7 +11787,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-19 14:00"
   },
   {
-    "id": "sub-real-0038",
+    "id": "sub-real-0042",
     "userId": "user-e142155@student.hech.be",
     "userName": "Maude Pierre",
     "userEmail": "e142155@student.hech.be",
@@ -9296,7 +11799,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-19 14:00"
   },
   {
-    "id": "sub-real-0039",
+    "id": "sub-real-0043",
     "userId": "user-e142155@student.hech.be",
     "userName": "Maude Pierre",
     "userEmail": "e142155@student.hech.be",
@@ -9308,7 +11811,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-19 14:00"
   },
   {
-    "id": "sub-real-0040",
+    "id": "sub-real-0044",
     "userId": "user-e142155@student.hech.be",
     "userName": "Maude Pierre",
     "userEmail": "e142155@student.hech.be",
@@ -9320,7 +11823,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-19 14:00"
   },
   {
-    "id": "sub-real-0041",
+    "id": "sub-real-0045",
     "userId": "user-e142155@student.hech.be",
     "userName": "Maude Pierre",
     "userEmail": "e142155@student.hech.be",
@@ -9332,7 +11835,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-19 14:00"
   },
   {
-    "id": "sub-real-0042",
+    "id": "sub-real-0046",
     "userId": "user-e142655@student.hech.be",
     "userName": "Marielle Van Dijk",
     "userEmail": "e142655@student.hech.be",
@@ -9344,7 +11847,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-01 14:00"
   },
   {
-    "id": "sub-real-0043",
+    "id": "sub-real-0047",
     "userId": "user-e142655@student.hech.be",
     "userName": "Marielle Van Dijk",
     "userEmail": "e142655@student.hech.be",
@@ -9356,7 +11859,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-21 14:00"
   },
   {
-    "id": "sub-real-0044",
+    "id": "sub-real-0048",
     "userId": "user-e142655@student.hech.be",
     "userName": "Marielle Van Dijk",
     "userEmail": "e142655@student.hech.be",
@@ -9368,7 +11871,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-07 14:00"
   },
   {
-    "id": "sub-real-0045",
+    "id": "sub-real-0049",
     "userId": "user-e142655@student.hech.be",
     "userName": "Marielle Van Dijk",
     "userEmail": "e142655@student.hech.be",
@@ -9380,7 +11883,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-07 14:00"
   },
   {
-    "id": "sub-real-0046",
+    "id": "sub-real-0050",
     "userId": "user-e142655@student.hech.be",
     "userName": "Marielle Van Dijk",
     "userEmail": "e142655@student.hech.be",
@@ -9392,7 +11895,19 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-21 14:00"
   },
   {
-    "id": "sub-real-0047",
+    "id": "sub-real-0051",
+    "userId": "user-e142655@student.hech.be",
+    "userName": "Marielle Van Dijk",
+    "userEmail": "e142655@student.hech.be",
+    "exerciseId": "exercice-07",
+    "exerciseTitle": "Atelier 7 : Défi Hardware & Peer Learning (Démonter/Remonter un PC)",
+    "answer": "Exercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nPhoto \nNom de la pièce \nFonction de la pièce \nDisque dur \nLe disque dur est un composant qui permet de stocker et de \nconserver les données de l’ordinateur de manière \npermanente, même lorsqu’il est éteint. \nIl contient notamment le système d’exploitation (Windows, \nLinux…), les logiciels installés ainsi que les fichiers \npersonnels (documents, photos, vidéos, etc.). \nIl permet également de lire et d’écrire des données, c’est-à-\ndire de retrouver des informations enregistrées ou d’en \nsauvegarder de nouvelles. \nDans un disque dur classique (HDD), les données sont \nenregistrées sur des plateaux magnétiques en rotation, \ngrâce à des têtes de lecture et d’écriture. \nContrairement à la mémoire vive (RAM), le disque dur \nconserve les informations lorsque l’alimentation électrique \nest coupée. \n \n \n \n \nProcesseur  \n(en dessous du \nventilateur) \nLe processeur est considéré comme le cerveau de \nl’ordinateur. Il est chargé d’exécuter les instructions des \nprogrammes et de réaliser les calculs nécessaires au \nfonctionnement de l’ordinateur. \nIl traite les informations provenant des logiciels et des \ndifférents composants. \nIl effectue notamment des opérations arithmétiques et \nlogiques (calculs, comparaisons, prises de décision). \nIl coordonne également l’exécution des instructions et les \néchanges de données avec les autres composants, \nnotamment la mémoire vive (RAM). \nSa vitesse de fonctionnement, exprimée en gigahertz (GHz), \net son nombre de cœurs influencent les performances de \nl’ordinateur. \nLe processeur produit de la chaleur et nécessite donc \nun système de refroidissement (ventilateur ou dissipateur \nthermique). \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nRAM \nLa mémoire vive (RAM) est un composant qui permet \nde stocker temporairement les données et les \ninstructions utilisées par l’ordinateur lorsqu’il fonctionne. \nElle conserve notamment les informations nécessaires à \nl’exécution des logiciels et des applications en cours \nd’utilisation. \nElle permet au processeur d’accéder rapidement aux \ndonnées dont il a besoin pour effectuer ses opérations. \nPlus la capacité de la RAM est importante, plus l’ordinateur \npeut gérer simultanément plusieurs programmes et des \ntâches exigeantes sans ralentissement lié au manque de \nmémoire. \nContrairement au disque dur, la RAM est une mémoire \nvolatile : toutes les données qu’elle contient disparaissent \nlorsque l’ordinateur est éteint. \nElle joue donc un rôle essentiel dans la rapidité et la \nfluidité du fonctionnement de l’ordinateur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nCarte graphique \nLa carte graphique est un composant chargé de traiter les \ndonnées graphiques et de produire les images affichées sur \nl’écran de l’ordinateur. \nElle transforme les informations numériques en images \nvisibles : textes, photos, vidéos, animations et images en 3D. \nElle possède un processeur graphique (GPU) spécialisé \ndans l’exécution rapide de nombreux calculs en parallèle. \nElle est particulièrement sollicitée pour les jeux vidéo, le \nmontage vidéo, la modélisation 3D et certaines applications \nd’intelligence artificielle. \nElle dispose généralement d’une mémoire vidéo \n(VRAM) permettant de stocker temporairement les données \nnécessaires à l'affichage. \nLe processeur graphique peut être intégré au processeur \nprincipal ou se trouver sur une carte graphique dédiée. \nLecteur CD \nLe lecteur CD est un périphérique qui permet de lire les \ninformations enregistrées sur un disque compact (CD). \nIl utilise un faisceau laser pour détecter les données \nnumériques présentes à la surface du disque. \nIl permet notamment de lire des CD audio, d’installer des \nlogiciels ou d’accéder à des fichiers enregistrés sur un CD-\nROM. \nCertains modèles, appelés graveurs CD, permettent \négalement d’écrire des données sur des CD enregistrables \n(CD-R) ou réinscriptibles (CD-RW). \nLe lecteur CD contient un moteur qui fait tourner le disque et \nun mécanisme qui déplace la tête de lecture laser. \nAujourd’hui, il est de moins en moins présent dans les \nordinateurs récents, car il est progressivement remplacé par \nles clés USB, les téléchargements et le stockage en ligne. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nCarte mère \nLa carte mère est le circuit électronique principal de \nl’ordinateur. Elle permet de connecter et de faire \ncommuniquer les différents composants entre eux. \nElle accueille notamment le processeur (CPU), la mémoire \nvive (RAM) et les connecteurs destinés aux périphériques et \naux unités de stockage. \nElle assure la circulation des données entre les composants \ngrâce à des circuits et des connexions électroniques. \nElle distribue également l’alimentation électrique nécessaire \nau fonctionnement de plusieurs composants. \nElle contient le BIOS/UEFI, un micrologiciel qui permet \nnotamment d’initialiser le matériel lors du démarrage de \nl’ordinateur. \nElle possède différents ports et connecteurs (USB, SATA, \nPCI Express, etc.) permettant de brancher des périphériques \net des composants supplémentaires. \nLa carte mère joue donc un rôle central dans le \nfonctionnement et la coordination de l'ensemble de \nl'ordinateur. \n \nVentilateur  \nLe ventilateur est un composant qui permet de refroidir les \néléments de l’ordinateur en favorisant la circulation de l’air. \nIl sert principalement à évacuer la chaleur produite par les \ncomposants électroniques, notamment le processeur (CPU) \net la carte graphique (GPU). \nIl contribue à maintenir une température de fonctionnement \nadaptée, afin d’éviter la surchauffe et les ralentissements. \nIl fonctionne grâce à un moteur électrique qui fait tourner des \npales, créant ainsi un flux d’air. \nIl est souvent associé à un dissipateur thermique, qui \nabsorbe et évacue la chaleur produite par le processeur. \nCertains ventilateurs font entrer de l’air frais dans le boîtier, \ntandis que d’autres expulsent l’air chaud vers l’extérieur. \nLe ventilateur contribue ainsi à préserver les performances, \nla stabilité et la durée de vie de l’ordinateur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nBloc d’alimentation \nLe bloc d’alimentation est un composant qui permet \nde fournir l’énergie électrique nécessaire au fonctionnement \nde l’ordinateur. \nIl transforme le courant alternatif (AC) provenant de la prise \nélectrique en courant continu (DC) utilisable par les \ncomposants électroniques. \nIl distribue cette énergie aux différents éléments de \nl’ordinateur, notamment la carte mère, le processeur, la carte \ngraphique et les unités de stockage. \nIl fournit plusieurs tensions électriques adaptées aux besoins \ndes composants, principalement 3,3 V, 5 V et 12 V. \nIl intègre également des systèmes de protection contre \ncertains problèmes électriques, comme les surtensions, les \nsurcharges et les courts-circuits. \nSa puissance, exprimée en watts (W), détermine la quantité \nmaximale d’énergie qu’il peut fournir. \nLe bloc d’alimentation est donc indispensable au \nfonctionnement stable et sécurisé de l’ordinateur. \n \nPorts de \nconnexion  \nLes ports de connexion sont des interfaces permettant de \nrelier l’ordinateur à des périphériques externes ou à d’autres \néquipements. \nIls permettent l’échange de données et de signaux entre \nl’ordinateur et les appareils connectés. \nIl existe différents types de ports, notamment les ports \nUSB (clavier, souris, clé USB), HDMI ou \nDisplayPort (écran), Ethernet RJ45 (réseau) et les prises \naudio (casque, microphone). \nCertains ports permettent également de fournir de l’énergie \nélectrique aux périphériques connectés, par exemple pour \nrecharger un smartphone. \nIls sont généralement situés à l’arrière ou à l’avant du boîtier \net sont reliés à la carte mère. \nLes ports de connexion jouent donc un rôle essentiel dans la \ncommunication entre l’ordinateur et son environnement \nextérieur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \n \n \n \n \nDans notre image : \n \nN° \nNom du Port \nFonction \n1 \nPS/2 \n(clavier/souris) \nConnexion d’un ancien clavier ou d’une \nsouris \n2 \nPort série (COM / \nDB9) \nConnexion de périphériques anciens \n3 \nDVI \nConnexion d’un écran \n4 \nHDMI \nConnexion d’un écran ou d’un téléviseur \n5 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n6 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n7 \nEthernet (RJ45) \nConnexion réseau / Internet par câble \n8 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n9 \nPrises audio Jack \n3,5 mm \nBleu : Connexion casque,  \nVert : haut-parleurs \nRose :  microphone \n10 \nVGA \nTransmission de l’image en analogique vers \nun écran \n11 \nHDMI \nConnexion d’un écran ou d’un téléviseur \n12 \nDVI \nConnexion d’un écran",
+    "content": "Exercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nPhoto \nNom de la pièce \nFonction de la pièce \nDisque dur \nLe disque dur est un composant qui permet de stocker et de \nconserver les données de l’ordinateur de manière \npermanente, même lorsqu’il est éteint. \nIl contient notamment le système d’exploitation (Windows, \nLinux…), les logiciels installés ainsi que les fichiers \npersonnels (documents, photos, vidéos, etc.). \nIl permet également de lire et d’écrire des données, c’est-à-\ndire de retrouver des informations enregistrées ou d’en \nsauvegarder de nouvelles. \nDans un disque dur classique (HDD), les données sont \nenregistrées sur des plateaux magnétiques en rotation, \ngrâce à des têtes de lecture et d’écriture. \nContrairement à la mémoire vive (RAM), le disque dur \nconserve les informations lorsque l’alimentation électrique \nest coupée. \n \n \n \n \nProcesseur  \n(en dessous du \nventilateur) \nLe processeur est considéré comme le cerveau de \nl’ordinateur. Il est chargé d’exécuter les instructions des \nprogrammes et de réaliser les calculs nécessaires au \nfonctionnement de l’ordinateur. \nIl traite les informations provenant des logiciels et des \ndifférents composants. \nIl effectue notamment des opérations arithmétiques et \nlogiques (calculs, comparaisons, prises de décision). \nIl coordonne également l’exécution des instructions et les \néchanges de données avec les autres composants, \nnotamment la mémoire vive (RAM). \nSa vitesse de fonctionnement, exprimée en gigahertz (GHz), \net son nombre de cœurs influencent les performances de \nl’ordinateur. \nLe processeur produit de la chaleur et nécessite donc \nun système de refroidissement (ventilateur ou dissipateur \nthermique). \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nRAM \nLa mémoire vive (RAM) est un composant qui permet \nde stocker temporairement les données et les \ninstructions utilisées par l’ordinateur lorsqu’il fonctionne. \nElle conserve notamment les informations nécessaires à \nl’exécution des logiciels et des applications en cours \nd’utilisation. \nElle permet au processeur d’accéder rapidement aux \ndonnées dont il a besoin pour effectuer ses opérations. \nPlus la capacité de la RAM est importante, plus l’ordinateur \npeut gérer simultanément plusieurs programmes et des \ntâches exigeantes sans ralentissement lié au manque de \nmémoire. \nContrairement au disque dur, la RAM est une mémoire \nvolatile : toutes les données qu’elle contient disparaissent \nlorsque l’ordinateur est éteint. \nElle joue donc un rôle essentiel dans la rapidité et la \nfluidité du fonctionnement de l’ordinateur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nCarte graphique \nLa carte graphique est un composant chargé de traiter les \ndonnées graphiques et de produire les images affichées sur \nl’écran de l’ordinateur. \nElle transforme les informations numériques en images \nvisibles : textes, photos, vidéos, animations et images en 3D. \nElle possède un processeur graphique (GPU) spécialisé \ndans l’exécution rapide de nombreux calculs en parallèle. \nElle est particulièrement sollicitée pour les jeux vidéo, le \nmontage vidéo, la modélisation 3D et certaines applications \nd’intelligence artificielle. \nElle dispose généralement d’une mémoire vidéo \n(VRAM) permettant de stocker temporairement les données \nnécessaires à l'affichage. \nLe processeur graphique peut être intégré au processeur \nprincipal ou se trouver sur une carte graphique dédiée. \nLecteur CD \nLe lecteur CD est un périphérique qui permet de lire les \ninformations enregistrées sur un disque compact (CD). \nIl utilise un faisceau laser pour détecter les données \nnumériques présentes à la surface du disque. \nIl permet notamment de lire des CD audio, d’installer des \nlogiciels ou d’accéder à des fichiers enregistrés sur un CD-\nROM. \nCertains modèles, appelés graveurs CD, permettent \négalement d’écrire des données sur des CD enregistrables \n(CD-R) ou réinscriptibles (CD-RW). \nLe lecteur CD contient un moteur qui fait tourner le disque et \nun mécanisme qui déplace la tête de lecture laser. \nAujourd’hui, il est de moins en moins présent dans les \nordinateurs récents, car il est progressivement remplacé par \nles clés USB, les téléchargements et le stockage en ligne. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nCarte mère \nLa carte mère est le circuit électronique principal de \nl’ordinateur. Elle permet de connecter et de faire \ncommuniquer les différents composants entre eux. \nElle accueille notamment le processeur (CPU), la mémoire \nvive (RAM) et les connecteurs destinés aux périphériques et \naux unités de stockage. \nElle assure la circulation des données entre les composants \ngrâce à des circuits et des connexions électroniques. \nElle distribue également l’alimentation électrique nécessaire \nau fonctionnement de plusieurs composants. \nElle contient le BIOS/UEFI, un micrologiciel qui permet \nnotamment d’initialiser le matériel lors du démarrage de \nl’ordinateur. \nElle possède différents ports et connecteurs (USB, SATA, \nPCI Express, etc.) permettant de brancher des périphériques \net des composants supplémentaires. \nLa carte mère joue donc un rôle central dans le \nfonctionnement et la coordination de l'ensemble de \nl'ordinateur. \n \nVentilateur  \nLe ventilateur est un composant qui permet de refroidir les \néléments de l’ordinateur en favorisant la circulation de l’air. \nIl sert principalement à évacuer la chaleur produite par les \ncomposants électroniques, notamment le processeur (CPU) \net la carte graphique (GPU). \nIl contribue à maintenir une température de fonctionnement \nadaptée, afin d’éviter la surchauffe et les ralentissements. \nIl fonctionne grâce à un moteur électrique qui fait tourner des \npales, créant ainsi un flux d’air. \nIl est souvent associé à un dissipateur thermique, qui \nabsorbe et évacue la chaleur produite par le processeur. \nCertains ventilateurs font entrer de l’air frais dans le boîtier, \ntandis que d’autres expulsent l’air chaud vers l’extérieur. \nLe ventilateur contribue ainsi à préserver les performances, \nla stabilité et la durée de vie de l’ordinateur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nBloc d’alimentation \nLe bloc d’alimentation est un composant qui permet \nde fournir l’énergie électrique nécessaire au fonctionnement \nde l’ordinateur. \nIl transforme le courant alternatif (AC) provenant de la prise \nélectrique en courant continu (DC) utilisable par les \ncomposants électroniques. \nIl distribue cette énergie aux différents éléments de \nl’ordinateur, notamment la carte mère, le processeur, la carte \ngraphique et les unités de stockage. \nIl fournit plusieurs tensions électriques adaptées aux besoins \ndes composants, principalement 3,3 V, 5 V et 12 V. \nIl intègre également des systèmes de protection contre \ncertains problèmes électriques, comme les surtensions, les \nsurcharges et les courts-circuits. \nSa puissance, exprimée en watts (W), détermine la quantité \nmaximale d’énergie qu’il peut fournir. \nLe bloc d’alimentation est donc indispensable au \nfonctionnement stable et sécurisé de l’ordinateur. \n \nPorts de \nconnexion  \nLes ports de connexion sont des interfaces permettant de \nrelier l’ordinateur à des périphériques externes ou à d’autres \néquipements. \nIls permettent l’échange de données et de signaux entre \nl’ordinateur et les appareils connectés. \nIl existe différents types de ports, notamment les ports \nUSB (clavier, souris, clé USB), HDMI ou \nDisplayPort (écran), Ethernet RJ45 (réseau) et les prises \naudio (casque, microphone). \nCertains ports permettent également de fournir de l’énergie \nélectrique aux périphériques connectés, par exemple pour \nrecharger un smartphone. \nIls sont généralement situés à l’arrière ou à l’avant du boîtier \net sont reliés à la carte mère. \nLes ports de connexion jouent donc un rôle essentiel dans la \ncommunication entre l’ordinateur et son environnement \nextérieur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \n \n \n \n \nDans notre image : \n \nN° \nNom du Port \nFonction \n1 \nPS/2 \n(clavier/souris) \nConnexion d’un ancien clavier ou d’une \nsouris \n2 \nPort série (COM / \nDB9) \nConnexion de périphériques anciens \n3 \nDVI \nConnexion d’un écran \n4 \nHDMI \nConnexion d’un écran ou d’un téléviseur \n5 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n6 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n7 \nEthernet (RJ45) \nConnexion réseau / Internet par câble \n8 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n9 \nPrises audio Jack \n3,5 mm \nBleu : Connexion casque,  \nVert : haut-parleurs \nRose :  microphone \n10 \nVGA \nTransmission de l’image en analogique vers \nun écran \n11 \nHDMI \nConnexion d’un écran ou d’un téléviseur \n12 \nDVI \nConnexion d’un écran",
+    "fileUrl": "/travaux-etudiants/VAN_DIJK_Marielle_Atelier_7_Defi_Hardware_Peer_L_2026-11-06.pdf",
+    "submittedAt": "2026-11-06 14:00"
+  },
+  {
+    "id": "sub-real-0052",
     "userId": "user-e142655@student.hech.be",
     "userName": "Marielle Van Dijk",
     "userEmail": "e142655@student.hech.be",
@@ -9404,7 +11919,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-21 14:00"
   },
   {
-    "id": "sub-real-0048",
+    "id": "sub-real-0053",
     "userId": "user-e161029@student.hech.be",
     "userName": "Jordan Casamento",
     "userEmail": "e161029@student.hech.be",
@@ -9416,7 +11931,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-09-30 14:00"
   },
   {
-    "id": "sub-real-0049",
+    "id": "sub-real-0054",
     "userId": "user-e161029@student.hech.be",
     "userName": "Jordan Casamento",
     "userEmail": "e161029@student.hech.be",
@@ -9428,7 +11943,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-09-30 14:00"
   },
   {
-    "id": "sub-real-0050",
+    "id": "sub-real-0055",
     "userId": "user-e161029@student.hech.be",
     "userName": "Jordan Casamento",
     "userEmail": "e161029@student.hech.be",
@@ -9440,7 +11955,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-09-30 14:00"
   },
   {
-    "id": "sub-real-0051",
+    "id": "sub-real-0056",
     "userId": "user-e161029@student.hech.be",
     "userName": "Jordan Casamento",
     "userEmail": "e161029@student.hech.be",
@@ -9452,7 +11967,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-19 14:00"
   },
   {
-    "id": "sub-real-0052",
+    "id": "sub-real-0057",
     "userId": "user-e2301877@student.hech.be",
     "userName": "Amélie Sarlet",
     "userEmail": "e2301877@student.hech.be",
@@ -9464,7 +11979,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-09-30 14:00"
   },
   {
-    "id": "sub-real-0053",
+    "id": "sub-real-0058",
     "userId": "user-e2301877@student.hech.be",
     "userName": "Amélie Sarlet",
     "userEmail": "e2301877@student.hech.be",
@@ -9476,7 +11991,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-09-30 14:00"
   },
   {
-    "id": "sub-real-0054",
+    "id": "sub-real-0059",
     "userId": "user-e2301877@student.hech.be",
     "userName": "Amélie Sarlet",
     "userEmail": "e2301877@student.hech.be",
@@ -9488,7 +12003,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-04 14:00"
   },
   {
-    "id": "sub-real-0055",
+    "id": "sub-real-0060",
     "userId": "user-e2301877@student.hech.be",
     "userName": "Amélie Sarlet",
     "userEmail": "e2301877@student.hech.be",
@@ -9500,7 +12015,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-12 14:00"
   },
   {
-    "id": "sub-real-0056",
+    "id": "sub-real-0061",
     "userId": "user-e2301877@student.hech.be",
     "userName": "Amélie Sarlet",
     "userEmail": "e2301877@student.hech.be",
@@ -9512,7 +12027,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-21 14:00"
   },
   {
-    "id": "sub-real-0057",
+    "id": "sub-real-0062",
     "userId": "user-e2301886@student.hech.be",
     "userName": "Emma DI MASCIA",
     "userEmail": "e2301886@student.hech.be",
@@ -9524,7 +12039,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-09-30 14:00"
   },
   {
-    "id": "sub-real-0058",
+    "id": "sub-real-0063",
     "userId": "user-e2301886@student.hech.be",
     "userName": "Emma DI MASCIA",
     "userEmail": "e2301886@student.hech.be",
@@ -9536,7 +12051,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-09-30 14:00"
   },
   {
-    "id": "sub-real-0059",
+    "id": "sub-real-0064",
     "userId": "user-e2301886@student.hech.be",
     "userName": "Emma DI MASCIA",
     "userEmail": "e2301886@student.hech.be",
@@ -9548,7 +12063,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-06 14:00"
   },
   {
-    "id": "sub-real-0060",
+    "id": "sub-real-0065",
     "userId": "user-e2301886@student.hech.be",
     "userName": "Emma DI MASCIA",
     "userEmail": "e2301886@student.hech.be",
@@ -9560,7 +12075,19 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-12 14:00"
   },
   {
-    "id": "sub-real-0061",
+    "id": "sub-real-0066",
+    "userId": "user-e2301886@student.hech.be",
+    "userName": "Emma DI MASCIA",
+    "userEmail": "e2301886@student.hech.be",
+    "exerciseId": "exercice-08",
+    "exerciseTitle": "Atelier 8 : Construire des grilles d'évaluation critériées",
+    "answer": "Exercice 08 – Construire des grilles d’évaluation critériées\nObjectif\nL’objectif de cet exercice est de vous apprendre à construire une grille d’évaluation critériée adaptée à différents types d’apprentissages numériques.\nVous devrez être capables d’identifier les apprentissages réellement visés, de sélectionner des critères pertinents et de construire des indicateurs permettant d’observer différents niveaux de maîtrise.\nOrganisation\nTravail par groupes de 2 ou 3 étudiants.\nChaque groupe choisit 3 cas parmi les 10 proposés.\nPour chacun des trois cas, vous construisez une grille critériée différente.\nLes trois grilles doivent être accompagnées d’une justification de vos choix.\nPour chaque cas\n1. Identifiez les apprentissages visés\nDéterminez ce que l’élève doit :\nsavoir ;\nsavoir-faire ;\nmobiliser comme compétence ;\néventuellement développer comme capacité réflexive, autonomie ou esprit critique.\n2. Construisez la grille\nVotre grille doit comporter :\n3 à 5 critères directement liés aux apprentissages visés ;\n2 à 4 indicateurs observables par critère ;\n4 niveaux de maîtrise décrivant une progression qualitative.\nÉvitez les formulations vagues telles que « bon travail », « maîtrise bien » ou « production réussie ». Les descripteurs doivent permettre d'observer concrètement ce que l'élève est capable de faire.\n3. Précisez le dispositif d’évaluation\nIndiquez si votre grille est destinée à une :\névaluation diagnostique ;\névaluation formative ;\névaluation sommative ;\nauto-évaluation ;\névaluation par les pairs ;\nco-évaluation.\nPlusieurs modalités peuvent être combinées.\n4. Justifiez vos choix\nPour chaque grille, expliquez brièvement :\npourquoi vous avez retenu ces critères ;\npourquoi ces indicateurs permettent d’observer les apprentissages ;\ncomment les niveaux de maîtrise traduisent une progression ;\npourquoi vous avez choisi cette modalité d’évaluation.\nLes 10 cas de figure\n1. Recherche d’information \nRechercher des informations sur Internet concernant une personnalité scientifique, sélectionner des informations pertinentes et identifier des sources fiables.\n2. Création d’une vidéo \nRéaliser une vidéo de trois minutes destinée à expliquer un concept scientifique à des élèves plus jeunes.\n3. Éducation aux médias : info ou intox ? \nAnalyser des publications provenant des réseaux sociaux, vérifier leur fiabilité et justifier son analyse.\n Recherche d’information : \n1. Identifiez les apprentissages visés : \nSavoirs -> Connaitre les caractéristiques d’une source fiable : auteur identifiable, organisme reconnu, date de publication, références et informations vérifiables\nSavoir-faire -> Utiliser un moteur de recherche, choisir des mots-clés pertinents, consulter plusieurs sites et extraire les informations utiles.\nCompétence -> Rechercher, sélectionner, vérifier et organiser des informations provenant de différentes sources pour répondre à une question documentaire.\nLes élèves devront exercer leur esprit critique, justifier leur choix de source, comparer les informations et prendre conscience des limites des contenus en ligne\nLes élèves réaliseront des recherches de manière progressive sans dépendre constamment de l’enseignant\n2. Construisez la grille\nCritère 1 : Utilisation du moteur de recherche \nCritère 2 : Fiabilité des sources \nCritère 3 : Sélection et vérification des informations \nCritère 4 : Organisation des informations et référencement des sources\n3. Précisez le dispositif d’évaluation\nJe combinerai l’évaluation formative et l’auto-évaluation : Pendant l’exercice, on l’utiliserait pour aider les élèves à améliorer leur travail. Et à la fin, les élèves la compléteraient aussi pour après corriger son travail. \n4. Justifiez vos choix\nJ’ai choisi ces quatre critères car ils correspondent aux étapes essentielles d’une recherche d’information : rechercher, vérifier les sources, sélectionner les informations et les organiser. Les indicateurs permettent d’observer concrètement les capacités de l’élève, notamment son esprit critique. Les quatre niveaux de maîtrise montrent une progression allant d’un élève qui a besoin d’aide à un élève autonome, capable de justifier ses choix. La combinaison de l’évaluation formative et de l’auto-évaluation permet à l’élève de recevoir des conseils, de réfléchir à ses apprentissages et d’améliorer son travail.\n2. Création d’une vidéo \nRéaliser une vidéo de trois minutes destinée à expliquer un concept scientifique à des élèves plus jeunes.\nIdentification des apprentissages visés\nSavoirs : Comprendre le concept scientifique choisi et connaître le vocabulaire associé.\nSavoir-faire : Rechercher des informations fiables, rédiger un scénario et réaliser un montage vidéo.\nCompétences : Expliquer clairement un concept scientifique à des élèves plus jeunes en respectant la durée de trois minutes.\nCapacités réflexives et autonomie : Vérifier ses sources, évaluer sa production et identifier des améliorations possibles.\nGrille d’évaluation critériée\nLe dispositif d’évaluation\nL’évaluation choisie est une évaluation formative individuelle.\nChaque élève réalise une vidéo de trois minutes dans laquelle il explique un concept scientifique à des élèves plus jeunes. \nIl doit :\nRechercher des informations scientifiques fiables.\nExpliquer le concept de manière claire et adaptée au public.\nOrganiser ses idées et réaliser une vidéo structurée.\nVérifier ses sources et évaluer sa production.\nL’enseignant utilise la grille pour identifier les acquis et les difficultés de chaque élève, puis lui donne un retour afin qu’il puisse améliorer son travail.\nJustification des choix\nPourquoi avoir retenu ces critères ?\nLes quatre critères correspondent aux apprentissages visés. Ils permettent d’évaluer la compréhension scientifique, la capacité à expliquer un concept à un public plus jeune, l’organisation de la vidéo et l’utilisation des outils numériques ainsi que la fiabilité des sources.\nPourquoi avoir choisi ces indicateurs ?\nLes indicateurs sont observables et permettent d’évaluer concrètement le travail de l’élève, comme l’utilisation du vocabulaire scientifique, la structure de la vidéo ou la vérification des sources.\nComment les niveaux de maîtrise traduisent-ils une progression ?\nLes quatre niveaux vont d’une maîtrise insuffisante à une très bonne maîtrise. Ils permettent de distinguer les difficultés de l’élève, les apprentissages en cours et les objectifs atteints, voire dépassés.\nPourquoi avoir choisi cette modalité d’évaluation ?\nL’évaluation formative permet à l’enseignant d’identifier les acquis et les difficultés de chaque élève pendant la réalisation du projet. Son retour aide l’élève à corriger ses erreurs et à améliorer sa vidéo.\n\n3. Éducation aux médias : info ou intox ? \nApprentissages visés\n\nSavoir : Connaître les informations à vérifier pour savoir si une information fiable.\nSavoir-faire : Identifier la source d’une publication, recouper les informations et vérifier les faits à l’aide de sources fiables.\nCompétence : Analyser une publication provenant des réseaux sociaux, déterminer si elle est fiable ou douteuse et justifier sa conclusion à partir d’éléments vérifiables.\nCapacité réflexive : Prendre du recul face aux informations diffusées en ligne, remettre en question une première impression et adopter une attitude prudente avant de partager une publication.\n2. Grille d’évaluation critériée\n3. Dispositif d’évaluation\nJe propose une évaluation formative individuelle.\nChaque élève reçoit une publication issue d’un réseau social contenant une information dont la fiabilité doit être vérifiée. Il doit :\nIdentifier la source et relever les indices utiles.\nEffectuer des recherches pour vérifier l’information.\nComparer les résultats obtenus avec d’autres sources.\nConclure en justifiant sa réponse par écrit.\nL’enseignant utilise la grille pour repérer les acquis et les difficultés de chaque élève, puis lui donne un retour lui permettant d’améliorer sa méthode de vérification.\n4. Justification des choix\n\nPourquoi ces critères ?\nLes quatre critères correspondent aux étapes essentielles de l’analyse d’une publication : identifier sa provenance, vérifier les faits, exercer son esprit critique et justifier sa conclusion. Ils permettent d’évaluer la démarche de l’élève et pas uniquement sa capacité à donner une réponse correcte.\nPourquoi ces indicateurs ?\nLes indicateurs sont observables dans les recherches et dans la justification écrite de l’élève. Par exemple, on peut vérifier s’il a identifié l’auteur, consulté plusieurs sources ou expliqué sa conclusion à partir d’éléments précis.\nComment les niveaux traduisent-ils une progression ?\nLes quatre niveaux permettent de distinguer une absence de démarche, une démarche partielle, une vérification pertinente et une analyse autonome et approfondie. Cette progression permet à l’enseignant de repérer précisément ce que l’élève doit encore apprendre.\nPourquoi choisir une évaluation formative ?\nL’objectif est de développer une compétence qui nécessite de l’entraînement. L’évaluation formative permet à l’enseignant de fournir des conseils ciblés et à l’élève de progresser dans sa manière de rechercher, de vérifier et d’analyser l’information.",
+    "content": "Exercice 08 – Construire des grilles d’évaluation critériées\nObjectif\nL’objectif de cet exercice est de vous apprendre à construire une grille d’évaluation critériée adaptée à différents types d’apprentissages numériques.\nVous devrez être capables d’identifier les apprentissages réellement visés, de sélectionner des critères pertinents et de construire des indicateurs permettant d’observer différents niveaux de maîtrise.\nOrganisation\nTravail par groupes de 2 ou 3 étudiants.\nChaque groupe choisit 3 cas parmi les 10 proposés.\nPour chacun des trois cas, vous construisez une grille critériée différente.\nLes trois grilles doivent être accompagnées d’une justification de vos choix.\nPour chaque cas\n1. Identifiez les apprentissages visés\nDéterminez ce que l’élève doit :\nsavoir ;\nsavoir-faire ;\nmobiliser comme compétence ;\néventuellement développer comme capacité réflexive, autonomie ou esprit critique.\n2. Construisez la grille\nVotre grille doit comporter :\n3 à 5 critères directement liés aux apprentissages visés ;\n2 à 4 indicateurs observables par critère ;\n4 niveaux de maîtrise décrivant une progression qualitative.\nÉvitez les formulations vagues telles que « bon travail », « maîtrise bien » ou « production réussie ». Les descripteurs doivent permettre d'observer concrètement ce que l'élève est capable de faire.\n3. Précisez le dispositif d’évaluation\nIndiquez si votre grille est destinée à une :\névaluation diagnostique ;\névaluation formative ;\névaluation sommative ;\nauto-évaluation ;\névaluation par les pairs ;\nco-évaluation.\nPlusieurs modalités peuvent être combinées.\n4. Justifiez vos choix\nPour chaque grille, expliquez brièvement :\npourquoi vous avez retenu ces critères ;\npourquoi ces indicateurs permettent d’observer les apprentissages ;\ncomment les niveaux de maîtrise traduisent une progression ;\npourquoi vous avez choisi cette modalité d’évaluation.\nLes 10 cas de figure\n1. Recherche d’information \nRechercher des informations sur Internet concernant une personnalité scientifique, sélectionner des informations pertinentes et identifier des sources fiables.\n2. Création d’une vidéo \nRéaliser une vidéo de trois minutes destinée à expliquer un concept scientifique à des élèves plus jeunes.\n3. Éducation aux médias : info ou intox ? \nAnalyser des publications provenant des réseaux sociaux, vérifier leur fiabilité et justifier son analyse.\n Recherche d’information : \n1. Identifiez les apprentissages visés : \nSavoirs -> Connaitre les caractéristiques d’une source fiable : auteur identifiable, organisme reconnu, date de publication, références et informations vérifiables\nSavoir-faire -> Utiliser un moteur de recherche, choisir des mots-clés pertinents, consulter plusieurs sites et extraire les informations utiles.\nCompétence -> Rechercher, sélectionner, vérifier et organiser des informations provenant de différentes sources pour répondre à une question documentaire.\nLes élèves devront exercer leur esprit critique, justifier leur choix de source, comparer les informations et prendre conscience des limites des contenus en ligne\nLes élèves réaliseront des recherches de manière progressive sans dépendre constamment de l’enseignant\n2. Construisez la grille\nCritère 1 : Utilisation du moteur de recherche \nCritère 2 : Fiabilité des sources \nCritère 3 : Sélection et vérification des informations \nCritère 4 : Organisation des informations et référencement des sources\n3. Précisez le dispositif d’évaluation\nJe combinerai l’évaluation formative et l’auto-évaluation : Pendant l’exercice, on l’utiliserait pour aider les élèves à améliorer leur travail. Et à la fin, les élèves la compléteraient aussi pour après corriger son travail. \n4. Justifiez vos choix\nJ’ai choisi ces quatre critères car ils correspondent aux étapes essentielles d’une recherche d’information : rechercher, vérifier les sources, sélectionner les informations et les organiser. Les indicateurs permettent d’observer concrètement les capacités de l’élève, notamment son esprit critique. Les quatre niveaux de maîtrise montrent une progression allant d’un élève qui a besoin d’aide à un élève autonome, capable de justifier ses choix. La combinaison de l’évaluation formative et de l’auto-évaluation permet à l’élève de recevoir des conseils, de réfléchir à ses apprentissages et d’améliorer son travail.\n2. Création d’une vidéo \nRéaliser une vidéo de trois minutes destinée à expliquer un concept scientifique à des élèves plus jeunes.\nIdentification des apprentissages visés\nSavoirs : Comprendre le concept scientifique choisi et connaître le vocabulaire associé.\nSavoir-faire : Rechercher des informations fiables, rédiger un scénario et réaliser un montage vidéo.\nCompétences : Expliquer clairement un concept scientifique à des élèves plus jeunes en respectant la durée de trois minutes.\nCapacités réflexives et autonomie : Vérifier ses sources, évaluer sa production et identifier des améliorations possibles.\nGrille d’évaluation critériée\nLe dispositif d’évaluation\nL’évaluation choisie est une évaluation formative individuelle.\nChaque élève réalise une vidéo de trois minutes dans laquelle il explique un concept scientifique à des élèves plus jeunes. \nIl doit :\nRechercher des informations scientifiques fiables.\nExpliquer le concept de manière claire et adaptée au public.\nOrganiser ses idées et réaliser une vidéo structurée.\nVérifier ses sources et évaluer sa production.\nL’enseignant utilise la grille pour identifier les acquis et les difficultés de chaque élève, puis lui donne un retour afin qu’il puisse améliorer son travail.\nJustification des choix\nPourquoi avoir retenu ces critères ?\nLes quatre critères correspondent aux apprentissages visés. Ils permettent d’évaluer la compréhension scientifique, la capacité à expliquer un concept à un public plus jeune, l’organisation de la vidéo et l’utilisation des outils numériques ainsi que la fiabilité des sources.\nPourquoi avoir choisi ces indicateurs ?\nLes indicateurs sont observables et permettent d’évaluer concrètement le travail de l’élève, comme l’utilisation du vocabulaire scientifique, la structure de la vidéo ou la vérification des sources.\nComment les niveaux de maîtrise traduisent-ils une progression ?\nLes quatre niveaux vont d’une maîtrise insuffisante à une très bonne maîtrise. Ils permettent de distinguer les difficultés de l’élève, les apprentissages en cours et les objectifs atteints, voire dépassés.\nPourquoi avoir choisi cette modalité d’évaluation ?\nL’évaluation formative permet à l’enseignant d’identifier les acquis et les difficultés de chaque élève pendant la réalisation du projet. Son retour aide l’élève à corriger ses erreurs et à améliorer sa vidéo.\n\n3. Éducation aux médias : info ou intox ? \nApprentissages visés\n\nSavoir : Connaître les informations à vérifier pour savoir si une information fiable.\nSavoir-faire : Identifier la source d’une publication, recouper les informations et vérifier les faits à l’aide de sources fiables.\nCompétence : Analyser une publication provenant des réseaux sociaux, déterminer si elle est fiable ou douteuse et justifier sa conclusion à partir d’éléments vérifiables.\nCapacité réflexive : Prendre du recul face aux informations diffusées en ligne, remettre en question une première impression et adopter une attitude prudente avant de partager une publication.\n2. Grille d’évaluation critériée\n3. Dispositif d’évaluation\nJe propose une évaluation formative individuelle.\nChaque élève reçoit une publication issue d’un réseau social contenant une information dont la fiabilité doit être vérifiée. Il doit :\nIdentifier la source et relever les indices utiles.\nEffectuer des recherches pour vérifier l’information.\nComparer les résultats obtenus avec d’autres sources.\nConclure en justifiant sa réponse par écrit.\nL’enseignant utilise la grille pour repérer les acquis et les difficultés de chaque élève, puis lui donne un retour lui permettant d’améliorer sa méthode de vérification.\n4. Justification des choix\n\nPourquoi ces critères ?\nLes quatre critères correspondent aux étapes essentielles de l’analyse d’une publication : identifier sa provenance, vérifier les faits, exercer son esprit critique et justifier sa conclusion. Ils permettent d’évaluer la démarche de l’élève et pas uniquement sa capacité à donner une réponse correcte.\nPourquoi ces indicateurs ?\nLes indicateurs sont observables dans les recherches et dans la justification écrite de l’élève. Par exemple, on peut vérifier s’il a identifié l’auteur, consulté plusieurs sources ou expliqué sa conclusion à partir d’éléments précis.\nComment les niveaux traduisent-ils une progression ?\nLes quatre niveaux permettent de distinguer une absence de démarche, une démarche partielle, une vérification pertinente et une analyse autonome et approfondie. Cette progression permet à l’enseignant de repérer précisément ce que l’élève doit encore apprendre.\nPourquoi choisir une évaluation formative ?\nL’objectif est de développer une compétence qui nécessite de l’entraînement. L’évaluation formative permet à l’enseignant de fournir des conseils ciblés et à l’élève de progresser dans sa manière de rechercher, de vérifier et d’analyser l’information.",
+    "fileUrl": "/travaux-etudiants/DI_MASCIA_Emma_Exercice_8_Construire_des_gril_2026-10-22.docx",
+    "submittedAt": "2026-10-22 14:00"
+  },
+  {
+    "id": "sub-real-0067",
     "userId": "user-e2303712@student.hech.be",
     "userName": "Michael Jamar",
     "userEmail": "e2303712@student.hech.be",
@@ -9572,7 +12099,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-09-30 14:00"
   },
   {
-    "id": "sub-real-0062",
+    "id": "sub-real-0068",
     "userId": "user-e2303712@student.hech.be",
     "userName": "Michael Jamar",
     "userEmail": "e2303712@student.hech.be",
@@ -9584,7 +12111,19 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-09-30 14:00"
   },
   {
-    "id": "sub-real-0063",
+    "id": "sub-real-0069",
+    "userId": "user-e2303712@student.hech.be",
+    "userName": "Michael Jamar",
+    "userEmail": "e2303712@student.hech.be",
+    "exerciseId": "exercice-06",
+    "exerciseTitle": "Atelier 6 : Démarche itérative (Concevoir & tester un mini-jeu)",
+    "answer": "Contexte de l'activité\nCe jeu s'inscrit dans une séquence de cours consacrée à la cybersécurité, plus précisément à la création et à la protection des mots de passe, destinée à des élèves de 1re secondaire.\nIl intervient en début de séquence, avant toute présentation théorique, afin d'introduire la thématique de manière ludique.\nLes élèves sont amenés à retrouver des mots de passe de difficulté croissante en exploitant les informations publiées sur des profils de réseaux sociaux fictifs. L'objectif est de leur faire prendre conscience que certaines informations personnelles peuvent faciliter la découverte d'un mot de passe.\nLe jeu n'a pas pour objectif d'enseigner directement les notions théoriques. Il sert de situation de départ sur laquelle l'enseignant pourra s'appuyer pour construire la suite du cours.\nÀ l'issue de l'activité, une mise en commun permettra de revenir sur les stratégies utilisées par les élèves, d'identifier les faiblesses des mots de passe proposés et d'introduire les bonnes pratiques en matière de sécurité.\nLien genially :\nhttps://view.genially.com/6adb367d65be6b7ccc535f1f?fbclid=IwY2xjawVISmlleHRuA2FlbQIxMQBwZG9mBHNydGMGYXBwX2lkATAAAR5C1DMFQvGeA0ceWdh1Is8P9BhdIye7HiTwEQEcqjiuNp742pGvYiZTTK5A2w_aem_MYxfC5A0mCOwF0mzTLqifA\nLien google forms :\nhttps://docs.google.com/forms/d/e/1FAIpQLSfNEKqB6guj8XqjFjnYvZKkLSxrmu_ZNIvzzpFzphg6Jyjy_A/viewform",
+    "content": "Contexte de l'activité\nCe jeu s'inscrit dans une séquence de cours consacrée à la cybersécurité, plus précisément à la création et à la protection des mots de passe, destinée à des élèves de 1re secondaire.\nIl intervient en début de séquence, avant toute présentation théorique, afin d'introduire la thématique de manière ludique.\nLes élèves sont amenés à retrouver des mots de passe de difficulté croissante en exploitant les informations publiées sur des profils de réseaux sociaux fictifs. L'objectif est de leur faire prendre conscience que certaines informations personnelles peuvent faciliter la découverte d'un mot de passe.\nLe jeu n'a pas pour objectif d'enseigner directement les notions théoriques. Il sert de situation de départ sur laquelle l'enseignant pourra s'appuyer pour construire la suite du cours.\nÀ l'issue de l'activité, une mise en commun permettra de revenir sur les stratégies utilisées par les élèves, d'identifier les faiblesses des mots de passe proposés et d'introduire les bonnes pratiques en matière de sécurité.\nLien genially :\nhttps://view.genially.com/6adb367d65be6b7ccc535f1f?fbclid=IwY2xjawVISmlleHRuA2FlbQIxMQBwZG9mBHNydGMGYXBwX2lkATAAAR5C1DMFQvGeA0ceWdh1Is8P9BhdIye7HiTwEQEcqjiuNp742pGvYiZTTK5A2w_aem_MYxfC5A0mCOwF0mzTLqifA\nLien google forms :\nhttps://docs.google.com/forms/d/e/1FAIpQLSfNEKqB6guj8XqjFjnYvZKkLSxrmu_ZNIvzzpFzphg6Jyjy_A/viewform",
+    "fileUrl": "/travaux-etudiants/JAMAR_Michael_Exercice_6_Demarche_iterative__2026-10-23.docx",
+    "submittedAt": "2026-10-23 14:00"
+  },
+  {
+    "id": "sub-real-0070",
     "userId": "user-e2305392@student.hech.be",
     "userName": "Amadou Bamba Traoré",
     "userEmail": "e2305392@student.hech.be",
@@ -9596,7 +12135,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-01 14:00"
   },
   {
-    "id": "sub-real-0064",
+    "id": "sub-real-0071",
     "userId": "user-e2305392@student.hech.be",
     "userName": "Amadou Bamba Traoré",
     "userEmail": "e2305392@student.hech.be",
@@ -9608,7 +12147,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-01 14:00"
   },
   {
-    "id": "sub-real-0065",
+    "id": "sub-real-0072",
     "userId": "user-e2305392@student.hech.be",
     "userName": "Amadou Bamba Traoré",
     "userEmail": "e2305392@student.hech.be",
@@ -9620,7 +12159,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-01 14:00"
   },
   {
-    "id": "sub-real-0066",
+    "id": "sub-real-0073",
     "userId": "user-e2305392@student.hech.be",
     "userName": "Amadou Bamba Traoré",
     "userEmail": "e2305392@student.hech.be",
@@ -9632,7 +12171,31 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-20 14:00"
   },
   {
-    "id": "sub-real-0067",
+    "id": "sub-real-0074",
+    "userId": "user-e2305392@student.hech.be",
+    "userName": "Amadou Bamba Traoré",
+    "userEmail": "e2305392@student.hech.be",
+    "exerciseId": "exercice-06",
+    "exerciseTitle": "Atelier 6 : Démarche itérative (Concevoir & tester un mini-jeu)",
+    "answer": "Projet de jeu éducatif sur Genially\n1. Objectif pédagogique\nÀ la fin du jeu, l’apprenant sera capable de reconnaître les principales catégories de déchets, de les \nassocier à la bonne poubelle et d’appliquer les règles essentielles du tri sélectif dans la vie \nquotidienne. Il aura aussi quelques notions de recyclage.\nPlus précisément, il devra être capable de :\n•\nIdentifier les  différentes  catégories de déchets : papier-carton, PMC, verre (blanc ou \ncoloré), déchets organiques et déchets résiduels, encombrants.\n•\nAssocier chaque déchet au conteneur approprié.\n•\nRepérer les erreurs de tri les plus fréquentes.\n•\nAdopter  des  comportements  responsables  pour  réduire  l’impact  des  déchets  sur \nl’environnement (ex : recyclage).\n2. Public cible : des élèves de P5\n3. Règles du jeu\nLe jeu repose sur un système de quatre missions successives. Il n’y a pas de règles ; le but de la \nséquence ainsi que la navigation dans l’interface sont clairement indiqués.\nRemarque : les consignes de tri doivent être adaptées aux règles locales de collecte, notamment \ncelles en vigueur en Wallonie ou dans la commune concernée.\n4. Scénario du jeu\nHistoire\nLa planète Triora est envahie par Pollutors, un peuple qui polluent Triora en jetant leurs déchets \ndans la nature. Les habitants ont oublié comment les trier correctement et les rues sont de plus en \nplus polluées.\nLe joueur incarne un apprenti gardien de la planète, recruté par Éco, une petite mascotte chargée \nde protéger l’environnement. Pour sauver Triora, il doit réussir plusieurs missions.\n\nDéroulement de l’aventure\n•\nIntroduction : L’invasion de Triora par les Pollutors et présentation de la mission.\n•\nMission 1 : Compléter un texte à trous sur le vocabulaire lié au recyclage et aux déchets.\n•\nMission 2 : Trier les déchets dans les bonnes poubelles.\n•\nMission 3 : Recycler les déchets.\n•\nMission 4 : Trier les encombrants et autres déchets particuliers.\n•\nConclusion : Le joueur sauve la planète Triora.\n5. Liens\n•\nDu Genially : https://view.genially.com/6ac9e6376ddf6a28c8afbb74\n•\nDu Google form : \nhttps://docs.google.com/forms/d/e/1FAIpQLSfHBCHfqHqnsvgX3WUnZsu14kv3FbRDtRJb_V\nkcoidtlTAMgQ/viewform?usp=publish-editor",
+    "content": "Projet de jeu éducatif sur Genially\n1. Objectif pédagogique\nÀ la fin du jeu, l’apprenant sera capable de reconnaître les principales catégories de déchets, de les \nassocier à la bonne poubelle et d’appliquer les règles essentielles du tri sélectif dans la vie \nquotidienne. Il aura aussi quelques notions de recyclage.\nPlus précisément, il devra être capable de :\n•\nIdentifier les  différentes  catégories de déchets : papier-carton, PMC, verre (blanc ou \ncoloré), déchets organiques et déchets résiduels, encombrants.\n•\nAssocier chaque déchet au conteneur approprié.\n•\nRepérer les erreurs de tri les plus fréquentes.\n•\nAdopter  des  comportements  responsables  pour  réduire  l’impact  des  déchets  sur \nl’environnement (ex : recyclage).\n2. Public cible : des élèves de P5\n3. Règles du jeu\nLe jeu repose sur un système de quatre missions successives. Il n’y a pas de règles ; le but de la \nséquence ainsi que la navigation dans l’interface sont clairement indiqués.\nRemarque : les consignes de tri doivent être adaptées aux règles locales de collecte, notamment \ncelles en vigueur en Wallonie ou dans la commune concernée.\n4. Scénario du jeu\nHistoire\nLa planète Triora est envahie par Pollutors, un peuple qui polluent Triora en jetant leurs déchets \ndans la nature. Les habitants ont oublié comment les trier correctement et les rues sont de plus en \nplus polluées.\nLe joueur incarne un apprenti gardien de la planète, recruté par Éco, une petite mascotte chargée \nde protéger l’environnement. Pour sauver Triora, il doit réussir plusieurs missions.\n\nDéroulement de l’aventure\n•\nIntroduction : L’invasion de Triora par les Pollutors et présentation de la mission.\n•\nMission 1 : Compléter un texte à trous sur le vocabulaire lié au recyclage et aux déchets.\n•\nMission 2 : Trier les déchets dans les bonnes poubelles.\n•\nMission 3 : Recycler les déchets.\n•\nMission 4 : Trier les encombrants et autres déchets particuliers.\n•\nConclusion : Le joueur sauve la planète Triora.\n5. Liens\n•\nDu Genially : https://view.genially.com/6ac9e6376ddf6a28c8afbb74\n•\nDu Google form : \nhttps://docs.google.com/forms/d/e/1FAIpQLSfHBCHfqHqnsvgX3WUnZsu14kv3FbRDtRJb_V\nkcoidtlTAMgQ/viewform?usp=publish-editor",
+    "fileUrl": "/travaux-etudiants/TRAORE_Amadou_Bamba_Exercice_6_Demarche_iterative__2026-11-06.pdf",
+    "submittedAt": "2026-11-06 14:00"
+  },
+  {
+    "id": "sub-real-0075",
+    "userId": "user-e2305392@student.hech.be",
+    "userName": "Amadou Bamba Traoré",
+    "userEmail": "e2305392@student.hech.be",
+    "exerciseId": "exercice-08",
+    "exerciseTitle": "Atelier 8 : Construire des grilles d'évaluation critériées",
+    "answer": "Projet d’évaluation critériée : apprentissages numériques.\nCas 1 : INTELLIGENCE ARTIFICIELLE\nSujet : Utiliser une IA génératrice pour créer une affiche, expérimenter différents prompts, comparer les résultats et justifier ses choix. \n1.  Apprentissages visés\n    • Savoir : Comprendre le fonctionnement global d’une IA génératrice d’image\n (génération textuelle, influence des prompts, limite et biais).\n     • Savoir-faire : Rédiger des prompts structurés, expérimenter des variations itératives et sélectionner la production la plus adaptée.\n     • Compétences : Collaborer et piloter un outil d’intelligence artificielle en tant qu’assistant créatif.\n      • Capacité réflexive : Analyser les écarts entre l’intention de départ et le résultat générée, et ajuster sa stratégie de questionnement.\n2. Grille d’évaluations\n3. Dispositif d’évaluation :\n       • Modalité : évaluation formative et auto-évaluation (via le journal de bord des prompts)\n         • Justification : l’intérêt pédagogique réside dans le processus d’essais-erreur. Suivre l’historique des prompts permet d’aider l’élève à progresser dans sa maîtrise d’outils.\n4. Justification des choix : l’évaluation ne juge pas seulement la beauté de l’affiche finale, mais la démarche méthodologique et le pilotage de l’outil. Ils ciblent l’historique des essais, la comparaison critique et la justification textuelle. \nCas 2 : RECHERCHE D’INFORMATION\nSujet : Recherche des informations sur internet concernant une personnalité scientifique, sélectionner des informations pertinentes et identifier des sources fiables. \n1.  Apprentissages visés\n    • Savoir : Connaître les critères de fiabilité d’une source et le vocabulaire spécifique aux moteurs de recherches.\n     • Savoir-faire : Formuler une requête de recherche efficace, trier et sélectionner des informations pertinentes par rapport à une bibliographie scientifique, et citer ses sources (références bibliographiques ou liens).\n     • Compétences : Mobiliser une stratégie de recherche documentaire autonome et méthodique face à un flux d’informations numériques\n      • Capacité réflexive : Prendre du recul par rapport au premier résultat affiché par un moteur de recherche et croiser les sources pour valider l’exactitude des informations.\n2. Grille d’évaluations\n3. Dispositif d’évaluation :\n       • Modalité : évaluation formative combinée à une auto-évaluation.\n         • Justification : l’élève utilise la grille comme guide pendant sa recherche pour s’ajuster en autonomie, tandis que l’enseignant l’utilise pour formulés des retours constructifs avant la production finale.\n4. Justification des choix : Ils ciblent directement le cœur de l’activité (trouver, trier, citer) sans se disperser sur la mise en page. D’autres part, ils traduisent des gestes professionnels observables. Pour terminer, la progression allant d’un comportement passif et imitateur (copier-coller) à une démarche de rigoureuse.\nCas 3 : EDUCATION AUX MEDIA : info ou intox ?\nSujet : Analyser des publications provenant des réseaux sociaux, vérifier leur fiabilité et justifie son analyse. \n1.  Apprentissages visés\n    • Savoir : Connaître les mécanismes de la désinformation (fake news) et les outils de numériques de vérification.\n     • Savoir-faire : Analyser une publication de réseau social, identifier les indices de manipulation. \n     • Compétences : Exercer son sens critique face à l’information numérique et argumenter sa position.\n      • Capacité réflexive : Démontrer une distance critique face à ses propres émotions ou croyance initiales face à une publication virale. \n2. Grille d’évaluations\n3. Dispositif d’évaluation :\n       • Modalité : évaluation par les pairs et co-évaluation.\n         • Justification : le traitement des fausses informations se prête idéalement au débat et au regard croisé pour déconstruire les biais cognitifs.\n4. Justification des choix : Ils isolent la capacité de repérage, l’enquête technique et la rigueur de l’argumentation. Par ailleurs, ils rendent observables des actions concrètes (utilisation d’outils, citation de preuves). En fin, la progression d’une adhésion naïve aux rumeurs vers une postures d’enquêteur critique outillé. \n.",
+    "content": "Projet d’évaluation critériée : apprentissages numériques.\nCas 1 : INTELLIGENCE ARTIFICIELLE\nSujet : Utiliser une IA génératrice pour créer une affiche, expérimenter différents prompts, comparer les résultats et justifier ses choix. \n1.  Apprentissages visés\n    • Savoir : Comprendre le fonctionnement global d’une IA génératrice d’image\n (génération textuelle, influence des prompts, limite et biais).\n     • Savoir-faire : Rédiger des prompts structurés, expérimenter des variations itératives et sélectionner la production la plus adaptée.\n     • Compétences : Collaborer et piloter un outil d’intelligence artificielle en tant qu’assistant créatif.\n      • Capacité réflexive : Analyser les écarts entre l’intention de départ et le résultat générée, et ajuster sa stratégie de questionnement.\n2. Grille d’évaluations\n3. Dispositif d’évaluation :\n       • Modalité : évaluation formative et auto-évaluation (via le journal de bord des prompts)\n         • Justification : l’intérêt pédagogique réside dans le processus d’essais-erreur. Suivre l’historique des prompts permet d’aider l’élève à progresser dans sa maîtrise d’outils.\n4. Justification des choix : l’évaluation ne juge pas seulement la beauté de l’affiche finale, mais la démarche méthodologique et le pilotage de l’outil. Ils ciblent l’historique des essais, la comparaison critique et la justification textuelle. \nCas 2 : RECHERCHE D’INFORMATION\nSujet : Recherche des informations sur internet concernant une personnalité scientifique, sélectionner des informations pertinentes et identifier des sources fiables. \n1.  Apprentissages visés\n    • Savoir : Connaître les critères de fiabilité d’une source et le vocabulaire spécifique aux moteurs de recherches.\n     • Savoir-faire : Formuler une requête de recherche efficace, trier et sélectionner des informations pertinentes par rapport à une bibliographie scientifique, et citer ses sources (références bibliographiques ou liens).\n     • Compétences : Mobiliser une stratégie de recherche documentaire autonome et méthodique face à un flux d’informations numériques\n      • Capacité réflexive : Prendre du recul par rapport au premier résultat affiché par un moteur de recherche et croiser les sources pour valider l’exactitude des informations.\n2. Grille d’évaluations\n3. Dispositif d’évaluation :\n       • Modalité : évaluation formative combinée à une auto-évaluation.\n         • Justification : l’élève utilise la grille comme guide pendant sa recherche pour s’ajuster en autonomie, tandis que l’enseignant l’utilise pour formulés des retours constructifs avant la production finale.\n4. Justification des choix : Ils ciblent directement le cœur de l’activité (trouver, trier, citer) sans se disperser sur la mise en page. D’autres part, ils traduisent des gestes professionnels observables. Pour terminer, la progression allant d’un comportement passif et imitateur (copier-coller) à une démarche de rigoureuse.\nCas 3 : EDUCATION AUX MEDIA : info ou intox ?\nSujet : Analyser des publications provenant des réseaux sociaux, vérifier leur fiabilité et justifie son analyse. \n1.  Apprentissages visés\n    • Savoir : Connaître les mécanismes de la désinformation (fake news) et les outils de numériques de vérification.\n     • Savoir-faire : Analyser une publication de réseau social, identifier les indices de manipulation. \n     • Compétences : Exercer son sens critique face à l’information numérique et argumenter sa position.\n      • Capacité réflexive : Démontrer une distance critique face à ses propres émotions ou croyance initiales face à une publication virale. \n2. Grille d’évaluations\n3. Dispositif d’évaluation :\n       • Modalité : évaluation par les pairs et co-évaluation.\n         • Justification : le traitement des fausses informations se prête idéalement au débat et au regard croisé pour déconstruire les biais cognitifs.\n4. Justification des choix : Ils isolent la capacité de repérage, l’enquête technique et la rigueur de l’argumentation. Par ailleurs, ils rendent observables des actions concrètes (utilisation d’outils, citation de preuves). En fin, la progression d’une adhésion naïve aux rumeurs vers une postures d’enquêteur critique outillé. \n.",
+    "fileUrl": "/travaux-etudiants/TRAORE_Amadou_Bamba_Exercice_8_Construire_des_gril_2026-10-23.docx",
+    "submittedAt": "2026-10-23 14:00"
+  },
+  {
+    "id": "sub-real-0076",
     "userId": "user-e2306390@student.hech.be",
     "userName": "Florence D’Archambeau",
     "userEmail": "e2306390@student.hech.be",
@@ -9644,7 +12207,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-05 14:00"
   },
   {
-    "id": "sub-real-0068",
+    "id": "sub-real-0077",
     "userId": "user-e2306390@student.hech.be",
     "userName": "Florence D’Archambeau",
     "userEmail": "e2306390@student.hech.be",
@@ -9656,7 +12219,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-05 14:00"
   },
   {
-    "id": "sub-real-0069",
+    "id": "sub-real-0078",
     "userId": "user-e2306390@student.hech.be",
     "userName": "Florence D’Archambeau",
     "userEmail": "e2306390@student.hech.be",
@@ -9668,7 +12231,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-15 14:00"
   },
   {
-    "id": "sub-real-0070",
+    "id": "sub-real-0079",
     "userId": "user-e2306390@student.hech.be",
     "userName": "Florence D’Archambeau",
     "userEmail": "e2306390@student.hech.be",
@@ -9680,7 +12243,19 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-15 14:00"
   },
   {
-    "id": "sub-real-0071",
+    "id": "sub-real-0080",
+    "userId": "user-e2306390@student.hech.be",
+    "userName": "Florence D’Archambeau",
+    "userEmail": "e2306390@student.hech.be",
+    "exerciseId": "exercice-06",
+    "exerciseTitle": "Atelier 6 : Démarche itérative (Concevoir & tester un mini-jeu)",
+    "answer": "Contexte de l'activité\nCe jeu s'inscrit dans une séquence de cours consacrée à la cybersécurité, plus précisément à la création et à la protection des mots de passe, destinée à des élèves de 1re secondaire.\nIl intervient en début de séquence, avant toute présentation théorique, afin d'introduire la thématique de manière ludique.\nLes élèves sont amenés à retrouver des mots de passe de difficulté croissante en exploitant les informations publiées sur des profils de réseaux sociaux fictifs. L'objectif est de leur faire prendre conscience que certaines informations personnelles peuvent faciliter la découverte d'un mot de passe.\nLe jeu n'a pas pour objectif d'enseigner directement les notions théoriques. Il sert de situation de départ sur laquelle l'enseignant pourra s'appuyer pour construire la suite du cours.\nÀ l'issue de l'activité, une mise en commun permettra de revenir sur les stratégies utilisées par les élèves, d'identifier les faiblesses des mots de passe proposés et d'introduire les bonnes pratiques en matière de sécurité.\nLien genially :\nhttps://view.genially.com/6adb367d65be6b7ccc535f1f?fbclid=IwY2xjawVISmlleHRuA2FlbQIxMQBwZG9mBHNydGMGYXBwX2lkATAAAR5C1DMFQvGeA0ceWdh1Is8P9BhdIye7HiTwEQEcqjiuNp742pGvYiZTTK5A2w_aem_MYxfC5A0mCOwF0mzTLqifA\nLien google forms :\nhttps://docs.google.com/forms/d/e/1FAIpQLSfNEKqB6guj8XqjFjnYvZKkLSxrmu_ZNIvzzpFzphg6Jyjy_A/viewform",
+    "content": "Contexte de l'activité\nCe jeu s'inscrit dans une séquence de cours consacrée à la cybersécurité, plus précisément à la création et à la protection des mots de passe, destinée à des élèves de 1re secondaire.\nIl intervient en début de séquence, avant toute présentation théorique, afin d'introduire la thématique de manière ludique.\nLes élèves sont amenés à retrouver des mots de passe de difficulté croissante en exploitant les informations publiées sur des profils de réseaux sociaux fictifs. L'objectif est de leur faire prendre conscience que certaines informations personnelles peuvent faciliter la découverte d'un mot de passe.\nLe jeu n'a pas pour objectif d'enseigner directement les notions théoriques. Il sert de situation de départ sur laquelle l'enseignant pourra s'appuyer pour construire la suite du cours.\nÀ l'issue de l'activité, une mise en commun permettra de revenir sur les stratégies utilisées par les élèves, d'identifier les faiblesses des mots de passe proposés et d'introduire les bonnes pratiques en matière de sécurité.\nLien genially :\nhttps://view.genially.com/6adb367d65be6b7ccc535f1f?fbclid=IwY2xjawVISmlleHRuA2FlbQIxMQBwZG9mBHNydGMGYXBwX2lkATAAAR5C1DMFQvGeA0ceWdh1Is8P9BhdIye7HiTwEQEcqjiuNp742pGvYiZTTK5A2w_aem_MYxfC5A0mCOwF0mzTLqifA\nLien google forms :\nhttps://docs.google.com/forms/d/e/1FAIpQLSfNEKqB6guj8XqjFjnYvZKkLSxrmu_ZNIvzzpFzphg6Jyjy_A/viewform",
+    "fileUrl": "/travaux-etudiants/D_ARCHAMBEAU_Florence_Exercice_6_Demarche_iterative__2026-10-24.docx",
+    "submittedAt": "2026-10-24 14:00"
+  },
+  {
+    "id": "sub-real-0081",
     "userId": "user-e2306390@student.hech.be",
     "userName": "Florence D’Archambeau",
     "userEmail": "e2306390@student.hech.be",
@@ -9692,7 +12267,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-16 14:00"
   },
   {
-    "id": "sub-real-0072",
+    "id": "sub-real-0082",
     "userId": "user-e2306513@student.hech.be",
     "userName": "Sara Cheng",
     "userEmail": "e2306513@student.hech.be",
@@ -9704,7 +12279,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-14 14:00"
   },
   {
-    "id": "sub-real-0073",
+    "id": "sub-real-0083",
     "userId": "user-e2306513@student.hech.be",
     "userName": "Sara Cheng",
     "userEmail": "e2306513@student.hech.be",
@@ -9716,7 +12291,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-14 14:00"
   },
   {
-    "id": "sub-real-0074",
+    "id": "sub-real-0084",
     "userId": "user-e2306513@student.hech.be",
     "userName": "Sara Cheng",
     "userEmail": "e2306513@student.hech.be",
@@ -9728,7 +12303,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-14 14:00"
   },
   {
-    "id": "sub-real-0075",
+    "id": "sub-real-0085",
     "userId": "user-e2505429@student.hech.be",
     "userName": "Juliette Renard",
     "userEmail": "e2505429@student.hech.be",
@@ -9740,7 +12315,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-01 14:00"
   },
   {
-    "id": "sub-real-0076",
+    "id": "sub-real-0086",
     "userId": "user-e2505429@student.hech.be",
     "userName": "Juliette Renard",
     "userEmail": "e2505429@student.hech.be",
@@ -9752,7 +12327,55 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-13 14:00"
   },
   {
-    "id": "sub-real-0077",
+    "id": "sub-real-0087",
+    "userId": "user-e2505429@student.hech.be",
+    "userName": "Juliette Renard",
+    "userEmail": "e2505429@student.hech.be",
+    "exerciseId": "exercice-04",
+    "exerciseTitle": "Atelier 4 : Escape Game FMTTN (Cyber-Enquête)",
+    "answer": "L’escape game a été réalisé, mais je n’ai pas pu faire de capture d’écran. Vous nous aviez dit lors \ndu cours que ce n’était pas grave et que nous ne devions pas le refaire.",
+    "content": "L’escape game a été réalisé, mais je n’ai pas pu faire de capture d’écran. Vous nous aviez dit lors \ndu cours que ce n’était pas grave et que nous ne devions pas le refaire.",
+    "fileUrl": "/travaux-etudiants/RENARD_Juliette_Exercice_4_Escape_Game_FMTTN_C_2026-11-04.pdf",
+    "submittedAt": "2026-11-04 14:00"
+  },
+  {
+    "id": "sub-real-0088",
+    "userId": "user-e2505429@student.hech.be",
+    "userName": "Juliette Renard",
+    "userEmail": "e2505429@student.hech.be",
+    "exerciseId": "exercice-05",
+    "exerciseTitle": "Atelier 5 : Défi — Créer une vidéo pour les réseaux sociaux",
+    "answer": "Lien vers la vidéo youtube  : \nhttps://youtube.com/shorts/O-sO6Fr255E?si=u4i6NamqWb0VU0VU",
+    "content": "Lien vers la vidéo youtube  : \nhttps://youtube.com/shorts/O-sO6Fr255E?si=u4i6NamqWb0VU0VU",
+    "fileUrl": "/travaux-etudiants/RENARD_Juliette_Exercice_5_Defi_Creer_une_vide_2026-11-04.pdf",
+    "submittedAt": "2026-11-04 14:00"
+  },
+  {
+    "id": "sub-real-0089",
+    "userId": "user-e2505429@student.hech.be",
+    "userName": "Juliette Renard",
+    "userEmail": "e2505429@student.hech.be",
+    "exerciseId": "exercice-06",
+    "exerciseTitle": "Atelier 6 : Démarche itérative (Concevoir & tester un mini-jeu)",
+    "answer": "Lien de mon Genially : https://view.genially.com/6aeb1a925a6f4b743843b301",
+    "content": "Lien de mon Genially : https://view.genially.com/6aeb1a925a6f4b743843b301",
+    "fileUrl": "/travaux-etudiants/RENARD_Juliette_Atelier_6_Demarche_iterative_e_2026-11-04.pdf",
+    "submittedAt": "2026-11-04 14:00"
+  },
+  {
+    "id": "sub-real-0090",
+    "userId": "user-e2505429@student.hech.be",
+    "userName": "Juliette Renard",
+    "userEmail": "e2505429@student.hech.be",
+    "exerciseId": "exercice-08",
+    "exerciseTitle": "Atelier 8 : Construire des grilles d'évaluation critériées",
+    "answer": "Exercice 08 – Grilles critériées · Juliette Renard · 1 \nExercice 08 \nConstruire des grilles d’évaluation critériées \nJuliette Renard  ·  HECh – Les Rivageois  ·  Novembre 2026 \nCas 1 Création d’une vidéo \nRéaliser une vidéo de trois minutes destinées à expliquer un concept scientifique à des élèves plus jeunes. \nContexte : 3e secondaire, par groupes de trois, en lien avec le cours de sciences. Chaque groupe explique une \nnotion vue en classe (par exemple les phases de la Lune, le cycle de l’eau ou la photosynthèse, etc.) à des élèves \nde 5e-6e primaire d’une école partenaire. Le montage se fait dans un espace en ligne partagé par le groupe. \n1. Apprentissages visés \nContenu du référentiel \nAttendu \nAnnée \nSAVOIRS \nNotions spécifiques liées à \nl’éthique des médias \nnumériques \nUtiliser, adéquatement en contexte, les notions et les \ntermes dont droit à la vie privée, droit à l’oubli, droit de \nretrait, liberté d’expression/de censure/de modération, \nlicence open source*. \nS1 (prérequis) \nLicences « Creative Commons » \nSavoir ce qu’est une licence Creative Commons (définie \ndans le glossaire du référentiel) et ce que veulent dire les \nprincipales conditions (citer l’auteur, pas d’usage \ncommercial). \ncomplément \nLangage audiovisuel (chapitre \n6.7 du cours) \n• Connaître les principaux plans (gros plan, plan moyen, \nplan d’ensemble) et savoir à quoi ils servent. \n• Savoir ce qu’est un scénarimage (storyboard) : une \nsuite de cases dessinées, plan par plan, qui montre ce \nqu’on verra et ce qu’on entendra dans la vidéo avant de \nla filmer (cadrage, texte dit, son, durée). \n• Savoir à quoi sert une voix off : enregistrer l’explication \nà part, puis la poser sur les images. \ncomplément \nNotion scientifique expliquée \nBien comprendre la notion choisie (cours de sciences) et \nconnaître les erreurs que les élèves font souvent à son sujet. \ncomplément \nSAVOIR-FAIRE \nEffectuer le montage d’un son \net/ou d’une vidéo. \nUtiliser les fonctions de montage dont couper, copier, \ncoller, effacer. \nP5 (prérequis) \nAppliquer des principes \nd’élaboration d’un message \nmultimédia. \nAppliquer des principes d’élaboration d’un message \nmultimédia pour appuyer un discours. \nP6 (prérequis) \nUtiliser conjointement des \napplications*/des logiciels* \ndisponibles dans un espace \nnumérique. \nUtiliser conjointement des applications*/des logiciels* \ndisponibles dans un espace collaboratif numérique en \nligne. \nS3 \nParticiper dans un espace \ncollaboratif numérique. \nRepérer, accepter et/ou refuser les interventions des \ncollaborateurs. \nS3 \nUtiliser l’historique de \nrévisions. \nRevenir à une version antérieure du travail. \nS3 \n\nExercice 08 – Grilles critériées · Juliette Renard · 2 \nContenu du référentiel \nAttendu \nAnnée \nRespecter les droits de \npropriété. \nRespecter les droits de propriété, dans des situations de \ncommunication et de collaboration. \nS3 \nRespecter les droits à l’image \net à la voix. \nRespecter le droit à l’image et à la voix, dans des situations \nde communication et de collaboration. \nS3 \nCOMPÉTENCES \nProduire et traiter des \ncontenus multimédias. \nProduire et traiter des contenus multimédias de manière \ncollaborative. \nS3 \nCollaborer sur un contenu \nnumérique. \nCollaborer sur un contenu numérique. \nS3 \nLes lignes « complément » ne sont pas des attendus du référentiel FMTTN. Je prévois de les expliquer aux élèves \nde manière brève et précise avant le projet, pour les aider à concevoir leur vidéo. Les licences Creative Commons \nleur permettent de savoir quelles images et quelles musiques ils peuvent utiliser. Le langage audiovisuel, qui vient \ndu chapitre 6.7 du cours et de la partie « Langages médiatiques » de la brochure sur l’éducation aux médias, les \naide à choisir leurs plans et à préparer leur scénarimage. La notion scientifique, elle, vient du cours de sciences. \nDéfi pour les élèves plus rapides : les groupes qui avancent vite peuvent aller plus loin avec des notions du \nchapitre 6.7 qui dépassent le référentiel : les angles de prise de vue (plongée, contre-plongée), les raccords \n(champ/contrechamp, fondu) et les règles des 180° et des 30°. Ce défi n’est pas demandé à tout le monde et \nn’est pas nécessaire pour atteindre le niveau « Maîtrisé ». \nCapacités transversales \n• Communication : expliquer quelque chose à des enfants qui n’ont pas les mêmes connaissances. \n• Collaboration : se partager le travail, écouter les idées des autres et décider ensemble. \n• Esprit critique : regarder sa propre vidéo avec du recul et se demander ce que le public va comprendre. \n• Créativité : trouver des comparaisons et des images qui rendent la notion facile à comprendre. \n\nExercice 08 – Grilles critériées · Juliette Renard · 3 \n2. Grille critériée \nCritère et indicateurs observables \nÀ renforcer \nEn développement \nMaîtrisé \nTrès bonne maîtrise \n1. Contenu juste et bien organisé \n• Pas d’erreur scientifique \n• Simplifications qui restent justes \n• Une structure : accroche, explication, \nexemple, résumé \n• Environ trois minutes \nLa vidéo contient des erreurs ou \nparle d’autre chose que la notion. \nOn ne voit pas de fil conducteur. La \ndurée est très loin des trois \nminutes. \nLe contenu est plutôt juste, mais \nune simplification donne une idée \nfausse (par exemple : « la Lune \nchange de forme parce que la Terre \nlui fait de l’ombre »). Il manque une \npartie de la structure, souvent le \nrésumé. La durée est \napproximative. \nLa notion est juste et les \nsimplifications ne la déforment pas. \nOn retrouve l’accroche, \nl’explication, un exemple et un \nrésumé. La vidéo dure environ trois \nminutes. \nLe contenu est juste et complet \npour des élèves de primaire. Le \ngroupe pense à une erreur \nfréquente et l’explique dans la \nvidéo. Chaque partie sert vraiment \nà l’explication. \n2. Adaptée au public \n• Mots simples, mots difficiles expliqués \n• Exemples de la vie des enfants \n• Rythme qu’on peut suivre \n• Compréhension vérifiée avec un petit \nquestionnaire \nLes mots sont ceux d’un manuel ou \nd’un adulte, il n’y a pas d’exemple \net ça parle trop vite. Au \nquestionnaire, les enfants ne \nretiennent presque rien. \nIl y a quelques efforts (un exemple, \nun mot expliqué), mais pas partout, \net certains passages vont trop vite. \nLes réponses au questionnaire sont \nmoyennes. \nLes mots sont simples et les mots \ndifficiles sont expliqués. Les \nexemples parlent aux enfants et le \nrythme est bon. La plupart des \nenfants répondent bien aux \nquestions principales. \nToute la vidéo est pensée pour les \nenfants (ton, comparaisons, \nquestions posées au spectateur). Le \ngroupe regarde les réponses au \nquestionnaire et explique ce qu’il \nchangerait. \n3. Réalisation de la vidéo \n• Scénarimage fait avant de filmer \n• Image nette et bien cadrée, voix (ou \nvoix off) qu’on entend bien \n• Montage : couper, enchaîner, ajouter \ndes titres \n• Plans choisis pour aider à comprendre \nIl n’y a pas de scénarimage. L’image \nest floue ou mal cadrée, on \nn’entend pas la voix. Les morceaux \nsont mis bout à bout sans montage. \nLe scénarimage est très court et peu \nsuivi. L’image et le son sont bons \npar moments seulement (bruit de \nfond, contre-jour). Le montage est \nbasique, avec des coupures \nbrusques. Certaines images sont \njuste là pour décorer. \nLe scénarimage est complet et \nindique les plans prévus. L’image \nest nette, on entend bien la voix. Le \nmontage est soigné : les morceaux \ns’enchaînent, les titres sont lisibles \net les images illustrent l’explication. \nLe scénarimage évolue pendant le \nprojet. Le groupe explique pourquoi \nil a choisi tel plan (un gros plan pour \nmontrer un détail, un plan \nd’ensemble pour situer). Le \nmontage est fluide et il n’y a pas \nd’image inutile. \n4. Travail de groupe et droits \n• Chacun participe (visible dans \nl’historique des versions) \n• Les idées des autres sont discutées \navant d’être acceptées ou refusées \n• Images et musiques libres de droits ou \nsous licence Creative Commons, citées \n• Accord des personnes filmées ou \nenregistrées \nUne seule personne fait presque \ntout. Les images et musiques sont \nprises sur Internet sans vérifier les \ndroits et ne sont pas citées. Des \npersonnes sont filmées sans leur \naccord. \nLe travail est partagé mais pas de \nfaçon égale. Les commentaires dans \nl’espace en ligne sont peu utilisés. \nSeulement une partie des images et \nmusiques est vérifiée et citée. On \ndemande l’accord des personnes à \nl’oral, sans trace. \nChacun participe, on le voit dans \nl’historique des versions. Les idées \nsont discutées. Toutes les images et \nmusiques sont libres de droits ou \nsous licence Creative Commons et \ncitées au générique. Les personnes \nfilmées ont donné leur accord par \nécrit. \nLe groupe s’organise (planning, \nrôles clairs) et explique ses \ndécisions. Il revient à une ancienne \nversion quand c’est utile. Il choisit \nles licences en sachant ce qu’elles \npermettent (par exemple CC BY ou \nCC BY-NC) et respecte ces règles \nsans qu’on le lui rappelle. \n\nExercice 08 – Grilles critériées · Juliette Renard · 4 \n3. Dispositif d’évaluation \nLe projet est long, donc je prévois plusieurs moments d’évaluation : un diagnostic au départ, deux étapes \nformatives, une co-évaluation et une évaluation sommative à la fin. \nMoment \nModalité \nQui utilise la grille ? \nTrace / production \nPremière séance \nÉvaluation \ndiagnostique \nL’enseignant (sans la \ngrille) \nPetit défi : une vidéo de 30 \nsecondes à 1 minute faite en 50 \nminutes \nLancement \nDécouverte des critères \nLa classe, sur deux vidéos \nd’explication trouvées en \nligne (une réussie, une \nmoins réussie) \nGrille remplie ensemble \nAvant de filmer \nÉvaluation formative \n(étape 1) \nL’enseignant, critères 1 \net 3 \nScénario et scénarimage acceptés \nou à retravailler \nPremier montage Test auprès du public \n(étape 2) \nLes élèves de primaire \n(questionnaire de 3-4 \nquestions), puis le groupe \npour le critère 2 \nRéponses au questionnaire, liste de \nchangements à faire \nVersion finale \nCo-évaluation \nLe groupe et l’enseignant \nremplissent chacun la \ngrille, puis en discutent \nLes deux grilles comparées \nFin \nÉvaluation sommative \nL’enseignant, toute la \ngrille \nVidéo finale, historique des \nversions, petit bilan individuel \n \nDiagnostic : je reprends l’idée de l’exercice 05 fait au cours (« créer une vidéo pour les réseaux sociaux »). En 50 \nminutes, les groupes font une vidéo très courte sur un sujet simple. Cela permet à l’enseignant de voir ce que les \nélèves savent déjà faire (cadrer, enregistrer une voix, monter avec CapCut par exemple) et ce qu’il faudra leur \napprendre. \nÉtape 1 : l’enseignant vérifie le scénario avant le tournage, pour éviter que le groupe filme une explication fausse. \nLe professeur de sciences peut aider pour le critère 1. \nÉtape 2 : le premier montage est montré à des élèves de primaire, qui répondent à quelques questions sur la \nnotion. Le groupe regarde leurs réponses et améliore sa vidéo. \nCo-évaluation : le groupe et l’enseignant remplissent la grille chacun de leur côté, puis comparent. Ensuite, \nl’enseignant donne l’évaluation finale. Pour le critère 4, l’historique des versions et un petit bilan individuel \npermettent de voir ce que chacun a fait. \n4. Justification des choix \na) Les critères et les indicateurs \nPour les trois premiers critères, je me suis basée sur les trois dimensions de l’éducation aux médias de la brochure \n: le contenu (dimension informationnelle), le public (dimension sociale) et la technique (dimension technique). \nUne vidéo peut être bien filmée mais fausse, ou juste mais trop difficile pour des enfants. En séparant ces trois \naspects, on voit mieux ce que l’élève réussit et ce qui lui pose problème. \n• Contenu juste et bien organisé : quand on simplifie, on risque de dire des choses fausses. C’est pour ça que \nj’ai mis un indicateur sur les simplifications. La structure et la durée correspondent à l’attendu « appliquer \ndes principes d’élaboration d’un message multimédia pour appuyer un discours ». \n\nExercice 08 – Grilles critériées · Juliette Renard · 5 \n• Adaptée au public : c’est le cœur de la consigne, puisque la vidéo est pour des élèves plus jeunes. Le \nquestionnaire permet de vérifier ce que les enfants ont vraiment compris, au lieu de juste le supposer. \n• Réalisation de la vidéo : ce critère reprend les savoir-faire de montage du référentiel (couper, copier, coller, \neffacer) et quelques bases du chapitre 6.7. Je n’évalue pas seulement si c’est net et audible, mais aussi si les \nplans choisis aident à comprendre. Le scénarimage est un indicateur important : il oblige le groupe à réfléchir \nà la vidéo avant de filmer. \n• Travail de groupe et droits : en S3, le référentiel insiste sur le travail à plusieurs et sur le respect des droits « \ndans des situations de communication et de collaboration ». L’historique des versions et le générique sont \ndes traces faciles à vérifier. \nb) Les niveaux de maîtrise \nAu niveau « À renforcer », l’élève ne tient pas compte du critère. En « En développement », il en tient compte un \npeu ou pas tout le temps. En « Maîtrisé », il le fait à chaque fois. En « Très bonne maîtrise », il va plus loin : il \nprévoit une erreur fréquente, analyse les réponses du public ou explique ses choix de plans. \nc) Les modalités d’évaluation \n• Le diagnostic évite de croire que les élèves savent déjà faire une vidéo parce qu’ils filment souvent avec leur \ntéléphone. On voit ce qu’ils savent vraiment. \n• Les étapes formatives sont importantes parce que le projet dure longtemps. Une erreur dans le contenu ou \nun scénario pas clair coûte cher si on la découvre seulement à la fin. \n• Le test avec les élèves de primaire est l’évaluation la plus proche de la réalité : ce sont les vrais destinataires \nqui montrent si la vidéo fonctionne. C’est aussi la dimension sociale de l’éducation aux médias, qui \ns’intéresse à l’effet d’un média sur son public. \n• La co-évaluation est utile parce que certains critères laissent de la place à l’interprétation (un rythme « \nadapté », un exemple « parlant »). Comparer l’avis du groupe et celui de l’enseignant oblige les élèves à \nexpliquer leurs choix. \n• L’évaluation sommative arrive à la fin d’un projet complexe, après plusieurs occasions de s’améliorer. Elle est \ndonc juste pour les élèves. \n\nExercice 08 – Grilles critériées · Juliette Renard · 6 \nCas 2   Création d’un jeu numérique \nCréer avec Scratch un jeu comprenant un objectif, des règles, plusieurs niveaux et des interactions avec le joueur. \nContexte : 2e secondaire, par deux, à la fin d’une séquence sur les boucles, les conditions et les variables dans \nScratch. Le jeu est rendu en deux fois : une version 1, puis une version 2 améliorée, comme dans les projets de \nprogrammation que nous avons faits au cours. \n1. Apprentissages visés \nContenu du référentiel \nAttendu \nAnnée \nSAVOIRS \nProgrammation et \nlogigrammes* \nExpliquer les termes dont algorithme*, logigramme*, \ncondition, boucle, langage de programmation. \nP6 (prérequis) \nProgrammation et \nlogigrammes* \nDifférencier algorithme* et programme*. \nP6 (prérequis) \nProgrammation et \nlogigrammes* \nExpliquer le concept de variable. \nS1 (prérequis) \nProgrammation et \nlogigrammes* \nExpliquer l’effet des opérateurs logiques. \nS2 \nSAVOIR-FAIRE \nLire un algorithme* simple. \nVerbaliser un logigramme* intégrant une condition, une \nboucle, un opérateur logique et une variable. \nS2 \nÉcrire un algorithme* simple. \nÉcrire un logigramme* intégrant une condition, une \nboucle, un opérateur logique et une variable. \nS2 \nLire un programme* simple. \nLire un programme* intégrant une boucle, une condition, \nun opérateur logique et une variable. \nS2 \nÉcrire un programme* simple. \nTraduire un logigramme* intégrant une condition, une \nboucle, un opérateur logique et une variable en langage de \nprogrammation. \nS2 \nCOMPÉTENCES \nConcevoir un algorithme* pour \nrésoudre un problème simple. \nConcevoir un logigramme* intégrant une boucle, une \ncondition, un opérateur logique et une variable. \nS2 \nConcevoir un programme* \npour résoudre un problème. \nTraduire un logigramme* intégrant une boucle, une \ncondition, un opérateur logique et une variable en langage \nde programmation, le tester, le déboguer et l’optimiser. \nS2 \nDéfi pour les élèves plus rapides : les groupes qui finissent vite peuvent aller plus loin avec des notions vues \ndans les slides de programmation mais qui dépassent le référentiel de S2 : utiliser des clones (par exemple pour \nfaire apparaître plusieurs ennemis) ou une liste (par exemple pour garder les meilleurs scores). Ce défi est \nfacultatif et n’est pas nécessaire pour atteindre le niveau « Maîtrisé ». \nCapacités transversales \n• Autonomie : chercher d’où vient un bug et essayer des solutions avant de demander de l’aide. \n• Réflexivité : noter ce qu’on fait et expliquer comment on a corrigé une erreur. \n• Créativité : inventer son propre jeu tout en respectant la consigne. \n• Argumentation : donner un avis justifié sur le jeu d’un autre groupe. \n\nExercice 08 – Grilles critériées · Juliette Renard · 7 \n2. Grille critériée \nCritère et indicateurs observables \nÀ renforcer \nEn développement \nMaîtrisé \nTrès bonne maîtrise \n1. Conception du jeu \n• Logigramme fait avant de programmer \n• But et règles expliqués au joueur \n• Niveaux de plus en plus difficiles \nIl n’y a pas de logigramme, ou il n’a \nrien à voir avec le jeu. On ne \ncomprend pas le but ni comment on \ngagne ou on perd. Il n’y a qu’un \nniveau. \nLe logigramme montre seulement \nune partie des règles (souvent, la fin \nde partie manque). On comprend le \nbut, mais certaines règles ne sont \npas claires. Il y a plusieurs niveaux, \nmais ils se jouent pareil. \nLe logigramme montre les règles \nprincipales (déplacement, points, \nfin de partie) avec au moins une \nboucle et une condition. Le but et \nles règles sont expliqués au joueur. \nLe niveau 2 est plus difficile que le \nniveau 1 (plus rapide, plus \nd’obstacles…). \nLe logigramme contient une boucle, \nune condition, une variable et un \nopérateur logique, et il correspond \nau programme final. Les règles vont \nbien ensemble et une variable règle \nla difficulté des niveaux. \n2. Utilisation des blocs de \nprogrammation \n• Boucles (répéter, indéfiniment, \njusqu’à) \n• Conditions et capteurs testés en \ncontinu \n• Variables mises à zéro au début puis \nmodifiées \n• Opérateurs logiques (et, ou, non) \nLe programme est une suite de \nblocs sans boucle ni condition, ou il \ny a des blocs qui ne servent à rien \n(une variable créée mais jamais \nutilisée). \nIl y a des boucles et des conditions, \nmais mal placées : un test fait une \nseule fois en dehors d’une boucle, \nune variable pas remise à zéro, des \nblocs recopiés au lieu d’une boucle. \nPas d’opérateur logique. \nLes boucles et les conditions sont \nbien placées. Au moins deux \nvariables (par exemple le score et \nles vies) sont mises à zéro au début \npuis changent pendant la partie. Au \nmoins un opérateur logique est bien \nutilisé. \nLes blocs sont bien combinés : \nconditions les unes dans les autres, \nrègles avec un opérateur logique (« \nsi score > 10 et vies > 0 »), variable \nqui fait passer au niveau suivant. \nLes variables ont des noms clairs. \n3. Le jeu fonctionne \n• Le jeu redémarre bien au drapeau vert \n• Le jeu réagit aux touches du joueur \n• Le joueur voit son score, la fin de \npartie, entend des sons \n• Pas de blocage \nLe jeu ne se lance pas ou se bloque \ntrès vite. Le joueur ne peut rien \nfaire. \nLe jeu se lance, mais des bugs \ngênent (le lutin sort de l’écran, le \nscore ne revient pas à zéro, la partie \nne finit jamais). Le joueur n’a \nqu’une seule touche. \nLe jeu repart à zéro à chaque \ndrapeau vert, réagit aux touches et \naffiche le score et la fin de partie. Il \nreste peut-être de petits défauts, \nmais on peut jouer. \nOn peut jouer du début à la fin sans \nbug. Le joueur a plusieurs façons \nd’agir (clavier, souris, questions) et \nle jeu lui répond de plusieurs façons \n(score, vies, sons, messages, décor \nqui change). \n4. Tester, corriger, améliorer \n• Tests notés dans un carnet de bugs \n• Cause des erreurs trouvée et corrigée \n• Avis des autres groupes utilisés \n• Programme simplifié (boucles, blocs \npersonnalisés) \nL’élève ne teste pas son jeu ou ne \nfait rien quand on lui montre une \nerreur. Il attend que l’enseignant \ncorrige. \nL’élève trouve des erreurs en \ntestant, mais il a besoin de \nbeaucoup d’aide pour les corriger. Il \nn’utilise pas les avis des autres. Le \nprogramme reste long et répétitif. \nL’élève teste, trouve et corrige seul \nla plupart des erreurs. Il utilise au \nmoins un avis d’un autre groupe et \nremplace au moins une répétition \npar une boucle ou un bloc \npersonnalisé. \nL’élève teste chaque règle, même \nles cas rares. Il explique d’où venait \nune erreur et comment il l’a \ncorrigée. Il dit pourquoi il a suivi ou \nnon les avis reçus et simplifie son \nprogramme (blocs personnalisés, \nblocs inutiles enlevés). \n\nExercice 08 – Grilles critériées · Juliette Renard · 8 \n3. Dispositif d’évaluation \nJe suis l’ordre proposé dans le cours : on présente les critères, les élèves produisent, les pairs évaluent, les élèves \naméliorent, ils s’auto-évaluent, puis l’enseignant évalue. \nMoment \nModalité \nQui utilise la grille ? \nTrace / production \nDébut de \nséquence \nÉvaluation \ndiagnostique \nL’enseignant (sans la \ngrille) \nQuelques niveaux de Compute it! \npour voir ce que les élèves savent \nsur les boucles, les conditions et les \nvariables \nAvant le projet \nPrésentation des \ncritères \nLa classe \nGrille expliquée avec des exemples \nde jeux \nVersion 1 \nÉvaluation par les pairs \n(formative) \nUn autre groupe, critères \n1 à 3 \nFiche « une réussite, un point à \naméliorer, une idée », sans note \nEntre V1 et V2 \nAmélioration \nLe groupe \nCarnet de bugs : erreur, cause, \ncorrection, avis suivis ou non \nAvant la remise \nAuto-évaluation \nLe groupe, toute la grille \nGrille remplie, avec un exemple \npour chaque niveau choisi \nFin \nÉvaluation sommative \nL’enseignant, toute la \ngrille \nJeu final, logigramme et carnet de \nbugs \n \nPendant l’évaluation par les pairs, chaque groupe joue une dizaine de minutes au jeu d’un autre groupe et regarde \nson programme. Le critère 4 n’est pas évalué par les pairs, parce qu’ils ne voient pas comment l’autre groupe a \ntravaillé. \n4. Justification des choix \na) Les critères et les indicateurs \n• Conception du jeu : le référentiel demande de concevoir un logigramme avec une boucle, une condition, un \nopérateur logique et une variable. La consigne demande aussi un but, des règles et des niveaux, et il faut y \nréfléchir avant de programmer. Les slides du cours le disent : programmer sert surtout à apprendre à \norganiser et planifier la résolution d’un problème. \n• Utilisation des blocs : ce critère reprend les savoir-faire de la S2. Je ne regarde pas seulement si le bloc est là, \nmais s’il est bien utilisé. Par exemple, une condition en dehors d’une boucle n’est testée qu’une fois, et une \nvariable pas remise à zéro fausse le score dès la deuxième partie. Ce sont des erreurs fréquentes, qui aident \nà faire la différence entre les niveaux. \n• Le jeu fonctionne : un jeu, c’est fait pour jouer. Ce critère regarde le résultat du côté du joueur. On peut \nl’évaluer juste en jouant, donc les pairs peuvent le faire. \n• Tester, corriger, améliorer : le référentiel demande aussi de « tester, déboguer et optimiser ». Un jeu qui \nmarche a peut-être été corrigé par l’enseignant. À l’inverse, un jeu avec des défauts peut montrer que l’élève \na beaucoup cherché seul. Le carnet de bugs permet de voir ce travail. \nb) Les niveaux de maîtrise \nPour chaque critère, on passe de « le bloc ou la démarche n’est pas là » à « c’est là mais mal utilisé », puis à « c’est \nbien utilisé et l’élève le fait seul », et enfin à « l’élève combine plusieurs choses et peut expliquer ses choix ». Pour \nêtre « Maîtrisé », il faut au moins un opérateur logique bien utilisé, parce que c’est la nouveauté de la S2 par \nrapport à la S1. \n \n\nExercice 08 – Grilles critériées · Juliette Renard · 9 \nc) Les modalités d’évaluation \n• L’évaluation par les pairs est logique pour un jeu, puisqu’il est fait pour que d’autres y jouent. En lisant le \nprogramme d’un autre groupe, l’élève travaille aussi un attendu du référentiel (« lire un programme \nintégrant une boucle, une condition, un opérateur logique et une variable »). Un avis écrit aide plus qu’une \nnote pour améliorer la version 2. \n• L’auto-évaluation se fait après les avis des pairs, avec la même grille. L’élève peut comparer ce qu’il pense de \nson jeu et ce que les autres en ont dit. \n• L’évaluation sommative porte sur la version 2, donc sur ce que l’élève sait faire après avoir reçu des conseils. \nC’est plus juste que de noter la première version. \n\nExercice 08 – Grilles critériées · Juliette Renard · 10 \nCas 3   Démontage et remontage d’un ordinateur \nDémonter un ordinateur, identifier ses composants, expliquer leur fonction et remonter correctement la machine. \nContexte : 1re secondaire, par groupes de 2 ou 3, avec de vieux ordinateurs de bureau donnés par l’école. J’adapte \nen classe l’activité « Défi hardware » que nous avons faite au cours (exercice 07). Les élèves n’ont pas de mode \nd’emploi détaillé : ils doivent observer, démonter, chercher l’information, s’aider entre eux, puis remonter le PC \net le faire redémarrer. Chaque groupe a des outils, un bracelet antistatique, un bac pour les vis et de la \ndocumentation technique. \nCe que les élèves rendent : un schéma annoté du PC, un tableau « Composant → Fonction → Connexions », des \nphotos des étapes, les problèmes rencontrés et leurs solutions, et un bilan de groupe. La grille utilise ces traces et \nce que l’enseignant observe pendant l’activité. \n1. Apprentissages visés \nContenu du référentiel \nAttendu \nAnnée \nSAVOIRS \nVocabulaire spécifique au \nhardware* \nDistinguer hardware* de software*, mémoire vive de \nmémoire morte, stockage interne de stockage externe. \nS1 \nVocabulaire spécifique au \nhardware* \nUtiliser, adéquatement et en contexte, le terme \npériphérique. \nS1 \nÉquipements de protection \nÉnoncer les équipements de protection requis, en lien avec \nl’environnement de travail*, les consommables*, les outils, \nles ustensiles, les machines et les techniques*. \nS1 \nComposants d’un ordinateur \nNommer et situer les principaux composants (carte mère, \nprocesseur, mémoire vive, disque dur ou SSD, alimentation, \nventilateur) et dire à quoi ils servent. \ncomplément \nSAVOIR-FAIRE \nPréparer le poste de travail*, le \nmatériel* et les \nconsommables* nécessaires à \nune tâche. \nChoisir le matériel* et les consommables* parmi ce qui est \nmis à disposition. Les agencer sur son poste de travail*. \nVérifier l’opérationnalité du matériel* (qui peut faire \nl’objet d’un montage par l’élève). \nS1 \nGérer l’espace de travail. \nOrganiser et maintenir un espace de travail fonctionnel : \npropre, rangé, organisé. \nS1 \nLire un document technique*. \nExpliciter des informations d’une fiche technique, d’un \nmode d’emploi, en lien avec un objet technologique*. \nS1 \nAppliquer des techniques* de \nmontage et de démontage \nd’un objet technologique*. \nDémonter un objet technologique* (en tout ou en partie) \nincluant un circuit électrique simple, en utilisant des outils \nadaptés ; le remonter sur la base de traces du démontage. \nS1 \nCOMPÉTENCES \nExécuter une tâche en toute \nsécurité. \nAdopter, avec l’aide de l’enseignant, une attitude proactive \nqui prend en considération les risques et les dangers, pour \nsoi et pour les autres, lors de la préparation du poste de \ntravail* et de l’exécution des gestes techniques*, en \nrecourant notamment aux équipements de protection \nadéquats. \nS1 \n\nExercice 08 – Grilles critériées · Juliette Renard · 11 \nContenu du référentiel \nAttendu \nAnnée \nDiagnostiquer le \ndysfonctionnement d’un objet \ntechnologique* et intervenir \ndans la mesure du possible. \nDiagnostiquer et intervenir, dans la mesure du possible, sur \nun dysfonctionnement d’un objet technologique* incluant \nun circuit électrique simple. \nS1 \nLe référentiel parle d’« objet technologique » en général et ne cite pas les composants d’un ordinateur. J’ai ajouté \nla ligne « complément » parce que la consigne demande d’identifier les composants et d’expliquer leur fonction. \nCapacités transversales \n• Méthode : observer avant d’agir et garder des traces pour pouvoir revenir en arrière. \n• Autonomie : suivre la démarche « j’observe, je cherche, je demande à un pair, je teste, je demande à \nl’enseignant ». \n• Entraide : aider un autre groupe en expliquant, sans faire la manipulation à sa place. \n• Réflexivité : comprendre ses erreurs et ce qu’on a appris en manipulant. \n• Communication : expliquer à quoi sert un composant avec les bons mots. \n• Écocitoyenneté : comprendre qu’un ordinateur peut se réparer et resservir. Le référentiel de S1 invite \nd’ailleurs à penser à réparer avant de jeter. \n\nExercice 08 – Grilles critériées · Juliette Renard · 12 \n2. Grille critériée \nCritère et indicateurs observables \nÀ renforcer \nEn développement \nMaîtrisé \nTrès bonne maîtrise \n1. Sécurité et poste de travail \n• PC débranché et électricité statique \névitée avant d’ouvrir (bracelet, toucher \nle boîtier) \n• Bons outils, sans forcer \n• Vis et pièces rangées par étape dans le \nbac \nL’élève ouvre le PC sans le \ndébrancher ou sans se protéger de \nl’électricité statique, même après \nun rappel. Il utilise un mauvais outil \nou force. Les vis et les pièces sont \nmélangées sur la table. \nL’élève respecte les règles de \nsécurité seulement quand \nl’enseignant les rappelle. Il prend \nparfois un mauvais outil. Il range \nune partie des vis, mais sans les \nséparer par étape. \nL’élève débranche le PC et met son \nbracelet avant de commencer, sans \nrappel. Il utilise les bons outils sans \nforcer et range les vis et les pièces \npar étape. \nL’élève respecte toutes les règles \nsans rappel et sait expliquer \npourquoi (danger pour lui, danger \npour les composants). Son poste \nreste rangé jusqu’à la fin. Il prévient \nles autres quand il voit un danger. \n2. Démontage et traces \n• Observer et faire des hypothèses avant \nde toucher \n• Ordre logique (capot, câbles, cartes, \ncomposants) \n• Photos des étapes et notes pour le \nremontage \n• Gestes précis, sans forcer \nL’élève démonte sans regarder \navant, au hasard, ou arrache des \npièces. Il ne garde aucune trace. \nL’ordre est logique en partie. Les \ntraces sont incomplètes (quelques \nphotos dans le désordre, des étapes \noubliées). Il arrive que l’élève \ndébranche un câble en tirant sur le \nfil. \nL’élève regarde ce qu’il va enlever \navant d’agir, puis démonte dans un \nordre logique. Il photographie les \nétapes importantes et note ce qui \nservira au remontage. Il ouvre \ncorrectement les clips et les \nverrous. \nL’élève prévoit l’ordre du \ndémontage avant de commencer et \nsait dire pourquoi. Ses traces sont \ncomplètes et en ordre, un autre \ngroupe pourrait les utiliser. Aucune \npièce n’est abîmée. \n3. Les composants et leur rôle \n• Composants nommés et placés sur le \nschéma \n• Différences : mémoire vive / mémoire \nmorte, stockage interne / externe, \ncomposant / périphérique \n• Tableau « Composant → Fonction → \nConnexions » complet et juste \n• Explication de comment les \ncomposants travaillent ensemble \nL’élève connaît peu de composants \nou les confond (par exemple la \nmémoire vive et le disque dur). Il ne \nsait pas à quoi ils servent. \nL’élève connaît la plupart des \ncomposants, mais explique leur rôle \nde façon vague (« ça sert à faire \nmarcher l’ordi »). Il confond encore \nmémoire vive et stockage, ou \ncomposant et périphérique. \nL’élève nomme et place les \nprincipaux composants et explique \nle rôle de chacun avec les bons \nmots. Il fait la différence entre \nmémoire vive et mémoire morte, \nstockage interne et externe, \ncomposant et périphérique. \nL’élève explique comment les \ncomposants travaillent ensemble \n(par exemple : un programme passe \ndu disque à la mémoire vive pour \nêtre traité par le processeur). Il \nutilise les bons mots sans qu’on le \nlui demande et fait des liens avec \nson propre ordinateur ou son \ntéléphone. \n4. Remontage et résolution de \nproblème \n• Remontage à partir des traces \n• Branchements expliqués (pourquoi \nchaque câble est nécessaire) \n• Le PC redémarre \n• Si le PC ne démarre pas : hypothèses, \ntests, analyse \nL’élève n’arrive pas à remonter le \nPC, même avec de l’aide. Il reste \ndes pièces ou des vis. \nL’élève remonte avec beaucoup \nd’aide ou sans utiliser ses traces. Un \ncâble ou une pièce mal fixée \nempêche le démarrage, et il ne sait \npas comment chercher le problème. \nL’élève remonte le PC grâce à ses \ntraces et sait expliquer où va \nchaque pièce et pourquoi chaque \nbranchement est utile. Le PC \ndémarre. Sinon, l’élève propose au \nmoins une hypothèse et la teste. \nLe remontage est fait seul et \nproprement (câbles rangés). En cas \nde problème, l’élève propose \nplusieurs hypothèses (barrette de \nmémoire mal enfoncée, câble \nd’alimentation de la carte mère \noublié…), les teste une par une et \ncorrige. \n\nExercice 08 – Grilles critériées · Juliette Renard · 13 \nCritère et indicateurs observables \nÀ renforcer \nEn développement \nMaîtrisé \nTrès bonne maîtrise \n5. Entraide et bilan \n• Démarche suivie avant d’appeler \nl’enseignant (observer, chercher, \ndemander à un pair, tester) \n• Aide aux autres en expliquant \n• Bilan : difficultés, solutions, ce qu’on a \nappris de ses erreurs \nL’élève appelle l’enseignant dès le \npremier problème. Il ne parle pas \navec les autres groupes. Le bilan est \nabsent ou dit juste « on a réussi » \nou « c’était dur ». \nL’élève cherche parfois avant de \ndemander, mais saute souvent des \nétapes. Quand il aide quelqu’un, il \nfait la manipulation à sa place. Le \nbilan raconte ce qui s’est passé sans \ndire ce qu’il a appris. \nL’élève suit la démarche (observer, \nchercher, demander à un pair, \ntester) avant d’appeler l’enseignant. \nIl aide les autres en expliquant. Le \nbilan donne une difficulté, la \nsolution trouvée et ce qu’elle a \nappris au groupe. \nL’élève suit la démarche de lui-\nmême et pousse son groupe à le \nfaire aussi. Ses explications aident \nun autre groupe à avancer seul. Le \nbilan analyse les erreurs et dit ce \nque la manipulation a fait \ncomprendre mieux qu’un cours \nthéorique. \n\nExercice 08 – Grilles critériées · Juliette Renard · 14 \n3. Dispositif d’évaluation \nIci, beaucoup de choses ne se voient que pendant l’activité (les gestes, la sécurité, l’entraide). Le dispositif suit \ndonc les étapes du « Défi hardware » : observer, démonter, apprendre avec les autres, remonter, résoudre le \nproblème, faire le bilan. \nMoment \nModalité \nQui utilise la grille ? \nTrace / production \nSéance d’avant \nÉvaluation \ndiagnostique \nL’enseignant (sans la \ngrille) \nDessin « ce qu’il y a dans un \nordinateur » et tri de photos : \ncomposant ou périphérique \nDébut de l’atelier Présentation des \ncritères \nLa classe \nCritères 1 et 2 au tableau, règles de \nsécurité \nObserver, \ndémonter, \ns’entraider \nÉvaluation formative \npar observation \nL’enseignant, critères 1, 2 \net 5 \nLa grille sert de liste d’observation ; \nl’enseignant réagit tout de suite \nRemonter, \nrésoudre \nCo-évaluation (petit \nentretien) \nLe groupe et \nl’enseignant, critères 3 et \n4 \nExplication d’un composant tiré au \nsort et des branchements ; niveau \ndécidé ensemble \nAprès l’activité \nÉvaluation sommative \nL’enseignant, critères 3 à \n5 \nSchéma, tableau Composant → \nFonction → Connexions, photos, \nproblèmes et solutions, bilan \n \nDiagnostic : le dessin et le tri de photos montrent ce que les élèves imaginent. Beaucoup pensent par exemple \nque l’ordinateur est « dans » l’écran ou le clavier. L’enseignant sait alors ce qu’il doit expliquer. \nObservation : l’enseignant passe entre les postes avec la grille. Si une règle de sécurité n’est pas respectée, il \nintervient tout de suite. Pour la sécurité, on ne peut pas attendre la fin. \nEntretien : quand le PC est remonté, le groupe explique un composant tiré au sort et comment il est branché aux \nautres. Si le PC n’a pas redémarré, il explique ce qu’il a essayé. Les élèves disent d’abord où ils se situent sur les \ncritères 3 et 4, puis l’enseignant donne son avis. Ensemble, ils choisissent un point à travailler. \nÉvaluation sommative : elle porte sur le dossier rendu à la fin. La consigne du défi dit que « la réussite ne consiste \npas uniquement à faire redémarrer le PC ». Un groupe dont le PC ne redémarre pas peut donc avoir une bonne \névaluation s’il comprend et explique ce qu’il a fait. \n4. Justification des choix \na) Les critères et les indicateurs \n• Sécurité et poste de travail : le référentiel donne des règles de sécurité valables pour toutes les activités : \nconnaître les risques, utiliser les équipements de protection, respecter les règles. Ouvrir un PC présente deux \nrisques : pour l’élève (le courant) et pour les pièces (l’électricité statique). Les indicateurs transforment ces \nrègles en gestes qu’on peut voir. \n• Démontage et traces : l’attendu de S1 dit que l’élève remonte l’objet « sur la base de traces du démontage \n». Sans bonnes traces, le remontage est presque impossible. C’est pour ça que les traces sont un indicateur à \npart. \n• Les composants et leur rôle : ce critère vérifie le vocabulaire du hardware en vrai. Réciter « la mémoire vive \nest temporaire » ne suffit pas : il faut reconnaître la barrette dans le PC et expliquer à quoi elle sert. Le \ndernier indicateur fait la différence entre connaître des mots et comprendre comment l’ordinateur \nfonctionne. \n\nExercice 08 – Grilles critériées · Juliette Renard · 15 \n• Remontage et résolution de problème : voir le PC redémarrer est très concret, mais ce n’est pas suffisant. \nJ’ai ajouté l’explication des branchements et les hypothèses, ce qui correspond à la compétence « \ndiagnostiquer » du référentiel. Un PC qui ne démarre pas devient une occasion d’apprendre. \n• Entraide et bilan : toute l’activité repose sur l’entraide et sur les erreurs. Si on demande aux élèves de \nchercher, de s’aider et d’apprendre de leurs erreurs, il faut aussi l’évaluer. Ce critère reprend la démarche et \nles questions du bilan de la consigne. \nb) Les niveaux de maîtrise \nEn S1, le référentiel dit que l’élève agit « avec l’aide de l’enseignant ». Les niveaux suivent donc l’autonomie de \nl’élève : au début, il a besoin de rappels ou de beaucoup d’aide (À renforcer, En développement). Ensuite, il fait \ncorrectement sans rappel (Maîtrisé). Enfin, il sait expliquer ce qu’il fait et s’adapter quand il y a un problème (Très \nbonne maîtrise). \nc) Les modalités d’évaluation \n• Le diagnostic est utile parce que les élèves ont souvent une idée floue de ce qu’il y a dans un ordinateur. En \nle sachant, l’enseignant peut mieux cibler ses explications. \n• L’observation pendant l’activité est la seule façon d’évaluer des gestes et la sécurité. Le cours le dit : les \nsavoir-faire « doivent prioritairement être évalués en situation ». Un PC remonté ne montre pas comment \nl’élève a travaillé. \n• L’entretien permet d’entendre l’élève expliquer et de comparer son avis à celui de l’enseignant. En 1re \nsecondaire, les élèves ont encore peu l’habitude de s’auto-évaluer : cet entretien les aide à utiliser les \ncritères. \n• L’évaluation sommative du dossier porte sur la compréhension et la démarche, pas seulement sur le résultat. \nC’est ce que demande le défi : comprendre, expliquer et justifier ses choix.",
+    "content": "Exercice 08 – Grilles critériées · Juliette Renard · 1 \nExercice 08 \nConstruire des grilles d’évaluation critériées \nJuliette Renard  ·  HECh – Les Rivageois  ·  Novembre 2026 \nCas 1 Création d’une vidéo \nRéaliser une vidéo de trois minutes destinées à expliquer un concept scientifique à des élèves plus jeunes. \nContexte : 3e secondaire, par groupes de trois, en lien avec le cours de sciences. Chaque groupe explique une \nnotion vue en classe (par exemple les phases de la Lune, le cycle de l’eau ou la photosynthèse, etc.) à des élèves \nde 5e-6e primaire d’une école partenaire. Le montage se fait dans un espace en ligne partagé par le groupe. \n1. Apprentissages visés \nContenu du référentiel \nAttendu \nAnnée \nSAVOIRS \nNotions spécifiques liées à \nl’éthique des médias \nnumériques \nUtiliser, adéquatement en contexte, les notions et les \ntermes dont droit à la vie privée, droit à l’oubli, droit de \nretrait, liberté d’expression/de censure/de modération, \nlicence open source*. \nS1 (prérequis) \nLicences « Creative Commons » \nSavoir ce qu’est une licence Creative Commons (définie \ndans le glossaire du référentiel) et ce que veulent dire les \nprincipales conditions (citer l’auteur, pas d’usage \ncommercial). \ncomplément \nLangage audiovisuel (chapitre \n6.7 du cours) \n• Connaître les principaux plans (gros plan, plan moyen, \nplan d’ensemble) et savoir à quoi ils servent. \n• Savoir ce qu’est un scénarimage (storyboard) : une \nsuite de cases dessinées, plan par plan, qui montre ce \nqu’on verra et ce qu’on entendra dans la vidéo avant de \nla filmer (cadrage, texte dit, son, durée). \n• Savoir à quoi sert une voix off : enregistrer l’explication \nà part, puis la poser sur les images. \ncomplément \nNotion scientifique expliquée \nBien comprendre la notion choisie (cours de sciences) et \nconnaître les erreurs que les élèves font souvent à son sujet. \ncomplément \nSAVOIR-FAIRE \nEffectuer le montage d’un son \net/ou d’une vidéo. \nUtiliser les fonctions de montage dont couper, copier, \ncoller, effacer. \nP5 (prérequis) \nAppliquer des principes \nd’élaboration d’un message \nmultimédia. \nAppliquer des principes d’élaboration d’un message \nmultimédia pour appuyer un discours. \nP6 (prérequis) \nUtiliser conjointement des \napplications*/des logiciels* \ndisponibles dans un espace \nnumérique. \nUtiliser conjointement des applications*/des logiciels* \ndisponibles dans un espace collaboratif numérique en \nligne. \nS3 \nParticiper dans un espace \ncollaboratif numérique. \nRepérer, accepter et/ou refuser les interventions des \ncollaborateurs. \nS3 \nUtiliser l’historique de \nrévisions. \nRevenir à une version antérieure du travail. \nS3 \n\nExercice 08 – Grilles critériées · Juliette Renard · 2 \nContenu du référentiel \nAttendu \nAnnée \nRespecter les droits de \npropriété. \nRespecter les droits de propriété, dans des situations de \ncommunication et de collaboration. \nS3 \nRespecter les droits à l’image \net à la voix. \nRespecter le droit à l’image et à la voix, dans des situations \nde communication et de collaboration. \nS3 \nCOMPÉTENCES \nProduire et traiter des \ncontenus multimédias. \nProduire et traiter des contenus multimédias de manière \ncollaborative. \nS3 \nCollaborer sur un contenu \nnumérique. \nCollaborer sur un contenu numérique. \nS3 \nLes lignes « complément » ne sont pas des attendus du référentiel FMTTN. Je prévois de les expliquer aux élèves \nde manière brève et précise avant le projet, pour les aider à concevoir leur vidéo. Les licences Creative Commons \nleur permettent de savoir quelles images et quelles musiques ils peuvent utiliser. Le langage audiovisuel, qui vient \ndu chapitre 6.7 du cours et de la partie « Langages médiatiques » de la brochure sur l’éducation aux médias, les \naide à choisir leurs plans et à préparer leur scénarimage. La notion scientifique, elle, vient du cours de sciences. \nDéfi pour les élèves plus rapides : les groupes qui avancent vite peuvent aller plus loin avec des notions du \nchapitre 6.7 qui dépassent le référentiel : les angles de prise de vue (plongée, contre-plongée), les raccords \n(champ/contrechamp, fondu) et les règles des 180° et des 30°. Ce défi n’est pas demandé à tout le monde et \nn’est pas nécessaire pour atteindre le niveau « Maîtrisé ». \nCapacités transversales \n• Communication : expliquer quelque chose à des enfants qui n’ont pas les mêmes connaissances. \n• Collaboration : se partager le travail, écouter les idées des autres et décider ensemble. \n• Esprit critique : regarder sa propre vidéo avec du recul et se demander ce que le public va comprendre. \n• Créativité : trouver des comparaisons et des images qui rendent la notion facile à comprendre. \n\nExercice 08 – Grilles critériées · Juliette Renard · 3 \n2. Grille critériée \nCritère et indicateurs observables \nÀ renforcer \nEn développement \nMaîtrisé \nTrès bonne maîtrise \n1. Contenu juste et bien organisé \n• Pas d’erreur scientifique \n• Simplifications qui restent justes \n• Une structure : accroche, explication, \nexemple, résumé \n• Environ trois minutes \nLa vidéo contient des erreurs ou \nparle d’autre chose que la notion. \nOn ne voit pas de fil conducteur. La \ndurée est très loin des trois \nminutes. \nLe contenu est plutôt juste, mais \nune simplification donne une idée \nfausse (par exemple : « la Lune \nchange de forme parce que la Terre \nlui fait de l’ombre »). Il manque une \npartie de la structure, souvent le \nrésumé. La durée est \napproximative. \nLa notion est juste et les \nsimplifications ne la déforment pas. \nOn retrouve l’accroche, \nl’explication, un exemple et un \nrésumé. La vidéo dure environ trois \nminutes. \nLe contenu est juste et complet \npour des élèves de primaire. Le \ngroupe pense à une erreur \nfréquente et l’explique dans la \nvidéo. Chaque partie sert vraiment \nà l’explication. \n2. Adaptée au public \n• Mots simples, mots difficiles expliqués \n• Exemples de la vie des enfants \n• Rythme qu’on peut suivre \n• Compréhension vérifiée avec un petit \nquestionnaire \nLes mots sont ceux d’un manuel ou \nd’un adulte, il n’y a pas d’exemple \net ça parle trop vite. Au \nquestionnaire, les enfants ne \nretiennent presque rien. \nIl y a quelques efforts (un exemple, \nun mot expliqué), mais pas partout, \net certains passages vont trop vite. \nLes réponses au questionnaire sont \nmoyennes. \nLes mots sont simples et les mots \ndifficiles sont expliqués. Les \nexemples parlent aux enfants et le \nrythme est bon. La plupart des \nenfants répondent bien aux \nquestions principales. \nToute la vidéo est pensée pour les \nenfants (ton, comparaisons, \nquestions posées au spectateur). Le \ngroupe regarde les réponses au \nquestionnaire et explique ce qu’il \nchangerait. \n3. Réalisation de la vidéo \n• Scénarimage fait avant de filmer \n• Image nette et bien cadrée, voix (ou \nvoix off) qu’on entend bien \n• Montage : couper, enchaîner, ajouter \ndes titres \n• Plans choisis pour aider à comprendre \nIl n’y a pas de scénarimage. L’image \nest floue ou mal cadrée, on \nn’entend pas la voix. Les morceaux \nsont mis bout à bout sans montage. \nLe scénarimage est très court et peu \nsuivi. L’image et le son sont bons \npar moments seulement (bruit de \nfond, contre-jour). Le montage est \nbasique, avec des coupures \nbrusques. Certaines images sont \njuste là pour décorer. \nLe scénarimage est complet et \nindique les plans prévus. L’image \nest nette, on entend bien la voix. Le \nmontage est soigné : les morceaux \ns’enchaînent, les titres sont lisibles \net les images illustrent l’explication. \nLe scénarimage évolue pendant le \nprojet. Le groupe explique pourquoi \nil a choisi tel plan (un gros plan pour \nmontrer un détail, un plan \nd’ensemble pour situer). Le \nmontage est fluide et il n’y a pas \nd’image inutile. \n4. Travail de groupe et droits \n• Chacun participe (visible dans \nl’historique des versions) \n• Les idées des autres sont discutées \navant d’être acceptées ou refusées \n• Images et musiques libres de droits ou \nsous licence Creative Commons, citées \n• Accord des personnes filmées ou \nenregistrées \nUne seule personne fait presque \ntout. Les images et musiques sont \nprises sur Internet sans vérifier les \ndroits et ne sont pas citées. Des \npersonnes sont filmées sans leur \naccord. \nLe travail est partagé mais pas de \nfaçon égale. Les commentaires dans \nl’espace en ligne sont peu utilisés. \nSeulement une partie des images et \nmusiques est vérifiée et citée. On \ndemande l’accord des personnes à \nl’oral, sans trace. \nChacun participe, on le voit dans \nl’historique des versions. Les idées \nsont discutées. Toutes les images et \nmusiques sont libres de droits ou \nsous licence Creative Commons et \ncitées au générique. Les personnes \nfilmées ont donné leur accord par \nécrit. \nLe groupe s’organise (planning, \nrôles clairs) et explique ses \ndécisions. Il revient à une ancienne \nversion quand c’est utile. Il choisit \nles licences en sachant ce qu’elles \npermettent (par exemple CC BY ou \nCC BY-NC) et respecte ces règles \nsans qu’on le lui rappelle. \n\nExercice 08 – Grilles critériées · Juliette Renard · 4 \n3. Dispositif d’évaluation \nLe projet est long, donc je prévois plusieurs moments d’évaluation : un diagnostic au départ, deux étapes \nformatives, une co-évaluation et une évaluation sommative à la fin. \nMoment \nModalité \nQui utilise la grille ? \nTrace / production \nPremière séance \nÉvaluation \ndiagnostique \nL’enseignant (sans la \ngrille) \nPetit défi : une vidéo de 30 \nsecondes à 1 minute faite en 50 \nminutes \nLancement \nDécouverte des critères \nLa classe, sur deux vidéos \nd’explication trouvées en \nligne (une réussie, une \nmoins réussie) \nGrille remplie ensemble \nAvant de filmer \nÉvaluation formative \n(étape 1) \nL’enseignant, critères 1 \net 3 \nScénario et scénarimage acceptés \nou à retravailler \nPremier montage Test auprès du public \n(étape 2) \nLes élèves de primaire \n(questionnaire de 3-4 \nquestions), puis le groupe \npour le critère 2 \nRéponses au questionnaire, liste de \nchangements à faire \nVersion finale \nCo-évaluation \nLe groupe et l’enseignant \nremplissent chacun la \ngrille, puis en discutent \nLes deux grilles comparées \nFin \nÉvaluation sommative \nL’enseignant, toute la \ngrille \nVidéo finale, historique des \nversions, petit bilan individuel \n \nDiagnostic : je reprends l’idée de l’exercice 05 fait au cours (« créer une vidéo pour les réseaux sociaux »). En 50 \nminutes, les groupes font une vidéo très courte sur un sujet simple. Cela permet à l’enseignant de voir ce que les \nélèves savent déjà faire (cadrer, enregistrer une voix, monter avec CapCut par exemple) et ce qu’il faudra leur \napprendre. \nÉtape 1 : l’enseignant vérifie le scénario avant le tournage, pour éviter que le groupe filme une explication fausse. \nLe professeur de sciences peut aider pour le critère 1. \nÉtape 2 : le premier montage est montré à des élèves de primaire, qui répondent à quelques questions sur la \nnotion. Le groupe regarde leurs réponses et améliore sa vidéo. \nCo-évaluation : le groupe et l’enseignant remplissent la grille chacun de leur côté, puis comparent. Ensuite, \nl’enseignant donne l’évaluation finale. Pour le critère 4, l’historique des versions et un petit bilan individuel \npermettent de voir ce que chacun a fait. \n4. Justification des choix \na) Les critères et les indicateurs \nPour les trois premiers critères, je me suis basée sur les trois dimensions de l’éducation aux médias de la brochure \n: le contenu (dimension informationnelle), le public (dimension sociale) et la technique (dimension technique). \nUne vidéo peut être bien filmée mais fausse, ou juste mais trop difficile pour des enfants. En séparant ces trois \naspects, on voit mieux ce que l’élève réussit et ce qui lui pose problème. \n• Contenu juste et bien organisé : quand on simplifie, on risque de dire des choses fausses. C’est pour ça que \nj’ai mis un indicateur sur les simplifications. La structure et la durée correspondent à l’attendu « appliquer \ndes principes d’élaboration d’un message multimédia pour appuyer un discours ». \n\nExercice 08 – Grilles critériées · Juliette Renard · 5 \n• Adaptée au public : c’est le cœur de la consigne, puisque la vidéo est pour des élèves plus jeunes. Le \nquestionnaire permet de vérifier ce que les enfants ont vraiment compris, au lieu de juste le supposer. \n• Réalisation de la vidéo : ce critère reprend les savoir-faire de montage du référentiel (couper, copier, coller, \neffacer) et quelques bases du chapitre 6.7. Je n’évalue pas seulement si c’est net et audible, mais aussi si les \nplans choisis aident à comprendre. Le scénarimage est un indicateur important : il oblige le groupe à réfléchir \nà la vidéo avant de filmer. \n• Travail de groupe et droits : en S3, le référentiel insiste sur le travail à plusieurs et sur le respect des droits « \ndans des situations de communication et de collaboration ». L’historique des versions et le générique sont \ndes traces faciles à vérifier. \nb) Les niveaux de maîtrise \nAu niveau « À renforcer », l’élève ne tient pas compte du critère. En « En développement », il en tient compte un \npeu ou pas tout le temps. En « Maîtrisé », il le fait à chaque fois. En « Très bonne maîtrise », il va plus loin : il \nprévoit une erreur fréquente, analyse les réponses du public ou explique ses choix de plans. \nc) Les modalités d’évaluation \n• Le diagnostic évite de croire que les élèves savent déjà faire une vidéo parce qu’ils filment souvent avec leur \ntéléphone. On voit ce qu’ils savent vraiment. \n• Les étapes formatives sont importantes parce que le projet dure longtemps. Une erreur dans le contenu ou \nun scénario pas clair coûte cher si on la découvre seulement à la fin. \n• Le test avec les élèves de primaire est l’évaluation la plus proche de la réalité : ce sont les vrais destinataires \nqui montrent si la vidéo fonctionne. C’est aussi la dimension sociale de l’éducation aux médias, qui \ns’intéresse à l’effet d’un média sur son public. \n• La co-évaluation est utile parce que certains critères laissent de la place à l’interprétation (un rythme « \nadapté », un exemple « parlant »). Comparer l’avis du groupe et celui de l’enseignant oblige les élèves à \nexpliquer leurs choix. \n• L’évaluation sommative arrive à la fin d’un projet complexe, après plusieurs occasions de s’améliorer. Elle est \ndonc juste pour les élèves. \n\nExercice 08 – Grilles critériées · Juliette Renard · 6 \nCas 2   Création d’un jeu numérique \nCréer avec Scratch un jeu comprenant un objectif, des règles, plusieurs niveaux et des interactions avec le joueur. \nContexte : 2e secondaire, par deux, à la fin d’une séquence sur les boucles, les conditions et les variables dans \nScratch. Le jeu est rendu en deux fois : une version 1, puis une version 2 améliorée, comme dans les projets de \nprogrammation que nous avons faits au cours. \n1. Apprentissages visés \nContenu du référentiel \nAttendu \nAnnée \nSAVOIRS \nProgrammation et \nlogigrammes* \nExpliquer les termes dont algorithme*, logigramme*, \ncondition, boucle, langage de programmation. \nP6 (prérequis) \nProgrammation et \nlogigrammes* \nDifférencier algorithme* et programme*. \nP6 (prérequis) \nProgrammation et \nlogigrammes* \nExpliquer le concept de variable. \nS1 (prérequis) \nProgrammation et \nlogigrammes* \nExpliquer l’effet des opérateurs logiques. \nS2 \nSAVOIR-FAIRE \nLire un algorithme* simple. \nVerbaliser un logigramme* intégrant une condition, une \nboucle, un opérateur logique et une variable. \nS2 \nÉcrire un algorithme* simple. \nÉcrire un logigramme* intégrant une condition, une \nboucle, un opérateur logique et une variable. \nS2 \nLire un programme* simple. \nLire un programme* intégrant une boucle, une condition, \nun opérateur logique et une variable. \nS2 \nÉcrire un programme* simple. \nTraduire un logigramme* intégrant une condition, une \nboucle, un opérateur logique et une variable en langage de \nprogrammation. \nS2 \nCOMPÉTENCES \nConcevoir un algorithme* pour \nrésoudre un problème simple. \nConcevoir un logigramme* intégrant une boucle, une \ncondition, un opérateur logique et une variable. \nS2 \nConcevoir un programme* \npour résoudre un problème. \nTraduire un logigramme* intégrant une boucle, une \ncondition, un opérateur logique et une variable en langage \nde programmation, le tester, le déboguer et l’optimiser. \nS2 \nDéfi pour les élèves plus rapides : les groupes qui finissent vite peuvent aller plus loin avec des notions vues \ndans les slides de programmation mais qui dépassent le référentiel de S2 : utiliser des clones (par exemple pour \nfaire apparaître plusieurs ennemis) ou une liste (par exemple pour garder les meilleurs scores). Ce défi est \nfacultatif et n’est pas nécessaire pour atteindre le niveau « Maîtrisé ». \nCapacités transversales \n• Autonomie : chercher d’où vient un bug et essayer des solutions avant de demander de l’aide. \n• Réflexivité : noter ce qu’on fait et expliquer comment on a corrigé une erreur. \n• Créativité : inventer son propre jeu tout en respectant la consigne. \n• Argumentation : donner un avis justifié sur le jeu d’un autre groupe. \n\nExercice 08 – Grilles critériées · Juliette Renard · 7 \n2. Grille critériée \nCritère et indicateurs observables \nÀ renforcer \nEn développement \nMaîtrisé \nTrès bonne maîtrise \n1. Conception du jeu \n• Logigramme fait avant de programmer \n• But et règles expliqués au joueur \n• Niveaux de plus en plus difficiles \nIl n’y a pas de logigramme, ou il n’a \nrien à voir avec le jeu. On ne \ncomprend pas le but ni comment on \ngagne ou on perd. Il n’y a qu’un \nniveau. \nLe logigramme montre seulement \nune partie des règles (souvent, la fin \nde partie manque). On comprend le \nbut, mais certaines règles ne sont \npas claires. Il y a plusieurs niveaux, \nmais ils se jouent pareil. \nLe logigramme montre les règles \nprincipales (déplacement, points, \nfin de partie) avec au moins une \nboucle et une condition. Le but et \nles règles sont expliqués au joueur. \nLe niveau 2 est plus difficile que le \nniveau 1 (plus rapide, plus \nd’obstacles…). \nLe logigramme contient une boucle, \nune condition, une variable et un \nopérateur logique, et il correspond \nau programme final. Les règles vont \nbien ensemble et une variable règle \nla difficulté des niveaux. \n2. Utilisation des blocs de \nprogrammation \n• Boucles (répéter, indéfiniment, \njusqu’à) \n• Conditions et capteurs testés en \ncontinu \n• Variables mises à zéro au début puis \nmodifiées \n• Opérateurs logiques (et, ou, non) \nLe programme est une suite de \nblocs sans boucle ni condition, ou il \ny a des blocs qui ne servent à rien \n(une variable créée mais jamais \nutilisée). \nIl y a des boucles et des conditions, \nmais mal placées : un test fait une \nseule fois en dehors d’une boucle, \nune variable pas remise à zéro, des \nblocs recopiés au lieu d’une boucle. \nPas d’opérateur logique. \nLes boucles et les conditions sont \nbien placées. Au moins deux \nvariables (par exemple le score et \nles vies) sont mises à zéro au début \npuis changent pendant la partie. Au \nmoins un opérateur logique est bien \nutilisé. \nLes blocs sont bien combinés : \nconditions les unes dans les autres, \nrègles avec un opérateur logique (« \nsi score > 10 et vies > 0 »), variable \nqui fait passer au niveau suivant. \nLes variables ont des noms clairs. \n3. Le jeu fonctionne \n• Le jeu redémarre bien au drapeau vert \n• Le jeu réagit aux touches du joueur \n• Le joueur voit son score, la fin de \npartie, entend des sons \n• Pas de blocage \nLe jeu ne se lance pas ou se bloque \ntrès vite. Le joueur ne peut rien \nfaire. \nLe jeu se lance, mais des bugs \ngênent (le lutin sort de l’écran, le \nscore ne revient pas à zéro, la partie \nne finit jamais). Le joueur n’a \nqu’une seule touche. \nLe jeu repart à zéro à chaque \ndrapeau vert, réagit aux touches et \naffiche le score et la fin de partie. Il \nreste peut-être de petits défauts, \nmais on peut jouer. \nOn peut jouer du début à la fin sans \nbug. Le joueur a plusieurs façons \nd’agir (clavier, souris, questions) et \nle jeu lui répond de plusieurs façons \n(score, vies, sons, messages, décor \nqui change). \n4. Tester, corriger, améliorer \n• Tests notés dans un carnet de bugs \n• Cause des erreurs trouvée et corrigée \n• Avis des autres groupes utilisés \n• Programme simplifié (boucles, blocs \npersonnalisés) \nL’élève ne teste pas son jeu ou ne \nfait rien quand on lui montre une \nerreur. Il attend que l’enseignant \ncorrige. \nL’élève trouve des erreurs en \ntestant, mais il a besoin de \nbeaucoup d’aide pour les corriger. Il \nn’utilise pas les avis des autres. Le \nprogramme reste long et répétitif. \nL’élève teste, trouve et corrige seul \nla plupart des erreurs. Il utilise au \nmoins un avis d’un autre groupe et \nremplace au moins une répétition \npar une boucle ou un bloc \npersonnalisé. \nL’élève teste chaque règle, même \nles cas rares. Il explique d’où venait \nune erreur et comment il l’a \ncorrigée. Il dit pourquoi il a suivi ou \nnon les avis reçus et simplifie son \nprogramme (blocs personnalisés, \nblocs inutiles enlevés). \n\nExercice 08 – Grilles critériées · Juliette Renard · 8 \n3. Dispositif d’évaluation \nJe suis l’ordre proposé dans le cours : on présente les critères, les élèves produisent, les pairs évaluent, les élèves \naméliorent, ils s’auto-évaluent, puis l’enseignant évalue. \nMoment \nModalité \nQui utilise la grille ? \nTrace / production \nDébut de \nséquence \nÉvaluation \ndiagnostique \nL’enseignant (sans la \ngrille) \nQuelques niveaux de Compute it! \npour voir ce que les élèves savent \nsur les boucles, les conditions et les \nvariables \nAvant le projet \nPrésentation des \ncritères \nLa classe \nGrille expliquée avec des exemples \nde jeux \nVersion 1 \nÉvaluation par les pairs \n(formative) \nUn autre groupe, critères \n1 à 3 \nFiche « une réussite, un point à \naméliorer, une idée », sans note \nEntre V1 et V2 \nAmélioration \nLe groupe \nCarnet de bugs : erreur, cause, \ncorrection, avis suivis ou non \nAvant la remise \nAuto-évaluation \nLe groupe, toute la grille \nGrille remplie, avec un exemple \npour chaque niveau choisi \nFin \nÉvaluation sommative \nL’enseignant, toute la \ngrille \nJeu final, logigramme et carnet de \nbugs \n \nPendant l’évaluation par les pairs, chaque groupe joue une dizaine de minutes au jeu d’un autre groupe et regarde \nson programme. Le critère 4 n’est pas évalué par les pairs, parce qu’ils ne voient pas comment l’autre groupe a \ntravaillé. \n4. Justification des choix \na) Les critères et les indicateurs \n• Conception du jeu : le référentiel demande de concevoir un logigramme avec une boucle, une condition, un \nopérateur logique et une variable. La consigne demande aussi un but, des règles et des niveaux, et il faut y \nréfléchir avant de programmer. Les slides du cours le disent : programmer sert surtout à apprendre à \norganiser et planifier la résolution d’un problème. \n• Utilisation des blocs : ce critère reprend les savoir-faire de la S2. Je ne regarde pas seulement si le bloc est là, \nmais s’il est bien utilisé. Par exemple, une condition en dehors d’une boucle n’est testée qu’une fois, et une \nvariable pas remise à zéro fausse le score dès la deuxième partie. Ce sont des erreurs fréquentes, qui aident \nà faire la différence entre les niveaux. \n• Le jeu fonctionne : un jeu, c’est fait pour jouer. Ce critère regarde le résultat du côté du joueur. On peut \nl’évaluer juste en jouant, donc les pairs peuvent le faire. \n• Tester, corriger, améliorer : le référentiel demande aussi de « tester, déboguer et optimiser ». Un jeu qui \nmarche a peut-être été corrigé par l’enseignant. À l’inverse, un jeu avec des défauts peut montrer que l’élève \na beaucoup cherché seul. Le carnet de bugs permet de voir ce travail. \nb) Les niveaux de maîtrise \nPour chaque critère, on passe de « le bloc ou la démarche n’est pas là » à « c’est là mais mal utilisé », puis à « c’est \nbien utilisé et l’élève le fait seul », et enfin à « l’élève combine plusieurs choses et peut expliquer ses choix ». Pour \nêtre « Maîtrisé », il faut au moins un opérateur logique bien utilisé, parce que c’est la nouveauté de la S2 par \nrapport à la S1. \n \n\nExercice 08 – Grilles critériées · Juliette Renard · 9 \nc) Les modalités d’évaluation \n• L’évaluation par les pairs est logique pour un jeu, puisqu’il est fait pour que d’autres y jouent. En lisant le \nprogramme d’un autre groupe, l’élève travaille aussi un attendu du référentiel (« lire un programme \nintégrant une boucle, une condition, un opérateur logique et une variable »). Un avis écrit aide plus qu’une \nnote pour améliorer la version 2. \n• L’auto-évaluation se fait après les avis des pairs, avec la même grille. L’élève peut comparer ce qu’il pense de \nson jeu et ce que les autres en ont dit. \n• L’évaluation sommative porte sur la version 2, donc sur ce que l’élève sait faire après avoir reçu des conseils. \nC’est plus juste que de noter la première version. \n\nExercice 08 – Grilles critériées · Juliette Renard · 10 \nCas 3   Démontage et remontage d’un ordinateur \nDémonter un ordinateur, identifier ses composants, expliquer leur fonction et remonter correctement la machine. \nContexte : 1re secondaire, par groupes de 2 ou 3, avec de vieux ordinateurs de bureau donnés par l’école. J’adapte \nen classe l’activité « Défi hardware » que nous avons faite au cours (exercice 07). Les élèves n’ont pas de mode \nd’emploi détaillé : ils doivent observer, démonter, chercher l’information, s’aider entre eux, puis remonter le PC \net le faire redémarrer. Chaque groupe a des outils, un bracelet antistatique, un bac pour les vis et de la \ndocumentation technique. \nCe que les élèves rendent : un schéma annoté du PC, un tableau « Composant → Fonction → Connexions », des \nphotos des étapes, les problèmes rencontrés et leurs solutions, et un bilan de groupe. La grille utilise ces traces et \nce que l’enseignant observe pendant l’activité. \n1. Apprentissages visés \nContenu du référentiel \nAttendu \nAnnée \nSAVOIRS \nVocabulaire spécifique au \nhardware* \nDistinguer hardware* de software*, mémoire vive de \nmémoire morte, stockage interne de stockage externe. \nS1 \nVocabulaire spécifique au \nhardware* \nUtiliser, adéquatement et en contexte, le terme \npériphérique. \nS1 \nÉquipements de protection \nÉnoncer les équipements de protection requis, en lien avec \nl’environnement de travail*, les consommables*, les outils, \nles ustensiles, les machines et les techniques*. \nS1 \nComposants d’un ordinateur \nNommer et situer les principaux composants (carte mère, \nprocesseur, mémoire vive, disque dur ou SSD, alimentation, \nventilateur) et dire à quoi ils servent. \ncomplément \nSAVOIR-FAIRE \nPréparer le poste de travail*, le \nmatériel* et les \nconsommables* nécessaires à \nune tâche. \nChoisir le matériel* et les consommables* parmi ce qui est \nmis à disposition. Les agencer sur son poste de travail*. \nVérifier l’opérationnalité du matériel* (qui peut faire \nl’objet d’un montage par l’élève). \nS1 \nGérer l’espace de travail. \nOrganiser et maintenir un espace de travail fonctionnel : \npropre, rangé, organisé. \nS1 \nLire un document technique*. \nExpliciter des informations d’une fiche technique, d’un \nmode d’emploi, en lien avec un objet technologique*. \nS1 \nAppliquer des techniques* de \nmontage et de démontage \nd’un objet technologique*. \nDémonter un objet technologique* (en tout ou en partie) \nincluant un circuit électrique simple, en utilisant des outils \nadaptés ; le remonter sur la base de traces du démontage. \nS1 \nCOMPÉTENCES \nExécuter une tâche en toute \nsécurité. \nAdopter, avec l’aide de l’enseignant, une attitude proactive \nqui prend en considération les risques et les dangers, pour \nsoi et pour les autres, lors de la préparation du poste de \ntravail* et de l’exécution des gestes techniques*, en \nrecourant notamment aux équipements de protection \nadéquats. \nS1 \n\nExercice 08 – Grilles critériées · Juliette Renard · 11 \nContenu du référentiel \nAttendu \nAnnée \nDiagnostiquer le \ndysfonctionnement d’un objet \ntechnologique* et intervenir \ndans la mesure du possible. \nDiagnostiquer et intervenir, dans la mesure du possible, sur \nun dysfonctionnement d’un objet technologique* incluant \nun circuit électrique simple. \nS1 \nLe référentiel parle d’« objet technologique » en général et ne cite pas les composants d’un ordinateur. J’ai ajouté \nla ligne « complément » parce que la consigne demande d’identifier les composants et d’expliquer leur fonction. \nCapacités transversales \n• Méthode : observer avant d’agir et garder des traces pour pouvoir revenir en arrière. \n• Autonomie : suivre la démarche « j’observe, je cherche, je demande à un pair, je teste, je demande à \nl’enseignant ». \n• Entraide : aider un autre groupe en expliquant, sans faire la manipulation à sa place. \n• Réflexivité : comprendre ses erreurs et ce qu’on a appris en manipulant. \n• Communication : expliquer à quoi sert un composant avec les bons mots. \n• Écocitoyenneté : comprendre qu’un ordinateur peut se réparer et resservir. Le référentiel de S1 invite \nd’ailleurs à penser à réparer avant de jeter. \n\nExercice 08 – Grilles critériées · Juliette Renard · 12 \n2. Grille critériée \nCritère et indicateurs observables \nÀ renforcer \nEn développement \nMaîtrisé \nTrès bonne maîtrise \n1. Sécurité et poste de travail \n• PC débranché et électricité statique \névitée avant d’ouvrir (bracelet, toucher \nle boîtier) \n• Bons outils, sans forcer \n• Vis et pièces rangées par étape dans le \nbac \nL’élève ouvre le PC sans le \ndébrancher ou sans se protéger de \nl’électricité statique, même après \nun rappel. Il utilise un mauvais outil \nou force. Les vis et les pièces sont \nmélangées sur la table. \nL’élève respecte les règles de \nsécurité seulement quand \nl’enseignant les rappelle. Il prend \nparfois un mauvais outil. Il range \nune partie des vis, mais sans les \nséparer par étape. \nL’élève débranche le PC et met son \nbracelet avant de commencer, sans \nrappel. Il utilise les bons outils sans \nforcer et range les vis et les pièces \npar étape. \nL’élève respecte toutes les règles \nsans rappel et sait expliquer \npourquoi (danger pour lui, danger \npour les composants). Son poste \nreste rangé jusqu’à la fin. Il prévient \nles autres quand il voit un danger. \n2. Démontage et traces \n• Observer et faire des hypothèses avant \nde toucher \n• Ordre logique (capot, câbles, cartes, \ncomposants) \n• Photos des étapes et notes pour le \nremontage \n• Gestes précis, sans forcer \nL’élève démonte sans regarder \navant, au hasard, ou arrache des \npièces. Il ne garde aucune trace. \nL’ordre est logique en partie. Les \ntraces sont incomplètes (quelques \nphotos dans le désordre, des étapes \noubliées). Il arrive que l’élève \ndébranche un câble en tirant sur le \nfil. \nL’élève regarde ce qu’il va enlever \navant d’agir, puis démonte dans un \nordre logique. Il photographie les \nétapes importantes et note ce qui \nservira au remontage. Il ouvre \ncorrectement les clips et les \nverrous. \nL’élève prévoit l’ordre du \ndémontage avant de commencer et \nsait dire pourquoi. Ses traces sont \ncomplètes et en ordre, un autre \ngroupe pourrait les utiliser. Aucune \npièce n’est abîmée. \n3. Les composants et leur rôle \n• Composants nommés et placés sur le \nschéma \n• Différences : mémoire vive / mémoire \nmorte, stockage interne / externe, \ncomposant / périphérique \n• Tableau « Composant → Fonction → \nConnexions » complet et juste \n• Explication de comment les \ncomposants travaillent ensemble \nL’élève connaît peu de composants \nou les confond (par exemple la \nmémoire vive et le disque dur). Il ne \nsait pas à quoi ils servent. \nL’élève connaît la plupart des \ncomposants, mais explique leur rôle \nde façon vague (« ça sert à faire \nmarcher l’ordi »). Il confond encore \nmémoire vive et stockage, ou \ncomposant et périphérique. \nL’élève nomme et place les \nprincipaux composants et explique \nle rôle de chacun avec les bons \nmots. Il fait la différence entre \nmémoire vive et mémoire morte, \nstockage interne et externe, \ncomposant et périphérique. \nL’élève explique comment les \ncomposants travaillent ensemble \n(par exemple : un programme passe \ndu disque à la mémoire vive pour \nêtre traité par le processeur). Il \nutilise les bons mots sans qu’on le \nlui demande et fait des liens avec \nson propre ordinateur ou son \ntéléphone. \n4. Remontage et résolution de \nproblème \n• Remontage à partir des traces \n• Branchements expliqués (pourquoi \nchaque câble est nécessaire) \n• Le PC redémarre \n• Si le PC ne démarre pas : hypothèses, \ntests, analyse \nL’élève n’arrive pas à remonter le \nPC, même avec de l’aide. Il reste \ndes pièces ou des vis. \nL’élève remonte avec beaucoup \nd’aide ou sans utiliser ses traces. Un \ncâble ou une pièce mal fixée \nempêche le démarrage, et il ne sait \npas comment chercher le problème. \nL’élève remonte le PC grâce à ses \ntraces et sait expliquer où va \nchaque pièce et pourquoi chaque \nbranchement est utile. Le PC \ndémarre. Sinon, l’élève propose au \nmoins une hypothèse et la teste. \nLe remontage est fait seul et \nproprement (câbles rangés). En cas \nde problème, l’élève propose \nplusieurs hypothèses (barrette de \nmémoire mal enfoncée, câble \nd’alimentation de la carte mère \noublié…), les teste une par une et \ncorrige. \n\nExercice 08 – Grilles critériées · Juliette Renard · 13 \nCritère et indicateurs observables \nÀ renforcer \nEn développement \nMaîtrisé \nTrès bonne maîtrise \n5. Entraide et bilan \n• Démarche suivie avant d’appeler \nl’enseignant (observer, chercher, \ndemander à un pair, tester) \n• Aide aux autres en expliquant \n• Bilan : difficultés, solutions, ce qu’on a \nappris de ses erreurs \nL’élève appelle l’enseignant dès le \npremier problème. Il ne parle pas \navec les autres groupes. Le bilan est \nabsent ou dit juste « on a réussi » \nou « c’était dur ». \nL’élève cherche parfois avant de \ndemander, mais saute souvent des \nétapes. Quand il aide quelqu’un, il \nfait la manipulation à sa place. Le \nbilan raconte ce qui s’est passé sans \ndire ce qu’il a appris. \nL’élève suit la démarche (observer, \nchercher, demander à un pair, \ntester) avant d’appeler l’enseignant. \nIl aide les autres en expliquant. Le \nbilan donne une difficulté, la \nsolution trouvée et ce qu’elle a \nappris au groupe. \nL’élève suit la démarche de lui-\nmême et pousse son groupe à le \nfaire aussi. Ses explications aident \nun autre groupe à avancer seul. Le \nbilan analyse les erreurs et dit ce \nque la manipulation a fait \ncomprendre mieux qu’un cours \nthéorique. \n\nExercice 08 – Grilles critériées · Juliette Renard · 14 \n3. Dispositif d’évaluation \nIci, beaucoup de choses ne se voient que pendant l’activité (les gestes, la sécurité, l’entraide). Le dispositif suit \ndonc les étapes du « Défi hardware » : observer, démonter, apprendre avec les autres, remonter, résoudre le \nproblème, faire le bilan. \nMoment \nModalité \nQui utilise la grille ? \nTrace / production \nSéance d’avant \nÉvaluation \ndiagnostique \nL’enseignant (sans la \ngrille) \nDessin « ce qu’il y a dans un \nordinateur » et tri de photos : \ncomposant ou périphérique \nDébut de l’atelier Présentation des \ncritères \nLa classe \nCritères 1 et 2 au tableau, règles de \nsécurité \nObserver, \ndémonter, \ns’entraider \nÉvaluation formative \npar observation \nL’enseignant, critères 1, 2 \net 5 \nLa grille sert de liste d’observation ; \nl’enseignant réagit tout de suite \nRemonter, \nrésoudre \nCo-évaluation (petit \nentretien) \nLe groupe et \nl’enseignant, critères 3 et \n4 \nExplication d’un composant tiré au \nsort et des branchements ; niveau \ndécidé ensemble \nAprès l’activité \nÉvaluation sommative \nL’enseignant, critères 3 à \n5 \nSchéma, tableau Composant → \nFonction → Connexions, photos, \nproblèmes et solutions, bilan \n \nDiagnostic : le dessin et le tri de photos montrent ce que les élèves imaginent. Beaucoup pensent par exemple \nque l’ordinateur est « dans » l’écran ou le clavier. L’enseignant sait alors ce qu’il doit expliquer. \nObservation : l’enseignant passe entre les postes avec la grille. Si une règle de sécurité n’est pas respectée, il \nintervient tout de suite. Pour la sécurité, on ne peut pas attendre la fin. \nEntretien : quand le PC est remonté, le groupe explique un composant tiré au sort et comment il est branché aux \nautres. Si le PC n’a pas redémarré, il explique ce qu’il a essayé. Les élèves disent d’abord où ils se situent sur les \ncritères 3 et 4, puis l’enseignant donne son avis. Ensemble, ils choisissent un point à travailler. \nÉvaluation sommative : elle porte sur le dossier rendu à la fin. La consigne du défi dit que « la réussite ne consiste \npas uniquement à faire redémarrer le PC ». Un groupe dont le PC ne redémarre pas peut donc avoir une bonne \névaluation s’il comprend et explique ce qu’il a fait. \n4. Justification des choix \na) Les critères et les indicateurs \n• Sécurité et poste de travail : le référentiel donne des règles de sécurité valables pour toutes les activités : \nconnaître les risques, utiliser les équipements de protection, respecter les règles. Ouvrir un PC présente deux \nrisques : pour l’élève (le courant) et pour les pièces (l’électricité statique). Les indicateurs transforment ces \nrègles en gestes qu’on peut voir. \n• Démontage et traces : l’attendu de S1 dit que l’élève remonte l’objet « sur la base de traces du démontage \n». Sans bonnes traces, le remontage est presque impossible. C’est pour ça que les traces sont un indicateur à \npart. \n• Les composants et leur rôle : ce critère vérifie le vocabulaire du hardware en vrai. Réciter « la mémoire vive \nest temporaire » ne suffit pas : il faut reconnaître la barrette dans le PC et expliquer à quoi elle sert. Le \ndernier indicateur fait la différence entre connaître des mots et comprendre comment l’ordinateur \nfonctionne. \n\nExercice 08 – Grilles critériées · Juliette Renard · 15 \n• Remontage et résolution de problème : voir le PC redémarrer est très concret, mais ce n’est pas suffisant. \nJ’ai ajouté l’explication des branchements et les hypothèses, ce qui correspond à la compétence « \ndiagnostiquer » du référentiel. Un PC qui ne démarre pas devient une occasion d’apprendre. \n• Entraide et bilan : toute l’activité repose sur l’entraide et sur les erreurs. Si on demande aux élèves de \nchercher, de s’aider et d’apprendre de leurs erreurs, il faut aussi l’évaluer. Ce critère reprend la démarche et \nles questions du bilan de la consigne. \nb) Les niveaux de maîtrise \nEn S1, le référentiel dit que l’élève agit « avec l’aide de l’enseignant ». Les niveaux suivent donc l’autonomie de \nl’élève : au début, il a besoin de rappels ou de beaucoup d’aide (À renforcer, En développement). Ensuite, il fait \ncorrectement sans rappel (Maîtrisé). Enfin, il sait expliquer ce qu’il fait et s’adapter quand il y a un problème (Très \nbonne maîtrise). \nc) Les modalités d’évaluation \n• Le diagnostic est utile parce que les élèves ont souvent une idée floue de ce qu’il y a dans un ordinateur. En \nle sachant, l’enseignant peut mieux cibler ses explications. \n• L’observation pendant l’activité est la seule façon d’évaluer des gestes et la sécurité. Le cours le dit : les \nsavoir-faire « doivent prioritairement être évalués en situation ». Un PC remonté ne montre pas comment \nl’élève a travaillé. \n• L’entretien permet d’entendre l’élève expliquer et de comparer son avis à celui de l’enseignant. En 1re \nsecondaire, les élèves ont encore peu l’habitude de s’auto-évaluer : cet entretien les aide à utiliser les \ncritères. \n• L’évaluation sommative du dossier porte sur la compréhension et la démarche, pas seulement sur le résultat. \nC’est ce que demande le défi : comprendre, expliquer et justifier ses choix.",
+    "fileUrl": "/travaux-etudiants/RENARD_Juliette_Atelier_8_Construire_des_grill_2026-11-05 (1).pdf",
+    "submittedAt": "2026-11-05 14:00"
+  },
+  {
+    "id": "sub-real-0091",
     "userId": "user-e2604966@student.hech.be",
     "userName": "Nathalie D'accardo",
     "userEmail": "e2604966@student.hech.be",
@@ -9764,7 +12387,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-09-30 14:00"
   },
   {
-    "id": "sub-real-0078",
+    "id": "sub-real-0092",
     "userId": "user-e2604966@student.hech.be",
     "userName": "Nathalie D'accardo",
     "userEmail": "e2604966@student.hech.be",
@@ -9776,7 +12399,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-09-30 14:00"
   },
   {
-    "id": "sub-real-0079",
+    "id": "sub-real-0093",
     "userId": "user-e2604966@student.hech.be",
     "userName": "Nathalie D'accardo",
     "userEmail": "e2604966@student.hech.be",
@@ -9788,7 +12411,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-10 14:00"
   },
   {
-    "id": "sub-real-0080",
+    "id": "sub-real-0094",
     "userId": "user-e2604966@student.hech.be",
     "userName": "Nathalie D'accardo",
     "userEmail": "e2604966@student.hech.be",
@@ -9800,7 +12423,31 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-14 14:00"
   },
   {
-    "id": "sub-real-0081",
+    "id": "sub-real-0095",
+    "userId": "user-e2604966@student.hech.be",
+    "userName": "Nathalie D'accardo",
+    "userEmail": "e2604966@student.hech.be",
+    "exerciseId": "exercice-07",
+    "exerciseTitle": "Atelier 7 : Défi Hardware & Peer Learning (Démonter/Remonter un PC)",
+    "answer": "Exercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nPhoto \nNom de la pièce \nFonction de la pièce \nDisque dur \nLe disque dur est un composant qui permet de stocker et de \nconserver les données de l’ordinateur de manière \npermanente, même lorsqu’il est éteint. \nIl contient notamment le système d’exploitation (Windows, \nLinux…), les logiciels installés ainsi que les fichiers \npersonnels (documents, photos, vidéos, etc.). \nIl permet également de lire et d’écrire des données, c’est-à-\ndire de retrouver des informations enregistrées ou d’en \nsauvegarder de nouvelles. \nDans un disque dur classique (HDD), les données sont \nenregistrées sur des plateaux magnétiques en rotation, \ngrâce à des têtes de lecture et d’écriture. \nContrairement à la mémoire vive (RAM), le disque dur \nconserve les informations lorsque l’alimentation électrique \nest coupée. \n \n \n \n \nProcesseur  \n(en dessous du \nventilateur) \nLe processeur est considéré comme le cerveau de \nl’ordinateur. Il est chargé d’exécuter les instructions des \nprogrammes et de réaliser les calculs nécessaires au \nfonctionnement de l’ordinateur. \nIl traite les informations provenant des logiciels et des \ndifférents composants. \nIl effectue notamment des opérations arithmétiques et \nlogiques (calculs, comparaisons, prises de décision). \nIl coordonne également l’exécution des instructions et les \néchanges de données avec les autres composants, \nnotamment la mémoire vive (RAM). \nSa vitesse de fonctionnement, exprimée en gigahertz (GHz), \net son nombre de cœurs influencent les performances de \nl’ordinateur. \nLe processeur produit de la chaleur et nécessite donc \nun système de refroidissement (ventilateur ou dissipateur \nthermique). \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nRAM \nLa mémoire vive (RAM) est un composant qui permet \nde stocker temporairement les données et les \ninstructions utilisées par l’ordinateur lorsqu’il fonctionne. \nElle conserve notamment les informations nécessaires à \nl’exécution des logiciels et des applications en cours \nd’utilisation. \nElle permet au processeur d’accéder rapidement aux \ndonnées dont il a besoin pour effectuer ses opérations. \nPlus la capacité de la RAM est importante, plus l’ordinateur \npeut gérer simultanément plusieurs programmes et des \ntâches exigeantes sans ralentissement lié au manque de \nmémoire. \nContrairement au disque dur, la RAM est une mémoire \nvolatile : toutes les données qu’elle contient disparaissent \nlorsque l’ordinateur est éteint. \nElle joue donc un rôle essentiel dans la rapidité et la \nfluidité du fonctionnement de l’ordinateur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nCarte graphique \nLa carte graphique est un composant chargé de traiter les \ndonnées graphiques et de produire les images affichées sur \nl’écran de l’ordinateur. \nElle transforme les informations numériques en images \nvisibles : textes, photos, vidéos, animations et images en 3D. \nElle possède un processeur graphique (GPU) spécialisé \ndans l’exécution rapide de nombreux calculs en parallèle. \nElle est particulièrement sollicitée pour les jeux vidéo, le \nmontage vidéo, la modélisation 3D et certaines applications \nd’intelligence artificielle. \nElle dispose généralement d’une mémoire vidéo \n(VRAM) permettant de stocker temporairement les données \nnécessaires à l'affichage. \nLe processeur graphique peut être intégré au processeur \nprincipal ou se trouver sur une carte graphique dédiée. \nLecteur CD \nLe lecteur CD est un périphérique qui permet de lire les \ninformations enregistrées sur un disque compact (CD). \nIl utilise un faisceau laser pour détecter les données \nnumériques présentes à la surface du disque. \nIl permet notamment de lire des CD audio, d’installer des \nlogiciels ou d’accéder à des fichiers enregistrés sur un CD-\nROM. \nCertains modèles, appelés graveurs CD, permettent \négalement d’écrire des données sur des CD enregistrables \n(CD-R) ou réinscriptibles (CD-RW). \nLe lecteur CD contient un moteur qui fait tourner le disque et \nun mécanisme qui déplace la tête de lecture laser. \nAujourd’hui, il est de moins en moins présent dans les \nordinateurs récents, car il est progressivement remplacé par \nles clés USB, les téléchargements et le stockage en ligne. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nCarte mère \nLa carte mère est le circuit électronique principal de \nl’ordinateur. Elle permet de connecter et de faire \ncommuniquer les différents composants entre eux. \nElle accueille notamment le processeur (CPU), la mémoire \nvive (RAM) et les connecteurs destinés aux périphériques et \naux unités de stockage. \nElle assure la circulation des données entre les composants \ngrâce à des circuits et des connexions électroniques. \nElle distribue également l’alimentation électrique nécessaire \nau fonctionnement de plusieurs composants. \nElle contient le BIOS/UEFI, un micrologiciel qui permet \nnotamment d’initialiser le matériel lors du démarrage de \nl’ordinateur. \nElle possède différents ports et connecteurs (USB, SATA, \nPCI Express, etc.) permettant de brancher des périphériques \net des composants supplémentaires. \nLa carte mère joue donc un rôle central dans le \nfonctionnement et la coordination de l'ensemble de \nl'ordinateur. \n \nVentilateur  \nLe ventilateur est un composant qui permet de refroidir les \néléments de l’ordinateur en favorisant la circulation de l’air. \nIl sert principalement à évacuer la chaleur produite par les \ncomposants électroniques, notamment le processeur (CPU) \net la carte graphique (GPU). \nIl contribue à maintenir une température de fonctionnement \nadaptée, afin d’éviter la surchauffe et les ralentissements. \nIl fonctionne grâce à un moteur électrique qui fait tourner des \npales, créant ainsi un flux d’air. \nIl est souvent associé à un dissipateur thermique, qui \nabsorbe et évacue la chaleur produite par le processeur. \nCertains ventilateurs font entrer de l’air frais dans le boîtier, \ntandis que d’autres expulsent l’air chaud vers l’extérieur. \nLe ventilateur contribue ainsi à préserver les performances, \nla stabilité et la durée de vie de l’ordinateur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nBloc d’alimentation \nLe bloc d’alimentation est un composant qui permet \nde fournir l’énergie électrique nécessaire au fonctionnement \nde l’ordinateur. \nIl transforme le courant alternatif (AC) provenant de la prise \nélectrique en courant continu (DC) utilisable par les \ncomposants électroniques. \nIl distribue cette énergie aux différents éléments de \nl’ordinateur, notamment la carte mère, le processeur, la carte \ngraphique et les unités de stockage. \nIl fournit plusieurs tensions électriques adaptées aux besoins \ndes composants, principalement 3,3 V, 5 V et 12 V. \nIl intègre également des systèmes de protection contre \ncertains problèmes électriques, comme les surtensions, les \nsurcharges et les courts-circuits. \nSa puissance, exprimée en watts (W), détermine la quantité \nmaximale d’énergie qu’il peut fournir. \nLe bloc d’alimentation est donc indispensable au \nfonctionnement stable et sécurisé de l’ordinateur. \n \nPorts de \nconnexion  \nLes ports de connexion sont des interfaces permettant de \nrelier l’ordinateur à des périphériques externes ou à d’autres \néquipements. \nIls permettent l’échange de données et de signaux entre \nl’ordinateur et les appareils connectés. \nIl existe différents types de ports, notamment les ports \nUSB (clavier, souris, clé USB), HDMI ou \nDisplayPort (écran), Ethernet RJ45 (réseau) et les prises \naudio (casque, microphone). \nCertains ports permettent également de fournir de l’énergie \nélectrique aux périphériques connectés, par exemple pour \nrecharger un smartphone. \nIls sont généralement situés à l’arrière ou à l’avant du boîtier \net sont reliés à la carte mère. \nLes ports de connexion jouent donc un rôle essentiel dans la \ncommunication entre l’ordinateur et son environnement \nextérieur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \n \n \n \n \nDans notre image : \n \nN° \nNom du Port \nFonction \n1 \nPS/2 \n(clavier/souris) \nConnexion d’un ancien clavier ou d’une \nsouris \n2 \nPort série (COM / \nDB9) \nConnexion de périphériques anciens \n3 \nDVI \nConnexion d’un écran \n4 \nHDMI \nConnexion d’un écran ou d’un téléviseur \n5 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n6 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n7 \nEthernet (RJ45) \nConnexion réseau / Internet par câble \n8 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n9 \nPrises audio Jack \n3,5 mm \nBleu : Connexion casque,  \nVert : haut-parleurs \nRose :  microphone \n10 \nVGA \nTransmission de l’image en analogique vers \nun écran \n11 \nHDMI \nConnexion d’un écran ou d’un téléviseur \n12 \nDVI \nConnexion d’un écran",
+    "content": "Exercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nPhoto \nNom de la pièce \nFonction de la pièce \nDisque dur \nLe disque dur est un composant qui permet de stocker et de \nconserver les données de l’ordinateur de manière \npermanente, même lorsqu’il est éteint. \nIl contient notamment le système d’exploitation (Windows, \nLinux…), les logiciels installés ainsi que les fichiers \npersonnels (documents, photos, vidéos, etc.). \nIl permet également de lire et d’écrire des données, c’est-à-\ndire de retrouver des informations enregistrées ou d’en \nsauvegarder de nouvelles. \nDans un disque dur classique (HDD), les données sont \nenregistrées sur des plateaux magnétiques en rotation, \ngrâce à des têtes de lecture et d’écriture. \nContrairement à la mémoire vive (RAM), le disque dur \nconserve les informations lorsque l’alimentation électrique \nest coupée. \n \n \n \n \nProcesseur  \n(en dessous du \nventilateur) \nLe processeur est considéré comme le cerveau de \nl’ordinateur. Il est chargé d’exécuter les instructions des \nprogrammes et de réaliser les calculs nécessaires au \nfonctionnement de l’ordinateur. \nIl traite les informations provenant des logiciels et des \ndifférents composants. \nIl effectue notamment des opérations arithmétiques et \nlogiques (calculs, comparaisons, prises de décision). \nIl coordonne également l’exécution des instructions et les \néchanges de données avec les autres composants, \nnotamment la mémoire vive (RAM). \nSa vitesse de fonctionnement, exprimée en gigahertz (GHz), \net son nombre de cœurs influencent les performances de \nl’ordinateur. \nLe processeur produit de la chaleur et nécessite donc \nun système de refroidissement (ventilateur ou dissipateur \nthermique). \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nRAM \nLa mémoire vive (RAM) est un composant qui permet \nde stocker temporairement les données et les \ninstructions utilisées par l’ordinateur lorsqu’il fonctionne. \nElle conserve notamment les informations nécessaires à \nl’exécution des logiciels et des applications en cours \nd’utilisation. \nElle permet au processeur d’accéder rapidement aux \ndonnées dont il a besoin pour effectuer ses opérations. \nPlus la capacité de la RAM est importante, plus l’ordinateur \npeut gérer simultanément plusieurs programmes et des \ntâches exigeantes sans ralentissement lié au manque de \nmémoire. \nContrairement au disque dur, la RAM est une mémoire \nvolatile : toutes les données qu’elle contient disparaissent \nlorsque l’ordinateur est éteint. \nElle joue donc un rôle essentiel dans la rapidité et la \nfluidité du fonctionnement de l’ordinateur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nCarte graphique \nLa carte graphique est un composant chargé de traiter les \ndonnées graphiques et de produire les images affichées sur \nl’écran de l’ordinateur. \nElle transforme les informations numériques en images \nvisibles : textes, photos, vidéos, animations et images en 3D. \nElle possède un processeur graphique (GPU) spécialisé \ndans l’exécution rapide de nombreux calculs en parallèle. \nElle est particulièrement sollicitée pour les jeux vidéo, le \nmontage vidéo, la modélisation 3D et certaines applications \nd’intelligence artificielle. \nElle dispose généralement d’une mémoire vidéo \n(VRAM) permettant de stocker temporairement les données \nnécessaires à l'affichage. \nLe processeur graphique peut être intégré au processeur \nprincipal ou se trouver sur une carte graphique dédiée. \nLecteur CD \nLe lecteur CD est un périphérique qui permet de lire les \ninformations enregistrées sur un disque compact (CD). \nIl utilise un faisceau laser pour détecter les données \nnumériques présentes à la surface du disque. \nIl permet notamment de lire des CD audio, d’installer des \nlogiciels ou d’accéder à des fichiers enregistrés sur un CD-\nROM. \nCertains modèles, appelés graveurs CD, permettent \négalement d’écrire des données sur des CD enregistrables \n(CD-R) ou réinscriptibles (CD-RW). \nLe lecteur CD contient un moteur qui fait tourner le disque et \nun mécanisme qui déplace la tête de lecture laser. \nAujourd’hui, il est de moins en moins présent dans les \nordinateurs récents, car il est progressivement remplacé par \nles clés USB, les téléchargements et le stockage en ligne. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nCarte mère \nLa carte mère est le circuit électronique principal de \nl’ordinateur. Elle permet de connecter et de faire \ncommuniquer les différents composants entre eux. \nElle accueille notamment le processeur (CPU), la mémoire \nvive (RAM) et les connecteurs destinés aux périphériques et \naux unités de stockage. \nElle assure la circulation des données entre les composants \ngrâce à des circuits et des connexions électroniques. \nElle distribue également l’alimentation électrique nécessaire \nau fonctionnement de plusieurs composants. \nElle contient le BIOS/UEFI, un micrologiciel qui permet \nnotamment d’initialiser le matériel lors du démarrage de \nl’ordinateur. \nElle possède différents ports et connecteurs (USB, SATA, \nPCI Express, etc.) permettant de brancher des périphériques \net des composants supplémentaires. \nLa carte mère joue donc un rôle central dans le \nfonctionnement et la coordination de l'ensemble de \nl'ordinateur. \n \nVentilateur  \nLe ventilateur est un composant qui permet de refroidir les \néléments de l’ordinateur en favorisant la circulation de l’air. \nIl sert principalement à évacuer la chaleur produite par les \ncomposants électroniques, notamment le processeur (CPU) \net la carte graphique (GPU). \nIl contribue à maintenir une température de fonctionnement \nadaptée, afin d’éviter la surchauffe et les ralentissements. \nIl fonctionne grâce à un moteur électrique qui fait tourner des \npales, créant ainsi un flux d’air. \nIl est souvent associé à un dissipateur thermique, qui \nabsorbe et évacue la chaleur produite par le processeur. \nCertains ventilateurs font entrer de l’air frais dans le boîtier, \ntandis que d’autres expulsent l’air chaud vers l’extérieur. \nLe ventilateur contribue ainsi à préserver les performances, \nla stabilité et la durée de vie de l’ordinateur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nBloc d’alimentation \nLe bloc d’alimentation est un composant qui permet \nde fournir l’énergie électrique nécessaire au fonctionnement \nde l’ordinateur. \nIl transforme le courant alternatif (AC) provenant de la prise \nélectrique en courant continu (DC) utilisable par les \ncomposants électroniques. \nIl distribue cette énergie aux différents éléments de \nl’ordinateur, notamment la carte mère, le processeur, la carte \ngraphique et les unités de stockage. \nIl fournit plusieurs tensions électriques adaptées aux besoins \ndes composants, principalement 3,3 V, 5 V et 12 V. \nIl intègre également des systèmes de protection contre \ncertains problèmes électriques, comme les surtensions, les \nsurcharges et les courts-circuits. \nSa puissance, exprimée en watts (W), détermine la quantité \nmaximale d’énergie qu’il peut fournir. \nLe bloc d’alimentation est donc indispensable au \nfonctionnement stable et sécurisé de l’ordinateur. \n \nPorts de \nconnexion  \nLes ports de connexion sont des interfaces permettant de \nrelier l’ordinateur à des périphériques externes ou à d’autres \néquipements. \nIls permettent l’échange de données et de signaux entre \nl’ordinateur et les appareils connectés. \nIl existe différents types de ports, notamment les ports \nUSB (clavier, souris, clé USB), HDMI ou \nDisplayPort (écran), Ethernet RJ45 (réseau) et les prises \naudio (casque, microphone). \nCertains ports permettent également de fournir de l’énergie \nélectrique aux périphériques connectés, par exemple pour \nrecharger un smartphone. \nIls sont généralement situés à l’arrière ou à l’avant du boîtier \net sont reliés à la carte mère. \nLes ports de connexion jouent donc un rôle essentiel dans la \ncommunication entre l’ordinateur et son environnement \nextérieur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \n \n \n \n \nDans notre image : \n \nN° \nNom du Port \nFonction \n1 \nPS/2 \n(clavier/souris) \nConnexion d’un ancien clavier ou d’une \nsouris \n2 \nPort série (COM / \nDB9) \nConnexion de périphériques anciens \n3 \nDVI \nConnexion d’un écran \n4 \nHDMI \nConnexion d’un écran ou d’un téléviseur \n5 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n6 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n7 \nEthernet (RJ45) \nConnexion réseau / Internet par câble \n8 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n9 \nPrises audio Jack \n3,5 mm \nBleu : Connexion casque,  \nVert : haut-parleurs \nRose :  microphone \n10 \nVGA \nTransmission de l’image en analogique vers \nun écran \n11 \nHDMI \nConnexion d’un écran ou d’un téléviseur \n12 \nDVI \nConnexion d’un écran",
+    "fileUrl": "/travaux-etudiants/D_ACCARDO_Nathalie_Exercice_7_Defi_Hardware_Peer__2026-11-06.pdf",
+    "submittedAt": "2026-11-06 14:00"
+  },
+  {
+    "id": "sub-real-0096",
+    "userId": "user-e2604966@student.hech.be",
+    "userName": "Nathalie D'accardo",
+    "userEmail": "e2604966@student.hech.be",
+    "exerciseId": "exercice-08",
+    "exerciseTitle": "Atelier 8 : Construire des grilles d'évaluation critériées",
+    "answer": "DIDACTIQUE DU NUMÉRIQUE   •   EXERCICE 08     1\nDIDACTIQUE DU NUMÉRIQUE   /   EXERCICE 08\nÉvaluer ce que les élèves apprennent\nTrois situations numériques, trois grilles critériées\n01   Info ou intox ?\nAnalyser une information, vérifier et argumenter\n02   Mes données, ma vie privée\nIdentifier des risques et choisir des comportements adaptés\n03   Une vidéo pour expliquer\nRendre un concept scientifique accessible à des élèves plus jeunes\nNOTRE DÉMARCHE\nPour chaque situation, nous partons des apprentissages visés. Nous choisissons ensuite des critères et des indicateurs que l’on peut réellement \nobserver, puis nous décrivons quatre niveaux de maîtrise. Les modalités d’évaluation sont choisies en fonction de ce que les élèves doivent \nmontrer.\nCOMMENT LIRE LES GRILLES\nNiveau 1 : à renforcer    •    Niveau 2 : en développement    •    Niveau 3 : maîtrisé    •    Niveau 4 : maîtrise approfondie\nLes attendus cités dans les pages suivantes sont repris tels qu’ils figurent dans les tableaux « Contenus / attendus » des documents FMTTN fournis. Les situations, critères, \nindicateurs et descripteurs sont nos propositions pour cet exercice.\n\nDIDACTIQUE DU NUMÉRIQUE   •   EXERCICE 08     2\nEXERCICE 08   /   DIDACTIQUE DU NUMÉRIQUE\n01   Info ou intox ?\nCas 3 • Analyser des publications des réseaux sociaux, vérifier leur fiabilité et justifier son analyse.\nATTENDUS RETENUS • LIBELLÉS EXACTS\nSavoir — « Expliquer ce que sont les « Fake News » — la mésinformation et la désinformation —, leurs enjeux et énoncer des moyens permettant de les repérer. »\nSavoir — « Identifier les moyens de signaler ou bloquer un contenu partagé de manière inappropriée en ligne. »\nSavoir-faire — « Proposer et mettre en place des actions pertinentes pour faire face à des situations de cyberattaque, de cyberharcèlement, de cybermanipulation. »\nSituation : à partir de deux publications, l’élève relève des indices, vérifie les informations et explique sa décision de partage. Modalités : formative et évaluation par les pairs, \navec un retour avant la conclusion finale.\nCritère\nIndicateurs observables\n1 · À renforcer\n2 · En développement\n3 · Maîtrisé\n4 · Approfondi\nReconnaître les mécanismes \nde désinformation\n• Distingue mésinformation et \ndésinformation\n• Repère un indice trompeur\n• Explique le risque de diffusion\nConfond les notions et ne \nrepère pas d’indice.\nNomme une notion ou un \nindice sans l’expliquer.\nDistingue les notions, repère un \nindice et explique un risque.\nDistingue les notions et relie \nplusieurs indices aux effets \npossibles.\nVérifier une publication\n• Identifie auteur et date\n• Recherche la source d’origine\n• Confronte à une autre source\nAccepte la publication sans \nvérification.\nVérifie un élément, sans \nconfronter les sources.\nVérifie auteur, date et origine, \npuis confronte une source.\nConfronte plusieurs sources et \nexplique les éventuels écarts.\nJustifier un choix de partage\n• Formule une conclusion\n• Cite les éléments vérifiés\n• Évite d’exposer des données \nprivées\nDécide de partager sans \njustification.\nDonne un avis avec un indice \npeu précis.\nJustifie sa décision avec des \néléments vérifiés et protège les \ndonnées.\nArgumente de façon nuancée et \npropose une conduite \nresponsable.\nPOURQUOI CES CHOIX ?\nNous avons retenu la compréhension, la vérification et la justification, car reconnaître une fake news ne suffit pas. Les indicateurs montrent ce que l’élève fait réellement. Les \nniveaux passent d’une réaction spontanée à une analyse argumentée. Le retour des pairs permet de confronter les démarches et de revoir sa conclusion.\n\nDIDACTIQUE DU NUMÉRIQUE   •   EXERCICE 08     3\nEXERCICE 08   /   DIDACTIQUE DU NUMÉRIQUE\n02   Mes données, ma vie privée\nCas 7 • Analyser des situations numériques, identifier les risques et proposer des comportements adaptés.\nATTENDUS RETENUS • LIBELLÉS EXACTS\nSavoir — « Expliquer les risques liés à l’exposition de données personnelles ou de contenus sensibles. »\nSavoir-faire — « Repérer les informations relatives à la vie privée, lors de l’encodage de données personnelles, y compris avec une IA. »\nCompétence — « Gérer son identité numérique, ses traces, ses données personnelles, de manière responsable. »\nSituation : l’élève examine trois situations (formulaire, application et photo publiée), identifie les données concernées et propose des actions. Modalités : diagnostique au \ndépart, puis formative et auto-évaluation après l’analyse.\nCritère\nIndicateurs observables\n1 · À renforcer\n2 · En développement\n3 · Maîtrisé\n4 · Approfondi\nRepérer les données \npersonnelles\n• Repère les données \ndemandées\n• Distingue données sensibles et \ncourantes\n• Identifie les personnes \nconcernées\nNe reconnaît que quelques \ndonnées évidentes.\nRepère plusieurs données mais \noublie les plus sensibles.\nIdentifie les données et \ndistingue celles qui demandent \nune vigilance.\nRepère aussi les données \nindirectes et explique qui est \nconcerné.\nComprendre les risques\n• Relie une donnée à son usage\n• Décrit un risque concret\n• Explique une conséquence \npossible\nNe relie pas les données à un \nrisque.\nCite un risque sans expliquer la \nsituation.\nExplique un risque pertinent et \nsa conséquence.\nCompare plusieurs \nconséquences selon le contexte.\nChoisir une protection \nadaptée\n• Propose une action réalisable\n• Adapte l’action à la situation\n• Justifie son choix\nPropose une action absente ou \ninadaptée.\nPropose une action utile mais \npeu adaptée.\nChoisit une protection adaptée \net explique pourquoi.\nPropose plusieurs protections \net justifie leur priorité.\nPOURQUOI CES CHOIX ?\nNous voulons vérifier que l’élève ne se contente pas de définir une donnée personnelle, mais qu’il sait la reconnaître et agir. Les indicateurs portent sur des réponses \nconcrètes dans chaque situation. Les niveaux progressent du simple repérage vers des choix justifiés. Le diagnostic aide à connaître les idées de départ ; l’auto-évaluation \npermet ensuite de mesurer ce qui a changé.\n\nDIDACTIQUE DU NUMÉRIQUE   •   EXERCICE 08     4\nEXERCICE 08   /   DIDACTIQUE DU NUMÉRIQUE\n03   Une vidéo pour expliquer\nCas 2 • Réaliser une vidéo de trois minutes expliquant un concept scientifique à des élèves plus jeunes.\nATTENDUS RETENUS • LIBELLÉS EXACTS\nSavoir-faire — « Sélectionner un outil, une application ou un logiciel adéquat en fonction de l’intention. »\nSavoir-faire — « Utiliser les fonctions principales d’un outil de création de contenus. »\nCompétence — « Interagir et communiquer de manière orale et écrite, en sélectionnant et en utilisant des outils numériques adéquats. »\nSituation : par groupe, les élèves préparent un scénario, réalisent une vidéo de trois minutes et la présentent à un public plus jeune. Modalités : évaluation par les pairs sur un \npremier montage, amélioration, puis sommative sur la version finale.\nCritère\nIndicateurs observables\n1 · À renforcer\n2 · En développement\n3 · Maîtrisé\n4 · Approfondi\nExpliquer le concept\n• Informations exactes\n• Explication progressive\n• Exemple adapté au public\nLe concept reste incorrect ou \nincompréhensible.\nL’explication est partiellement \njuste mais manque d’étapes.\nLe concept est exact et expliqué \navec un exemple accessible.\nL’explication anticipe les \ndifficultés du jeune public.\nCommuniquer avec la vidéo\n• Accroche et ordre des idées\n• Voix et textes \ncompréhensibles\n• Images utiles au propos\nLe message est difficile à \nsuivre.\nLe message est compréhensible \npar moments seulement.\nLa vidéo est structurée, audible \net les images aident à \ncomprendre.\nLes choix de rythme et \nd’images renforcent \nl’apprentissage.\nMobiliser les outils de \ncréation\n• Choix d’un outil adapté\n• Montage et transitions utiles\n• Export et durée de 3 minutes\nNe parvient pas à produire une \nvidéo exploitable.\nProduit une vidéo mais avec \ndes problèmes de montage ou \nd’export.\nUtilise les fonctions utiles et \nlivre une vidéo exploitable de 3 \nmin.\nAjuste les outils et le montage \npour améliorer la clarté du \nmessage.\nPOURQUOI CES CHOIX ?\nNous avons choisi de regarder ce que la vidéo permet d’apprendre, la manière dont le message est transmis et l’utilisation des outils. Les indicateurs portent sur le contenu, la \ncommunication et des gestes techniques visibles. Les niveaux vont d’une production peu exploitable à une vidéo pensée pour son public. Les retours des pairs servent à \naméliorer le premier montage avant l’évaluation finale.",
+    "content": "DIDACTIQUE DU NUMÉRIQUE   •   EXERCICE 08     1\nDIDACTIQUE DU NUMÉRIQUE   /   EXERCICE 08\nÉvaluer ce que les élèves apprennent\nTrois situations numériques, trois grilles critériées\n01   Info ou intox ?\nAnalyser une information, vérifier et argumenter\n02   Mes données, ma vie privée\nIdentifier des risques et choisir des comportements adaptés\n03   Une vidéo pour expliquer\nRendre un concept scientifique accessible à des élèves plus jeunes\nNOTRE DÉMARCHE\nPour chaque situation, nous partons des apprentissages visés. Nous choisissons ensuite des critères et des indicateurs que l’on peut réellement \nobserver, puis nous décrivons quatre niveaux de maîtrise. Les modalités d’évaluation sont choisies en fonction de ce que les élèves doivent \nmontrer.\nCOMMENT LIRE LES GRILLES\nNiveau 1 : à renforcer    •    Niveau 2 : en développement    •    Niveau 3 : maîtrisé    •    Niveau 4 : maîtrise approfondie\nLes attendus cités dans les pages suivantes sont repris tels qu’ils figurent dans les tableaux « Contenus / attendus » des documents FMTTN fournis. Les situations, critères, \nindicateurs et descripteurs sont nos propositions pour cet exercice.\n\nDIDACTIQUE DU NUMÉRIQUE   •   EXERCICE 08     2\nEXERCICE 08   /   DIDACTIQUE DU NUMÉRIQUE\n01   Info ou intox ?\nCas 3 • Analyser des publications des réseaux sociaux, vérifier leur fiabilité et justifier son analyse.\nATTENDUS RETENUS • LIBELLÉS EXACTS\nSavoir — « Expliquer ce que sont les « Fake News » — la mésinformation et la désinformation —, leurs enjeux et énoncer des moyens permettant de les repérer. »\nSavoir — « Identifier les moyens de signaler ou bloquer un contenu partagé de manière inappropriée en ligne. »\nSavoir-faire — « Proposer et mettre en place des actions pertinentes pour faire face à des situations de cyberattaque, de cyberharcèlement, de cybermanipulation. »\nSituation : à partir de deux publications, l’élève relève des indices, vérifie les informations et explique sa décision de partage. Modalités : formative et évaluation par les pairs, \navec un retour avant la conclusion finale.\nCritère\nIndicateurs observables\n1 · À renforcer\n2 · En développement\n3 · Maîtrisé\n4 · Approfondi\nReconnaître les mécanismes \nde désinformation\n• Distingue mésinformation et \ndésinformation\n• Repère un indice trompeur\n• Explique le risque de diffusion\nConfond les notions et ne \nrepère pas d’indice.\nNomme une notion ou un \nindice sans l’expliquer.\nDistingue les notions, repère un \nindice et explique un risque.\nDistingue les notions et relie \nplusieurs indices aux effets \npossibles.\nVérifier une publication\n• Identifie auteur et date\n• Recherche la source d’origine\n• Confronte à une autre source\nAccepte la publication sans \nvérification.\nVérifie un élément, sans \nconfronter les sources.\nVérifie auteur, date et origine, \npuis confronte une source.\nConfronte plusieurs sources et \nexplique les éventuels écarts.\nJustifier un choix de partage\n• Formule une conclusion\n• Cite les éléments vérifiés\n• Évite d’exposer des données \nprivées\nDécide de partager sans \njustification.\nDonne un avis avec un indice \npeu précis.\nJustifie sa décision avec des \néléments vérifiés et protège les \ndonnées.\nArgumente de façon nuancée et \npropose une conduite \nresponsable.\nPOURQUOI CES CHOIX ?\nNous avons retenu la compréhension, la vérification et la justification, car reconnaître une fake news ne suffit pas. Les indicateurs montrent ce que l’élève fait réellement. Les \nniveaux passent d’une réaction spontanée à une analyse argumentée. Le retour des pairs permet de confronter les démarches et de revoir sa conclusion.\n\nDIDACTIQUE DU NUMÉRIQUE   •   EXERCICE 08     3\nEXERCICE 08   /   DIDACTIQUE DU NUMÉRIQUE\n02   Mes données, ma vie privée\nCas 7 • Analyser des situations numériques, identifier les risques et proposer des comportements adaptés.\nATTENDUS RETENUS • LIBELLÉS EXACTS\nSavoir — « Expliquer les risques liés à l’exposition de données personnelles ou de contenus sensibles. »\nSavoir-faire — « Repérer les informations relatives à la vie privée, lors de l’encodage de données personnelles, y compris avec une IA. »\nCompétence — « Gérer son identité numérique, ses traces, ses données personnelles, de manière responsable. »\nSituation : l’élève examine trois situations (formulaire, application et photo publiée), identifie les données concernées et propose des actions. Modalités : diagnostique au \ndépart, puis formative et auto-évaluation après l’analyse.\nCritère\nIndicateurs observables\n1 · À renforcer\n2 · En développement\n3 · Maîtrisé\n4 · Approfondi\nRepérer les données \npersonnelles\n• Repère les données \ndemandées\n• Distingue données sensibles et \ncourantes\n• Identifie les personnes \nconcernées\nNe reconnaît que quelques \ndonnées évidentes.\nRepère plusieurs données mais \noublie les plus sensibles.\nIdentifie les données et \ndistingue celles qui demandent \nune vigilance.\nRepère aussi les données \nindirectes et explique qui est \nconcerné.\nComprendre les risques\n• Relie une donnée à son usage\n• Décrit un risque concret\n• Explique une conséquence \npossible\nNe relie pas les données à un \nrisque.\nCite un risque sans expliquer la \nsituation.\nExplique un risque pertinent et \nsa conséquence.\nCompare plusieurs \nconséquences selon le contexte.\nChoisir une protection \nadaptée\n• Propose une action réalisable\n• Adapte l’action à la situation\n• Justifie son choix\nPropose une action absente ou \ninadaptée.\nPropose une action utile mais \npeu adaptée.\nChoisit une protection adaptée \net explique pourquoi.\nPropose plusieurs protections \net justifie leur priorité.\nPOURQUOI CES CHOIX ?\nNous voulons vérifier que l’élève ne se contente pas de définir une donnée personnelle, mais qu’il sait la reconnaître et agir. Les indicateurs portent sur des réponses \nconcrètes dans chaque situation. Les niveaux progressent du simple repérage vers des choix justifiés. Le diagnostic aide à connaître les idées de départ ; l’auto-évaluation \npermet ensuite de mesurer ce qui a changé.\n\nDIDACTIQUE DU NUMÉRIQUE   •   EXERCICE 08     4\nEXERCICE 08   /   DIDACTIQUE DU NUMÉRIQUE\n03   Une vidéo pour expliquer\nCas 2 • Réaliser une vidéo de trois minutes expliquant un concept scientifique à des élèves plus jeunes.\nATTENDUS RETENUS • LIBELLÉS EXACTS\nSavoir-faire — « Sélectionner un outil, une application ou un logiciel adéquat en fonction de l’intention. »\nSavoir-faire — « Utiliser les fonctions principales d’un outil de création de contenus. »\nCompétence — « Interagir et communiquer de manière orale et écrite, en sélectionnant et en utilisant des outils numériques adéquats. »\nSituation : par groupe, les élèves préparent un scénario, réalisent une vidéo de trois minutes et la présentent à un public plus jeune. Modalités : évaluation par les pairs sur un \npremier montage, amélioration, puis sommative sur la version finale.\nCritère\nIndicateurs observables\n1 · À renforcer\n2 · En développement\n3 · Maîtrisé\n4 · Approfondi\nExpliquer le concept\n• Informations exactes\n• Explication progressive\n• Exemple adapté au public\nLe concept reste incorrect ou \nincompréhensible.\nL’explication est partiellement \njuste mais manque d’étapes.\nLe concept est exact et expliqué \navec un exemple accessible.\nL’explication anticipe les \ndifficultés du jeune public.\nCommuniquer avec la vidéo\n• Accroche et ordre des idées\n• Voix et textes \ncompréhensibles\n• Images utiles au propos\nLe message est difficile à \nsuivre.\nLe message est compréhensible \npar moments seulement.\nLa vidéo est structurée, audible \net les images aident à \ncomprendre.\nLes choix de rythme et \nd’images renforcent \nl’apprentissage.\nMobiliser les outils de \ncréation\n• Choix d’un outil adapté\n• Montage et transitions utiles\n• Export et durée de 3 minutes\nNe parvient pas à produire une \nvidéo exploitable.\nProduit une vidéo mais avec \ndes problèmes de montage ou \nd’export.\nUtilise les fonctions utiles et \nlivre une vidéo exploitable de 3 \nmin.\nAjuste les outils et le montage \npour améliorer la clarté du \nmessage.\nPOURQUOI CES CHOIX ?\nNous avons choisi de regarder ce que la vidéo permet d’apprendre, la manière dont le message est transmis et l’utilisation des outils. Les indicateurs portent sur le contenu, la \ncommunication et des gestes techniques visibles. Les niveaux vont d’une production peu exploitable à une vidéo pensée pour son public. Les retours des pairs servent à \naméliorer le premier montage avant l’évaluation finale.",
+    "fileUrl": "/travaux-etudiants/D_ACCARDO_Nathalie_Exercice_8_Construire_des_gril_2026-10-22.pdf",
+    "submittedAt": "2026-10-22 14:00"
+  },
+  {
+    "id": "sub-real-0097",
     "userId": "user-g.vromen@student.hech.be",
     "userName": "Gérard Vromen",
     "userEmail": "g.vromen@student.hech.be",
@@ -9812,7 +12459,67 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-02 14:00"
   },
   {
-    "id": "sub-real-0082",
+    "id": "sub-real-0098",
+    "userId": "user-g.vromen@student.hech.be",
+    "userName": "Gérard Vromen",
+    "userEmail": "g.vromen@student.hech.be",
+    "exerciseId": "exercice-02",
+    "exerciseTitle": "Atelier 2 : Évaluation critique d'une information",
+    "answer": "Exercice 02 — Peut-on faire confiance à cette information ?\nVotre mission\nVous découvrez sur Internet l'affirmation suivante :\n« Une étude scientifique vient de prouver que regarder son téléphone avant de dormir fait perdre 2 heures de sommeil chaque nuit. »\nAvant de la partager avec des élèves, vous devez déterminer si cette information est suffisamment fiable.\nPar groupes de 3 à 4 :\nConstruisez votre méthode de vérification\nQuelles informations devez-vous rechercher pour pouvoir déterminer si cette affirmation est fiable ?\n rechercher l’étude scientifique ou des rapports de référence qui dicte cette phrase en transformant la phrase de départ en information brute « regarder son téléphone avant de dormir fait perdre 2 heures de sommeil chaque nuit. » \nIl faut donc trouver la source d’origine (l’auteur ou l’émetteur) une fois la source trouvée, il faudrait vérifier sa spécialité et sa légitimité (est-il un expert dans le domaine, a-t-il un intérêt financier, politique ou idéologique à défendre cette affirmation) et la date d’origine. \n Les effets néfastes de l’utilisation du gsm avant de dormir (articles scientifiques, recherche global grâce à l’IA dans un premier instant)\n Une fois plusieurs articles les analyser et voir s’il y a des contradictions/des similitudes entre les différentes sources.\n Il faut également trouver les sources utilisés par l’auteur.\nMenez l'enquête\nUtilisez Internet pour vérifier l'information. Recherchez notamment :\nl'origine de l'affirmation ; sources médicales, press connue, IA mais avec une vérification des sources utilisés en ayant mis une condition « cite tes sources ». Néanmoins on ne trouve pas de réelle affirmation sur internet.\nla source scientifique éventuelle ;  Une idée est de vérifier des mémoires à condition d’avoir accès à une plateforme de l’université. \nl'auteur ou l'organisme à l'origine de l'information ; \nSur l’affirmation tel lequel nous n’avons pas trouvé.\nd'autres sources permettant de confirmer ou de nuancer l'affirmation.\nInsomnie : Une étude révèle que l'utilisation de téléphones portables avant le coucher est associée à un sommeil de moins bonne qualité - BBC News Afrique (BBC)\nLe manque de sommeil à l'ère du numérique : causes, conséquences et conseils (leading-midicine)\nSommeil et nouvelles technologies - INSV Institut National du Sommeil et de la Vigilance (institut sommeil)\nLe sommeil et les écrans - Étudiant-es Relais Santé - UNIGE  texte d’une université\nPrenez une décision\nRépondez à la question :Selon la source le temps de sommeil est diminuée mais on ne trouve pas exactement les « 2 heures » (il s’agit d’une moyenne symbolique). Cette diminution est liée à plusieurs facteurs : le fait scroller, retard de l’endormissement, effet biologique (hormone du sommeil est réduite)\n« Partageriez-vous cette information avec des élèves ? » Non : Nous n’avons pas la source qui citait exactement cette affirmation. Néanmoins nous avons des affirmations qui s’en approchent mais il s’agit d’une problématique où il n’y a pas de nombre réelle associé aux nombres d’heures perdues. Il en sort néanmoins qu’il y a une perte de sommeil par rapport à une personne qui n’utilise pas son gsm avant de dormir, mais cette perte n’est pas quantifiable.\nJustifiez votre réponse à partir de sources vérifiables.\nPréparez une restitution de 2 minutes :\nvotre décision ; Nous donnerons cette phrase selon un contexte donnée : Un élève qui devrait vérifier cette phrase dans le cadre du cours de numérique. Peut-on se fier à n’importe quelle citation ? Mais nous n’utiliserons pas cette phrase s’il s’agit d’une affirmation à transmettre aux élèves.\nles éléments qui ont guidé votre choix ; Ce n’est pas une vérité absolue. Il n’y a aucun site/citation qui explicite cette phrase.\nvotre méthode de vérification ;  Dans un premier instant, nous avons essayé de trouver la citation exacte dans un moteur de recherche. Ensuite, nous avons fait la recherche en allant sur l’IA afin de voir ce qu’il en dit. Ensuite nous avons essayé de trouver des documents scientifiques à propos de la réduction de sommeil suite à l’utilisation de gsm avant le sommeil. \nune difficulté rencontrée : Dans le peu de temps imparti, on a rencontré beaucoup de sites non fiables. Il fallait vérifier la source du site, vérifier la fiabilité et la pertinence pour chaque site. (On peut également considérer que le temps que chaque membre de l’équipe comprenne l’exercice a été un obstacle.)\nRessources\nVous pouvez utiliser un moteur de recherche ainsi que :\nGoogle Scholar\nPubMed\nCrossref\nUne IA peut vous aider dans vos recherches, mais ses réponses doivent être vérifiées à partir de sources fiables.",
+    "content": "Exercice 02 — Peut-on faire confiance à cette information ?\nVotre mission\nVous découvrez sur Internet l'affirmation suivante :\n« Une étude scientifique vient de prouver que regarder son téléphone avant de dormir fait perdre 2 heures de sommeil chaque nuit. »\nAvant de la partager avec des élèves, vous devez déterminer si cette information est suffisamment fiable.\nPar groupes de 3 à 4 :\nConstruisez votre méthode de vérification\nQuelles informations devez-vous rechercher pour pouvoir déterminer si cette affirmation est fiable ?\n rechercher l’étude scientifique ou des rapports de référence qui dicte cette phrase en transformant la phrase de départ en information brute « regarder son téléphone avant de dormir fait perdre 2 heures de sommeil chaque nuit. » \nIl faut donc trouver la source d’origine (l’auteur ou l’émetteur) une fois la source trouvée, il faudrait vérifier sa spécialité et sa légitimité (est-il un expert dans le domaine, a-t-il un intérêt financier, politique ou idéologique à défendre cette affirmation) et la date d’origine. \n Les effets néfastes de l’utilisation du gsm avant de dormir (articles scientifiques, recherche global grâce à l’IA dans un premier instant)\n Une fois plusieurs articles les analyser et voir s’il y a des contradictions/des similitudes entre les différentes sources.\n Il faut également trouver les sources utilisés par l’auteur.\nMenez l'enquête\nUtilisez Internet pour vérifier l'information. Recherchez notamment :\nl'origine de l'affirmation ; sources médicales, press connue, IA mais avec une vérification des sources utilisés en ayant mis une condition « cite tes sources ». Néanmoins on ne trouve pas de réelle affirmation sur internet.\nla source scientifique éventuelle ;  Une idée est de vérifier des mémoires à condition d’avoir accès à une plateforme de l’université. \nl'auteur ou l'organisme à l'origine de l'information ; \nSur l’affirmation tel lequel nous n’avons pas trouvé.\nd'autres sources permettant de confirmer ou de nuancer l'affirmation.\nInsomnie : Une étude révèle que l'utilisation de téléphones portables avant le coucher est associée à un sommeil de moins bonne qualité - BBC News Afrique (BBC)\nLe manque de sommeil à l'ère du numérique : causes, conséquences et conseils (leading-midicine)\nSommeil et nouvelles technologies - INSV Institut National du Sommeil et de la Vigilance (institut sommeil)\nLe sommeil et les écrans - Étudiant-es Relais Santé - UNIGE  texte d’une université\nPrenez une décision\nRépondez à la question :Selon la source le temps de sommeil est diminuée mais on ne trouve pas exactement les « 2 heures » (il s’agit d’une moyenne symbolique). Cette diminution est liée à plusieurs facteurs : le fait scroller, retard de l’endormissement, effet biologique (hormone du sommeil est réduite)\n« Partageriez-vous cette information avec des élèves ? » Non : Nous n’avons pas la source qui citait exactement cette affirmation. Néanmoins nous avons des affirmations qui s’en approchent mais il s’agit d’une problématique où il n’y a pas de nombre réelle associé aux nombres d’heures perdues. Il en sort néanmoins qu’il y a une perte de sommeil par rapport à une personne qui n’utilise pas son gsm avant de dormir, mais cette perte n’est pas quantifiable.\nJustifiez votre réponse à partir de sources vérifiables.\nPréparez une restitution de 2 minutes :\nvotre décision ; Nous donnerons cette phrase selon un contexte donnée : Un élève qui devrait vérifier cette phrase dans le cadre du cours de numérique. Peut-on se fier à n’importe quelle citation ? Mais nous n’utiliserons pas cette phrase s’il s’agit d’une affirmation à transmettre aux élèves.\nles éléments qui ont guidé votre choix ; Ce n’est pas une vérité absolue. Il n’y a aucun site/citation qui explicite cette phrase.\nvotre méthode de vérification ;  Dans un premier instant, nous avons essayé de trouver la citation exacte dans un moteur de recherche. Ensuite, nous avons fait la recherche en allant sur l’IA afin de voir ce qu’il en dit. Ensuite nous avons essayé de trouver des documents scientifiques à propos de la réduction de sommeil suite à l’utilisation de gsm avant le sommeil. \nune difficulté rencontrée : Dans le peu de temps imparti, on a rencontré beaucoup de sites non fiables. Il fallait vérifier la source du site, vérifier la fiabilité et la pertinence pour chaque site. (On peut également considérer que le temps que chaque membre de l’équipe comprenne l’exercice a été un obstacle.)\nRessources\nVous pouvez utiliser un moteur de recherche ainsi que :\nGoogle Scholar\nPubMed\nCrossref\nUne IA peut vous aider dans vos recherches, mais ses réponses doivent être vérifiées à partir de sources fiables.",
+    "fileUrl": "/travaux-etudiants/VROMEN_Gerard_Exercice_2_Peut-on_faire_confi_2026-10-22.docx",
+    "submittedAt": "2026-10-22 14:00"
+  },
+  {
+    "id": "sub-real-0099",
+    "userId": "user-g.vromen@student.hech.be",
+    "userName": "Gérard Vromen",
+    "userEmail": "g.vromen@student.hech.be",
+    "exerciseId": "exercice-03",
+    "exerciseTitle": "Atelier 3 : Conception d'un guide numérique élèves",
+    "answer": "Exercice 03 — Concevoir un guide numérique pour les élèves\nVotre mission\nVotre établissement constate que les nouveaux élèves rencontrent des difficultés pour s'organiser et collaborer dans leur environnement numérique. teams\nVotre groupe doit concevoir un guide numérique destiné à ces élèves pour les aider à utiliser efficacement les outils numériques de l'école.\nConsignes\nEn groupes de 3 à 4 :\nIdentifiez les besoins\nDéterminez les principales difficultés auxquelles votre guide devra répondre.\nSavoir s’identifier \nComprendre l’environnement (les options de base : voir une notifications, lire un message, répondre à un message, comment réaliser un devoir, comment télécharger un document, vidéo, …)\nComment naviguer dans l’équipe (canaux) \nAfficher les canaux masqués\nMoyen de diffuser\nDéfinissez votre projet\nChoisissez les contenus à transmettre, le public cible et le format le plus pertinent : vidéo, tutoriel interactif, site, infographie, podcast…\nContenu : Utilisation de base de teams.\nPublic : 1re secondaire et tous les nouveaux élèves\nFormat :application (Tuto interactif accessible sur téléphone (susceptible de faire évoluer) et d’ajouter des vidéo et des infographies)\nOrganisez votre travail\nRépartissez les rôles en fonction des compétences et des intérêts de chacun et planifiez les différentes étapes de réalisation.\nRédaction du contenu (voir 1) : Sabri\nPrétest : Mariëlle\nRelecture : Anita\nCréateur de l’application : Jona\n\nRéalisez votre production\nUtilisez les outils numériques de votre choix pour créer votre guide.\nIA pour créer l’application \nCanva si le timing le permet\nTestez et améliorez\nFaites tester votre production par un autre groupe. Recueillez leurs remarques et apportez au moins une amélioration.\nPrésentation\nPrésentez votre guide au groupe en 3 minutes.\nVous devrez expliquer :\nle besoin auquel vous avez répondu ;\nvos principaux choix ;\nla contribution des différents membres du groupe ;\nune amélioration apportée à la suite des tests.",
+    "content": "Exercice 03 — Concevoir un guide numérique pour les élèves\nVotre mission\nVotre établissement constate que les nouveaux élèves rencontrent des difficultés pour s'organiser et collaborer dans leur environnement numérique. teams\nVotre groupe doit concevoir un guide numérique destiné à ces élèves pour les aider à utiliser efficacement les outils numériques de l'école.\nConsignes\nEn groupes de 3 à 4 :\nIdentifiez les besoins\nDéterminez les principales difficultés auxquelles votre guide devra répondre.\nSavoir s’identifier \nComprendre l’environnement (les options de base : voir une notifications, lire un message, répondre à un message, comment réaliser un devoir, comment télécharger un document, vidéo, …)\nComment naviguer dans l’équipe (canaux) \nAfficher les canaux masqués\nMoyen de diffuser\nDéfinissez votre projet\nChoisissez les contenus à transmettre, le public cible et le format le plus pertinent : vidéo, tutoriel interactif, site, infographie, podcast…\nContenu : Utilisation de base de teams.\nPublic : 1re secondaire et tous les nouveaux élèves\nFormat :application (Tuto interactif accessible sur téléphone (susceptible de faire évoluer) et d’ajouter des vidéo et des infographies)\nOrganisez votre travail\nRépartissez les rôles en fonction des compétences et des intérêts de chacun et planifiez les différentes étapes de réalisation.\nRédaction du contenu (voir 1) : Sabri\nPrétest : Mariëlle\nRelecture : Anita\nCréateur de l’application : Jona\n\nRéalisez votre production\nUtilisez les outils numériques de votre choix pour créer votre guide.\nIA pour créer l’application \nCanva si le timing le permet\nTestez et améliorez\nFaites tester votre production par un autre groupe. Recueillez leurs remarques et apportez au moins une amélioration.\nPrésentation\nPrésentez votre guide au groupe en 3 minutes.\nVous devrez expliquer :\nle besoin auquel vous avez répondu ;\nvos principaux choix ;\nla contribution des différents membres du groupe ;\nune amélioration apportée à la suite des tests.",
+    "fileUrl": "/travaux-etudiants/VROMEN_Gerard_Exercice_3_Concevoir_un_guide__2026-10-22.docx",
+    "submittedAt": "2026-10-22 14:00"
+  },
+  {
+    "id": "sub-real-0100",
+    "userId": "user-g.vromen@student.hech.be",
+    "userName": "Gérard Vromen",
+    "userEmail": "g.vromen@student.hech.be",
+    "exerciseId": "exercice-04",
+    "exerciseTitle": "Atelier 4 : Escape Game FMTTN (Cyber-Enquête)",
+    "answer": "",
+    "content": "",
+    "fileUrl": "/travaux-etudiants/VROMEN_Gerard_Exercice_4_Escape_Game_FMTTN_C_2026-10-22.docx",
+    "submittedAt": "2026-10-22 14:00"
+  },
+  {
+    "id": "sub-real-0101",
+    "userId": "user-g.vromen@student.hech.be",
+    "userName": "Gérard Vromen",
+    "userEmail": "g.vromen@student.hech.be",
+    "exerciseId": "exercice-06",
+    "exerciseTitle": "Atelier 6 : Démarche itérative (Concevoir & tester un mini-jeu)",
+    "answer": "Lien vers le Genially – Le tri des déchets :\nLien vers le questionnaire GoogleForms :\nLes 3 améliorations effectués : \n- Correction des fautes d’orthographe\n- Ajout d’exercices supplémentaires dans le tri des objets et des liens vers « où vont nos poubelles ensuite »\n- Ajout d’un diplôme à la fin du mini-jeu.\nCe que vous avez appris grâce au processus d'itération : \n- Le fait d’améliorer un jeu en le faisant tester + demander un retour via le googleforms permet de se rendre compte des fautes commis lors de la conception, il permet également de faire attention aux erreurs à éviter pour les prochains jeux. \n- Il y a également la découverte de fonctionnalités dont on ne connait pas l’existence. \n- La clarté de navigation n’est pas toujours optimale (un bouton caché, trop d’éléments, des images trop petits, …) \n- Il y a également l’optimisation du temps de création, autant au début il faut beaucoup de temps pour réaliser le genially autant à la fin, la correction est plus rapide étant donné qu’on connait les différents fonctionnalités (et ses limites)\nEn quoi le test de votre production a-t-il modifié votre manière de concevoir le jeu ?\nA l’avenir, il faudrait réaliser un brouillon (connaissant maintenant les différentes fonctionnalités) avant d’entamer la création afin de ne plus perdre du temps. Le but premier a été de créer le jeu, ayant plus de connaissances on peut trouver plus de situations problèmes, les yeux à venir auront des idées innovantes, des jeux  plus ludiques à insérer dans le jeu, … \nGroupe :\nD’accardo Nathalie Esposito Julien Shreurs Aurélie Van Dijk Mariëlle Vromen Gérard",
+    "content": "Lien vers le Genially – Le tri des déchets :\nLien vers le questionnaire GoogleForms :\nLes 3 améliorations effectués : \n- Correction des fautes d’orthographe\n- Ajout d’exercices supplémentaires dans le tri des objets et des liens vers « où vont nos poubelles ensuite »\n- Ajout d’un diplôme à la fin du mini-jeu.\nCe que vous avez appris grâce au processus d'itération : \n- Le fait d’améliorer un jeu en le faisant tester + demander un retour via le googleforms permet de se rendre compte des fautes commis lors de la conception, il permet également de faire attention aux erreurs à éviter pour les prochains jeux. \n- Il y a également la découverte de fonctionnalités dont on ne connait pas l’existence. \n- La clarté de navigation n’est pas toujours optimale (un bouton caché, trop d’éléments, des images trop petits, …) \n- Il y a également l’optimisation du temps de création, autant au début il faut beaucoup de temps pour réaliser le genially autant à la fin, la correction est plus rapide étant donné qu’on connait les différents fonctionnalités (et ses limites)\nEn quoi le test de votre production a-t-il modifié votre manière de concevoir le jeu ?\nA l’avenir, il faudrait réaliser un brouillon (connaissant maintenant les différentes fonctionnalités) avant d’entamer la création afin de ne plus perdre du temps. Le but premier a été de créer le jeu, ayant plus de connaissances on peut trouver plus de situations problèmes, les yeux à venir auront des idées innovantes, des jeux  plus ludiques à insérer dans le jeu, … \nGroupe :\nD’accardo Nathalie Esposito Julien Shreurs Aurélie Van Dijk Mariëlle Vromen Gérard",
+    "fileUrl": "/travaux-etudiants/VROMEN_Gerard_Atelier_6_Demarche_iterative_e_2026-10-22.docx",
+    "submittedAt": "2026-10-22 14:00"
+  },
+  {
+    "id": "sub-real-0102",
+    "userId": "user-g.vromen@student.hech.be",
+    "userName": "Gérard Vromen",
+    "userEmail": "g.vromen@student.hech.be",
+    "exerciseId": "exercice-08",
+    "exerciseTitle": "Atelier 8 : Construire des grilles d'évaluation critériées",
+    "answer": "Exercice 8 : Construire des grilles d’évaluation critériées\nCas 1 : Recherche d’information : Rechercher des informations sur Internet concernant une personnalité scientifique, sélectionner des informations pertinentes et identifier des sources fiables.\nApprentissages visés : \nSavoirs : \nUtiliser adéquatement en contexte, les termes dont moteur de recherche, barre de recherche et navigateur.\nSavoirs-faires :\nDéterminer un ou plusieurs mot(s)-clé(s) pertinent(s) pour effectuer une recherche.\nUtiliser des outils de recherche dont des moteurs de recherche, en considérant leurs spécificités.\nNaviguer entre plusieurs documents, sites, applications, onglets, logiciels.\nAssocier chaque élément du résultat de la recherche à son intention.\nPointer la source apparente d’un contenu.\n\nCompétences mobilisés : \nRechercher un contenu, au moyen d’un outil de recherche imposé, en utilisant une bibliothèque appropriée et des mots-clés choisis individuellement.\nQuestionner la fiabilité contextuelle d’une source, avec l’aide de l’enseignant.\nCompétences transversales :\nDévelopper une pensée critique et complexe : trouver, traiter et évaluer des sources d’information fiables en luttant contre les généralisations et le copier-coller naïf. S’interroger sur l’intention des producteurs et diffuseurs de contenus sur le Web.\nApprendre à apprendre : développer son environnement personnel d’apprentissage.\nDécouvrir le monde des activités professionnelles et s’orienter.\nSe connaître et développer son autonomie.\n\nSituation problème :\n« Pour le cours de sciences et le journal de l’école, ton enseignant te demande de réaliser un article sur le tri des déchets et leur impact sur l’environnement. Malheureusement, il est parti précipitamment en réunion et n’a laissé sur ton banc un petit post-it jaune avec trois indices très mystérieux. »\nSur le post-it se trouve : \nIndice 1 : « Une pelure d’orange met quelques semaines à disparaître tandis qu’un sac de plastique met 450 ans. Retrouvez la frontière exacte entre ce qui est biodégradable à l’échelle humaine et ce qui ne l’est pas »\nIndice 2 : « PMC, compost, papier-carton, bulles à verre, … »\nIndice 2 : « Notre poubelle verte, une source d’énergie ? »\nConsigne : « A partir de ces 3 indices, utilisez votre navigateur pour réaliser les recherches sur ceux-ci. Complète ton carnet de recherche associé ».\nLa leçon se passe en plusieurs étapes : \nEtape 1 : Test flash « détective des déchets »\nEtape 2 : Retour, en groupe classe : Réaliser un brainstorming sur les mots tapés dans la barre de recherche. Ensuite proposer les sites trouvés par les élèves et demander en groupe classe leur avis sur la fiabilité de la source.\nEtape 3 : Demander aux élèves de réaliser la situation problème.\nEtape 4 : Présentation du son travail auprès de 4 condisciples. Laisser les élèves se confronter à leurs recherches et les laisser améliorer leurs recherches.\nEtape 5 : Rendre le carnet de note + le travail \n\nLe carnet de recherche : \n\nDispositif d’évaluation\nIci la grille d’évaluation se porte sur le dispositif diagnostique (10 à 15 minutes) qui sera réalisé en étape 1.\nGrilles d’évaluation critériée\nJustification des choix\nRétention des critères : \nElles répondent directement au référentiel de FMTTN. Chaque critère est un acquis d’apprentissage dicté dans le volet numérique du référentiel. Dans les critères on évalue les critères savoirs, savoirs-faires et les compétences mobilisées et transversales. Il s’agit donc d’une situation très complète qui permet d’évaluer les leviers nécessaires pour résoudre le défi.\nEléments permettent l’observation des indicateurs\nIl y a des critères directement observables et donc mesurables qui sont laissés par des traces écrits.\nEtant donné que les élèves ont accès aux critères, les élèves savent exactement ce qui atteste la réussite. Ceci facilite l’auto-évaluation.\nL’enseignant peut donc très rapidement déceler les blocages méthodologiques et y remédier.\nTraduction de la progression\nIl y a une échelle descriptive composé de 4 niveaux (initial, intermédiaire, confirmé et expert) qui traduit le passage d'une démarche impulsive à une démarche autonome et réflexive.\nNiveau 1 : L’élève agit de manière intuitive.\nNiveau 2 : L’élève applique les gestes de base mais ne comprend pas toujours l’origine et commet toujours des maladresses.\nNiveau 3 (attendu en fin d’année) : L’élève maitrise la procédure recommandée et répond pleinement aux exigences de la consigne.\nNiveau 4 : L’élève dépasse l’attendu simple.\nChoix de cette modalité\nLe choix d’un test diagnostique : Ce test a permis de déterminer les représentations initiales sans note chiffrée dès le début de la situation-problème. Elle permet également de déterminer les pré-requis des élèves venant d’écoles et de milieux différents.\nCe test permet également, en fin de leçon, de mettre à l’évidence aux élèves leur progression dans les différents attendus (de la matière comme la compétence transversale)\nCas 2 : Education aux médias (info ou intox ?) Analyser des publications provenant des réseaux sociaux, vérifier leur fiabilité et justifier son analyse.\nApprentissages visés\nSavoirs : \nExpliquer la notion de « Fake News » comme étant une information délibérément fausse.\nRéseaux socionumériques : expliciter les spécificités des différents réseaux socionumériques.\nNavigation sécurisée : distinguer un protocole sécurisé HTTPS d’un protocole non sécurisé http.\nSavoirs-faires :\nRepérage de la source : sélectionner des mots-clés pertinents, pointer la source apparente d’un contenu.\nProposer et mettre en place des actions pertinentes et adaptées face à des situations de cyberattaque, cyberharcèlement ou cybermanipulation.\n\nCompétences mobilisés : \nQuestionner la fiabilité contextuelle d’une source, avec l’aide de l’enseignant.\n\nCompétences transversales :\nDévelopper une pensée critique et complexe : trouver, traiter et évaluer des sources d’information fiables en luttant contre les généralisations et le copier-coller naïf. S’interroger sur l’intention des producteurs et diffuseurs de contenus sur le Web.\nCréativité : Adopter une posture citoyenne et écoresponsable du numérique.\nSituation problème :\n« Ce matin, c’est l’effervescence totale dans la cour de récréation ! Un message vocal de 15 secondes accompagné d’un visuel circule à toute vitesse dans les groupes Facebook, WhatsApp et Snapchat de la classe. On y entend clairement la voix de ton directeur annoncer : « Bonjour à tous les élèves. En raison d’un problème technique dans l’établissement, tous les cours sont suspendus ce vendredi après-midi pour organiser un grand tournoi de jeux vidéo dans le gymnase. Rendez-vous sur le lien ci-dessous pour inscrire votre compte et recevoir un passe d’accès gratuit ! Vite il n’y en aura pas pour tout le monde.». La voix ressemble à celle du directeur et le message utilise le logo officiel de l’école ! Certains élèves fêtent déjà la nouvelle, tandis que d’autres s’apprêtent à remplir le formulaire d’inscription. Ta mission : étant dans la brigade « Info/intox », le secrétariat de l’école vous demande de mener une enquête en 40 minutes afin de vérifier s’il s’agit d’une vraie communication officielle ou d’un piège numérique. Rédige à la suite de celui-ci une note d’explication pour la classe »\nL’élève va devoir compléter un carnet d’enquête : \nDispositif d’évaluation\nL’exercice sera 5 sera ici un test formatif\nGrilles d’évaluation critériée\nJustification des choix\nRétention des critères : \nElles répondent directement au référentiel de FMTTN. Chaque critère est un acquis d’apprentissage dicté dans le volet numérique du référentiel. Dans les critères on évalue les critères savoirs, savoirs-faires et les compétences mobilisées et transversales. La compréhension théorique de la notion de « Fake News » est vérifié. Les élèves doivent montrer à l’enseignant comment ils aborderaient une informations. \nEléments permettent l’observation des indicateurs\nLa grille décrit des comportements et des gestes techniques et des traces mesurables. Les élèves peuvent une fois de plus vérifier ce qui les attend. La grille permet de déterminer le niveau de réflexion et la nature exacte de(s) erreur(s) de l’élève.\nTraduction de la progression\nUne fois de plus on passe par une échelle descriptive à 4 niveaux.\nLe niveau 1 est toujours dans l’impulsivité où l’élève clique aveuglément, relaie l’information sans vérifier et dépend totalement de l’enseignant.\nLe niveau 2 permet de voir si un élève applique des gestes techniques isolés mais conserve une hésitation.\nLe niveau 3 (toujours attendu en fin s1) sera la maitrise de la démarche complète exigé.\nLe niveau 4 : Il dépasse l’attendu et analyse les biais, le fonctionnement des algorithmes, …\nOn pourrait supposer que la plupart des élèves commencent au niveau 1 et en passant par les différentes activités, les élèves atteindront normalement le niveau 3.\nChoix de cette modalité\nLe choix de l’évaluation formative : ) ce stade la grille ne sanctionne pas mais permet un feedback immédiat et constructif. L’enseignant peut directement insister sur les lacunes et trouver des « remédiations ». \nUn des points sur lequel insiste le programme : apprendre à apprendre. A travers la test formatif, l’élève cherche donc à comprendre où sont ses difficultés et peut alors les rétablir pour le test sommatif (l’enseignant donne une info et un intox, l’élève va devoir trouver laquelle est info et intox. Ensuite ils doivent justifier et expliquer leur démarche réalisée. \nCas 3 : Intelligence artificielle : Utiliser une IA générative pour créer une affiche, expérimenter différents prompts, comparer les résultats et justifier ses choix.\nApprentissages visés (en S3)\nSavoirs : \nExemplifier des usages de l’IA.\nSavoirs-faires :\nUtiliser conjointement des applications/des logiciels disponibles dans un espace numérique en ligne\nCompétences mobilisés : \nInterroger/analyser le potentiel d’un algorithme (ex. : en matière d’intelligence artificielle [IA]\nCompétences transversales :\nApprendre à apprendre : être capable d’expliciter le sens de sa démarche et de ses choix.\nSituation problème :\n« Pour l’organisation de la journée sportive, le comité des élèves aimerait réaliser une affiche. Afin de gagner en temps, un des élèves propose de confier le travail à l’IA. Etant donné que tu es en charge des affiches pour le comité, tu vas devoir t’en charger. Tu dois essayer d’attirer le plus de monde à y participer. Il faut donc que tu génère un texte/slogan et que tu crées l’affiche à l’aide de l’I.A. »\nL’élève va devoir créer l’affiche à l’aide de son carnet de bord :\nDispositif d’évaluation\nL’évaluation se fait donc par les pairs.\nGrille d’évaluation critérié\nJustification des choix\nRétention des critères : \nLes 4 critères découlent directement du référentiel FMTTN.\nExemplifier des usages de l’IA : l’élève doit être capable de distinguer génération textuelle et la génération visuelle. Et il doit comprendre la diversité des applications algorithmiques.\nUtiliser conjointement des app/logiciels en ligne : l’élève doit pouvoir associer un générateur d’image à un outil de mise en page.\nInterroger/analyser le potentiel d’un algorithme d’IA : L’élève doit dépasser l’effet « magique » pour évaluer les biais, artefacts et limites réelles du modèle.\nApprendre à apprendre : l’élève doit analyser la métacognition de son travail.\nEléments permettent l’observation des indicateurs\nChaque niveau s’appuie sur des traces écrites et mesurables déposées dans le carnet de rouge (retranscription exacte du prompt)\nLes appréciations seront objectives : on évalue la méthodologie numérique pour sa pertinence, l’articulation des outils et la lucidité du regard porté sur l’algorithme.\nLes élèves savent ce qui est attendu permettant une auto-évaluation immédiate au cours de l’activité.\nTraduction de la progression\nNiveau 1 : l’élève subit l’outil. Il accepte la première image générée sans recul. Il ne sait pas combiner deux applications et ne parvient pas à expliquer ses prompts.\nNiveau 2 : L’élève utilise les outils de manière cloisonnée. Il repère des erreurs flagrants mais peine à ajuster son prompt ou à justifier ses choix.\nNiveau 3 : L’élève maitrise la démarche complète : il rédige un prompt structuré, combine conjointement les outils dans l’espace en ligne.\nNiveau 4 : L’élève maîtrise le fonctionnement général des algorithmes, optimise les mises en page et argumente la valeur ajoutée de l’intelligence humaine face à l’IA.\nChoix de cette modalité\nL’évaluation par les pairs permet d’un part une évaluation formative qui permet dans un premier temps d’améliorer son affiche en ajustant son prompt, … d’un autre part : les élèves peuvent donner des conseils et partager leurs prompts. Il y a donc d’abord le recherche par essais-erreurs. L’enseignant intervient donc en tant que guide. L’évaluation valorise surtout le développement de l’esprit critique, l’autonomie méthodologique et la capacité à devenir un utilisateur éclairé et responsable des technologies numériques.",
+    "content": "Exercice 8 : Construire des grilles d’évaluation critériées\nCas 1 : Recherche d’information : Rechercher des informations sur Internet concernant une personnalité scientifique, sélectionner des informations pertinentes et identifier des sources fiables.\nApprentissages visés : \nSavoirs : \nUtiliser adéquatement en contexte, les termes dont moteur de recherche, barre de recherche et navigateur.\nSavoirs-faires :\nDéterminer un ou plusieurs mot(s)-clé(s) pertinent(s) pour effectuer une recherche.\nUtiliser des outils de recherche dont des moteurs de recherche, en considérant leurs spécificités.\nNaviguer entre plusieurs documents, sites, applications, onglets, logiciels.\nAssocier chaque élément du résultat de la recherche à son intention.\nPointer la source apparente d’un contenu.\n\nCompétences mobilisés : \nRechercher un contenu, au moyen d’un outil de recherche imposé, en utilisant une bibliothèque appropriée et des mots-clés choisis individuellement.\nQuestionner la fiabilité contextuelle d’une source, avec l’aide de l’enseignant.\nCompétences transversales :\nDévelopper une pensée critique et complexe : trouver, traiter et évaluer des sources d’information fiables en luttant contre les généralisations et le copier-coller naïf. S’interroger sur l’intention des producteurs et diffuseurs de contenus sur le Web.\nApprendre à apprendre : développer son environnement personnel d’apprentissage.\nDécouvrir le monde des activités professionnelles et s’orienter.\nSe connaître et développer son autonomie.\n\nSituation problème :\n« Pour le cours de sciences et le journal de l’école, ton enseignant te demande de réaliser un article sur le tri des déchets et leur impact sur l’environnement. Malheureusement, il est parti précipitamment en réunion et n’a laissé sur ton banc un petit post-it jaune avec trois indices très mystérieux. »\nSur le post-it se trouve : \nIndice 1 : « Une pelure d’orange met quelques semaines à disparaître tandis qu’un sac de plastique met 450 ans. Retrouvez la frontière exacte entre ce qui est biodégradable à l’échelle humaine et ce qui ne l’est pas »\nIndice 2 : « PMC, compost, papier-carton, bulles à verre, … »\nIndice 2 : « Notre poubelle verte, une source d’énergie ? »\nConsigne : « A partir de ces 3 indices, utilisez votre navigateur pour réaliser les recherches sur ceux-ci. Complète ton carnet de recherche associé ».\nLa leçon se passe en plusieurs étapes : \nEtape 1 : Test flash « détective des déchets »\nEtape 2 : Retour, en groupe classe : Réaliser un brainstorming sur les mots tapés dans la barre de recherche. Ensuite proposer les sites trouvés par les élèves et demander en groupe classe leur avis sur la fiabilité de la source.\nEtape 3 : Demander aux élèves de réaliser la situation problème.\nEtape 4 : Présentation du son travail auprès de 4 condisciples. Laisser les élèves se confronter à leurs recherches et les laisser améliorer leurs recherches.\nEtape 5 : Rendre le carnet de note + le travail \n\nLe carnet de recherche : \n\nDispositif d’évaluation\nIci la grille d’évaluation se porte sur le dispositif diagnostique (10 à 15 minutes) qui sera réalisé en étape 1.\nGrilles d’évaluation critériée\nJustification des choix\nRétention des critères : \nElles répondent directement au référentiel de FMTTN. Chaque critère est un acquis d’apprentissage dicté dans le volet numérique du référentiel. Dans les critères on évalue les critères savoirs, savoirs-faires et les compétences mobilisées et transversales. Il s’agit donc d’une situation très complète qui permet d’évaluer les leviers nécessaires pour résoudre le défi.\nEléments permettent l’observation des indicateurs\nIl y a des critères directement observables et donc mesurables qui sont laissés par des traces écrits.\nEtant donné que les élèves ont accès aux critères, les élèves savent exactement ce qui atteste la réussite. Ceci facilite l’auto-évaluation.\nL’enseignant peut donc très rapidement déceler les blocages méthodologiques et y remédier.\nTraduction de la progression\nIl y a une échelle descriptive composé de 4 niveaux (initial, intermédiaire, confirmé et expert) qui traduit le passage d'une démarche impulsive à une démarche autonome et réflexive.\nNiveau 1 : L’élève agit de manière intuitive.\nNiveau 2 : L’élève applique les gestes de base mais ne comprend pas toujours l’origine et commet toujours des maladresses.\nNiveau 3 (attendu en fin d’année) : L’élève maitrise la procédure recommandée et répond pleinement aux exigences de la consigne.\nNiveau 4 : L’élève dépasse l’attendu simple.\nChoix de cette modalité\nLe choix d’un test diagnostique : Ce test a permis de déterminer les représentations initiales sans note chiffrée dès le début de la situation-problème. Elle permet également de déterminer les pré-requis des élèves venant d’écoles et de milieux différents.\nCe test permet également, en fin de leçon, de mettre à l’évidence aux élèves leur progression dans les différents attendus (de la matière comme la compétence transversale)\nCas 2 : Education aux médias (info ou intox ?) Analyser des publications provenant des réseaux sociaux, vérifier leur fiabilité et justifier son analyse.\nApprentissages visés\nSavoirs : \nExpliquer la notion de « Fake News » comme étant une information délibérément fausse.\nRéseaux socionumériques : expliciter les spécificités des différents réseaux socionumériques.\nNavigation sécurisée : distinguer un protocole sécurisé HTTPS d’un protocole non sécurisé http.\nSavoirs-faires :\nRepérage de la source : sélectionner des mots-clés pertinents, pointer la source apparente d’un contenu.\nProposer et mettre en place des actions pertinentes et adaptées face à des situations de cyberattaque, cyberharcèlement ou cybermanipulation.\n\nCompétences mobilisés : \nQuestionner la fiabilité contextuelle d’une source, avec l’aide de l’enseignant.\n\nCompétences transversales :\nDévelopper une pensée critique et complexe : trouver, traiter et évaluer des sources d’information fiables en luttant contre les généralisations et le copier-coller naïf. S’interroger sur l’intention des producteurs et diffuseurs de contenus sur le Web.\nCréativité : Adopter une posture citoyenne et écoresponsable du numérique.\nSituation problème :\n« Ce matin, c’est l’effervescence totale dans la cour de récréation ! Un message vocal de 15 secondes accompagné d’un visuel circule à toute vitesse dans les groupes Facebook, WhatsApp et Snapchat de la classe. On y entend clairement la voix de ton directeur annoncer : « Bonjour à tous les élèves. En raison d’un problème technique dans l’établissement, tous les cours sont suspendus ce vendredi après-midi pour organiser un grand tournoi de jeux vidéo dans le gymnase. Rendez-vous sur le lien ci-dessous pour inscrire votre compte et recevoir un passe d’accès gratuit ! Vite il n’y en aura pas pour tout le monde.». La voix ressemble à celle du directeur et le message utilise le logo officiel de l’école ! Certains élèves fêtent déjà la nouvelle, tandis que d’autres s’apprêtent à remplir le formulaire d’inscription. Ta mission : étant dans la brigade « Info/intox », le secrétariat de l’école vous demande de mener une enquête en 40 minutes afin de vérifier s’il s’agit d’une vraie communication officielle ou d’un piège numérique. Rédige à la suite de celui-ci une note d’explication pour la classe »\nL’élève va devoir compléter un carnet d’enquête : \nDispositif d’évaluation\nL’exercice sera 5 sera ici un test formatif\nGrilles d’évaluation critériée\nJustification des choix\nRétention des critères : \nElles répondent directement au référentiel de FMTTN. Chaque critère est un acquis d’apprentissage dicté dans le volet numérique du référentiel. Dans les critères on évalue les critères savoirs, savoirs-faires et les compétences mobilisées et transversales. La compréhension théorique de la notion de « Fake News » est vérifié. Les élèves doivent montrer à l’enseignant comment ils aborderaient une informations. \nEléments permettent l’observation des indicateurs\nLa grille décrit des comportements et des gestes techniques et des traces mesurables. Les élèves peuvent une fois de plus vérifier ce qui les attend. La grille permet de déterminer le niveau de réflexion et la nature exacte de(s) erreur(s) de l’élève.\nTraduction de la progression\nUne fois de plus on passe par une échelle descriptive à 4 niveaux.\nLe niveau 1 est toujours dans l’impulsivité où l’élève clique aveuglément, relaie l’information sans vérifier et dépend totalement de l’enseignant.\nLe niveau 2 permet de voir si un élève applique des gestes techniques isolés mais conserve une hésitation.\nLe niveau 3 (toujours attendu en fin s1) sera la maitrise de la démarche complète exigé.\nLe niveau 4 : Il dépasse l’attendu et analyse les biais, le fonctionnement des algorithmes, …\nOn pourrait supposer que la plupart des élèves commencent au niveau 1 et en passant par les différentes activités, les élèves atteindront normalement le niveau 3.\nChoix de cette modalité\nLe choix de l’évaluation formative : ) ce stade la grille ne sanctionne pas mais permet un feedback immédiat et constructif. L’enseignant peut directement insister sur les lacunes et trouver des « remédiations ». \nUn des points sur lequel insiste le programme : apprendre à apprendre. A travers la test formatif, l’élève cherche donc à comprendre où sont ses difficultés et peut alors les rétablir pour le test sommatif (l’enseignant donne une info et un intox, l’élève va devoir trouver laquelle est info et intox. Ensuite ils doivent justifier et expliquer leur démarche réalisée. \nCas 3 : Intelligence artificielle : Utiliser une IA générative pour créer une affiche, expérimenter différents prompts, comparer les résultats et justifier ses choix.\nApprentissages visés (en S3)\nSavoirs : \nExemplifier des usages de l’IA.\nSavoirs-faires :\nUtiliser conjointement des applications/des logiciels disponibles dans un espace numérique en ligne\nCompétences mobilisés : \nInterroger/analyser le potentiel d’un algorithme (ex. : en matière d’intelligence artificielle [IA]\nCompétences transversales :\nApprendre à apprendre : être capable d’expliciter le sens de sa démarche et de ses choix.\nSituation problème :\n« Pour l’organisation de la journée sportive, le comité des élèves aimerait réaliser une affiche. Afin de gagner en temps, un des élèves propose de confier le travail à l’IA. Etant donné que tu es en charge des affiches pour le comité, tu vas devoir t’en charger. Tu dois essayer d’attirer le plus de monde à y participer. Il faut donc que tu génère un texte/slogan et que tu crées l’affiche à l’aide de l’I.A. »\nL’élève va devoir créer l’affiche à l’aide de son carnet de bord :\nDispositif d’évaluation\nL’évaluation se fait donc par les pairs.\nGrille d’évaluation critérié\nJustification des choix\nRétention des critères : \nLes 4 critères découlent directement du référentiel FMTTN.\nExemplifier des usages de l’IA : l’élève doit être capable de distinguer génération textuelle et la génération visuelle. Et il doit comprendre la diversité des applications algorithmiques.\nUtiliser conjointement des app/logiciels en ligne : l’élève doit pouvoir associer un générateur d’image à un outil de mise en page.\nInterroger/analyser le potentiel d’un algorithme d’IA : L’élève doit dépasser l’effet « magique » pour évaluer les biais, artefacts et limites réelles du modèle.\nApprendre à apprendre : l’élève doit analyser la métacognition de son travail.\nEléments permettent l’observation des indicateurs\nChaque niveau s’appuie sur des traces écrites et mesurables déposées dans le carnet de rouge (retranscription exacte du prompt)\nLes appréciations seront objectives : on évalue la méthodologie numérique pour sa pertinence, l’articulation des outils et la lucidité du regard porté sur l’algorithme.\nLes élèves savent ce qui est attendu permettant une auto-évaluation immédiate au cours de l’activité.\nTraduction de la progression\nNiveau 1 : l’élève subit l’outil. Il accepte la première image générée sans recul. Il ne sait pas combiner deux applications et ne parvient pas à expliquer ses prompts.\nNiveau 2 : L’élève utilise les outils de manière cloisonnée. Il repère des erreurs flagrants mais peine à ajuster son prompt ou à justifier ses choix.\nNiveau 3 : L’élève maitrise la démarche complète : il rédige un prompt structuré, combine conjointement les outils dans l’espace en ligne.\nNiveau 4 : L’élève maîtrise le fonctionnement général des algorithmes, optimise les mises en page et argumente la valeur ajoutée de l’intelligence humaine face à l’IA.\nChoix de cette modalité\nL’évaluation par les pairs permet d’un part une évaluation formative qui permet dans un premier temps d’améliorer son affiche en ajustant son prompt, … d’un autre part : les élèves peuvent donner des conseils et partager leurs prompts. Il y a donc d’abord le recherche par essais-erreurs. L’enseignant intervient donc en tant que guide. L’évaluation valorise surtout le développement de l’esprit critique, l’autonomie méthodologique et la capacité à devenir un utilisateur éclairé et responsable des technologies numériques.",
+    "fileUrl": "/travaux-etudiants/VROMEN_Gerard_Exercice_8_Construire_des_gril_2026-11-05.docx",
+    "submittedAt": "2026-11-05 14:00"
+  },
+  {
+    "id": "sub-real-0103",
     "userId": "user-hockers.caroline@outlook.com",
     "userName": "Caroline Hockers",
     "userEmail": "hockers.caroline@outlook.com",
@@ -9824,7 +12531,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-09-30 14:00"
   },
   {
-    "id": "sub-real-0083",
+    "id": "sub-real-0104",
     "userId": "user-hockers.caroline@outlook.com",
     "userName": "Caroline Hockers",
     "userEmail": "hockers.caroline@outlook.com",
@@ -9836,7 +12543,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-09-30 14:00"
   },
   {
-    "id": "sub-real-0084",
+    "id": "sub-real-0105",
     "userId": "user-hockers.caroline@outlook.com",
     "userName": "Caroline Hockers",
     "userEmail": "hockers.caroline@outlook.com",
@@ -9848,7 +12555,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-09-30 14:00"
   },
   {
-    "id": "sub-real-0085",
+    "id": "sub-real-0106",
     "userId": "user-j.wasterlain@student.hech.be",
     "userName": "Justin Wasterlain",
     "userEmail": "j.wasterlain@student.hech.be",
@@ -9860,7 +12567,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-09-30 14:00"
   },
   {
-    "id": "sub-real-0086",
+    "id": "sub-real-0107",
     "userId": "user-j.wasterlain@student.hech.be",
     "userName": "Justin Wasterlain",
     "userEmail": "j.wasterlain@student.hech.be",
@@ -9872,7 +12579,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-09-30 14:00"
   },
   {
-    "id": "sub-real-0087",
+    "id": "sub-real-0108",
     "userId": "user-j.wasterlain@student.hech.be",
     "userName": "Justin Wasterlain",
     "userEmail": "j.wasterlain@student.hech.be",
@@ -9884,7 +12591,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-14 14:00"
   },
   {
-    "id": "sub-real-0088",
+    "id": "sub-real-0109",
     "userId": "user-j.wasterlain@student.hech.be",
     "userName": "Justin Wasterlain",
     "userEmail": "j.wasterlain@student.hech.be",
@@ -9896,7 +12603,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-19 14:00"
   },
   {
-    "id": "sub-real-0089",
+    "id": "sub-real-0110",
     "userId": "user-jonathan.valenzano@student.hech.be",
     "userName": "Jonathan Valenzano",
     "userEmail": "jonathan.valenzano@student.hech.be",
@@ -9908,7 +12615,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-09-30 14:00"
   },
   {
-    "id": "sub-real-0090",
+    "id": "sub-real-0111",
     "userId": "user-jonathan.valenzano@student.hech.be",
     "userName": "Jonathan Valenzano",
     "userEmail": "jonathan.valenzano@student.hech.be",
@@ -9920,7 +12627,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-04 14:00"
   },
   {
-    "id": "sub-real-0091",
+    "id": "sub-real-0112",
     "userId": "user-jonathan.valenzano@student.hech.be",
     "userName": "Jonathan Valenzano",
     "userEmail": "jonathan.valenzano@student.hech.be",
@@ -9932,7 +12639,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-07 14:00"
   },
   {
-    "id": "sub-real-0092",
+    "id": "sub-real-0113",
     "userId": "user-jonathan.valenzano@student.hech.be",
     "userName": "Jonathan Valenzano",
     "userEmail": "jonathan.valenzano@student.hech.be",
@@ -9944,7 +12651,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-10 14:00"
   },
   {
-    "id": "sub-real-0093",
+    "id": "sub-real-0114",
     "userId": "user-jonathan.valenzano@student.hech.be",
     "userName": "Jonathan Valenzano",
     "userEmail": "jonathan.valenzano@student.hech.be",
@@ -9956,7 +12663,79 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-10 14:00"
   },
   {
-    "id": "sub-real-0094",
+    "id": "sub-real-0115",
+    "userId": "user-jonathan.valenzano@student.hech.be",
+    "userName": "Jonathan Valenzano",
+    "userEmail": "jonathan.valenzano@student.hech.be",
+    "exerciseId": "exercice-07",
+    "exerciseTitle": "Atelier 7 : Défi Hardware & Peer Learning (Démonter/Remonter un PC)",
+    "answer": "Anita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 1 \n \nExercice 07 - DÉFI HARDWARE \n \nL’ordinateur fonctionne. \n \n1. Observer \n \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 2 \n \nComposants \nFonction \nConnexions \nAlimentation \nApporter de l’électricité à la \ncarte mère. \n- \nCarte mère \nCarte mère \nRelier les composants entre \neux et alimenter certains \ncomposants en électricité. \n- \nAlimentation \n- \nProcesseur \n- \nLecteur optique \n- \nStockage SSD \n- \nVentilateur \n- \nRAM \nVentilateur \nGérer la température du \nprocesseur. \n- \nCarte mère \n- \nProcesseur (collé via une \npâte thermique) \nLecteur optique \nLire CD et DVD pour \ntransmettre les \ninformations. \n- \nCarte-mère  \no Alimentation \no Données \nRAM \nStocker les données de \nmanière temporaire. \n- \nCarte mère \n \nCes composants n’étaient pas visibles avant le démontage. \nProcesseur \nCoordinateur des \ncomposants et calculateur. \n- \nCarte mère \nStockage SSD \nStocker des données de \nmanière permanente. \n- \nCarte mère \nCarte graphique \nAfficher les images et les \nvidéos à l’écran. \nIntégrée à la carte mère \n \n2. Démonter \nNuméros \nÉléments retirés / Actions \nPhotos \n1 \nLa face latérale \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 3 \n2 \nLa face avant. \n \n3 \nL’emplacement du disque dur. \n \n4 \nLa structure qui tient le lecteur \noptique. \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 4 \n5 \nDéconnecter le lecteur optique. \n \n6 \nRetirer le lecteur optique de \nson support. \n \n7  \nRetirer la RAM. \n \n8 \nDéconnecter le ventilateur de la \ncarte mère et le retirer. \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 5 \n9 \nRetirer le dissipateur \nthermique. \n \n10 \nDéconnecter l’alimentation de \nla carte mère et retirer le bloc \nd’alimentation. \n \n11 \nDéconnecter tous les petits \ncâbles encore connectés à la \ncarte mère (SATA, connexion \naux éléments extérieurs). \n \n12 \nRetrait du SSD. \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 6 \n13 \nRetrait des vis tenant la carte \nmère et retrait de celle-ci. \n \n \n3. Apprendre \nNous avons utilisé une vidéo en ligne car nous rencontrions des difficultés pour retirer la \ncarte mère. \n \n4. Remonter \nPour le démontage, nous avons placé les différents éléments (vis et composants) dans \nl’ordre du retrait afin d’utiliser cette organisation pour le remontage (ordre inverse). \nDes photos des différentes connectiques ont été prises pour ne pas se tromper de câbles. \n \n   \n   \n \n \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 7 \n \n \n \n5. Démarrage de l’ordinateur \nAucun problème à signaler. \n \n \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 8 \n \n6. Bilan \n• \nQuelle difficulté avons-nous rencontrée ? \nNous avons éprouvé des difficultés à retirer la carte mère, nous avions même pensé \nqu’elle était peut-être collée. \nLors du remontage, la face avant ne s’emboitait pas correctement, un élément (la \nstructure pour un disque dur) n’était pas correctement placée. \n• \nComment avons-nous trouvé la solution ? \nNous avons visionné des vidéos pour comprendre comment retirer la carte mère sans \nforcer. \nNous avons démonté à nouveau l’élément gênant. \n• \nQu'avons-nous appris grâce à nos erreurs ? \nIl est important de se renseigner avant de faire quelque chose qui pourrait endommager \nle matériel. \nNe pas s’énerver et revenir sur des étapes précédentes pour palier le problème. \n• \nQu'est-ce qu'un autre groupe nous a appris ? \nNous étions en autonomie pour faire ce travail. \n• \nQu'avons-nous compris grâce à la manipulation que nous aurions difficilement compris avec un \ncours théorique ? \nLa manipulation permet de se plonger plus facilement dans l’ordinateur. On est obligé de \nrester concentrer tout le long de l’activité. La manipulation présente l’avantage \nd’observer l’ordinateur sur toutes ses coutures, de repérer l’organisation structurée qui \nest présente au niveau des câblages et placement des éléments. La manipulation \ndemande également d’autres compétences purement techniques afin de s’organiser au \nmieux lors du démontage par exemple. Cet exercice nous a permis de réfléchir et de \nnous poser des questions sur l’agencement des éléments, contrairement à un cours \nthéorique qui aurait probablement fourni les réponses sans que nous ayons à les \nchercher activement.  \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 9",
+    "content": "Anita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 1 \n \nExercice 07 - DÉFI HARDWARE \n \nL’ordinateur fonctionne. \n \n1. Observer \n \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 2 \n \nComposants \nFonction \nConnexions \nAlimentation \nApporter de l’électricité à la \ncarte mère. \n- \nCarte mère \nCarte mère \nRelier les composants entre \neux et alimenter certains \ncomposants en électricité. \n- \nAlimentation \n- \nProcesseur \n- \nLecteur optique \n- \nStockage SSD \n- \nVentilateur \n- \nRAM \nVentilateur \nGérer la température du \nprocesseur. \n- \nCarte mère \n- \nProcesseur (collé via une \npâte thermique) \nLecteur optique \nLire CD et DVD pour \ntransmettre les \ninformations. \n- \nCarte-mère  \no Alimentation \no Données \nRAM \nStocker les données de \nmanière temporaire. \n- \nCarte mère \n \nCes composants n’étaient pas visibles avant le démontage. \nProcesseur \nCoordinateur des \ncomposants et calculateur. \n- \nCarte mère \nStockage SSD \nStocker des données de \nmanière permanente. \n- \nCarte mère \nCarte graphique \nAfficher les images et les \nvidéos à l’écran. \nIntégrée à la carte mère \n \n2. Démonter \nNuméros \nÉléments retirés / Actions \nPhotos \n1 \nLa face latérale \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 3 \n2 \nLa face avant. \n \n3 \nL’emplacement du disque dur. \n \n4 \nLa structure qui tient le lecteur \noptique. \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 4 \n5 \nDéconnecter le lecteur optique. \n \n6 \nRetirer le lecteur optique de \nson support. \n \n7  \nRetirer la RAM. \n \n8 \nDéconnecter le ventilateur de la \ncarte mère et le retirer. \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 5 \n9 \nRetirer le dissipateur \nthermique. \n \n10 \nDéconnecter l’alimentation de \nla carte mère et retirer le bloc \nd’alimentation. \n \n11 \nDéconnecter tous les petits \ncâbles encore connectés à la \ncarte mère (SATA, connexion \naux éléments extérieurs). \n \n12 \nRetrait du SSD. \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 6 \n13 \nRetrait des vis tenant la carte \nmère et retrait de celle-ci. \n \n \n3. Apprendre \nNous avons utilisé une vidéo en ligne car nous rencontrions des difficultés pour retirer la \ncarte mère. \n \n4. Remonter \nPour le démontage, nous avons placé les différents éléments (vis et composants) dans \nl’ordre du retrait afin d’utiliser cette organisation pour le remontage (ordre inverse). \nDes photos des différentes connectiques ont été prises pour ne pas se tromper de câbles. \n \n   \n   \n \n \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 7 \n \n \n \n5. Démarrage de l’ordinateur \nAucun problème à signaler. \n \n \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 8 \n \n6. Bilan \n• \nQuelle difficulté avons-nous rencontrée ? \nNous avons éprouvé des difficultés à retirer la carte mère, nous avions même pensé \nqu’elle était peut-être collée. \nLors du remontage, la face avant ne s’emboitait pas correctement, un élément (la \nstructure pour un disque dur) n’était pas correctement placée. \n• \nComment avons-nous trouvé la solution ? \nNous avons visionné des vidéos pour comprendre comment retirer la carte mère sans \nforcer. \nNous avons démonté à nouveau l’élément gênant. \n• \nQu'avons-nous appris grâce à nos erreurs ? \nIl est important de se renseigner avant de faire quelque chose qui pourrait endommager \nle matériel. \nNe pas s’énerver et revenir sur des étapes précédentes pour palier le problème. \n• \nQu'est-ce qu'un autre groupe nous a appris ? \nNous étions en autonomie pour faire ce travail. \n• \nQu'avons-nous compris grâce à la manipulation que nous aurions difficilement compris avec un \ncours théorique ? \nLa manipulation permet de se plonger plus facilement dans l’ordinateur. On est obligé de \nrester concentrer tout le long de l’activité. La manipulation présente l’avantage \nd’observer l’ordinateur sur toutes ses coutures, de repérer l’organisation structurée qui \nest présente au niveau des câblages et placement des éléments. La manipulation \ndemande également d’autres compétences purement techniques afin de s’organiser au \nmieux lors du démontage par exemple. Cet exercice nous a permis de réfléchir et de \nnous poser des questions sur l’agencement des éléments, contrairement à un cours \nthéorique qui aurait probablement fourni les réponses sans que nous ayons à les \nchercher activement.  \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 9",
+    "fileUrl": "/travaux-etudiants/VALENZANO_Jonathan_Exercice_7_Defi_Hardware_Peer__2026-10-31.pdf",
+    "submittedAt": "2026-10-31 14:00"
+  },
+  {
+    "id": "sub-real-0116",
+    "userId": "user-jonathan.valenzano@student.hech.be",
+    "userName": "Jonathan Valenzano",
+    "userEmail": "jonathan.valenzano@student.hech.be",
+    "exerciseId": "exercice-08",
+    "exerciseTitle": "Atelier 8 : Construire des grilles d'évaluation critériées",
+    "answer": "Anita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 1 \nRecherche d’information \nIntitulé \nRechercher des informations sur Internet concernant une personnalité scientifique, \nsélectionner des informations pertinentes et identifier des sources fiables. \n1. Identification des apprentissages visés \nSavoirs  \n• Connaître les critères de validité d'une source web (auteur, date, institution, URL) ; \n• Connaître le vocabulaire spécifique lié à la biographie de la personnalité scientifique. \n \nLien avec le référentiel : Vocabulaire spécifique au réseau (Internet) et au software \n(moteur de recherche, navigateur, URL, extensions) \n \nSavoir-faire \n• Utiliser des moteurs de recherche de manière efficace (mots-clés, opérateurs) ;  \n• Croiser les sources ; \n• Filtrer l'information pertinente par rapport à la consigne. \n \nLien avec le référentiel : Utiliser un outil de recherche en s’adaptant à l’environnement, \ndéterminer des mots-clés pertinents, pointer la source apparente d’un contenu. \n \nCompétence mobilisée \n• Traiter des informations textuelles et documentaires pour restituer une synthèse \nrigoureuse et contextualisée. \nCapacités transversales \n• Esprit critique (évaluation de la fiabilité) ; \n• Autonomie dans la démarche de recherche. \n \nLien avec le référentiel : « Effectuer une recherche pour répondre à un besoin suivant \nune stratégie pertinente » et « Évaluer la fiabilité contextuelle d'une source ». \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 2 \nCritères \nIndicateurs \nA \nB \nC \nD \n1. Pertinence et \nsélection des \ninformations \n§ Sélectionne des \nfaits en lien direct \navec la consigne. \n \n§ Écarte les détails \nsuperflus. \n \n§ Couvre les \naspects clés de la \npersonnalité. \nEffectue une \nsélection rigoureuse \net synthétique qui \nmet en évidence les \néléments essentiels \ndu parcours de la \npersonnalité. \n \nHiérarchise \nl'information pour ne \ngarder que l'essentiel \net produit une \nsynthèse percutante. \nSélectionne des \ninformations \nfactuelles, \npertinentes et \ndirectement reliées à \nla consigne. \nSélectionne des \ninformations \ncorrectes mais \nincomplètes ou \ncomportant quelques \ndétails superflus. \nIntègre des \ninformations hors \nsujet ou omet des \naspects centraux de \nla consigne. \n2. Fiabilité et analyse \ndes sources \n§ Vérifie l'origine \ndes sites (auteur, \ninstitution, URL). \n \n§ Croise les \ninformations sur \nplusieurs sources. \n \n§ Identifie la date \nde publication et \nde mise à jour. \nAnalyse de manière \ncritique l'origine, les \nbiais potentiels et la \nlégitimité des sources \ndocumentaires \nconsultées. \nIdentifie et cite des \nsources \ninstitutionnelles ou \nacadémiques fiables \net croise au moins \ndeux sources \nindépendantes. \nUtilise des sources \nglobales mais ne \ncroise pas \nsystématiquement les \ninformations pour en \nvérifier l'exactitude. \nUtilise des sources \nnon vérifiées ou de \ntype encyclopédique \nparticipatif sans \nrecoupement \n(exemple : réseaux \nsociaux, blogs \nanonymes). \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 3 \nCritères \nIndicateurs \nA \nB \nC \nD \n3. Esprit critique et \ndistanciation \n§ Distingue les faits \ndes opinions ou \nrumeurs. \n§ Identifie les biais \néventuels. \n§ Justifie le choix \ndes sources \nretenues. \nExerce un regard \ncritique aiguisé, \ndétecte les biais \nhistoriques ou \néditoriaux et \nargumente \nsolidement ses choix \ndocumentaires. \nFait la distinction \nclaire entre faits \navérés et \ninterprétations ; \nexplique la valeur des \nsources choisies. \nRemet rarement en \nquestion les \naffirmations lues et \njustifie difficilement la \ncrédibilité des sites \nchoisis. \nRépète des \ninformations sans \nrecul ni \ndiscernement, en \nconfondant faits et \nrumeurs. \n4. Communication \n§ Explique la \nstratégie de \nrecherche \nemployée. \n§ Présente les \nrésultats \nclairement. \n§ Utilise un \nvocabulaire \nadapté. \nExplicite avec aisance \net rigueur toute sa \ndémarche \nméthodologique, \nprésente des \nrésultats \nsynthétiques et \nutilise un vocabulaire \ntechnique précis. \nExplique clairement \nsa stratégie de \nrecherche, présente \ndes résultats \nstructurés et emploie \nle vocabulaire \nnumérique adéquat. \nExplique globalement \nsa démarche mais de \nfaçon schématique, \nen oubliant de \nmentionner certains \nchoix de mots-clés \nou de sites. \nRestitue les résultats \nde manière confuse \nou est incapable \nd'expliquer comment \nil a mené sa \nrecherche sur \nInternet. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 4 \n2. Dispositif d’évaluation \nModalité \n• Co-évaluation ; \n• Évaluation formative. \nJustification \nL'évaluation formative permet à l'élève d'ajuster sa recherche en cours de route. La co-\névaluation (par les paires) est particulièrement intéressante : un élève analyse la \nbibliographie et la pertinence des sources sélectionnées par un camarade, ce qui renforce \nl'esprit critique par la confrontation des pratiques de recherche. \n \n3. Justification des choix pédagogiques \nChoix des critères \nLa recherche ne se résumant pas à un simple copier-coller, les critères ciblent à la fois la \nqualité du contenu (pertinence), la rigueur épistémologique (fiabilité et esprit critique) et \nla communication de l'élève.  \nIndicateurs observables \nLes indicateurs évitent le subjectif en ciblant des actions concrètes (croiser les sources, \nidentifier l'auteur, reformuler). \nProgression des niveaux \nLa progression va d'une collecte passive et non vérifiée (niveau D) à une démarche active, \ncritique, autonome et réflexive (niveau A). \nLe niveau A signifie : la maîtrise dépasse l’attendu. \nLe niveau B signifie : la maîtrise est conforme à l’attendu. \nLe niveau C signifie : la maîtrise est en proche de l’attendu. \nLe niveau D signifie : la maîtrise est très en deçà de l’attendu. \n \n \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 5 \nRemarques \nLes grilles officielles WBE utilisent une graduation normalisée à 4 niveaux (A, B, C, D) reposant \nsur une formulation trop vague comme pour le niveau A : La maîtrise dépasse l’attendu.  Nous \navons décidé de personnaliser chaque description de cellule de manière spécifique. \nLes documents officiels WBE intègrent également des critères incontournables et une échelle \nde validation par couleur (Bleu, Vert, Jaune, Orange). Nous avons décidé de ne pas définir les \ncritères incontournables. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 1 \nDémontage et remontage d’un ordinateur \nIntitulé \nDémonter un ordinateur, identifier ses composants, expliquer leur fonction et remonter \ncorrectement la machine. \n1. Identification des apprentissages visés \nSavoir  \n• Connaissance du nom et de la nature des composants internes de l'ordinateur (carte \nmère, processeur, mémoire vive, stockage, alimentation, cartes filles). \n \nLien avec le référentiel : Vocabulaire spécifique au hardware (distinction matériel/logiciel, \nmémoire vive / mémoire morte, stockage interne / externe, périphériques). \n \nSavoir-faire \n• Manipuler le matériel informatique avec précaution (gestes antistatiques, repérage de \nla visserie, débranchement des nappes) ; \n• Appliquer une procédure méthodique de démontage/remontage. \n \nLien avec le référentiel : Appliquer des règles de sécurité et de manipulation \nméthodique, organiser et gérer l'espace technique. \n \nCompétence mobilisée \n• Résoudre une tâche technique complexe en mobilisant habileté manuelle, \nraisonnement spatial et connaissances théoriques. \nCapacités transversales \n• Rigueur méthodologique ; \n• Respect des consignes de sécurité ;  \n• Autonomie ; \n• Persévérance face à un problème technique. \n \nLien avec le référentiel : Gérer et organiser des données matérielles et logicielles de \nmanière sécurisée et fonctionnelle. \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 2 \nCritères \nIndicateurs \nA \nB \nC \nD \n1. Sécurité et respect \ndu matériel \n§ Utilise les \nprécautions \nantistatiques (si \ndisponible). \n \n§ Manipulation \ndouce des \nconnectiques et \ncartes. \n \n§ Rangement \nordonné de la \nvisserie. \nGestes sûrs, \nprécautionneux et \nprofessionnels ; \nanticipe les risques \nde casse ou de court-\ncircuit. \nRespecte \nscrupuleusement les \nconsignes de \nmanipulation, utilise \nles outils adaptés et \nrange \nméthodiquement les \ncomposants. \nManipule avec \nprécaution globale \nmais oublie de \nsécuriser certains \néléments fragiles ou \ndésorganise la \nvisserie. \nForce les \nconnectiques, \nmanipule les cartes \npar les circuits \nimprimés ou néglige \nles risques \nélectrostatiques. \n2. Méthodologie et \nordre opératoire \n§ Suit l'ordre \nlogique de \ndémontage \n(périphériques ➔ \nalimentation ➔ \ncartes ➔ \nprocesseur). \n \n§ Maintien de \nl'espace de travail \npropre. \nMaîtrise parfaite de la \nchronologie, fluidité \ndes gestes, \nautonomie complète \ndans l'organisation de \nl'espace de travail. \nApplique \nrigoureusement la \nchronologie logique \nde démontage et de \nremontage sans \nprécipitation. \nSuit les grandes \nétapes mais commet \ndes erreurs d'ordre \n(exemple : oubli d'un \ncâble avant \nextraction de carte). \nProcède de manière \nanarchique, dévisse \ndes éléments sans \nlogique ou risque \nd'endommager la \nstructure. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 3 \nCritères \nIndicateurs \nA \nB \nC \nD \n3. Identification et \nfonction des \ncomposants \n§ Nomme \ncorrectement \nchaque \ncomposant (CPU, \nRAM, SSD, etc.). \n \n§ Explique \nprécisément le \nrôle de chaque \nélément. \nDémontre une \nexpertise \napprofondie en \nexpliquant non \nseulement le rôle, \nmais aussi les \ninteractions entre les \ncomposants. \nIdentifie sans \nhésitation tous les \ncomposants \nmanipulés et explicite \nclairement leur \nfonction technique. \nIdentifie les \ncomposants \nprincipaux mais \nhésite ou formule \ndes imprécisions sur \nleur rôle exact. \nConfond les \ncomposants majeurs \n(exemple : confusion \nentre RAM et \nstockage) et ignore \nleurs fonctions \nprincipales. \n4. Fonctionnement \nfinal de la machine \n§ La machine \nredémarre au \npremier essai. \n \n§ Tous les câbles \ninternes sont \ncorrectement \nrebranchés. \nRemontage \nimpeccable, gestion \nsoignée du \ncheminement des \ncâbles favorisant la \ncirculation d'air. \nLa machine \nredémarre du \npremier coup, \nattestant d'un \nremontage intègre et \nrigoureux. \nLa machine démarre \naprès l'identification \net la correction de \nquelques erreurs de \nraccordement par \nl'élève. \nLa machine ne \ndémarre pas à la \nsuite d’oublis majeurs \nde câblage ou des \ninversions de \nconnecteurs. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 4 \n2. Dispositif d’évaluation \nModalité \n• Évaluation formative en cours \n• Auto-évaluation (bilan des difficultés rencontrées). \nJustification \nCette activité combine un geste technique manuel et un savoir théorique. L'évaluation \nformative est indispensable pour intervenir immédiatement en cas de geste dangereux \npour le matériel. Le redémarrage de la machine offre une rétroaction immédiate et \nindiscutable à l'élève. \n \n3. Justification des choix pédagogiques \nChoix des critères \nLes critères couvrent l'ensemble de la compétence technique : la sécurité et le soin (savoir-\nêtre), la méthode (savoir-faire procédural), la théorie (savoirs) et le résultat final \n(performance). \nIndicateurs observables \nBasés sur des actions concrètes et vérifiables (la machine démarre, les connectiques sont \nmanipulées sans forcer, le vocabulaire est exact). \nProgression des niveaux \nTraduit le passage d'un tâtonnement risqué pour le matériel (niveau D) à une exécution \nexperte, soigneuse et autonome (niveau A). \nLe niveau A signifie : la maîtrise dépasse l’attendu. \nLe niveau B signifie : la maîtrise est conforme à l’attendu. \nLe niveau C signifie : la maîtrise est en proche de l’attendu. \nLe niveau D signifie : la maîtrise est très en deçà de l’attendu. \n \n \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 5 \nRemarques \nLes grilles officielles WBE utilisent une graduation normalisée à 4 niveaux (A, B, C, D) reposant \nsur une formulation trop vague comme pour le niveau A : La maîtrise dépasse l’attendu.  Nous \navons décidé de personnaliser chaque description de cellule de manière spécifique. \nLes documents officiels WBE intègrent également des critères incontournables et une échelle \nde validation par couleur (Bleu, Vert, Jaune, Orange). Nous avons décidé de ne pas définir les \ncritères incontournables. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 1 \nPrésentation multimédia \nIntitulé \nCréer une présentation destinée à sensibiliser les élèves au cyberharcèlement en sélectionnant \net organisant des informations et des contenus multimédias pertinents. \n1. Identification des apprentissages visés \nSavoirs  \n• Définition du cyberharcèlement ; \n• Identification des mécanismes de groupe ; \n• Identification des droits d’auteur, droit à l’image ; \n• Connaissance des ressources d'aide (lignes d'écoute, signalement). \n \nLien avec le référentiel : Vocabulaire invariant de production, droits d'auteur, droit à \nl'image et à la voix, respect de la vie privée et de la nétiquette. \n \nSavoir-faire \n• Structurer un message de sensibilisation percutant ; \n• Concevoir un support multimédia équilibré (texte, image, vidéo, audio) ;  \n• Citer les sources et respecter le droit à l'image / les droits d'auteur. \n \nLien avec le référentiel : Utiliser des fonctionnalités courantes d'un outil de présentation \n(intégration de médias), appliquer les principes d'élaboration d'un message multimédia \npour appuyer un discours. \n \nCompétence mobilisée \n• Communiquer efficacement à des fins de sensibilisation auprès d'un public cible (les \npairs) en mobilisant des langages multiples. \nCapacités transversales \n• Empathie ;  \n• Engagement citoyen ; \n• Créativité et maîtrise des outils de communication numérique. \n \nLien avec le référentiel : « Produire et traiter des contenus multimédias » et « \nInteragir/communiquer de manière responsable ». \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 2 \nCritères \nIndicateurs \nA \nB \nC \nD \n1. Pertinence et \nexactitude du \ncontenu \n§ Définitions \ncorrectes du \ncyberharcèlement. \n \n§ Distingue \nharcèlement et \ncyberharcèlement. \n \n§ Propose des \nsolutions \nconcrètes ou des \nrecours. \nLe contenu dépasse \nla simple restitution \nen proposant une \nanalyse rigoureuse \ndes dynamiques \nrelationnelles et des \nsolutions innovantes. \nLe contenu est exact, \ncomplet, bien \ndocumenté et \npropose des pistes \nde prévention claires \nadaptées au public. \nPrésente les notions \ngénérales mais \nmanque de précision \nsur les mécanismes \nou omet les \nsolutions/ressources. \nContenu lacunaire, \ncomportant des \nerreurs factuelles ou \ndes amalgames \npréjudiciables sur le \nsujet. \n2. Qualité de la \ncommunication et \nstructure \n§ Message clair et \npercutant. \n \n§ Enchaînement \nlogique des \ndiapositives ou \nsections. \n \n§ S'adresse \ndirectement au \npublic visé. \nCommunication \ncaptivante, narration \nfluide et impact \némotionnel/réflexif \nfort, suscitant \nl'adhésion immédiate. \nStructure claire, \naccroche efficace, \nton juste et \npersuasif, \nparfaitement adapté \naux élèves \nsensibilisés. \nStructure présente \nmais transitions \nmaladroites ; impact \nde sensibilisation \nmodéré sur le public. \nStructure décousue, \nmessages confus ou \nnon adaptés au \npublic visé (trop \ninfantilisants ou trop \njargonneux). \n \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 3 \nCritères \nIndicateurs \nA \nB \nC \nD \n3. Utilisation \njudicieuse des médias \n§ Illustrations/vidéos \nau service du \npropos (pas \ndécoratives). \n \n§ Lisibilité des \ndiapos (contraste, \nsobriété). \n \n§ Respect des droits \nd'auteur/images. \nUtilisation créative et \nmaîtrisée des \nressources \nmultimédias (rythme, \nesthétique, \naccessibilité, sources \nirréprochables). \nMédias \nsoigneusement \nchoisis, renforçant le \nmessage, diapositives \népurées et respect \ndes droits d'auteur. \nUtilise quelques \nmédias pertinents \nmais la mise en page \nnuit parfois à la \nlisibilité ou les \nsources d'images ne \nsont pas indiquées. \nSurcharge visuelle, \nmédias purement \ndécoratifs ou \nperturbateurs, non-\nrespect des droits \nd'auteur. \n4. Posture éthique et \nengagement \n§ Respect d'autrui \net empathie dans \nle traitement du \nsujet. \n \n§ Refus du \nsensationnalisme \ndéplacé. \nDéveloppe une \napproche nuancée, \nhumaine et \nconstructive, \nvalorisant l'entraide \net la responsabilité \ncollective. \nTraite le sujet avec \nsérieux, respect, \ndiscernement et \nempathie, \ndémontrant une \nréelle posture \ncitoyenne. \nTraite le sujet de \nmanière formelle et \ndistante, sans \nsusciter de réelle \nprise de conscience \nou d'empathie. \nUtilise un ton \nculpabilisant, \nmoralisateur ou au \ncontraire banalisant \nface aux situations \nprésentées. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 4 \n2. Dispositif d’évaluation \nModalité \n• Auto-évaluation suivie d’une évaluation par les pairs \n• Évaluation sommative. \nJustification \nLe sujet s'y prête particulièrement : la sensibilisation au cyberharcèlement vise le public \ncible (les pairs). L'évaluation par les pairs permet de mesurer si l'objectif de sensibilisation \net d'impact sur le public est réellement atteint. \n \n3. Justification des choix pédagogiques \nChoix des critères \nLa grille combine trois dimensions complémentaires : la rigueur des informations \nprésentées, la maîtrise technique et esthétique de la communication et des médias, ainsi \nque l’engagement citoyen et éthique. \nIndicateurs observables \nPermettent de vérifier objectivement si les notions légales et préventives sont présentes, \net si la forme graphique respecte les règles d'ergonomie multimédia (lisibilité, absence de \nsurcharge). \nProgression des niveaux \nÉvolue d'une production maladroite ou anxiogène (niveau D) à une création percutante, \néthique, rigoureuse et esthétiquement maîtrisée (niveau A). \nLe niveau de validation A signifie : la maîtrise dépasse l’attendu. \nLe niveau de validation B signifie : la maîtrise est conforme à l’attendu. \nLe niveau de validation C signifie : la maîtrise est en proche de l’attendu. \nLe niveau de validation D signifie : la maîtrise est très en deçà de l’attendu. \n \n \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 5 \nRemarques \nLes grilles officielles WBE utilisent une graduation normalisée à 4 niveaux (A, B, C, D) reposant \nsur une formulation trop vague comme pour le niveau A : La maîtrise dépasse l’attendu.  Nous \navons décidé de personnaliser chaque description de cellule de manière spécifique. \nLes documents officiels WBE intègrent également des critères incontournables et une échelle \nde validation par couleur (Bleu, Vert, Jaune, Orange). Nous avons décidé de garder l’idée des \ncouleurs et de critères incontournables qui représentent l’essentiel de l’apprentissage.",
+    "content": "Anita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 1 \nRecherche d’information \nIntitulé \nRechercher des informations sur Internet concernant une personnalité scientifique, \nsélectionner des informations pertinentes et identifier des sources fiables. \n1. Identification des apprentissages visés \nSavoirs  \n• Connaître les critères de validité d'une source web (auteur, date, institution, URL) ; \n• Connaître le vocabulaire spécifique lié à la biographie de la personnalité scientifique. \n \nLien avec le référentiel : Vocabulaire spécifique au réseau (Internet) et au software \n(moteur de recherche, navigateur, URL, extensions) \n \nSavoir-faire \n• Utiliser des moteurs de recherche de manière efficace (mots-clés, opérateurs) ;  \n• Croiser les sources ; \n• Filtrer l'information pertinente par rapport à la consigne. \n \nLien avec le référentiel : Utiliser un outil de recherche en s’adaptant à l’environnement, \ndéterminer des mots-clés pertinents, pointer la source apparente d’un contenu. \n \nCompétence mobilisée \n• Traiter des informations textuelles et documentaires pour restituer une synthèse \nrigoureuse et contextualisée. \nCapacités transversales \n• Esprit critique (évaluation de la fiabilité) ; \n• Autonomie dans la démarche de recherche. \n \nLien avec le référentiel : « Effectuer une recherche pour répondre à un besoin suivant \nune stratégie pertinente » et « Évaluer la fiabilité contextuelle d'une source ». \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 2 \nCritères \nIndicateurs \nA \nB \nC \nD \n1. Pertinence et \nsélection des \ninformations \n§ Sélectionne des \nfaits en lien direct \navec la consigne. \n \n§ Écarte les détails \nsuperflus. \n \n§ Couvre les \naspects clés de la \npersonnalité. \nEffectue une \nsélection rigoureuse \net synthétique qui \nmet en évidence les \néléments essentiels \ndu parcours de la \npersonnalité. \n \nHiérarchise \nl'information pour ne \ngarder que l'essentiel \net produit une \nsynthèse percutante. \nSélectionne des \ninformations \nfactuelles, \npertinentes et \ndirectement reliées à \nla consigne. \nSélectionne des \ninformations \ncorrectes mais \nincomplètes ou \ncomportant quelques \ndétails superflus. \nIntègre des \ninformations hors \nsujet ou omet des \naspects centraux de \nla consigne. \n2. Fiabilité et analyse \ndes sources \n§ Vérifie l'origine \ndes sites (auteur, \ninstitution, URL). \n \n§ Croise les \ninformations sur \nplusieurs sources. \n \n§ Identifie la date \nde publication et \nde mise à jour. \nAnalyse de manière \ncritique l'origine, les \nbiais potentiels et la \nlégitimité des sources \ndocumentaires \nconsultées. \nIdentifie et cite des \nsources \ninstitutionnelles ou \nacadémiques fiables \net croise au moins \ndeux sources \nindépendantes. \nUtilise des sources \nglobales mais ne \ncroise pas \nsystématiquement les \ninformations pour en \nvérifier l'exactitude. \nUtilise des sources \nnon vérifiées ou de \ntype encyclopédique \nparticipatif sans \nrecoupement \n(exemple : réseaux \nsociaux, blogs \nanonymes). \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 3 \nCritères \nIndicateurs \nA \nB \nC \nD \n3. Esprit critique et \ndistanciation \n§ Distingue les faits \ndes opinions ou \nrumeurs. \n§ Identifie les biais \néventuels. \n§ Justifie le choix \ndes sources \nretenues. \nExerce un regard \ncritique aiguisé, \ndétecte les biais \nhistoriques ou \néditoriaux et \nargumente \nsolidement ses choix \ndocumentaires. \nFait la distinction \nclaire entre faits \navérés et \ninterprétations ; \nexplique la valeur des \nsources choisies. \nRemet rarement en \nquestion les \naffirmations lues et \njustifie difficilement la \ncrédibilité des sites \nchoisis. \nRépète des \ninformations sans \nrecul ni \ndiscernement, en \nconfondant faits et \nrumeurs. \n4. Communication \n§ Explique la \nstratégie de \nrecherche \nemployée. \n§ Présente les \nrésultats \nclairement. \n§ Utilise un \nvocabulaire \nadapté. \nExplicite avec aisance \net rigueur toute sa \ndémarche \nméthodologique, \nprésente des \nrésultats \nsynthétiques et \nutilise un vocabulaire \ntechnique précis. \nExplique clairement \nsa stratégie de \nrecherche, présente \ndes résultats \nstructurés et emploie \nle vocabulaire \nnumérique adéquat. \nExplique globalement \nsa démarche mais de \nfaçon schématique, \nen oubliant de \nmentionner certains \nchoix de mots-clés \nou de sites. \nRestitue les résultats \nde manière confuse \nou est incapable \nd'expliquer comment \nil a mené sa \nrecherche sur \nInternet. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 4 \n2. Dispositif d’évaluation \nModalité \n• Co-évaluation ; \n• Évaluation formative. \nJustification \nL'évaluation formative permet à l'élève d'ajuster sa recherche en cours de route. La co-\névaluation (par les paires) est particulièrement intéressante : un élève analyse la \nbibliographie et la pertinence des sources sélectionnées par un camarade, ce qui renforce \nl'esprit critique par la confrontation des pratiques de recherche. \n \n3. Justification des choix pédagogiques \nChoix des critères \nLa recherche ne se résumant pas à un simple copier-coller, les critères ciblent à la fois la \nqualité du contenu (pertinence), la rigueur épistémologique (fiabilité et esprit critique) et \nla communication de l'élève.  \nIndicateurs observables \nLes indicateurs évitent le subjectif en ciblant des actions concrètes (croiser les sources, \nidentifier l'auteur, reformuler). \nProgression des niveaux \nLa progression va d'une collecte passive et non vérifiée (niveau D) à une démarche active, \ncritique, autonome et réflexive (niveau A). \nLe niveau A signifie : la maîtrise dépasse l’attendu. \nLe niveau B signifie : la maîtrise est conforme à l’attendu. \nLe niveau C signifie : la maîtrise est en proche de l’attendu. \nLe niveau D signifie : la maîtrise est très en deçà de l’attendu. \n \n \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 5 \nRemarques \nLes grilles officielles WBE utilisent une graduation normalisée à 4 niveaux (A, B, C, D) reposant \nsur une formulation trop vague comme pour le niveau A : La maîtrise dépasse l’attendu.  Nous \navons décidé de personnaliser chaque description de cellule de manière spécifique. \nLes documents officiels WBE intègrent également des critères incontournables et une échelle \nde validation par couleur (Bleu, Vert, Jaune, Orange). Nous avons décidé de ne pas définir les \ncritères incontournables. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 1 \nDémontage et remontage d’un ordinateur \nIntitulé \nDémonter un ordinateur, identifier ses composants, expliquer leur fonction et remonter \ncorrectement la machine. \n1. Identification des apprentissages visés \nSavoir  \n• Connaissance du nom et de la nature des composants internes de l'ordinateur (carte \nmère, processeur, mémoire vive, stockage, alimentation, cartes filles). \n \nLien avec le référentiel : Vocabulaire spécifique au hardware (distinction matériel/logiciel, \nmémoire vive / mémoire morte, stockage interne / externe, périphériques). \n \nSavoir-faire \n• Manipuler le matériel informatique avec précaution (gestes antistatiques, repérage de \nla visserie, débranchement des nappes) ; \n• Appliquer une procédure méthodique de démontage/remontage. \n \nLien avec le référentiel : Appliquer des règles de sécurité et de manipulation \nméthodique, organiser et gérer l'espace technique. \n \nCompétence mobilisée \n• Résoudre une tâche technique complexe en mobilisant habileté manuelle, \nraisonnement spatial et connaissances théoriques. \nCapacités transversales \n• Rigueur méthodologique ; \n• Respect des consignes de sécurité ;  \n• Autonomie ; \n• Persévérance face à un problème technique. \n \nLien avec le référentiel : Gérer et organiser des données matérielles et logicielles de \nmanière sécurisée et fonctionnelle. \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 2 \nCritères \nIndicateurs \nA \nB \nC \nD \n1. Sécurité et respect \ndu matériel \n§ Utilise les \nprécautions \nantistatiques (si \ndisponible). \n \n§ Manipulation \ndouce des \nconnectiques et \ncartes. \n \n§ Rangement \nordonné de la \nvisserie. \nGestes sûrs, \nprécautionneux et \nprofessionnels ; \nanticipe les risques \nde casse ou de court-\ncircuit. \nRespecte \nscrupuleusement les \nconsignes de \nmanipulation, utilise \nles outils adaptés et \nrange \nméthodiquement les \ncomposants. \nManipule avec \nprécaution globale \nmais oublie de \nsécuriser certains \néléments fragiles ou \ndésorganise la \nvisserie. \nForce les \nconnectiques, \nmanipule les cartes \npar les circuits \nimprimés ou néglige \nles risques \nélectrostatiques. \n2. Méthodologie et \nordre opératoire \n§ Suit l'ordre \nlogique de \ndémontage \n(périphériques ➔ \nalimentation ➔ \ncartes ➔ \nprocesseur). \n \n§ Maintien de \nl'espace de travail \npropre. \nMaîtrise parfaite de la \nchronologie, fluidité \ndes gestes, \nautonomie complète \ndans l'organisation de \nl'espace de travail. \nApplique \nrigoureusement la \nchronologie logique \nde démontage et de \nremontage sans \nprécipitation. \nSuit les grandes \nétapes mais commet \ndes erreurs d'ordre \n(exemple : oubli d'un \ncâble avant \nextraction de carte). \nProcède de manière \nanarchique, dévisse \ndes éléments sans \nlogique ou risque \nd'endommager la \nstructure. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 3 \nCritères \nIndicateurs \nA \nB \nC \nD \n3. Identification et \nfonction des \ncomposants \n§ Nomme \ncorrectement \nchaque \ncomposant (CPU, \nRAM, SSD, etc.). \n \n§ Explique \nprécisément le \nrôle de chaque \nélément. \nDémontre une \nexpertise \napprofondie en \nexpliquant non \nseulement le rôle, \nmais aussi les \ninteractions entre les \ncomposants. \nIdentifie sans \nhésitation tous les \ncomposants \nmanipulés et explicite \nclairement leur \nfonction technique. \nIdentifie les \ncomposants \nprincipaux mais \nhésite ou formule \ndes imprécisions sur \nleur rôle exact. \nConfond les \ncomposants majeurs \n(exemple : confusion \nentre RAM et \nstockage) et ignore \nleurs fonctions \nprincipales. \n4. Fonctionnement \nfinal de la machine \n§ La machine \nredémarre au \npremier essai. \n \n§ Tous les câbles \ninternes sont \ncorrectement \nrebranchés. \nRemontage \nimpeccable, gestion \nsoignée du \ncheminement des \ncâbles favorisant la \ncirculation d'air. \nLa machine \nredémarre du \npremier coup, \nattestant d'un \nremontage intègre et \nrigoureux. \nLa machine démarre \naprès l'identification \net la correction de \nquelques erreurs de \nraccordement par \nl'élève. \nLa machine ne \ndémarre pas à la \nsuite d’oublis majeurs \nde câblage ou des \ninversions de \nconnecteurs. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 4 \n2. Dispositif d’évaluation \nModalité \n• Évaluation formative en cours \n• Auto-évaluation (bilan des difficultés rencontrées). \nJustification \nCette activité combine un geste technique manuel et un savoir théorique. L'évaluation \nformative est indispensable pour intervenir immédiatement en cas de geste dangereux \npour le matériel. Le redémarrage de la machine offre une rétroaction immédiate et \nindiscutable à l'élève. \n \n3. Justification des choix pédagogiques \nChoix des critères \nLes critères couvrent l'ensemble de la compétence technique : la sécurité et le soin (savoir-\nêtre), la méthode (savoir-faire procédural), la théorie (savoirs) et le résultat final \n(performance). \nIndicateurs observables \nBasés sur des actions concrètes et vérifiables (la machine démarre, les connectiques sont \nmanipulées sans forcer, le vocabulaire est exact). \nProgression des niveaux \nTraduit le passage d'un tâtonnement risqué pour le matériel (niveau D) à une exécution \nexperte, soigneuse et autonome (niveau A). \nLe niveau A signifie : la maîtrise dépasse l’attendu. \nLe niveau B signifie : la maîtrise est conforme à l’attendu. \nLe niveau C signifie : la maîtrise est en proche de l’attendu. \nLe niveau D signifie : la maîtrise est très en deçà de l’attendu. \n \n \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 5 \nRemarques \nLes grilles officielles WBE utilisent une graduation normalisée à 4 niveaux (A, B, C, D) reposant \nsur une formulation trop vague comme pour le niveau A : La maîtrise dépasse l’attendu.  Nous \navons décidé de personnaliser chaque description de cellule de manière spécifique. \nLes documents officiels WBE intègrent également des critères incontournables et une échelle \nde validation par couleur (Bleu, Vert, Jaune, Orange). Nous avons décidé de ne pas définir les \ncritères incontournables. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 1 \nPrésentation multimédia \nIntitulé \nCréer une présentation destinée à sensibiliser les élèves au cyberharcèlement en sélectionnant \net organisant des informations et des contenus multimédias pertinents. \n1. Identification des apprentissages visés \nSavoirs  \n• Définition du cyberharcèlement ; \n• Identification des mécanismes de groupe ; \n• Identification des droits d’auteur, droit à l’image ; \n• Connaissance des ressources d'aide (lignes d'écoute, signalement). \n \nLien avec le référentiel : Vocabulaire invariant de production, droits d'auteur, droit à \nl'image et à la voix, respect de la vie privée et de la nétiquette. \n \nSavoir-faire \n• Structurer un message de sensibilisation percutant ; \n• Concevoir un support multimédia équilibré (texte, image, vidéo, audio) ;  \n• Citer les sources et respecter le droit à l'image / les droits d'auteur. \n \nLien avec le référentiel : Utiliser des fonctionnalités courantes d'un outil de présentation \n(intégration de médias), appliquer les principes d'élaboration d'un message multimédia \npour appuyer un discours. \n \nCompétence mobilisée \n• Communiquer efficacement à des fins de sensibilisation auprès d'un public cible (les \npairs) en mobilisant des langages multiples. \nCapacités transversales \n• Empathie ;  \n• Engagement citoyen ; \n• Créativité et maîtrise des outils de communication numérique. \n \nLien avec le référentiel : « Produire et traiter des contenus multimédias » et « \nInteragir/communiquer de manière responsable ». \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 2 \nCritères \nIndicateurs \nA \nB \nC \nD \n1. Pertinence et \nexactitude du \ncontenu \n§ Définitions \ncorrectes du \ncyberharcèlement. \n \n§ Distingue \nharcèlement et \ncyberharcèlement. \n \n§ Propose des \nsolutions \nconcrètes ou des \nrecours. \nLe contenu dépasse \nla simple restitution \nen proposant une \nanalyse rigoureuse \ndes dynamiques \nrelationnelles et des \nsolutions innovantes. \nLe contenu est exact, \ncomplet, bien \ndocumenté et \npropose des pistes \nde prévention claires \nadaptées au public. \nPrésente les notions \ngénérales mais \nmanque de précision \nsur les mécanismes \nou omet les \nsolutions/ressources. \nContenu lacunaire, \ncomportant des \nerreurs factuelles ou \ndes amalgames \npréjudiciables sur le \nsujet. \n2. Qualité de la \ncommunication et \nstructure \n§ Message clair et \npercutant. \n \n§ Enchaînement \nlogique des \ndiapositives ou \nsections. \n \n§ S'adresse \ndirectement au \npublic visé. \nCommunication \ncaptivante, narration \nfluide et impact \némotionnel/réflexif \nfort, suscitant \nl'adhésion immédiate. \nStructure claire, \naccroche efficace, \nton juste et \npersuasif, \nparfaitement adapté \naux élèves \nsensibilisés. \nStructure présente \nmais transitions \nmaladroites ; impact \nde sensibilisation \nmodéré sur le public. \nStructure décousue, \nmessages confus ou \nnon adaptés au \npublic visé (trop \ninfantilisants ou trop \njargonneux). \n \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 3 \nCritères \nIndicateurs \nA \nB \nC \nD \n3. Utilisation \njudicieuse des médias \n§ Illustrations/vidéos \nau service du \npropos (pas \ndécoratives). \n \n§ Lisibilité des \ndiapos (contraste, \nsobriété). \n \n§ Respect des droits \nd'auteur/images. \nUtilisation créative et \nmaîtrisée des \nressources \nmultimédias (rythme, \nesthétique, \naccessibilité, sources \nirréprochables). \nMédias \nsoigneusement \nchoisis, renforçant le \nmessage, diapositives \népurées et respect \ndes droits d'auteur. \nUtilise quelques \nmédias pertinents \nmais la mise en page \nnuit parfois à la \nlisibilité ou les \nsources d'images ne \nsont pas indiquées. \nSurcharge visuelle, \nmédias purement \ndécoratifs ou \nperturbateurs, non-\nrespect des droits \nd'auteur. \n4. Posture éthique et \nengagement \n§ Respect d'autrui \net empathie dans \nle traitement du \nsujet. \n \n§ Refus du \nsensationnalisme \ndéplacé. \nDéveloppe une \napproche nuancée, \nhumaine et \nconstructive, \nvalorisant l'entraide \net la responsabilité \ncollective. \nTraite le sujet avec \nsérieux, respect, \ndiscernement et \nempathie, \ndémontrant une \nréelle posture \ncitoyenne. \nTraite le sujet de \nmanière formelle et \ndistante, sans \nsusciter de réelle \nprise de conscience \nou d'empathie. \nUtilise un ton \nculpabilisant, \nmoralisateur ou au \ncontraire banalisant \nface aux situations \nprésentées. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 4 \n2. Dispositif d’évaluation \nModalité \n• Auto-évaluation suivie d’une évaluation par les pairs \n• Évaluation sommative. \nJustification \nLe sujet s'y prête particulièrement : la sensibilisation au cyberharcèlement vise le public \ncible (les pairs). L'évaluation par les pairs permet de mesurer si l'objectif de sensibilisation \net d'impact sur le public est réellement atteint. \n \n3. Justification des choix pédagogiques \nChoix des critères \nLa grille combine trois dimensions complémentaires : la rigueur des informations \nprésentées, la maîtrise technique et esthétique de la communication et des médias, ainsi \nque l’engagement citoyen et éthique. \nIndicateurs observables \nPermettent de vérifier objectivement si les notions légales et préventives sont présentes, \net si la forme graphique respecte les règles d'ergonomie multimédia (lisibilité, absence de \nsurcharge). \nProgression des niveaux \nÉvolue d'une production maladroite ou anxiogène (niveau D) à une création percutante, \néthique, rigoureuse et esthétiquement maîtrisée (niveau A). \nLe niveau de validation A signifie : la maîtrise dépasse l’attendu. \nLe niveau de validation B signifie : la maîtrise est conforme à l’attendu. \nLe niveau de validation C signifie : la maîtrise est en proche de l’attendu. \nLe niveau de validation D signifie : la maîtrise est très en deçà de l’attendu. \n \n \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 5 \nRemarques \nLes grilles officielles WBE utilisent une graduation normalisée à 4 niveaux (A, B, C, D) reposant \nsur une formulation trop vague comme pour le niveau A : La maîtrise dépasse l’attendu.  Nous \navons décidé de personnaliser chaque description de cellule de manière spécifique. \nLes documents officiels WBE intègrent également des critères incontournables et une échelle \nde validation par couleur (Bleu, Vert, Jaune, Orange). Nous avons décidé de garder l’idée des \ncouleurs et de critères incontournables qui représentent l’essentiel de l’apprentissage.",
+    "fileUrl": "/travaux-etudiants/VALENZANO_Jonathan_Exercice_8_Construire_des_gril_2026-10-22.pdf",
+    "submittedAt": "2026-10-22 14:00"
+  },
+  {
+    "id": "sub-real-0117",
+    "userId": "user-josephine.staffe@student.hech.be",
+    "userName": "Joséphine Staffe",
+    "userEmail": "josephine.staffe@student.hech.be",
+    "exerciseId": "exercice-01",
+    "exerciseTitle": "Atelier 1 : Diagnostic de compétences (DigComp 2.2)",
+    "answer": "Exercice 1.1A — Compétent, partiellement compétent ou incompétent ?\nObjectif\nVous allez analyser différentes situations afin de réfléchir à ce que signifie réellement être compétent numériquement.\nL'objectif n'est pas de déterminer qui maîtrise le plus d'outils, mais d'identifier les différentes dimensions qui permettent de caractériser une compétence numérique.\nConsigne\nEn groupe de 3 à 4 étudiants, prenez connaissance des profils distribués.\nPour chaque profil, vous devez attribuer une seule des trois catégories suivantes :\n🟢 COMPÉTENT\nLa personne dispose de ressources suffisantes pour agir de manière pertinente, autonome et responsable dans les situations décrites.\n🟠 PARTIELLEMENT COMPÉTENT\nLa personne maîtrise certaines dimensions de la compétence numérique, mais présente des limites importantes dans d'autres dimensions.\n🔴 INCOMPÉTENT\nLa personne ne dispose pas des ressources nécessaires pour agir de manière pertinente dans les situations décrites.\nAttention : « incompétent » ne signifie pas que la personne est incapable d'utiliser le numérique. Elle peut posséder certaines habiletés techniques tout en étant insuffisamment compétente dans la situation considérée.\nPour chaque profil\nDiscutez collectivement des questions suivantes :\n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nLes 10 profils\nProfil 1 — Sarah : l'experte en IA\nSarah utilise quotidiennement ChatGPT pour ses études. Elle sait rédiger des prompts précis, demander différentes versions d'une réponse, résumer des textes et générer des idées. Elle obtient rapidement des productions qui lui semblent de bonne qualité.\nEn revanche, elle vérifie rarement les informations fournies par l'IA. Lorsqu'une réponse contient une référence ou une statistique, elle considère généralement qu'elle est correcte. Elle ne cherche pas systématiquement à identifier les sources originales.\nLorsqu'on lui signale qu'une réponse est fausse, elle répond : « Je ne pouvais pas le savoir, c'est l'IA qui a répondu. »\nQue sait faire cette personne ?\nHabilité à utiliser Chat GPT\nQue ne sait-elle pas faire ou ne comprend-elle pas ?\nElle ne sait pas vérifier ses sources et ne sait pas remettre l’IA en question.\nEst-elle capable de s'adapter ?\nNon\nEst-elle autonome ?\nAutonome dans la démarche active mais pas dans la réflexion.\nEst-elle capable de porter un regard critique ?\nNon\nAgit-elle de manière responsable ?\nNon \n🟠 PARTIELLEMENT COMPÉTENT\nProfil 2 — Thomas : le débrouillard\nThomas ne connaît pas beaucoup de logiciels et n'a jamais utilisé Canva. Il n'est pas particulièrement à l'aise lorsqu'il découvre une nouvelle interface.\nLorsqu'on lui demande de créer une infographie, il commence cependant par rechercher des outils permettant de réaliser cette tâche. Il compare plusieurs possibilités, consulte des tutoriels et expérimente.\nAprès plusieurs essais, il parvient à produire une infographie adaptée au public auquel elle est destinée.\nLorsqu'il rencontre une difficulté, il cherche généralement une solution avant de demander de l'aide.\nQue sait faire cette personne ?\nSe renseigner, autonomie, bon esprit critique\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nPas à l’aise avec la nouveauté\nEst-elle capable de s'adapter ?\nOui\nEst-elle autonome ?\noui\nEst-elle capable de porter un regard critique ?\noui\nAgit-elle de manière responsable ?\noui\n🟢 COMPÉTENT\nMaitrise pas mais se débrouille pour y arriver. Autodidacte.\nProfil 3 — Lina : la spécialiste des réseaux sociaux\nLina maîtrise parfaitement Instagram, TikTok et Snapchat. Elle connaît les différentes fonctionnalités, sait créer des vidéos, utiliser les tendances et analyser les statistiques de ses publications.\nElle publie régulièrement des photographies et vidéos de ses amis. Elle considère que les contenus présents sur son smartphone peuvent être publiés librement.\nElle ne s'interroge pas particulièrement sur le consentement des personnes photographiées, la conservation des contenus ou les conséquences de leur diffusion.\nElle affirme :\n« Je suis probablement la personne la plus compétente en numérique de ma classe. »\n🟠 PARTIELLEMENT COMPÉTENT\nNe connais pas les bases (consentement et RGPD). Elle connait les réseaux mais pas plus. \nProfil 4 — Hugo : le sceptique\nHugo utilise peu les réseaux sociaux et ne connaît pas la plupart des applications utilisées par ses camarades. Il éprouve parfois des difficultés avec certains logiciels et ne sait pas réaliser des montages vidéo complexes.\nLorsqu'il reçoit une information étonnante sur Internet, il ne la partage cependant jamais immédiatement. Il cherche l'origine de l'information, vérifie la date, consulte plusieurs sources et tente d'identifier l'auteur.\nLorsqu'il ne comprend pas quelque chose, il cherche généralement une ressource lui permettant de progresser.\nNe maîtrise pas tous les outils mais se renseigne et vérifie l’info.\n🟠 PARTIELLEMENT COMPÉTENT\n🟢 COMPÉTENT\nOn ne maitrise jamais tout mais démarche d’apprentissage pour s’améliorer.\nProfil 5 — Julie : l'experte des logiciels\nJulie maîtrise très bien Word, Excel, PowerPoint et plusieurs logiciels professionnels. Elle connaît de nombreuses fonctions avancées et ses camarades font régulièrement appel à elle lorsqu'ils rencontrent un problème.\nElle refuse cependant presque systématiquement d'utiliser de nouveaux outils.\nLorsqu'un logiciel est remplacé dans son établissement, elle demande qu'on lui explique précisément chaque étape et préfère attendre une formation plutôt que d'expérimenter seule.\nElle considère que sa compétence numérique repose principalement sur le nombre de logiciels qu'elle maîtrise.\nSe forme, connait les bases mais ne va pas tester par elle-même.\n🟠 PARTIELLEMENT COMPÉTENT\nPas autodidacte, plutôt technophobe. \nProfil 6 — Mehdi : le chercheur rapide\nMehdi sait utiliser efficacement les moteurs de recherche. Lorsqu'un professeur lui donne une question, il trouve rapidement une réponse sur Internet.\nPour gagner du temps, il consulte généralement les premiers résultats proposés par le moteur de recherche. Il regarde rarement qui a publié l'information et ne vérifie pas systématiquement les sources.\nLorsque plusieurs sites donnent la même information, il considère qu'elle est nécessairement vraie.\nIl explique :\n« Je trouve toujours ce que je cherche sur Internet. »\nRecherche mais se contente des premières infos sans vérifier (si tous dit la même chose c’est que c’est vrai)\n🟠 PARTIELLEMENT COMPÉTENT\nProfil 7 — Emma : la prudente\nEmma ne maîtrise pas particulièrement les fonctions avancées des logiciels bureautiques. Elle demande régulièrement de l'aide lorsqu'elle rencontre une difficulté technique.\nElle utilise cependant un gestionnaire de mots de passe, active la double authentification et vérifie régulièrement les paramètres de confidentialité de ses comptes.\nElle réfléchit avant de transmettre des données personnelles à une application et fait attention aux informations qu'elle publie.\nLorsqu'elle ne sait pas utiliser un outil, elle cherche une solution ou demande de l'aide plutôt que de prétendre savoir faire.\nElle ne gère pas les outils mais a un esprit critique et essaye de trouver des solution ou demande de l’aide.\n🔴 INCOMPÉTENT\nProfil 8 — Lucas : le technicien\nLucas est passionné d'informatique. Il sait installer des logiciels, configurer un ordinateur, résoudre de nombreux problèmes techniques et comprendre les caractéristiques du matériel.\nLorsqu'un problème apparaît, il parvient généralement à trouver une solution par lui-même.\nEn revanche, il considère que les questions relatives aux données personnelles, aux algorithmes, aux biais ou à l'éthique sont secondaires.\nPour lui :\n« Si ça fonctionne et que ça permet de faire ce qu'on veut, c'est que c'est un bon outil. »\nTout a fait compétent au point de vue technologique et autodidacte mais aucun esprit critique.\n🟢 COMPÉTENT\nProfil 9 — Chloé : l'utilisatrice critique\nChloé utilise régulièrement des outils d'IA pour ses études. Elle les utilise notamment pour générer des idées, reformuler certains passages ou explorer différentes pistes.\nElle ne considère toutefois jamais une réponse générée comme une vérité définitive. Elle vérifie les informations importantes, consulte les sources originales et modifie les productions obtenues.\nAvant d'utiliser un outil, elle se demande également s'il est réellement pertinent pour la tâche.\nElle est capable d'expliquer à ses camarades ce que l'outil peut faire, ses limites et les situations dans lesquelles il vaut mieux ne pas l'utiliser.\nTout a fait compétente : aussi bien pour le côté technologique et autodidacte que pour le côté critique.\n🟢 COMPÉTENT\nProfil 10 — Nathan : le reproducteur\nNathan utilise facilement les applications que ses amis lui montrent. Lorsqu'on lui explique une procédure, il est capable de la reproduire rapidement.\nIl sait donc utiliser de nombreux outils.\nEn revanche, lorsqu'une situation légèrement différente se présente, il ne sait généralement plus comment procéder. Il demande alors à quelqu'un de lui montrer exactement ce qu'il doit faire.\nLorsqu'un problème apparaît, il essaie rarement d'en comprendre la cause ou de rechercher lui-même une solution.\nIl explique :\n« Je sais utiliser les outils quand on m'a montré comment faire, mais je ne sais jamais quoi faire quand ça ne marche pas comme prévu. »\nSi montré ok mais que en surface, ne sait pas refaire s’il y a une différence.\n🔴 INCOMPÉTENT",
+    "content": "Exercice 1.1A — Compétent, partiellement compétent ou incompétent ?\nObjectif\nVous allez analyser différentes situations afin de réfléchir à ce que signifie réellement être compétent numériquement.\nL'objectif n'est pas de déterminer qui maîtrise le plus d'outils, mais d'identifier les différentes dimensions qui permettent de caractériser une compétence numérique.\nConsigne\nEn groupe de 3 à 4 étudiants, prenez connaissance des profils distribués.\nPour chaque profil, vous devez attribuer une seule des trois catégories suivantes :\n🟢 COMPÉTENT\nLa personne dispose de ressources suffisantes pour agir de manière pertinente, autonome et responsable dans les situations décrites.\n🟠 PARTIELLEMENT COMPÉTENT\nLa personne maîtrise certaines dimensions de la compétence numérique, mais présente des limites importantes dans d'autres dimensions.\n🔴 INCOMPÉTENT\nLa personne ne dispose pas des ressources nécessaires pour agir de manière pertinente dans les situations décrites.\nAttention : « incompétent » ne signifie pas que la personne est incapable d'utiliser le numérique. Elle peut posséder certaines habiletés techniques tout en étant insuffisamment compétente dans la situation considérée.\nPour chaque profil\nDiscutez collectivement des questions suivantes :\n1. Que sait faire cette personne ?\nIdentifiez ses connaissances et ses savoir-faire.\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nRepérez ses limites.\n3. Est-elle capable de s'adapter ?\nQue fait-elle lorsqu'elle rencontre une situation nouvelle ou un problème ?\n4. Est-elle autonome ?\nPeut-elle trouver seule une solution ou dépend-elle systématiquement d'une personne, d'un tutoriel ou d'une procédure ?\n5. Est-elle capable de porter un regard critique ?\nVérifie-t-elle les informations ? Questionne-t-elle les outils et leurs résultats ?\n6. Agit-elle de manière responsable ?\nPrend-elle en compte les questions de sécurité, de vie privée, de droit, d'éthique ou les conséquences de ses actions ?\nLes 10 profils\nProfil 1 — Sarah : l'experte en IA\nSarah utilise quotidiennement ChatGPT pour ses études. Elle sait rédiger des prompts précis, demander différentes versions d'une réponse, résumer des textes et générer des idées. Elle obtient rapidement des productions qui lui semblent de bonne qualité.\nEn revanche, elle vérifie rarement les informations fournies par l'IA. Lorsqu'une réponse contient une référence ou une statistique, elle considère généralement qu'elle est correcte. Elle ne cherche pas systématiquement à identifier les sources originales.\nLorsqu'on lui signale qu'une réponse est fausse, elle répond : « Je ne pouvais pas le savoir, c'est l'IA qui a répondu. »\nQue sait faire cette personne ?\nHabilité à utiliser Chat GPT\nQue ne sait-elle pas faire ou ne comprend-elle pas ?\nElle ne sait pas vérifier ses sources et ne sait pas remettre l’IA en question.\nEst-elle capable de s'adapter ?\nNon\nEst-elle autonome ?\nAutonome dans la démarche active mais pas dans la réflexion.\nEst-elle capable de porter un regard critique ?\nNon\nAgit-elle de manière responsable ?\nNon \n🟠 PARTIELLEMENT COMPÉTENT\nProfil 2 — Thomas : le débrouillard\nThomas ne connaît pas beaucoup de logiciels et n'a jamais utilisé Canva. Il n'est pas particulièrement à l'aise lorsqu'il découvre une nouvelle interface.\nLorsqu'on lui demande de créer une infographie, il commence cependant par rechercher des outils permettant de réaliser cette tâche. Il compare plusieurs possibilités, consulte des tutoriels et expérimente.\nAprès plusieurs essais, il parvient à produire une infographie adaptée au public auquel elle est destinée.\nLorsqu'il rencontre une difficulté, il cherche généralement une solution avant de demander de l'aide.\nQue sait faire cette personne ?\nSe renseigner, autonomie, bon esprit critique\n2. Que ne sait-elle pas faire ou ne comprend-elle pas ?\nPas à l’aise avec la nouveauté\nEst-elle capable de s'adapter ?\nOui\nEst-elle autonome ?\noui\nEst-elle capable de porter un regard critique ?\noui\nAgit-elle de manière responsable ?\noui\n🟢 COMPÉTENT\nMaitrise pas mais se débrouille pour y arriver. Autodidacte.\nProfil 3 — Lina : la spécialiste des réseaux sociaux\nLina maîtrise parfaitement Instagram, TikTok et Snapchat. Elle connaît les différentes fonctionnalités, sait créer des vidéos, utiliser les tendances et analyser les statistiques de ses publications.\nElle publie régulièrement des photographies et vidéos de ses amis. Elle considère que les contenus présents sur son smartphone peuvent être publiés librement.\nElle ne s'interroge pas particulièrement sur le consentement des personnes photographiées, la conservation des contenus ou les conséquences de leur diffusion.\nElle affirme :\n« Je suis probablement la personne la plus compétente en numérique de ma classe. »\n🟠 PARTIELLEMENT COMPÉTENT\nNe connais pas les bases (consentement et RGPD). Elle connait les réseaux mais pas plus. \nProfil 4 — Hugo : le sceptique\nHugo utilise peu les réseaux sociaux et ne connaît pas la plupart des applications utilisées par ses camarades. Il éprouve parfois des difficultés avec certains logiciels et ne sait pas réaliser des montages vidéo complexes.\nLorsqu'il reçoit une information étonnante sur Internet, il ne la partage cependant jamais immédiatement. Il cherche l'origine de l'information, vérifie la date, consulte plusieurs sources et tente d'identifier l'auteur.\nLorsqu'il ne comprend pas quelque chose, il cherche généralement une ressource lui permettant de progresser.\nNe maîtrise pas tous les outils mais se renseigne et vérifie l’info.\n🟠 PARTIELLEMENT COMPÉTENT\n🟢 COMPÉTENT\nOn ne maitrise jamais tout mais démarche d’apprentissage pour s’améliorer.\nProfil 5 — Julie : l'experte des logiciels\nJulie maîtrise très bien Word, Excel, PowerPoint et plusieurs logiciels professionnels. Elle connaît de nombreuses fonctions avancées et ses camarades font régulièrement appel à elle lorsqu'ils rencontrent un problème.\nElle refuse cependant presque systématiquement d'utiliser de nouveaux outils.\nLorsqu'un logiciel est remplacé dans son établissement, elle demande qu'on lui explique précisément chaque étape et préfère attendre une formation plutôt que d'expérimenter seule.\nElle considère que sa compétence numérique repose principalement sur le nombre de logiciels qu'elle maîtrise.\nSe forme, connait les bases mais ne va pas tester par elle-même.\n🟠 PARTIELLEMENT COMPÉTENT\nPas autodidacte, plutôt technophobe. \nProfil 6 — Mehdi : le chercheur rapide\nMehdi sait utiliser efficacement les moteurs de recherche. Lorsqu'un professeur lui donne une question, il trouve rapidement une réponse sur Internet.\nPour gagner du temps, il consulte généralement les premiers résultats proposés par le moteur de recherche. Il regarde rarement qui a publié l'information et ne vérifie pas systématiquement les sources.\nLorsque plusieurs sites donnent la même information, il considère qu'elle est nécessairement vraie.\nIl explique :\n« Je trouve toujours ce que je cherche sur Internet. »\nRecherche mais se contente des premières infos sans vérifier (si tous dit la même chose c’est que c’est vrai)\n🟠 PARTIELLEMENT COMPÉTENT\nProfil 7 — Emma : la prudente\nEmma ne maîtrise pas particulièrement les fonctions avancées des logiciels bureautiques. Elle demande régulièrement de l'aide lorsqu'elle rencontre une difficulté technique.\nElle utilise cependant un gestionnaire de mots de passe, active la double authentification et vérifie régulièrement les paramètres de confidentialité de ses comptes.\nElle réfléchit avant de transmettre des données personnelles à une application et fait attention aux informations qu'elle publie.\nLorsqu'elle ne sait pas utiliser un outil, elle cherche une solution ou demande de l'aide plutôt que de prétendre savoir faire.\nElle ne gère pas les outils mais a un esprit critique et essaye de trouver des solution ou demande de l’aide.\n🔴 INCOMPÉTENT\nProfil 8 — Lucas : le technicien\nLucas est passionné d'informatique. Il sait installer des logiciels, configurer un ordinateur, résoudre de nombreux problèmes techniques et comprendre les caractéristiques du matériel.\nLorsqu'un problème apparaît, il parvient généralement à trouver une solution par lui-même.\nEn revanche, il considère que les questions relatives aux données personnelles, aux algorithmes, aux biais ou à l'éthique sont secondaires.\nPour lui :\n« Si ça fonctionne et que ça permet de faire ce qu'on veut, c'est que c'est un bon outil. »\nTout a fait compétent au point de vue technologique et autodidacte mais aucun esprit critique.\n🟢 COMPÉTENT\nProfil 9 — Chloé : l'utilisatrice critique\nChloé utilise régulièrement des outils d'IA pour ses études. Elle les utilise notamment pour générer des idées, reformuler certains passages ou explorer différentes pistes.\nElle ne considère toutefois jamais une réponse générée comme une vérité définitive. Elle vérifie les informations importantes, consulte les sources originales et modifie les productions obtenues.\nAvant d'utiliser un outil, elle se demande également s'il est réellement pertinent pour la tâche.\nElle est capable d'expliquer à ses camarades ce que l'outil peut faire, ses limites et les situations dans lesquelles il vaut mieux ne pas l'utiliser.\nTout a fait compétente : aussi bien pour le côté technologique et autodidacte que pour le côté critique.\n🟢 COMPÉTENT\nProfil 10 — Nathan : le reproducteur\nNathan utilise facilement les applications que ses amis lui montrent. Lorsqu'on lui explique une procédure, il est capable de la reproduire rapidement.\nIl sait donc utiliser de nombreux outils.\nEn revanche, lorsqu'une situation légèrement différente se présente, il ne sait généralement plus comment procéder. Il demande alors à quelqu'un de lui montrer exactement ce qu'il doit faire.\nLorsqu'un problème apparaît, il essaie rarement d'en comprendre la cause ou de rechercher lui-même une solution.\nIl explique :\n« Je sais utiliser les outils quand on m'a montré comment faire, mais je ne sais jamais quoi faire quand ça ne marche pas comme prévu. »\nSi montré ok mais que en surface, ne sait pas refaire s’il y a une différence.\n🔴 INCOMPÉTENT",
+    "fileUrl": "/travaux-etudiants/STAFFE_Josephine_Exercice_1_Diagnostic_de_compe_2026-10-23.docx",
+    "submittedAt": "2026-10-23 14:00"
+  },
+  {
+    "id": "sub-real-0118",
+    "userId": "user-josephine.staffe@student.hech.be",
+    "userName": "Joséphine Staffe",
+    "userEmail": "josephine.staffe@student.hech.be",
+    "exerciseId": "exercice-02",
+    "exerciseTitle": "Atelier 2 : Évaluation critique d'une information",
+    "answer": "Exercice 02 — Peut-on faire confiance à cette information ?\nCollard Alexiane \nHockers Caroline\nStaffe Joséphine \nVotre mission\nVous découvrez sur Internet l'affirmation suivante :\n« Une étude scientifique vient de prouver que regarder son téléphone avant de dormir fait perdre 2 heures de sommeil chaque nuit. »\nAvant de la partager avec des élèves, vous devez déterminer si cette information est suffisamment fiable.\nPar groupes de 3 à 4 :\nConstruisez votre méthode de vérification\nQuelles informations devez-vous rechercher pour pouvoir déterminer si cette affirmation est fiable ?\nTaper la question dans un moteur de recherche (google/google scholar) \nAnalyser les différents articles proposés par l’IA (BBC, Actu.fr, euronews, 24h.ch)\nLe nombre de sources \nL’auteur\nLa date de l’article \nMenez l'enquête\nUtilisez Internet pour vérifier l'information. Recherchez notamment :\nl'origine de l'affirmation ; \nNous n’avons pas trouvé l’origine précise de l’affirmation mais plutôt un croisement de plusieurs données qui nuance les propos. \nla source scientifique éventuelle ;\nUn article de la BBC qui nous parle d’un Dr Gunnhild Johnsen Hjetland, de l’institut norvégien de santé publique.\nl'auteur ou l'organisme à l'origine de l'information ;\nAuteur de l’étude : Dr Gunnhild Johnsen Hjetland\nAuteur de l’article : Liv McMahon   Présente sur les réseaux sociaux (X, Linkedin,…)\nAprès vérification, ces personnes sont bien réelles.\nd'autres sources permettant de confirmer ou de nuancer l'affirmation.\nAutres sources proposées par l’IA mais l’article de base nuance déjà les propos. \nPrenez une décision\nRépondez à la question :\n« Partageriez-vous cette information avec des élèves ? »\nJustifiez votre réponse à partir de sources vérifiables.\nJe ne partagerai pas cette information parce qu’elle est plus nuancée que l’affirmation de départ. Je leur expliquerai que l’utilisation du téléphone a un impact sur le sommeil. Je leur demanderai plutôt d’aller chercher les conséquences liées à l’utilisation de leur téléphone avant d’aller dormir. \nSi nous sommes dans un objectif de recherche numérique, on peut leur donner l’affirmation en leur demandant de la vérifier et de la nuancer. \nPréparez une restitution de 2 minutes :\nvotre décision ;\nOn ne communique pas cette affirmation mais on peut utiliser une version plus nuancée. \nles éléments qui ont guidé votre choix ;\nOn ne trouve pas d’article nous donnant l’affirmation précise. \nvotre méthode de vérification ;\nLa lecture de plusieurs articles en vérifiant si les sources et les auteurs existaient réellement. \nune difficulté rencontrée.\nL’affirmation n’apparait nulle part. C’est donc difficile de vérifier les différentes parties de l’affirmation. \nRessources\nVous pouvez utiliser un moteur de recherche ainsi que :\nGoogle Scholar\nPubMed\nCrossref\nUne IA peut vous aider dans vos recherches, mais ses réponses doivent être vérifiées à partir de sources fiables.",
+    "content": "Exercice 02 — Peut-on faire confiance à cette information ?\nCollard Alexiane \nHockers Caroline\nStaffe Joséphine \nVotre mission\nVous découvrez sur Internet l'affirmation suivante :\n« Une étude scientifique vient de prouver que regarder son téléphone avant de dormir fait perdre 2 heures de sommeil chaque nuit. »\nAvant de la partager avec des élèves, vous devez déterminer si cette information est suffisamment fiable.\nPar groupes de 3 à 4 :\nConstruisez votre méthode de vérification\nQuelles informations devez-vous rechercher pour pouvoir déterminer si cette affirmation est fiable ?\nTaper la question dans un moteur de recherche (google/google scholar) \nAnalyser les différents articles proposés par l’IA (BBC, Actu.fr, euronews, 24h.ch)\nLe nombre de sources \nL’auteur\nLa date de l’article \nMenez l'enquête\nUtilisez Internet pour vérifier l'information. Recherchez notamment :\nl'origine de l'affirmation ; \nNous n’avons pas trouvé l’origine précise de l’affirmation mais plutôt un croisement de plusieurs données qui nuance les propos. \nla source scientifique éventuelle ;\nUn article de la BBC qui nous parle d’un Dr Gunnhild Johnsen Hjetland, de l’institut norvégien de santé publique.\nl'auteur ou l'organisme à l'origine de l'information ;\nAuteur de l’étude : Dr Gunnhild Johnsen Hjetland\nAuteur de l’article : Liv McMahon   Présente sur les réseaux sociaux (X, Linkedin,…)\nAprès vérification, ces personnes sont bien réelles.\nd'autres sources permettant de confirmer ou de nuancer l'affirmation.\nAutres sources proposées par l’IA mais l’article de base nuance déjà les propos. \nPrenez une décision\nRépondez à la question :\n« Partageriez-vous cette information avec des élèves ? »\nJustifiez votre réponse à partir de sources vérifiables.\nJe ne partagerai pas cette information parce qu’elle est plus nuancée que l’affirmation de départ. Je leur expliquerai que l’utilisation du téléphone a un impact sur le sommeil. Je leur demanderai plutôt d’aller chercher les conséquences liées à l’utilisation de leur téléphone avant d’aller dormir. \nSi nous sommes dans un objectif de recherche numérique, on peut leur donner l’affirmation en leur demandant de la vérifier et de la nuancer. \nPréparez une restitution de 2 minutes :\nvotre décision ;\nOn ne communique pas cette affirmation mais on peut utiliser une version plus nuancée. \nles éléments qui ont guidé votre choix ;\nOn ne trouve pas d’article nous donnant l’affirmation précise. \nvotre méthode de vérification ;\nLa lecture de plusieurs articles en vérifiant si les sources et les auteurs existaient réellement. \nune difficulté rencontrée.\nL’affirmation n’apparait nulle part. C’est donc difficile de vérifier les différentes parties de l’affirmation. \nRessources\nVous pouvez utiliser un moteur de recherche ainsi que :\nGoogle Scholar\nPubMed\nCrossref\nUne IA peut vous aider dans vos recherches, mais ses réponses doivent être vérifiées à partir de sources fiables.",
+    "fileUrl": "/travaux-etudiants/STAFFE_Josephine_Exercice_2_Peut-on_faire_confi_2026-10-23.docx",
+    "submittedAt": "2026-10-23 14:00"
+  },
+  {
+    "id": "sub-real-0119",
+    "userId": "user-josephine.staffe@student.hech.be",
+    "userName": "Joséphine Staffe",
+    "userEmail": "josephine.staffe@student.hech.be",
+    "exerciseId": "exercice-03",
+    "exerciseTitle": "Atelier 3 : Conception d'un guide numérique élèves",
+    "answer": "Exercice 03 — Concevoir un guide numérique pour les élèves\nAlexiane Collard – Caroline Hockers – Joséphine Staffe \nVotre mission\nVotre établissement constate que les nouveaux élèves rencontrent des difficultés pour s'organiser et collaborer dans leur environnement numérique.\nVotre groupe doit concevoir un guide numérique destiné à ces élèves pour les aider à utiliser efficacement les outils numériques de l'école.\nConsignes\nEn groupes de 3 à 4 :\nIdentifiez les besoins\nDéterminez les principales difficultés auxquelles votre guide devra répondre.\nIdentifier le niveau de chaque élève ; partir du principe que le guide (fiche outil) doive répondre au besoin d’un élève novice en informatique.\nCréer un guide efficace et non barbant.\nDéfinissez votre projet\nChoisissez les contenus à transmettre, le public cible et le format le plus pertinent : vidéo, tutoriel interactif, site, infographie, podcast…\nFiche outil (vu le manque de temps) mais d’autres formats comme une vidéo serait pertinent. \nThème : allumer l’ordinateur, ouvrir un programme (utilisation souris + clavier) puis éteindre l’ordinateur. + Créer un document + retrouver un fichier + premiers pas sur internet\nPublic cible : élève de première année + nouveaux élèves + …\nOrganisez votre travail\nRépartissez les rôles en fonction des compétences et des intérêts de chacun et planifiez les différentes étapes de réalisation.\nVu le temps (20 min) on a décidé d’utiliser Chat GPT en lui demandant de générer des consignes de fiche outil pour le thème souhaité. Nous avons ensuite demandé de générer une image d’une fiche outil. \nEn demandant la même chose à Gemini, nous obtenons une version beaucoup plus condensée et plus pauvre des démarches. \n\nNous avons vérifié le contenu des productions obtenues.\nChacun a eu son rôle : « secrétaire » + « architecte/gestionnaire » + « créateur/exécutant »\nRéalisez votre production\nUtilisez les outils numériques de votre choix pour créer votre guide.\nVoir ci-dessous.\nTestez et améliorez\nFaites tester votre production par un autre groupe. Recueillez leurs remarques et apportez au moins une amélioration.\nPrésentation\nPrésentez votre guide au groupe en 3 minutes.\nVous devrez expliquer :\nle besoin auquel vous avez répondu ;\nvos principaux choix ;\nla contribution des différents membres du groupe ;\nune amélioration apportée à la suite des tests.\nEn + du travail de groupe :\nAu-delà du cours de numérique, j’ai appliqué cette démarche à nouveau très vite en créant une fiche outil pour l’utilisation de SmartSchool par les nouveaux élèves arrivant dans l’école. \nJe me suis beaucoup aidée de Gemini en détaillant toutes mes demandes et voici la fiche outil que j’ai alors générée + modifiée en word :",
+    "content": "Exercice 03 — Concevoir un guide numérique pour les élèves\nAlexiane Collard – Caroline Hockers – Joséphine Staffe \nVotre mission\nVotre établissement constate que les nouveaux élèves rencontrent des difficultés pour s'organiser et collaborer dans leur environnement numérique.\nVotre groupe doit concevoir un guide numérique destiné à ces élèves pour les aider à utiliser efficacement les outils numériques de l'école.\nConsignes\nEn groupes de 3 à 4 :\nIdentifiez les besoins\nDéterminez les principales difficultés auxquelles votre guide devra répondre.\nIdentifier le niveau de chaque élève ; partir du principe que le guide (fiche outil) doive répondre au besoin d’un élève novice en informatique.\nCréer un guide efficace et non barbant.\nDéfinissez votre projet\nChoisissez les contenus à transmettre, le public cible et le format le plus pertinent : vidéo, tutoriel interactif, site, infographie, podcast…\nFiche outil (vu le manque de temps) mais d’autres formats comme une vidéo serait pertinent. \nThème : allumer l’ordinateur, ouvrir un programme (utilisation souris + clavier) puis éteindre l’ordinateur. + Créer un document + retrouver un fichier + premiers pas sur internet\nPublic cible : élève de première année + nouveaux élèves + …\nOrganisez votre travail\nRépartissez les rôles en fonction des compétences et des intérêts de chacun et planifiez les différentes étapes de réalisation.\nVu le temps (20 min) on a décidé d’utiliser Chat GPT en lui demandant de générer des consignes de fiche outil pour le thème souhaité. Nous avons ensuite demandé de générer une image d’une fiche outil. \nEn demandant la même chose à Gemini, nous obtenons une version beaucoup plus condensée et plus pauvre des démarches. \n\nNous avons vérifié le contenu des productions obtenues.\nChacun a eu son rôle : « secrétaire » + « architecte/gestionnaire » + « créateur/exécutant »\nRéalisez votre production\nUtilisez les outils numériques de votre choix pour créer votre guide.\nVoir ci-dessous.\nTestez et améliorez\nFaites tester votre production par un autre groupe. Recueillez leurs remarques et apportez au moins une amélioration.\nPrésentation\nPrésentez votre guide au groupe en 3 minutes.\nVous devrez expliquer :\nle besoin auquel vous avez répondu ;\nvos principaux choix ;\nla contribution des différents membres du groupe ;\nune amélioration apportée à la suite des tests.\nEn + du travail de groupe :\nAu-delà du cours de numérique, j’ai appliqué cette démarche à nouveau très vite en créant une fiche outil pour l’utilisation de SmartSchool par les nouveaux élèves arrivant dans l’école. \nJe me suis beaucoup aidée de Gemini en détaillant toutes mes demandes et voici la fiche outil que j’ai alors générée + modifiée en word :",
+    "fileUrl": "/travaux-etudiants/STAFFE_Josephine_Exercice_3_Concevoir_un_guide__2026-10-23.docx",
+    "submittedAt": "2026-10-23 14:00"
+  },
+  {
+    "id": "sub-real-0120",
+    "userId": "user-josephine.staffe@student.hech.be",
+    "userName": "Joséphine Staffe",
+    "userEmail": "josephine.staffe@student.hech.be",
+    "exerciseId": "exercice-04",
+    "exerciseTitle": "Atelier 4 : Escape Game FMTTN (Cyber-Enquête)",
+    "answer": "J’étais absente lors du cours donc j’ai un peu cherché et tâtonné.\nAu premier essais, j’étais trop juste, il me manquait 2 secondes pour valider la 5e zone.\nJ’ai relancé une partie et là, easy peasy lemon squeezy dont voici le résultat :",
+    "content": "J’étais absente lors du cours donc j’ai un peu cherché et tâtonné.\nAu premier essais, j’étais trop juste, il me manquait 2 secondes pour valider la 5e zone.\nJ’ai relancé une partie et là, easy peasy lemon squeezy dont voici le résultat :",
+    "fileUrl": "/travaux-etudiants/STAFFE_Josephine_Exercice_4_Escape_Game_FMTTN_C_2026-10-23.docx",
+    "submittedAt": "2026-10-23 14:00"
+  },
+  {
+    "id": "sub-real-0121",
     "userId": "user-julien.esposito@student.hech.be",
     "userName": "Julien Esposito",
     "userEmail": "julien.esposito@student.hech.be",
@@ -9968,7 +12747,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-09-30 14:00"
   },
   {
-    "id": "sub-real-0095",
+    "id": "sub-real-0122",
     "userId": "user-julien.esposito@student.hech.be",
     "userName": "Julien Esposito",
     "userEmail": "julien.esposito@student.hech.be",
@@ -9980,7 +12759,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-09-30 14:00"
   },
   {
-    "id": "sub-real-0096",
+    "id": "sub-real-0123",
     "userId": "user-julien.esposito@student.hech.be",
     "userName": "Julien Esposito",
     "userEmail": "julien.esposito@student.hech.be",
@@ -9992,7 +12771,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-04 14:00"
   },
   {
-    "id": "sub-real-0097",
+    "id": "sub-real-0124",
     "userId": "user-julien.esposito@student.hech.be",
     "userName": "Julien Esposito",
     "userEmail": "julien.esposito@student.hech.be",
@@ -10004,7 +12783,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-09 14:00"
   },
   {
-    "id": "sub-real-0098",
+    "id": "sub-real-0125",
     "userId": "user-julien.esposito@student.hech.be",
     "userName": "Julien Esposito",
     "userEmail": "julien.esposito@student.hech.be",
@@ -10016,7 +12795,19 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-13 14:00"
   },
   {
-    "id": "sub-real-0099",
+    "id": "sub-real-0126",
+    "userId": "user-julien.esposito@student.hech.be",
+    "userName": "Julien Esposito",
+    "userEmail": "julien.esposito@student.hech.be",
+    "exerciseId": "exercice-07",
+    "exerciseTitle": "Atelier 7 : Défi Hardware & Peer Learning (Démonter/Remonter un PC)",
+    "answer": "Exercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M. mets nous 9/10 \nPhoto \nNom de la pièce \nFonction de la pièce \n \nDisque dur \nLe disque dur est un composant qui permet de stocker et de \nconserver les données de l’ordinateur de manière \npermanente, même lorsqu’il est éteint. \nIl contient notamment le système d’exploitation (Windows, \nLinux…), les logiciels installés ainsi que les fichiers \npersonnels (documents, photos, vidéos, etc.). \nIl permet également de lire et d’écrire des données, c’est-à-\ndire de retrouver des informations enregistrées ou d’en \nsauvegarder de nouvelles. \nDans un disque dur classique (HDD), les données sont \nenregistrées sur des plateaux magnétiques en rotation, \ngrâce à des têtes de lecture et d’écriture. \nContrairement à la mémoire vive (RAM), le disque dur \nconserve les informations lorsque l’alimentation électrique \nest coupée. \n \n \n \nProcesseur  \n(en dessous du \nventilateur) \nLe processeur est considéré comme le cerveau de \nl’ordinateur. Il est chargé d’exécuter les instructions des \nprogrammes et de réaliser les calculs nécessaires au \nfonctionnement de l’ordinateur. \nIl traite les informations provenant des logiciels et des \ndifférents composants. \nIl effectue notamment des opérations arithmétiques et \nlogiques (calculs, comparaisons, prises de décision). \nIl coordonne également l’exécution des instructions et les \néchanges de données avec les autres composants, \nnotamment la mémoire vive (RAM). \nSa vitesse de fonctionnement, exprimée en gigahertz (GHz), \net son nombre de cœurs influencent les performances de \nl’ordinateur. \nLe processeur produit de la chaleur et nécessite donc \nun système de refroidissement (ventilateur ou dissipateur \nthermique). \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M. mets nous 9/10 \nRAM \nLa mémoire vive (RAM) est un composant qui permet \nde stocker temporairement les données et les \ninstructions utilisées par l’ordinateur lorsqu’il fonctionne. \nElle conserve notamment les informations nécessaires à \nl’exécution des logiciels et des applications en cours \nd’utilisation. \nElle permet au processeur d’accéder rapidement aux \ndonnées dont il a besoin pour effectuer ses opérations. \nPlus la capacité de la RAM est importante, plus l’ordinateur \npeut gérer simultanément plusieurs programmes et des \ntâches exigeantes sans ralentissement lié au manque de \nmémoire. \nContrairement au disque dur, la RAM est une mémoire \nvolatile : toutes les données qu’elle contient disparaissent \nlorsque l’ordinateur est éteint. \nElle joue donc un rôle essentiel dans la rapidité et la \nfluidité du fonctionnement de l’ordinateur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M. mets nous 9/10 \nCarte graphique \nLa carte graphique est un composant chargé de traiter les \ndonnées graphiques et de produire les images affichées sur \nl’écran de l’ordinateur. \nElle transforme les informations numériques en images \nvisibles : textes, photos, vidéos, animations et images en 3D. \nElle possède un processeur graphique (GPU) spécialisé \ndans l’exécution rapide de nombreux calculs en parallèle. \nElle est particulièrement sollicitée pour les jeux vidéo, le \nmontage vidéo, la modélisation 3D et certaines applications \nd’intelligence artificielle. \nElle dispose généralement d’une mémoire vidéo \n(VRAM) permettant de stocker temporairement les données \nnécessaires à l'affichage. \nLe processeur graphique peut être intégré au processeur \nprincipal ou se trouver sur une carte graphique dédiée. \nLecteur CD \nLe lecteur CD est un périphérique qui permet de lire les \ninformations enregistrées sur un disque compact (CD). \nIl utilise un faisceau laser pour détecter les données \nnumériques présentes à la surface du disque. \nIl permet notamment de lire des CD audio, d’installer des \nlogiciels ou d’accéder à des fichiers enregistrés sur un CD-\nROM. \nCertains modèles, appelés graveurs CD, permettent \négalement d’écrire des données sur des CD enregistrables \n(CD-R) ou réinscriptibles (CD-RW). \nLe lecteur CD contient un moteur qui fait tourner le disque et \nun mécanisme qui déplace la tête de lecture laser. \nAujourd’hui, il est de moins en moins présent dans les \nordinateurs récents, car il est progressivement remplacé par \nles clés USB, les téléchargements et le stockage en ligne. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M. mets nous 9/10 \nCarte mère \nLa carte mère est le circuit électronique principal de \nl’ordinateur. Elle permet de connecter et de faire \ncommuniquer les différents composants entre eux. \nElle accueille notamment le processeur (CPU), la mémoire \nvive (RAM) et les connecteurs destinés aux périphériques et \naux unités de stockage. \nElle assure la circulation des données entre les composants \ngrâce à des circuits et des connexions électroniques. \nElle distribue également l’alimentation électrique nécessaire \nau fonctionnement de plusieurs composants. \nElle contient le BIOS/UEFI, un micrologiciel qui permet \nnotamment d’initialiser le matériel lors du démarrage de \nl’ordinateur. \nElle possède différents ports et connecteurs (USB, SATA, \nPCI Express, etc.) permettant de brancher des périphériques \net des composants supplémentaires. \nLa carte mère joue donc un rôle central dans le \nfonctionnement et la coordination de l'ensemble de \nl'ordinateur. \n \nVentilateur  \nLe ventilateur est un composant qui permet de refroidir les \néléments de l’ordinateur en favorisant la circulation de l’air. \nIl sert principalement à évacuer la chaleur produite par les \ncomposants électroniques, notamment le processeur (CPU) \net la carte graphique (GPU). \nIl contribue à maintenir une température de fonctionnement \nadaptée, afin d’éviter la surchauffe et les ralentissements. \nIl fonctionne grâce à un moteur électrique qui fait tourner des \npales, créant ainsi un flux d’air. \nIl est souvent associé à un dissipateur thermique, qui \nabsorbe et évacue la chaleur produite par le processeur. \nCertains ventilateurs font entrer de l’air frais dans le boîtier, \ntandis que d’autres expulsent l’air chaud vers l’extérieur. \nLe ventilateur contribue ainsi à préserver les performances, \nla stabilité et la durée de vie de l’ordinateur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M. mets nous 9/10 \nBloc d’alimentation \nLe bloc d’alimentation est un composant qui permet \nde fournir l’énergie électrique nécessaire au fonctionnement \nde l’ordinateur. \nIl transforme le courant alternatif (AC) provenant de la prise \nélectrique en courant continu (DC) utilisable par les \ncomposants électroniques. \nIl distribue cette énergie aux différents éléments de \nl’ordinateur, notamment la carte mère, le processeur, la carte \ngraphique et les unités de stockage. \nIl fournit plusieurs tensions électriques adaptées aux besoins \ndes composants, principalement 3,3 V, 5 V et 12 V. \nIl intègre également des systèmes de protection contre \ncertains problèmes électriques, comme les surtensions, les \nsurcharges et les courts-circuits. \nSa puissance, exprimée en watts (W), détermine la quantité \nmaximale d’énergie qu’il peut fournir. \nLe bloc d’alimentation est donc indispensable au \nfonctionnement stable et sécurisé de l’ordinateur. \n \nPorts de \nconnexion  \nLes ports de connexion sont des interfaces permettant de \nrelier l’ordinateur à des périphériques externes ou à d’autres \néquipements. \nIls permettent l’échange de données et de signaux entre \nl’ordinateur et les appareils connectés. \nIl existe différents types de ports, notamment les ports \nUSB (clavier, souris, clé USB), HDMI ou \nDisplayPort (écran), Ethernet RJ45 (réseau) et les prises \naudio (casque, microphone). \nCertains ports permettent également de fournir de l’énergie \nélectrique aux périphériques connectés, par exemple pour \nrecharger un smartphone. \nIls sont généralement situés à l’arrière ou à l’avant du boîtier \net sont reliés à la carte mère. \nLes ports de connexion jouent donc un rôle essentiel dans la \ncommunication entre l’ordinateur et son environnement \nextérieur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M. mets nous 9/10 \n \n \n \n \nDans notre image : \n \nN° \nNom du Port \nFonction \n1 \nPS/2 \n(clavier/souris) \nConnexion d’un ancien clavier ou d’une \nsouris \n2 \nPort série (COM / \nDB9) \nConnexion de périphériques anciens \n3 \nDVI \nConnexion d’un écran \n4 \nHDMI \nConnexion d’un écran ou d’un téléviseur \n5 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n6 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n7 \nEthernet (RJ45) \nConnexion réseau / Internet par câble \n8 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n9 \nPrises audio Jack \n3,5 mm \nBleu : Connexion casque,  \nVert : haut-parleurs \nRose :  microphone \n10 \nVGA \nTransmission de l’image en analogique vers \nun écran \n11 \nHDMI \nConnexion d’un écran ou d’un téléviseur \n12 \nDVI \nConnexion d’un écran",
+    "content": "Exercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M. mets nous 9/10 \nPhoto \nNom de la pièce \nFonction de la pièce \n \nDisque dur \nLe disque dur est un composant qui permet de stocker et de \nconserver les données de l’ordinateur de manière \npermanente, même lorsqu’il est éteint. \nIl contient notamment le système d’exploitation (Windows, \nLinux…), les logiciels installés ainsi que les fichiers \npersonnels (documents, photos, vidéos, etc.). \nIl permet également de lire et d’écrire des données, c’est-à-\ndire de retrouver des informations enregistrées ou d’en \nsauvegarder de nouvelles. \nDans un disque dur classique (HDD), les données sont \nenregistrées sur des plateaux magnétiques en rotation, \ngrâce à des têtes de lecture et d’écriture. \nContrairement à la mémoire vive (RAM), le disque dur \nconserve les informations lorsque l’alimentation électrique \nest coupée. \n \n \n \nProcesseur  \n(en dessous du \nventilateur) \nLe processeur est considéré comme le cerveau de \nl’ordinateur. Il est chargé d’exécuter les instructions des \nprogrammes et de réaliser les calculs nécessaires au \nfonctionnement de l’ordinateur. \nIl traite les informations provenant des logiciels et des \ndifférents composants. \nIl effectue notamment des opérations arithmétiques et \nlogiques (calculs, comparaisons, prises de décision). \nIl coordonne également l’exécution des instructions et les \néchanges de données avec les autres composants, \nnotamment la mémoire vive (RAM). \nSa vitesse de fonctionnement, exprimée en gigahertz (GHz), \net son nombre de cœurs influencent les performances de \nl’ordinateur. \nLe processeur produit de la chaleur et nécessite donc \nun système de refroidissement (ventilateur ou dissipateur \nthermique). \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M. mets nous 9/10 \nRAM \nLa mémoire vive (RAM) est un composant qui permet \nde stocker temporairement les données et les \ninstructions utilisées par l’ordinateur lorsqu’il fonctionne. \nElle conserve notamment les informations nécessaires à \nl’exécution des logiciels et des applications en cours \nd’utilisation. \nElle permet au processeur d’accéder rapidement aux \ndonnées dont il a besoin pour effectuer ses opérations. \nPlus la capacité de la RAM est importante, plus l’ordinateur \npeut gérer simultanément plusieurs programmes et des \ntâches exigeantes sans ralentissement lié au manque de \nmémoire. \nContrairement au disque dur, la RAM est une mémoire \nvolatile : toutes les données qu’elle contient disparaissent \nlorsque l’ordinateur est éteint. \nElle joue donc un rôle essentiel dans la rapidité et la \nfluidité du fonctionnement de l’ordinateur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M. mets nous 9/10 \nCarte graphique \nLa carte graphique est un composant chargé de traiter les \ndonnées graphiques et de produire les images affichées sur \nl’écran de l’ordinateur. \nElle transforme les informations numériques en images \nvisibles : textes, photos, vidéos, animations et images en 3D. \nElle possède un processeur graphique (GPU) spécialisé \ndans l’exécution rapide de nombreux calculs en parallèle. \nElle est particulièrement sollicitée pour les jeux vidéo, le \nmontage vidéo, la modélisation 3D et certaines applications \nd’intelligence artificielle. \nElle dispose généralement d’une mémoire vidéo \n(VRAM) permettant de stocker temporairement les données \nnécessaires à l'affichage. \nLe processeur graphique peut être intégré au processeur \nprincipal ou se trouver sur une carte graphique dédiée. \nLecteur CD \nLe lecteur CD est un périphérique qui permet de lire les \ninformations enregistrées sur un disque compact (CD). \nIl utilise un faisceau laser pour détecter les données \nnumériques présentes à la surface du disque. \nIl permet notamment de lire des CD audio, d’installer des \nlogiciels ou d’accéder à des fichiers enregistrés sur un CD-\nROM. \nCertains modèles, appelés graveurs CD, permettent \négalement d’écrire des données sur des CD enregistrables \n(CD-R) ou réinscriptibles (CD-RW). \nLe lecteur CD contient un moteur qui fait tourner le disque et \nun mécanisme qui déplace la tête de lecture laser. \nAujourd’hui, il est de moins en moins présent dans les \nordinateurs récents, car il est progressivement remplacé par \nles clés USB, les téléchargements et le stockage en ligne. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M. mets nous 9/10 \nCarte mère \nLa carte mère est le circuit électronique principal de \nl’ordinateur. Elle permet de connecter et de faire \ncommuniquer les différents composants entre eux. \nElle accueille notamment le processeur (CPU), la mémoire \nvive (RAM) et les connecteurs destinés aux périphériques et \naux unités de stockage. \nElle assure la circulation des données entre les composants \ngrâce à des circuits et des connexions électroniques. \nElle distribue également l’alimentation électrique nécessaire \nau fonctionnement de plusieurs composants. \nElle contient le BIOS/UEFI, un micrologiciel qui permet \nnotamment d’initialiser le matériel lors du démarrage de \nl’ordinateur. \nElle possède différents ports et connecteurs (USB, SATA, \nPCI Express, etc.) permettant de brancher des périphériques \net des composants supplémentaires. \nLa carte mère joue donc un rôle central dans le \nfonctionnement et la coordination de l'ensemble de \nl'ordinateur. \n \nVentilateur  \nLe ventilateur est un composant qui permet de refroidir les \néléments de l’ordinateur en favorisant la circulation de l’air. \nIl sert principalement à évacuer la chaleur produite par les \ncomposants électroniques, notamment le processeur (CPU) \net la carte graphique (GPU). \nIl contribue à maintenir une température de fonctionnement \nadaptée, afin d’éviter la surchauffe et les ralentissements. \nIl fonctionne grâce à un moteur électrique qui fait tourner des \npales, créant ainsi un flux d’air. \nIl est souvent associé à un dissipateur thermique, qui \nabsorbe et évacue la chaleur produite par le processeur. \nCertains ventilateurs font entrer de l’air frais dans le boîtier, \ntandis que d’autres expulsent l’air chaud vers l’extérieur. \nLe ventilateur contribue ainsi à préserver les performances, \nla stabilité et la durée de vie de l’ordinateur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M. mets nous 9/10 \nBloc d’alimentation \nLe bloc d’alimentation est un composant qui permet \nde fournir l’énergie électrique nécessaire au fonctionnement \nde l’ordinateur. \nIl transforme le courant alternatif (AC) provenant de la prise \nélectrique en courant continu (DC) utilisable par les \ncomposants électroniques. \nIl distribue cette énergie aux différents éléments de \nl’ordinateur, notamment la carte mère, le processeur, la carte \ngraphique et les unités de stockage. \nIl fournit plusieurs tensions électriques adaptées aux besoins \ndes composants, principalement 3,3 V, 5 V et 12 V. \nIl intègre également des systèmes de protection contre \ncertains problèmes électriques, comme les surtensions, les \nsurcharges et les courts-circuits. \nSa puissance, exprimée en watts (W), détermine la quantité \nmaximale d’énergie qu’il peut fournir. \nLe bloc d’alimentation est donc indispensable au \nfonctionnement stable et sécurisé de l’ordinateur. \n \nPorts de \nconnexion  \nLes ports de connexion sont des interfaces permettant de \nrelier l’ordinateur à des périphériques externes ou à d’autres \néquipements. \nIls permettent l’échange de données et de signaux entre \nl’ordinateur et les appareils connectés. \nIl existe différents types de ports, notamment les ports \nUSB (clavier, souris, clé USB), HDMI ou \nDisplayPort (écran), Ethernet RJ45 (réseau) et les prises \naudio (casque, microphone). \nCertains ports permettent également de fournir de l’énergie \nélectrique aux périphériques connectés, par exemple pour \nrecharger un smartphone. \nIls sont généralement situés à l’arrière ou à l’avant du boîtier \net sont reliés à la carte mère. \nLes ports de connexion jouent donc un rôle essentiel dans la \ncommunication entre l’ordinateur et son environnement \nextérieur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M. mets nous 9/10 \n \n \n \n \nDans notre image : \n \nN° \nNom du Port \nFonction \n1 \nPS/2 \n(clavier/souris) \nConnexion d’un ancien clavier ou d’une \nsouris \n2 \nPort série (COM / \nDB9) \nConnexion de périphériques anciens \n3 \nDVI \nConnexion d’un écran \n4 \nHDMI \nConnexion d’un écran ou d’un téléviseur \n5 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n6 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n7 \nEthernet (RJ45) \nConnexion réseau / Internet par câble \n8 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n9 \nPrises audio Jack \n3,5 mm \nBleu : Connexion casque,  \nVert : haut-parleurs \nRose :  microphone \n10 \nVGA \nTransmission de l’image en analogique vers \nun écran \n11 \nHDMI \nConnexion d’un écran ou d’un téléviseur \n12 \nDVI \nConnexion d’un écran",
+    "fileUrl": "/travaux-etudiants/ESPOSITO_Julien_Atelier_7_Defi_Hardware_Peer_L_2026-11-06 (1).pdf",
+    "submittedAt": "2026-11-06 14:00"
+  },
+  {
+    "id": "sub-real-0127",
     "userId": "user-julien.esposito@student.hech.be",
     "userName": "Julien Esposito",
     "userEmail": "julien.esposito@student.hech.be",
@@ -10028,7 +12819,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-20 14:00"
   },
   {
-    "id": "sub-real-0100",
+    "id": "sub-real-0128",
     "userId": "user-laura.mokeddem@student.hech.be",
     "userName": "Laura Mokeddem",
     "userEmail": "laura.mokeddem@student.hech.be",
@@ -10040,7 +12831,31 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-21 14:00"
   },
   {
-    "id": "sub-real-0101",
+    "id": "sub-real-0129",
+    "userId": "user-laura.mokeddem@student.hech.be",
+    "userName": "Laura Mokeddem",
+    "userEmail": "laura.mokeddem@student.hech.be",
+    "exerciseId": "exercice-02",
+    "exerciseTitle": "Atelier 2 : Évaluation critique d'une information",
+    "answer": "Exercice 2 – Laura Mokeddem\nMéthode de vérification\nDans un premier temps, voir où a été trouvée cette information.\nEst-ce un site fiable ou plutôt sensationnel ? Cite-t-on le laboratoire, l’université ou autre qui aurait fait cette enquête ?\nEnquête \nOn ne trouve pas d’article qui affirme que l’usage du téléphone avant de dormir fait perdre 2 heures de sommeil chaque nuit. \nCependant, on trouve différents articles et enquêtes qui confirme l’impact du téléphone sur le sommeil, mais aussi sur l’humeur et la régulation des émotions.\nPar exemple : https://pmc.ncbi.nlm.nih.gov/articles/PMC7010281/#sec022 \nDans aucun article, la notion de 2 heures précisément n’est mentionné.\nDécision\nJe ne partagerai pas l’information telle quelle avec mes élèves. En effet, la notion de 2 heures de sommeil perdues semble être du racolage plus qu’une donnée scientifiquement prouvée. Cependant, je pourrai sensibiliser mes élèves aux problèmes avec des données plus nuancées.",
+    "content": "Exercice 2 – Laura Mokeddem\nMéthode de vérification\nDans un premier temps, voir où a été trouvée cette information.\nEst-ce un site fiable ou plutôt sensationnel ? Cite-t-on le laboratoire, l’université ou autre qui aurait fait cette enquête ?\nEnquête \nOn ne trouve pas d’article qui affirme que l’usage du téléphone avant de dormir fait perdre 2 heures de sommeil chaque nuit. \nCependant, on trouve différents articles et enquêtes qui confirme l’impact du téléphone sur le sommeil, mais aussi sur l’humeur et la régulation des émotions.\nPar exemple : https://pmc.ncbi.nlm.nih.gov/articles/PMC7010281/#sec022 \nDans aucun article, la notion de 2 heures précisément n’est mentionné.\nDécision\nJe ne partagerai pas l’information telle quelle avec mes élèves. En effet, la notion de 2 heures de sommeil perdues semble être du racolage plus qu’une donnée scientifiquement prouvée. Cependant, je pourrai sensibiliser mes élèves aux problèmes avec des données plus nuancées.",
+    "fileUrl": "/travaux-etudiants/MOKEDDEM_Laura_Exercice_2_Peut-on_faire_confi_2026-10-27.docx",
+    "submittedAt": "2026-10-27 14:00"
+  },
+  {
+    "id": "sub-real-0130",
+    "userId": "user-laura.mokeddem@student.hech.be",
+    "userName": "Laura Mokeddem",
+    "userEmail": "laura.mokeddem@student.hech.be",
+    "exerciseId": "exercice-03",
+    "exerciseTitle": "Atelier 3 : Conception d'un guide numérique élèves",
+    "answer": "Dans mon cours de mathématiques, j’utilise parfois l’application Khan Academy\navec les élèves. \nLa première connexion n’est pas toujours évidente, mais malheureusement les\nsuivantes non plus. \nCe guide est à destination des élèves de l’enseignement secondaire spécialisé de\nMarloie.\nLe rappel de l’adresse mail et du mot de passe n’est pas très “RGPD friendly”,\nmais nécessaire vu le public cible.\nEn effet, l’adresse mail de l’école est très peu utilisée par les élèves (en dehors de\ns élèves de la section Economie), il ne la retienne donc pas. Ils ne retiennent pas\nnon plus leur mot de passe, raison pour laquelle on évite qu’il le change à tout va. \nSE CONNECTER À KHAN ACADEMY\n\nOuvre une page internet et rends toi sur le site: https://fr.khanacademy.org/\nSE CONNECTER À KHAN ACADEMY\n1. Ouvrir Khan Academy\n2.Se connecter à sa session\na. Tu as déjà un compte\nClique sur Connectez-vous.  \nIndique ensuite ton adresse mail et ton mot de passe. \nAttention à bien indiquer l’adresse mail avec laquelle tu as créé ton compte la 1ère fois.\nIl s’agit de ton adresse mail de l’école ! \n\nClique sur Elève. \nIndique ensuite ton mois et ton année de naissance et clique sur Suivant.\nSE CONNECTER À KHAN ACADEMY\nb. Tu n’as pas encore de compte\nIndique ton adresse mail (de l’école) ainsi que ton mot de passe. \nMail : nom.prenom@eesscfmarloie.be\nMot de passe : NOMprenom!\nN’oublie pas de cocher la case pour les conditions d’utilisation avant de cliquer sur\nInscrivez-vous.\n\nEncore une étape, tu y es presque !\nIndique ton Prénom et ton Nom de famille.\nClique sur Rejoindre Khan Academy pour les apprenants.\nBravo, tu es maintenant inscrit sur Khan Academy ! \nPour rejoindre une classe, clique sur Enseignant.tes puis sur Entrer le code d’une classe\nSE CONNECTER À KHAN ACADEMY",
+    "content": "Dans mon cours de mathématiques, j’utilise parfois l’application Khan Academy\navec les élèves. \nLa première connexion n’est pas toujours évidente, mais malheureusement les\nsuivantes non plus. \nCe guide est à destination des élèves de l’enseignement secondaire spécialisé de\nMarloie.\nLe rappel de l’adresse mail et du mot de passe n’est pas très “RGPD friendly”,\nmais nécessaire vu le public cible.\nEn effet, l’adresse mail de l’école est très peu utilisée par les élèves (en dehors de\ns élèves de la section Economie), il ne la retienne donc pas. Ils ne retiennent pas\nnon plus leur mot de passe, raison pour laquelle on évite qu’il le change à tout va. \nSE CONNECTER À KHAN ACADEMY\n\nOuvre une page internet et rends toi sur le site: https://fr.khanacademy.org/\nSE CONNECTER À KHAN ACADEMY\n1. Ouvrir Khan Academy\n2.Se connecter à sa session\na. Tu as déjà un compte\nClique sur Connectez-vous.  \nIndique ensuite ton adresse mail et ton mot de passe. \nAttention à bien indiquer l’adresse mail avec laquelle tu as créé ton compte la 1ère fois.\nIl s’agit de ton adresse mail de l’école ! \n\nClique sur Elève. \nIndique ensuite ton mois et ton année de naissance et clique sur Suivant.\nSE CONNECTER À KHAN ACADEMY\nb. Tu n’as pas encore de compte\nIndique ton adresse mail (de l’école) ainsi que ton mot de passe. \nMail : nom.prenom@eesscfmarloie.be\nMot de passe : NOMprenom!\nN’oublie pas de cocher la case pour les conditions d’utilisation avant de cliquer sur\nInscrivez-vous.\n\nEncore une étape, tu y es presque !\nIndique ton Prénom et ton Nom de famille.\nClique sur Rejoindre Khan Academy pour les apprenants.\nBravo, tu es maintenant inscrit sur Khan Academy ! \nPour rejoindre une classe, clique sur Enseignant.tes puis sur Entrer le code d’une classe\nSE CONNECTER À KHAN ACADEMY",
+    "fileUrl": "/travaux-etudiants/MOKEDDEM_Laura_Exercice_3_Concevoir_un_guide__2026-10-27.pdf",
+    "submittedAt": "2026-10-27 14:00"
+  },
+  {
+    "id": "sub-real-0131",
     "userId": "user-laura.mokeddem@student.hech.be",
     "userName": "Laura Mokeddem",
     "userEmail": "laura.mokeddem@student.hech.be",
@@ -10052,7 +12867,19 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-10 14:00"
   },
   {
-    "id": "sub-real-0102",
+    "id": "sub-real-0132",
+    "userId": "user-laura.mokeddem@student.hech.be",
+    "userName": "Laura Mokeddem",
+    "userEmail": "laura.mokeddem@student.hech.be",
+    "exerciseId": "exercice-07",
+    "exerciseTitle": "Atelier 7 : Défi Hardware & Peer Learning (Démonter/Remonter un PC)",
+    "answer": "Exercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nPhoto \nNom de la pièce \nFonction de la pièce \nDisque dur \nLe disque dur est un composant qui permet de stocker et de \nconserver les données de l’ordinateur de manière \npermanente, même lorsqu’il est éteint. \nIl contient notamment le système d’exploitation (Windows, \nLinux…), les logiciels installés ainsi que les fichiers \npersonnels (documents, photos, vidéos, etc.). \nIl permet également de lire et d’écrire des données, c’est-à-\ndire de retrouver des informations enregistrées ou d’en \nsauvegarder de nouvelles. \nDans un disque dur classique (HDD), les données sont \nenregistrées sur des plateaux magnétiques en rotation, \ngrâce à des têtes de lecture et d’écriture. \nContrairement à la mémoire vive (RAM), le disque dur \nconserve les informations lorsque l’alimentation électrique \nest coupée. \n \n \n \n \nProcesseur  \n(en dessous du \nventilateur) \nLe processeur est considéré comme le cerveau de \nl’ordinateur. Il est chargé d’exécuter les instructions des \nprogrammes et de réaliser les calculs nécessaires au \nfonctionnement de l’ordinateur. \nIl traite les informations provenant des logiciels et des \ndifférents composants. \nIl effectue notamment des opérations arithmétiques et \nlogiques (calculs, comparaisons, prises de décision). \nIl coordonne également l’exécution des instructions et les \néchanges de données avec les autres composants, \nnotamment la mémoire vive (RAM). \nSa vitesse de fonctionnement, exprimée en gigahertz (GHz), \net son nombre de cœurs influencent les performances de \nl’ordinateur. \nLe processeur produit de la chaleur et nécessite donc \nun système de refroidissement (ventilateur ou dissipateur \nthermique). \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nRAM \nLa mémoire vive (RAM) est un composant qui permet \nde stocker temporairement les données et les \ninstructions utilisées par l’ordinateur lorsqu’il fonctionne. \nElle conserve notamment les informations nécessaires à \nl’exécution des logiciels et des applications en cours \nd’utilisation. \nElle permet au processeur d’accéder rapidement aux \ndonnées dont il a besoin pour effectuer ses opérations. \nPlus la capacité de la RAM est importante, plus l’ordinateur \npeut gérer simultanément plusieurs programmes et des \ntâches exigeantes sans ralentissement lié au manque de \nmémoire. \nContrairement au disque dur, la RAM est une mémoire \nvolatile : toutes les données qu’elle contient disparaissent \nlorsque l’ordinateur est éteint. \nElle joue donc un rôle essentiel dans la rapidité et la \nfluidité du fonctionnement de l’ordinateur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nCarte graphique \nLa carte graphique est un composant chargé de traiter les \ndonnées graphiques et de produire les images affichées sur \nl’écran de l’ordinateur. \nElle transforme les informations numériques en images \nvisibles : textes, photos, vidéos, animations et images en 3D. \nElle possède un processeur graphique (GPU) spécialisé \ndans l’exécution rapide de nombreux calculs en parallèle. \nElle est particulièrement sollicitée pour les jeux vidéo, le \nmontage vidéo, la modélisation 3D et certaines applications \nd’intelligence artificielle. \nElle dispose généralement d’une mémoire vidéo \n(VRAM) permettant de stocker temporairement les données \nnécessaires à l'affichage. \nLe processeur graphique peut être intégré au processeur \nprincipal ou se trouver sur une carte graphique dédiée. \nLecteur CD \nLe lecteur CD est un périphérique qui permet de lire les \ninformations enregistrées sur un disque compact (CD). \nIl utilise un faisceau laser pour détecter les données \nnumériques présentes à la surface du disque. \nIl permet notamment de lire des CD audio, d’installer des \nlogiciels ou d’accéder à des fichiers enregistrés sur un CD-\nROM. \nCertains modèles, appelés graveurs CD, permettent \négalement d’écrire des données sur des CD enregistrables \n(CD-R) ou réinscriptibles (CD-RW). \nLe lecteur CD contient un moteur qui fait tourner le disque et \nun mécanisme qui déplace la tête de lecture laser. \nAujourd’hui, il est de moins en moins présent dans les \nordinateurs récents, car il est progressivement remplacé par \nles clés USB, les téléchargements et le stockage en ligne. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nCarte mère \nLa carte mère est le circuit électronique principal de \nl’ordinateur. Elle permet de connecter et de faire \ncommuniquer les différents composants entre eux. \nElle accueille notamment le processeur (CPU), la mémoire \nvive (RAM) et les connecteurs destinés aux périphériques et \naux unités de stockage. \nElle assure la circulation des données entre les composants \ngrâce à des circuits et des connexions électroniques. \nElle distribue également l’alimentation électrique nécessaire \nau fonctionnement de plusieurs composants. \nElle contient le BIOS/UEFI, un micrologiciel qui permet \nnotamment d’initialiser le matériel lors du démarrage de \nl’ordinateur. \nElle possède différents ports et connecteurs (USB, SATA, \nPCI Express, etc.) permettant de brancher des périphériques \net des composants supplémentaires. \nLa carte mère joue donc un rôle central dans le \nfonctionnement et la coordination de l'ensemble de \nl'ordinateur. \n \nVentilateur  \nLe ventilateur est un composant qui permet de refroidir les \néléments de l’ordinateur en favorisant la circulation de l’air. \nIl sert principalement à évacuer la chaleur produite par les \ncomposants électroniques, notamment le processeur (CPU) \net la carte graphique (GPU). \nIl contribue à maintenir une température de fonctionnement \nadaptée, afin d’éviter la surchauffe et les ralentissements. \nIl fonctionne grâce à un moteur électrique qui fait tourner des \npales, créant ainsi un flux d’air. \nIl est souvent associé à un dissipateur thermique, qui \nabsorbe et évacue la chaleur produite par le processeur. \nCertains ventilateurs font entrer de l’air frais dans le boîtier, \ntandis que d’autres expulsent l’air chaud vers l’extérieur. \nLe ventilateur contribue ainsi à préserver les performances, \nla stabilité et la durée de vie de l’ordinateur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nBloc d’alimentation \nLe bloc d’alimentation est un composant qui permet \nde fournir l’énergie électrique nécessaire au fonctionnement \nde l’ordinateur. \nIl transforme le courant alternatif (AC) provenant de la prise \nélectrique en courant continu (DC) utilisable par les \ncomposants électroniques. \nIl distribue cette énergie aux différents éléments de \nl’ordinateur, notamment la carte mère, le processeur, la carte \ngraphique et les unités de stockage. \nIl fournit plusieurs tensions électriques adaptées aux besoins \ndes composants, principalement 3,3 V, 5 V et 12 V. \nIl intègre également des systèmes de protection contre \ncertains problèmes électriques, comme les surtensions, les \nsurcharges et les courts-circuits. \nSa puissance, exprimée en watts (W), détermine la quantité \nmaximale d’énergie qu’il peut fournir. \nLe bloc d’alimentation est donc indispensable au \nfonctionnement stable et sécurisé de l’ordinateur. \n \nPorts de \nconnexion  \nLes ports de connexion sont des interfaces permettant de \nrelier l’ordinateur à des périphériques externes ou à d’autres \néquipements. \nIls permettent l’échange de données et de signaux entre \nl’ordinateur et les appareils connectés. \nIl existe différents types de ports, notamment les ports \nUSB (clavier, souris, clé USB), HDMI ou \nDisplayPort (écran), Ethernet RJ45 (réseau) et les prises \naudio (casque, microphone). \nCertains ports permettent également de fournir de l’énergie \nélectrique aux périphériques connectés, par exemple pour \nrecharger un smartphone. \nIls sont généralement situés à l’arrière ou à l’avant du boîtier \net sont reliés à la carte mère. \nLes ports de connexion jouent donc un rôle essentiel dans la \ncommunication entre l’ordinateur et son environnement \nextérieur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \n \n \n \n \nDans notre image : \n \nN° \nNom du Port \nFonction \n1 \nPS/2 \n(clavier/souris) \nConnexion d’un ancien clavier ou d’une \nsouris \n2 \nPort série (COM / \nDB9) \nConnexion de périphériques anciens \n3 \nDVI \nConnexion d’un écran \n4 \nHDMI \nConnexion d’un écran ou d’un téléviseur \n5 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n6 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n7 \nEthernet (RJ45) \nConnexion réseau / Internet par câble \n8 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n9 \nPrises audio Jack \n3,5 mm \nBleu : Connexion casque,  \nVert : haut-parleurs \nRose :  microphone \n10 \nVGA \nTransmission de l’image en analogique vers \nun écran \n11 \nHDMI \nConnexion d’un écran ou d’un téléviseur \n12 \nDVI \nConnexion d’un écran",
+    "content": "Exercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nPhoto \nNom de la pièce \nFonction de la pièce \nDisque dur \nLe disque dur est un composant qui permet de stocker et de \nconserver les données de l’ordinateur de manière \npermanente, même lorsqu’il est éteint. \nIl contient notamment le système d’exploitation (Windows, \nLinux…), les logiciels installés ainsi que les fichiers \npersonnels (documents, photos, vidéos, etc.). \nIl permet également de lire et d’écrire des données, c’est-à-\ndire de retrouver des informations enregistrées ou d’en \nsauvegarder de nouvelles. \nDans un disque dur classique (HDD), les données sont \nenregistrées sur des plateaux magnétiques en rotation, \ngrâce à des têtes de lecture et d’écriture. \nContrairement à la mémoire vive (RAM), le disque dur \nconserve les informations lorsque l’alimentation électrique \nest coupée. \n \n \n \n \nProcesseur  \n(en dessous du \nventilateur) \nLe processeur est considéré comme le cerveau de \nl’ordinateur. Il est chargé d’exécuter les instructions des \nprogrammes et de réaliser les calculs nécessaires au \nfonctionnement de l’ordinateur. \nIl traite les informations provenant des logiciels et des \ndifférents composants. \nIl effectue notamment des opérations arithmétiques et \nlogiques (calculs, comparaisons, prises de décision). \nIl coordonne également l’exécution des instructions et les \néchanges de données avec les autres composants, \nnotamment la mémoire vive (RAM). \nSa vitesse de fonctionnement, exprimée en gigahertz (GHz), \net son nombre de cœurs influencent les performances de \nl’ordinateur. \nLe processeur produit de la chaleur et nécessite donc \nun système de refroidissement (ventilateur ou dissipateur \nthermique). \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nRAM \nLa mémoire vive (RAM) est un composant qui permet \nde stocker temporairement les données et les \ninstructions utilisées par l’ordinateur lorsqu’il fonctionne. \nElle conserve notamment les informations nécessaires à \nl’exécution des logiciels et des applications en cours \nd’utilisation. \nElle permet au processeur d’accéder rapidement aux \ndonnées dont il a besoin pour effectuer ses opérations. \nPlus la capacité de la RAM est importante, plus l’ordinateur \npeut gérer simultanément plusieurs programmes et des \ntâches exigeantes sans ralentissement lié au manque de \nmémoire. \nContrairement au disque dur, la RAM est une mémoire \nvolatile : toutes les données qu’elle contient disparaissent \nlorsque l’ordinateur est éteint. \nElle joue donc un rôle essentiel dans la rapidité et la \nfluidité du fonctionnement de l’ordinateur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nCarte graphique \nLa carte graphique est un composant chargé de traiter les \ndonnées graphiques et de produire les images affichées sur \nl’écran de l’ordinateur. \nElle transforme les informations numériques en images \nvisibles : textes, photos, vidéos, animations et images en 3D. \nElle possède un processeur graphique (GPU) spécialisé \ndans l’exécution rapide de nombreux calculs en parallèle. \nElle est particulièrement sollicitée pour les jeux vidéo, le \nmontage vidéo, la modélisation 3D et certaines applications \nd’intelligence artificielle. \nElle dispose généralement d’une mémoire vidéo \n(VRAM) permettant de stocker temporairement les données \nnécessaires à l'affichage. \nLe processeur graphique peut être intégré au processeur \nprincipal ou se trouver sur une carte graphique dédiée. \nLecteur CD \nLe lecteur CD est un périphérique qui permet de lire les \ninformations enregistrées sur un disque compact (CD). \nIl utilise un faisceau laser pour détecter les données \nnumériques présentes à la surface du disque. \nIl permet notamment de lire des CD audio, d’installer des \nlogiciels ou d’accéder à des fichiers enregistrés sur un CD-\nROM. \nCertains modèles, appelés graveurs CD, permettent \négalement d’écrire des données sur des CD enregistrables \n(CD-R) ou réinscriptibles (CD-RW). \nLe lecteur CD contient un moteur qui fait tourner le disque et \nun mécanisme qui déplace la tête de lecture laser. \nAujourd’hui, il est de moins en moins présent dans les \nordinateurs récents, car il est progressivement remplacé par \nles clés USB, les téléchargements et le stockage en ligne. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nCarte mère \nLa carte mère est le circuit électronique principal de \nl’ordinateur. Elle permet de connecter et de faire \ncommuniquer les différents composants entre eux. \nElle accueille notamment le processeur (CPU), la mémoire \nvive (RAM) et les connecteurs destinés aux périphériques et \naux unités de stockage. \nElle assure la circulation des données entre les composants \ngrâce à des circuits et des connexions électroniques. \nElle distribue également l’alimentation électrique nécessaire \nau fonctionnement de plusieurs composants. \nElle contient le BIOS/UEFI, un micrologiciel qui permet \nnotamment d’initialiser le matériel lors du démarrage de \nl’ordinateur. \nElle possède différents ports et connecteurs (USB, SATA, \nPCI Express, etc.) permettant de brancher des périphériques \net des composants supplémentaires. \nLa carte mère joue donc un rôle central dans le \nfonctionnement et la coordination de l'ensemble de \nl'ordinateur. \n \nVentilateur  \nLe ventilateur est un composant qui permet de refroidir les \néléments de l’ordinateur en favorisant la circulation de l’air. \nIl sert principalement à évacuer la chaleur produite par les \ncomposants électroniques, notamment le processeur (CPU) \net la carte graphique (GPU). \nIl contribue à maintenir une température de fonctionnement \nadaptée, afin d’éviter la surchauffe et les ralentissements. \nIl fonctionne grâce à un moteur électrique qui fait tourner des \npales, créant ainsi un flux d’air. \nIl est souvent associé à un dissipateur thermique, qui \nabsorbe et évacue la chaleur produite par le processeur. \nCertains ventilateurs font entrer de l’air frais dans le boîtier, \ntandis que d’autres expulsent l’air chaud vers l’extérieur. \nLe ventilateur contribue ainsi à préserver les performances, \nla stabilité et la durée de vie de l’ordinateur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \nBloc d’alimentation \nLe bloc d’alimentation est un composant qui permet \nde fournir l’énergie électrique nécessaire au fonctionnement \nde l’ordinateur. \nIl transforme le courant alternatif (AC) provenant de la prise \nélectrique en courant continu (DC) utilisable par les \ncomposants électroniques. \nIl distribue cette énergie aux différents éléments de \nl’ordinateur, notamment la carte mère, le processeur, la carte \ngraphique et les unités de stockage. \nIl fournit plusieurs tensions électriques adaptées aux besoins \ndes composants, principalement 3,3 V, 5 V et 12 V. \nIl intègre également des systèmes de protection contre \ncertains problèmes électriques, comme les surtensions, les \nsurcharges et les courts-circuits. \nSa puissance, exprimée en watts (W), détermine la quantité \nmaximale d’énergie qu’il peut fournir. \nLe bloc d’alimentation est donc indispensable au \nfonctionnement stable et sécurisé de l’ordinateur. \n \nPorts de \nconnexion  \nLes ports de connexion sont des interfaces permettant de \nrelier l’ordinateur à des périphériques externes ou à d’autres \néquipements. \nIls permettent l’échange de données et de signaux entre \nl’ordinateur et les appareils connectés. \nIl existe différents types de ports, notamment les ports \nUSB (clavier, souris, clé USB), HDMI ou \nDisplayPort (écran), Ethernet RJ45 (réseau) et les prises \naudio (casque, microphone). \nCertains ports permettent également de fournir de l’énergie \nélectrique aux périphériques connectés, par exemple pour \nrecharger un smartphone. \nIls sont généralement situés à l’arrière ou à l’avant du boîtier \net sont reliés à la carte mère. \nLes ports de connexion jouent donc un rôle essentiel dans la \ncommunication entre l’ordinateur et son environnement \nextérieur. \n\nExercice 7 : Défi Hardware & Peer Learning (Démonter un PC) : D’accardo N. – Esposito J. – Mokeddem L. – Schreurs A. – Van Dijck M.  \n \n \n \n \n \nDans notre image : \n \nN° \nNom du Port \nFonction \n1 \nPS/2 \n(clavier/souris) \nConnexion d’un ancien clavier ou d’une \nsouris \n2 \nPort série (COM / \nDB9) \nConnexion de périphériques anciens \n3 \nDVI \nConnexion d’un écran \n4 \nHDMI \nConnexion d’un écran ou d’un téléviseur \n5 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n6 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n7 \nEthernet (RJ45) \nConnexion réseau / Internet par câble \n8 \nUSB Type-A 3.0 \nConnexion de périphériques USB \n9 \nPrises audio Jack \n3,5 mm \nBleu : Connexion casque,  \nVert : haut-parleurs \nRose :  microphone \n10 \nVGA \nTransmission de l’image en analogique vers \nun écran \n11 \nHDMI \nConnexion d’un écran ou d’un téléviseur \n12 \nDVI \nConnexion d’un écran",
+    "fileUrl": "/travaux-etudiants/MOKEDDEM_Laura_Exercice_7_Defi_Hardware_Peer__2026-11-06.pdf",
+    "submittedAt": "2026-11-06 14:00"
+  },
+  {
+    "id": "sub-real-0133",
     "userId": "user-laura.mokeddem@student.hech.be",
     "userName": "Laura Mokeddem",
     "userEmail": "laura.mokeddem@student.hech.be",
@@ -10064,7 +12891,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-21 14:00"
   },
   {
-    "id": "sub-real-0103",
+    "id": "sub-real-0134",
     "userId": "user-mathis.rodes@student.hech.be",
     "userName": "Mathis Rodès",
     "userEmail": "mathis.rodes@student.hech.be",
@@ -10076,7 +12903,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-09-30 14:00"
   },
   {
-    "id": "sub-real-0104",
+    "id": "sub-real-0135",
     "userId": "user-mathis.rodes@student.hech.be",
     "userName": "Mathis Rodès",
     "userEmail": "mathis.rodes@student.hech.be",
@@ -10088,7 +12915,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-09-30 14:00"
   },
   {
-    "id": "sub-real-0105",
+    "id": "sub-real-0136",
     "userId": "user-mathis.rodes@student.hech.be",
     "userName": "Mathis Rodès",
     "userEmail": "mathis.rodes@student.hech.be",
@@ -10100,7 +12927,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-14 14:00"
   },
   {
-    "id": "sub-real-0106",
+    "id": "sub-real-0137",
     "userId": "user-mathis.rodes@student.hech.be",
     "userName": "Mathis Rodès",
     "userEmail": "mathis.rodes@student.hech.be",
@@ -10112,7 +12939,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-20 14:00"
   },
   {
-    "id": "sub-real-0107",
+    "id": "sub-real-0138",
     "userId": "user-nbats@student.hech.be",
     "userName": "Nathalie Bats",
     "userEmail": "nbats@student.hech.be",
@@ -10124,7 +12951,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-04 14:00"
   },
   {
-    "id": "sub-real-0108",
+    "id": "sub-real-0139",
     "userId": "user-olivier.henrion@student.hech.be",
     "userName": "Olivier Henrion",
     "userEmail": "olivier.henrion@student.hech.be",
@@ -10136,7 +12963,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-04 14:00"
   },
   {
-    "id": "sub-real-0109",
+    "id": "sub-real-0140",
     "userId": "user-olivier.henrion@student.hech.be",
     "userName": "Olivier Henrion",
     "userEmail": "olivier.henrion@student.hech.be",
@@ -10148,7 +12975,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-04 14:00"
   },
   {
-    "id": "sub-real-0110",
+    "id": "sub-real-0141",
     "userId": "user-olivier.henrion@student.hech.be",
     "userName": "Olivier Henrion",
     "userEmail": "olivier.henrion@student.hech.be",
@@ -10160,7 +12987,19 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-15 14:00"
   },
   {
-    "id": "sub-real-0111",
+    "id": "sub-real-0142",
+    "userId": "user-olivier.henrion@student.hech.be",
+    "userName": "Olivier Henrion",
+    "userEmail": "olivier.henrion@student.hech.be",
+    "exerciseId": "exercice-06",
+    "exerciseTitle": "Atelier 6 : Démarche itérative (Concevoir & tester un mini-jeu)",
+    "answer": "Contexte de l'activité\nCe jeu s'inscrit dans une séquence de cours consacrée à la cybersécurité, plus précisément à la création et à la protection des mots de passe, destinée à des élèves de 1re secondaire.\nIl intervient en début de séquence, avant toute présentation théorique, afin d'introduire la thématique de manière ludique.\nLes élèves sont amenés à retrouver des mots de passe de difficulté croissante en exploitant les informations publiées sur des profils de réseaux sociaux fictifs. L'objectif est de leur faire prendre conscience que certaines informations personnelles peuvent faciliter la découverte d'un mot de passe.\nLe jeu n'a pas pour objectif d'enseigner directement les notions théoriques. Il sert de situation de départ sur laquelle l'enseignant pourra s'appuyer pour construire la suite du cours.\nÀ l'issue de l'activité, une mise en commun permettra de revenir sur les stratégies utilisées par les élèves, d'identifier les faiblesses des mots de passe proposés et d'introduire les bonnes pratiques en matière de sécurité.\nLien genially :\nhttps://view.genially.com/6adb367d65be6b7ccc535f1f?fbclid=IwY2xjawVISmlleHRuA2FlbQIxMQBwZG9mBHNydGMGYXBwX2lkATAAAR5C1DMFQvGeA0ceWdh1Is8P9BhdIye7HiTwEQEcqjiuNp742pGvYiZTTK5A2w_aem_MYxfC5A0mCOwF0mzTLqifA\nLien google forms :\nhttps://docs.google.com/forms/d/e/1FAIpQLSfNEKqB6guj8XqjFjnYvZKkLSxrmu_ZNIvzzpFzphg6Jyjy_A/viewform",
+    "content": "Contexte de l'activité\nCe jeu s'inscrit dans une séquence de cours consacrée à la cybersécurité, plus précisément à la création et à la protection des mots de passe, destinée à des élèves de 1re secondaire.\nIl intervient en début de séquence, avant toute présentation théorique, afin d'introduire la thématique de manière ludique.\nLes élèves sont amenés à retrouver des mots de passe de difficulté croissante en exploitant les informations publiées sur des profils de réseaux sociaux fictifs. L'objectif est de leur faire prendre conscience que certaines informations personnelles peuvent faciliter la découverte d'un mot de passe.\nLe jeu n'a pas pour objectif d'enseigner directement les notions théoriques. Il sert de situation de départ sur laquelle l'enseignant pourra s'appuyer pour construire la suite du cours.\nÀ l'issue de l'activité, une mise en commun permettra de revenir sur les stratégies utilisées par les élèves, d'identifier les faiblesses des mots de passe proposés et d'introduire les bonnes pratiques en matière de sécurité.\nLien genially :\nhttps://view.genially.com/6adb367d65be6b7ccc535f1f?fbclid=IwY2xjawVISmlleHRuA2FlbQIxMQBwZG9mBHNydGMGYXBwX2lkATAAAR5C1DMFQvGeA0ceWdh1Is8P9BhdIye7HiTwEQEcqjiuNp742pGvYiZTTK5A2w_aem_MYxfC5A0mCOwF0mzTLqifA\nLien google forms :\nhttps://docs.google.com/forms/d/e/1FAIpQLSfNEKqB6guj8XqjFjnYvZKkLSxrmu_ZNIvzzpFzphg6Jyjy_A/viewform",
+    "fileUrl": "/travaux-etudiants/HENRION_Olivier_Exercice_6_Demarche_iterative__2026-10-27.docx",
+    "submittedAt": "2026-10-27 14:00"
+  },
+  {
+    "id": "sub-real-0143",
     "userId": "user-sabrina.siragusa@student.hech.be",
     "userName": "Sabrina Siragusa",
     "userEmail": "sabrina.siragusa@student.hech.be",
@@ -10172,7 +13011,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-04 14:00"
   },
   {
-    "id": "sub-real-0112",
+    "id": "sub-real-0144",
     "userId": "user-sabrina.siragusa@student.hech.be",
     "userName": "Sabrina Siragusa",
     "userEmail": "sabrina.siragusa@student.hech.be",
@@ -10184,7 +13023,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-07 14:00"
   },
   {
-    "id": "sub-real-0113",
+    "id": "sub-real-0145",
     "userId": "user-sabrina.siragusa@student.hech.be",
     "userName": "Sabrina Siragusa",
     "userEmail": "sabrina.siragusa@student.hech.be",
@@ -10196,7 +13035,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-10 14:00"
   },
   {
-    "id": "sub-real-0114",
+    "id": "sub-real-0146",
     "userId": "user-sabrina.siragusa@student.hech.be",
     "userName": "Sabrina Siragusa",
     "userEmail": "sabrina.siragusa@student.hech.be",
@@ -10208,7 +13047,31 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-10 14:00"
   },
   {
-    "id": "sub-real-0115",
+    "id": "sub-real-0147",
+    "userId": "user-sabrina.siragusa@student.hech.be",
+    "userName": "Sabrina Siragusa",
+    "userEmail": "sabrina.siragusa@student.hech.be",
+    "exerciseId": "exercice-07",
+    "exerciseTitle": "Atelier 7 : Défi Hardware & Peer Learning (Démonter/Remonter un PC)",
+    "answer": "Anita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 1 \n \nExercice 07 - DÉFI HARDWARE \n \nL’ordinateur fonctionne. \n \n1. Observer \n \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 2 \n \nComposants \nFonction \nConnexions \nAlimentation \nApporter de l’électricité à la \ncarte mère. \n- \nCarte mère \nCarte mère \nRelier les composants entre \neux et alimenter certains \ncomposants en électricité. \n- \nAlimentation \n- \nProcesseur \n- \nLecteur optique \n- \nStockage SSD \n- \nVentilateur \n- \nRAM \nVentilateur \nGérer la température du \nprocesseur. \n- \nCarte mère \n- \nProcesseur (collé via une \npâte thermique) \nLecteur optique \nLire CD et DVD pour \ntransmettre les \ninformations. \n- \nCarte-mère  \no Alimentation \no Données \nRAM \nStocker les données de \nmanière temporaire. \n- \nCarte mère \n \nCes composants n’étaient pas visibles avant le démontage. \nProcesseur \nCoordinateur des \ncomposants et calculateur. \n- \nCarte mère \nStockage SSD \nStocker des données de \nmanière permanente. \n- \nCarte mère \nCarte graphique \nAfficher les images et les \nvidéos à l’écran. \nIntégrée à la carte mère \n \n2. Démonter \nNuméros \nÉléments retirés / Actions \nPhotos \n1 \nLa face latérale \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 3 \n2 \nLa face avant. \n \n3 \nL’emplacement du disque dur. \n \n4 \nLa structure qui tient le lecteur \noptique. \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 4 \n5 \nDéconnecter le lecteur optique. \n \n6 \nRetirer le lecteur optique de \nson support. \n \n7  \nRetirer la RAM. \n \n8 \nDéconnecter le ventilateur de la \ncarte mère et le retirer. \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 5 \n9 \nRetirer le dissipateur \nthermique. \n \n10 \nDéconnecter l’alimentation de \nla carte mère et retirer le bloc \nd’alimentation. \n \n11 \nDéconnecter tous les petits \ncâbles encore connectés à la \ncarte mère (SATA, connexion \naux éléments extérieurs). \n \n12 \nRetrait du SSD. \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 6 \n13 \nRetrait des vis tenant la carte \nmère et retrait de celle-ci. \n \n \n3. Apprendre \nNous avons utilisé une vidéo en ligne car nous rencontrions des difficultés pour retirer la \ncarte mère. \n \n4. Remonter \nPour le démontage, nous avons placé les différents éléments (vis et composants) dans \nl’ordre du retrait afin d’utiliser cette organisation pour le remontage (ordre inverse). \nDes photos des différentes connectiques ont été prises pour ne pas se tromper de câbles. \n \n   \n   \n \n \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 7 \n \n \n \n5. Démarrage de l’ordinateur \nAucun problème à signaler. \n \n \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 8 \n \n6. Bilan \n• \nQuelle difficulté avons-nous rencontrée ? \nNous avons éprouvé des difficultés à retirer la carte mère, nous avions même pensé \nqu’elle était peut-être collée. \nLors du remontage, la face avant ne s’emboitait pas correctement, un élément (la \nstructure pour un disque dur) n’était pas correctement placée. \n• \nComment avons-nous trouvé la solution ? \nNous avons visionné des vidéos pour comprendre comment retirer la carte mère sans \nforcer. \nNous avons démonté à nouveau l’élément gênant. \n• \nQu'avons-nous appris grâce à nos erreurs ? \nIl est important de se renseigner avant de faire quelque chose qui pourrait endommager \nle matériel. \nNe pas s’énerver et revenir sur des étapes précédentes pour palier le problème. \n• \nQu'est-ce qu'un autre groupe nous a appris ? \nNous étions en autonomie pour faire ce travail. \n• \nQu'avons-nous compris grâce à la manipulation que nous aurions difficilement compris avec un \ncours théorique ? \nLa manipulation permet de se plonger plus facilement dans l’ordinateur. On est obligé de \nrester concentrer tout le long de l’activité. La manipulation présente l’avantage \nd’observer l’ordinateur sur toutes ses coutures, de repérer l’organisation structurée qui \nest présente au niveau des câblages et placement des éléments. La manipulation \ndemande également d’autres compétences purement techniques afin de s’organiser au \nmieux lors du démontage par exemple. Cet exercice nous a permis de réfléchir et de \nnous poser des questions sur l’agencement des éléments, contrairement à un cours \nthéorique qui aurait probablement fourni les réponses sans que nous ayons à les \nchercher activement.  \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 9",
+    "content": "Anita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 1 \n \nExercice 07 - DÉFI HARDWARE \n \nL’ordinateur fonctionne. \n \n1. Observer \n \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 2 \n \nComposants \nFonction \nConnexions \nAlimentation \nApporter de l’électricité à la \ncarte mère. \n- \nCarte mère \nCarte mère \nRelier les composants entre \neux et alimenter certains \ncomposants en électricité. \n- \nAlimentation \n- \nProcesseur \n- \nLecteur optique \n- \nStockage SSD \n- \nVentilateur \n- \nRAM \nVentilateur \nGérer la température du \nprocesseur. \n- \nCarte mère \n- \nProcesseur (collé via une \npâte thermique) \nLecteur optique \nLire CD et DVD pour \ntransmettre les \ninformations. \n- \nCarte-mère  \no Alimentation \no Données \nRAM \nStocker les données de \nmanière temporaire. \n- \nCarte mère \n \nCes composants n’étaient pas visibles avant le démontage. \nProcesseur \nCoordinateur des \ncomposants et calculateur. \n- \nCarte mère \nStockage SSD \nStocker des données de \nmanière permanente. \n- \nCarte mère \nCarte graphique \nAfficher les images et les \nvidéos à l’écran. \nIntégrée à la carte mère \n \n2. Démonter \nNuméros \nÉléments retirés / Actions \nPhotos \n1 \nLa face latérale \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 3 \n2 \nLa face avant. \n \n3 \nL’emplacement du disque dur. \n \n4 \nLa structure qui tient le lecteur \noptique. \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 4 \n5 \nDéconnecter le lecteur optique. \n \n6 \nRetirer le lecteur optique de \nson support. \n \n7  \nRetirer la RAM. \n \n8 \nDéconnecter le ventilateur de la \ncarte mère et le retirer. \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 5 \n9 \nRetirer le dissipateur \nthermique. \n \n10 \nDéconnecter l’alimentation de \nla carte mère et retirer le bloc \nd’alimentation. \n \n11 \nDéconnecter tous les petits \ncâbles encore connectés à la \ncarte mère (SATA, connexion \naux éléments extérieurs). \n \n12 \nRetrait du SSD. \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 6 \n13 \nRetrait des vis tenant la carte \nmère et retrait de celle-ci. \n \n \n3. Apprendre \nNous avons utilisé une vidéo en ligne car nous rencontrions des difficultés pour retirer la \ncarte mère. \n \n4. Remonter \nPour le démontage, nous avons placé les différents éléments (vis et composants) dans \nl’ordre du retrait afin d’utiliser cette organisation pour le remontage (ordre inverse). \nDes photos des différentes connectiques ont été prises pour ne pas se tromper de câbles. \n \n   \n   \n \n \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 7 \n \n \n \n5. Démarrage de l’ordinateur \nAucun problème à signaler. \n \n \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 8 \n \n6. Bilan \n• \nQuelle difficulté avons-nous rencontrée ? \nNous avons éprouvé des difficultés à retirer la carte mère, nous avions même pensé \nqu’elle était peut-être collée. \nLors du remontage, la face avant ne s’emboitait pas correctement, un élément (la \nstructure pour un disque dur) n’était pas correctement placée. \n• \nComment avons-nous trouvé la solution ? \nNous avons visionné des vidéos pour comprendre comment retirer la carte mère sans \nforcer. \nNous avons démonté à nouveau l’élément gênant. \n• \nQu'avons-nous appris grâce à nos erreurs ? \nIl est important de se renseigner avant de faire quelque chose qui pourrait endommager \nle matériel. \nNe pas s’énerver et revenir sur des étapes précédentes pour palier le problème. \n• \nQu'est-ce qu'un autre groupe nous a appris ? \nNous étions en autonomie pour faire ce travail. \n• \nQu'avons-nous compris grâce à la manipulation que nous aurions difficilement compris avec un \ncours théorique ? \nLa manipulation permet de se plonger plus facilement dans l’ordinateur. On est obligé de \nrester concentrer tout le long de l’activité. La manipulation présente l’avantage \nd’observer l’ordinateur sur toutes ses coutures, de repérer l’organisation structurée qui \nest présente au niveau des câblages et placement des éléments. La manipulation \ndemande également d’autres compétences purement techniques afin de s’organiser au \nmieux lors du démontage par exemple. Cet exercice nous a permis de réfléchir et de \nnous poser des questions sur l’agencement des éléments, contrairement à un cours \nthéorique qui aurait probablement fourni les réponses sans que nous ayons à les \nchercher activement.  \n \n\nAnita Langohr \nSabrina Siragusa \nJonathan Valenzano \nPage 9",
+    "fileUrl": "/travaux-etudiants/SIRAGUSA_Sabrina_Exercice_7_Defi_Hardware_Peer__2026-10-31.pdf",
+    "submittedAt": "2026-10-31 14:00"
+  },
+  {
+    "id": "sub-real-0148",
+    "userId": "user-sabrina.siragusa@student.hech.be",
+    "userName": "Sabrina Siragusa",
+    "userEmail": "sabrina.siragusa@student.hech.be",
+    "exerciseId": "exercice-08",
+    "exerciseTitle": "Atelier 8 : Construire des grilles d'évaluation critériées",
+    "answer": "Anita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 1 \nRecherche d’information \nIntitulé \nRechercher des informations sur Internet concernant une personnalité scientifique, \nsélectionner des informations pertinentes et identifier des sources fiables. \n1. Identification des apprentissages visés \nSavoirs  \n• Connaître les critères de validité d'une source web (auteur, date, institution, URL) ; \n• Connaître le vocabulaire spécifique lié à la biographie de la personnalité scientifique. \n \nLien avec le référentiel : Vocabulaire spécifique au réseau (Internet) et au software \n(moteur de recherche, navigateur, URL, extensions) \n \nSavoir-faire \n• Utiliser des moteurs de recherche de manière efficace (mots-clés, opérateurs) ;  \n• Croiser les sources ; \n• Filtrer l'information pertinente par rapport à la consigne. \n \nLien avec le référentiel : Utiliser un outil de recherche en s’adaptant à l’environnement, \ndéterminer des mots-clés pertinents, pointer la source apparente d’un contenu. \n \nCompétence mobilisée \n• Traiter des informations textuelles et documentaires pour restituer une synthèse \nrigoureuse et contextualisée. \nCapacités transversales \n• Esprit critique (évaluation de la fiabilité) ; \n• Autonomie dans la démarche de recherche. \n \nLien avec le référentiel : « Effectuer une recherche pour répondre à un besoin suivant \nune stratégie pertinente » et « Évaluer la fiabilité contextuelle d'une source ». \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 2 \nCritères \nIndicateurs \nA \nB \nC \nD \n1. Pertinence et \nsélection des \ninformations \n§ Sélectionne des \nfaits en lien direct \navec la consigne. \n \n§ Écarte les détails \nsuperflus. \n \n§ Couvre les \naspects clés de la \npersonnalité. \nEffectue une \nsélection rigoureuse \net synthétique qui \nmet en évidence les \néléments essentiels \ndu parcours de la \npersonnalité. \n \nHiérarchise \nl'information pour ne \ngarder que l'essentiel \net produit une \nsynthèse percutante. \nSélectionne des \ninformations \nfactuelles, \npertinentes et \ndirectement reliées à \nla consigne. \nSélectionne des \ninformations \ncorrectes mais \nincomplètes ou \ncomportant quelques \ndétails superflus. \nIntègre des \ninformations hors \nsujet ou omet des \naspects centraux de \nla consigne. \n2. Fiabilité et analyse \ndes sources \n§ Vérifie l'origine \ndes sites (auteur, \ninstitution, URL). \n \n§ Croise les \ninformations sur \nplusieurs sources. \n \n§ Identifie la date \nde publication et \nde mise à jour. \nAnalyse de manière \ncritique l'origine, les \nbiais potentiels et la \nlégitimité des sources \ndocumentaires \nconsultées. \nIdentifie et cite des \nsources \ninstitutionnelles ou \nacadémiques fiables \net croise au moins \ndeux sources \nindépendantes. \nUtilise des sources \nglobales mais ne \ncroise pas \nsystématiquement les \ninformations pour en \nvérifier l'exactitude. \nUtilise des sources \nnon vérifiées ou de \ntype encyclopédique \nparticipatif sans \nrecoupement \n(exemple : réseaux \nsociaux, blogs \nanonymes). \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 3 \nCritères \nIndicateurs \nA \nB \nC \nD \n3. Esprit critique et \ndistanciation \n§ Distingue les faits \ndes opinions ou \nrumeurs. \n§ Identifie les biais \néventuels. \n§ Justifie le choix \ndes sources \nretenues. \nExerce un regard \ncritique aiguisé, \ndétecte les biais \nhistoriques ou \néditoriaux et \nargumente \nsolidement ses choix \ndocumentaires. \nFait la distinction \nclaire entre faits \navérés et \ninterprétations ; \nexplique la valeur des \nsources choisies. \nRemet rarement en \nquestion les \naffirmations lues et \njustifie difficilement la \ncrédibilité des sites \nchoisis. \nRépète des \ninformations sans \nrecul ni \ndiscernement, en \nconfondant faits et \nrumeurs. \n4. Communication \n§ Explique la \nstratégie de \nrecherche \nemployée. \n§ Présente les \nrésultats \nclairement. \n§ Utilise un \nvocabulaire \nadapté. \nExplicite avec aisance \net rigueur toute sa \ndémarche \nméthodologique, \nprésente des \nrésultats \nsynthétiques et \nutilise un vocabulaire \ntechnique précis. \nExplique clairement \nsa stratégie de \nrecherche, présente \ndes résultats \nstructurés et emploie \nle vocabulaire \nnumérique adéquat. \nExplique globalement \nsa démarche mais de \nfaçon schématique, \nen oubliant de \nmentionner certains \nchoix de mots-clés \nou de sites. \nRestitue les résultats \nde manière confuse \nou est incapable \nd'expliquer comment \nil a mené sa \nrecherche sur \nInternet. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 4 \n2. Dispositif d’évaluation \nModalité \n• Co-évaluation ; \n• Évaluation formative. \nJustification \nL'évaluation formative permet à l'élève d'ajuster sa recherche en cours de route. La co-\névaluation (par les paires) est particulièrement intéressante : un élève analyse la \nbibliographie et la pertinence des sources sélectionnées par un camarade, ce qui renforce \nl'esprit critique par la confrontation des pratiques de recherche. \n \n3. Justification des choix pédagogiques \nChoix des critères \nLa recherche ne se résumant pas à un simple copier-coller, les critères ciblent à la fois la \nqualité du contenu (pertinence), la rigueur épistémologique (fiabilité et esprit critique) et \nla communication de l'élève.  \nIndicateurs observables \nLes indicateurs évitent le subjectif en ciblant des actions concrètes (croiser les sources, \nidentifier l'auteur, reformuler). \nProgression des niveaux \nLa progression va d'une collecte passive et non vérifiée (niveau D) à une démarche active, \ncritique, autonome et réflexive (niveau A). \nLe niveau A signifie : la maîtrise dépasse l’attendu. \nLe niveau B signifie : la maîtrise est conforme à l’attendu. \nLe niveau C signifie : la maîtrise est en proche de l’attendu. \nLe niveau D signifie : la maîtrise est très en deçà de l’attendu. \n \n \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 5 \nRemarques \nLes grilles officielles WBE utilisent une graduation normalisée à 4 niveaux (A, B, C, D) reposant \nsur une formulation trop vague comme pour le niveau A : La maîtrise dépasse l’attendu.  Nous \navons décidé de personnaliser chaque description de cellule de manière spécifique. \nLes documents officiels WBE intègrent également des critères incontournables et une échelle \nde validation par couleur (Bleu, Vert, Jaune, Orange). Nous avons décidé de ne pas définir les \ncritères incontournables. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 1 \nDémontage et remontage d’un ordinateur \nIntitulé \nDémonter un ordinateur, identifier ses composants, expliquer leur fonction et remonter \ncorrectement la machine. \n1. Identification des apprentissages visés \nSavoir  \n• Connaissance du nom et de la nature des composants internes de l'ordinateur (carte \nmère, processeur, mémoire vive, stockage, alimentation, cartes filles). \n \nLien avec le référentiel : Vocabulaire spécifique au hardware (distinction matériel/logiciel, \nmémoire vive / mémoire morte, stockage interne / externe, périphériques). \n \nSavoir-faire \n• Manipuler le matériel informatique avec précaution (gestes antistatiques, repérage de \nla visserie, débranchement des nappes) ; \n• Appliquer une procédure méthodique de démontage/remontage. \n \nLien avec le référentiel : Appliquer des règles de sécurité et de manipulation \nméthodique, organiser et gérer l'espace technique. \n \nCompétence mobilisée \n• Résoudre une tâche technique complexe en mobilisant habileté manuelle, \nraisonnement spatial et connaissances théoriques. \nCapacités transversales \n• Rigueur méthodologique ; \n• Respect des consignes de sécurité ;  \n• Autonomie ; \n• Persévérance face à un problème technique. \n \nLien avec le référentiel : Gérer et organiser des données matérielles et logicielles de \nmanière sécurisée et fonctionnelle. \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 2 \nCritères \nIndicateurs \nA \nB \nC \nD \n1. Sécurité et respect \ndu matériel \n§ Utilise les \nprécautions \nantistatiques (si \ndisponible). \n \n§ Manipulation \ndouce des \nconnectiques et \ncartes. \n \n§ Rangement \nordonné de la \nvisserie. \nGestes sûrs, \nprécautionneux et \nprofessionnels ; \nanticipe les risques \nde casse ou de court-\ncircuit. \nRespecte \nscrupuleusement les \nconsignes de \nmanipulation, utilise \nles outils adaptés et \nrange \nméthodiquement les \ncomposants. \nManipule avec \nprécaution globale \nmais oublie de \nsécuriser certains \néléments fragiles ou \ndésorganise la \nvisserie. \nForce les \nconnectiques, \nmanipule les cartes \npar les circuits \nimprimés ou néglige \nles risques \nélectrostatiques. \n2. Méthodologie et \nordre opératoire \n§ Suit l'ordre \nlogique de \ndémontage \n(périphériques ➔ \nalimentation ➔ \ncartes ➔ \nprocesseur). \n \n§ Maintien de \nl'espace de travail \npropre. \nMaîtrise parfaite de la \nchronologie, fluidité \ndes gestes, \nautonomie complète \ndans l'organisation de \nl'espace de travail. \nApplique \nrigoureusement la \nchronologie logique \nde démontage et de \nremontage sans \nprécipitation. \nSuit les grandes \nétapes mais commet \ndes erreurs d'ordre \n(exemple : oubli d'un \ncâble avant \nextraction de carte). \nProcède de manière \nanarchique, dévisse \ndes éléments sans \nlogique ou risque \nd'endommager la \nstructure. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 3 \nCritères \nIndicateurs \nA \nB \nC \nD \n3. Identification et \nfonction des \ncomposants \n§ Nomme \ncorrectement \nchaque \ncomposant (CPU, \nRAM, SSD, etc.). \n \n§ Explique \nprécisément le \nrôle de chaque \nélément. \nDémontre une \nexpertise \napprofondie en \nexpliquant non \nseulement le rôle, \nmais aussi les \ninteractions entre les \ncomposants. \nIdentifie sans \nhésitation tous les \ncomposants \nmanipulés et explicite \nclairement leur \nfonction technique. \nIdentifie les \ncomposants \nprincipaux mais \nhésite ou formule \ndes imprécisions sur \nleur rôle exact. \nConfond les \ncomposants majeurs \n(exemple : confusion \nentre RAM et \nstockage) et ignore \nleurs fonctions \nprincipales. \n4. Fonctionnement \nfinal de la machine \n§ La machine \nredémarre au \npremier essai. \n \n§ Tous les câbles \ninternes sont \ncorrectement \nrebranchés. \nRemontage \nimpeccable, gestion \nsoignée du \ncheminement des \ncâbles favorisant la \ncirculation d'air. \nLa machine \nredémarre du \npremier coup, \nattestant d'un \nremontage intègre et \nrigoureux. \nLa machine démarre \naprès l'identification \net la correction de \nquelques erreurs de \nraccordement par \nl'élève. \nLa machine ne \ndémarre pas à la \nsuite d’oublis majeurs \nde câblage ou des \ninversions de \nconnecteurs. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 4 \n2. Dispositif d’évaluation \nModalité \n• Évaluation formative en cours \n• Auto-évaluation (bilan des difficultés rencontrées). \nJustification \nCette activité combine un geste technique manuel et un savoir théorique. L'évaluation \nformative est indispensable pour intervenir immédiatement en cas de geste dangereux \npour le matériel. Le redémarrage de la machine offre une rétroaction immédiate et \nindiscutable à l'élève. \n \n3. Justification des choix pédagogiques \nChoix des critères \nLes critères couvrent l'ensemble de la compétence technique : la sécurité et le soin (savoir-\nêtre), la méthode (savoir-faire procédural), la théorie (savoirs) et le résultat final \n(performance). \nIndicateurs observables \nBasés sur des actions concrètes et vérifiables (la machine démarre, les connectiques sont \nmanipulées sans forcer, le vocabulaire est exact). \nProgression des niveaux \nTraduit le passage d'un tâtonnement risqué pour le matériel (niveau D) à une exécution \nexperte, soigneuse et autonome (niveau A). \nLe niveau A signifie : la maîtrise dépasse l’attendu. \nLe niveau B signifie : la maîtrise est conforme à l’attendu. \nLe niveau C signifie : la maîtrise est en proche de l’attendu. \nLe niveau D signifie : la maîtrise est très en deçà de l’attendu. \n \n \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 5 \nRemarques \nLes grilles officielles WBE utilisent une graduation normalisée à 4 niveaux (A, B, C, D) reposant \nsur une formulation trop vague comme pour le niveau A : La maîtrise dépasse l’attendu.  Nous \navons décidé de personnaliser chaque description de cellule de manière spécifique. \nLes documents officiels WBE intègrent également des critères incontournables et une échelle \nde validation par couleur (Bleu, Vert, Jaune, Orange). Nous avons décidé de ne pas définir les \ncritères incontournables. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 1 \nPrésentation multimédia \nIntitulé \nCréer une présentation destinée à sensibiliser les élèves au cyberharcèlement en sélectionnant \net organisant des informations et des contenus multimédias pertinents. \n1. Identification des apprentissages visés \nSavoirs  \n• Définition du cyberharcèlement ; \n• Identification des mécanismes de groupe ; \n• Identification des droits d’auteur, droit à l’image ; \n• Connaissance des ressources d'aide (lignes d'écoute, signalement). \n \nLien avec le référentiel : Vocabulaire invariant de production, droits d'auteur, droit à \nl'image et à la voix, respect de la vie privée et de la nétiquette. \n \nSavoir-faire \n• Structurer un message de sensibilisation percutant ; \n• Concevoir un support multimédia équilibré (texte, image, vidéo, audio) ;  \n• Citer les sources et respecter le droit à l'image / les droits d'auteur. \n \nLien avec le référentiel : Utiliser des fonctionnalités courantes d'un outil de présentation \n(intégration de médias), appliquer les principes d'élaboration d'un message multimédia \npour appuyer un discours. \n \nCompétence mobilisée \n• Communiquer efficacement à des fins de sensibilisation auprès d'un public cible (les \npairs) en mobilisant des langages multiples. \nCapacités transversales \n• Empathie ;  \n• Engagement citoyen ; \n• Créativité et maîtrise des outils de communication numérique. \n \nLien avec le référentiel : « Produire et traiter des contenus multimédias » et « \nInteragir/communiquer de manière responsable ». \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 2 \nCritères \nIndicateurs \nA \nB \nC \nD \n1. Pertinence et \nexactitude du \ncontenu \n§ Définitions \ncorrectes du \ncyberharcèlement. \n \n§ Distingue \nharcèlement et \ncyberharcèlement. \n \n§ Propose des \nsolutions \nconcrètes ou des \nrecours. \nLe contenu dépasse \nla simple restitution \nen proposant une \nanalyse rigoureuse \ndes dynamiques \nrelationnelles et des \nsolutions innovantes. \nLe contenu est exact, \ncomplet, bien \ndocumenté et \npropose des pistes \nde prévention claires \nadaptées au public. \nPrésente les notions \ngénérales mais \nmanque de précision \nsur les mécanismes \nou omet les \nsolutions/ressources. \nContenu lacunaire, \ncomportant des \nerreurs factuelles ou \ndes amalgames \npréjudiciables sur le \nsujet. \n2. Qualité de la \ncommunication et \nstructure \n§ Message clair et \npercutant. \n \n§ Enchaînement \nlogique des \ndiapositives ou \nsections. \n \n§ S'adresse \ndirectement au \npublic visé. \nCommunication \ncaptivante, narration \nfluide et impact \némotionnel/réflexif \nfort, suscitant \nl'adhésion immédiate. \nStructure claire, \naccroche efficace, \nton juste et \npersuasif, \nparfaitement adapté \naux élèves \nsensibilisés. \nStructure présente \nmais transitions \nmaladroites ; impact \nde sensibilisation \nmodéré sur le public. \nStructure décousue, \nmessages confus ou \nnon adaptés au \npublic visé (trop \ninfantilisants ou trop \njargonneux). \n \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 3 \nCritères \nIndicateurs \nA \nB \nC \nD \n3. Utilisation \njudicieuse des médias \n§ Illustrations/vidéos \nau service du \npropos (pas \ndécoratives). \n \n§ Lisibilité des \ndiapos (contraste, \nsobriété). \n \n§ Respect des droits \nd'auteur/images. \nUtilisation créative et \nmaîtrisée des \nressources \nmultimédias (rythme, \nesthétique, \naccessibilité, sources \nirréprochables). \nMédias \nsoigneusement \nchoisis, renforçant le \nmessage, diapositives \népurées et respect \ndes droits d'auteur. \nUtilise quelques \nmédias pertinents \nmais la mise en page \nnuit parfois à la \nlisibilité ou les \nsources d'images ne \nsont pas indiquées. \nSurcharge visuelle, \nmédias purement \ndécoratifs ou \nperturbateurs, non-\nrespect des droits \nd'auteur. \n4. Posture éthique et \nengagement \n§ Respect d'autrui \net empathie dans \nle traitement du \nsujet. \n \n§ Refus du \nsensationnalisme \ndéplacé. \nDéveloppe une \napproche nuancée, \nhumaine et \nconstructive, \nvalorisant l'entraide \net la responsabilité \ncollective. \nTraite le sujet avec \nsérieux, respect, \ndiscernement et \nempathie, \ndémontrant une \nréelle posture \ncitoyenne. \nTraite le sujet de \nmanière formelle et \ndistante, sans \nsusciter de réelle \nprise de conscience \nou d'empathie. \nUtilise un ton \nculpabilisant, \nmoralisateur ou au \ncontraire banalisant \nface aux situations \nprésentées. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 4 \n2. Dispositif d’évaluation \nModalité \n• Auto-évaluation suivie d’une évaluation par les pairs \n• Évaluation sommative. \nJustification \nLe sujet s'y prête particulièrement : la sensibilisation au cyberharcèlement vise le public \ncible (les pairs). L'évaluation par les pairs permet de mesurer si l'objectif de sensibilisation \net d'impact sur le public est réellement atteint. \n \n3. Justification des choix pédagogiques \nChoix des critères \nLa grille combine trois dimensions complémentaires : la rigueur des informations \nprésentées, la maîtrise technique et esthétique de la communication et des médias, ainsi \nque l’engagement citoyen et éthique. \nIndicateurs observables \nPermettent de vérifier objectivement si les notions légales et préventives sont présentes, \net si la forme graphique respecte les règles d'ergonomie multimédia (lisibilité, absence de \nsurcharge). \nProgression des niveaux \nÉvolue d'une production maladroite ou anxiogène (niveau D) à une création percutante, \néthique, rigoureuse et esthétiquement maîtrisée (niveau A). \nLe niveau de validation A signifie : la maîtrise dépasse l’attendu. \nLe niveau de validation B signifie : la maîtrise est conforme à l’attendu. \nLe niveau de validation C signifie : la maîtrise est en proche de l’attendu. \nLe niveau de validation D signifie : la maîtrise est très en deçà de l’attendu. \n \n \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 5 \nRemarques \nLes grilles officielles WBE utilisent une graduation normalisée à 4 niveaux (A, B, C, D) reposant \nsur une formulation trop vague comme pour le niveau A : La maîtrise dépasse l’attendu.  Nous \navons décidé de personnaliser chaque description de cellule de manière spécifique. \nLes documents officiels WBE intègrent également des critères incontournables et une échelle \nde validation par couleur (Bleu, Vert, Jaune, Orange). Nous avons décidé de garder l’idée des \ncouleurs et de critères incontournables qui représentent l’essentiel de l’apprentissage.",
+    "content": "Anita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 1 \nRecherche d’information \nIntitulé \nRechercher des informations sur Internet concernant une personnalité scientifique, \nsélectionner des informations pertinentes et identifier des sources fiables. \n1. Identification des apprentissages visés \nSavoirs  \n• Connaître les critères de validité d'une source web (auteur, date, institution, URL) ; \n• Connaître le vocabulaire spécifique lié à la biographie de la personnalité scientifique. \n \nLien avec le référentiel : Vocabulaire spécifique au réseau (Internet) et au software \n(moteur de recherche, navigateur, URL, extensions) \n \nSavoir-faire \n• Utiliser des moteurs de recherche de manière efficace (mots-clés, opérateurs) ;  \n• Croiser les sources ; \n• Filtrer l'information pertinente par rapport à la consigne. \n \nLien avec le référentiel : Utiliser un outil de recherche en s’adaptant à l’environnement, \ndéterminer des mots-clés pertinents, pointer la source apparente d’un contenu. \n \nCompétence mobilisée \n• Traiter des informations textuelles et documentaires pour restituer une synthèse \nrigoureuse et contextualisée. \nCapacités transversales \n• Esprit critique (évaluation de la fiabilité) ; \n• Autonomie dans la démarche de recherche. \n \nLien avec le référentiel : « Effectuer une recherche pour répondre à un besoin suivant \nune stratégie pertinente » et « Évaluer la fiabilité contextuelle d'une source ». \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 2 \nCritères \nIndicateurs \nA \nB \nC \nD \n1. Pertinence et \nsélection des \ninformations \n§ Sélectionne des \nfaits en lien direct \navec la consigne. \n \n§ Écarte les détails \nsuperflus. \n \n§ Couvre les \naspects clés de la \npersonnalité. \nEffectue une \nsélection rigoureuse \net synthétique qui \nmet en évidence les \néléments essentiels \ndu parcours de la \npersonnalité. \n \nHiérarchise \nl'information pour ne \ngarder que l'essentiel \net produit une \nsynthèse percutante. \nSélectionne des \ninformations \nfactuelles, \npertinentes et \ndirectement reliées à \nla consigne. \nSélectionne des \ninformations \ncorrectes mais \nincomplètes ou \ncomportant quelques \ndétails superflus. \nIntègre des \ninformations hors \nsujet ou omet des \naspects centraux de \nla consigne. \n2. Fiabilité et analyse \ndes sources \n§ Vérifie l'origine \ndes sites (auteur, \ninstitution, URL). \n \n§ Croise les \ninformations sur \nplusieurs sources. \n \n§ Identifie la date \nde publication et \nde mise à jour. \nAnalyse de manière \ncritique l'origine, les \nbiais potentiels et la \nlégitimité des sources \ndocumentaires \nconsultées. \nIdentifie et cite des \nsources \ninstitutionnelles ou \nacadémiques fiables \net croise au moins \ndeux sources \nindépendantes. \nUtilise des sources \nglobales mais ne \ncroise pas \nsystématiquement les \ninformations pour en \nvérifier l'exactitude. \nUtilise des sources \nnon vérifiées ou de \ntype encyclopédique \nparticipatif sans \nrecoupement \n(exemple : réseaux \nsociaux, blogs \nanonymes). \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 3 \nCritères \nIndicateurs \nA \nB \nC \nD \n3. Esprit critique et \ndistanciation \n§ Distingue les faits \ndes opinions ou \nrumeurs. \n§ Identifie les biais \néventuels. \n§ Justifie le choix \ndes sources \nretenues. \nExerce un regard \ncritique aiguisé, \ndétecte les biais \nhistoriques ou \néditoriaux et \nargumente \nsolidement ses choix \ndocumentaires. \nFait la distinction \nclaire entre faits \navérés et \ninterprétations ; \nexplique la valeur des \nsources choisies. \nRemet rarement en \nquestion les \naffirmations lues et \njustifie difficilement la \ncrédibilité des sites \nchoisis. \nRépète des \ninformations sans \nrecul ni \ndiscernement, en \nconfondant faits et \nrumeurs. \n4. Communication \n§ Explique la \nstratégie de \nrecherche \nemployée. \n§ Présente les \nrésultats \nclairement. \n§ Utilise un \nvocabulaire \nadapté. \nExplicite avec aisance \net rigueur toute sa \ndémarche \nméthodologique, \nprésente des \nrésultats \nsynthétiques et \nutilise un vocabulaire \ntechnique précis. \nExplique clairement \nsa stratégie de \nrecherche, présente \ndes résultats \nstructurés et emploie \nle vocabulaire \nnumérique adéquat. \nExplique globalement \nsa démarche mais de \nfaçon schématique, \nen oubliant de \nmentionner certains \nchoix de mots-clés \nou de sites. \nRestitue les résultats \nde manière confuse \nou est incapable \nd'expliquer comment \nil a mené sa \nrecherche sur \nInternet. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 4 \n2. Dispositif d’évaluation \nModalité \n• Co-évaluation ; \n• Évaluation formative. \nJustification \nL'évaluation formative permet à l'élève d'ajuster sa recherche en cours de route. La co-\névaluation (par les paires) est particulièrement intéressante : un élève analyse la \nbibliographie et la pertinence des sources sélectionnées par un camarade, ce qui renforce \nl'esprit critique par la confrontation des pratiques de recherche. \n \n3. Justification des choix pédagogiques \nChoix des critères \nLa recherche ne se résumant pas à un simple copier-coller, les critères ciblent à la fois la \nqualité du contenu (pertinence), la rigueur épistémologique (fiabilité et esprit critique) et \nla communication de l'élève.  \nIndicateurs observables \nLes indicateurs évitent le subjectif en ciblant des actions concrètes (croiser les sources, \nidentifier l'auteur, reformuler). \nProgression des niveaux \nLa progression va d'une collecte passive et non vérifiée (niveau D) à une démarche active, \ncritique, autonome et réflexive (niveau A). \nLe niveau A signifie : la maîtrise dépasse l’attendu. \nLe niveau B signifie : la maîtrise est conforme à l’attendu. \nLe niveau C signifie : la maîtrise est en proche de l’attendu. \nLe niveau D signifie : la maîtrise est très en deçà de l’attendu. \n \n \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 5 \nRemarques \nLes grilles officielles WBE utilisent une graduation normalisée à 4 niveaux (A, B, C, D) reposant \nsur une formulation trop vague comme pour le niveau A : La maîtrise dépasse l’attendu.  Nous \navons décidé de personnaliser chaque description de cellule de manière spécifique. \nLes documents officiels WBE intègrent également des critères incontournables et une échelle \nde validation par couleur (Bleu, Vert, Jaune, Orange). Nous avons décidé de ne pas définir les \ncritères incontournables. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 1 \nDémontage et remontage d’un ordinateur \nIntitulé \nDémonter un ordinateur, identifier ses composants, expliquer leur fonction et remonter \ncorrectement la machine. \n1. Identification des apprentissages visés \nSavoir  \n• Connaissance du nom et de la nature des composants internes de l'ordinateur (carte \nmère, processeur, mémoire vive, stockage, alimentation, cartes filles). \n \nLien avec le référentiel : Vocabulaire spécifique au hardware (distinction matériel/logiciel, \nmémoire vive / mémoire morte, stockage interne / externe, périphériques). \n \nSavoir-faire \n• Manipuler le matériel informatique avec précaution (gestes antistatiques, repérage de \nla visserie, débranchement des nappes) ; \n• Appliquer une procédure méthodique de démontage/remontage. \n \nLien avec le référentiel : Appliquer des règles de sécurité et de manipulation \nméthodique, organiser et gérer l'espace technique. \n \nCompétence mobilisée \n• Résoudre une tâche technique complexe en mobilisant habileté manuelle, \nraisonnement spatial et connaissances théoriques. \nCapacités transversales \n• Rigueur méthodologique ; \n• Respect des consignes de sécurité ;  \n• Autonomie ; \n• Persévérance face à un problème technique. \n \nLien avec le référentiel : Gérer et organiser des données matérielles et logicielles de \nmanière sécurisée et fonctionnelle. \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 2 \nCritères \nIndicateurs \nA \nB \nC \nD \n1. Sécurité et respect \ndu matériel \n§ Utilise les \nprécautions \nantistatiques (si \ndisponible). \n \n§ Manipulation \ndouce des \nconnectiques et \ncartes. \n \n§ Rangement \nordonné de la \nvisserie. \nGestes sûrs, \nprécautionneux et \nprofessionnels ; \nanticipe les risques \nde casse ou de court-\ncircuit. \nRespecte \nscrupuleusement les \nconsignes de \nmanipulation, utilise \nles outils adaptés et \nrange \nméthodiquement les \ncomposants. \nManipule avec \nprécaution globale \nmais oublie de \nsécuriser certains \néléments fragiles ou \ndésorganise la \nvisserie. \nForce les \nconnectiques, \nmanipule les cartes \npar les circuits \nimprimés ou néglige \nles risques \nélectrostatiques. \n2. Méthodologie et \nordre opératoire \n§ Suit l'ordre \nlogique de \ndémontage \n(périphériques ➔ \nalimentation ➔ \ncartes ➔ \nprocesseur). \n \n§ Maintien de \nl'espace de travail \npropre. \nMaîtrise parfaite de la \nchronologie, fluidité \ndes gestes, \nautonomie complète \ndans l'organisation de \nl'espace de travail. \nApplique \nrigoureusement la \nchronologie logique \nde démontage et de \nremontage sans \nprécipitation. \nSuit les grandes \nétapes mais commet \ndes erreurs d'ordre \n(exemple : oubli d'un \ncâble avant \nextraction de carte). \nProcède de manière \nanarchique, dévisse \ndes éléments sans \nlogique ou risque \nd'endommager la \nstructure. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 3 \nCritères \nIndicateurs \nA \nB \nC \nD \n3. Identification et \nfonction des \ncomposants \n§ Nomme \ncorrectement \nchaque \ncomposant (CPU, \nRAM, SSD, etc.). \n \n§ Explique \nprécisément le \nrôle de chaque \nélément. \nDémontre une \nexpertise \napprofondie en \nexpliquant non \nseulement le rôle, \nmais aussi les \ninteractions entre les \ncomposants. \nIdentifie sans \nhésitation tous les \ncomposants \nmanipulés et explicite \nclairement leur \nfonction technique. \nIdentifie les \ncomposants \nprincipaux mais \nhésite ou formule \ndes imprécisions sur \nleur rôle exact. \nConfond les \ncomposants majeurs \n(exemple : confusion \nentre RAM et \nstockage) et ignore \nleurs fonctions \nprincipales. \n4. Fonctionnement \nfinal de la machine \n§ La machine \nredémarre au \npremier essai. \n \n§ Tous les câbles \ninternes sont \ncorrectement \nrebranchés. \nRemontage \nimpeccable, gestion \nsoignée du \ncheminement des \ncâbles favorisant la \ncirculation d'air. \nLa machine \nredémarre du \npremier coup, \nattestant d'un \nremontage intègre et \nrigoureux. \nLa machine démarre \naprès l'identification \net la correction de \nquelques erreurs de \nraccordement par \nl'élève. \nLa machine ne \ndémarre pas à la \nsuite d’oublis majeurs \nde câblage ou des \ninversions de \nconnecteurs. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 4 \n2. Dispositif d’évaluation \nModalité \n• Évaluation formative en cours \n• Auto-évaluation (bilan des difficultés rencontrées). \nJustification \nCette activité combine un geste technique manuel et un savoir théorique. L'évaluation \nformative est indispensable pour intervenir immédiatement en cas de geste dangereux \npour le matériel. Le redémarrage de la machine offre une rétroaction immédiate et \nindiscutable à l'élève. \n \n3. Justification des choix pédagogiques \nChoix des critères \nLes critères couvrent l'ensemble de la compétence technique : la sécurité et le soin (savoir-\nêtre), la méthode (savoir-faire procédural), la théorie (savoirs) et le résultat final \n(performance). \nIndicateurs observables \nBasés sur des actions concrètes et vérifiables (la machine démarre, les connectiques sont \nmanipulées sans forcer, le vocabulaire est exact). \nProgression des niveaux \nTraduit le passage d'un tâtonnement risqué pour le matériel (niveau D) à une exécution \nexperte, soigneuse et autonome (niveau A). \nLe niveau A signifie : la maîtrise dépasse l’attendu. \nLe niveau B signifie : la maîtrise est conforme à l’attendu. \nLe niveau C signifie : la maîtrise est en proche de l’attendu. \nLe niveau D signifie : la maîtrise est très en deçà de l’attendu. \n \n \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 5 \nRemarques \nLes grilles officielles WBE utilisent une graduation normalisée à 4 niveaux (A, B, C, D) reposant \nsur une formulation trop vague comme pour le niveau A : La maîtrise dépasse l’attendu.  Nous \navons décidé de personnaliser chaque description de cellule de manière spécifique. \nLes documents officiels WBE intègrent également des critères incontournables et une échelle \nde validation par couleur (Bleu, Vert, Jaune, Orange). Nous avons décidé de ne pas définir les \ncritères incontournables. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 1 \nPrésentation multimédia \nIntitulé \nCréer une présentation destinée à sensibiliser les élèves au cyberharcèlement en sélectionnant \net organisant des informations et des contenus multimédias pertinents. \n1. Identification des apprentissages visés \nSavoirs  \n• Définition du cyberharcèlement ; \n• Identification des mécanismes de groupe ; \n• Identification des droits d’auteur, droit à l’image ; \n• Connaissance des ressources d'aide (lignes d'écoute, signalement). \n \nLien avec le référentiel : Vocabulaire invariant de production, droits d'auteur, droit à \nl'image et à la voix, respect de la vie privée et de la nétiquette. \n \nSavoir-faire \n• Structurer un message de sensibilisation percutant ; \n• Concevoir un support multimédia équilibré (texte, image, vidéo, audio) ;  \n• Citer les sources et respecter le droit à l'image / les droits d'auteur. \n \nLien avec le référentiel : Utiliser des fonctionnalités courantes d'un outil de présentation \n(intégration de médias), appliquer les principes d'élaboration d'un message multimédia \npour appuyer un discours. \n \nCompétence mobilisée \n• Communiquer efficacement à des fins de sensibilisation auprès d'un public cible (les \npairs) en mobilisant des langages multiples. \nCapacités transversales \n• Empathie ;  \n• Engagement citoyen ; \n• Créativité et maîtrise des outils de communication numérique. \n \nLien avec le référentiel : « Produire et traiter des contenus multimédias » et « \nInteragir/communiquer de manière responsable ». \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 2 \nCritères \nIndicateurs \nA \nB \nC \nD \n1. Pertinence et \nexactitude du \ncontenu \n§ Définitions \ncorrectes du \ncyberharcèlement. \n \n§ Distingue \nharcèlement et \ncyberharcèlement. \n \n§ Propose des \nsolutions \nconcrètes ou des \nrecours. \nLe contenu dépasse \nla simple restitution \nen proposant une \nanalyse rigoureuse \ndes dynamiques \nrelationnelles et des \nsolutions innovantes. \nLe contenu est exact, \ncomplet, bien \ndocumenté et \npropose des pistes \nde prévention claires \nadaptées au public. \nPrésente les notions \ngénérales mais \nmanque de précision \nsur les mécanismes \nou omet les \nsolutions/ressources. \nContenu lacunaire, \ncomportant des \nerreurs factuelles ou \ndes amalgames \npréjudiciables sur le \nsujet. \n2. Qualité de la \ncommunication et \nstructure \n§ Message clair et \npercutant. \n \n§ Enchaînement \nlogique des \ndiapositives ou \nsections. \n \n§ S'adresse \ndirectement au \npublic visé. \nCommunication \ncaptivante, narration \nfluide et impact \némotionnel/réflexif \nfort, suscitant \nl'adhésion immédiate. \nStructure claire, \naccroche efficace, \nton juste et \npersuasif, \nparfaitement adapté \naux élèves \nsensibilisés. \nStructure présente \nmais transitions \nmaladroites ; impact \nde sensibilisation \nmodéré sur le public. \nStructure décousue, \nmessages confus ou \nnon adaptés au \npublic visé (trop \ninfantilisants ou trop \njargonneux). \n \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 3 \nCritères \nIndicateurs \nA \nB \nC \nD \n3. Utilisation \njudicieuse des médias \n§ Illustrations/vidéos \nau service du \npropos (pas \ndécoratives). \n \n§ Lisibilité des \ndiapos (contraste, \nsobriété). \n \n§ Respect des droits \nd'auteur/images. \nUtilisation créative et \nmaîtrisée des \nressources \nmultimédias (rythme, \nesthétique, \naccessibilité, sources \nirréprochables). \nMédias \nsoigneusement \nchoisis, renforçant le \nmessage, diapositives \népurées et respect \ndes droits d'auteur. \nUtilise quelques \nmédias pertinents \nmais la mise en page \nnuit parfois à la \nlisibilité ou les \nsources d'images ne \nsont pas indiquées. \nSurcharge visuelle, \nmédias purement \ndécoratifs ou \nperturbateurs, non-\nrespect des droits \nd'auteur. \n4. Posture éthique et \nengagement \n§ Respect d'autrui \net empathie dans \nle traitement du \nsujet. \n \n§ Refus du \nsensationnalisme \ndéplacé. \nDéveloppe une \napproche nuancée, \nhumaine et \nconstructive, \nvalorisant l'entraide \net la responsabilité \ncollective. \nTraite le sujet avec \nsérieux, respect, \ndiscernement et \nempathie, \ndémontrant une \nréelle posture \ncitoyenne. \nTraite le sujet de \nmanière formelle et \ndistante, sans \nsusciter de réelle \nprise de conscience \nou d'empathie. \nUtilise un ton \nculpabilisant, \nmoralisateur ou au \ncontraire banalisant \nface aux situations \nprésentées. \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 4 \n2. Dispositif d’évaluation \nModalité \n• Auto-évaluation suivie d’une évaluation par les pairs \n• Évaluation sommative. \nJustification \nLe sujet s'y prête particulièrement : la sensibilisation au cyberharcèlement vise le public \ncible (les pairs). L'évaluation par les pairs permet de mesurer si l'objectif de sensibilisation \net d'impact sur le public est réellement atteint. \n \n3. Justification des choix pédagogiques \nChoix des critères \nLa grille combine trois dimensions complémentaires : la rigueur des informations \nprésentées, la maîtrise technique et esthétique de la communication et des médias, ainsi \nque l’engagement citoyen et éthique. \nIndicateurs observables \nPermettent de vérifier objectivement si les notions légales et préventives sont présentes, \net si la forme graphique respecte les règles d'ergonomie multimédia (lisibilité, absence de \nsurcharge). \nProgression des niveaux \nÉvolue d'une production maladroite ou anxiogène (niveau D) à une création percutante, \néthique, rigoureuse et esthétiquement maîtrisée (niveau A). \nLe niveau de validation A signifie : la maîtrise dépasse l’attendu. \nLe niveau de validation B signifie : la maîtrise est conforme à l’attendu. \nLe niveau de validation C signifie : la maîtrise est en proche de l’attendu. \nLe niveau de validation D signifie : la maîtrise est très en deçà de l’attendu. \n \n \n \n \n\nAnita LANGOHR \nSabrina SIRAGUSA \nJonathan VALENZANO \nPage 5 \nRemarques \nLes grilles officielles WBE utilisent une graduation normalisée à 4 niveaux (A, B, C, D) reposant \nsur une formulation trop vague comme pour le niveau A : La maîtrise dépasse l’attendu.  Nous \navons décidé de personnaliser chaque description de cellule de manière spécifique. \nLes documents officiels WBE intègrent également des critères incontournables et une échelle \nde validation par couleur (Bleu, Vert, Jaune, Orange). Nous avons décidé de garder l’idée des \ncouleurs et de critères incontournables qui représentent l’essentiel de l’apprentissage.",
+    "fileUrl": "/travaux-etudiants/SIRAGUSA_Sabrina_Exercice_8_Construire_des_gril_2026-10-24.pdf",
+    "submittedAt": "2026-10-24 14:00"
+  },
+  {
+    "id": "sub-real-0149",
     "userId": "user-vanhee.anais.mail@gmail.com",
     "userName": "Anaïs Vanhee",
     "userEmail": "vanhee.anais.mail@gmail.com",
@@ -10220,7 +13083,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-01 14:00"
   },
   {
-    "id": "sub-real-0116",
+    "id": "sub-real-0150",
     "userId": "user-vincianne.schoonbroodt@student.hech.be",
     "userName": "Vincianne SCHOONBROODT",
     "userEmail": "vincianne.schoonbroodt@student.hech.be",
@@ -10232,7 +13095,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-09-30 14:00"
   },
   {
-    "id": "sub-real-0117",
+    "id": "sub-real-0151",
     "userId": "user-vincianne.schoonbroodt@student.hech.be",
     "userName": "Vincianne SCHOONBROODT",
     "userEmail": "vincianne.schoonbroodt@student.hech.be",
@@ -10244,7 +13107,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-09-30 14:00"
   },
   {
-    "id": "sub-real-0118",
+    "id": "sub-real-0152",
     "userId": "user-vincianne.schoonbroodt@student.hech.be",
     "userName": "Vincianne SCHOONBROODT",
     "userEmail": "vincianne.schoonbroodt@student.hech.be",
@@ -10256,7 +13119,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-09-30 14:00"
   },
   {
-    "id": "sub-real-0119",
+    "id": "sub-real-0153",
     "userId": "user-vincianne.schoonbroodt@student.hech.be",
     "userName": "Vincianne SCHOONBROODT",
     "userEmail": "vincianne.schoonbroodt@student.hech.be",
@@ -10268,7 +13131,7 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "submittedAt": "2026-10-07 14:00"
   },
   {
-    "id": "sub-real-0120",
+    "id": "sub-real-0154",
     "userId": "user-vincianne.schoonbroodt@student.hech.be",
     "userName": "Vincianne SCHOONBROODT",
     "userEmail": "vincianne.schoonbroodt@student.hech.be",
@@ -10278,6 +13141,30 @@ export const INITIAL_REAL_SUBMISSIONS: Submission[] = [
     "content": "Video  SCHOONBROODT Vincianne \n \ne6ce47a5-7696-4256-a52e-7c476234c11e.mp4",
     "fileUrl": "/travaux-etudiants/SCHOONBROODT_Vincianne_Exercice_5_Defi_Creer_une_vide_2026-10-12.pdf",
     "submittedAt": "2026-10-12 14:00"
+  },
+  {
+    "id": "sub-real-0155",
+    "userId": "user-vincianne.schoonbroodt@student.hech.be",
+    "userName": "Vincianne SCHOONBROODT",
+    "userEmail": "vincianne.schoonbroodt@student.hech.be",
+    "exerciseId": "exercice-06",
+    "exerciseTitle": "Atelier 6 : Démarche itérative (Concevoir & tester un mini-jeu)",
+    "answer": "Jeu Genially sur le tri des déchets et formulaire pour ensuite améliorer le jeu \n \n \nJeu   https://view.genially.com/6ad06cc002f7a3ace07e82df \n \nFormulaire https://forms.cloud.microsoft/e/UF72vRDggB \n \nJeu version 2  https://view.genially.com/6ad9d9fda98ca06bc55de6dc \n \nL’objectif pédagogique du jeu est de permettre aux élèves de 10 à 12 ans de découvrir et de \nmémoriser les principales règles du tri des déchets grâce à un jeu numérique interactif. \nJe voulais un jeu facile à comprendre, visuel, ludique et accessible sans explications supplémentaires \npour des élèves de 10-12 ans. \nLes personnes qui ont répondu au formulaire et qui ont testé le jeu ont dit qu’il était facile à \ncomprendre et à utiliser. Ce jeu est intéressant et motivant.  \nLes points à améliorer conseillés sont : \n- \nPlus de dias \n- \nReformuler le mot résidu ou le définir \n- \nRéaliser une dia pour bien comprendre résidu \n- \nRenforcer la motivation grâce aux points, aux étoiles et à un message de réussite final. \nLe test du jeu m’a permis de comprendre qu’il ne suffit pas de créer un jeu pour qu’il soit adapté aux \nélèves. Il faut vérifier si les consignes sont faciles à comprendre, si le jeu est simple à utiliser et si les \nrègles du tri sont claires. \nGrâce aux remarques des testeurs, j’ai pu voir ce qu’il fallait améliorer. J’ai donc modifié mon jeu \npour créer une deuxième version. J’ai appris qu’il est important de tester son travail, d’écouter les avis \ndes autres et de faire des changements pour améliorer le jeu. \nDu cours, je retiens que la conception itérative consiste à créer une première version, la faire tester, \nanalyser les remarques et l’améliorer. Il est important de faire tester son travail par d’autres personnes, \ncar on ne remarque pas toujours soi-même les erreurs ou les difficultés. Un questionnaire permet de \nrecueillir des avis précis pour savoir ce qui fonctionne et ce qu’il faut modifier. Cette démarche fait \nappel à plusieurs compétences : analyser, évaluer et créer. Enfin, je retiens que les erreurs ne sont pas \ndes échecs, mais des occasions d’apprendre et d’améliorer sa production. \nVincianne SCHOONBROODT",
+    "content": "Jeu Genially sur le tri des déchets et formulaire pour ensuite améliorer le jeu \n \n \nJeu   https://view.genially.com/6ad06cc002f7a3ace07e82df \n \nFormulaire https://forms.cloud.microsoft/e/UF72vRDggB \n \nJeu version 2  https://view.genially.com/6ad9d9fda98ca06bc55de6dc \n \nL’objectif pédagogique du jeu est de permettre aux élèves de 10 à 12 ans de découvrir et de \nmémoriser les principales règles du tri des déchets grâce à un jeu numérique interactif. \nJe voulais un jeu facile à comprendre, visuel, ludique et accessible sans explications supplémentaires \npour des élèves de 10-12 ans. \nLes personnes qui ont répondu au formulaire et qui ont testé le jeu ont dit qu’il était facile à \ncomprendre et à utiliser. Ce jeu est intéressant et motivant.  \nLes points à améliorer conseillés sont : \n- \nPlus de dias \n- \nReformuler le mot résidu ou le définir \n- \nRéaliser une dia pour bien comprendre résidu \n- \nRenforcer la motivation grâce aux points, aux étoiles et à un message de réussite final. \nLe test du jeu m’a permis de comprendre qu’il ne suffit pas de créer un jeu pour qu’il soit adapté aux \nélèves. Il faut vérifier si les consignes sont faciles à comprendre, si le jeu est simple à utiliser et si les \nrègles du tri sont claires. \nGrâce aux remarques des testeurs, j’ai pu voir ce qu’il fallait améliorer. J’ai donc modifié mon jeu \npour créer une deuxième version. J’ai appris qu’il est important de tester son travail, d’écouter les avis \ndes autres et de faire des changements pour améliorer le jeu. \nDu cours, je retiens que la conception itérative consiste à créer une première version, la faire tester, \nanalyser les remarques et l’améliorer. Il est important de faire tester son travail par d’autres personnes, \ncar on ne remarque pas toujours soi-même les erreurs ou les difficultés. Un questionnaire permet de \nrecueillir des avis précis pour savoir ce qui fonctionne et ce qu’il faut modifier. Cette démarche fait \nappel à plusieurs compétences : analyser, évaluer et créer. Enfin, je retiens que les erreurs ne sont pas \ndes échecs, mais des occasions d’apprendre et d’améliorer sa production. \nVincianne SCHOONBROODT",
+    "fileUrl": "/travaux-etudiants/SCHOONBROODT_Vincianne_Atelier_6_Demarche_iterative_e_2026-10-27 (1).pdf",
+    "submittedAt": "2026-10-27 14:00"
+  },
+  {
+    "id": "sub-real-0156",
+    "userId": "user-vincianne.schoonbroodt@student.hech.be",
+    "userName": "Vincianne SCHOONBROODT",
+    "userEmail": "vincianne.schoonbroodt@student.hech.be",
+    "exerciseId": "exercice-08",
+    "exerciseTitle": "Atelier 8 : Construire des grilles d'évaluation critériées",
+    "answer": "Exercice 08 – Construire des grilles d’évaluation critériées \nObjectif \nL’objectif de cet exercice est de vous apprendre à construire une grille d’évaluation critériée adaptée à différents types d’apprentissages numériques. \nVous devrez être capables d’identifier les apprentissages réellement visés, de sélectionner des critères pertinents et de construire des indicateurs permettant d’observer différents niveaux de maîtrise. \nOrganisation \nTravail par groupes de 2 ou 3 étudiants. \nChaque groupe choisit 3 cas parmi les 10 proposés. \nPour chacun des trois cas, vous construisez une grille critériée différente. \nLes trois grilles doivent être accompagnées d’une justification de vos choix. \nMon premier cas  \n5. Intelligence artificielle \nUtiliser une IA générative pour créer une affiche, expérimenter différents prompts, comparer les résultats et justifier ses choix. \nJe travaille dans l’enseignement secondaire spécialisé de Forme 3 et je choisis ce cas car les élèves peuvent réaliser une production concrète qui a du SENS pour eux. \nDans ce cas, je demanderais aux élèves d'utiliser l’IA pour créer une affiche pour présenter leur projet ERASMUS+ Corse à leurs parents, responsables. \n1. Identifiez les apprentissages visés \nDéterminez ce que l’élève doit : \nsavoir ;  \nComprendre ce que c’est qu’une intelligence artificielle générative et savoir qu’elle peut créer des textes et des images à partir d’une consigne \nComprendre ce qu’est un prompt et quel est son rôle \nConnaître les éléments essentiels d’une affiche \nSavoir que l’intelligence artificielle peut produire des erreurs (images - textes) \nAvoir connaissance des informations essentielles sur le projet ERASMUS+ Corse \nsavoir-faire ; \nRédiger un prompt simple pour obtenir une affiche adaptée au projet \nModifier le prompt pour améliorer l’affiche \nVérifier les informations sur l’affiche \nComparer les différents résultats en fonction des différents prompts \nmobiliser comme compétence ; \nPour ce travail, l’élève doit mobiliser les compétences suivantes  \n utiliser le numérique,  \ndévelopper son autonomie, \nexercer son esprit critique,  \ncommuniquer  \njustifier ses choix.  \n2. Construisez la grille \nVotre grille doit comporter : \n3 à 5 critères directement liés aux apprentissages visés ; \n2 à 4 indicateurs observables par critère ; \n4 niveaux de maîtrise décrivant une progression qualitative. \nLes quatre niveaux de maîtrise sont les suivants : \nNiveau 1 : À renforcer \nNiveau 2 : En développement \nNiveau 3 : Maîtrisé \nNiveau 4 : Très bonne maîtrise \nCritère 1 : Rédiger et améliorer un prompt \nIndicateur 1 : Dans son prompt, l’élève indique le sujet et l’objectif de l’affiche \nIndicateur 2 : Dans son prompt, l’élève précise les éléments qu’il attend et modifie le prompt pour améliorer le résultat \nCritère 2 : Comparer et développer l’esprit critique face aux résultats de l’intelligence artificielle \nIndicateur 1 : L’élève compare plusieurs propositions réalisées avec l’IA \nIndicateur 2 : L’élève repère et modifie les erreurs et les éléments qui ne correspondent pas au projet \nCritère 3 : Créer une affiche claire et adaptée au projet \nIndicateur 1 : L’élève sélectionne et présente les informations essentielles sur le projet Erasmus+.  \nIndicateur 2 : L’élève organise les textes et les images pour rendre son affiche lisible et attractive.  \nJe précise la date car dans l’enseignement spécialisé tous les élèves n’avancent pas au même rythme. \n3. Précisez le dispositif d’évaluation \nJe combine plusieurs modalités d’évaluation \névaluation formative ; Pendant la création de l’affiche, j’observe les démarches des élèves et si besoin je leur donne des conseils pour améliorer les prompts ou réaliser leur production. \névaluation sommative ; A la fin de l’activité, j’évalue l’affiche finale de chaque élève en fonction des critères. \nauto-évaluation ; Chaque élève utilise une autre grille pour identifier ses acquis et repérer ce qu’il pourrait améliorer. \n4. Justifiez vos choix \nPour chaque grille, expliquez brièvement : \npourquoi vous avez retenu ces critères ; \npourquoi ces indicateurs permettent d’observer les apprentissages ; \ncomment les niveaux de maîtrise traduisent une progression ; \npourquoi vous avez choisi cette modalité d’évaluation. \nJ’ai choisi cette situation parce qu’elle est directement liée au projet Erasmus+ en Corse et à la formation professionnelle des élèves de Forme 3. La réalisation de l’affiche répond à un besoin réel de l’école : informer les parents sur la mobilité et les stages professionnels. \nLes critères ont été retenus parce qu’ils correspondent aux principaux apprentissages visés. Il ne s’agit pas seulement de créer une affiche esthétique, mais aussi d’apprendre à formuler une demande à une IA, à comparer ses propositions et de vérifier les informations. \nLes indicateurs permettent d’observer concrètement les actions réalisées par les élèves. \nLes quatre niveaux de maîtrise décrivent une progression allant d’un élève qui a besoin d’une aide importante à un élève capable de travailler de manière autonome, d’adapter sa démarche et de justifier ses décisions. \nJ’ai choisi de combiner plusieurs modalités d’évaluation parce qu’elles permettent d’accompagner les élèves pendant leur apprentissage. L’auto-évaluation les aide également à prendre conscience de leurs progrès. \nEnfin, cette activité permet de développer des compétences numériques utiles dans la vie quotidienne et professionnelle. Elle sensibilise les élèves aux possibilités de l’intelligence artificielle, mais aussi à la nécessité de vérifier ses résultats et de conserver un regard critique sur les contenus qu’elle produit \nMon second cas \n3. Éducation aux médias : info ou intox ? \nAnalyser des publications provenant des réseaux sociaux, vérifier leur fiabilité et justifier son analyse. \nL’objectif sera d’apprendre aux élèves à ne pas croire automatiquement tout ce qu’ils voient sur les réseaux sociaux, à vérifier les informations et à expliquer leur avis. \nComme déjà précisé plus haut, je travaille dans l’enseignement secondaire spécialisé de Forme 3 et je choisis ce cas car les élèves sont régulièrement confrontés à des informations sur Internet et les réseaux sociaux. Il est important qu’ils apprennent à faire la différence entre une information fiable et une information fausse ou trompeuse. \nJe propose de partir d’informations concernant la Corse, dans le cadre du projet Erasmus+ de l’école. Les élèves analyseront différentes publications, par exemple sur les lieux à visiter, les traditions corses, la gastronomie ou les activités proposées sur l’île. \nIls devront vérifier les informations à l’aide de sources fiables, puis présenter leur analyse à un camarade. Une évaluation par les pairs permettra à chaque élève de donner un retour constructif sur le travail d’un autre élève. \n1. Identifiez les apprentissages visés \nDéterminez ce que l’élève doit : \nsavoir ; \nComprendre la différence entre une information, une opinion et une publicité \nSavoir que les publications sur les réseaux sociaux ne sont pas toujours vraies \nConnaître la base des indices de fiabilité (auteur - date - source et preuve) \nComprendre qu’une image peut-être modifiée ou sortie de son contexte \nsavoir-faire ; \nLire une information et identifier l’information principale \nIdentifier la source, l’auteur et la date de la publication \nRechercher et vérifier l’information sur un autre site \nComparer les informations trouvées \nExpliquer pourquoi une information paraît fiable ou non \nmobiliser comme compétence ; \nRechercher et vérifier une information sur internet \nDévelopper son esprit critique \nCommuniquer ses résultats et expliquer \n2. Construisez la grille \nVotre grille doit comporter : \n3 à 5 critères directement liés aux apprentissages visés ; \n2 à 4 indicateurs observables par critère ; \n4 niveaux de maîtrise décrivant une progression qualitative. \nLes quatre niveaux de maîtrise sont les suivants : \nNiveau 1 : À renforcer \nNiveau 2 : En développement \nNiveau 3 : Maîtrisé \nNiveau 4 : Très bonne maîtrise \nCritère 1 : Identifier et analyser une publication \nIndicateur 1 : L’élève identifie l’information principale d’une publication \nIndicateur 2 : L’élève identifie la date, la source et l’auteur de la publication \nCritère 2 : Vérifier la fiabilité des informations sur la Corse \nIndicateur 1 : L’élève recherche dans une autre source fiable s’il trouve la même information \nIndicateur 2 : L’élève compare les informations et relève les erreurs \nCritère 3 : Évaluer le travail d’un camarade \nIndicateur 1 : L’élève utilise la grille d’évaluation pour examiner le travail de son camarade \n3. Précisez le dispositif d’évaluation \névaluation formative ; Pendant l’activité, j’observe les élèves, je les guide dans leurs recherches s’ils en ont besoin et je les aide à vérifier les informations \nauto-évaluation ; Chaque élève réfléchit à ce qu’il a appris et aux difficultés qu’il a rencontrées \névaluation par les pairs : chaque élève examine le travail d’un autre élève à l’aide d’une grille simple  \nJ’évalue le travail d’un autre élève \nNom de l’élève évalué :  \nNom de l’élève qui évalue :  \n4. Justifiez vos choix \nPour chaque grille, expliquez brièvement : \npourquoi vous avez retenu ces critères ; \npourquoi ces indicateurs permettent d’observer les apprentissages ; \ncomment les niveaux de maîtrise traduisent une progression ; \npourquoi vous avez choisi cette modalité d’évaluation. \nJ’ai choisi ces critères car ils correspondent aux étapes nécessaires pour analyser une publication sur les réseaux sociaux : comprendre l’information, vérifier sa fiabilité, justifier son avis et évaluer le travail d’un camarade. \nLes indicateurs permettent d’observer concrètement les actions réalisées par les élèves, comme rechercher une source, comparer et justifier des informations. \nLes quatre niveaux de maîtrise montrent une progression entre un élève qui a besoin d’une aide importante et un élève qui réalise les tâches de manière autonome et peut expliquer son raisonnement. Les niveaux permettent de tenir compte des besoins et du rythme de chaque élève de Forme 3. \nJ’ai choisi de combiner l’évaluation formative, l’évaluation par les pairs et l’autoévaluation. L’évaluation formative permet d’accompagner les élèves pendant leurs recherches. L’évaluation par les pairs les aide à porter un regard critique sur un travail et à donner un avis respectueux. L’autoévaluation leur permet de prendre conscience de leurs progrès. \nEnfin, cette activité développe des compétences utiles dans la vie quotidienne et professionnelle. Elle apprend aux élèves à ne pas croire automatiquement les informations trouvées sur Internet et à vérifier les sources avant de partager une publication. \nMon 3ème cas \n7. Protection des données personnelles \nAnalyser différentes situations numériques, identifier les risques liés aux données personnelles et proposer des comportements adaptés. \nJe travaille dans l’enseignement secondaire spécialisé de Forme 3 et je choisis ce cas car les élèves utilisent ou seront amenés à utiliser des outils numériques dans leur vie quotidienne et professionnelle. Il est donc important qu’ils apprennent à protéger leurs données personnelles. \nJe propose de partir de situations concrètes : créer une adresse e-mail, choisir un mot de passe, recevoir un message suspect ou être sollicité pour communiquer ses identifiants. Les élèves devront identifier les risques et choisir les bons comportements pour protéger leurs informations personnelles. \n1. Identifiez les apprentissages visés \nDéterminez ce que l’élève doit : \nsavoir ;  \nComprendre ce que c’est qu’une donnée personnelle ; nom, prénom, adresse e-maill, numéro de tel … \nComprendre à quoi sert une adresse email et un mot de passe \nSavoir qu’un mot de passe doit rester secret \nConnaître les caractéristique d’un mot de passe dit “robuste” \nSavoir qu’un message peut être frauduleux et chercher à voler des informations personnelles \nsavoir-faire ;  \nIdentifier des données personnelles dans différentes situations \nChoisir un mot de passe robuste (sans le communiquer) \nRepérer les risques dans les messages suspects \nChoisir un comportement adapté et donc ne pas cliquer sur des liens suspects et ne pas communiquer son mot de passe \nModifier son mot de passe si nécessaire \nmobiliser comme compétence ; \nProtéger ses données personnelles \nUtiliser les outils numériques de manière responsable \nIdentifier un risque de fraude \nDévelopper son autonomie dans l’utilisation du numérique \n2. Construisez la grille \nVotre grille doit comporter : \n3 à 5 critères directement liés aux apprentissages visés ; \n2 à 4 indicateurs observables par critère ; \n4 niveaux de maîtrise décrivant une progression qualitative. \nLes quatre niveaux de maîtrise sont les suivants : \nNiveau 1 : À renforcer \nNiveau 2 : En développement \nNiveau 3 : Maîtrisé \nNiveau 4 : Très bonne maîtrise \nCritère 1 : Identifier les données personnelles et les informations confidentielles \nIndicateur 1 : L’élève identifie les informations personnelles dans diverses situations \nIndicateur 2 : L’élève identifie les informations qui ne doivent pas être communiquées, notamment son mot de passe \nCritère 2 : Choisir et protéger un mot de passe. \nIndicateur 1 : L’élève reconnaît les caractères d’un mot de passe robuste. \nIndicateur 2 : L’élève identifie les bonnes pratiques pour protéger son mot de passe. \nCritère 3 : Repérer les risques liés à l’adresse e-mail. \nIndicateur 1 : L’élève repère les éléments suspects dans un message ou dans un e-mail. \nIndicateur 2 : L’élève choisit un comportement adapté face à une demande suspecte. \n3. Précisez le dispositif d’évaluation \nIndiquez si votre grille est destinée à une : \névaluation formative ; pendant les exercices, j’observe les choix des élèves et je les aide à comprendre les risques.  \nauto-évaluation ; l’élève vérifie s’il connaît les bonnes pratiques pour protéger ses données personnelles \nco-évaluation; par groupe de 2, les élèves analysent plusieurs situations fictives où ils doivent par exemple choisir un mot de passe parmi plusieurs et réagir à un e-mail suspect. \nJe sais protéger mes données personnelles \nJe reconnais les principales données personnelles. \nJe sais qu’un mot de passe doit rester secret. \nJe sais reconnaître les caractéristiques d’un mot de passe robuste. \nJe sais repérer des indices dans un e-mail suspect. \nJe sais comment réagir si un message me semble dangereux. \n4. Justifiez vos choix \nPour chaque grille, expliquez brièvement : \npourquoi vous avez retenu ces critères ; \npourquoi ces indicateurs permettent d’observer les apprentissages ; \ncomment les niveaux de maîtrise traduisent une progression ; \npourquoi vous avez choisi cette modalité d’évaluation. \nJ’ai choisi ces critères car ils correspondent aux apprentissages essentiels pour apprendre aux élèves à protéger leurs données personnelles dans leur vie quotidienne et professionnelle. Il est important qu’ils puissent identifier les informations personnelles, comprendre pourquoi un mot de passe doit rester secret et savoir reconnaître les risques liés aux e-mails suspects. \nLes indicateurs permettent d’observer concrètement les apprentissages des élèves. Ils permettent notamment de vérifier si l’élève reconnaît les données personnelles, identifie les caractéristiques d’un mot de passe robuste, repère les éléments suspects dans un e-mail et choisit une réaction adaptée face à une situation à risque. \nLes quatre niveaux de maîtrise montrent une progression entre un élève qui a besoin d’une aide importante pour identifier les risques et un élève qui est capable de les repérer de manière autonome, d’expliquer ses choix et de proposer des solutions adaptées. Cette progression permet de tenir compte des besoins et du rythme de chaque élève de l’enseignement spécialisé de Forme 3. \nJ’ai choisi de combiner l’évaluation formative, l’auto-évaluation et la co-évaluation. L’évaluation formative me permet d’accompagner les élèves pendant les exercices et de les aider à comprendre leurs erreurs. L’auto-évaluation leur permet de prendre conscience de leurs acquis et des points qu’ils doivent encore améliorer. La co-évaluation, réalisée en binôme à partir de situations fictives, permet aux élèves d’échanger leurs idées, de comparer leurs choix et d’apprendre les bonnes pratiques ensemble. \nCette activité vise à développer l’autonomie des élèves et à les rendre plus responsables dans leur utilisation du numérique. Ces apprentissages leur seront utiles dans leur vie personnelle et professionnelle, notamment lorsqu’ils utiliseront une adresse e-mail, créeront un mot de passe ou recevront un message suspect. \n Je dois retenir pour ce cours",
+    "content": "Exercice 08 – Construire des grilles d’évaluation critériées \nObjectif \nL’objectif de cet exercice est de vous apprendre à construire une grille d’évaluation critériée adaptée à différents types d’apprentissages numériques. \nVous devrez être capables d’identifier les apprentissages réellement visés, de sélectionner des critères pertinents et de construire des indicateurs permettant d’observer différents niveaux de maîtrise. \nOrganisation \nTravail par groupes de 2 ou 3 étudiants. \nChaque groupe choisit 3 cas parmi les 10 proposés. \nPour chacun des trois cas, vous construisez une grille critériée différente. \nLes trois grilles doivent être accompagnées d’une justification de vos choix. \nMon premier cas  \n5. Intelligence artificielle \nUtiliser une IA générative pour créer une affiche, expérimenter différents prompts, comparer les résultats et justifier ses choix. \nJe travaille dans l’enseignement secondaire spécialisé de Forme 3 et je choisis ce cas car les élèves peuvent réaliser une production concrète qui a du SENS pour eux. \nDans ce cas, je demanderais aux élèves d'utiliser l’IA pour créer une affiche pour présenter leur projet ERASMUS+ Corse à leurs parents, responsables. \n1. Identifiez les apprentissages visés \nDéterminez ce que l’élève doit : \nsavoir ;  \nComprendre ce que c’est qu’une intelligence artificielle générative et savoir qu’elle peut créer des textes et des images à partir d’une consigne \nComprendre ce qu’est un prompt et quel est son rôle \nConnaître les éléments essentiels d’une affiche \nSavoir que l’intelligence artificielle peut produire des erreurs (images - textes) \nAvoir connaissance des informations essentielles sur le projet ERASMUS+ Corse \nsavoir-faire ; \nRédiger un prompt simple pour obtenir une affiche adaptée au projet \nModifier le prompt pour améliorer l’affiche \nVérifier les informations sur l’affiche \nComparer les différents résultats en fonction des différents prompts \nmobiliser comme compétence ; \nPour ce travail, l’élève doit mobiliser les compétences suivantes  \n utiliser le numérique,  \ndévelopper son autonomie, \nexercer son esprit critique,  \ncommuniquer  \njustifier ses choix.  \n2. Construisez la grille \nVotre grille doit comporter : \n3 à 5 critères directement liés aux apprentissages visés ; \n2 à 4 indicateurs observables par critère ; \n4 niveaux de maîtrise décrivant une progression qualitative. \nLes quatre niveaux de maîtrise sont les suivants : \nNiveau 1 : À renforcer \nNiveau 2 : En développement \nNiveau 3 : Maîtrisé \nNiveau 4 : Très bonne maîtrise \nCritère 1 : Rédiger et améliorer un prompt \nIndicateur 1 : Dans son prompt, l’élève indique le sujet et l’objectif de l’affiche \nIndicateur 2 : Dans son prompt, l’élève précise les éléments qu’il attend et modifie le prompt pour améliorer le résultat \nCritère 2 : Comparer et développer l’esprit critique face aux résultats de l’intelligence artificielle \nIndicateur 1 : L’élève compare plusieurs propositions réalisées avec l’IA \nIndicateur 2 : L’élève repère et modifie les erreurs et les éléments qui ne correspondent pas au projet \nCritère 3 : Créer une affiche claire et adaptée au projet \nIndicateur 1 : L’élève sélectionne et présente les informations essentielles sur le projet Erasmus+.  \nIndicateur 2 : L’élève organise les textes et les images pour rendre son affiche lisible et attractive.  \nJe précise la date car dans l’enseignement spécialisé tous les élèves n’avancent pas au même rythme. \n3. Précisez le dispositif d’évaluation \nJe combine plusieurs modalités d’évaluation \névaluation formative ; Pendant la création de l’affiche, j’observe les démarches des élèves et si besoin je leur donne des conseils pour améliorer les prompts ou réaliser leur production. \névaluation sommative ; A la fin de l’activité, j’évalue l’affiche finale de chaque élève en fonction des critères. \nauto-évaluation ; Chaque élève utilise une autre grille pour identifier ses acquis et repérer ce qu’il pourrait améliorer. \n4. Justifiez vos choix \nPour chaque grille, expliquez brièvement : \npourquoi vous avez retenu ces critères ; \npourquoi ces indicateurs permettent d’observer les apprentissages ; \ncomment les niveaux de maîtrise traduisent une progression ; \npourquoi vous avez choisi cette modalité d’évaluation. \nJ’ai choisi cette situation parce qu’elle est directement liée au projet Erasmus+ en Corse et à la formation professionnelle des élèves de Forme 3. La réalisation de l’affiche répond à un besoin réel de l’école : informer les parents sur la mobilité et les stages professionnels. \nLes critères ont été retenus parce qu’ils correspondent aux principaux apprentissages visés. Il ne s’agit pas seulement de créer une affiche esthétique, mais aussi d’apprendre à formuler une demande à une IA, à comparer ses propositions et de vérifier les informations. \nLes indicateurs permettent d’observer concrètement les actions réalisées par les élèves. \nLes quatre niveaux de maîtrise décrivent une progression allant d’un élève qui a besoin d’une aide importante à un élève capable de travailler de manière autonome, d’adapter sa démarche et de justifier ses décisions. \nJ’ai choisi de combiner plusieurs modalités d’évaluation parce qu’elles permettent d’accompagner les élèves pendant leur apprentissage. L’auto-évaluation les aide également à prendre conscience de leurs progrès. \nEnfin, cette activité permet de développer des compétences numériques utiles dans la vie quotidienne et professionnelle. Elle sensibilise les élèves aux possibilités de l’intelligence artificielle, mais aussi à la nécessité de vérifier ses résultats et de conserver un regard critique sur les contenus qu’elle produit \nMon second cas \n3. Éducation aux médias : info ou intox ? \nAnalyser des publications provenant des réseaux sociaux, vérifier leur fiabilité et justifier son analyse. \nL’objectif sera d’apprendre aux élèves à ne pas croire automatiquement tout ce qu’ils voient sur les réseaux sociaux, à vérifier les informations et à expliquer leur avis. \nComme déjà précisé plus haut, je travaille dans l’enseignement secondaire spécialisé de Forme 3 et je choisis ce cas car les élèves sont régulièrement confrontés à des informations sur Internet et les réseaux sociaux. Il est important qu’ils apprennent à faire la différence entre une information fiable et une information fausse ou trompeuse. \nJe propose de partir d’informations concernant la Corse, dans le cadre du projet Erasmus+ de l’école. Les élèves analyseront différentes publications, par exemple sur les lieux à visiter, les traditions corses, la gastronomie ou les activités proposées sur l’île. \nIls devront vérifier les informations à l’aide de sources fiables, puis présenter leur analyse à un camarade. Une évaluation par les pairs permettra à chaque élève de donner un retour constructif sur le travail d’un autre élève. \n1. Identifiez les apprentissages visés \nDéterminez ce que l’élève doit : \nsavoir ; \nComprendre la différence entre une information, une opinion et une publicité \nSavoir que les publications sur les réseaux sociaux ne sont pas toujours vraies \nConnaître la base des indices de fiabilité (auteur - date - source et preuve) \nComprendre qu’une image peut-être modifiée ou sortie de son contexte \nsavoir-faire ; \nLire une information et identifier l’information principale \nIdentifier la source, l’auteur et la date de la publication \nRechercher et vérifier l’information sur un autre site \nComparer les informations trouvées \nExpliquer pourquoi une information paraît fiable ou non \nmobiliser comme compétence ; \nRechercher et vérifier une information sur internet \nDévelopper son esprit critique \nCommuniquer ses résultats et expliquer \n2. Construisez la grille \nVotre grille doit comporter : \n3 à 5 critères directement liés aux apprentissages visés ; \n2 à 4 indicateurs observables par critère ; \n4 niveaux de maîtrise décrivant une progression qualitative. \nLes quatre niveaux de maîtrise sont les suivants : \nNiveau 1 : À renforcer \nNiveau 2 : En développement \nNiveau 3 : Maîtrisé \nNiveau 4 : Très bonne maîtrise \nCritère 1 : Identifier et analyser une publication \nIndicateur 1 : L’élève identifie l’information principale d’une publication \nIndicateur 2 : L’élève identifie la date, la source et l’auteur de la publication \nCritère 2 : Vérifier la fiabilité des informations sur la Corse \nIndicateur 1 : L’élève recherche dans une autre source fiable s’il trouve la même information \nIndicateur 2 : L’élève compare les informations et relève les erreurs \nCritère 3 : Évaluer le travail d’un camarade \nIndicateur 1 : L’élève utilise la grille d’évaluation pour examiner le travail de son camarade \n3. Précisez le dispositif d’évaluation \névaluation formative ; Pendant l’activité, j’observe les élèves, je les guide dans leurs recherches s’ils en ont besoin et je les aide à vérifier les informations \nauto-évaluation ; Chaque élève réfléchit à ce qu’il a appris et aux difficultés qu’il a rencontrées \névaluation par les pairs : chaque élève examine le travail d’un autre élève à l’aide d’une grille simple  \nJ’évalue le travail d’un autre élève \nNom de l’élève évalué :  \nNom de l’élève qui évalue :  \n4. Justifiez vos choix \nPour chaque grille, expliquez brièvement : \npourquoi vous avez retenu ces critères ; \npourquoi ces indicateurs permettent d’observer les apprentissages ; \ncomment les niveaux de maîtrise traduisent une progression ; \npourquoi vous avez choisi cette modalité d’évaluation. \nJ’ai choisi ces critères car ils correspondent aux étapes nécessaires pour analyser une publication sur les réseaux sociaux : comprendre l’information, vérifier sa fiabilité, justifier son avis et évaluer le travail d’un camarade. \nLes indicateurs permettent d’observer concrètement les actions réalisées par les élèves, comme rechercher une source, comparer et justifier des informations. \nLes quatre niveaux de maîtrise montrent une progression entre un élève qui a besoin d’une aide importante et un élève qui réalise les tâches de manière autonome et peut expliquer son raisonnement. Les niveaux permettent de tenir compte des besoins et du rythme de chaque élève de Forme 3. \nJ’ai choisi de combiner l’évaluation formative, l’évaluation par les pairs et l’autoévaluation. L’évaluation formative permet d’accompagner les élèves pendant leurs recherches. L’évaluation par les pairs les aide à porter un regard critique sur un travail et à donner un avis respectueux. L’autoévaluation leur permet de prendre conscience de leurs progrès. \nEnfin, cette activité développe des compétences utiles dans la vie quotidienne et professionnelle. Elle apprend aux élèves à ne pas croire automatiquement les informations trouvées sur Internet et à vérifier les sources avant de partager une publication. \nMon 3ème cas \n7. Protection des données personnelles \nAnalyser différentes situations numériques, identifier les risques liés aux données personnelles et proposer des comportements adaptés. \nJe travaille dans l’enseignement secondaire spécialisé de Forme 3 et je choisis ce cas car les élèves utilisent ou seront amenés à utiliser des outils numériques dans leur vie quotidienne et professionnelle. Il est donc important qu’ils apprennent à protéger leurs données personnelles. \nJe propose de partir de situations concrètes : créer une adresse e-mail, choisir un mot de passe, recevoir un message suspect ou être sollicité pour communiquer ses identifiants. Les élèves devront identifier les risques et choisir les bons comportements pour protéger leurs informations personnelles. \n1. Identifiez les apprentissages visés \nDéterminez ce que l’élève doit : \nsavoir ;  \nComprendre ce que c’est qu’une donnée personnelle ; nom, prénom, adresse e-maill, numéro de tel … \nComprendre à quoi sert une adresse email et un mot de passe \nSavoir qu’un mot de passe doit rester secret \nConnaître les caractéristique d’un mot de passe dit “robuste” \nSavoir qu’un message peut être frauduleux et chercher à voler des informations personnelles \nsavoir-faire ;  \nIdentifier des données personnelles dans différentes situations \nChoisir un mot de passe robuste (sans le communiquer) \nRepérer les risques dans les messages suspects \nChoisir un comportement adapté et donc ne pas cliquer sur des liens suspects et ne pas communiquer son mot de passe \nModifier son mot de passe si nécessaire \nmobiliser comme compétence ; \nProtéger ses données personnelles \nUtiliser les outils numériques de manière responsable \nIdentifier un risque de fraude \nDévelopper son autonomie dans l’utilisation du numérique \n2. Construisez la grille \nVotre grille doit comporter : \n3 à 5 critères directement liés aux apprentissages visés ; \n2 à 4 indicateurs observables par critère ; \n4 niveaux de maîtrise décrivant une progression qualitative. \nLes quatre niveaux de maîtrise sont les suivants : \nNiveau 1 : À renforcer \nNiveau 2 : En développement \nNiveau 3 : Maîtrisé \nNiveau 4 : Très bonne maîtrise \nCritère 1 : Identifier les données personnelles et les informations confidentielles \nIndicateur 1 : L’élève identifie les informations personnelles dans diverses situations \nIndicateur 2 : L’élève identifie les informations qui ne doivent pas être communiquées, notamment son mot de passe \nCritère 2 : Choisir et protéger un mot de passe. \nIndicateur 1 : L’élève reconnaît les caractères d’un mot de passe robuste. \nIndicateur 2 : L’élève identifie les bonnes pratiques pour protéger son mot de passe. \nCritère 3 : Repérer les risques liés à l’adresse e-mail. \nIndicateur 1 : L’élève repère les éléments suspects dans un message ou dans un e-mail. \nIndicateur 2 : L’élève choisit un comportement adapté face à une demande suspecte. \n3. Précisez le dispositif d’évaluation \nIndiquez si votre grille est destinée à une : \névaluation formative ; pendant les exercices, j’observe les choix des élèves et je les aide à comprendre les risques.  \nauto-évaluation ; l’élève vérifie s’il connaît les bonnes pratiques pour protéger ses données personnelles \nco-évaluation; par groupe de 2, les élèves analysent plusieurs situations fictives où ils doivent par exemple choisir un mot de passe parmi plusieurs et réagir à un e-mail suspect. \nJe sais protéger mes données personnelles \nJe reconnais les principales données personnelles. \nJe sais qu’un mot de passe doit rester secret. \nJe sais reconnaître les caractéristiques d’un mot de passe robuste. \nJe sais repérer des indices dans un e-mail suspect. \nJe sais comment réagir si un message me semble dangereux. \n4. Justifiez vos choix \nPour chaque grille, expliquez brièvement : \npourquoi vous avez retenu ces critères ; \npourquoi ces indicateurs permettent d’observer les apprentissages ; \ncomment les niveaux de maîtrise traduisent une progression ; \npourquoi vous avez choisi cette modalité d’évaluation. \nJ’ai choisi ces critères car ils correspondent aux apprentissages essentiels pour apprendre aux élèves à protéger leurs données personnelles dans leur vie quotidienne et professionnelle. Il est important qu’ils puissent identifier les informations personnelles, comprendre pourquoi un mot de passe doit rester secret et savoir reconnaître les risques liés aux e-mails suspects. \nLes indicateurs permettent d’observer concrètement les apprentissages des élèves. Ils permettent notamment de vérifier si l’élève reconnaît les données personnelles, identifie les caractéristiques d’un mot de passe robuste, repère les éléments suspects dans un e-mail et choisit une réaction adaptée face à une situation à risque. \nLes quatre niveaux de maîtrise montrent une progression entre un élève qui a besoin d’une aide importante pour identifier les risques et un élève qui est capable de les repérer de manière autonome, d’expliquer ses choix et de proposer des solutions adaptées. Cette progression permet de tenir compte des besoins et du rythme de chaque élève de l’enseignement spécialisé de Forme 3. \nJ’ai choisi de combiner l’évaluation formative, l’auto-évaluation et la co-évaluation. L’évaluation formative me permet d’accompagner les élèves pendant les exercices et de les aider à comprendre leurs erreurs. L’auto-évaluation leur permet de prendre conscience de leurs acquis et des points qu’ils doivent encore améliorer. La co-évaluation, réalisée en binôme à partir de situations fictives, permet aux élèves d’échanger leurs idées, de comparer leurs choix et d’apprendre les bonnes pratiques ensemble. \nCette activité vise à développer l’autonomie des élèves et à les rendre plus responsables dans leur utilisation du numérique. Ces apprentissages leur seront utiles dans leur vie personnelle et professionnelle, notamment lorsqu’ils utiliseront une adresse e-mail, créeront un mot de passe ou recevront un message suspect. \n Je dois retenir pour ce cours",
+    "fileUrl": "/travaux-etudiants/SCHOONBROODT_Vincianne_Atelier_8_Construire_des_grill_2026-10-29.docx",
+    "submittedAt": "2026-10-29 14:00"
   }
 ];
 

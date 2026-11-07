@@ -3093,10 +3093,17 @@ export const userStore = {
 
   downloadSubmittedFile(file: SubmittedFile) {
     const fileName = file.formattedFileName || file.originalFileName || 'document'
-    const targetFileUrl = (file as any).fileUrl || (fileName ? `/travaux-etudiants/${encodeURIComponent(fileName)}` : '')
-    if (typeof window !== 'undefined' && targetFileUrl) {
+    let rawFileUrl = (file as any).fileUrl || (fileName ? `/travaux-etudiants/${fileName}` : '')
+    if (typeof window !== 'undefined' && rawFileUrl) {
+      let finalUrl = rawFileUrl
+      if (!rawFileUrl.startsWith('http') && !rawFileUrl.startsWith('blob:') && !rawFileUrl.startsWith('data:')) {
+        const segs = rawFileUrl.split('/').map((s: string) => s ? encodeURIComponent(decodeURIComponent(s)) : '')
+        const encoded = segs.join('/')
+        const base = '/Didactique-du-num-rique-M1-plateforme/'
+        finalUrl = encoded.startsWith(base) ? encoded : base.replace(/\/$/, '') + (encoded.startsWith('/') ? encoded : '/' + encoded)
+      }
       const link = document.createElement('a')
-      link.href = targetFileUrl.startsWith('http') ? targetFileUrl : (typeof (window as any).__VITEPRESS__ !== 'undefined' ? targetFileUrl : targetFileUrl)
+      link.href = finalUrl
       link.download = fileName
       link.target = '_blank'
       document.body.appendChild(link)
@@ -3586,7 +3593,9 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
           aiScore: finalQuizAiScore,
           aiSummary: isQuizDone ? `${userQuizzes.length} quiz passé(s) • Moyenne: ${quizAiScore}/20` : 'Aucun quiz diagnostique passé (0 pt)',
           teacherScore: Math.min(def.maxPoints, Math.max(0, Number(teacherPts || 0))),
+          points: Math.min(def.maxPoints, Math.max(0, Number(teacherPts || 0))),
           feedback: fbQuiz?.feedback || (!isQuizDone ? 'Quiz non passé (0 pt)' : ''),
+          teacherFeedback: fbQuiz?.feedback || '',
           completed: isQuizDone,
           file: null,
           quizAttempts: userQuizzes || [],
@@ -3678,7 +3687,9 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
         aiScore,
         aiSummary,
         teacherScore: Math.min(def.maxPoints, Math.max(0, Number(teacherPts || 0))),
+        points: Math.min(def.maxPoints, Math.max(0, Number(teacherPts || 0))),
         feedback: fb?.feedback || (file?.teacherGrade?.feedback || ''),
+        teacherFeedback: fb?.feedback || (file?.teacherGrade?.feedback || ''),
         submission: state.submissions.find(s => (s?.userEmail || '').toLowerCase() === targetEmail && s?.exerciseId === def.id) || null,
         quizAttempts: def.id === 'quiz' ? userQuizzes : [],
         completed: isDone,

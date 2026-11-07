@@ -1032,12 +1032,12 @@ function formatSize(bytes) {
                       >
                         📥 Google Doc ↗
                       </a>
-                      <span :class="['ee-status', ex.completed ? 'ok' : 'pending', { graded: !!ex.teacherFeedback }]">
-                        <template v-if="ex.teacherFeedback">
-                          👨‍🏫 Noté : {{ ex.points }}/10
+                      <span :class="['ee-status', ex.completed ? 'ok' : 'pending', { graded: !!(ex.teacherFeedback || ex.feedback) }]">
+                        <template v-if="ex.teacherFeedback || ex.feedback">
+                          👨‍🏫 Noté : {{ ex.teacherScore ?? ex.points ?? ex.aiScore ?? 0 }}/10
                         </template>
                         <template v-else-if="ex.completed">
-                          Déposé ({{ ex.points }}/10)
+                          Déposé ({{ ex.teacherScore ?? ex.points ?? ex.aiScore ?? 0 }}/10)
                         </template>
                         <template v-else>
                           Non déposé (0/10)

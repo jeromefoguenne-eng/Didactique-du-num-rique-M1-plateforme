@@ -140,14 +140,18 @@ function closeDocPreview() {
 
 function getDocumentPublicUrl(file) {
   if (!file) return ''
-  if (file.fileUrl) {
-    return file.fileUrl.startsWith('http') ? file.fileUrl : withBase(file.fileUrl.startsWith('/') ? file.fileUrl : '/' + file.fileUrl)
+  let path = file.fileUrl || ''
+  if (!path) {
+    const fileName = file.formattedFileName || file.originalFileName || ''
+    if (fileName) {
+      path = `/travaux-etudiants/${fileName}`
+    }
   }
-  const fileName = file.formattedFileName || file.originalFileName || ''
-  if (fileName) {
-    return withBase(`/travaux-etudiants/${encodeURIComponent(fileName)}`)
-  }
-  return ''
+  if (!path) return ''
+  if (path.startsWith('http') || path.startsWith('blob:') || path.startsWith('data:')) return path
+  const segs = path.split('/').map(seg => seg ? encodeURIComponent(decodeURIComponent(seg)) : '')
+  const encodedPath = segs.join('/')
+  return withBase(encodedPath.startsWith('/') ? encodedPath : '/' + encodedPath)
 }
 
 // Aperçu direct Word (Mammoth) ou PDF (Iframe directe / Blob URL) ou Texte Brut
@@ -171,7 +175,7 @@ async function toggleDocumentPreview(file) {
   if (realMatch) {
     if (!fileDataUrl && realMatch.dataUrl) fileDataUrl = realMatch.dataUrl
     if (!fileExtractedText && realMatch.extractedText) fileExtractedText = realMatch.extractedText
-    if (!fileUrl && realMatch.fileUrl) fileUrl = withBase(realMatch.fileUrl.startsWith('/') ? realMatch.fileUrl : '/' + realMatch.fileUrl)
+    if (!fileUrl && realMatch.fileUrl) fileUrl = getDocumentPublicUrl(realMatch)
     if (!file.fileSize && realMatch.fileSize) file.fileSize = realMatch.fileSize
   }
 

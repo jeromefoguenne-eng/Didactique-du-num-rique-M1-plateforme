@@ -80,8 +80,11 @@ const subCategories = [
   </p>
 </div>
 
-::: info Hub du Projet Jeu de Société
-Retrouvez ci-dessous l'ensemble des modules méthodologiques et des fiches d'exercices pratiques guidant la réalisation de votre jeu de société, de l'idéation ludique jusqu'à la soutenance finale.
+::: info 📦 Modalité de remise : Un seul travail global (100 points)
+Les exercices liés à la création du jeu de société (chapitres 6.2 à 6.8) ne doivent plus être rendus séparément. **Tout le travail est à remettre d'un coup en un seul dossier** dans votre [Espace Membre](/espace-membre) :
+1. **Les différents exercices rassemblés en un seul fichier** (règles, photos, cartes IA, plateau laser, pions 3D, vidéo, playtest) ;
+2. **La préparation de leçon réalisée avec l'assistant FMTTN** ;
+3. **Le jeu de société final** (présenté devant la classe).
 :::
 
 <div class="callout-concept" style="margin: 1.8rem 0 2rem 0;">

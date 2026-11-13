@@ -18,7 +18,7 @@ Tout au long du quadrimestre, **l'évaluation continue des travaux pratiques et 
 ⚠️ **Revue, ajustement et validation finale par l'enseignant :**
 L'évaluation finale sera bien entendu **intégralement revue par l'enseignant à la fin du cours** :
 * **1. Travaux réalisés sur la plateforme (100 points / 200)** : l'enseignant réévaluera personnellement la note formative attribuée par l'IA pour l'ensemble des 8 ateliers pratiques (80 points) et les auto-évaluations diagnostiques en ligne (20 points).
-* **2. Projet de création du jeu de société didactique (100 points / 200)** : l'enseignant attribuera une note globale à l'ensemble du dispositif didactique (suivi des 8 étapes clés de réalisation, fabrication FabLab, vidéo de démonstration et présentation interactive de la leçon FMTTN devant la classe).
+* **2. Projet de création du jeu de société didactique (100 points / 200)** : le jeu de société est évalué en **un seul travail global**. Vous ne devez pas rendre de petites parties séparées : vous déposez **tout le travail d'un coup** dans un dossier unique comprenant : (1) les différents exercices liés au jeu rassemblés en un seul fichier, (2) la préparation de leçon réalisée avec l'assistant FMTTN, et (3) le jeu de société final (et sa présentation en classe).
 
 👉 L'IA applique un protocole d'évaluation pédagogique rigoureux et transparent : **[Consulter les critères détaillés et le prompt de correction par l'IA ↗](/guide/criteres-correction-ia)**.
 :::
@@ -52,15 +52,8 @@ Le barème s'articule autour de deux volets complémentaires totalisant **200 po
 | ↳ *Atelier 6 : Démarche itérative & Mini-jeu (Playtest)* | *10 pts* | *5%* | [📥 Télécharger l'Exercice 6 ↗](https://docs.google.com/document/d/1mfCTqwo-2l9k_wdLzIu3qRWOJuBxrqJv/preview) |
 | ↳ *Atelier 7 : Défi Hardware PC & Peer Learning* | *10 pts* | *5%* | [📥 Télécharger l'Exercice 7 ↗](https://docs.google.com/document/d/1Vjy9xrqLG-xuktmMmmOQ6Kh8I-hXiIzV/preview) |
 | ↳ *Atelier 8 : Construire des grilles d'évaluation critériées* | *10 pts* | *5%* | [📥 Télécharger l'Exercice 8 ↗](https://docs.google.com/document/d/1MV1xWWb5ZtcuRhFn_JIVG6UHeFle6IUI/preview) |
-| **2. Projet Jeu de Société Didactique (Totalité du projet)** | **100 pts** | **50%** | **Équipe de projet (Cotation globale par l'enseignant)** |
-| ↳ *Étape 1 (Ex 9) : Règles du jeu & dossier pédagogique (FMTTN / CSEM)* | *Jalon* | *—* | [📥 Télécharger l'Exercice 9 ↗](https://docs.google.com/document/d/1af3aH5FiR31N4FB99VrFq6628kiFFbly/preview) |
-| ↳ *Étape 2 (Ex 10) : Photographier le numérique (visuels & matériel)* | *Jalon* | *—* | [📥 Télécharger l'Exercice 10 ↗](https://docs.google.com/document/d/1kSoMRpjySi0DvjA0S1W4b8BoaDQrXNZh/preview) |
-| ↳ *Étape 3 (Ex 11) : Supports de jeu & cartes conçues avec l'IA* | *Jalon* | *—* | [📥 Télécharger l'Exercice 11 ↗](https://docs.google.com/document/d/1CzyMJRbjyvYVh7XP83Lx4tjxnq23oHXX/preview) |
-| ↳ *Étape 4 (Ex 12) : Plateau de jeu à la découpeuse laser (FabLab)* | *Jalon* | *—* | [📥 Télécharger l'Exercice 12 ↗](https://docs.google.com/document/d/1Ov_huVW9al2DKuoBmW89QO3ZqE5E-nzU/preview) |
-| ↳ *Étape 5 (Ex 13) : Pions de jeu modélisés et imprimés en 3D (FabLab)* | *Jalon* | *—* | [📥 Télécharger l'Exercice 13 ↗](https://docs.google.com/document/d/1H_88UJvPPezdUXw1Vt8_U9wtsaFouepU/preview) |
-| ↳ *Étape 6 (Ex 14) : Présentation vidéo du jeu (Capsule 2-3 min)* | *Jalon* | *—* | [📥 Télécharger l'Exercice 14 ↗](https://docs.google.com/document/d/1JO_9ayYt3IqZfStfUPkzT3GDOF65VBxQ/preview) |
-| ↳ *Étape 7 (Ex 15) : Playtest & Grille d'évaluation du jeu* | *Jalon* | *—* | [📥 Télécharger l'Exercice 15 ↗](https://docs.google.com/document/d/1uIheBr_KU2Dh2TjYkegz7lHixsUNxs4t/preview) |
-| ↳ *Étape 8 (Ex 16) : Présentation finale et leçon FMTTN devant la classe* | *Jalon* | *—* | [📥 Télécharger l'Exercice 16 ↗](https://docs.google.com/document/d/1Tm15GqKSwutH1MDbaGYJaWByliC17iRT/preview) |
+| **2. Projet Jeu de Société Didactique (Travail unique complet)** | **100 pts** | **50%** | **Équipe de projet — Dépôt unique en fin de projet** |
+| ↳ *Dossier unique : (1) Exercices du jeu rassemblés en un fichier + (2) Préparation assistant FMTTN + (3) Jeu de société final & présentation* | *100 pts* | *50%* | [📤 Déposer le dossier complet sur l'Espace Membre](/espace-membre) |
 | **TOTAL GÉNÉRAL** | **200 pts** | **100%** | **Note finale officielle sur 20 (Seuil de réussite : 100/200)** |
 
 > *⚠️ Note : La pondération pourra être revue en fonction du déroulement effectif du cours.*
@@ -87,22 +80,18 @@ Le barème s'articule autour de deux volets complémentaires totalisant **200 po
 
 ---
 
-### 2. Projet Jeu de Société Didactique & Présentation devant la Classe (100 points)
+### 2. Projet Jeu de Société Didactique : Travail Unique (100 points)
 
 <div class="callout-example">
-  <div class="callout-title">🎲 Le Projet Fil Rouge & la Restitution Orale (Note Globale de 100 Points)</div>
+  <div class="callout-title">🎲 Un seul travail global à remettre (100 Points)</div>
   <p>
-    L'enseignant attribue une note d'ensemble sur 100 points pour la totalité de votre réalisation ludo-pédagogique. Les 8 étapes intermédiaires sont conservées dans la grille d'évaluation comme jalons de suivi et de dépôt formatif :
+    Pour simplifier le suivi et l'évaluation, le projet de jeu de société n'est plus découpé en plusieurs petits dépôts séparés : il est évalué en <strong>un seul travail global sur 100 points</strong>. Vous remettez l'ensemble du projet en une seule fois dans l'onglet <strong>« Devoirs & Dépôts »</strong> de votre Espace Membre.
   </p>
+  <p><strong>Ce travail unique doit impérativement contenir :</strong></p>
   <ul>
-    <li><strong>Étape 1 (Ex 9) : Règles du jeu & intention didactique</strong> : Cohérence didactique, clarté des règles, boucle de gameplay et ancrage dans les compétences FMTTN / Éducation aux médias.</li>
-    <li><strong>Étape 2 (Ex 10) : Reportage photographique & visuels</strong> : Clichés soignés du matériel, maîtrise des techniques de composition visuelle et intégration dans la boîte/règles.</li>
-    <li><strong>Étape 3 (Ex 11) : Supports & cartes conçues avec l'IA</strong> : Pertinence des prompts, cohérence stylistique, formulation didactique des défis et recul critique face à l'IA.</li>
-    <li><strong>Étape 4 (Ex 12) : Plateau à la découpeuse laser (FabLab)</strong> : Conception vectorielle (.svg), propreté de la gravure au FabLab et ergonomie du plateau physique.</li>
-    <li><strong>Étape 5 (Ex 13) : Pions modélisés et imprimés en 3D (FabLab)</strong> : Modélisation 3D originale (ex : Tinkercad), finition et solidité des pièces physiques.</li>
-    <li><strong>Étape 6 (Ex 14) : Capsule vidéo de présentation</strong> : Vidéo rythmée (2 à 3 min) valorisant le pitch, le matériel et la mécanique de jeu (échelle des plans, son, voix-off).</li>
-    <li><strong>Étape 7 (Ex 15) : Playtest & Grille d'évaluation formative</strong> : Tests réels menés avec d'autres étudiants, recueil méthodique des retours et améliorations itératives.</li>
-    <li><strong>Étape 8 (Ex 16) : Présentation finale et leçon FMTTN devant la classe</strong> : Exposé oral dynamique de 20 minutes, animation interactive de la table de jeu et défense didactique de votre fiche de préparation FMTTN.</li>
+    <li><strong>1. Les différents exercices rassemblés en un seul fichier</strong> : règles du jeu et intention pédagogique, visuels/photographies, cartes créées avec l'IA, supports FabLab (découpeuse laser & impression 3D), capsule vidéo de présentation et bilan de playtest/évaluation formative.</li>
+    <li><strong>2. La préparation réalisée avec l'assistant FMTTN</strong> : votre fiche de préparation de leçon complète intégrant le jeu dans une séquence d'apprentissage FMTTN.</li>
+    <li><strong>3. Le jeu de société final</strong> : le prototype complet, abouti et jouable, présenté devant la classe.</li>
   </ul>
 </div>
 

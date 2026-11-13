@@ -448,7 +448,7 @@ function formatSize(bytes) {
             v-for="f in [
               { id: 'all', label: `Tous les travaux (${currentDossier.items.length})` },
               { id: 'part1', label: 'Partie 1 : Ateliers (8)' },
-              { id: 'part2', label: 'Partie 2 : Projet Jeu (8)' },
+              { id: 'part2', label: 'Partie 2 : Projet Jeu (100 pts)' },
               { id: 'quiz', label: 'Quiz en ligne (7)' },
               { id: 'submitted_only', label: 'Remis uniquement' }
             ]" 

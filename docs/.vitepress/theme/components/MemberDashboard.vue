@@ -186,70 +186,15 @@ const availableExercises = [
     points: 10,
     docUrl: 'https://docs.google.com/document/d/1MV1xWWb5ZtcuRhFn_JIVG6UHeFle6IUI/preview'
   },
-  // 2. Projet Jeu de Société Didactique (Partie 2 : 100 pts global, étapes de suivi formatif)
+  // 2. Projet Jeu de Société Didactique (Partie 2 : 100 pts — Travail unique complet)
   { 
-    id: 'exercice-09', 
-    title: 'Étape 1 (Ex 9) : Règles du jeu & dossier pédagogique (FMTTN / CSEM)',
+    id: 'projet-jeu', 
+    title: 'Travail Final — Projet Jeu de Société Didactique (Dossier complet)',
     category: 'Projet Jeu',
-    points: 0,
-    isProjectStep: true,
+    points: 100,
+    isProjectStep: false,
+    description: 'Un seul dépôt complet à remettre pour l\'ensemble du projet (100 pts) comprenant : (1) tous les différents exercices liés au jeu rassemblés en un seul fichier, (2) la préparation de leçon réalisée avec l\'assistant FMTTN, et (3) le jeu de société final.',
     docUrl: 'https://docs.google.com/document/d/1af3aH5FiR31N4FB99VrFq6628kiFFbly/preview'
-  },
-  { 
-    id: 'exercice-10', 
-    title: 'Étape 2 (Ex 10) : Photographier le numérique (visuels & matériel)',
-    category: 'Projet Jeu',
-    points: 0,
-    isProjectStep: true,
-    docUrl: 'https://docs.google.com/document/d/1kSoMRpjySi0DvjA0S1W4b8BoaDQrXNZh/preview'
-  },
-  { 
-    id: 'exercice-11', 
-    title: 'Étape 3 (Ex 11) : Supports du jeu & cartes créées avec l\'IA',
-    category: 'Projet Jeu',
-    points: 0,
-    isProjectStep: true,
-    docUrl: 'https://docs.google.com/document/d/1CzyMJRbjyvYVh7XP83Lx4tjxnq23oHXX/preview'
-  },
-  { 
-    id: 'exercice-12', 
-    title: 'Étape 4 (Ex 12) : Plateau de jeu à la découpeuse laser (FabLab)',
-    category: 'Projet Jeu',
-    points: 0,
-    isProjectStep: true,
-    docUrl: 'https://docs.google.com/document/d/1Ov_huVW9al2DKuoBmW89QO3ZqE5E-nzU/preview'
-  },
-  { 
-    id: 'exercice-13', 
-    title: 'Étape 5 (Ex 13) : Réalisation des pions à l\'imprimante 3D (FabLab)',
-    category: 'Projet Jeu',
-    points: 0,
-    isProjectStep: true,
-    docUrl: 'https://docs.google.com/document/d/1H_88UJvPPezdUXw1Vt8_U9wtsaFouepU/preview'
-  },
-  { 
-    id: 'exercice-14', 
-    title: 'Étape 6 (Ex 14) : Présentation vidéo du jeu (Capsule 2-3 min)',
-    category: 'Projet Jeu',
-    points: 0,
-    isProjectStep: true,
-    docUrl: 'https://docs.google.com/document/d/1JO_9ayYt3IqZfStfUPkzT3GDOF65VBxQ/preview'
-  },
-  { 
-    id: 'exercice-15', 
-    title: 'Étape 7 (Ex 15) : Playtest & Grille d\'évaluation formative du jeu',
-    category: 'Projet Jeu',
-    points: 0,
-    isProjectStep: true,
-    docUrl: 'https://docs.google.com/document/d/1uIheBr_KU2Dh2TjYkegz7lHixsUNxs4t/preview'
-  },
-  { 
-    id: 'exercice-16', 
-    title: 'Étape 8 (Ex 16) : Présentation finale et leçon FMTTN devant la classe',
-    category: 'Projet Jeu',
-    points: 0,
-    isProjectStep: true,
-    docUrl: 'https://docs.google.com/document/d/1Tm15GqKSwutH1MDbaGYJaWByliC17iRT/preview'
   }
 ]
 
@@ -1056,85 +1001,50 @@ function formatSize(bytes) {
               </div>
             </div>
 
-            <!-- PARTIE 2 : PROJET JEU DE SOCIÉTÉ DIDACTIQUE (100 PTS) -->
+            <!-- PARTIE 2 : PROJET JEU DE SOCIÉTÉ DIDACTIQUE (100 PTS — TRAVAIL UNIQUE) -->
             <div class="pillar-card p2">
               <div class="pillar-header">
                 <div class="pillar-badge">Partie 2 • 100 Pts</div>
                 <div class="pillar-score-badge">{{ myEvaluation.pillar2.total }} / 100 pts</div>
               </div>
-              <h4 class="pillar-title">Projet Jeu de Société Didactique</h4>
-              <p class="pillar-summary">Note globale attribuée par l'enseignant pour la totalité du projet didactique (conception, FabLab, vidéo et leçon en classe).</p>
+              <h4 class="pillar-title">Projet Jeu de Société Didactique (Travail unique)</h4>
+              <p class="pillar-summary">Le jeu de société est pondéré en <strong>un seul travail global sur 100 points</strong>. Vous remettez l'ensemble du dossier en une seule fois dans l'onglet « Devoirs & Dépôts ».</p>
 
               <div class="pillar-details-box">
                 <div class="criteria-check-item">
                   <span class="crit-icon">📋</span>
                   <div class="crit-text">
-                    <strong>Étape 1 (Ex 9) : Règles du jeu & dossier pédagogique</strong>
-                    <span>Dossier didactique, intention pédagogique, règles et compétences FMTTN / CSEM.</span>
+                    <strong>1. Les différents exercices rassemblés en un fichier</strong>
+                    <span>Règles du jeu (FMTTN/CSEM), visuels/photos, cartes IA, supports FabLab (plateau laser, pions 3D), capsule vidéo et bilan de playtest réunis dans un document unique.</span>
                   </div>
-                  <span class="crit-sub-score">Étape de projet</span>
-                </div>
-                <div class="criteria-check-item">
-                  <span class="crit-icon">📸</span>
-                  <div class="crit-text">
-                    <strong>Étape 2 (Ex 10) : Photographier le numérique</strong>
-                    <span>Documentation visuelle, reportage photo du matériel et composition.</span>
-                  </div>
-                  <span class="crit-sub-score">Étape de projet</span>
+                  <span class="crit-sub-score">Inclus</span>
                 </div>
                 <div class="criteria-check-item">
                   <span class="crit-icon">🤖</span>
                   <div class="crit-text">
-                    <strong>Étape 3 (Ex 11) : Supports de jeu & cartes conçues avec l'IA</strong>
-                    <span>Génération de visuels IA, harmonisation Canva et cartes défis pédagogiques.</span>
+                    <strong>2. La préparation réalisée avec l'assistant FMTTN</strong>
+                    <span>Fiche de préparation de leçon complète générée et affinée avec l'assistant FMTTN, intégrant le jeu dans une séquence d'apprentissage.</span>
                   </div>
-                  <span class="crit-sub-score">Étape de projet</span>
-                </div>
-                <div class="criteria-check-item">
-                  <span class="crit-icon">🪚</span>
-                  <div class="crit-text">
-                    <strong>Étape 4 (Ex 12) : Plateau à la découpeuse laser (FabLab)</strong>
-                    <span>Fichiers vectoriels .svg, gravure bois/plexiglas et ergonomie matérielle.</span>
-                  </div>
-                  <span class="crit-sub-score">Étape de projet</span>
+                  <span class="crit-sub-score">Inclus</span>
                 </div>
                 <div class="criteria-check-item">
                   <span class="crit-icon">🎲</span>
                   <div class="crit-text">
-                    <strong>Étape 5 (Ex 13) : Pions modélisés et imprimés en 3D (FabLab)</strong>
-                    <span>Modélisation 3D originale et fabrication additive FDM au FabLab.</span>
+                    <strong>3. Le jeu de société final & sa présentation</strong>
+                    <span>Prototype matériel complet, jouabilité validée et présentation finale de votre dispositif devant la classe.</span>
                   </div>
-                  <span class="crit-sub-score">Étape de projet</span>
-                </div>
-                <div class="criteria-check-item">
-                  <span class="crit-icon">🎬</span>
-                  <div class="crit-text">
-                    <strong>Étape 6 (Ex 14) : Présentation vidéo du jeu (Capsule 2-3 min)</strong>
-                    <span>Pitch dynamique, démonstration, valeurs de plans et son soigné.</span>
-                  </div>
-                  <span class="crit-sub-score">Étape de projet</span>
-                </div>
-                <div class="criteria-check-item">
-                  <span class="crit-icon">🧪</span>
-                  <div class="crit-text">
-                    <strong>Étape 7 (Ex 15) : Playtest & Grille d'évaluation formative</strong>
-                    <span>Tests réels menés auprès des pairs, recueil de données et améliorations itératives.</span>
-                  </div>
-                  <span class="crit-sub-score">Étape de projet</span>
-                </div>
-                <div class="criteria-check-item">
-                  <span class="crit-icon">🎤</span>
-                  <div class="crit-text">
-                    <strong>Étape 8 (Ex 16) : Présentation finale et leçon FMTTN devant la classe</strong>
-                    <span>Animation de la table de jeu, défense didactique et fiche de préparation de leçon.</span>
-                  </div>
-                  <span class="crit-sub-score">Étape de projet</span>
+                  <span class="crit-sub-score">Inclus</span>
                 </div>
               </div>
 
               <div class="pillar-note-box">
                 <span class="pnb-label">Total projet Jeu de société didactique :</span>
                 <span class="pnb-val">{{ myEvaluation.pillar2.total }} / 100 pts</span>
+              </div>
+              <div v-if="!getFileForExercise('projet-jeu')" style="margin-top: 0.9rem; text-align: right;">
+                <button @click="activeTab = 'exercises'" class="btn-quick-upload">
+                  Déposer le dossier complet (100 pts) →
+                </button>
               </div>
             </div>
           </div>
@@ -1239,6 +1149,9 @@ function formatSize(bytes) {
             <div class="ex-card-header">
               <div class="ex-card-title-block">
                 <h4>{{ ex.title }}</h4>
+                <p v-if="ex.description" class="ex-card-desc" style="margin: 0.4rem 0 0.7rem; font-size: 0.9rem; color: #475569; line-height: 1.5; background: #f8fafc; padding: 0.65rem 0.85rem; border-left: 3px solid #2563eb; border-radius: 6px;">
+                  {{ ex.description }}
+                </p>
                 <div class="ex-meta-links-row" v-if="getDocLinks(ex.id)">
                   <a 
                     :href="getDocLinks(ex.id).docxLocalUrl || getDocLinks(ex.id).docxGoogleUrl" 

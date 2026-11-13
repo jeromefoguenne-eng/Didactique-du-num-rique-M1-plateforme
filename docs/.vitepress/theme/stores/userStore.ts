@@ -416,95 +416,14 @@ export const OFFICIAL_EVALUATION_ITEMS: EvaluationItemDefinition[] = [
     maxPoints: 10,
     docLink: 'https://docs.google.com/document/d/1MV1xWWb5ZtcuRhFn_JIVG6UHeFle6IUI/preview'
   },
-  // Partie 2 : Projet Jeu de Société Didactique (100 pts global)
+  // Partie 2 : Projet Jeu de Société Didactique (100 pts — Travail unique complet)
   {
     id: 'projet-jeu',
-    title: 'Projet Jeu de Société Didactique (Note globale du projet)',
-    shortTitle: 'Projet Jeu (Note 100 pts)',
+    title: 'Travail Final — Projet Jeu de Société Didactique (Dossier complet)',
+    shortTitle: 'Projet Jeu (100 pts)',
     part: 2,
     partLabel: 'Partie 2 : Projet Jeu de Société (100 pts)',
     maxPoints: 100
-  },
-  // Étapes de suivi & réalisations intermédiaires du projet (sans pondération séparée)
-  {
-    id: 'exercice-09',
-    title: 'Étape 1 (Ex 9) : Règles du jeu & dossier pédagogique (FMTTN / CSEM)',
-    shortTitle: 'Étape 1 (Règles)',
-    part: 2,
-    partLabel: 'Partie 2 : Projet Jeu de Société (100 pts)',
-    maxPoints: 0,
-    isProjectStep: true,
-    docLink: 'https://docs.google.com/document/d/1af3aH5FiR31N4FB99VrFq6628kiFFbly/preview'
-  },
-  {
-    id: 'exercice-10',
-    title: 'Étape 2 (Ex 10) : Photographier le numérique (visuels & matériel)',
-    shortTitle: 'Étape 2 (Photographie)',
-    part: 2,
-    partLabel: 'Partie 2 : Projet Jeu de Société (100 pts)',
-    maxPoints: 0,
-    isProjectStep: true,
-    docLink: 'https://docs.google.com/document/d/1kSoMRpjySi0DvjA0S1W4b8BoaDQrXNZh/preview'
-  },
-  {
-    id: 'exercice-11',
-    title: 'Étape 3 (Ex 11) : Supports de jeu & cartes conçues avec l\'IA',
-    shortTitle: 'Étape 3 (Cartes IA)',
-    part: 2,
-    partLabel: 'Partie 2 : Projet Jeu de Société (100 pts)',
-    maxPoints: 0,
-    isProjectStep: true,
-    docLink: 'https://docs.google.com/document/d/1CzyMJRbjyvYVh7XP83Lx4tjxnq23oHXX/preview'
-  },
-  {
-    id: 'exercice-12',
-    title: 'Étape 4 (Ex 12) : Plateau de jeu à la découpeuse laser (FabLab)',
-    shortTitle: 'Étape 4 (Plateau Laser)',
-    part: 2,
-    partLabel: 'Partie 2 : Projet Jeu de Société (100 pts)',
-    maxPoints: 0,
-    isProjectStep: true,
-    docLink: 'https://docs.google.com/document/d/1Ov_huVW9al2DKuoBmW89QO3ZqE5E-nzU/preview'
-  },
-  {
-    id: 'exercice-13',
-    title: 'Étape 5 (Ex 13) : Pions de jeu modélisés et imprimés en 3D (FabLab)',
-    shortTitle: 'Étape 5 (Pions 3D)',
-    part: 2,
-    partLabel: 'Partie 2 : Projet Jeu de Société (100 pts)',
-    maxPoints: 0,
-    isProjectStep: true,
-    docLink: 'https://docs.google.com/document/d/1H_88UJvPPezdUXw1Vt8_U9wtsaFouepU/preview'
-  },
-  {
-    id: 'exercice-14',
-    title: 'Étape 6 (Ex 14) : Présentation vidéo du jeu (Capsule 2-3 min)',
-    shortTitle: 'Étape 6 (Vidéo)',
-    part: 2,
-    partLabel: 'Partie 2 : Projet Jeu de Société (100 pts)',
-    maxPoints: 0,
-    isProjectStep: true,
-    docLink: 'https://docs.google.com/document/d/1JO_9ayYt3IqZfStfUPkzT3GDOF65VBxQ/preview'
-  },
-  {
-    id: 'exercice-15',
-    title: 'Étape 7 (Ex 15) : Playtest & Grille d\'évaluation formative du jeu',
-    shortTitle: 'Étape 7 (Playtest)',
-    part: 2,
-    partLabel: 'Partie 2 : Projet Jeu de Société (100 pts)',
-    maxPoints: 0,
-    isProjectStep: true,
-    docLink: 'https://docs.google.com/document/d/1uIheBr_KU2Dh2TjYkegz7lHixsUNxs4t/preview'
-  },
-  {
-    id: 'exercice-16',
-    title: 'Étape 8 (Ex 16) : Présentation finale et leçon FMTTN devant la classe',
-    shortTitle: 'Étape 8 (Soutenance & Leçon)',
-    part: 2,
-    partLabel: 'Partie 2 : Projet Jeu de Société (100 pts)',
-    maxPoints: 0,
-    isProjectStep: true,
-    docLink: 'https://docs.google.com/document/d/1Tm15GqKSwutH1MDbaGYJaWByliC17iRT/preview'
   }
 ]
 
@@ -1062,19 +981,20 @@ export const EXERCISE_DIDACTIC_PROFILES: Record<string, ExerciseDidacticProfile>
   },
   'projet-jeu': {
     id: 'projet-jeu',
-    title: 'Projet Jeu de Société Didactique (Dossier complet)',
-    shortTitle: 'Projet Jeu (Note 100 pts)',
-    requiredKeywords: ['jeu', 'projet', 'dossier', 'pedagogique', 'regles'],
+    title: 'Travail Final — Projet Jeu de Société Didactique (Dossier complet)',
+    shortTitle: 'Projet Jeu (100 pts)',
+    requiredKeywords: ['jeu', 'projet', 'fmttn', 'regles', 'preparation'],
     domainKeywords: [
       'jeu', 'projet', 'dossier', 'pedagogique', 'regles', 'mecanique', 'csem', 'fmttn',
-      'supports', 'cartes', 'plateau', 'video', 'playtest', 'fabrication', 'competences',
+      'assistant', 'preparation', 'lecon', 'supports', 'cartes', 'plateau', 'video',
+      'playtest', 'fabrication', 'laser', '3d', 'photographie', 'competences',
       'cycle', 'didactique', 'evaluation'
     ],
-    expectedSummary: "Dossier didactique complet intégrant règles, matériel, fiche pédagogique FMTTN, capsule vidéo et bilan de playtest.",
+    expectedSummary: "Dossier unique complet rassemblant : (1) tous les exercices du jeu réunis en un fichier, (2) la préparation de leçon réalisée avec l'assistant FMTTN, et (3) le jeu de société final.",
     questionsCles: [
-      "Intégration harmonieuse de l'ensemble des composantes du projet",
-      "Excellence de la transposition didactique et pertinence pour le public scolaire",
-      "Rigueur de la conception matérielle et du dossier d'accompagnement"
+      "Présence de l'ensemble des exercices liés au jeu rassemblés en un seul fichier structuré",
+      "Qualité de la préparation de leçon réalisée avec l'assistant FMTTN et cohérence didactique",
+      "Aboutissement du jeu de société final (règles, matériel, jouabilité et articulation pédagogique)"
     ]
   }
 }
@@ -3647,11 +3567,17 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
       let teacherPts: number | undefined = fb?.score
 
       if (teacherPts === undefined || teacherPts === null) {
-        if (!isDone) {
+        if (def.id === 'projet-jeu') {
+          if (file?.teacherGrade?.score !== undefined) {
+            teacherPts = file.teacherGrade.score
+          } else if (evalRec.gameProjectScore !== undefined && evalRec.gameProjectScore !== null) {
+            teacherPts = evalRec.gameProjectScore
+          } else {
+            teacherPts = 0
+          }
+        } else if (!isDone) {
           // EXERCICE NON RENDU : Note automatiquement de 0
           teacherPts = 0
-        } else if (def.id === 'projet-jeu') {
-          teacherPts = evalRec.gameProjectScore !== undefined ? evalRec.gameProjectScore : 0
         } else if (file?.teacherGrade?.score !== undefined) {
           teacherPts = file.teacherGrade.score
         } else if (def.id === 'exercice-09' && (evalRec.gameEx09RulesScore !== undefined || evalRec.gamePedagogyScore !== undefined)) {

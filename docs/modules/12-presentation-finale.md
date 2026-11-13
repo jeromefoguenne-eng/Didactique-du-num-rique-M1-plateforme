@@ -41,7 +41,10 @@ Ne vous contentez pas de présenter un diaporama. Faites vivre votre projet ! Vo
 L'objectif est de montrer ce que vous avez créé, comment vous l'avez créé et ce que cette expérience vous a appris.
 
 
-📄 **À remettre :** la fiche de préparation de votre leçon FMTTN.
+📄 **À remettre (en un seul dépôt global sur 100 pts dans votre [Espace Membre](/espace-membre)) :**
+* Tous les **exercices liés au jeu de société rassemblés en un seul fichier** ;
+* La **préparation de leçon réalisée avec l'assistant FMTTN** ;
+* Le **jeu de société final**.
 
 
 ---

@@ -1326,7 +1326,7 @@ function saveActiveStudentGrid() {
 }
 
 function exportAllResultsToExcel() {
-  let csv = `Nom de famille;Prénom;Email institutionnel;Suivi Délais IA;Quiz (/20);Ex 1 DigComp (/10);Ex 2 Info critique (/10);Ex 3 Guide élèves (/10);Ex 4 Escape Game (/10);Ex 5 Défi Vidéo Réseaux Sociaux (/10);Ex 6 Démarche itérative (/10);Ex 7 Hardware PC (/10);Ex 8 Grilles critériées (/10);SOUS-TOTAL PLATEFORME (/100);PROJET JEU NOTE GLOBALE (/100);Étape 1 Règles;Étape 2 Photos;Étape 3 Cartes IA;Étape 4 Plateau Laser;Étape 5 Pions 3D;Étape 6 Vidéo;Étape 7 Playtest;Étape 8 Présentation & Leçon;SOUS-TOTAL PROJET JEU (/100);TOTAL GÉNÉRAL (/200);NOTE FINALE (/20);POURCENTAGE;RÉSULTAT;MENTION;FEEDBACK GÉNÉRAL\n`
+  let csv = `Nom de famille;Prénom;Email institutionnel;Suivi Délais IA;Quiz (/20);Ex 1 DigComp (/10);Ex 2 Info critique (/10);Ex 3 Guide élèves (/10);Ex 4 Escape Game (/10);Ex 5 Défi Vidéo Réseaux Sociaux (/10);Ex 6 Démarche itérative (/10);Ex 7 Hardware PC (/10);Ex 8 Grilles critériées (/10);SOUS-TOTAL PLATEFORME (/100);Dépôt Dossier Projet Jeu;PROJET JEU NOTE GLOBALE (/100);SOUS-TOTAL PROJET JEU (/100);TOTAL GÉNÉRAL (/200);NOTE FINALE (/20);POURCENTAGE;RÉSULTAT;MENTION;FEEDBACK GÉNÉRAL\n`
 
   users.value.forEach(u => {
     if (!u || !u.email) return
@@ -1346,21 +1346,15 @@ function exportAllResultsToExcel() {
     const ex8 = items.find(i => i.id === 'exercice-08')?.teacherScore ?? 0
     const p1Total = ev.part1.total
 
-    const projScore = items.find(i => i.id === 'projet-jeu')?.teacherScore ?? ev.part2.total
-    const ex9 = items.find(i => i.id === 'exercice-09')?.completed ? 'Déposé' : 'En attente'
-    const ex10 = items.find(i => i.id === 'exercice-10')?.completed ? 'Déposé' : 'En attente'
-    const ex11 = items.find(i => i.id === 'exercice-11')?.completed ? 'Déposé' : 'En attente'
-    const ex12 = items.find(i => i.id === 'exercice-12')?.completed ? 'Déposé' : 'En attente'
-    const ex13 = items.find(i => i.id === 'exercice-13')?.completed ? 'Déposé' : 'En attente'
-    const ex14 = items.find(i => i.id === 'exercice-14')?.completed ? 'Déposé' : 'En attente'
-    const ex15 = items.find(i => i.id === 'exercice-15')?.completed ? 'Déposé' : 'En attente'
-    const ex16 = items.find(i => i.id === 'exercice-16')?.completed ? 'Déposé' : 'En attente'
+    const projItem = items.find(i => i.id === 'projet-jeu')
+    const projScore = projItem?.teacherScore ?? ev.part2.total
+    const projStatus = projItem?.completed ? 'Déposé' : 'En attente'
     const p2Total = ev.part2.total
 
     const status = ev.isPassing ? 'Admis' : 'Ajourné'
     const cleanFb = (ev.feedback || '').replace(/"/g, '""').replace(/\n/g, ' ')
 
-    csv += `"${u.lastName}";"${u.firstName}";"${u.email}";"${lateText}";"${q}";"${ex1}";"${ex2}";"${ex3}";"${ex4}";"${ex5}";"${ex6}";"${ex7}";"${ex8}";"${p1Total}";"${projScore}";"${ex9}";"${ex10}";"${ex11}";"${ex12}";"${ex13}";"${ex14}";"${ex15}";"${ex16}";"${p2Total}";"${ev.totalScore}";"${ev.totalOutOf20}";"${ev.percentage}%";"${status}";"${ev.mention}";"${cleanFb}"\n`
+    csv += `"${u.lastName}";"${u.firstName}";"${u.email}";"${lateText}";"${q}";"${ex1}";"${ex2}";"${ex3}";"${ex4}";"${ex5}";"${ex6}";"${ex7}";"${ex8}";"${p1Total}";"${projStatus}";"${projScore}";"${p2Total}";"${ev.totalScore}";"${ev.totalOutOf20}";"${ev.percentage}%";"${status}";"${ev.mention}";"${cleanFb}"\n`
   })
 
   // Encodage UTF-8 BOM pour ouverture directe parfaite dans Microsoft Excel
@@ -2325,7 +2319,7 @@ function toggleQuizExpand(id) {
                 <td colspan="5">
                   <div class="sec-div-content">
                     <strong>Partie 2 : Projet Jeu de Société Didactique (100 Points)</strong>
-                    <span class="sec-div-badge">Projet global & 8 étapes clés</span>
+                    <span class="sec-div-badge">Travail unique complet (100 pts)</span>
                   </div>
                 </td>
               </tr>
@@ -2683,7 +2677,7 @@ function toggleQuizExpand(id) {
                           📎 Document : <code>{{ item.file.formattedFileName }}</code>
                         </div>
                         <div v-else-if="item.id === 'projet-jeu'" class="item-file-link" style="color: #2563eb;">
-                          ⭐ Note globale attribuée à l'ensemble du projet didactique (conception, FabLab, vidéo, leçon en classe)
+                          ⭐ Dossier unique (100 pts) : exercices rassemblés en un fichier + préparation assistant FMTTN + jeu de société final
                         </div>
                         <div v-else-if="item.isOverdue" class="item-file-link overdue">
                           🚨 ALARME RETARD : Document non déposé (Échéance dépassée le {{ item.deadlineLabel }})

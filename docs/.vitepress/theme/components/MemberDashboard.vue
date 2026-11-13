@@ -189,12 +189,12 @@ const availableExercises = [
   // 2. Projet Jeu de Société Didactique (Partie 2 : 100 pts — Travail unique complet)
   { 
     id: 'projet-jeu', 
-    title: 'Travail Final — Projet Jeu de Société Didactique (Dossier complet)',
+    title: 'Travail Final — Projet Jeu de Société Didactique (100 pts)',
     category: 'Projet Jeu',
     points: 100,
     isProjectStep: false,
-    description: 'Un seul dépôt complet à remettre pour l\'ensemble du projet (100 pts) comprenant : (1) tous les différents exercices liés au jeu rassemblés en un seul fichier, (2) la préparation de leçon réalisée avec l\'assistant FMTTN, et (3) le jeu de société final.',
-    docUrl: 'https://docs.google.com/document/d/1af3aH5FiR31N4FB99VrFq6628kiFFbly/preview'
+    description: 'Un seul exercice à rendre pour le jeu de société (100 pts). Il doit comprendre : (1) les différents exercices réalisés en classe rassemblés en un seul fichier, (2) la préparation réalisée avec l\'assistant FMTTN, et (3) le jeu de société réalisé.',
+    docUrl: ''
   }
 ]
 
@@ -1014,8 +1014,8 @@ function formatSize(bytes) {
                 <div class="criteria-check-item">
                   <span class="crit-icon">📋</span>
                   <div class="crit-text">
-                    <strong>1. Les différents exercices rassemblés en un fichier</strong>
-                    <span>Règles du jeu (FMTTN/CSEM), visuels/photos, cartes IA, supports FabLab (plateau laser, pions 3D), capsule vidéo et bilan de playtest réunis dans un document unique.</span>
+                    <strong>1. Les différents exercices réalisés en classe (en un fichier)</strong>
+                    <span>Règles du jeu (FMTTN/CSEM), visuels/photos, cartes IA, supports FabLab (plateau laser, pions 3D), capsule vidéo et playtest réunis dans un document unique.</span>
                   </div>
                   <span class="crit-sub-score">Inclus</span>
                 </div>
@@ -1030,7 +1030,7 @@ function formatSize(bytes) {
                 <div class="criteria-check-item">
                   <span class="crit-icon">🎲</span>
                   <div class="crit-text">
-                    <strong>3. Le jeu de société final & sa présentation</strong>
+                    <strong>3. Le jeu de société réalisé</strong>
                     <span>Prototype matériel complet, jouabilité validée et présentation finale de votre dispositif devant la classe.</span>
                   </div>
                   <span class="crit-sub-score">Inclus</span>
@@ -1188,7 +1188,12 @@ function formatSize(bytes) {
                     <span>👁️ Docs ↗</span>
                   </a>
                 </div>
-                <div class="ex-meta-links-row" v-else>
+                <div class="ex-meta-links-row" v-else-if="ex.id === 'projet-jeu'">
+                  <a :href="withBase('/modules/05-projet-jeu-societe')" class="link-doc-drive-inline">
+                    🎲 Consulter le hub du Projet Jeu de société ↗
+                  </a>
+                </div>
+                <div class="ex-meta-links-row" v-else-if="ex.docUrl">
                   <a :href="ex.docUrl" target="_blank" rel="noopener" class="link-doc-drive-inline">
                     📥 Consignes officielles (Google Docs) ↗
                   </a>

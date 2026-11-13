@@ -3292,12 +3292,14 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
     const file = state.submittedFiles.find(f => f.id === fileId)
     if (!file) return { success: false, message: "Document non trouvé." }
 
-    const numScore = Math.max(0, Math.min(10, Number(score) || 0))
+    const def = OFFICIAL_EVALUATION_ITEMS.find(i => i.id === file.exerciseId)
+    const itemMax = def ? def.maxPoints : 10
+    const numScore = Math.max(0, Math.min(itemMax, Number(score) || 0))
     const now = new Date().toISOString().replace('T', ' ').substring(0, 16)
     
     file.teacherGrade = {
       score: numScore,
-      maxScore: 10,
+      maxScore: itemMax,
       feedback: feedback.trim(),
       gradedAt: now,
       status: 'graded'
@@ -3311,7 +3313,7 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
       exerciseId: file.exerciseId,
       exerciseTitle: file.exerciseTitle,
       score: numScore,
-      maxScore: 10,
+      maxScore: itemMax,
       feedback: feedback.trim(),
       gradedAt: now,
       status: 'graded'
@@ -3322,7 +3324,7 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
     return { 
       success: true, 
       file,
-      message: `Évaluation enseignant enregistrée : ${numScore}/10 pour ${file.userName}` 
+      message: `Évaluation enseignant enregistrée : ${numScore}/${itemMax} pour ${file.userName}` 
     }
   },
 
@@ -3409,13 +3411,15 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
       f => f && f.exerciseId === exerciseId && allowed.includes((f.userEmail || '').toLowerCase())
     )
     if (file?.teacherGrade && (file.teacherGrade.feedback || file.teacherGrade.status === 'graded')) {
+      const def = OFFICIAL_EVALUATION_ITEMS.find(i => i.id === exerciseId)
+      const itemMax = file.teacherGrade.maxScore || (def ? def.maxPoints : 10)
       return {
         userEmail: file.userEmail,
         userName: file.userName,
         exerciseId,
         exerciseTitle: file.exerciseTitle,
         score: file.teacherGrade.score,
-        maxScore: 10,
+        maxScore: itemMax,
         feedback: file.teacherGrade.feedback,
         gradedAt: file.teacherGrade.gradedAt || file.submittedAt,
         status: file.teacherGrade.status
@@ -3464,8 +3468,20 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
 
   getStudentEvaluation(email?: string) {
     const targetEmail = (email || state.currentUser?.email || '').trim().toLowerCase()
-    const user = state.users.find(u => u && u.email && u.email.toLowerCase() === targetEmail)
-    const evalRec: any = state.evaluations[targetEmail] || {
+    const user = findUserByQuery(targetEmail) || state.users.find(u => u && u.email && u.email.toLowerCase() === targetEmail)
+    const allowedEmails = [targetEmail]
+    if (user?.email && !allowedEmails.includes(user.email.toLowerCase())) allowedEmails.push(user.email.toLowerCase())
+    if ((user as any)?.aliases && Array.isArray((user as any).aliases)) {
+      for (const a of (user as any).aliases) if (a && !allowedEmails.includes(a.toLowerCase())) allowedEmails.push(a.toLowerCase())
+    }
+    let foundEvalRec: any = null
+    for (const em of allowedEmails) {
+      if (state.evaluations[em]) {
+        foundEvalRec = state.evaluations[em]
+        break
+      }
+    }
+    const evalRec: any = foundEvalRec || {
       userEmail: targetEmail,
       gamePedagogyScore: 0,
       gameBoardLaserScore: 0,
@@ -3616,7 +3632,7 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
         points: Math.min(def.maxPoints, Math.max(0, Number(teacherPts || 0))),
         feedback: fb?.feedback || (file?.teacherGrade?.feedback || ''),
         teacherFeedback: fb?.feedback || (file?.teacherGrade?.feedback || ''),
-        submission: state.submissions.find(s => (s?.userEmail || '').toLowerCase() === targetEmail && s?.exerciseId === def.id) || null,
+        submission: userSubs.find(s => s?.exerciseId === def.id) || null,
         quizAttempts: def.id === 'quiz' ? userQuizzes : [],
         completed: isDone,
         file,
@@ -3740,6 +3756,9 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
 
     const overdueList: OverdueItemDetail[] = []
     let daysOverdueMax = 0
+    const userQuizzes = this.getUserQuizAttempts(targetEmail)
+    const userFiles = this.getUserFiles(targetEmail)
+    const userSubs = this.getUserSubmissions(targetEmail)
 
     for (const item of OFFICIAL_EVALUATION_ITEMS) {
       const eff = this.getExerciseDeadline(item.id)
@@ -3750,10 +3769,10 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
       if (now > deadlineDate) {
         let isCompleted = false
         if (item.id === 'quiz') {
-          isCompleted = state.quizAttempts.some(q => (q?.userEmail || '').toLowerCase() === targetEmail)
+          isCompleted = userQuizzes.length > 0
         } else {
-          const hasFile = state.submittedFiles.some(f => (f?.userEmail || '').toLowerCase() === targetEmail && f?.exerciseId === item.id)
-          const hasSub = state.submissions.some(s => (s?.userEmail || '').toLowerCase() === targetEmail && s?.exerciseId === item.id && (s?.answer || (s as any)?.content || '').trim().length > 10)
+          const hasFile = userFiles.some(f => f?.exerciseId === item.id)
+          const hasSub = userSubs.some(s => s?.exerciseId === item.id && (s?.answer || (s as any)?.content || '').trim().length > 10)
           isCompleted = hasFile || hasSub
         }
 

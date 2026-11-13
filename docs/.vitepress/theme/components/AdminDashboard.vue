@@ -592,14 +592,15 @@ const averageProgress = computed(() => {
 
 const exerciseOptions = [
   { id: 'all', title: 'Tous les exercices' },
-  { id: 'exercice-01', title: 'Atelier 1 : Diagnostic de compétences' },
-  { id: 'exercice-02', title: 'Atelier 2 : Peut-on faire confiance ?' },
+  { id: 'exercice-01', title: 'Atelier 1 : Diagnostic de compétences (DigComp 2.2)' },
+  { id: 'exercice-02', title: 'Atelier 2 : Peut-on faire confiance à cette info ?' },
   { id: 'exercice-03', title: 'Atelier 3 : Guide numérique élèves' },
   { id: 'exercice-04', title: 'Atelier 4 : Escape Game FMTTN' },
   { id: 'exercice-05', title: 'Atelier 5 : Défi Vidéo Réseaux Sociaux' },
-  { id: 'exercice-06', title: 'Atelier 6 : Défi Hardware PC' },
-  { id: 'exercice-video', title: 'Atelier 7 : Capsule Vidéo' },
-  { id: 'projet-jeu', title: 'Projet : Dossier Jeu de société' }
+  { id: 'exercice-06', title: 'Atelier 6 : Démarche itérative (Mini-jeu)' },
+  { id: 'exercice-07', title: 'Atelier 7 : Défi Hardware PC & Peer Learning' },
+  { id: 'exercice-08', title: 'Atelier 8 : Grilles d\'évaluation critériées' },
+  { id: 'projet-jeu', title: 'Projet Final : Jeu de Société Didactique (100 pts)' }
 ]
 
 const filteredSubmissions = computed(() => {

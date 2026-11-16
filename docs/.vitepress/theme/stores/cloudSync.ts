@@ -119,32 +119,37 @@ export class CloudSync {
     cloudSyncState.syncError = null
 
     try {
-      // Préparation de la liste allégée des fichiers locaux (sans le lourd base64)
-      const lightweightFiles = (localState.submittedFiles || []).map((f: any) => ({
-        id: f.id,
-        userEmail: f.userEmail,
-        userName: f.userName,
-        exerciseId: f.exerciseId,
-        exerciseTitle: f.exerciseTitle,
-        originalFileName: f.originalFileName,
-        formattedFileName: f.formattedFileName,
-        driveUrl: f.driveUrl || '',
-        submittedAt: f.submittedAt,
-        driveSynced: f.driveSynced === true
-      }))
+      // Préparation de la liste allégée des fichiers locaux créés récemment (hors base statique)
+      const lightweightFiles = (localState.submittedFiles || [])
+        .filter((f: any) => f && f.id && !String(f.id).startsWith('file-real-'))
+        .map((f: any) => ({
+          id: f.id,
+          userEmail: f.userEmail,
+          userName: f.userName,
+          exerciseId: f.exerciseId,
+          exerciseTitle: f.exerciseTitle,
+          originalFileName: f.originalFileName,
+          formattedFileName: f.formattedFileName,
+          driveUrl: f.driveUrl || '',
+          submittedAt: f.submittedAt,
+          driveSynced: f.driveSynced === true
+        }))
 
-      // On tente d'abord un POST avec l'état local pour effectuer un merge bidirectionnel sur le serveur
+      const newSubmissions = (localState.submissions || []).filter((s: any) => s && s.id && !String(s.id).startsWith('sub-real-'))
+      const newQuizzes = (localState.quizAttempts || []).filter((q: any) => q && q.id && !String(q.id).startsWith('quiz-real-'))
+
+      // On tente d'abord un POST avec uniquement les nouvelles entrées locales (évite de saturer Google Sheets)
       const response = await this.postJson({
         action: 'syncAll',
         state: {
           users: localState.users || [],
-          submissions: localState.submissions || [],
+          submissions: newSubmissions,
           deadlines: localState.deadlines || {},
-          quizAttempts: localState.quizAttempts || [],
+          quizAttempts: newQuizzes,
           evaluations: localState.evaluations || {},
           submittedFiles: lightweightFiles
         }
-      })
+      }, 10000)
 
       if (response && response.status === 'success') {
         const now = Date.now()
@@ -157,7 +162,7 @@ export class CloudSync {
       }
 
       // Fallback via GET si le POST a retourné une réponse inattendue
-      const getData = await this.getJson({ action: 'syncAll' })
+      const getData = await this.getJson({ action: 'syncAll' }, 10000)
       if (getData && getData.status === 'success') {
         const now = Date.now()
         cloudSyncState.lastSyncTime = now
@@ -182,14 +187,14 @@ export class CloudSync {
 
     try {
       const cleanEmail = email.trim().toLowerCase()
-      // Tenter d'abord par GET
-      const res = await this.getJson({ action: 'getStudent', email: cleanEmail })
+      // Tenter d'abord par GET (timeout court de 5s pour ne jamais bloquer la connexion étudiante)
+      const res = await this.getJson({ action: 'getStudent', email: cleanEmail }, 5000)
       if (res && res.status === 'success' && res.user) {
         return res.user
       }
 
-      // Sinon tenter via POST
-      const postRes = await this.postJson({ action: 'getStudent', email: cleanEmail })
+      // Sinon tenter via POST (timeout court de 5s)
+      const postRes = await this.postJson({ action: 'getStudent', email: cleanEmail }, 5000)
       if (postRes && postRes.status === 'success' && postRes.user) {
         return postRes.user
       }

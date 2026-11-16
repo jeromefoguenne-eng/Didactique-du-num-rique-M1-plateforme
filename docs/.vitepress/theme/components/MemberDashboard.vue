@@ -743,10 +743,10 @@ function formatSize(bytes) {
       <div class="profile-header">
         <div class="user-meta">
           <div class="avatar-badge">
-            {{ currentUser.firstName[0] }}{{ currentUser.lastName[0] }}
+            {{ (currentUser.firstName || 'E')[0] }}{{ (currentUser.lastName || 'T')[0] }}
           </div>
           <div>
-            <h2 class="user-name">{{ currentUser.firstName }} {{ currentUser.lastName }}</h2>
+            <h2 class="user-name">{{ currentUser.firstName || 'Étudiant' }} {{ currentUser.lastName || '' }}</h2>
             <p class="user-email">{{ currentUser.email }} • Étudiant M1 Math-Numérique</p>
           </div>
         </div>
@@ -1265,9 +1265,9 @@ function formatSize(bytes) {
               <!-- Cas 1 : Un fichier est déjà déposé pour cet exercice -->
               <div v-if="getFileForExercise(ex.id)" class="ex-file-active-card">
                 <div class="ef-left">
-                  <span class="ef-icon">{{ getFileForExercise(ex.id).formattedFileName.endsWith('.pdf') ? '📕' : '📘' }}</span>
+                  <span class="ef-icon">{{ (getFileForExercise(ex.id).formattedFileName || getFileForExercise(ex.id).originalFileName || '').toLowerCase().endsWith('.pdf') ? '📕' : '📘' }}</span>
                   <div class="ef-meta">
-                    <div class="ef-filename">{{ getFileForExercise(ex.id).formattedFileName }}</div>
+                    <div class="ef-filename">{{ getFileForExercise(ex.id).formattedFileName || getFileForExercise(ex.id).originalFileName || 'Document déposé' }}</div>
                     <div class="ef-subtext">
                       <span>Taille : {{ formatSize(getFileForExercise(ex.id).fileSize) }}</span>
                       <span>•</span>
@@ -1513,10 +1513,10 @@ function formatSize(bytes) {
           <div v-else class="files-cards-grid">
             <div v-for="file in userFiles" :key="file.id" class="file-card">
               <div class="file-card-top">
-                <span class="file-icon">{{ file.formattedFileName.endsWith('.pdf') ? '📕' : '📘' }}</span>
+                <span class="file-icon">{{ (file.formattedFileName || file.originalFileName || '').toLowerCase().endsWith('.pdf') ? '📕' : '📘' }}</span>
                 <div class="file-details">
                   <div class="file-title-badge">{{ file.exerciseTitle }}</div>
-                  <div class="file-name-code">{{ file.formattedFileName }}</div>
+                  <div class="file-name-code">{{ file.formattedFileName || file.originalFileName || 'Document déposé' }}</div>
                   <div class="file-meta-row">
                     <span>Taille : {{ formatSize(file.fileSize) }}</span>
                     <span>•</span>
@@ -1598,11 +1598,11 @@ function formatSize(bytes) {
             <!-- Détail des réponses -->
             <details class="q-answers-details">
               <summary class="q-details-summary">
-                Consulter mes réponses et les critères didactiques ({{ att.answers.length }} questions)
+                Consulter mes réponses et les critères didactiques ({{ (att.answers || []).length }} questions)
               </summary>
               <div class="q-answers-breakdown">
                 <div 
-                  v-for="(ans, aIdx) in att.answers" 
+                  v-for="(ans, aIdx) in (att.answers || [])" 
                   :key="ans.questionId || aIdx"
                   class="q-answer-item"
                   :class="ans.type === 'qcm' ? (ans.isCorrect ? 'ans-correct' : 'ans-wrong') : 'ans-open'"

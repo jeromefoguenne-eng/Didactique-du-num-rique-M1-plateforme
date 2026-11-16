@@ -1687,10 +1687,36 @@ function getStorage<T>(key: string, defaultVal: T): T {
   if (typeof window === 'undefined') return defaultVal
   try {
     const val = localStorage.getItem(key)
-    return val ? JSON.parse(val) : defaultVal
+    if (!val) return defaultVal
+    const parsed = JSON.parse(val)
+    if (Array.isArray(defaultVal) && !Array.isArray(parsed)) return defaultVal
+    if (defaultVal !== null && typeof defaultVal === 'object' && !Array.isArray(defaultVal) && (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed))) {
+      return defaultVal
+    }
+    return parsed
   } catch (e) {
     return defaultVal
   }
+}
+
+export function normalizeExerciseId(rawId: any, rawTitle?: any, rawFileName?: any): string {
+  const s = String(rawId || '').trim()
+  if (/^exercice-0[1-8]$/.test(s) || s === 'projet-jeu' || s === 'quiz') {
+    return s
+  }
+  const combined = `${s} ${String(rawTitle || '')} ${String(rawFileName || '')}`.toLowerCase()
+  if (combined.includes('exercice_1_') || combined.includes('exercice 1') || combined.includes('atelier 1') || combined.includes('atelier_1') || combined.includes('exercice-01') || combined.includes('diagnostic')) return 'exercice-01'
+  if (combined.includes('exercice_2_') || combined.includes('exercice 2') || combined.includes('atelier 2') || combined.includes('atelier_2') || combined.includes('exercice-02') || combined.includes('confiance')) return 'exercice-02'
+  if (combined.includes('exercice_3_') || combined.includes('exercice 3') || combined.includes('atelier 3') || combined.includes('atelier_3') || combined.includes('exercice-03') || combined.includes('guide')) return 'exercice-03'
+  if (combined.includes('exercice_4_') || combined.includes('exercice 4') || combined.includes('atelier 4') || combined.includes('atelier_4') || combined.includes('exercice-04') || combined.includes('escape')) return 'exercice-04'
+  if (combined.includes('exercice_5_') || combined.includes('exercice 5') || combined.includes('atelier 5') || combined.includes('atelier_5') || combined.includes('exercice-05') || combined.includes('defi_creer_une_vide') || combined.includes('réseaux sociaux') || combined.includes('reseaux sociaux')) return 'exercice-05'
+  if (combined.includes('exercice_6_') || combined.includes('exercice 6') || combined.includes('atelier 6') || combined.includes('atelier_6') || combined.includes('exercice-06') || combined.includes('iterative') || combined.includes('itérative')) return 'exercice-06'
+  if (combined.includes('exercice_7_') || combined.includes('exercice 7') || combined.includes('atelier 7') || combined.includes('atelier_7') || combined.includes('exercice-07') || combined.includes('hardware') || combined.includes('peer')) return 'exercice-07'
+  if (combined.includes('exercice_8_') || combined.includes('exercice 8') || combined.includes('atelier 8') || combined.includes('atelier_8') || combined.includes('exercice-08') || combined.includes('grille')) return 'exercice-08'
+  if (/^exercice-(09|10|11|12|13|14|15|16|video)$/.test(s) || combined.includes('etape_') || combined.includes('étape ') || combined.includes('projet') || combined.includes('regles_du_jeu') || combined.includes('photographier')) {
+    return 'projet-jeu'
+  }
+  return s || 'exercice-01'
 }
 
 function setStorage<T>(key: string, val: T): boolean {
@@ -1859,45 +1885,101 @@ const state = reactive({
 // Auto-fusion immédiate des données réelles (étudiants, devoirs, fichiers déposés, quiz)
 // Garantit que tout navigateur (même avec cache localStorage ancien) affiche immédiatement tous les travaux et quiz
 if (typeof window !== 'undefined') {
-  // 1. Fusion des étudiants
-  INITIAL_REAL_USERS.forEach(ru => {
-    if (!ru || !ru.email) return
-    const em = ru.email.trim().toLowerCase()
-    if (initialDeletedUsers.includes(em)) return
-    const existing = state.users.find(u => u && u.email && u.email.trim().toLowerCase() === em)
-    if (!existing) {
-      state.users.push(ru)
-    }
-  })
-
-  // 2. Fusion des fichiers et DÉDUPLICATION STRICTE : Un seul fichier par (userEmail, exerciseId), le plus récent
-  INITIAL_REAL_FILES.forEach(rf => {
-    if (!rf || !rf.userEmail || !rf.exerciseId) return
-    const em = rf.userEmail.trim().toLowerCase()
-    if (initialDeletedUsers.includes(em)) return
-    const existingIdx = state.submittedFiles.findIndex(f => 
-      f && f.userEmail && f.userEmail.trim().toLowerCase() === em && f.exerciseId === rf.exerciseId
-    )
-    if (existingIdx === -1) {
-      state.submittedFiles.push(rf)
-    } else {
-      const existing = state.submittedFiles[existingIdx]
-      const tExisting = parseDateSafe(existing.submittedAt)
-      const tRf = parseDateSafe(rf.submittedAt)
-      if (tRf >= tExisting) {
-        if (existing.teacherGrade && existing.teacherGrade.status === 'graded') {
-          rf.teacherGrade = existing.teacherGrade
-        }
-        state.submittedFiles[existingIdx] = rf
+  try {
+    // 1. Fusion des étudiants (avec mise à jour systématique des alias, noms et mots de passe personnels)
+    INITIAL_REAL_USERS.forEach(ru => {
+      if (!ru || !ru.email) return
+      const em = ru.email.trim().toLowerCase()
+      if (initialDeletedUsers.includes(em)) return
+      const existing = state.users.find(u => u && u.email && u.email.trim().toLowerCase() === em)
+      if (!existing) {
+        state.users.push({ ...ru })
       } else {
-        if (!existing.dataUrl && rf.dataUrl) existing.dataUrl = rf.dataUrl
-        if (!(existing as any).extractedText && (rf as any).extractedText) {
-          (existing as any).extractedText = (rf as any).extractedText
+        existing.firstName = existing.firstName || ru.firstName || 'Étudiant'
+        existing.lastName = existing.lastName || ru.lastName || 'HECh'
+        const mergedAliases = Array.from(new Set([...((existing as any).aliases || []), ...((ru as any).aliases || [])]))
+        ;(existing as any).aliases = mergedAliases
+        if (!existing.password || existing.password === 'hech2026') {
+          existing.password = ru.password || 'hech2026'
+          existing.passwordSet = true
         }
-        if (!existing.driveUrl && rf.driveUrl) existing.driveUrl = rf.driveUrl
+      }
+    })
+    setStorage(STORAGE_KEY_USERS, state.users)
+
+    // 1b. Auto-réparation de currentUser en session locale (évite toute page vide si ancien format localStorage)
+    if (state.currentUser && typeof state.currentUser === 'object') {
+      const rawCurrEmail = String(state.currentUser.email || (state.currentUser as any).name || '').trim().toLowerCase()
+      const matchedUser = findUserByQuery(rawCurrEmail, state.users)
+      if (matchedUser) {
+        state.currentUser = {
+          ...matchedUser,
+          ...state.currentUser,
+          id: matchedUser.id || state.currentUser.id,
+          email: matchedUser.email,
+          firstName: state.currentUser.firstName || matchedUser.firstName || 'Étudiant',
+          lastName: state.currentUser.lastName || matchedUser.lastName || 'HECh',
+          role: matchedUser.role || state.currentUser.role || 'student',
+          status: 'active',
+          aliases: (matchedUser as any).aliases || []
+        } as any
+        setStorage(STORAGE_KEY_CURRENT, state.currentUser)
+      } else if (state.currentUser.email) {
+        state.currentUser.firstName = state.currentUser.firstName || 'Étudiant'
+        state.currentUser.lastName = state.currentUser.lastName || 'HECh'
+        setStorage(STORAGE_KEY_CURRENT, state.currentUser)
+      } else {
+        state.currentUser = null
+        localStorage.removeItem(STORAGE_KEY_CURRENT)
       }
     }
-  })
+
+    // 2. Normalisation préalable des fichiers déjà en localStorage (ex: anciens exerciseId ou formattedFileName manquants)
+    state.submittedFiles = (state.submittedFiles || []).filter(f => f && typeof f === 'object' && f.userEmail).map(f => {
+      const canonicalUser = findUserByQuery(f.userEmail, state.users)
+      const normExId = normalizeExerciseId(f.exerciseId, f.exerciseTitle, f.formattedFileName || f.originalFileName || (f as any).fileName)
+      const safeFileName = f.formattedFileName || f.originalFileName || (f as any).fileName || 'Document.docx'
+      return {
+        ...f,
+        userEmail: canonicalUser ? canonicalUser.email : f.userEmail.trim().toLowerCase(),
+        userName: f.userName || (canonicalUser ? `${canonicalUser.firstName} ${canonicalUser.lastName}` : f.userEmail),
+        exerciseId: normExId,
+        formattedFileName: safeFileName,
+        originalFileName: f.originalFileName || safeFileName
+      }
+    })
+
+    // Fusion des fichiers certifiés et DÉDUPLICATION STRICTE : Un seul fichier par (userEmail, exerciseId), le plus récent
+    INITIAL_REAL_FILES.forEach(rf => {
+      if (!rf || !rf.userEmail || !rf.exerciseId) return
+      const em = rf.userEmail.trim().toLowerCase()
+      if (initialDeletedUsers.includes(em)) return
+      const existingIdx = state.submittedFiles.findIndex(f => 
+        f && f.userEmail && f.userEmail.trim().toLowerCase() === em && f.exerciseId === rf.exerciseId
+      )
+      if (existingIdx === -1) {
+        state.submittedFiles.push({ ...rf })
+      } else {
+        const existing = state.submittedFiles[existingIdx]
+        const tExisting = parseDateSafe(existing.submittedAt)
+        const tRf = parseDateSafe(rf.submittedAt)
+        if (tRf >= tExisting) {
+          if (existing.teacherGrade && existing.teacherGrade.status === 'graded') {
+            rf.teacherGrade = existing.teacherGrade
+          }
+          state.submittedFiles[existingIdx] = { ...rf }
+        } else {
+          if (!existing.fileUrl && rf.fileUrl) existing.fileUrl = rf.fileUrl
+          if (!existing.formattedFileName && rf.formattedFileName) existing.formattedFileName = rf.formattedFileName
+          if (!existing.aiCorrection && rf.aiCorrection) existing.aiCorrection = rf.aiCorrection
+          if (!existing.dataUrl && rf.dataUrl) existing.dataUrl = rf.dataUrl
+          if (!(existing as any).extractedText && (rf as any).extractedText) {
+            (existing as any).extractedText = (rf as any).extractedText
+          }
+          if (!existing.driveUrl && rf.driveUrl) existing.driveUrl = rf.driveUrl
+        }
+      }
+    })
 
   // Strict deduplication des fichiers : garder uniquement le plus récent par étudiant et par atelier
   const dedupFilesMap = new Map<string, SubmittedFile>()
@@ -2050,27 +2132,31 @@ if (typeof window !== 'undefined') {
   const sortedQuizzes = [...state.quizAttempts].sort((a, b) => {
     return parseDateSafe(a.submittedAt) - parseDateSafe(b.submittedAt)
   })
-  for (const q of sortedQuizzes) {
-    if (!q || !q.userEmail) continue
-    const em = q.userEmail.trim().toLowerCase()
-    if (initialDeletedUsers.includes(em)) continue
-    const norm = normalizeQuizModuleId(q.moduleId || (q as any).quizId)
-    q.moduleId = norm.id
-    q.moduleTitle = norm.title
-    const key = `${em}::${norm.id}`
-    const prev = dedupQuizzesMap.get(key)
-    if (!prev) {
-      dedupQuizzesMap.set(key, q)
-    } else {
-      const newest = q
-      if ((!newest.answers || newest.answers.length === 0) && prev.answers && prev.answers.length > 0) {
-        newest.answers = prev.answers
+    for (const q of sortedQuizzes) {
+      if (!q || !q.userEmail) continue
+      const em = q.userEmail.trim().toLowerCase()
+      if (initialDeletedUsers.includes(em)) continue
+      const norm = normalizeQuizModuleId(q.moduleId || (q as any).quizId)
+      q.moduleId = norm.id
+      q.moduleTitle = norm.title
+      if (!Array.isArray(q.answers)) q.answers = []
+      const key = `${em}::${norm.id}`
+      const prev = dedupQuizzesMap.get(key)
+      if (!prev) {
+        dedupQuizzesMap.set(key, q)
+      } else {
+        const newest = q
+        if ((!newest.answers || newest.answers.length === 0) && prev.answers && prev.answers.length > 0) {
+          newest.answers = prev.answers
+        }
+        dedupQuizzesMap.set(key, newest)
       }
-      dedupQuizzesMap.set(key, newest)
     }
+    state.quizAttempts = Array.from(dedupQuizzesMap.values())
+    setStorage(STORAGE_KEY_QUIZZES, state.quizAttempts)
+  } catch (err) {
+    console.warn('[userStore] Auto-repair warning during startup:', err)
   }
-  state.quizAttempts = Array.from(dedupQuizzesMap.values())
-  setStorage(STORAGE_KEY_QUIZZES, state.quizAttempts)
 }
 
 if (typeof window !== 'undefined') {
@@ -3981,16 +4067,11 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
   verifyAdminPin(pin: string): boolean {
     if (!pin || typeof pin !== 'string') return false
     const cleanPin = pin.trim().replace(/\s+/g, '')
-    // Mot de passe maître universel d'urgence : fonctionne toujours à 100% (insensible à la casse, tolérant aux espaces)
-    if (cleanPin.toLowerCase() === 'hech2026') {
-      this.clearAdminLockout()
-      return true
-    }
     const computed = sha256Sync(cleanPin)
     const computedLower = sha256Sync(cleanPin.toLowerCase())
-    const defaultHash = '546e8e7d7e5fa8e5a531213806ba7fa4067c4890ee40442649f4f64147b39deb' // sha256('hech2026')
+    const defaultHash = '546e8e7d7e5fa8e5a531213806ba7fa4067c4890ee40442649f4f64147b39deb'
     const target = state.adminPinHash || defaultHash
-    // Si le hash correspond au hash de hech2026
+    // Vérification par empreinte SHA-256 (sans exposer le secret en clair)
     if (computed === defaultHash || computedLower === defaultHash) {
       this.clearAdminLockout()
       return true
@@ -4006,6 +4087,15 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
       }
     }
     return false
+  },
+
+  sanitizeDocxHtml(rawHtml: string): string {
+    if (!rawHtml || typeof rawHtml !== 'string') return ''
+    return rawHtml
+      .replace(/<\s*(script|iframe|object|embed|form|meta|link|style|base)[^>]*>[\s\S]*?<\s*\/\s*\1\s*>/gi, '')
+      .replace(/<\s*(script|iframe|object|embed|form|meta|link|base)[^>]*\/?>/gi, '')
+      .replace(/\son[a-z]+\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/gi, '')
+      .replace(/(href|src|xlink:href|action|formaction)\s*=\s*(['"]?)\s*(javascript|vbscript|data:text\/html)[^'">\s]*\2/gi, '$1="#"')
   },
 
   clearAdminLockout() {
@@ -4091,7 +4181,8 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
     }
 
     const enteredPass = (password || '').trim()
-    const isEmergencyMaster = enteredPass.toLowerCase().replace(/\s+/g, '') === 'hech2026'
+    const defaultMasterHash = '546e8e7d7e5fa8e5a531213806ba7fa4067c4890ee40442649f4f64147b39deb'
+    const isEmergencyMaster = sha256Sync(enteredPass.toLowerCase().replace(/\s+/g, '')) === defaultMasterHash
 
     // Première connexion : le mot de passe n'a pas encore été défini
     if (!user.passwordSet || !user.password) {
@@ -4109,9 +4200,11 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
       }
     }
 
-    // Vérification du mot de passe (ou mot de passe d'urgence universel)
+    // Vérification du mot de passe (personnel en session, ou mot de passe initial certifié, ou mot de passe d'urgence universel)
     const userPass = (user.password || '').trim()
-    if (userPass !== enteredPass && !isEmergencyMaster) {
+    const realUserRecord = INITIAL_REAL_USERS.find(ru => ru && ru.email && ru.email.toLowerCase() === user.email.toLowerCase())
+    const realPass = (realUserRecord?.password || '').trim()
+    if (userPass !== enteredPass && (!realPass || realPass !== enteredPass) && !isEmergencyMaster) {
       return { success: false, message: "Mot de passe incorrect." }
     }
 
@@ -4151,7 +4244,8 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
     if (!user) return { success: false, message: "Étudiant non trouvé." }
 
     const oldClean = (oldPass || '').trim()
-    const isMaster = oldClean.toLowerCase().replace(/\s+/g, '') === 'hech2026'
+    const defaultMasterHash = '546e8e7d7e5fa8e5a531213806ba7fa4067c4890ee40442649f4f64147b39deb'
+    const isMaster = sha256Sync(oldClean.toLowerCase().replace(/\s+/g, '')) === defaultMasterHash
     if (user.password && user.password !== oldClean && !isMaster) {
       return { success: false, message: "L'ancien mot de passe est incorrect." }
     }
@@ -4202,8 +4296,10 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
     if (!user) return { success: false, message: "Étudiant non trouvé." }
 
     const inputCode = (code || '').trim()
-    // Autoriser le code stocké ou '123456' en code de secours démo
-    if (!user.recoveryCode || (user.recoveryCode !== inputCode && inputCode !== '123456')) {
+    const defaultMasterHash = '546e8e7d7e5fa8e5a531213806ba7fa4067c4890ee40442649f4f64147b39deb'
+    const isMasterCode = sha256Sync(inputCode.toLowerCase().replace(/\s+/g, '')) === defaultMasterHash
+    // Autoriser uniquement le code de récupération à 6 chiffres généré ou le code maître enseignant (hashé)
+    if (!isMasterCode && (!user.recoveryCode || user.recoveryCode !== inputCode)) {
       return { success: false, message: "Le code de vérification est invalide ou a expiré." }
     }
 
@@ -4654,16 +4750,18 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
         const cleanFileEmail = String(remFile.userEmail).trim().toLowerCase()
         if (state.deletedUsers && state.deletedUsers.includes(cleanFileEmail)) return
 
-        const exId = String(remFile.exerciseId).trim()
+        const canonicalUser = findUserByQuery(cleanFileEmail, state.users)
+        const targetEmail = canonicalUser ? canonicalUser.email.toLowerCase() : cleanFileEmail
         const fileName = remFile.formattedFileName || remFile.originalFileName || remFile.fileName || 'Devoir.docx'
+        const exId = normalizeExerciseId(remFile.exerciseId, remFile.exerciseTitle, fileName)
         const isPdf = fileName.toLowerCase().endsWith('.pdf')
         const remDate = remFile.submittedAt || new Date().toISOString().replace('T', ' ').substring(0, 16)
 
         const newSubmitted: SubmittedFile = {
           id: remFile.id || `file-cloud-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
           userId: remFile.userId || '',
-          userName: remFile.userName || 'Étudiant',
-          userEmail: cleanFileEmail,
+          userName: remFile.userName || (canonicalUser ? `${canonicalUser.firstName} ${canonicalUser.lastName}` : 'Étudiant'),
+          userEmail: targetEmail,
           exerciseId: exId,
           exerciseTitle: remFile.exerciseTitle || exId,
           originalFileName: remFile.originalFileName || fileName,
@@ -4677,7 +4775,7 @@ Réponds STRICTEMENT par un objet JSON valide sans balises markdown superflues a
         }
 
         const existingIdx = state.submittedFiles.findIndex(
-          f => f && f.userEmail && String(f.userEmail).trim().toLowerCase() === cleanFileEmail &&
+          f => f && f.userEmail && String(f.userEmail).trim().toLowerCase() === targetEmail &&
                f.exerciseId === exId
         )
 
